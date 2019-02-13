@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html >
+
+<head>
+
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Lección 3 Estimación puntual | AprendeR: Parte II</title>
+  <meta name="description" content="Apuntes AprendeR bookdown::gitbook.">
+  <meta name="generator" content="bookdown  and GitBook 2.6.7">
+
+  <meta property="og:title" content="Lección 3 Estimación puntual | AprendeR: Parte II" />
+  <meta property="og:type" content="book" />
+  
+  
+  <meta property="og:description" content="Apuntes AprendeR bookdown::gitbook." />
+  <meta name="github-repo" content="cescrossello/AprendeR-II" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Lección 3 Estimación puntual | AprendeR: Parte II" />
+  
+  <meta name="twitter:description" content="Apuntes AprendeR bookdown::gitbook." />
+  
+
+<meta name="author" content="The AprendeR team">
+
+
+<meta name="date" content="2019-02-10">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  
+  
+<link rel="prev" href="chap-muestreo.html">
+<link rel="next" href="chap-IC.html">
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+<style type="text/css">
+div.sourceCode { overflow-x: auto; }
+table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
+  margin: 0; padding: 0; vertical-align: baseline; border: none; }
+table.sourceCode { width: 100%; line-height: 100%; }
+td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
+td.sourceCode { padding-left: 5px; }
+code > span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code > span.dt { color: #902000; } /* DataType */
+code > span.dv { color: #40a070; } /* DecVal */
+code > span.bn { color: #40a070; } /* BaseN */
+code > span.fl { color: #40a070; } /* Float */
+code > span.ch { color: #4070a0; } /* Char */
+code > span.st { color: #4070a0; } /* String */
+code > span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code > span.ot { color: #007020; } /* Other */
+code > span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code > span.fu { color: #06287e; } /* Function */
+code > span.er { color: #ff0000; font-weight: bold; } /* Error */
+code > span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+code > span.cn { color: #880000; } /* Constant */
+code > span.sc { color: #4070a0; } /* SpecialChar */
+code > span.vs { color: #4070a0; } /* VerbatimString */
+code > span.ss { color: #bb6688; } /* SpecialString */
+code > span.im { } /* Import */
+code > span.va { color: #19177c; } /* Variable */
+code > span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code > span.op { color: #666666; } /* Operator */
+code > span.bu { } /* BuiltIn */
+code > span.ex { } /* Extension */
+code > span.pp { color: #bc7a00; } /* Preprocessor */
+code > span.at { color: #7d9029; } /* Attribute */
+code > span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code > span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code > span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">AprendeR: Parte II</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Presentación</a></li>
+<li class="part"><span><b>Parte II: Estadística inferencial</b></span></li>
+<li class="chapter" data-level="1" data-path="chap-distr.html"><a href="chap-distr.html"><i class="fa fa-check"></i><b>1</b> Distribuciones de probabilidad</a><ul>
+<li class="chapter" data-level="1.1" data-path="chap-distr.html"><a href="chap-distr.html#ejercicios"><i class="fa fa-check"></i><b>1.1</b> Ejercicios</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="chap-muestreo.html"><a href="chap-muestreo.html"><i class="fa fa-check"></i><b>2</b> Conceptos básicos de muestreo</a><ul>
+<li class="chapter" data-level="2.1" data-path="chap-muestreo.html"><a href="chap-muestreo.html#sec:muestreo"><i class="fa fa-check"></i><b>2.1</b> Tipos de muestreo</a></li>
+<li class="chapter" data-level="2.2" data-path="chap-muestreo.html"><a href="chap-muestreo.html#muestreo-aleatorio-con-r"><i class="fa fa-check"></i><b>2.2</b> Muestreo aleatorio con R</a></li>
+<li class="chapter" data-level="2.3" data-path="chap-muestreo.html"><a href="chap-muestreo.html#guia-rapida"><i class="fa fa-check"></i><b>2.3</b> Guía rápida</a></li>
+<li class="chapter" data-level="2.4" data-path="chap-muestreo.html"><a href="chap-muestreo.html#ejercicios-1"><i class="fa fa-check"></i><b>2.4</b> Ejercicios</a><ul>
+<li class="chapter" data-level="" data-path="chap-muestreo.html"><a href="chap-muestreo.html#modelo-de-test-1"><i class="fa fa-check"></i>Modelo de test</a></li>
+<li class="chapter" data-level="" data-path="chap-muestreo.html"><a href="chap-muestreo.html#respuestas-al-test-1"><i class="fa fa-check"></i>Respuestas al test</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="estimacion.html"><a href="estimacion.html"><i class="fa fa-check"></i><b>3</b> Estimación puntual</a><ul>
+<li class="chapter" data-level="3.1" data-path="estimacion.html"><a href="estimacion.html#estimacion-maximo-verosimil"><i class="fa fa-check"></i><b>3.1</b> Estimación máximo verosímil</a></li>
+<li class="chapter" data-level="3.2" data-path="estimacion.html"><a href="estimacion.html#guia-rapida-1"><i class="fa fa-check"></i><b>3.2</b> Guía rápida</a></li>
+<li class="chapter" data-level="3.3" data-path="estimacion.html"><a href="estimacion.html#ejercicios-2"><i class="fa fa-check"></i><b>3.3</b> Ejercicios</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="chap-IC.html"><a href="chap-IC.html"><i class="fa fa-check"></i><b>4</b> Intervalos de confianza</a><ul>
+<li class="chapter" data-level="4.1" data-path="chap-IC.html"><a href="chap-IC.html#sec:ICT"><i class="fa fa-check"></i><b>4.1</b> Intervalo de confianza para la media basado en la t de Student</a></li>
+<li class="chapter" data-level="4.2" data-path="chap-IC.html"><a href="chap-IC.html#intervalos-de-confianza-para-la-proporcion-poblacional"><i class="fa fa-check"></i><b>4.2</b> Intervalos de confianza para la proporción poblacional</a></li>
+<li class="chapter" data-level="4.3" data-path="chap-IC.html"><a href="chap-IC.html#sec:ICvar"><i class="fa fa-check"></i><b>4.3</b> Intervalo de confianza para la varianza de una población normal</a></li>
+<li class="chapter" data-level="4.4" data-path="chap-IC.html"><a href="chap-IC.html#bootstrap"><i class="fa fa-check"></i><b>4.4</b> Bootstrap</a></li>
+<li class="chapter" data-level="4.5" data-path="chap-IC.html"><a href="chap-IC.html#guia-rapida-2"><i class="fa fa-check"></i><b>4.5</b> Guía rápida</a></li>
+<li class="chapter" data-level="4.6" data-path="chap-IC.html"><a href="chap-IC.html#ejercicios-3"><i class="fa fa-check"></i><b>4.6</b> Ejercicios</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="chap-contrastes.html"><a href="chap-contrastes.html"><i class="fa fa-check"></i><b>5</b> Contrastes de hipótesis</a><ul>
+<li class="chapter" data-level="5.1" data-path="chap-contrastes.html"><a href="chap-contrastes.html#contrastes-para-medias"><i class="fa fa-check"></i><b>5.1</b> Contrastes para medias</a><ul>
+<li class="chapter" data-level="" data-path="chap-contrastes.html"><a href="chap-contrastes.html#el-test-t"><i class="fa fa-check"></i>El test t</a></li>
+<li class="chapter" data-level="" data-path="chap-contrastes.html"><a href="chap-contrastes.html#tests-no-parametricos"><i class="fa fa-check"></i>Tests no paramétricos</a></li>
+</ul></li>
+<li class="chapter" data-level="5.2" data-path="chap-contrastes.html"><a href="chap-contrastes.html#contrastes-para-varianzas"><i class="fa fa-check"></i><b>5.2</b> Contrastes para varianzas</a></li>
+<li class="chapter" data-level="5.3" data-path="chap-contrastes.html"><a href="chap-contrastes.html#contrastes-para-proporciones"><i class="fa fa-check"></i><b>5.3</b> Contrastes para proporciones</a></li>
+<li class="chapter" data-level="5.4" data-path="chap-contrastes.html"><a href="chap-contrastes.html#calculo-de-la-potencia-de-un-contraste"><i class="fa fa-check"></i><b>5.4</b> Cálculo de la potencia de un contraste</a></li>
+<li class="chapter" data-level="5.5" data-path="chap-contrastes.html"><a href="chap-contrastes.html#guia-rapida-3"><i class="fa fa-check"></i><b>5.5</b> Guía rápida</a></li>
+<li class="chapter" data-level="5.6" data-path="chap-contrastes.html"><a href="chap-contrastes.html#ejercicios-4"><i class="fa fa-check"></i><b>5.6</b> Ejercicios</a><ul>
+<li class="chapter" data-level="" data-path="chap-contrastes.html"><a href="chap-contrastes.html#modelo-de-test-4"><i class="fa fa-check"></i>Modelo de test</a></li>
+<li class="chapter" data-level="" data-path="chap-contrastes.html"><a href="chap-contrastes.html#respuestas-al-test-4"><i class="fa fa-check"></i>Respuestas al test</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="chap-bondad.html"><a href="chap-bondad.html"><i class="fa fa-check"></i><b>6</b> Contrastes de bondad de ajuste</a><ul>
+<li class="chapter" data-level="6.1" data-path="chap-bondad.html"><a href="chap-bondad.html#pruebas-graficas-q-q-plots"><i class="fa fa-check"></i><b>6.1</b> Pruebas gráficas: Q-Q-plots</a></li>
+<li class="chapter" data-level="6.2" data-path="chap-bondad.html"><a href="chap-bondad.html#el-test-chi2-de-pearson"><i class="fa fa-check"></i><b>6.2</b> El test <span class="math inline">\(\chi^2\)</span> de Pearson</a></li>
+<li class="chapter" data-level="6.3" data-path="chap-bondad.html"><a href="chap-bondad.html#el-test-chi2-para-distribuciones-continuas"><i class="fa fa-check"></i><b>6.3</b> El test <span class="math inline">\(\chi^2\)</span> para distribuciones continuas</a></li>
+<li class="chapter" data-level="6.4" data-path="chap-bondad.html"><a href="chap-bondad.html#el-test-de-kolgomorov-smirnov"><i class="fa fa-check"></i><b>6.4</b> El test de Kolgomorov-Smirnov</a></li>
+<li class="chapter" data-level="6.5" data-path="chap-bondad.html"><a href="chap-bondad.html#tests-de-normalidad"><i class="fa fa-check"></i><b>6.5</b> Tests de normalidad</a></li>
+<li class="chapter" data-level="6.6" data-path="chap-bondad.html"><a href="chap-bondad.html#guia-rapida-4"><i class="fa fa-check"></i><b>6.6</b> Guía rápida</a></li>
+<li class="chapter" data-level="6.7" data-path="chap-bondad.html"><a href="chap-bondad.html#ejercicios-5"><i class="fa fa-check"></i><b>6.7</b> Ejercicios</a><ul>
+<li class="chapter" data-level="" data-path="chap-bondad.html"><a href="chap-bondad.html#modelo-de-test-5"><i class="fa fa-check"></i>Modelo de test</a></li>
+<li class="chapter" data-level="" data-path="chap-bondad.html"><a href="chap-bondad.html#respuestas-al-test-5"><i class="fa fa-check"></i>Respuestas al test</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="chap-indep.html"><a href="chap-indep.html"><i class="fa fa-check"></i><b>7</b> Contrastes de independencia y homogeneidad</a><ul>
+<li class="chapter" data-level="7.1" data-path="chap-indep.html"><a href="chap-indep.html#tablas-de-contingencia"><i class="fa fa-check"></i><b>7.1</b> Tablas de contingencia</a></li>
+<li class="chapter" data-level="7.2" data-path="chap-indep.html"><a href="chap-indep.html#contraste-de-independencia"><i class="fa fa-check"></i><b>7.2</b> Contraste de independencia</a></li>
+<li class="chapter" data-level="7.3" data-path="chap-indep.html"><a href="chap-indep.html#sec:hom"><i class="fa fa-check"></i><b>7.3</b> Contraste de homogeneidad</a></li>
+<li class="chapter" data-level="7.4" data-path="chap-indep.html"><a href="chap-indep.html#potencia-de-un-contraste-chi2"><i class="fa fa-check"></i><b>7.4</b> Potencia de un contraste <span class="math inline">\(\chi^2\)</span></a></li>
+<li class="chapter" data-level="7.5" data-path="chap-indep.html"><a href="chap-indep.html#guia-rapida-5"><i class="fa fa-check"></i><b>7.5</b> Guía rápida</a></li>
+<li class="chapter" data-level="7.6" data-path="chap-indep.html"><a href="chap-indep.html#ejercicios-6"><i class="fa fa-check"></i><b>7.6</b> Ejercicios</a><ul>
+<li class="chapter" data-level="" data-path="chap-indep.html"><a href="chap-indep.html#modelo-de-test-6"><i class="fa fa-check"></i>Modelo de test</a></li>
+<li class="chapter" data-level="" data-path="chap-indep.html"><a href="chap-indep.html#respuestas-al-test-6"><i class="fa fa-check"></i>Respuestas al test</a></li>
+</ul></li>
+</ul></li>
+<li class="divider"></li>
+<li><a href="https://github.com/cescrossello/AprendeR-II" target="blank">Publicado con  bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">AprendeR: Parte II</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="estimacion" class="section level1">
+<h1><span class="header-section-number">Lección 3</span> Estimación puntual</h1>
+<p>En un estudio inferencial, una vez tomada la muestra y obtenidos los datos sobre sus miembros, el siguiente paso es inferir, es decir, deducir información sobre la población a partir de estos datos. Dicha información se puede deducir de dos formas:</p>
+<ul>
+<li><p>Suponiendo que conocemos el <strong>modelo</strong> al que se ajusta la población: es decir, suponiendo que conocemos el tipo de distribución de la variable aleatoria que modela la característica de la población en la que estamos interesados, pero desconocemos uno o varios parámetros de los que depende dicha distribución (observad que si lo sabemos todo sobre esta distribución, ya no hace falta tomar muestras para inferir algo sobre ella). Así, podemos saber (o suponer) que las longitudes de los ejemplares adultos de una cierta especie se distribuyen según una variable aleatoria normal, pero desconocer sus parámetros <span class="math inline">\(\mu\)</span> (media) y <span class="math inline">\(\sigma\)</span> (desviación típica), y usar este conocimiento para inferir información sobre dichas longitudes a partir de las de una muestra: por ejemplo, para estimar con un cierto margen de error su longitud media. Si estamos en este caso, hablaremos de <strong>estimación paramétrica</strong>.</p></li>
+<li><p>Suponiendo que desconocemos qué tipo de distribución tiene la variable aleatoria que modela la característica que nos interesa (aunque a veces necesitaremos saber algo de esta distribución; por ejemplo, si es simétrica o no). En este caso, hablaremos de <strong>estimación no paramétrica</strong>.</p></li>
+</ul>
+<p>En ambos casos, existen tres vías para obtener información sobre los parámetros de la distribución (conocida o desconocida) de la variable aleatoria que nos interesa:</p>
+<ul>
+<li><p><strong>Estimación puntual</strong>. Se trata de obtener expresiones matemáticas, llamadas <strong>estimadores puntuales</strong>, que aplicadas a los valores de una muestra nos dan una aproximación (el término exacto es una <strong>estimación</strong>) del valor de dicho parámetro para la población. A modo de ejemplo, la media aritmética de los datos <span class="math inline">\(x_1,\ldots,x_n\)</span> de una muestra, <span class="math display">\[
+\overline{x}=\frac{x_1+\cdots +x_n}{n},
+\]</span> es un estimador del <strong>valor medio</strong> (<strong>valor esperado</strong>, <strong>esperanza</strong>) de la variable aleatoria de la que hemos extraído la muestra.</p></li>
+<li><p><strong>Estimación por intervalos de confianza</strong>. Se trata de obtener intervalos que contengan con probabilidad alta el parámetro objeto de estudio. Trataremos este tema en la Lección <a href="chap-IC.html#chap:IC">4</a>.</p></li>
+<li><p><strong>Contraste de hipótesis</strong>. <em>Grosso modo</em>, se establecen dos hipótesis opuestas sobre el parámetro o, más en general, sobre la distribución de la variable aleatoria, y se contrastan para intentar decidir cuál es la verdadera. Los estudiaremos en próximas lecciones.</p></li>
+</ul>
+<p>En esta lección hablaremos de la estimación puntual. Para empezar, es obvio que no toda fórmula matemática sirve para estimar de manera sensata el valor de un parámetro. Por ejemplo, si queréis estimar la media de las alturas de los habitantes de una población y disponéis de una muestra aleatoria de las mismas, no tomáis la raíz cuadrada de la altura máxima en la muestra como estimación de la altura media de la población, ¿verdad? Lo que habéis hecho toda la vida, y seguiréis haciendo en este curso, ha sido calcular la media de las alturas en la muestra y dar ese valor como estimación de la altura media poblacional. Y es lo correcto, porque la media muestral es siempre un estimador <strong>insesgado</strong> de la media poblacional y muy a menudo es además su estimador <strong>máximo verosímil</strong>, Veamos qué significan estas propiedades.</p>
+<ul>
+<li><p><strong>Insesgado</strong>: Los valores de un estimador sobre muestras aleatorias de una población forman una variable aleatoria con una distribución de probabilidad propia, llamada genéricamente <strong>muestral</strong>. Decimos entonces que un estimador es <strong>insesgado</strong> cuando el valor esperado de la variable aleatoria que define coincide con el valor del parámetro poblacional que se quiere estimar. Por ejemplo, si se toman muestras aleatorias con o sin reposición, la media muestral es siempre un estimador insesgado del valor medio poblacional: su valor esperado es el valor medio poblacional.</p></li>
+<li><p><strong>Máximo verosímil</strong>: Cada muestra aleatoria de una población tiene una probabilidad de obtenerse que no solo depende de la muestra, sino también de la distribución de probabilidad de la variable aleatoria poblacional. Si la distribución poblacional es de un tipo concreto (Bernoulli, normal, …), esta probabilidad depende de sus parámetros. Decimos entonces que un estimador es <strong>máximo verosímil</strong> cuando el resultado que da sobre cada muestra aleatoria es el valor del parámetro poblacional que maximiza la probabilidad de obtenerla. Por ejemplo, si lanzamos una moneda al aire <span class="math inline">\(n\)</span> veces y calculamos la proporción de veces que obtenemos cara, esa <strong>proporción muestral</strong> <span class="math inline">\(\widehat{p}\)</span> es el estimador máximo verosímil de la probabilidad <span class="math inline">\(p\)</span> de obtener cara con esa moneda. Esto quiere decir que, de entre todas las distribuciones binomiales <span class="math inline">\(B(n,p)\)</span> que pueden modelar el número de caras que obtenemos al lanzar <span class="math inline">\(n\)</span> veces nuestra moneda, aquella que asigna mayor probabilidad al número de caras que hemos obtenido es la que tiene como parámetro <span class="math inline">\(p\)</span> la frecuencia relativa de caras <span class="math inline">\(\widehat{p}\)</span> que hemos observado.</p></li>
+</ul>
+<p>Para algunas distribuciones, el método de máxima verosimilitud de estimación de sus parámetros da lugar a fórmulas cerradas más o menos sencillas, pero en otros casos nos tenemos que conformar con un valor aproximado obtenido mediante algún método numérico.</p>
+<div id="estimacion-maximo-verosimil" class="section level2">
+<h2><span class="header-section-number">3.1</span> Estimación máximo verosímil</h2>
+<p>A continuación recordamos una lista de los estimadores máximo verosímiles de los parámetros de las distribuciones más comunes a partir de una muestra aleatoria simple:</p>
+<ul>
+<li><p>Para la familia Bernoulli, el estimador máximo verosímil del parámetro <span class="math inline">\(p\)</span> es la proporción muestral de éxitos <span class="math inline">\(\widehat{p}\)</span>. Este estimador es además insesgado.</p></li>
+<li><p>Para la familia Poisson, el estimador máximo verosímil del parámetro <span class="math inline">\(\lambda\)</span> es la media muestral <span class="math inline">\(\overline{X}\)</span>. Este estimador es de nuevo insesgado.</p></li>
+<li><p>Para la familia geométrica, el estimador máximo verosímil del parámetro <span class="math inline">\(p\)</span> es <span class="math inline">\({1}/{\overline{X}}\)</span>. Este estimador es sesgado.</p></li>
+<li><p>Para la familia exponencial, el estimador máximo verosímil del parámetro <span class="math inline">\(\lambda\)</span> es <span class="math inline">\({1}/{\overline{X}}\)</span>. Este estimador también es sesgado.</p></li>
+<li><p>Para la familia normal, los estimadores máximo verosímiles de la media <span class="math inline">\(\mu\)</span>, la desviación típica <span class="math inline">\(\sigma\)</span> y la varianza <span class="math inline">\(\sigma^2\)</span> son, respectivamente, la media muestral <span class="math inline">\(\overline{X}\)</span>, la desviación típica “verdadera” <span class="math inline">\(S_X\)</span> y la varianza “verdadera” <span class="math inline">\(S_X^2\)</span>. Además, <span class="math inline">\(\overline{X}\)</span> es un estimador insesgado de <span class="math inline">\(\mu\)</span>. La varianza verdadera <span class="math inline">\(S_X^2\)</span> no es un estimador insesgado de <span class="math inline">\(\sigma^2\)</span>, pero sí que lo es la varianza muestral <span class="math inline">\(\widetilde{S}^2\)</span>. Y ninguna de las dos desviaciones típicas, ni la “verdadera” <span class="math inline">\(S_X\)</span> ni la muestral <span class="math inline">\(\widetilde{S}_X\)</span>, es un estimador insesgado de <span class="math inline">\(\sigma\)</span>; si necesitáis un estimador insesgado de la desviación típica de una variable aleatoria normal a partir de una muestra aleatoria simple, lo podéis encontrar en la <a href="http://en.wikipedia.org/wiki/Unbiased_estimation_of_standard_deviation">correspondiente entrada de la Wikipedia</a>. No obstante, el beneficio de usar este estimador insesgado no suele compensar lo complicado de su cálculo.</p></li>
+</ul>
+<p>Cuando se estima algún parámetro de una distribución a partir de una muestra, es conveniente aportar el <strong>error típico</strong>, o <strong>estándar</strong>, como medida de la finura de la estimación. Recordemos que el <strong>error típico de un estimador</strong> es la desviación típica de su distribución muestral, y que el <strong>error típico de una estimación</strong> a partir de una muestra es la estimación del error típico del estimador usando dicha muestra. Como veremos en la próxima lección, estos errores típicos serán una ingrediente clave en el cálculo de intervalos de confianza.</p>
+<p>Veamos un ejemplo sencillo. Supongamos que tenemos una muestra aleatoria simple de tamaño <span class="math inline">\(n\)</span> de una variable <span class="math inline">\(X\)</span> que sigue una distribución Bernoulli de probabilidad poblacional <span class="math inline">\(p\)</span> desconocida que queremos estimar. Por ejemplo, puede ser que tengamos una moneda posiblemente trucada, la hayamos lanzado 100 veces al aire y hayamos anotado los resultados (1, cara, 0, cruz), y a partir de este experimento queramos estimar la probabilidad de sacar cara con esta moneda. O que hayamos anotado para 100 individuos de una población elegidos al azar si tienen o no una determinada enfermedad (1 significa que sí, 0 que no) y a partir de esta muestra deseemos estimar la <strong>prevalencia</strong> de la enfermedad en la población, es decir, la proporción real de enfermos, que coincide con la probabilidad de que un individuo elegido al azar tenga dicha enfermedad. Tomemos, para fijar ideas, la siguiente muestra de tamaño 100:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">x=<span class="kw">c</span>(<span class="dv">0</span>,<span class="dv">1</span>,<span class="dv">1</span>,<span class="dv">1</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">1</span>,<span class="dv">1</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">1</span>,<span class="dv">1</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">1</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">1</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">1</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">1</span>,<span class="dv">0</span>,<span class="dv">1</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,
+<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">1</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">1</span>,<span class="dv">1</span>,<span class="dv">0</span>,<span class="dv">1</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">1</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">1</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,
+<span class="dv">1</span>,<span class="dv">1</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">1</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">1</span>,<span class="dv">0</span>)</code></pre></div>
+<p>En este caso, podemos estimar <span class="math inline">\(p\)</span> mediante la proporción muestral de éxitos <span class="math inline">\(\widehat{p}\)</span>, que coincide con la media muestral. El error típico de este estimador es <span class="math inline">\(\sqrt{p(1-p)/n}\)</span>, y el error típico de una estimación concreta es <span class="math inline">\(\sqrt{\widehat{p}(1-\widehat{p})/n}\)</span>. Por lo tanto, a mano podemos estimar <span class="math inline">\(p\)</span> y calcular el error típico de dicha estimación de la manera siguiente:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">n=<span class="kw">length</span>(x)  <span class="co">#Tamaño de la muestra</span>
+estim.p=<span class="kw">mean</span>(x)  <span class="co">#Proporción muestral</span>
+estim.p</code></pre></div>
+<pre><code>## [1] 0.22</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">error.tip.p=<span class="kw">sqrt</span>(estim.p<span class="op">*</span>(<span class="dv">1</span><span class="op">-</span>estim.p)<span class="op">/</span>n) <span class="co">#Error típico de la estimación</span>
+error.tip.p</code></pre></div>
+<pre><code>## [1] 0.0414</code></pre>
+<p>De esta manera, estimamos que <span class="math inline">\(p\)</span>=0.22 con un error típico de 0.04.</p>
+<p>Con R podemos estimar un parámetro de una distribución por el método de máxima verosimilitud a partir de una muestra y además obtener el error típico de dicha estimación usando la función <code>fitdistr</code> del paquete <strong>MASS</strong>. Esta función calcula los estimadores máximo verosímiles de los parámetros de la mayoría de las familias de distribuciones disponibles en R.</p>
+<p>Su sintaxis básica es</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">fitdistr</span>(x, <span class="dt">densfun=</span>..., <span class="dt">start=</span>...)</code></pre></div>
+<p>donde</p>
+<ul>
+<li><p><code>x</code> es la muestra, un vector numérico.</p></li>
+<li><p>El valor de <code>densfun</code> ha de ser el nombre de la familia de distribuciones; se tiene que entrar entre comillas y puede tomar, entre otros, los valores siguientes: <code>&quot;chi-squared&quot;</code>, <code>&quot;exponential&quot;</code>, <code>&quot;f&quot;</code>, <code>&quot;geometric&quot;</code>, <code>&quot;lognormal&quot;</code>, <code>&quot;normal&quot;</code> y <code>&quot;poisson&quot;</code>. La lista de distribuciones a las que se puede aplicar, que podéis consultar en la Ayuda de la función, no incluye la Bernoulli ni la binomial.</p></li>
+<li><p>Si <code>fitdistr</code> no dispone de una fórmula cerrada para el estimador máximo verosímil de algún parámetro, usa un algoritmo numérico para aproximarlo que requiere de un valor inicial para arrancar. Este valor (o valores) se puede especificar igualando el parámetro <code>start</code> a una <code>list</code> con cada parámetro a estimar igualado a un valor inicial. Para algunas distribuciones, como la <code>&quot;t&quot;</code>, <code>fitdistr</code> sabe tomar valores iniciales razonables, y no es necesario especificar el parámetro <code>start</code>. Pero para otras distribuciones, como por ejemplo la <code>&quot;chi-squared&quot;</code>, es obligatorio especificarlo. Para las distribuciones que disponen de fórmula cerrada, como la <code>&quot;normal&quot;</code> o la <code>&quot;poisson&quot;</code>, se tiene que omitir el parámetro <code>start</code>.</p></li>
+</ul>
+<p>Como no podemos usar <code>fitdistr</code> para estimar el parámetro <span class="math inline">\(p\)</span> de una Bernoulli (los autores del paquete debieron de considerar que era más fácil estimarlo directamente), vamos a usarla en otro ejemplo. Consideremos la siguiente muestra <em>y</em> de 100 valores generados con distribución de Poisson de parámetro <span class="math inline">\(\lambda=10\)</span>:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">set.seed</span>(<span class="dv">100</span>) 
+y=<span class="kw">rpois</span>(<span class="dv">100</span>,<span class="dv">10</span>)
+<span class="kw">set.seed</span>(<span class="ot">NULL</span>) 
+y</code></pre></div>
+<pre><code>##   [1]  8 10  9 12 10 11  8 12  7 11 11 12  7 10  9  8 11  7  6 12 10 12  7
+##  [24]  7 10  6  7 15  9  9  7  8 15 11 12  5 14  4  7 14  8 14 10  4  9  8
+##  [47] 11 11 10 12  7 14  7  9 10  3 10  7  9 21 14  6 13  3 10  6  3 13  9
+##  [70] 12  8 11 10 11 11  8  6 17  7  8 10 12 15 12 13 10  9 12  8 11 12  4
+##  [93] 10  8  5  8  8 10  8 11</code></pre>
+<p>Vamos a estimar el parámetro <span class="math inline">\(\lambda\)</span> de una distribución Poisson que haya generado este vector:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(MASS)
+<span class="kw">fitdistr</span>(y, <span class="dt">densfun=</span><span class="st">&quot;poisson&quot;</span>)</code></pre></div>
+<pre><code>##   lambda 
+##   9.560  
+##  (0.309)</code></pre>
+<p>El resultado dice que el valor estimado de <span class="math inline">\(\lambda\)</span> es 9.56, con un error típico en esta estimación de 0.31. Veámoslo directamente: el estimador máximo verosímil de <span class="math inline">\(\lambda\)</span> es la media aritmética <span class="math inline">\(\overline{X}\)</span> y el error típico de este estimador es <span class="math inline">\(\sqrt{\lambda}/\sqrt{n}\)</span> (recordad que la desviación típica de una Poisson de parámetro <span class="math inline">\(\lambda\)</span> es <span class="math inline">\(\sqrt{\lambda}\)</span> y que el error típico de la media muestral es la desviación típica poblacional dividida por la raíz cuadrada del tamaño de la muestra), por lo que el error típico de una estimación es <span class="math inline">\(\sqrt{\overline{X}}/\sqrt{n}\)</span>.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">mean</span>(y)</code></pre></div>
+<pre><code>## [1] 9.56</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">sqrt</span>(<span class="kw">mean</span>(y)<span class="op">/</span><span class="kw">length</span>(y))</code></pre></div>
+<pre><code>## [1] 0.309</code></pre>
+<p>También podemos estimar la media y la desviación típica de una variable normal que hubiera producido esta muestra.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">fitdistr</span>(y, <span class="dt">densfun=</span><span class="st">&quot;normal&quot;</span>)</code></pre></div>
+<pre><code>##    mean     sd  
+##   9.560   3.083 
+##  (0.308) (0.218)</code></pre>
+<p>Observad que la estimación de la desviación típica que nos da <code>fitdistr</code> es la desviación típica “verdadera” (que es su estimador máximo verosímil) y no la muestral:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">sd</span>(y)</code></pre></div>
+<pre><code>## [1] 3.1</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">sqrt</span>((<span class="kw">length</span>(y)<span class="op">-</span><span class="dv">1</span>)<span class="op">/</span><span class="kw">length</span>(y))<span class="op">*</span><span class="kw">sd</span>(y)</code></pre></div>
+<pre><code>## [1] 3.08</code></pre>
+<p>Vamos a estimar ahora el número de grados de libertad de una t de Student que hubiera producido esta muestra.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">fitdistr</span>(y, <span class="dt">densfun=</span><span class="st">&quot;t&quot;</span>)</code></pre></div>
+<pre><code>##      m       s      df  
+##   9.509   2.752   9.923 
+##  (0.300) (0.307) (8.489)</code></pre>
+<p>¡Vaya!, aparte del número de grados de libertad, <code>df</code>, han aparecido parámetros que no esperábamos. Los parámetros <code>m</code> y <code>s</code> son los parámetros de posición, <span class="math inline">\(\mu\)</span>, y de escala, <span class="math inline">\(\sigma\)</span>, respectivamente, que definen una familia más general de distribuciones t de Student (si os interesa, consultad esta <a href="http://en.wikipedia.org/wiki/Noncentral_t-distribution">entrada de la Wikipedia</a>). Las que usamos en este curso tienen <span class="math inline">\(\mu=0\)</span> y <span class="math inline">\(\sigma=1\)</span>. ¿Cómo podríamos estimar los grados de libertad de una t de Student de las nuestras? Especificando dentro de <code>fitdistr</code> los valores de los parámetros que queremos que tomen un valor concreto: en este caso, añadiendo <code>m=0</code> y <code>s=1</code>.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">fitdistr</span>(y, <span class="dt">densfun=</span><span class="st">&quot;t&quot;</span>, <span class="dt">m=</span><span class="dv">0</span>, <span class="dt">s=</span><span class="dv">1</span>)</code></pre></div>
+<pre><code>## Error in fitdistr(y, densfun = &quot;t&quot;, m = 0, s = 1): &#39;start&#39; must be a named list</code></pre>
+<p>Ahora R nos pide que demos un valor inicial al número de grados de libertad, <code>df</code>, para poder arrancar el algoritmo numérico que usará. Vamos a inicializarlo a 1, y de paso veremos cómo se usa este parámetro:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">fitdistr</span>(y, <span class="dt">densfun=</span><span class="st">&quot;t&quot;</span>,<span class="dt">m=</span><span class="dv">0</span>,<span class="dt">s=</span><span class="dv">1</span>,<span class="dt">start=</span><span class="kw">list</span>(<span class="dt">df=</span><span class="dv">1</span>))</code></pre></div>
+<pre><code>## Warning in stats::optim(x = c(8L, 10L, 9L, 12L, 10L, 11L, 8L, 12L, 7L, 11L, : one-dimensional optimization by Nelder-Mead is unreliable:
+## use &quot;Brent&quot; or optimize() directly</code></pre>
+<pre><code>## Warning in dt((x - m)/s, df, log = TRUE): NaNs produced</code></pre>
+<pre><code>##      df  
+##   0.3727 
+##  (0.0428)</code></pre>
+<p>Obtenemos un número estimado de grados de libertad de la t de Student de aproximadamente 0.37 grados de libertad (sí, los grados de libertad de una t de Student pueden ser un número real positivo cualquiera). Por otro lado, R nos avisa de que el resultado es poco de fiar, pero tampoco nos importa mucho, porque el objetivo era mostrar un ejemplo de cómo fijar valores de parámetros, igualándolos a dichos valores, y cómo especificar el parámetro <code>start</code>, como una <code>list</code> donde asignamos a cada parámetro un valor inicial.</p>
+<p>El resultado de <code>fitdistr</code> es una <code>list</code>, y por lo tanto el valor de cada estimador y su error típico se pueden obtener con los sufijos adecuados. En concreto, los valores estimados forman la componente <code>estimate</code> y los errores típicos la componente <code>sd</code>. Para obtenerlos directamente, basta usar los sufijos <code>$estimate</code> y <code>$sd</code>, respectivamente:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">fitdistr</span>(y,<span class="st">&quot;poisson&quot;</span>)<span class="op">$</span>estimate  <span class="co">#Estimación de lambda</span></code></pre></div>
+<pre><code>## lambda 
+##   9.56</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">fitdistr</span>(y,<span class="st">&quot;poisson&quot;</span>)<span class="op">$</span>sd   <span class="co">#Error típico</span></code></pre></div>
+<pre><code>## lambda 
+##  0.309</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">fitdistr</span>(y,<span class="st">&quot;normal&quot;</span>)<span class="op">$</span>estimate  <span class="co">#Estimaciones </span></code></pre></div>
+<pre><code>## mean   sd 
+## 9.56 3.08</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">fitdistr</span>(y,<span class="st">&quot;normal&quot;</span>)<span class="op">$</span>estimate[<span class="dv">1</span>]  <span class="co">#Estimación de mu</span></code></pre></div>
+<pre><code>## mean 
+## 9.56</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">fitdistr</span>(y,<span class="st">&quot;normal&quot;</span>)<span class="op">$</span>estimate[<span class="dv">2</span>]  <span class="co">#Estimación de sigma</span></code></pre></div>
+<pre><code>##   sd 
+## 3.08</code></pre>
+</div>
+<div id="guia-rapida-1" class="section level2">
+<h2><span class="header-section-number">3.2</span> Guía rápida</h2>
+<ul>
+<li><p><code>fitdistr</code> del paquete <strong>MASS</strong>, sirve para calcular los estimadores máximo verosímiles de los parámetros de una distribución a partir de una muestra. El resultado es una <code>list</code> que incluye los objetos <code>estimate</code> (los valores estimados) y <code>sd</code> (los errores típicos de las estimaciones). Sus parámetros principales son:</p>
+<ul>
+<li><code>densfun</code>: el nombre de la familia de distribuciones, entre comillas.</li>
+<li><code>start</code>: permite fijar el valor inicial del algoritmo numérico para calcular el estimador, si la función lo requiere.</li>
+</ul></li>
+</ul>
+</div>
+<div id="ejercicios-2" class="section level2">
+<h2><span class="header-section-number">3.3</span> Ejercicios</h2>
+<div id="modelo-de-test-2" class="section level4 unnumbered">
+<h4>Modelo de test</h4>
+<p><em>(1)</em> Las distribuciones de Weibull tienen dos parámetros, forma, <code>shape</code>, y escala, <code>scale</code>. Supongamos que los datos siguientes siguen una distribución de Weibull: 2.46, 2.28, 1.7, 0.62, 0.87, 2.81, 2.35, 2.08, 2.11, 1.72. Calculad el estimador máximo verosímil del parámetro de escala de esta distribución, redondeado a 3 cifras decimales. Tenéis que dar el resultado (sin ceros innecesarios a la derecha), no cómo lo habéis calculado.</p>
+<p><em>(2)</em> Generad, con semilla de aleatoriedad igual a 42, una secuencia aleatoria de 100 valores con distribución geométrica Ge(0.6). A continuación estimad por máxima verosimilitud el parámetro <span class="math inline">\(p\)</span> de una distribución geométrica que haya generado dicha muestra y dad como respuesta a esta pregunta <em>el error típico de esta estimación</em> redondeado a 3 cifras decimales. Tenéis que dar el resultado (sin ceros innecesarios a la derecha), no cómo lo habéis calculado.</p>
+</div>
+<div id="respuestas-al-test-2" class="section level4 unnumbered">
+<h4>Respuestas al test</h4>
+<p><em>(1)</em> 2.116</p>
+<p><em>(2)</em> 0.038</p>
+
+</div>
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="chap-muestreo.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="chap-IC.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"google": false,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"all": ["facebook", "google", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": "https://github.com/cescrossello/AprendeR-II/edit/master/03-Estimacion_Puntual.Rmd",
+"text": "Edit"
+},
+"history": {
+"link": null,
+"text": null
+},
+"download": ["AprendeR-Parte-II.pdf", "AprendeR-Parte-II.epub"],
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:" && /^https?:/.test(src))
+      src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>
