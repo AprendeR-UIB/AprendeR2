@@ -25,7 +25,7 @@
 <meta name="author" content="The AprendeR team">
 
 
-<meta name="date" content="2019-02-10">
+<meta name="date" content="2019-02-26">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -166,6 +166,21 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li class="chapter" data-level="7.6" data-path="chap-indep.html"><a href="chap-indep.html#ejercicios-6"><i class="fa fa-check"></i><b>7.6</b> Ejercicios</a><ul>
 <li class="chapter" data-level="" data-path="chap-indep.html"><a href="chap-indep.html#modelo-de-test-6"><i class="fa fa-check"></i>Modelo de test</a></li>
 <li class="chapter" data-level="" data-path="chap-indep.html"><a href="chap-indep.html#respuestas-al-test-6"><i class="fa fa-check"></i>Respuestas al test</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="introduccion-a-la-estadistica-descriptiva-multidimensional.html"><a href="introduccion-a-la-estadistica-descriptiva-multidimensional.html"><i class="fa fa-check"></i><b>8</b> Introducción a la estadística descriptiva multidimensional</a><ul>
+<li class="chapter" data-level="8.1" data-path="introduccion-a-la-estadistica-descriptiva-multidimensional.html"><a href="introduccion-a-la-estadistica-descriptiva-multidimensional.html#matrices-de-datos-cuantitativos"><i class="fa fa-check"></i><b>8.1</b> Matrices de datos cuantitativos</a></li>
+<li class="chapter" data-level="8.2" data-path="introduccion-a-la-estadistica-descriptiva-multidimensional.html"><a href="introduccion-a-la-estadistica-descriptiva-multidimensional.html#transformaciones-lineales"><i class="fa fa-check"></i><b>8.2</b> Transformaciones lineales</a></li>
+<li class="chapter" data-level="8.3" data-path="introduccion-a-la-estadistica-descriptiva-multidimensional.html"><a href="introduccion-a-la-estadistica-descriptiva-multidimensional.html#covarianzas-y-correlaciones"><i class="fa fa-check"></i><b>8.3</b> Covarianzas y correlaciones</a></li>
+<li class="chapter" data-level="8.4" data-path="introduccion-a-la-estadistica-descriptiva-multidimensional.html"><a href="introduccion-a-la-estadistica-descriptiva-multidimensional.html#correlacion-de-spearman"><i class="fa fa-check"></i><b>8.4</b> Correlación de Spearman</a></li>
+<li class="chapter" data-level="8.5" data-path="introduccion-a-la-estadistica-descriptiva-multidimensional.html"><a href="introduccion-a-la-estadistica-descriptiva-multidimensional.html#contrastes-de-correlacion"><i class="fa fa-check"></i><b>8.5</b> Contrastes de correlación</a></li>
+<li class="chapter" data-level="8.6" data-path="introduccion-a-la-estadistica-descriptiva-multidimensional.html"><a href="introduccion-a-la-estadistica-descriptiva-multidimensional.html#un-ejemplo"><i class="fa fa-check"></i><b>8.6</b> Un ejemplo</a></li>
+<li class="chapter" data-level="8.7" data-path="introduccion-a-la-estadistica-descriptiva-multidimensional.html"><a href="introduccion-a-la-estadistica-descriptiva-multidimensional.html#representacion-grafica-de-datos-multidimensionales"><i class="fa fa-check"></i><b>8.7</b> Representación gráfica de datos multidimensionales</a></li>
+<li class="chapter" data-level="8.8" data-path="introduccion-a-la-estadistica-descriptiva-multidimensional.html"><a href="introduccion-a-la-estadistica-descriptiva-multidimensional.html#guia-rapida-6"><i class="fa fa-check"></i><b>8.8</b> Guía rápida</a></li>
+<li class="chapter" data-level="8.9" data-path="introduccion-a-la-estadistica-descriptiva-multidimensional.html"><a href="introduccion-a-la-estadistica-descriptiva-multidimensional.html#ejercicios-7"><i class="fa fa-check"></i><b>8.9</b> Ejercicios</a><ul>
+<li class="chapter" data-level="" data-path="introduccion-a-la-estadistica-descriptiva-multidimensional.html"><a href="introduccion-a-la-estadistica-descriptiva-multidimensional.html#modelo-de-test-7"><i class="fa fa-check"></i>Modelo de test</a></li>
+<li class="chapter" data-level="" data-path="introduccion-a-la-estadistica-descriptiva-multidimensional.html"><a href="introduccion-a-la-estadistica-descriptiva-multidimensional.html#ejercicio"><i class="fa fa-check"></i>Ejercicio</a></li>
+<li class="chapter" data-level="" data-path="introduccion-a-la-estadistica-descriptiva-multidimensional.html"><a href="introduccion-a-la-estadistica-descriptiva-multidimensional.html#respuestas-al-test-7"><i class="fa fa-check"></i>Respuestas al test</a></li>
 </ul></li>
 </ul></li>
 <li class="divider"></li>
@@ -885,7 +900,7 @@ x=<span class="kw">rt</span>(<span class="dv">50</span>,<span class="dv">3</span
 ##     Kurtosis Test: 0.07421 
 ## 
 ## Description:
-##  Sun Feb 10 20:29:24 2019 by user:</code></pre>
+##  Tue Feb 26 17:42:39 2019 by user:</code></pre>
 <p>El p-valor relevante es el del <em>“Omnibus test”</em>, en este caso 0.0568 cae en la zona de penumbra.</p>
 <p>Queremos hacer una última advertencia en esta sección. Aunque los tests que hemos explicado se pueden aplicar a muestras pequeñas, es muy difícil rechazar la normalidad de una muestra muy pequeña. Por ejemplo, una muestra de 10 valores escogidos con distribución uniforme entre 0 y 5 pasa holgadamente todos los tests de normalidad (salvo el de D’Agostino-Pearson, que requiere una muestra de al menos 20 elementos):</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">set.seed</span>(<span class="dv">100</span>)

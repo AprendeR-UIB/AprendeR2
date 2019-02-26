@@ -25,7 +25,7 @@
 <meta name="author" content="The AprendeR team">
 
 
-<meta name="date" content="2019-02-10">
+<meta name="date" content="2019-02-26">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -33,7 +33,7 @@
   
   
 <link rel="prev" href="chap-bondad.html">
-
+<link rel="next" href="introduccion-a-la-estadistica-descriptiva-multidimensional.html">
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -168,6 +168,21 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li class="chapter" data-level="" data-path="chap-indep.html"><a href="chap-indep.html#respuestas-al-test-6"><i class="fa fa-check"></i>Respuestas al test</a></li>
 </ul></li>
 </ul></li>
+<li class="chapter" data-level="8" data-path="introduccion-a-la-estadistica-descriptiva-multidimensional.html"><a href="introduccion-a-la-estadistica-descriptiva-multidimensional.html"><i class="fa fa-check"></i><b>8</b> Introducción a la estadística descriptiva multidimensional</a><ul>
+<li class="chapter" data-level="8.1" data-path="introduccion-a-la-estadistica-descriptiva-multidimensional.html"><a href="introduccion-a-la-estadistica-descriptiva-multidimensional.html#matrices-de-datos-cuantitativos"><i class="fa fa-check"></i><b>8.1</b> Matrices de datos cuantitativos</a></li>
+<li class="chapter" data-level="8.2" data-path="introduccion-a-la-estadistica-descriptiva-multidimensional.html"><a href="introduccion-a-la-estadistica-descriptiva-multidimensional.html#transformaciones-lineales"><i class="fa fa-check"></i><b>8.2</b> Transformaciones lineales</a></li>
+<li class="chapter" data-level="8.3" data-path="introduccion-a-la-estadistica-descriptiva-multidimensional.html"><a href="introduccion-a-la-estadistica-descriptiva-multidimensional.html#covarianzas-y-correlaciones"><i class="fa fa-check"></i><b>8.3</b> Covarianzas y correlaciones</a></li>
+<li class="chapter" data-level="8.4" data-path="introduccion-a-la-estadistica-descriptiva-multidimensional.html"><a href="introduccion-a-la-estadistica-descriptiva-multidimensional.html#correlacion-de-spearman"><i class="fa fa-check"></i><b>8.4</b> Correlación de Spearman</a></li>
+<li class="chapter" data-level="8.5" data-path="introduccion-a-la-estadistica-descriptiva-multidimensional.html"><a href="introduccion-a-la-estadistica-descriptiva-multidimensional.html#contrastes-de-correlacion"><i class="fa fa-check"></i><b>8.5</b> Contrastes de correlación</a></li>
+<li class="chapter" data-level="8.6" data-path="introduccion-a-la-estadistica-descriptiva-multidimensional.html"><a href="introduccion-a-la-estadistica-descriptiva-multidimensional.html#un-ejemplo"><i class="fa fa-check"></i><b>8.6</b> Un ejemplo</a></li>
+<li class="chapter" data-level="8.7" data-path="introduccion-a-la-estadistica-descriptiva-multidimensional.html"><a href="introduccion-a-la-estadistica-descriptiva-multidimensional.html#representacion-grafica-de-datos-multidimensionales"><i class="fa fa-check"></i><b>8.7</b> Representación gráfica de datos multidimensionales</a></li>
+<li class="chapter" data-level="8.8" data-path="introduccion-a-la-estadistica-descriptiva-multidimensional.html"><a href="introduccion-a-la-estadistica-descriptiva-multidimensional.html#guia-rapida-6"><i class="fa fa-check"></i><b>8.8</b> Guía rápida</a></li>
+<li class="chapter" data-level="8.9" data-path="introduccion-a-la-estadistica-descriptiva-multidimensional.html"><a href="introduccion-a-la-estadistica-descriptiva-multidimensional.html#ejercicios-7"><i class="fa fa-check"></i><b>8.9</b> Ejercicios</a><ul>
+<li class="chapter" data-level="" data-path="introduccion-a-la-estadistica-descriptiva-multidimensional.html"><a href="introduccion-a-la-estadistica-descriptiva-multidimensional.html#modelo-de-test-7"><i class="fa fa-check"></i>Modelo de test</a></li>
+<li class="chapter" data-level="" data-path="introduccion-a-la-estadistica-descriptiva-multidimensional.html"><a href="introduccion-a-la-estadistica-descriptiva-multidimensional.html#ejercicio"><i class="fa fa-check"></i>Ejercicio</a></li>
+<li class="chapter" data-level="" data-path="introduccion-a-la-estadistica-descriptiva-multidimensional.html"><a href="introduccion-a-la-estadistica-descriptiva-multidimensional.html#respuestas-al-test-7"><i class="fa fa-check"></i>Respuestas al test</a></li>
+</ul></li>
+</ul></li>
 <li class="divider"></li>
 <li><a href="https://github.com/cescrossello/AprendeR-II" target="blank">Publicado con  bookdown</a></li>
 
@@ -202,33 +217,28 @@ P(X=x|Y=y_1)=P(X=x|Y=y_2)=\cdots=P(X=x|Y=y_k)
 </ul>
 <p>En ambos contrastes, la hipótesis nula es que las variables son independientes, bajo una u otra formulación matemática, y la hipótesis alternativa es que son <strong>dependientes</strong> (o <strong>hay asociación</strong> entre ellas). La hipótesis nula se rechaza si se obtiene evidencia que hace inverosímiles las igualdades de probabilidades que se contrastan.</p>
 <p>Para ilustrar esta lección, hemos generado una muestra aleatoria de cadenas formadas por las bases “a”, “c”, “g” y “t”. En concreto, hemos generado cadenas de longitud 100 de tres tipos: <em>A</em>, <em>B</em> y <em>C.</em> Estos tipos se distinguen por los vectores de probabilidades que han determinado las frecuencias de las cuatro bases en las secuencias. Queremos investigar si hay relación entre el tipo (A, B o C) de una cadena, y la base de frecuencia máxima en ella.</p>
-<p>Los datos y el método de generación se encuentran en el repositorio de GitHub <a href="https://github.com/biocom-uib/Experimento-Cadenas" class="uri">https://github.com/biocom-uib/Experimento-Cadenas</a>. Este directorio contiene:</p>
+<p>Los datos y el método de generación se pueden descargar del <em>url</em> siguiente: <a href="http://bioinfo.uib.es/~recerca/MAT2/datos/bases/" class="uri">http://bioinfo.uib.es/~recerca/MAT2/datos/bases/</a>. Este directorio contiene:</p>
 <ul>
-<li><p>El fichero <em>LeemeGeneracionDatos.Rmd</em>, que contiene y explica el código de generación de las muestras. El html resultante de compilar este fichero <em>R Markdown</em> se puede leer en <a href="https://biocom-uib.github.io/Experimento-Cadenas/" class="uri">https://biocom-uib.github.io/Experimento-Cadenas/</a>.</p></li>
-<li><p>El fichero <em>MuestraTotalBases.txt</em>, que contiene una tabla de datos de 10000 observaciones de las dos variables siguientes sobre cadenas: el <code>tipo</code>, que es un factor con los niveles <code>A</code>, <code>B</code> y <code>C</code>, y <code>max.frec</code>, que es otro factor que indica qué base tiene mayor frecuencia en la cadena. Este fichero es de formato texto, con una primera fila con el nombre de las variables y sus columnas separadas por comas.</p></li>
-<li><p>Los ficheros <em>MuestraTipoAbases.txt</em>, <em>MuestraTipoBbases.txt</em> y <em>MuestraTipoCbases.txt</em>, que contienen las subtablas de datos de la anterior formadas solo por las cadenas de tipo A, de tipo B y de tipo C, respectivamente.</p></li>
+<li><p>El fichero <em>LeemeGeneracionDatos.html</em>, que contiene el código de generación de las muestras.</p></li>
+<li><p>El fichero <em>MuestraTotalBases.txt</em>, que contiene una tabla de datos de 10000 observaciones de las dos variables siguientes sobre cadenas: el <code>tipo</code>, que es un factor con los niveles <code>A</code>, <code>B</code> y <code>C</code>, y <code>max.frec</code>, que es otro factor que indica qué base tiene mayor frecuencia en la cadena. Este fichero es de formato texto, con una primera fila con el nombre de las variables y sus columnas separadas por tabuladores.</p></li>
 </ul>
-<p>Los <em>url</em> de estos ficheros para poderlos cargar en una seisón de R se pueden consultar en el <em>Readme</em> del repositorio.</p>
-<p>El bloque de código siguientes carga en un <em>data frame</em> la tabla global <em>MuestraTotalBases.txt</em> y comprueba que no ha habido problemas. Como su <em>url</em> empieza con <em>https</em>, hay que usar la construcción especial para cargarlo que ya explicamos en la Lección <a href="#chap:df"><strong>??</strong></a> de la primera parte.</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(RCurl)
-poblacion=<span class="kw">read.csv</span>(<span class="dt">text=</span><span class="kw">getURL</span>(<span class="st">&quot;https://raw.githubusercontent.com/biocom-uib/Experimento-Cadenas/master/MuestraTotalBases.txt&quot;</span>))
+<p>Los bloques de código siguientes cargan la tabla de datos, comprueban que no ha habido problemas, y extraen tres subtablas, una para cada tipo de cadena:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">poblacion=<span class="st"> </span><span class="kw">read.table</span>(<span class="st">&quot;http://bioinfo.uib.es/~recerca/MAT2/datos/bases/MuestraTotalBases.txt&quot;</span>, <span class="dt">sep=</span><span class="st">&quot;</span><span class="ch">\t</span><span class="st">&quot;</span>, <span class="dt">header=</span><span class="ot">TRUE</span>)
 <span class="kw">str</span>(poblacion)</code></pre></div>
 <pre><code>## &#39;data.frame&#39;:    10000 obs. of  2 variables:
 ##  $ tipo    : Factor w/ 3 levels &quot;A&quot;,&quot;B&quot;,&quot;C&quot;: 2 1 1 3 1 1 1 3 2 2 ...
-##  $ max.frec: Factor w/ 4 levels &quot;a&quot;,&quot;c&quot;,&quot;g&quot;,&quot;t&quot;: 3 1 2 4 4 1 1 3 2 2 ...</code></pre>
+##  $ max.frec: Factor w/ 4 levels &quot;a&quot;,&quot;c&quot;,&quot;g&quot;,&quot;t&quot;: 3 1 1 2 4 1 1 3 2 1 ...</code></pre>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">head</span>(poblacion)</code></pre></div>
 <pre><code>##   tipo max.frec
 ## 1    B        g
 ## 2    A        a
-## 3    A        c
-## 4    C        t
+## 3    A        a
+## 4    C        c
 ## 5    A        t
 ## 6    A        a</code></pre>
-<p>A continuación extraemos de este <em>data frame</em> tres subtablas, una para cada tipo de cadena:</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">poblacionA=<span class="kw">subset</span>(poblacion,tipo<span class="op">==</span><span class="st">&quot;A&quot;</span>)
 poblacionB=<span class="kw">subset</span>(poblacion,tipo<span class="op">==</span><span class="st">&quot;B&quot;</span>)
 poblacionC=<span class="kw">subset</span>(poblacion,tipo<span class="op">==</span><span class="st">&quot;C&quot;</span>)</code></pre></div>
-<p>También podríamos haber definido estos <em>data frames</em> a partr de los ficheros <em>MuestraTipoAbases.txt</em>, <em>MuestraTipoBbases.txt</em> y <em>MuestraTipoCbases.txt</em> de manera similar a como hemos cargado el fichero <em>MuestraTotalBases.txt</em> en el <em>data frame</em> <code>poblacion</code>.</p>
 <div id="tablas-de-contingencia" class="section level2">
 <h2><span class="header-section-number">7.1</span> Tablas de contingencia</h2>
 <p>Ya estudiamos en la Lección <a href="#chap:edqual"><strong>??</strong></a> de la primera parte las tablas de contingencia. En esta sección vamos a repasar y ampliar algunas de las funciones de R para el manejo de esta clase de tablas.</p>
@@ -237,16 +247,16 @@ poblacionC=<span class="kw">subset</span>(poblacion,tipo<span class="op">==</spa
 tabla</code></pre></div>
 <pre><code>##    
 ##        a    c    g    t
-##   A 1027 1003  998  998
-##   B 1259 1297  209  232
-##   C  245  602 1453  677</code></pre>
+##   A 1089 1007  972  958
+##   B 1316 1260  213  208
+##   C  241  655 1424  657</code></pre>
 <p>Su tabla de frecuencias relativas conjuntas en el total de la muestra, en términos de proporciones (tantos por uno), es:</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">prop.table</span>(tabla)</code></pre></div>
 <pre><code>##    
 ##          a      c      g      t
-##   A 0.1027 0.1003 0.0998 0.0998
-##   B 0.1259 0.1297 0.0209 0.0232
-##   C 0.0245 0.0602 0.1453 0.0677</code></pre>
+##   A 0.1089 0.1007 0.0972 0.0958
+##   B 0.1316 0.1260 0.0213 0.0208
+##   C 0.0241 0.0655 0.1424 0.0657</code></pre>
 <p>Para añadir las <strong>distribuciones marginales</strong> de la tabla de contingencia (o <strong>márgenes</strong> de la tabla), se añade una nueva fila con las sumas de cada columna y una nueva columna con las sumas de cada fila. Con R, esto se puede llevar a cabo fácilmente con la función <code>addmargins</code>. Su sintaxis básica es</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">addmargins</span>(tabla, <span class="dt">margin=</span>..., <span class="dt">FUN=</span>...)</code></pre></div>
 <p>donde:</p>
@@ -265,44 +275,44 @@ tabla</code></pre></div>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">addmargins</span>(tabla) </code></pre></div>
 <pre><code>##      
 ##           a     c     g     t   Sum
-##   A    1027  1003   998   998  4026
-##   B    1259  1297   209   232  2997
-##   C     245   602  1453   677  2977
-##   Sum  2531  2902  2660  1907 10000</code></pre>
+##   A    1089  1007   972   958  4026
+##   B    1316  1260   213   208  2997
+##   C     241   655  1424   657  2977
+##   Sum  2646  2922  2609  1823 10000</code></pre>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">addmargins</span>(<span class="kw">prop.table</span>(tabla)) </code></pre></div>
 <pre><code>##      
 ##            a      c      g      t    Sum
-##   A   0.1027 0.1003 0.0998 0.0998 0.4026
-##   B   0.1259 0.1297 0.0209 0.0232 0.2997
-##   C   0.0245 0.0602 0.1453 0.0677 0.2977
-##   Sum 0.2531 0.2902 0.2660 0.1907 1.0000</code></pre>
+##   A   0.1089 0.1007 0.0972 0.0958 0.4026
+##   B   0.1316 0.1260 0.0213 0.0208 0.2997
+##   C   0.0241 0.0655 0.1424 0.0657 0.2977
+##   Sum 0.2646 0.2922 0.2609 0.1823 1.0000</code></pre>
 <p>También podemos calcular la tabla de proporciones por filas y con su marginal por filas comprobar que efectivamente la suma de cada fila es 1:</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">addmargins</span>(<span class="kw">prop.table</span>(tabla,<span class="dt">margin=</span><span class="dv">1</span>),<span class="dt">margin=</span><span class="dv">2</span>)</code></pre></div>
 <pre><code>##    
 ##             a         c         g         t       Sum
-##   A 0.2550919 0.2491307 0.2478887 0.2478887 1.0000000
-##   B 0.4200868 0.4327661 0.0697364 0.0774107 1.0000000
-##   C 0.0822976 0.2022170 0.4880752 0.2274101 1.0000000</code></pre>
+##   A 0.2704918 0.2501242 0.2414307 0.2379533 1.0000000
+##   B 0.4391058 0.4204204 0.0710711 0.0694027 1.0000000
+##   C 0.0809540 0.2200202 0.4783339 0.2206920 1.0000000</code></pre>
 <p>Y viceversa, podemos calcular la tabla de proporciones por columnas y con su marginal por columnas comprobar que efectivamente la suma de cada columna es 1:</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">addmargins</span>(<span class="kw">prop.table</span>(tabla,<span class="dt">margin=</span><span class="dv">2</span>),<span class="dt">margin=</span><span class="dv">1</span>)</code></pre></div>
 <pre><code>##      
 ##               a         c         g         t
-##   A   0.4057685 0.3456237 0.3751880 0.5233351
-##   B   0.4974318 0.4469331 0.0785714 0.1216571
-##   C   0.0967997 0.2074431 0.5462406 0.3550079
+##   A   0.4115646 0.3446270 0.3725565 0.5255074
+##   B   0.4973545 0.4312115 0.0816405 0.1140976
+##   C   0.0910809 0.2241615 0.5458030 0.3603950
 ##   Sum 1.0000000 1.0000000 1.0000000 1.0000000</code></pre>
 <p>Observad que el significado de <code>margin</code> en <code>addmargins</code> es diferente de, por ejemplo, en <code>prop.table</code> o en <code>apply</code>: en estas dos últimas instrucciones indica la dimensión en la que calculamos las proporciones o aplicamos la función, mientras que en <code>addmargins</code> indica la dimensión en la que <em>añadimos</em> el margen, que, por lo tanto, se calcula aplicando la función en la otra dimensión.</p>
 <p>Si sólo nos interesa la fila o la columna de marginales, podemos usar las instrucciones <code>colSums</code> y <code>rowSums</code>, que suman una tabla por columnas y por filas, respectivamente. Por ejemplo, para obtener los vectores de marginales por columnas y por filas, respectivamente, podríamos entrar:</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">colSums</span>(tabla)</code></pre></div>
 <pre><code>##    a    c    g    t 
-## 2531 2902 2660 1907</code></pre>
+## 2646 2922 2609 1823</code></pre>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">rowSums</span>(tabla)</code></pre></div>
 <pre><code>##    A    B    C 
 ## 4026 2997 2977</code></pre>
 <p>También podemos obtener estos márgenes extrayendo los márgenes de la tabla con márgenes, obtenida aplicando <code>addmargins</code> a la tabla original, por medio de las instrucciones usuales para extraer filas y columnas.</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">addmargins</span>(tabla)[<span class="st">&quot;Sum&quot;</span>,<span class="op">-</span><span class="kw">dim</span>(<span class="kw">addmargins</span>(tabla))[<span class="dv">2</span>]]</code></pre></div>
 <pre><code>##    a    c    g    t 
-## 2531 2902 2660 1907</code></pre>
+## 2646 2922 2609 1823</code></pre>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">addmargins</span>(tabla)[<span class="op">-</span><span class="kw">dim</span>(<span class="kw">addmargins</span>(tabla))[<span class="dv">1</span>],<span class="st">&quot;Sum&quot;</span>]</code></pre></div>
 <pre><code>##    A    B    C 
 ## 4026 2997 2977</code></pre>
@@ -323,17 +333,17 @@ muestra.test.indep=<span class="st"> </span>poblacion[indices.muestra, ] <span c
 tabla.ind</code></pre></div>
 <pre><code>##    
 ##      a  c  g  t
-##   A 15 10 16 17
-##   B 19 18  0  4
-##   C  3 10 25 13</code></pre>
+##   A 16 14 21  7
+##   B 21 15  3  2
+##   C  3  8 26 14</code></pre>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">tabla.ind.marg=<span class="kw">addmargins</span>(tabla.ind)
 tabla.ind.marg</code></pre></div>
 <pre><code>##      
 ##         a   c   g   t Sum
-##   A    15  10  16  17  58
-##   B    19  18   0   4  41
-##   C     3  10  25  13  51
-##   Sum  37  38  41  34 150</code></pre>
+##   A    16  14  21   7  58
+##   B    21  15   3   2  41
+##   C     3   8  26  14  51
+##   Sum  40  37  50  23 150</code></pre>
 <p>Extraemos sus dos márgenes. Las frecuencias marginales de las filas:</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">frec.abs.tipo=tabla.ind.marg[<span class="op">-</span><span class="kw">dim</span>(tabla.ind.marg)[<span class="dv">1</span>],<span class="st">&quot;Sum&quot;</span>]
 frec.abs.tipo</code></pre></div>
@@ -343,40 +353,40 @@ frec.abs.tipo</code></pre></div>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">frec.abs.max.frec=tabla.ind.marg[<span class="st">&quot;Sum&quot;</span>,<span class="op">-</span><span class="kw">dim</span>(tabla.ind.marg)[<span class="dv">2</span>]]
 frec.abs.max.frec</code></pre></div>
 <pre><code>##  a  c  g  t 
-## 37 38 41 34</code></pre>
+## 40 37 50 23</code></pre>
 <p>El test de independencia usa las frecuencias absolutas esperadas bajo la hipótesis nula de independencia, que se obtienen, para cada celda <em>(i,j)</em>, multiplicando la frecuencia marginal de la fila <em>i</em> por la de la columna <em>j</em> y dividiendo por el tamaño de la muestra. En nuestro ejemplo estas frecuencias esperadas son <span class="math display">\[
 \begin{array}{l|cccc}
 &amp; \mbox{a} &amp; \mbox{c} &amp; \mbox{g} &amp; \mbox{t} \\ \hline
-\mbox{A} &amp; 58\cdot 37/150 &amp; 58\cdot 38/150 &amp; 58\cdot 41/150 &amp; 58\cdot 34/150 \\
-\mbox{B} &amp; 41\cdot 37/150 &amp; 41\cdot 38/150 &amp; 41\cdot 41/150 &amp; 41\cdot 34/150 \\
-\mbox{C} &amp; 51\cdot 37/150 &amp; 51\cdot 38/150 &amp; 51\cdot 41/150 &amp; 51\cdot 34/150 
+\mbox{A} &amp; 58\cdot 40/150 &amp; 58\cdot 37/150 &amp; 58\cdot 50/150 &amp; 58\cdot 23/150 \\
+\mbox{B} &amp; 41\cdot 40/150 &amp; 41\cdot 37/150 &amp; 41\cdot 50/150 &amp; 41\cdot 23/150 \\
+\mbox{C} &amp; 51\cdot 40/150 &amp; 51\cdot 37/150 &amp; 51\cdot 50/150 &amp; 51\cdot 23/150 
 \end{array}
 \]</span> y podemos obtenerlas fácilmente mediante un producto de matrices: <span class="math display">\[
 \frac{1}{150}\cdot\left(\begin{array}{c} 58 \\ 41 \\ 51\end{array}\right)\cdot
-\big( 37 ,38 ,  41 , 34\big).
+\big( 40 ,37 ,  50 , 23\big).
 \]</span> Por lo tanto, con R obtenemos esta tabla de frecuencias esperadas de la manera siguiente:</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">frec.esperadas=frec.abs.tipo<span class="op">%*%</span><span class="kw">t</span>(frec.abs.max.frec)<span class="op">/</span>n
 frec.esperadas</code></pre></div>
-<pre><code>##            a       c       g        t
-## [1,] 14.3067 14.6933 15.8533 13.14667
-## [2,] 10.1133 10.3867 11.2067  9.29333
-## [3,] 12.5800 12.9200 13.9400 11.56000</code></pre>
+<pre><code>##            a       c       g       t
+## [1,] 15.4667 14.3067 19.3333 8.89333
+## [2,] 10.9333 10.1133 13.6667 6.28667
+## [3,] 13.6000 12.5800 17.0000 7.82000</code></pre>
 <p>Aunque vayamos a realizar el test de independencia con una función de R, es necesario comprobar que todas estas frecuencias esperadas (o al menos la gran mayoría) son mayores o iguales que 5, por lo que no podemos evitar este cálculo. En este caso vemos que se cumple esta condición.</p>
 <p>Si queremos realizar el test <span class="math inline">\(\chi^2\)</span> de independencia a mano, podemos calcular el estadístico de forma directa con</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">chi2.estadistico=<span class="kw">sum</span>((tabla.ind<span class="op">-</span>frec.esperadas)<span class="op">^</span><span class="dv">2</span><span class="op">/</span>frec.esperadas)
 chi2.estadistico</code></pre></div>
-<pre><code>## [1] 47.1842</code></pre>
+<pre><code>## [1] 43.0276</code></pre>
 <p>y el p-valor del contraste, con</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">p.valor=<span class="dv">1</span><span class="op">-</span><span class="kw">pchisq</span>(chi2.estadistico,<span class="dt">df=</span>(<span class="dv">4</span><span class="op">-</span><span class="dv">1</span>)<span class="op">*</span>(<span class="dv">3</span><span class="op">-</span><span class="dv">1</span>))
 p.valor</code></pre></div>
-<pre><code>## [1] 1.71932e-08</code></pre>
+<pre><code>## [1] 1.15186e-07</code></pre>
 <p>Para realizar el test <span class="math inline">\(\chi^2\)</span> de independencia con R, es suficiente aplicar la función <code>chisq.test</code> a la tabla de contingencia de frecuencias absolutas:</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">chisq.test</span>(tabla.ind)</code></pre></div>
 <pre><code>## 
 ##  Pearson&#39;s Chi-squared test
 ## 
 ## data:  tabla.ind
-## X-squared = 47.18, df = 6, p-value = 1.72e-08</code></pre>
+## X-squared = 43.03, df = 6, p-value = 1.15e-07</code></pre>
 <p>Como el p-valor es muy pequeño, podemos rechazar la hipótesis de que las variables objeto de estudio sean independientes: hemos obtenido evidencia estadísticamente significativa de que la distribución de las bases de frecuencia máxima <em>sí que depende</em> del tipo de cadena.</p>
 <p>Si algunas frecuencias absolutas esperadas son inferiores a 5, la aproximación del p-valor por una distribución <span class="math inline">\(\chi^2\)</span> podría no ser adecuada. En este caso, al ser las variables cualitativas, no podemos recurrir al agrupamiento de valores consecutivos, puesto que no tienen orden. Si se da esta situación, lo mejor es recurrir a simular el p-valor usando el parámetro <code>simulate.p.value=TRUE</code>.</p>
 <p>Por ejemplo, consideremos la situación siguiente:</p>
@@ -388,37 +398,35 @@ tabla.ind2=<span class="kw">table</span>(muestra.test.indep2<span class="op">$</
 tabla.ind2</code></pre></div>
 <pre><code>##    
 ##      a  c  g  t
-##   A 11 12 10  9
-##   B 10 18  1  1
-##   C  4  7 13  4</code></pre>
+##   A 12  6 13 11
+##   B 16 12  0  2
+##   C  3  6 11  8</code></pre>
 <p>Si aplicamos a esta tabla la función <code>chisq.test</code>, obtenemos:</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">chisq.test</span>(tabla.ind2)</code></pre></div>
-<pre><code>## Warning in chisq.test(tabla.ind2): Chi-squared approximation may be
-## incorrect</code></pre>
 <pre><code>## 
 ##  Pearson&#39;s Chi-squared test
 ## 
 ## data:  tabla.ind2
-## X-squared = 23.63, df = 6, p-value = 0.00061</code></pre>
+## X-squared = 28.56, df = 6, p-value = 7.36e-05</code></pre>
 <p>¡Vaya! Veamos la tabla de frecuencias esperadas:</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">frec.abs.tipo2=<span class="kw">rowSums</span>(tabla.ind2)
 frec.abs.max.frec2=<span class="kw">colSums</span>(tabla.ind2)
 frec.esperadas2=frec.abs.tipo2<span class="op">%*%</span><span class="kw">t</span>(frec.abs.max.frec2)<span class="op">/</span>n2
 frec.esperadas2</code></pre></div>
-<pre><code>##         a     c     g    t
-## [1,] 10.5 15.54 10.08 5.88
-## [2,]  7.5 11.10  7.20 4.20
-## [3,]  7.0 10.36  6.72 3.92</code></pre>
+<pre><code>##          a     c     g    t
+## [1,] 13.02 10.08 10.08 8.82
+## [2,]  9.30  7.20  7.20 6.30
+## [3,]  8.68  6.72  6.72 5.88</code></pre>
 <p>Hay frecuencias esperadas inferiores a 5. Por lo tanto, lo recomendable es calcular el p-valor del test <span class="math inline">\(\chi^2\)</span> de independencia mediante simulaciones. Pero ahora tenemos que ir con cuidado en una cosa: hemos fijado la semilla de aleatoriedad para obtener una muestra de cadenas con frecuencias esperadas inferiores a 5. Lo recomendable es reiniciar esta semilla a un valor aleatorio con <code>set.seed(NULL)</code>.</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">set.seed</span>(<span class="ot">NULL</span>)
 <span class="kw">chisq.test</span>(tabla.ind2,<span class="dt">simulate.p.value=</span><span class="ot">TRUE</span>,<span class="dt">B=</span><span class="dv">5000</span>)<span class="op">$</span>p.value</code></pre></div>
-<pre><code>## [1] 0.00039992</code></pre>
+<pre><code>## [1] 0.00019996</code></pre>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">chisq.test</span>(tabla.ind2,<span class="dt">simulate.p.value=</span><span class="ot">TRUE</span>,<span class="dt">B=</span><span class="dv">5000</span>)<span class="op">$</span>p.value</code></pre></div>
-<pre><code>## [1] 0.00059988</code></pre>
+<pre><code>## [1] 0.00019996</code></pre>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">chisq.test</span>(tabla.ind2,<span class="dt">simulate.p.value=</span><span class="ot">TRUE</span>,<span class="dt">B=</span><span class="dv">5000</span>)<span class="op">$</span>p.value</code></pre></div>
-<pre><code>## [1] 0.00079984</code></pre>
+<pre><code>## [1] 0.00019996</code></pre>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">chisq.test</span>(tabla.ind2,<span class="dt">simulate.p.value=</span><span class="ot">TRUE</span>,<span class="dt">B=</span><span class="dv">5000</span>)<span class="op">$</span>p.value</code></pre></div>
-<pre><code>## [1] 0.00039992</code></pre>
+<pre><code>## [1] 0.00019996</code></pre>
 <p>El p-valor es sistemáticamente pequeño, lo que nos permite rechazar la hipótesis de que las variables son independientes.</p>
 </div>
 <div id="sec:hom" class="section level2">
@@ -439,23 +447,23 @@ muestra.test.homo=<span class="kw">rbind</span>(muestraA.<span class="dv">50</sp
 <span class="kw">str</span>(muestra.test.homo)</code></pre></div>
 <pre><code>## &#39;data.frame&#39;:    150 obs. of  2 variables:
 ##  $ tipo    : Factor w/ 3 levels &quot;A&quot;,&quot;B&quot;,&quot;C&quot;: 1 1 1 1 1 1 1 1 1 1 ...
-##  $ max.frec: Factor w/ 4 levels &quot;a&quot;,&quot;c&quot;,&quot;g&quot;,&quot;t&quot;: 4 2 2 4 3 2 1 1 3 4 ...</code></pre>
+##  $ max.frec: Factor w/ 4 levels &quot;a&quot;,&quot;c&quot;,&quot;g&quot;,&quot;t&quot;: 4 3 1 1 4 1 3 3 1 3 ...</code></pre>
 <p>Calculamos la tabla de contingencia de la muestra:</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">tabla.homo=<span class="kw">table</span>(muestra.test.homo<span class="op">$</span>tipo,muestra.test.homo<span class="op">$</span>max.frec)
 tabla.homo</code></pre></div>
 <pre><code>##    
 ##      a  c  g  t
-##   A 10 16 16  8
-##   B 21 21  6  2
-##   C  5 12 23 10</code></pre>
+##   A 13 11 15 11
+##   B 23 24  2  1
+##   C  5 14 19 12</code></pre>
 <p>Añadimos los márgenes:</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">addmargins</span>(tabla.homo)</code></pre></div>
 <pre><code>##      
 ##         a   c   g   t Sum
-##   A    10  16  16   8  50
-##   B    21  21   6   2  50
-##   C     5  12  23  10  50
-##   Sum  36  49  45  20 150</code></pre>
+##   A    13  11  15  11  50
+##   B    23  24   2   1  50
+##   C     5  14  19  12  50
+##   Sum  41  49  36  24 150</code></pre>
 <p>Confirmamos que hemos tomado 50 cadenas de cada grupo. Ahora calculamos las frecuencias esperadas bajo la hipótesis nula, para comprobar si son todas mayores o iguales que 5:</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">frec.abs.tipo=<span class="kw">rowSums</span>(tabla.homo)
 frec.abs.tipo</code></pre></div>
@@ -464,20 +472,20 @@ frec.abs.tipo</code></pre></div>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">frec.abs.max.frec=<span class="kw">colSums</span>(tabla.homo)
 frec.abs.max.frec</code></pre></div>
 <pre><code>##  a  c  g  t 
-## 36 49 45 20</code></pre>
+## 41 49 36 24</code></pre>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">frec.esperadas=frec.abs.tipo<span class="op">%*%</span><span class="kw">t</span>(frec.abs.max.frec)<span class="op">/</span><span class="kw">sum</span>(frec.abs.tipo)
 frec.esperadas  </code></pre></div>
-<pre><code>##       a       c  g       t
-## [1,] 12 16.3333 15 6.66667
-## [2,] 12 16.3333 15 6.66667
-## [3,] 12 16.3333 15 6.66667</code></pre>
+<pre><code>##            a       c  g t
+## [1,] 13.6667 16.3333 12 8
+## [2,] 13.6667 16.3333 12 8
+## [3,] 13.6667 16.3333 12 8</code></pre>
 <p>Todas las frecuencias son mayores o iguales que 5, así que aplicamos la función <code>chisq.test</code> sin simular el p-valor:</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">chisq.test</span>(tabla.homo)</code></pre></div>
 <pre><code>## 
 ##  Pearson&#39;s Chi-squared test
 ## 
 ## data:  tabla.homo
-## X-squared = 28.59, df = 6, p-value = 7.27e-05</code></pre>
+## X-squared = 39.99, df = 6, p-value = 4.57e-07</code></pre>
 <p>El p-valor es muy pequeño, por lo que podemos rechazar que las distribuciones de los valores de las bases de máxima frecuencia sean la misma para cada valor de la variable <code>tipo</code>.</p>
 <p>En definitiva, el tipo de cadena afecta a la distribución de la base de mayor frecuencia. Es la misma conclusión a la que habíamos llegado con el test de independencia, solo que ahora hemos realizado un tipo de experimento diferente.</p>
 </div>
@@ -497,7 +505,7 @@ frec.esperadas  </code></pre></div>
 <p>Veamos algunos ejemplos de uso.</p>
 
 <div class="example">
-<p><span id="exm:unnamed-chunk-304" class="example"><strong>Ejemplo 7.1  </strong></span>Vamos a calcular la potencia del contraste del Ejemplo <a href="chap-bondad.html#exm:dado">6.3</a>. En ese ejemplo, el tamaño de la muestra fue <span class="math inline">\(N=40\)</span>, el número de grados de libertad fue 5 y obtuvimos que <span class="math inline">\(X^2=7.7\)</span>, por lo que la magnitud del efecto fue <span class="math inline">\(w=\sqrt{7.7/40}\)</span>. Tomaremos el nivel de significación usual, <span class="math inline">\(\alpha=0.05\)</span>.</p>
+<p><span id="exm:unnamed-chunk-303" class="example"><strong>Ejemplo 7.1  </strong></span>Vamos a calcular la potencia del contraste del Ejemplo <a href="chap-bondad.html#exm:dado">6.3</a>. En ese ejemplo, el tamaño de la muestra fue <span class="math inline">\(N=40\)</span>, el número de grados de libertad fue 5 y obtuvimos que <span class="math inline">\(X^2=7.7\)</span>, por lo que la magnitud del efecto fue <span class="math inline">\(w=\sqrt{7.7/40}\)</span>. Tomaremos el nivel de significación usual, <span class="math inline">\(\alpha=0.05\)</span>.</p>
 </div>
 
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(pwr)
@@ -515,7 +523,7 @@ frec.esperadas  </code></pre></div>
 <p>La potencia del contraste ha sido de, aproximadamente, un 55%.</p>
 
 <div class="example">
-<p><span id="exm:unnamed-chunk-306" class="example"><strong>Ejemplo 7.2  </strong></span>Vamos a calcular la potencia del contraste de normalidad de las longitudes de los sépalos de flores iris del Ejemplo <a href="chap-bondad.html#exm:testnormiris1">6.8</a>. En ese ejemplo el tamaño de muestra fue <span class="math inline">\(N=150\)</span>; como usamos 7 clases, pero estimamos 2 parámetros, el número de grados de libertad fue 4; obtuvimos que <span class="math inline">\(X^2=11.0637\)</span>, por lo que <span class="math inline">\(w=\sqrt{11.0637/150}\)</span>; y ahora, por variar, tomaremos <span class="math inline">\(\alpha=0.1\)</span>.</p>
+<p><span id="exm:unnamed-chunk-305" class="example"><strong>Ejemplo 7.2  </strong></span>Vamos a calcular la potencia del contraste de normalidad de las longitudes de los sépalos de flores iris del Ejemplo <a href="chap-bondad.html#exm:testnormiris1">6.8</a>. En ese ejemplo el tamaño de muestra fue <span class="math inline">\(N=150\)</span>; como usamos 7 clases, pero estimamos 2 parámetros, el número de grados de libertad fue 4; obtuvimos que <span class="math inline">\(X^2=11.0637\)</span>, por lo que <span class="math inline">\(w=\sqrt{11.0637/150}\)</span>; y ahora, por variar, tomaremos <span class="math inline">\(\alpha=0.1\)</span>.</p>
 </div>
 
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">pwr.chisq.test</span>(<span class="dt">N=</span><span class="dv">150</span>, <span class="dt">df=</span><span class="dv">4</span>, <span class="dt">sig.level=</span><span class="fl">0.1</span>, <span class="dt">w=</span><span class="kw">sqrt</span>(<span class="fl">11.0637</span><span class="op">/</span><span class="dv">15</span>))</code></pre></div>
@@ -532,7 +540,7 @@ frec.esperadas  </code></pre></div>
 <p>La potencia da 1: la probabilidad de que aceptáramos que la muestra seguía una distribución normal si no fuera verdad es prácticamente 0.</p>
 
 <div class="example">
-<p><span id="exm:unnamed-chunk-308" class="example"><strong>Ejemplo 7.3  </strong></span>En el contraste de homogeneidad de la Sección <a href="chap-indep.html#sec:hom">7.3</a> hemos tomado tres muestras de 50 individuos cada una, en total 150 individuos. El estadístico de contraste ha valido <span class="math inline">\(X^2=29.7373\)</span>, por lo que la magnitud del efecto en ese test ha sido de <span class="math inline">\(w=\sqrt{29.7373/150}=0.445\)</span>, entre mediana y grande según la función <code>cohen.ES</code>, que nos da las magnitudes del efecto que por convención se entienden como pequeñas, medianas o grandes para los diferentes tests considerados en el paquete <strong>pwr</strong>:</p>
+<p><span id="exm:unnamed-chunk-307" class="example"><strong>Ejemplo 7.3  </strong></span>En el contraste de homogeneidad de la Sección <a href="chap-indep.html#sec:hom">7.3</a> hemos tomado tres muestras de 50 individuos cada una, en total 150 individuos. El estadístico de contraste ha valido <span class="math inline">\(X^2=29.7373\)</span>, por lo que la magnitud del efecto en ese test ha sido de <span class="math inline">\(w=\sqrt{29.7373/150}=0.445\)</span>, entre mediana y grande según la función <code>cohen.ES</code>, que nos da las magnitudes del efecto que por convención se entienden como pequeñas, medianas o grandes para los diferentes tests considerados en el paquete <strong>pwr</strong>:</p>
 </div>
 
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">cohen.ES</span>(<span class="dt">test=</span><span class="st">&quot;chisq&quot;</span>, <span class="dt">size=</span><span class="st">&quot;medium&quot;</span>)<span class="op">$</span>effect.size</code></pre></div>
@@ -601,26 +609,6 @@ frec.esperadas  </code></pre></div>
 </div>
 </div>
 </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 <div class="footnotes">
 <hr />
 <ol start="12">
@@ -633,8 +621,8 @@ frec.esperadas  </code></pre></div>
           </div>
         </div>
       </div>
-<a href="chap-bondad.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-
+<a href="chap-bondad.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="introduccion-a-la-estadistica-descriptiva-multidimensional.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
