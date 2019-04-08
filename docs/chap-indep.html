@@ -25,7 +25,7 @@
 <meta name="author" content="The AprendeR team">
 
 
-<meta name="date" content="2019-03-25">
+<meta name="date" content="2019-04-08">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -188,7 +188,6 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li class="chapter" data-level="8.8" data-path="introduccion-a-la-estadistica-descriptiva-multidimensional.html"><a href="introduccion-a-la-estadistica-descriptiva-multidimensional.html#guia-rapida-6"><i class="fa fa-check"></i><b>8.8</b> Guía rápida</a></li>
 <li class="chapter" data-level="8.9" data-path="introduccion-a-la-estadistica-descriptiva-multidimensional.html"><a href="introduccion-a-la-estadistica-descriptiva-multidimensional.html#ejercicios-7"><i class="fa fa-check"></i><b>8.9</b> Ejercicios</a><ul>
 <li class="chapter" data-level="" data-path="introduccion-a-la-estadistica-descriptiva-multidimensional.html"><a href="introduccion-a-la-estadistica-descriptiva-multidimensional.html#modelo-de-test-4"><i class="fa fa-check"></i>Modelo de test</a></li>
-<li class="chapter" data-level="" data-path="introduccion-a-la-estadistica-descriptiva-multidimensional.html"><a href="introduccion-a-la-estadistica-descriptiva-multidimensional.html#ejercicio"><i class="fa fa-check"></i>Ejercicio</a></li>
 <li class="chapter" data-level="" data-path="introduccion-a-la-estadistica-descriptiva-multidimensional.html"><a href="introduccion-a-la-estadistica-descriptiva-multidimensional.html#respuestas-al-test-7"><i class="fa fa-check"></i>Respuestas al test</a></li>
 </ul></li>
 </ul></li>
@@ -433,13 +432,13 @@ frec.esperadas2</code></pre></div>
 <p>Hay frecuencias esperadas inferiores a 5. Por lo tanto, lo recomendable es calcular el p-valor del test <span class="math inline">\(\chi^2\)</span> de independencia mediante simulaciones. Pero ahora tenemos que ir con cuidado en una cosa: hemos fijado la semilla de aleatoriedad para obtener una muestra de cadenas con frecuencias esperadas inferiores a 5. Lo recomendable es reiniciar esta semilla a un valor aleatorio con <code>set.seed(NULL)</code>.</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">set.seed</span>(<span class="ot">NULL</span>)
 <span class="kw">chisq.test</span>(tabla.ind2,<span class="dt">simulate.p.value=</span><span class="ot">TRUE</span>,<span class="dt">B=</span><span class="dv">5000</span>)<span class="op">$</span>p.value</code></pre></div>
-<pre><code>## [1] 0.00059988</code></pre>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">chisq.test</span>(tabla.ind2,<span class="dt">simulate.p.value=</span><span class="ot">TRUE</span>,<span class="dt">B=</span><span class="dv">5000</span>)<span class="op">$</span>p.value</code></pre></div>
-<pre><code>## [1] 0.00039992</code></pre>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">chisq.test</span>(tabla.ind2,<span class="dt">simulate.p.value=</span><span class="ot">TRUE</span>,<span class="dt">B=</span><span class="dv">5000</span>)<span class="op">$</span>p.value</code></pre></div>
 <pre><code>## [1] 0.00039992</code></pre>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">chisq.test</span>(tabla.ind2,<span class="dt">simulate.p.value=</span><span class="ot">TRUE</span>,<span class="dt">B=</span><span class="dv">5000</span>)<span class="op">$</span>p.value</code></pre></div>
 <pre><code>## [1] 0.00059988</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">chisq.test</span>(tabla.ind2,<span class="dt">simulate.p.value=</span><span class="ot">TRUE</span>,<span class="dt">B=</span><span class="dv">5000</span>)<span class="op">$</span>p.value</code></pre></div>
+<pre><code>## [1] 0.00079984</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">chisq.test</span>(tabla.ind2,<span class="dt">simulate.p.value=</span><span class="ot">TRUE</span>,<span class="dt">B=</span><span class="dv">5000</span>)<span class="op">$</span>p.value</code></pre></div>
+<pre><code>## [1] 0.00079984</code></pre>
 <p>El p-valor es sistemáticamente pequeño, lo que nos permite rechazar la hipótesis de que las variables son independientes.</p>
 </div>
 <div id="sec:hom" class="section level2">
