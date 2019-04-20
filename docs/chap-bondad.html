@@ -25,7 +25,7 @@
 <meta name="author" content="The AprendeR team">
 
 
-<meta name="date" content="2019-04-08">
+<meta name="date" content="2019-04-20">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -189,6 +189,24 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li class="chapter" data-level="8.9" data-path="introduccion-a-la-estadistica-descriptiva-multidimensional.html"><a href="introduccion-a-la-estadistica-descriptiva-multidimensional.html#ejercicios-7"><i class="fa fa-check"></i><b>8.9</b> Ejercicios</a><ul>
 <li class="chapter" data-level="" data-path="introduccion-a-la-estadistica-descriptiva-multidimensional.html"><a href="introduccion-a-la-estadistica-descriptiva-multidimensional.html#modelo-de-test-4"><i class="fa fa-check"></i>Modelo de test</a></li>
 <li class="chapter" data-level="" data-path="introduccion-a-la-estadistica-descriptiva-multidimensional.html"><a href="introduccion-a-la-estadistica-descriptiva-multidimensional.html#respuestas-al-test-7"><i class="fa fa-check"></i>Respuestas al test</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="9" data-path="chap-ANOVA.html"><a href="chap-ANOVA.html"><i class="fa fa-check"></i><b>9</b> ANOVA básico</a><ul>
+<li class="chapter" data-level="9.1" data-path="chap-ANOVA.html"><a href="chap-ANOVA.html#sec:modelos"><i class="fa fa-check"></i><b>9.1</b> Los modelos del ANOVA en R</a></li>
+<li class="chapter" data-level="9.2" data-path="chap-ANOVA.html"><a href="chap-ANOVA.html#sec:ANOVA-1"><i class="fa fa-check"></i><b>9.2</b> ANOVA de un factor</a></li>
+<li class="chapter" data-level="9.3" data-path="chap-ANOVA.html"><a href="chap-ANOVA.html#anova-de-bloques-completos-aleatorios"><i class="fa fa-check"></i><b>9.3</b> ANOVA de bloques completos aleatorios</a></li>
+<li class="chapter" data-level="9.4" data-path="chap-ANOVA.html"><a href="chap-ANOVA.html#sec:ANOVA2"><i class="fa fa-check"></i><b>9.4</b> ANOVA de dos vías</a></li>
+<li class="chapter" data-level="9.5" data-path="chap-ANOVA.html"><a href="chap-ANOVA.html#condiciones-del-anova"><i class="fa fa-check"></i><b>9.5</b> Condiciones del ANOVA</a></li>
+<li class="chapter" data-level="9.6" data-path="chap-ANOVA.html"><a href="chap-ANOVA.html#sec:pares"><i class="fa fa-check"></i><b>9.6</b> Comparaciones de pares de medias</a><ul>
+<li class="chapter" data-level="9.6.1" data-path="chap-ANOVA.html"><a href="chap-ANOVA.html#tests-t-por-parejas"><i class="fa fa-check"></i><b>9.6.1</b> Tests t por parejas</a></li>
+<li class="chapter" data-level="9.6.2" data-path="chap-ANOVA.html"><a href="chap-ANOVA.html#test-de-duncan"><i class="fa fa-check"></i><b>9.6.2</b> Test de Duncan</a></li>
+<li class="chapter" data-level="9.6.3" data-path="chap-ANOVA.html"><a href="chap-ANOVA.html#metodo-de-tukey"><i class="fa fa-check"></i><b>9.6.3</b> Método de Tukey</a></li>
+</ul></li>
+<li class="chapter" data-level="9.7" data-path="chap-ANOVA.html"><a href="chap-ANOVA.html#metodos-no-parametricos"><i class="fa fa-check"></i><b>9.7</b> Métodos no paramétricos</a></li>
+<li class="chapter" data-level="9.8" data-path="chap-ANOVA.html"><a href="chap-ANOVA.html#guia-rapida-7"><i class="fa fa-check"></i><b>9.8</b> Guía rápida</a></li>
+<li class="chapter" data-level="9.9" data-path="chap-ANOVA.html"><a href="chap-ANOVA.html#ejercicios-8"><i class="fa fa-check"></i><b>9.9</b> Ejercicios</a><ul>
+<li class="chapter" data-level="" data-path="chap-ANOVA.html"><a href="chap-ANOVA.html#test-3"><i class="fa fa-check"></i>Test</a></li>
+<li class="chapter" data-level="" data-path="chap-ANOVA.html"><a href="chap-ANOVA.html#respuestas-al-test-8"><i class="fa fa-check"></i>Respuestas al test</a></li>
 </ul></li>
 </ul></li>
 <li class="divider"></li>
@@ -897,7 +915,7 @@ x=<span class="kw">rt</span>(<span class="dv">50</span>,<span class="dv">3</span
 ##     Kurtosis Test: 0.07421 
 ## 
 ## Description:
-##  Mon Apr  8 18:05:14 2019 by user:</code></pre>
+##  Sat Apr 20 10:14:58 2019 by user:</code></pre>
 <p>El p-valor relevante es el del <em>“Omnibus test”</em>, en este caso 0.0568 cae en la zona de penumbra.</p>
 <p>Queremos hacer una última advertencia en esta sección. Aunque los tests que hemos explicado se pueden aplicar a muestras pequeñas, es muy difícil rechazar la normalidad de una muestra muy pequeña. Por ejemplo, una muestra de 10 valores escogidos con distribución uniforme entre 0 y 5 pasa holgadamente todos los tests de normalidad (salvo el de D’Agostino-Pearson, que requiere una muestra de al menos 20 elementos):</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">set.seed</span>(<span class="dv">100</span>)

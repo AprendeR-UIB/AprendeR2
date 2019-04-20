@@ -25,7 +25,7 @@
 <meta name="author" content="The AprendeR team">
 
 
-<meta name="date" content="2019-04-08">
+<meta name="date" content="2019-04-20">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -189,6 +189,24 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li class="chapter" data-level="8.9" data-path="introduccion-a-la-estadistica-descriptiva-multidimensional.html"><a href="introduccion-a-la-estadistica-descriptiva-multidimensional.html#ejercicios-7"><i class="fa fa-check"></i><b>8.9</b> Ejercicios</a><ul>
 <li class="chapter" data-level="" data-path="introduccion-a-la-estadistica-descriptiva-multidimensional.html"><a href="introduccion-a-la-estadistica-descriptiva-multidimensional.html#modelo-de-test-4"><i class="fa fa-check"></i>Modelo de test</a></li>
 <li class="chapter" data-level="" data-path="introduccion-a-la-estadistica-descriptiva-multidimensional.html"><a href="introduccion-a-la-estadistica-descriptiva-multidimensional.html#respuestas-al-test-7"><i class="fa fa-check"></i>Respuestas al test</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="9" data-path="chap-ANOVA.html"><a href="chap-ANOVA.html"><i class="fa fa-check"></i><b>9</b> ANOVA básico</a><ul>
+<li class="chapter" data-level="9.1" data-path="chap-ANOVA.html"><a href="chap-ANOVA.html#sec:modelos"><i class="fa fa-check"></i><b>9.1</b> Los modelos del ANOVA en R</a></li>
+<li class="chapter" data-level="9.2" data-path="chap-ANOVA.html"><a href="chap-ANOVA.html#sec:ANOVA-1"><i class="fa fa-check"></i><b>9.2</b> ANOVA de un factor</a></li>
+<li class="chapter" data-level="9.3" data-path="chap-ANOVA.html"><a href="chap-ANOVA.html#anova-de-bloques-completos-aleatorios"><i class="fa fa-check"></i><b>9.3</b> ANOVA de bloques completos aleatorios</a></li>
+<li class="chapter" data-level="9.4" data-path="chap-ANOVA.html"><a href="chap-ANOVA.html#sec:ANOVA2"><i class="fa fa-check"></i><b>9.4</b> ANOVA de dos vías</a></li>
+<li class="chapter" data-level="9.5" data-path="chap-ANOVA.html"><a href="chap-ANOVA.html#condiciones-del-anova"><i class="fa fa-check"></i><b>9.5</b> Condiciones del ANOVA</a></li>
+<li class="chapter" data-level="9.6" data-path="chap-ANOVA.html"><a href="chap-ANOVA.html#sec:pares"><i class="fa fa-check"></i><b>9.6</b> Comparaciones de pares de medias</a><ul>
+<li class="chapter" data-level="9.6.1" data-path="chap-ANOVA.html"><a href="chap-ANOVA.html#tests-t-por-parejas"><i class="fa fa-check"></i><b>9.6.1</b> Tests t por parejas</a></li>
+<li class="chapter" data-level="9.6.2" data-path="chap-ANOVA.html"><a href="chap-ANOVA.html#test-de-duncan"><i class="fa fa-check"></i><b>9.6.2</b> Test de Duncan</a></li>
+<li class="chapter" data-level="9.6.3" data-path="chap-ANOVA.html"><a href="chap-ANOVA.html#metodo-de-tukey"><i class="fa fa-check"></i><b>9.6.3</b> Método de Tukey</a></li>
+</ul></li>
+<li class="chapter" data-level="9.7" data-path="chap-ANOVA.html"><a href="chap-ANOVA.html#metodos-no-parametricos"><i class="fa fa-check"></i><b>9.7</b> Métodos no paramétricos</a></li>
+<li class="chapter" data-level="9.8" data-path="chap-ANOVA.html"><a href="chap-ANOVA.html#guia-rapida-7"><i class="fa fa-check"></i><b>9.8</b> Guía rápida</a></li>
+<li class="chapter" data-level="9.9" data-path="chap-ANOVA.html"><a href="chap-ANOVA.html#ejercicios-8"><i class="fa fa-check"></i><b>9.9</b> Ejercicios</a><ul>
+<li class="chapter" data-level="" data-path="chap-ANOVA.html"><a href="chap-ANOVA.html#test-3"><i class="fa fa-check"></i>Test</a></li>
+<li class="chapter" data-level="" data-path="chap-ANOVA.html"><a href="chap-ANOVA.html#respuestas-al-test-8"><i class="fa fa-check"></i>Respuestas al test</a></li>
 </ul></li>
 </ul></li>
 <li class="divider"></li>
@@ -465,52 +483,52 @@ muestra_long_pet</code></pre></div>
 <pre><code>## [1] 4 3 5</code></pre>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">set.seed</span>(<span class="ot">NULL</span>)
 <span class="kw">sample</span>(<span class="dv">10</span>,<span class="dv">3</span>)</code></pre></div>
-<pre><code>## [1] 2 8 6</code></pre>
+<pre><code>## [1]  8  3 10</code></pre>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">set.seed</span>(<span class="dv">100</span>)
 <span class="kw">sample</span>(<span class="dv">10</span>,<span class="dv">3</span>)</code></pre></div>
 <pre><code>## [1] 4 3 5</code></pre>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">set.seed</span>(<span class="ot">NULL</span>)
 <span class="kw">sample</span>(<span class="dv">10</span>,<span class="dv">3</span>)</code></pre></div>
-<pre><code>## [1] 10  7  9</code></pre>
+<pre><code>## [1] 4 2 3</code></pre>
 <p>A veces querremos tomar diversas muestras aleatorias de una misma población y calcular algo sobre ellas. Para hacerlo podemos usar la función <code>replicate</code>. La sintaxis básica es</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">replicate</span>(n, instrucción)</code></pre></div>
 <p>donde <code>n</code> es el número de repeticiones de la <code>instrucción</code>. Por ejemplo, para tomar 10 muestras aleatorias simples de 15 longitudes de pétalos de flores iris, podemos hacer:</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">muestras=<span class="kw">replicate</span>(<span class="dv">10</span>, <span class="kw">sample</span>(iris<span class="op">$</span>Petal.Length,<span class="dv">15</span>,<span class="dt">replace=</span><span class="ot">TRUE</span>))
 muestras</code></pre></div>
 <pre><code>##       [,1] [,2] [,3] [,4] [,5] [,6] [,7] [,8] [,9] [,10]
-##  [1,]  4.7  1.2  5.1  5.4  1.4  5.1  4.5  4.4  4.2   1.5
-##  [2,]  4.9  5.7  1.3  1.6  1.7  6.7  1.4  5.2  4.5   4.5
-##  [3,]  1.4  4.4  4.5  4.6  4.2  5.0  5.1  4.1  4.1   1.4
-##  [4,]  5.7  4.6  5.4  1.6  5.3  1.7  1.5  4.7  5.9   1.5
-##  [5,]  4.7  1.4  5.6  1.6  1.7  5.1  4.4  1.1  1.5   5.6
-##  [6,]  5.2  5.5  5.9  4.5  5.4  4.2  5.8  4.2  4.8   1.5
-##  [7,]  6.3  1.6  1.4  4.2  5.1  6.6  1.9  1.5  1.5   4.6
-##  [8,]  6.0  5.5  4.9  1.5  5.8  5.4  1.9  1.3  4.6   4.0
-##  [9,]  4.0  1.5  6.1  5.1  4.9  1.5  5.7  4.7  1.4   4.0
-## [10,]  1.5  1.5  3.7  4.5  3.7  1.5  6.1  4.6  1.3   3.8
-## [11,]  1.3  1.6  5.8  1.6  5.2  4.8  6.9  5.9  6.1   4.7
-## [12,]  5.0  4.2  5.0  1.3  5.2  6.7  1.4  1.4  1.5   5.9
-## [13,]  5.6  4.8  4.4  5.7  1.3  5.6  1.5  4.0  5.4   6.7
-## [14,]  1.3  3.5  4.4  5.9  4.8  4.8  1.4  5.1  1.7   4.5
-## [15,]  4.8  6.4  1.5  6.7  6.7  1.7  1.5  4.2  1.4   5.1</code></pre>
+##  [1,]  1.5  1.5  3.9  4.8  5.9  4.4  6.4  1.4  4.5   4.5
+##  [2,]  1.5  4.4  5.1  1.5  4.1  1.3  6.6  1.4  1.7   6.0
+##  [3,]  5.1  1.4  1.7  4.9  5.0  5.1  4.5  6.3  1.6   4.7
+##  [4,]  1.0  4.9  5.8  1.6  4.7  4.0  5.5  1.4  1.2   1.2
+##  [5,]  1.6  5.1  1.2  4.9  4.7  6.0  6.9  3.9  5.1   1.5
+##  [6,]  1.3  4.7  5.8  1.6  5.1  1.3  4.5  4.9  5.0   5.3
+##  [7,]  4.7  4.7  4.5  1.9  4.4  1.9  1.5  1.9  6.1   1.5
+##  [8,]  4.4  5.0  5.6  1.6  1.5  6.4  1.5  5.6  5.3   5.8
+##  [9,]  4.1  5.5  4.2  1.4  1.6  5.6  6.1  4.5  5.7   1.4
+## [10,]  5.1  3.9  4.4  5.1  5.1  5.1  4.8  4.8  1.3   4.3
+## [11,]  5.8  5.4  3.3  5.1  3.9  3.5  1.4  6.1  4.8   1.5
+## [12,]  1.5  6.3  6.1  1.6  3.3  5.1  5.5  6.6  4.5   1.4
+## [13,]  6.0  6.9  4.6  4.9  4.0  1.6  1.5  6.1  1.5   4.9
+## [14,]  1.3  5.7  6.7  6.1  1.4  4.0  1.5  5.9  5.0   4.9
+## [15,]  5.7  5.1  4.4  4.9  1.5  4.7  1.3  5.1  4.2   1.7</code></pre>
 <p>Observad que R ha organizado los 10 vectores generados con el <code>replicate</code> como columnas de una matriz.</p>
 <p>Si solo nos hubiera interesado calcular las medias, redondeadas a 2 cifras decimales, de 10 muestras aleatorias simples de 15 longitudes de pétalos de flores iris, podríamos haber hecho</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">medias=<span class="kw">replicate</span>(<span class="dv">10</span>,<span class="kw">round</span>(<span class="kw">mean</span>(<span class="kw">sample</span>(iris<span class="op">$</span>Petal.Length,<span class="dv">15</span>,<span class="dt">replace=</span><span class="ot">TRUE</span>)),<span class="dv">2</span>))
 medias</code></pre></div>
-<pre><code>##  [1] 4.38 3.55 3.91 4.17 3.34 3.93 4.07 4.00 4.10 4.43</code></pre>
+<pre><code>##  [1] 4.24 3.55 3.36 3.61 4.04 3.89 3.67 4.17 3.48 3.49</code></pre>
 <p>En este caso, como el resultado de la instrucción que iteramos es un solo número, los resultados del <code>replicate</code> forman un vector.</p>
 <p>¿Y si quisiéramos la media y la desviación típica muestral de 10 muestras de estas? No podemos usar sin más dos <code>replicate</code>, como en</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">replicate</span>(<span class="dv">10</span>,<span class="kw">round</span>(<span class="kw">mean</span>(<span class="kw">sample</span>(iris<span class="op">$</span>Petal.Length,<span class="dv">15</span>,<span class="dt">replace=</span><span class="ot">TRUE</span>)),<span class="dv">2</span>))</code></pre></div>
-<pre><code>##  [1] 3.31 3.69 3.35 3.91 3.23 3.60 4.31 3.92 3.89 3.53</code></pre>
+<pre><code>##  [1] 3.35 4.64 4.21 3.91 3.59 2.57 4.26 3.88 4.17 3.87</code></pre>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">replicate</span>(<span class="dv">10</span>,<span class="kw">round</span>(<span class="kw">sd</span>(<span class="kw">sample</span>(iris<span class="op">$</span>Petal.Length,<span class="dv">15</span>,<span class="dt">replace=</span><span class="ot">TRUE</span>)),<span class="dv">2</span>))</code></pre></div>
-<pre><code>##  [1] 1.72 1.95 1.85 1.82 1.63 2.00 1.81 1.78 1.21 1.88</code></pre>
+<pre><code>##  [1] 1.67 2.00 1.94 1.73 1.90 1.67 1.65 2.12 1.60 1.86</code></pre>
 <p>porque es muy probable que el conjunto de muestras de las que hemos calculado la media en el primer <code>replicate</code> sea diferente del conjunto de muestras de las que hemos calculado la desviación típica en el segundo <code>replicate</code>. Lo más adecuado es definir una función que calcule un vector con estos dos valores, y luego usarla dentro de un único <code>replicate</code>.</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">info=<span class="cf">function</span>(x){<span class="kw">round</span>(<span class="kw">c</span>(<span class="kw">mean</span>(x),<span class="kw">sd</span>(x)),<span class="dv">2</span>)}
 info_lp=<span class="kw">replicate</span>(<span class="dv">10</span>,<span class="kw">info</span>(<span class="kw">sample</span>(iris<span class="op">$</span>Petal.Length,<span class="dv">15</span>,<span class="dt">replace=</span><span class="ot">TRUE</span>)))
 info_lp</code></pre></div>
 <pre><code>##      [,1] [,2] [,3] [,4] [,5] [,6] [,7] [,8] [,9] [,10]
-## [1,] 4.00 4.25 3.44 3.89 3.52 3.84 3.55 3.39 3.15  4.17
-## [2,] 1.71 1.66 1.82 1.74 1.83 1.99 1.62 1.75 1.55  2.04</code></pre>
+## [1,] 3.55 4.14 3.09 3.67 3.41 3.54 2.75 3.13 4.23  4.09
+## [2,] 1.96 1.55 1.60 1.63 1.64 1.91 1.65 1.59 1.58  1.69</code></pre>
 <p>En este último caso, R ha organizado la información obtenida como columnas de una matriz: la primera fila son las medias y la segunda las desviaciones típicas.</p>
 <p>Naturalmente, la función <code>set.seed</code> permite “fijar” el resultado de un <code>replicate</code> que incluya la generación de números aleatorios:</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">set.seed</span>(<span class="dv">1000</span>)
