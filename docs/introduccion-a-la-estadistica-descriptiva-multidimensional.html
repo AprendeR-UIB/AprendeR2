@@ -25,7 +25,7 @@
 <meta name="author" content="The AprendeR team">
 
 
-<meta name="date" content="2019-04-20">
+<meta name="date" content="2019-05-21">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -51,41 +51,67 @@
 
 
 <style type="text/css">
-div.sourceCode { overflow-x: auto; }
-table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
-  margin: 0; padding: 0; vertical-align: baseline; border: none; }
-table.sourceCode { width: 100%; line-height: 100%; }
-td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
-td.sourceCode { padding-left: 5px; }
-code > span.kw { color: #007020; font-weight: bold; } /* Keyword */
-code > span.dt { color: #902000; } /* DataType */
-code > span.dv { color: #40a070; } /* DecVal */
-code > span.bn { color: #40a070; } /* BaseN */
-code > span.fl { color: #40a070; } /* Float */
-code > span.ch { color: #4070a0; } /* Char */
-code > span.st { color: #4070a0; } /* String */
-code > span.co { color: #60a0b0; font-style: italic; } /* Comment */
-code > span.ot { color: #007020; } /* Other */
-code > span.al { color: #ff0000; font-weight: bold; } /* Alert */
-code > span.fu { color: #06287e; } /* Function */
-code > span.er { color: #ff0000; font-weight: bold; } /* Error */
-code > span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
-code > span.cn { color: #880000; } /* Constant */
-code > span.sc { color: #4070a0; } /* SpecialChar */
-code > span.vs { color: #4070a0; } /* VerbatimString */
-code > span.ss { color: #bb6688; } /* SpecialString */
-code > span.im { } /* Import */
-code > span.va { color: #19177c; } /* Variable */
-code > span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
-code > span.op { color: #666666; } /* Operator */
-code > span.bu { } /* BuiltIn */
-code > span.ex { } /* Extension */
-code > span.pp { color: #bc7a00; } /* Preprocessor */
-code > span.at { color: #7d9029; } /* Attribute */
-code > span.do { color: #ba2121; font-style: italic; } /* Documentation */
-code > span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
-code > span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
-code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+a.sourceLine { display: inline-block; line-height: 1.25; }
+a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
+a.sourceLine:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode { white-space: pre; position: relative; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+code.sourceCode { white-space: pre-wrap; }
+a.sourceLine { text-indent: -1em; padding-left: 1em; }
+}
+pre.numberSource a.sourceLine
+  { position: relative; left: -4em; }
+pre.numberSource a.sourceLine::before
+  { content: attr(data-line-number);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; pointer-events: all; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {  }
+@media screen {
+a.sourceLine::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
 </style>
 
 <link rel="stylesheet" href="style.css" type="text/css" />
@@ -209,6 +235,27 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li class="chapter" data-level="" data-path="chap-ANOVA.html"><a href="chap-ANOVA.html#respuestas-al-test-8"><i class="fa fa-check"></i>Respuestas al test</a></li>
 </ul></li>
 </ul></li>
+<li class="chapter" data-level="10" data-path="chap-regresion.html"><a href="chap-regresion.html"><i class="fa fa-check"></i><b>10</b> Regresión lineal</a><ul>
+<li class="chapter" data-level="10.1" data-path="chap-regresion.html"><a href="chap-regresion.html#sec:1"><i class="fa fa-check"></i><b>10.1</b> El modelo de regresión lineal en R</a></li>
+<li class="chapter" data-level="10.2" data-path="chap-regresion.html"><a href="chap-regresion.html#intervalos-de-confianza-en-el-modelo-de-regresion-lineal"><i class="fa fa-check"></i><b>10.2</b> Intervalos de confianza en el modelo de regresión lineal</a></li>
+<li class="chapter" data-level="10.3" data-path="chap-regresion.html"><a href="chap-regresion.html#sec:seleccion"><i class="fa fa-check"></i><b>10.3</b> Selección del modelo en base al ajuste de los datos</a></li>
+<li class="chapter" data-level="10.4" data-path="chap-regresion.html"><a href="chap-regresion.html#sec:diagn"><i class="fa fa-check"></i><b>10.4</b> Diagnósticos de regresión</a></li>
+<li class="chapter" data-level="10.5" data-path="chap-regresion.html"><a href="chap-regresion.html#guia-rapida-8"><i class="fa fa-check"></i><b>10.5</b> Guía rápida</a></li>
+<li class="chapter" data-level="10.6" data-path="chap-regresion.html"><a href="chap-regresion.html#ejercicios-9"><i class="fa fa-check"></i><b>10.6</b> Ejercicios</a><ul>
+<li class="chapter" data-level="" data-path="chap-regresion.html"><a href="chap-regresion.html#test-4"><i class="fa fa-check"></i>Test</a></li>
+<li class="chapter" data-level="" data-path="chap-regresion.html"><a href="chap-regresion.html#respuestas-al-test-9"><i class="fa fa-check"></i>Respuestas al test</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="11" data-path="chap-clustering.html"><a href="chap-clustering.html"><i class="fa fa-check"></i><b>11</b> <em>Clustering</em> básico</a><ul>
+<li class="chapter" data-level="11.1" data-path="chap-clustering.html"><a href="chap-clustering.html#metodo-de-k-medias-o-k-means"><i class="fa fa-check"></i><b>11.1</b> Método de k-medias o <em>k-means</em></a></li>
+<li class="chapter" data-level="11.2" data-path="chap-clustering.html"><a href="chap-clustering.html#eleccion-del-numero-de-clusters"><i class="fa fa-check"></i><b>11.2</b> Elección del número de <em>clusters</em></a></li>
+<li class="chapter" data-level="11.3" data-path="chap-clustering.html"><a href="chap-clustering.html#metodos-jerarquicos-aglomerativos"><i class="fa fa-check"></i><b>11.3</b> Métodos jerárquicos aglomerativos</a></li>
+<li class="chapter" data-level="11.4" data-path="chap-clustering.html"><a href="chap-clustering.html#guia-rapida-9"><i class="fa fa-check"></i><b>11.4</b> Guía rápida</a></li>
+<li class="chapter" data-level="11.5" data-path="chap-clustering.html"><a href="chap-clustering.html#ejercicios-10"><i class="fa fa-check"></i><b>11.5</b> Ejercicios</a><ul>
+<li class="chapter" data-level="" data-path="chap-clustering.html"><a href="chap-clustering.html#test-5"><i class="fa fa-check"></i>Test</a></li>
+<li class="chapter" data-level="" data-path="chap-clustering.html"><a href="chap-clustering.html#respuestas-al-test-10"><i class="fa fa-check"></i>Respuestas al test</a></li>
+</ul></li>
+</ul></li>
 <li class="divider"></li>
 <li><a href="https://github.com/cescrossello/AprendeR-II" target="blank">Publicado con  bookdown</a></li>
 
@@ -234,37 +281,48 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <p>En general, los datos que se recogen en experimentos son multidimensionales: medimos varias variables aleatorias sobre una misma muestra de individuos, y organizamos esta información en tablas de datos en las que las filas representan los individuos observados y cada columna corresponde a una variable diferente. En las lecciones finales de la primera parte ya aparecieron datos cualitativos y ordinales multidimensionales, para los que calculamos y representamos gráficamente sus frecuencias globales y marginales; en esta lección estudiamos algunos estadísticos específicos para resumir y representar la relación existente entre diversas variables cuantitativas.</p>
 <div id="matrices-de-datos-cuantitativos" class="section level2">
 <h2><span class="header-section-number">8.1</span> Matrices de datos cuantitativos</h2>
-<p>Supongamos que hemos medido los valores de <span class="math inline">\(p\)</span> variables aleatorias <span class="math inline">\(X_1,\ldots,X_p\)</span> sobre un conjunto de <span class="math inline">\(n\)</span> individuos u objetos. Es decir, tenemos <span class="math inline">\(n\)</span> observaciones de <span class="math inline">\(p\)</span> variables. En cada observación, los valores que toman estas variables forman un vector que será una realización del vector aleatorio <span class="math inline">\(\underline{X}=(X_1,X_2,\ldots,X_p)\)</span>. Para trabajar con estas observaciones, las dispondremos en una tabla de datos donde cada fila corresponde a un individuo y cada columna, a una variable. En R, lo más conveniente es definir esta tabla en forma de <em>data frame</em>, pero, por conveniencia de lenguaje, en el texto de esta lección la representaremos como una matriz <span class="math display">\[
+<p>Supongamos que hemos medido los valores de <span class="math inline">\(p\)</span> variables aleatorias <span class="math inline">\(X_1,\ldots,X_p\)</span> sobre un conjunto de <span class="math inline">\(n\)</span> individuos u objetos. Es decir, tenemos <span class="math inline">\(n\)</span> observaciones de <span class="math inline">\(p\)</span> variables. En cada observación, los valores que toman estas variables forman un vector que será una realización del vector aleatorio <span class="math inline">\(\underline{X}=(X_1,X_2,\ldots,X_p)\)</span>. Para trabajar con estas observaciones, las dispondremos en una tabla de datos donde cada fila corresponde a un individuo y cada columna, a una variable. En R, lo más conveniente es definir esta tabla en forma de <em>data frame</em>, pero, por conveniencia de lenguaje, en el texto de esta lección la representaremos como una matriz
+<span class="math display">\[
 {X}=\begin{pmatrix}
 x_{1 1} &amp; x_{1 2} &amp;\ldots &amp; x_{1 p}\\
 x_{2 1} &amp; x_{2 2} &amp;\ldots &amp; x_{2 p}\\
 \vdots &amp; \vdots   &amp;   \ddots    &amp;\vdots\\ 
 x_{n 1} &amp; x_{n 2} &amp;\ldots &amp; x_{n p}
 \end{pmatrix}.
-\]</span> Utilizaremos las notaciones siguientes:</p>
+\]</span>
+Utilizaremos las notaciones siguientes:</p>
 <ul>
-<li><p>Denotaremos la <span class="math inline">\(i\)</span>-ésima fila de <span class="math inline">\(X\)</span> por <span class="math display">\[
+<li><p>Denotaremos la <span class="math inline">\(i\)</span>-ésima fila de <span class="math inline">\(X\)</span> por
+<span class="math display">\[
 {x}_{i\bullet}=(x_{i 1}, x_{i 2}, \ldots, x_{i p}).
-\]</span> Este vector está compuesto por las observaciones de las <span class="math inline">\(p\)</span> variables sobre el <span class="math inline">\(i\)</span>-ésimo individuo.</p></li>
-<li><p>Denotaremos la <span class="math inline">\(j\)</span>-ésima columna de <span class="math inline">\(X\)</span> por <span class="math display">\[
+\]</span>
+Este vector está compuesto por las observaciones de las <span class="math inline">\(p\)</span> variables sobre el <span class="math inline">\(i\)</span>-ésimo individuo.</p></li>
+<li><p>Denotaremos la <span class="math inline">\(j\)</span>-ésima columna de <span class="math inline">\(X\)</span> por
+<span class="math display">\[
 x_{\bullet j}=\begin{pmatrix}x_{1 j} \\ x_{2 j}\\ \vdots \\ x_{n j}
 \end{pmatrix}.
-\]</span> Esta columna está formada por todos los valores de la <span class="math inline">\(j\)</span>-ésima variable, es decir, es una muestra de <span class="math inline">\(X_j\)</span>.</p></li>
+\]</span>
+Esta columna está formada por todos los valores de la <span class="math inline">\(j\)</span>-ésima variable, es decir, es una muestra de <span class="math inline">\(X_j\)</span>.</p></li>
 </ul>
 <p>Observad que, en cada caso, la bolita <span class="math inline">\(\bullet\)</span> en el subíndice representa el índice “variable” de los elementos del vector o de la columna.</p>
-<p>De esta manera, podremos expresar la matriz de datos <span class="math inline">\(X\)</span> tanto por filas (individuos) como por columnas (muestras de variables): <span class="math display">\[
+<p>De esta manera, podremos expresar la matriz de datos <span class="math inline">\(X\)</span> tanto por filas (individuos) como por columnas (muestras de variables):
+<span class="math display">\[
 {X}=\begin{pmatrix}{x}_{1\bullet}\\x_{2\bullet}\\\vdots \\
 {x}_{n\bullet}\end{pmatrix}=({x}_{\bullet1}, {x}_{\bullet 2}, \ldots, {x}_{\bullet p}).
 \]</span></p>
 <p>Con estas notaciones, podemos generalizar al caso multidimensional los estadísticos de una variable cuantitativa, definiéndolos como los vectores que se obtienen aplicando el estadístico concreto a cada columna de la tabla de datos. Así:</p>
 <ul>
-<li>El <strong>vector de medias</strong> de <span class="math inline">\(X\)</span> es el vector formado por las medias aritméticas de sus columnas: <span class="math display">\[
+<li>El <strong>vector de medias</strong> de <span class="math inline">\(X\)</span> es el vector formado por las medias aritméticas de sus columnas:
+<span class="math display">\[
 \overline{X}=(\overline{{{x}}}_{\bullet1}, \overline{{x}}_{\bullet 2}, \ldots, \overline{{x}}_{\bullet p}), 
-\]</span> donde, para cada <span class="math inline">\(j=1, \ldots, p\)</span>, <span class="math display">\[
+\]</span>
+donde, para cada <span class="math inline">\(j=1, \ldots, p\)</span>,
+<span class="math display">\[
 \overline{{x}}_{\bullet j}=\frac{1}{n}\sum\limits_{i=1}^n x_{i j}.
 \]</span></li>
 </ul>
-<p>Observemos que <span class="math display">\[
+<p>Observemos que
+<span class="math display">\[
 \begin{array}{rl}
 \overline{X} &amp; \displaystyle = (\overline{{{x}}}_{\bullet1}, \overline{x}_{\bullet 2},\ldots,\overline{x}_{\bullet p})
 = \frac{1}{n}
@@ -274,20 +332,28 @@ x_{\bullet j}=\begin{pmatrix}x_{1 j} \\ x_{2 j}\\ \vdots \\ x_{n j}
 =
 \frac{1}{n} \sum_{i=1}^n {{x}_{i\bullet}}
 \end{array}
-\]</span> Es decir, el <strong>vector de medias</strong> de <span class="math inline">\(X\)</span> es la media aritmética de sus vectores fila.</p>
+\]</span>
+Es decir, el <strong>vector de medias</strong> de <span class="math inline">\(X\)</span> es la media aritmética de sus vectores fila.</p>
 <ul>
-<li><p>El <strong>vector de varianzas</strong> de <span class="math inline">\(X\)</span> es el vector formado por las varianzas de sus columnas: <span class="math display">\[
+<li><p>El <strong>vector de varianzas</strong> de <span class="math inline">\(X\)</span> es el vector formado por las varianzas de sus columnas:
+<span class="math display">\[
 s^2_{X}=(s^2_{1}, s^2_2, \ldots, s^2_p), 
-\]</span> donde <span class="math display">\[
+\]</span>
+donde
+<span class="math display">\[
 s_j^2=\frac{1}{n}\sum_{i=1}^n {(x_{ij}-\overline{{x}}_{\bullet j})^2}.
 \]</span></p></li>
-<li><p>El <strong>vector de varianzas muestrales</strong> de <span class="math inline">\(X\)</span> está formado por las varianzas muestrales de sus columnas: <span class="math display">\[
+<li><p>El <strong>vector de varianzas muestrales</strong> de <span class="math inline">\(X\)</span> está formado por las varianzas muestrales de sus columnas:
+<span class="math display">\[
 \widetilde{s}^2_{X}=(\widetilde{s}^2_{1}, 
 \widetilde{s}^2_2, \ldots, \widetilde{s}^2_p), 
-\]</span> donde <span class="math display">\[
+\]</span>
+donde
+<span class="math display">\[
 \widetilde{s}_j^2=\frac{1}{n-1}\sum_{i=1}^n {(x_{ij}-\overline{{x}}_{\bullet j})^2}=\frac{n}{n-1}s_j^2.
 \]</span></p></li>
-<li><p>Los <strong>vectores de desviaciones típicas</strong> <span class="math inline">\(s_{X}\)</span> y <strong>de desviaciones típicas muestrales</strong> <span class="math inline">\(\widetilde{s}_{X}\)</span> de <span class="math inline">\(X\)</span> son los formados por las desviaciones típicas y las desviaciones típicas muestrales de sus columnas, respectivamente: <span class="math display">\[
+<li><p>Los <strong>vectores de desviaciones típicas</strong> <span class="math inline">\(s_{X}\)</span> y <strong>de desviaciones típicas muestrales</strong> <span class="math inline">\(\widetilde{s}_{X}\)</span> de <span class="math inline">\(X\)</span> son los formados por las desviaciones típicas y las desviaciones típicas muestrales de sus columnas, respectivamente:
+<span class="math display">\[
 \begin{array}{l}
 s_{X}=(s_{1}, s_2, \ldots, s_p)=(+\sqrt{\vphantom{s_p^2}{s}^2_{1}}, 
 +\sqrt{\vphantom{s_p^2}{s}^2_2}, \ldots, +\sqrt{s_p^2})\\[1ex]
@@ -301,18 +367,20 @@ s_{X}=(s_{1}, s_2, \ldots, s_p)=(+\sqrt{\vphantom{s_p^2}{s}^2_{1}},
 <p>Estos vectores de estadísticos se pueden calcular con R aplicando la función correspondiente al estadístico a todas las columnas de la tabla de datos. La manera más sencilla de hacerlo en un solo paso es usando la función <code>sapply</code>, si tenemos guardada la tabla como un <em>data frame</em>, o <code>apply</code> con <code>MARGIN=2</code>, si la tenemos guardada en forma de matriz.</p>
 
 <div class="example">
-<p><span id="exm:multex0" class="example"><strong>Ejemplo 8.1  </strong></span>Consideremos la tabla de datos <span class="math display">\[
+<p><span id="exm:multex0" class="example"><strong>Ejemplo 8.1  </strong></span>Consideremos la tabla de datos
+<span class="math display">\[
 X=\left(\begin{array}{rrr}
 1&amp;-1&amp;3\\
 1&amp;0&amp;3\\
 2&amp;3&amp;0\\
 3&amp;0&amp;1
 \end{array}\right)
-\]</span> formada por 4 observaciones de 3 variables; por lo tanto, <span class="math inline">\(n=4\)</span> y <span class="math inline">\(p=3\)</span>. Vamos a guardarla en un <em>data frame</em> y a calcular sus estadísticos.</p>
+\]</span>
+formada por 4 observaciones de 3 variables; por lo tanto, <span class="math inline">\(n=4\)</span> y <span class="math inline">\(p=3\)</span>. Vamos a guardarla en un <em>data frame</em> y a calcular sus estadísticos.</p>
 </div>
 
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">X=<span class="kw">data.frame</span>(<span class="dt">V1=</span><span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>),<span class="dt">V2=</span><span class="kw">c</span>(<span class="op">-</span><span class="dv">1</span>,<span class="dv">0</span>,<span class="dv">3</span>,<span class="dv">0</span>),<span class="dt">V3=</span><span class="kw">c</span>(<span class="dv">3</span>,<span class="dv">3</span>,<span class="dv">0</span>,<span class="dv">1</span>))
-X</code></pre></div>
+<pre class="sourceCode r"><code class="sourceCode r">X=<span class="kw">data.frame</span>(<span class="dt">V1=</span><span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>),<span class="dt">V2=</span><span class="kw">c</span>(<span class="op">-</span><span class="dv">1</span>,<span class="dv">0</span>,<span class="dv">3</span>,<span class="dv">0</span>),<span class="dt">V3=</span><span class="kw">c</span>(<span class="dv">3</span>,<span class="dv">3</span>,<span class="dv">0</span>,<span class="dv">1</span>))
+X</code></pre>
 <pre><code>##   V1 V2 V3
 ## 1  1 -1  3
 ## 2  1  0  3
@@ -321,33 +389,33 @@ X</code></pre></div>
 <ul>
 <li>Su vector de medias es:</li>
 </ul>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">sapply</span>(X, mean) </code></pre></div>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">sapply</span>(X, mean) </code></pre>
 <pre><code>##   V1   V2   V3 
 ## 1.75 0.50 1.75</code></pre>
 <ul>
 <li>Su vector de varianzas muestrales es:</li>
 </ul>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">sapply</span>(X, var) </code></pre></div>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">sapply</span>(X, var) </code></pre>
 <pre><code>##       V1       V2       V3 
 ## 0.916667 3.000000 2.250000</code></pre>
 <ul>
 <li>Su vector de desviaciones típicas muestrales es:</li>
 </ul>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">sapply</span>(X, sd) </code></pre></div>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">sapply</span>(X, sd) </code></pre>
 <pre><code>##       V1       V2       V3 
 ## 0.957427 1.732051 1.500000</code></pre>
 <ul>
 <li>Su vector de varianzas es:</li>
 </ul>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">var_ver=<span class="cf">function</span>(x){<span class="kw">var</span>(x)<span class="op">*</span>(<span class="kw">length</span>(x)<span class="op">-</span><span class="dv">1</span>)<span class="op">/</span><span class="kw">length</span>(x)} <span class="co">#Varianza &quot;verdadera&quot;</span>
-<span class="kw">sapply</span>(X, var_ver) </code></pre></div>
+<pre class="sourceCode r"><code class="sourceCode r">var_ver=<span class="cf">function</span>(x){<span class="kw">var</span>(x)<span class="op">*</span>(<span class="kw">length</span>(x)<span class="op">-</span><span class="dv">1</span>)<span class="op">/</span><span class="kw">length</span>(x)} <span class="co">#Varianza &quot;verdadera&quot;</span>
+<span class="kw">sapply</span>(X, var_ver) </code></pre>
 <pre><code>##     V1     V2     V3 
 ## 0.6875 2.2500 1.6875</code></pre>
 <ul>
 <li>Su vector de desviaciones típicas es:</li>
 </ul>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">sd_ver=<span class="cf">function</span>(x){<span class="kw">sqrt</span>(<span class="kw">var_ver</span>(x))} <span class="co">#Desv. típica &quot;verdadera&quot;</span>
-<span class="kw">sapply</span>(X, sd_ver) </code></pre></div>
+<pre class="sourceCode r"><code class="sourceCode r">sd_ver=<span class="cf">function</span>(x){<span class="kw">sqrt</span>(<span class="kw">var_ver</span>(x))} <span class="co">#Desv. típica &quot;verdadera&quot;</span>
+<span class="kw">sapply</span>(X, sd_ver) </code></pre>
 <pre><code>##       V1       V2       V3 
 ## 0.829156 1.500000 1.299038</code></pre>
 
@@ -359,7 +427,8 @@ X</code></pre></div>
 <div id="transformaciones-lineales" class="section level2">
 <h2><span class="header-section-number">8.2</span> Transformaciones lineales</h2>
 <p>A veces es conveniente aplicar una transformación lineal a una tabla de datos <span class="math inline">\(X\)</span>, sumando a cada columna un valor y luego multiplicando cada columna resultante por otro valor. Los dos ejemplos más comunes de trasformación lineal son el <strong>centrado</strong> y la <strong>tipificación</strong> de datos.</p>
-<p>Para <strong>centrar</strong> una matriz de datos <span class="math inline">\(X\)</span>, se resta a cada columna su media aritmética: <span class="math display">\[
+<p>Para <strong>centrar</strong> una matriz de datos <span class="math inline">\(X\)</span>, se resta a cada columna su media aritmética:
+<span class="math display">\[
 \widetilde{X}=
 \begin{pmatrix}
 x_{1 1}- \overline{x}_{\bullet 1}&amp; x_{1 2}- \overline{x}_{\bullet 2} &amp;\ldots &amp; x_{1 p}-
@@ -370,10 +439,12 @@ x_{2 1} - \overline{x}_{\bullet 1}&amp; x_{2 2}- \overline{x}_{\bullet 2} &amp;\
 x_{n 1} - \overline{x}_{\bullet 1}&amp; x_{n 2}- \overline{x}_{\bullet 2} &amp;\ldots &amp; x_{n p}-
 \overline{x}_{\bullet p}
 \end{pmatrix}.
-\]</span> Llamaremos a esta matriz la <strong>matriz de datos centrados</strong> de <span class="math inline">\(X\)</span>.</p>
+\]</span>
+Llamaremos a esta matriz la <strong>matriz de datos centrados</strong> de <span class="math inline">\(X\)</span>.</p>
 
 <div class="example">
-<p><span id="exm:multex1-1" class="example"><strong>Ejemplo 8.2  </strong></span>Consideremos de nuevo la matriz de datos del Ejemplo <a href="introduccion-a-la-estadistica-descriptiva-multidimensional.html#exm:multex0">8.1</a>, <span class="math display">\[
+<p><span id="exm:multex1-1" class="example"><strong>Ejemplo 8.2  </strong></span>Consideremos de nuevo la matriz de datos del Ejemplo <a href="introduccion-a-la-estadistica-descriptiva-multidimensional.html#exm:multex0">8.1</a>,
+<span class="math display">\[
 {X}=\left(\begin{array}{rrr}
 1&amp;-1&amp;3\\
 1&amp;0&amp;3\\
@@ -384,10 +455,11 @@ x_{n 1} - \overline{x}_{\bullet 1}&amp; x_{n 2}- \overline{x}_{\bullet 2} &amp;\
 </div>
 
 <p>Para centrarla, hemos de restar a cada columna su media. Ya hemos calculado estas medias hace un momento:</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">sapply</span>(X, mean) </code></pre></div>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">sapply</span>(X, mean) </code></pre>
 <pre><code>##   V1   V2   V3 
 ## 1.75 0.50 1.75</code></pre>
-<p>Por lo tanto, su matriz de datos centrados es <span class="math display">\[
+<p>Por lo tanto, su matriz de datos centrados es
+<span class="math display">\[
 \widetilde{X}=\left(\begin{array}{rrr}
 1-1.75&amp;-1-0.5&amp;3-1.75\\
 1-1.75&amp;0-0.5&amp;3-1.75\\
@@ -402,8 +474,11 @@ x_{n 1} - \overline{x}_{\bullet 1}&amp; x_{n 2}- \overline{x}_{\bullet 2} &amp;\
 1.25&amp;-0.5&amp;-0.75
 \end{array}\right).
 \]</span></p>
-<p>Dado un vector de datos formado por una muestra de una variable cuantitativa, su <strong>vector de datos tipificados</strong> es el vector que se obtiene restando a cada entrada la media aritmética del vector y dividiendo el resultado por su desviación típica. De esta manera, se obtiene un vector de datos de media aritmética 0 y varianza 1. Tipificar un vector de datos es conveniente cuando se quiere trabajar con estos datos sin que influyan ni su media ni las unidades en los que están medidos: al dividir por su desviación típica, los valores resultantes son adimensionales. Por lo tanto, tipificar las variables de una tabla de datos permite compararlas dejando de lado las diferencias que pueda haber entre sus valores medios o sus varianzas.</p>
-<p>La <strong>matriz tipificada</strong> de una matriz de datos <span class="math inline">\(X\)</span> es la matriz <span class="math inline">\(Z\)</span> que se obtiene tipificando cada columna; es decir, para tipificar una matriz de datos <span class="math inline">\(X\)</span>, restamos a cada columna su media y a continuación dividimos cada columna por la desviación típica de la columna original en <span class="math inline">\(X\)</span> (que coincide con la desviación típica de la columna “centrada”, puesto que sumar o restar constantes no modifica la desviación típica): <span class="math display">\[
+<p>Dado un vector de datos formado por una muestra de una variable cuantitativa, su <strong>vector de datos tipificados</strong> es el vector que se obtiene restando a cada entrada la media aritmética del vector y dividiendo el resultado por su desviación típica. De esta manera, se obtiene un vector de datos de media aritmética 0 y varianza 1. Tipificar un vector de datos es conveniente cuando se quiere trabajar con estos datos sin que influyan ni su media ni las unidades en los que están medidos: al dividir por su desviación típica, los valores resultantes son adimensionales.
+Por lo tanto, tipificar las variables de una tabla de datos permite compararlas dejando de lado las diferencias que pueda haber entre sus valores medios o sus varianzas.</p>
+<p>La <strong>matriz tipificada</strong> de una matriz de datos <span class="math inline">\(X\)</span> es la matriz <span class="math inline">\(Z\)</span> que se obtiene tipificando cada columna; es decir, para tipificar una matriz de datos <span class="math inline">\(X\)</span>, restamos a cada columna su media y a continuación dividimos cada columna por la
+desviación típica de la columna original en <span class="math inline">\(X\)</span> (que coincide con la desviación típica de la columna “centrada”, puesto que sumar o restar constantes no modifica la desviación típica):
+<span class="math display">\[
 Z=\begin{pmatrix}
 \frac{x_{1 1}- \overline{x}_{\bullet 1}}{s_1}&amp; \frac{x_{1 2}- \overline{x}_{\bullet 2}}{s_2} &amp;\ldots &amp; \frac{x_{1 p}- \overline{x}_{\bullet p}}{s_p}\\[2ex]
 \frac{x_{2 1} - \overline{x}_{\bullet 1}}{s_1}&amp; \frac{x_{2 2}- \overline{x}_{\bullet 2}}{s_2} &amp;\ldots &amp; \frac{x_{2 p}- \overline{x}_{\bullet p}}{s_p}\\[2ex]
@@ -414,17 +489,19 @@ Z=\begin{pmatrix}
 \]</span></p>
 
 <div class="example">
-<p><span id="exm:multex1-3" class="example"><strong>Ejemplo 8.3  </strong></span>Vamos a tipificar a mano la tabla de datos <span class="math display">\[
+<p><span id="exm:multex1-3" class="example"><strong>Ejemplo 8.3  </strong></span>Vamos a tipificar a mano la tabla de datos
+<span class="math display">\[
 {X}=\left(\begin{array}{rrr}
 1&amp;-1&amp;3\\
 1&amp;0&amp;3\\
 2&amp;3&amp;0\\
 3&amp;0&amp;1
 \end{array}\right)
-\]</span> del Ejemplo <a href="introduccion-a-la-estadistica-descriptiva-multidimensional.html#exm:multex0">8.1</a>. Ya la hemos centrado en el Ejemplo <a href="introduccion-a-la-estadistica-descriptiva-multidimensional.html#exm:multex1-1">8.2</a>. Para tipificarla, tenemos que dividir cada columna de esta matriz centrada por la desviación típica de la columna correspondiente en la matriz original. Hemos calculado estas desviaciones típicas en el Ejemplo <a href="introduccion-a-la-estadistica-descriptiva-multidimensional.html#exm:multex0">8.1</a>:</p>
+\]</span>
+del Ejemplo <a href="introduccion-a-la-estadistica-descriptiva-multidimensional.html#exm:multex0">8.1</a>. Ya la hemos centrado en el Ejemplo <a href="introduccion-a-la-estadistica-descriptiva-multidimensional.html#exm:multex1-1">8.2</a>. Para tipificarla, tenemos que dividir cada columna de esta matriz centrada por la desviación típica de la columna correspondiente en la matriz original. Hemos calculado estas desviaciones típicas en el Ejemplo <a href="introduccion-a-la-estadistica-descriptiva-multidimensional.html#exm:multex0">8.1</a>:</p>
 </div>
 
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">sapply</span>(X, sd_ver) </code></pre></div>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">sapply</span>(X, sd_ver) </code></pre>
 <pre><code>##       V1       V2       V3 
 ## 0.829156 1.500000 1.299038</code></pre>
 <p>Dividiendo cada columna de la matriz centrada <span class="math inline">\(\widetilde{X}\)</span> por la correspondiente desviación típica obtenemos:</p>
@@ -446,7 +523,7 @@ Z &amp; =\left(\begin{array}{rrr}
 \end{array}
 \]</span></p>
 <p>La manera más sencilla de aplicar con R una transformación lineal a una tabla de datos <span class="math inline">\(X\)</span>, y en particular de centrarla o tipificarla, es usando la instrucción</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">scale</span>(X, <span class="dt">center=</span>..., <span class="dt">scale=</span>...)</code></pre></div>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">scale</span>(X, <span class="dt">center=</span>..., <span class="dt">scale=</span>...)</code></pre>
 <p>donde:</p>
 <ul>
 <li><p><code>X</code> puede ser tanto una matriz como un <em>data frame</em>; el resultado será siempre una matriz.</p></li>
@@ -459,15 +536,15 @@ Z &amp; =\left(\begin{array}{rrr}
 <p><span id="exm:multex1" class="example"><strong>Ejemplo 8.4  </strong></span>Recordemos la tabla de datos <span class="math inline">\(X\)</span> del Ejemplo <a href="introduccion-a-la-estadistica-descriptiva-multidimensional.html#exm:multex0">8.1</a>.</p>
 </div>
 
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">X</code></pre></div>
+<pre class="sourceCode r"><code class="sourceCode r">X</code></pre>
 <pre><code>##   V1 V2 V3
 ## 1  1 -1  3
 ## 2  1  0  3
 ## 3  2  3  0
 ## 4  3  0  1</code></pre>
 <p>Su matriz centrada es:</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">X_centrada=<span class="kw">scale</span>(X, <span class="dt">center=</span><span class="ot">TRUE</span>, <span class="dt">scale=</span><span class="ot">FALSE</span>)
-X_centrada</code></pre></div>
+<pre class="sourceCode r"><code class="sourceCode r">X_centrada=<span class="kw">scale</span>(X, <span class="dt">center=</span><span class="ot">TRUE</span>, <span class="dt">scale=</span><span class="ot">FALSE</span>)
+X_centrada</code></pre>
 <pre><code>##         V1   V2    V3
 ## [1,] -0.75 -1.5  1.25
 ## [2,] -0.75 -0.5  1.25
@@ -478,18 +555,18 @@ X_centrada</code></pre></div>
 ## 1.75 0.50 1.75</code></pre>
 <p>Coincide con la matriz obtenida en el Ejemplo <a href="introduccion-a-la-estadistica-descriptiva-multidimensional.html#exm:multex1-1">8.2</a>.</p>
 <p>Observad la estructura del resultado: en primer lugar nos da la matriz centrada, y a continuación nos dice que tiene un atributo llamado <code>&quot;scaled:center&quot;</code> cuyo valor es el vector usado para centrarla. Este atributo no interferirá para nada en las operaciones que realicéis con la matriz centrada, pero, si os molesta, recordad que se puede eliminar sustituyendo el resultado de centrar la matriz en los puntos suspensivos de la instrucción siguiente:</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">attr</span>(... , <span class="st">&quot;scaled:center&quot;</span>)=<span class="ot">NULL</span></code></pre></div>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">attr</span>(... , <span class="st">&quot;scaled:center&quot;</span>)=<span class="ot">NULL</span></code></pre>
 <p>En nuestro ejemplo:</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">attr</span>(X_centrada, <span class="st">&quot;scaled:center&quot;</span>)=<span class="ot">NULL</span>
-X_centrada</code></pre></div>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">attr</span>(X_centrada, <span class="st">&quot;scaled:center&quot;</span>)=<span class="ot">NULL</span>
+X_centrada</code></pre>
 <pre><code>##         V1   V2    V3
 ## [1,] -0.75 -1.5  1.25
 ## [2,] -0.75 -0.5  1.25
 ## [3,]  0.25  2.5 -1.75
 ## [4,]  1.25 -0.5 -0.75</code></pre>
 <p>Como ya hemos avisado, para tipificar esta tabla de datos <em>no</em> podemos hacer lo siguiente:</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">X_tip=<span class="kw">scale</span>(X)
-X_tip</code></pre></div>
+<pre class="sourceCode r"><code class="sourceCode r">X_tip=<span class="kw">scale</span>(X)
+X_tip</code></pre>
 <pre><code>##             V1        V2        V3
 ## [1,] -0.783349 -0.866025  0.833333
 ## [2,] -0.783349 -0.288675  0.833333
@@ -502,9 +579,9 @@ X_tip</code></pre></div>
 ##       V1       V2       V3 
 ## 0.957427 1.732051 1.500000</code></pre>
 <p>Para hacerlo bien según la definición que hemos dado, tenemos dos opciones. Una es multiplicar la matriz anterior por <span class="math inline">\(\sqrt{n/(n-1)}\)</span>, donde <span class="math inline">\(n\)</span> es el número de filas de la tabla. (El motivo es que, como <span class="math inline">\(\widetilde{s}_X=\sqrt{\frac{n}{n-1}}\cdot s_X\)</span>, se tiene que <span class="math inline">\(\frac{1}{s_X}=\sqrt{\frac{n}{n-1}}\cdot \frac{1}{\widetilde{s}_X}\)</span>; por lo tanto, si queríamos dividir por <span class="math inline">\(s_X\)</span> y <code>scale(X)</code> ha dividido por <span class="math inline">\(\widetilde{s}_X\)</span>, basta multiplicar su resultado por <span class="math inline">\(\sqrt{\frac{n}{n-1}}\)</span> para obtener el efecto deseado.)</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">n=<span class="kw">dim</span>(X)[<span class="dv">1</span>]  <span class="co">#Número de filas de X</span>
-X_tip=<span class="kw">scale</span>(X)<span class="op">*</span><span class="kw">sqrt</span>(n<span class="op">/</span>(n<span class="op">-</span><span class="dv">1</span>)) 
-X_tip</code></pre></div>
+<pre class="sourceCode r"><code class="sourceCode r">n=<span class="kw">dim</span>(X)[<span class="dv">1</span>]  <span class="co">#Número de filas de X</span>
+X_tip=<span class="kw">scale</span>(X)<span class="op">*</span><span class="kw">sqrt</span>(n<span class="op">/</span>(n<span class="dv">-1</span>)) 
+X_tip</code></pre>
 <pre><code>##             V1        V2       V3
 ## [1,] -0.904534 -1.000000  0.96225
 ## [2,] -0.904534 -0.333333  0.96225
@@ -518,8 +595,8 @@ X_tip</code></pre></div>
 ## 0.957427 1.732051 1.500000</code></pre>
 <p>Ahora sí que coincide con la matriz obtenida “a mano” en el Ejemplo <a href="introduccion-a-la-estadistica-descriptiva-multidimensional.html#exm:multex1-3">8.3</a>.</p>
 <p>Otra posibilidad es usar, como valor del parámetro <code>scale</code>, el vector <span class="math inline">\(s_X\)</span> de desviaciones típicas de las columnas.</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">X_tip1=<span class="kw">scale</span>(X, <span class="dt">scale=</span><span class="kw">sapply</span>(X, sd_ver)) 
-X_tip1</code></pre></div>
+<pre class="sourceCode r"><code class="sourceCode r">X_tip1=<span class="kw">scale</span>(X, <span class="dt">scale=</span><span class="kw">sapply</span>(X, sd_ver)) 
+X_tip1</code></pre>
 <pre><code>##             V1        V2       V3
 ## [1,] -0.904534 -1.000000  0.96225
 ## [2,] -0.904534 -0.333333  0.96225
@@ -531,10 +608,11 @@ X_tip1</code></pre></div>
 ## attr(,&quot;scaled:scale&quot;)
 ##       V1       V2       V3 
 ## 0.829156 1.500000 1.299038</code></pre>
-<p>Observaréis que la matriz resultante es la misma, pero el atributo que indica el vector por el que hemos dividido las columnas es diferente: en este caso, es el de desviaciones típicas. Ahora, en ambos casos, podemos usar la función <code>attr</code> para eliminar los dos atributos, <code>&quot;scaled:center&quot;</code> y <code>&quot;scaled:scale&quot;</code>, que se han añadido a la matriz tipificada. Por ejemplo:</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">attr</span>(X_tip, <span class="st">&quot;scaled:center&quot;</span>)=<span class="ot">NULL</span>
+<p>Observaréis que la matriz resultante es la misma, pero el atributo que indica el vector por el que hemos dividido las columnas es diferente: en este caso, es el de desviaciones típicas.
+Ahora, en ambos casos, podemos usar la función <code>attr</code> para eliminar los dos atributos, <code>&quot;scaled:center&quot;</code> y <code>&quot;scaled:scale&quot;</code>, que se han añadido a la matriz tipificada. Por ejemplo:</p>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">attr</span>(X_tip, <span class="st">&quot;scaled:center&quot;</span>)=<span class="ot">NULL</span>
 <span class="kw">attr</span>(X_tip, <span class="st">&quot;scaled:scale&quot;</span>)=<span class="ot">NULL</span>
-X_tip</code></pre></div>
+X_tip</code></pre>
 <pre><code>##             V1        V2       V3
 ## [1,] -0.904534 -1.000000  0.96225
 ## [2,] -0.904534 -0.333333  0.96225
@@ -545,51 +623,62 @@ X_tip</code></pre></div>
 <h2><span class="header-section-number">8.3</span> Covarianzas y correlaciones</h2>
 <p>La <strong>covarianza</strong> entre dos variables es una medida de la tendencia que tienen ambas variables a variar conjuntamente. Cuando la covarianza es positiva, si una de las dos variables crece o decrece, la otra tiene el mismo comportamiento; en cambio, cuando la covarianza es negativa, esta tendencia se invierte: si una variable crece, la otra decrece y viceversa. Puesto que interpretar el valor de la covarianza más allá de su signo es difícil, se suele usar una versión “normalizada” de la misma, la <strong>correlación de Pearson</strong>, que mide de manera más precisa la relación lineal entre dos variables.</p>
 <p>La covarianza generaliza la varianza, en el sentido de que la varianza de una variable es su covarianza consigo misma. Y como en el caso de la varianza, definiremos dos versiones de la covarianza: la <strong>“verdadera”</strong> y la <strong>muestral</strong>. La diferencia estará de nuevo en el denominador.</p>
-<p>Formalmente, la <strong>covarianza</strong> de las variables <span class="math inline">\({x}_{\bullet i}\)</span> y <span class="math inline">\({x}_{\bullet j}\)</span> de una matriz de datos <span class="math inline">\(X\)</span> es <span class="math display">\[
+<p>Formalmente, la <strong>covarianza</strong> de las variables <span class="math inline">\({x}_{\bullet i}\)</span> y
+<span class="math inline">\({x}_{\bullet j}\)</span> de una matriz de datos <span class="math inline">\(X\)</span> es
+<span class="math display">\[
 s_{i j}=\frac{1}{n} \sum_{k =1}^n\big((x_{k i}-\overline{{x}}_{\bullet i})(x_{kj}-\overline{{x}}_{\bullet j})\big)= 
 \frac{1}{n} \Big(\sum_{k =1}^n x_{k i} x_{k j}\Big) - \overline{{x}}_{\bullet i} \overline{{x}}_{\bullet j},
-\]</span> y su <strong>covarianza muestral</strong> es <span class="math display">\[
+\]</span>
+y su <strong>covarianza muestral</strong> es
+<span class="math display">\[
 \widetilde{s}_{ij} =
 \frac{1}{n-1} \sum_{k =1}^n\big((x_{k i}-\overline{{x}}_{\bullet i})(x_{kj}-\overline{{x}}_{\bullet j})\big)= 
 \frac{n}{n-1} s_{ij}.
 \]</span></p>
 <p>El estadístico <span class="math inline">\(\tilde{s}_{ij}\)</span> es siempre un estimador insesgado de la covarianza <span class="math inline">\(\sigma_{i j}\)</span> de las variables aleatorias <span class="math inline">\(X_i\)</span> y <span class="math inline">\(X_j\)</span> de las que <span class="math inline">\({x}_{\bullet i}\)</span> y <span class="math inline">\({x}_{\bullet j}\)</span> son muestras, mientras que <span class="math inline">\(s_{i j}\)</span> es su estimador máximo verosímil cuando la distribución conjunta de <span class="math inline">\(X_i\)</span> y <span class="math inline">\(X_j\)</span> es <a href="http://es.wikipedia.org/wiki/Distribución_normal_multivariante%7D">normal bivariante</a>.</p>
-<p>Es inmediato comprobar a partir de sus definiciones que ambas covarianzas son simétricas, y que la covarianza de una variable consigo misma es su varianza: <span class="math display">\[ 
+<p>Es inmediato comprobar a partir de sus definiciones que ambas covarianzas son simétricas, y que la covarianza de una variable consigo misma es su varianza:
+<span class="math display">\[ 
 s_{i j}= s_{j i}, \quad \widetilde{s}_{i j}= \widetilde{s}_{j i}, \quad
 s_{i i}=s_{i}^2, \quad \widetilde{s}_{ii}=\widetilde{s}_i^2.
 \]</span></p>
 
 <div class="example">
-<p><span id="exm:multex-cov-vect1" class="example"><strong>Ejemplo 8.5  </strong></span>La covarianza de las dos primeras columnas de la matriz de datos <span class="math display">\[
+<p><span id="exm:multex-cov-vect1" class="example"><strong>Ejemplo 8.5  </strong></span>La covarianza de las dos primeras columnas de la matriz de datos
+<span class="math display">\[
 X=\left(\begin{array}{rrr}
 1&amp;-1&amp;3\\
 1&amp;0&amp;3\\
 2&amp;3&amp;0\\
 3&amp;0&amp;1
 \end{array}\right)
-\]</span> del Ejemplo <a href="introduccion-a-la-estadistica-descriptiva-multidimensional.html#exm:multex0">8.1</a> se calcularía de la manera siguiente:</p>
+\]</span>
+del Ejemplo <a href="introduccion-a-la-estadistica-descriptiva-multidimensional.html#exm:multex0">8.1</a> se calcularía de la manera siguiente:</p>
 </div>
 
 <p><span class="math display">\[
 s_{12}=\frac{1}{4}(1\cdot (-1)+1\cdot 0+2\cdot 3+3\cdot 0)-1.75\cdot 0.5=
   1.25-0.875=0.375
-\]</span> Su covarianza muestral se obtendría multiplicando por <span class="math inline">\(4/3\)</span> este valor: <span class="math display">\[
+\]</span>
+Su covarianza muestral se obtendría multiplicando por <span class="math inline">\(4/3\)</span> este valor:
+<span class="math display">\[
 \widetilde{s}_{12} = \frac{4}{3} s_{12}=0.5.
 \]</span></p>
-<p>La covarianza <em>muestral</em> de dos vectores numéricos de la misma longitud <span class="math inline">\(n\)</span> se puede calcular con R mediante la función <code>cov</code>. Para obtener su covarianza “verdadera”, hay que multiplicar el resultado de <code>cov</code> por <span class="math inline">\((n-1)/n\)</span>.</p>
+<p>La covarianza <em>muestral</em> de dos vectores numéricos de la misma longitud <span class="math inline">\(n\)</span> se puede calcular con R mediante la función <code>cov</code>.
+Para obtener su covarianza “verdadera”, hay que multiplicar el resultado de <code>cov</code> por <span class="math inline">\((n-1)/n\)</span>.</p>
 
 <div class="example">
 <p><span id="exm:unnamed-chunk-349" class="example"><strong>Ejemplo 8.6  </strong></span>La covarianza muestral de las dos primeras columnas de la tabla de datos <span class="math inline">\(X\)</span>, que tenemos guardada en el <em>data frame</em> <code>X</code>, es:</p>
 </div>
 
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">cov</span>(X<span class="op">$</span>V1, X<span class="op">$</span>V2)</code></pre></div>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">cov</span>(X<span class="op">$</span>V1, X<span class="op">$</span>V2)</code></pre>
 <pre><code>## [1] 0.5</code></pre>
 <p>y su covarianza “verdadera” es:</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">n=<span class="kw">dim</span>(X)[<span class="dv">1</span>]
-((n<span class="op">-</span><span class="dv">1</span>)<span class="op">/</span>n)<span class="op">*</span><span class="kw">cov</span>(X<span class="op">$</span>V1, X<span class="op">$</span>V2) </code></pre></div>
+<pre class="sourceCode r"><code class="sourceCode r">n=<span class="kw">dim</span>(X)[<span class="dv">1</span>]
+((n<span class="dv">-1</span>)<span class="op">/</span>n)<span class="op">*</span><span class="kw">cov</span>(X<span class="op">$</span>V1, X<span class="op">$</span>V2) </code></pre>
 <pre><code>## [1] 0.375</code></pre>
 <p>Queremos recalcar que, como en el caso de la varianza con <code>var</code>, R calcula con <code>cov</code> la versión muestral de la covarianza.</p>
-<p>Las <strong>matrices de covarianzas</strong> y de <strong>covarianzas muestrales</strong> de una tabla de datos <span class="math inline">\(X\)</span> son, respectivamente, <span class="math display">\[
+<p>Las <strong>matrices de covarianzas</strong> y de <strong>covarianzas muestrales</strong> de una tabla de datos <span class="math inline">\(X\)</span> son, respectivamente,
+<span class="math display">\[
 {S}=
 \begin{pmatrix}  
  s_{1 1} &amp; s_{1 2} &amp; \ldots &amp; s_{1 p}\\
@@ -604,21 +693,28 @@ s_{12}=\frac{1}{4}(1\cdot (-1)+1\cdot 0+2\cdot 3+3\cdot 0)-1.75\cdot 0.5=
   \vdots &amp; \vdots  &amp;  \ddots      &amp; \vdots\\
 \widetilde{s}_{p 1} &amp; \widetilde{s}_{p 2} &amp; \ldots &amp; \widetilde{s}_{p p}
 \end{pmatrix},
-\]</span> donde cada <span class="math inline">\(s_{i j}\)</span> y cada <span class="math inline">\(\widetilde{s}_{i j}\)</span> son, respectivamente, la covarianza y la covarianza muestral de las correspondientes columnas <span class="math inline">\({x}_{\bullet i}\)</span> y <span class="math inline">\({x}_{\bullet j}\)</span>. Estas matrices de covarianzas miden la tendencia a la variabilidad conjunta de los datos de <span class="math inline">\(X\)</span> y, si <span class="math inline">\(n\)</span> es el número de filas de <span class="math inline">\(X\)</span>, se tiene que <span class="math display">\[
+\]</span>
+donde cada <span class="math inline">\(s_{i j}\)</span> y cada <span class="math inline">\(\widetilde{s}_{i j}\)</span> son, respectivamente, la covarianza y la covarianza muestral de las correspondientes columnas <span class="math inline">\({x}_{\bullet i}\)</span> y <span class="math inline">\({x}_{\bullet j}\)</span>.
+Estas matrices de covarianzas miden la tendencia a la variabilidad conjunta de
+los datos de <span class="math inline">\(X\)</span> y, si <span class="math inline">\(n\)</span> es el número de filas de <span class="math inline">\(X\)</span>, se tiene que
+<span class="math display">\[
 S=\frac{n-1}{n}\widetilde{{S}}.
 \]</span></p>
-<p>La matriz de covarianzas muestrales <span class="math inline">\(\widetilde{{S}}\)</span> es un estimador insesgado de la matriz de covarianzas <span class="math inline">\(\Sigma\)</span> del vector de variables aleatorias <span class="math inline">\(\underline{X}\)</span>, y si este tiene distribución normal multivariante, <span class="math inline">\(S\)</span> es un estimador máximo verosímil de <span class="math inline">\(\Sigma\)</span>. Ambas matrices de covarianzas son simétricas, puesto que <span class="math inline">\(s_{i j}=s_{j i}\)</span>, y tienen todos sus valores propios <span class="math inline">\({\geqslant}0\)</span>.</p>
+<p>La matriz de covarianzas muestrales <span class="math inline">\(\widetilde{{S}}\)</span> es un estimador insesgado de la matriz de covarianzas <span class="math inline">\(\Sigma\)</span> del vector de variables aleatorias <span class="math inline">\(\underline{X}\)</span>, y si este tiene distribución normal multivariante, <span class="math inline">\(S\)</span> es un estimador máximo verosímil de <span class="math inline">\(\Sigma\)</span>.
+Ambas matrices de covarianzas son simétricas, puesto que <span class="math inline">\(s_{i j}=s_{j i}\)</span>, y tienen todos sus valores propios <span class="math inline">\(\geqslant 0\)</span>.</p>
 <p>La matriz de covarianzas <em>muestrales</em> de una tabla de datos se calcula aplicando la función <code>cov</code> al <em>data frame</em> o a la matriz que contenga dicha tabla. Para obtener su matriz de covarianzas “verdaderas”, es suficiente multiplicar el resultado de <code>cov</code> por <span class="math inline">\((n-1)/n\)</span>, donde <span class="math inline">\(n\)</span> es el número de filas de la tabla de datos.</p>
 
 <div class="example">
-<p><span id="exm:multex1-cov" class="example"><strong>Ejemplo 8.7  </strong></span>Continuemos con la matriz <span class="math display">\[
+<p><span id="exm:multex1-cov" class="example"><strong>Ejemplo 8.7  </strong></span>Continuemos con la matriz
+<span class="math display">\[
 X=\left(\begin{array}{rrr}
 1&amp;-1&amp;3\\
 1&amp;0&amp;3\\
 2&amp;3&amp;0\\
 3&amp;0&amp;1
 \end{array}\right)
-\]</span> del Ejemplo <a href="introduccion-a-la-estadistica-descriptiva-multidimensional.html#exm:multex0">8.1</a>.</p>
+\]</span>
+del Ejemplo <a href="introduccion-a-la-estadistica-descriptiva-multidimensional.html#exm:multex0">8.1</a>.</p>
 </div>
 
 <!--
@@ -672,14 +768,14 @@ $$
 $$
 -->
 <p>Su matriz de covarianzas muestrales es</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">cov</span>(X)  </code></pre></div>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">cov</span>(X)  </code></pre>
 <pre><code>##           V1       V2       V3
 ## V1  0.916667  0.50000 -1.08333
 ## V2  0.500000  3.00000 -2.16667
 ## V3 -1.083333 -2.16667  2.25000</code></pre>
 <p>y su matriz de covarianzas es</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">n=<span class="kw">dim</span>(X)[<span class="dv">1</span>]
-((n<span class="op">-</span><span class="dv">1</span>)<span class="op">/</span>n)<span class="op">*</span><span class="kw">cov</span>(X)  </code></pre></div>
+<pre class="sourceCode r"><code class="sourceCode r">n=<span class="kw">dim</span>(X)[<span class="dv">1</span>]
+((n<span class="dv">-1</span>)<span class="op">/</span>n)<span class="op">*</span><span class="kw">cov</span>(X)  </code></pre>
 <pre><code>##         V1     V2      V3
 ## V1  0.6875  0.375 -0.8125
 ## V2  0.3750  2.250 -1.6250
@@ -689,35 +785,50 @@ $$
 <li><p>La <strong>varianza total</strong> de <span class="math inline">\(X\)</span>: la suma de las varianzas de sus columnas.</p></li>
 <li><p>La <strong>varianza media</strong> de <span class="math inline">\(X\)</span>: la media de las varianzas de sus columnas, es decir, la varianza total partida por el número de columnas.</p></li>
 <li><p>La <strong>varianza generalizada</strong> de <span class="math inline">\(X\)</span>: el determinante de su matriz de covarianzas.</p></li>
-<li><p>La <strong>desviación típica generalizada</strong> de <span class="math inline">\(X\)</span>: la raíz cuadrada positiva de su varianza generalizada.</p></li>
+<li><p>La <strong>desviación típica generalizada</strong> de <span class="math inline">\(X\)</span>:
+la raíz cuadrada positiva de su varianza generalizada.</p></li>
 </ul>
 <p>De cada uno de estos índices se definen, naturalmente, una versión muestral y una “verdadera”, según el tipo de varianzas o covarianzas que se usen en su cálculo.</p>
-<p>Pasemos ahora a la <strong>correlación lineal de Pearson</strong> (o, de ahora en adelante, simplemente <strong>correlación de Pearson</strong>) de dos variables <span class="math inline">\({x}_{\bullet i}\)</span> y <span class="math inline">\({x}_{\bullet j}\)</span> de <span class="math inline">\(X\)</span>, que se define como <span class="math display">\[
+<p>Pasemos ahora a la <strong>correlación lineal de Pearson</strong> (o, de ahora en adelante, simplemente <strong>correlación de Pearson</strong>) de dos variables <span class="math inline">\({x}_{\bullet i}\)</span> y <span class="math inline">\({x}_{\bullet j}\)</span> de <span class="math inline">\(X\)</span>, que se define como
+<span class="math display">\[
 r_{i j}=\frac{s_{i j}}{s_i\cdot s_j}.
-\]</span> Observad que <span class="math display">\[
+\]</span>
+Observad que
+<span class="math display">\[
 \frac{\widetilde{s}_{i j}}{\widetilde{s}_i\cdot \widetilde{s}_j}=
 \frac{\frac{n}{n-1}\cdot {s}_{i j}}{\sqrt{\frac{n}{n-1}}\cdot {s}_i \cdot\sqrt{\frac{n}{n-1}}\cdot{s}_j}=
 \frac{s_{i j}}{s_i \cdot s_j}=r_{i j},
-\]</span> y, por lo tanto, esta correlación se puede calcular también a partir de las versiones muestrales de la covarianza y las desviaciones típicas por medio de la misma fórmula.</p>
-<p>El estadístico <span class="math inline">\(r_{ij}\)</span> es un estimador máximo verosímil de la correlación de Pearson <span class="math inline">\(\rho_{i j}=Cor(X_i,X_j)\)</span> de las variables aleatorias <span class="math inline">\(X_i\)</span> y <span class="math inline">\(X_j\)</span> cuando su distribución conjunta es normal bivariante, y aunque es sesgado, su sesgo tiende a 0 cuando <span class="math inline">\(n\)</span> tiende a <span class="math inline">\(\infty\)</span>. Las propiedades más importantes de <span class="math inline">\(r_{i,j}\)</span> son las siguientes:</p>
+\]</span>
+y, por lo tanto, esta correlación se puede calcular también a partir de las versiones muestrales de la covarianza y las desviaciones típicas por medio de la misma fórmula.</p>
+<p>El estadístico <span class="math inline">\(r_{ij}\)</span> es un estimador máximo verosímil de la correlación de Pearson <span class="math inline">\(\rho_{i j}=Cor(X_i,X_j)\)</span> de las variables aleatorias <span class="math inline">\(X_i\)</span> y <span class="math inline">\(X_j\)</span>
+cuando su distribución conjunta es normal bivariante, y aunque es sesgado, su sesgo tiende a 0 cuando <span class="math inline">\(n\)</span> tiende a <span class="math inline">\(\infty\)</span>.
+Las propiedades más importantes de <span class="math inline">\(r_{i,j}\)</span> son las siguientes:</p>
 <ul>
 <li><p>Es simétrica: <span class="math inline">\(r_{i j}=r_{j i}\)</span>.</p></li>
-<li><p><span class="math inline">\(-1{\leqslant}r_{i j}{\leqslant}1\)</span>.</p></li>
+<li><p><span class="math inline">\(-1\leqslant r_{i j}\leqslant 1\)</span>.</p></li>
 <li><p><span class="math inline">\(r_{i i}=1\)</span>.</p></li>
 <li><p><span class="math inline">\(r_{i j}\)</span> tiene el mismo signo que <span class="math inline">\(s_{i j}\)</span>.</p></li>
-<li><p><span class="math inline">\(r_{i j}=\pm 1\)</span> si y, sólo si, existe una relación lineal perfecta entre las variables <span class="math inline">\({x}_{\bullet i}\)</span> y <span class="math inline">\({x}_{\bullet j}\)</span>: es decir, si, y sólo si, existen valores <span class="math inline">\(a, b\in \mathbb{R}\)</span> tales que <span class="math display">\[
+<li><p><span class="math inline">\(r_{i j}=\pm 1\)</span> si y, sólo si, existe una relación lineal perfecta entre las
+variables <span class="math inline">\({x}_{\bullet i}\)</span> y <span class="math inline">\({x}_{\bullet j}\)</span>: es decir, si, y sólo si, existen valores <span class="math inline">\(a, b\in \mathbb{R}\)</span> tales que
+<span class="math display">\[
 \left(\begin{array}{c}
 x_{1j}\\  \vdots \\ x_{nj}\end{array}\right)=
 a\cdot \left(\begin{array}{c}
 x_{1i}\\ \vdots \\ x_{ni}\end{array}\right) +b.
-\]</span> La pendiente <span class="math inline">\(a\)</span> de esta relación lineal tiene el mismo signo que <span class="math inline">\(r_{i j}\)</span>.</p></li>
-<li><p>El coeficiente de determinación <span class="math inline">\(R^2\)</span> de la regresión lineal por mínimos cuadrados de <span class="math inline">\({x}_{\bullet j}\)</span> respecto de <span class="math inline">\({x}_{\bullet i}\)</span> es igual al cuadrado de su correlación de Pearson, <span class="math inline">\(r_{i j}^2\)</span>; por lo tanto, cuánto más se aproxime el valor absoluto de <span class="math inline">\(r_{ij}\)</span> a 1, más se acercan las variables <span class="math inline">\({x}_{\bullet i}\)</span> y <span class="math inline">\({x}_{\bullet j}\)</span> a depender linealmente la una de la otra.</p></li>
+\]</span>
+La pendiente <span class="math inline">\(a\)</span> de esta relación lineal tiene el mismo signo
+que <span class="math inline">\(r_{i j}\)</span>.</p></li>
+<li><p>El coeficiente de determinación <span class="math inline">\(R^2\)</span> de la regresión lineal por mínimos cuadrados de <span class="math inline">\({x}_{\bullet j}\)</span> respecto de <span class="math inline">\({x}_{\bullet i}\)</span>
+es igual al cuadrado de su correlación de Pearson, <span class="math inline">\(r_{i j}^2\)</span>; por lo tanto, cuánto más se aproxime el valor absoluto de <span class="math inline">\(r_{ij}\)</span> a 1,
+más se acercan las
+variables <span class="math inline">\({x}_{\bullet i}\)</span> y <span class="math inline">\({x}_{\bullet j}\)</span> a depender linealmente la una de la otra.</p></li>
 </ul>
 <p>Así pues, la correlación de Pearson entre dos variables viene a ser una covarianza “normalizada”, ya que, como vemos, su valor está entre -1 y 1, y mide la tendencia de las variables a estar relacionadas según una función lineal. En concreto, cuanto más se acerca dicha correlación a 1 (respectivamente, a -1), más se acerca una (cualquiera) de las variables a ser función lineal creciente (respectivamente, decreciente) de la otra.</p>
 <p>Con R, la correlación de Pearson de dos vectores se puede calcular aplicándoles la función <code>cor</code>.</p>
 
 <div class="example">
-<p><span id="exm:unnamed-chunk-354" class="example"><strong>Ejemplo 8.8  </strong></span>En ejemplos anteriores hemos calculado la covarianza y las varianzas de las dos primeras columnas de la matriz de datos <span class="math display">\[
+<p><span id="exm:unnamed-chunk-354" class="example"><strong>Ejemplo 8.8  </strong></span>En ejemplos anteriores hemos calculado la covarianza y las varianzas de las dos primeras columnas de la matriz de datos
+<span class="math display">\[
 {X}=\left(\begin{array}{rrr}
 1&amp;-1&amp;3\\
 1&amp;0&amp;3\\
@@ -727,27 +838,31 @@ x_{1i}\\ \vdots \\ x_{ni}\end{array}\right) +b.
 \]</span></p>
 </div>
 
-<p>Hemos obtenido los valores siguientes <span class="math display">\[
+<p>Hemos obtenido los valores siguientes
+<span class="math display">\[
 s_{12}=0.375,\quad s_1=0.829156,\quad s_2=1.5.
-\]</span> Por lo tanto, su correlación de Pearson es <span class="math display">\[
+\]</span>
+Por lo tanto, su correlación de Pearson es
+<span class="math display">\[
 r_{1 2}=\frac{0.375}{0.829156\cdot 1.5}=0.301511.
 \]</span></p>
 <p>Ahora vamos a calcularla con R, y aprovecharemos para confirmar su relación con el valor de <span class="math inline">\(R^2\)</span> de la regresión lineal de la segunda columna respecto de la primera. Recordemos que esta tabla de datos sigue guardada en el <em>data frame</em> <code>X</code>.</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">X</code></pre></div>
+<pre class="sourceCode r"><code class="sourceCode r">X</code></pre>
 <pre><code>##   V1 V2 V3
 ## 1  1 -1  3
 ## 2  1  0  3
 ## 3  2  3  0
 ## 4  3  0  1</code></pre>
 <p>La correlación de sus dos primeras columnas es:</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">cor</span>(X<span class="op">$</span>V1, X<span class="op">$</span>V2)</code></pre></div>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">cor</span>(X<span class="op">$</span>V1, X<span class="op">$</span>V2)</code></pre>
 <pre><code>## [1] 0.301511</code></pre>
 <p>que coincide con el valor obtenido “a mano”. Comprobemos ahora que su cuadrado es igual al valor de <span class="math inline">\(R^2\)</span> de la regresión lineal:</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">cor</span>(X<span class="op">$</span>V1, X<span class="op">$</span>V2)<span class="op">^</span><span class="dv">2</span></code></pre></div>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">cor</span>(X<span class="op">$</span>V1, X<span class="op">$</span>V2)<span class="op">^</span><span class="dv">2</span></code></pre>
 <pre><code>## [1] 0.0909091</code></pre>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">summary</span>(<span class="kw">lm</span>(X<span class="op">$</span>V2<span class="op">~</span>X<span class="op">$</span>V1))<span class="op">$</span>r.squared</code></pre></div>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">summary</span>(<span class="kw">lm</span>(X<span class="op">$</span>V2<span class="op">~</span>X<span class="op">$</span>V1))<span class="op">$</span>r.squared</code></pre>
 <pre><code>## [1] 0.0909091</code></pre>
-<p>La <strong>matriz de correlaciones de Pearson</strong> de <span class="math inline">\(X\)</span> es <span class="math display">\[
+<p>La <strong>matriz de correlaciones de Pearson</strong> de <span class="math inline">\(X\)</span> es
+<span class="math display">\[
 {R}=
 \begin{pmatrix}
 1 &amp; r_{1 2} &amp; \ldots &amp; r_{1 p}\\
@@ -755,9 +870,10 @@ r_{2 1} &amp; 1 &amp; \ldots &amp; r_{2 p}\\
 \vdots &amp; \vdots &amp; \ddots &amp; \vdots\\
 r_{p 1} &amp; r_{p 2} &amp; \ldots &amp; 1
 \end{pmatrix},
-\]</span> donde cada <span class="math inline">\(r_{i j}\)</span> es la correlación de Pearson de las columnas correspondientes de <span class="math inline">\(X\)</span>. Esta matriz de correlaciones tiene siempre determinante entre 0 y 1 (ambos extremos incluidos) y todos sus valores propios son mayores o iguales que 0, y con R se puede calcular aplicando la misma instrucción <code>cor</code> a la tabla de datos, sea en forma de matriz o de <em>data frame</em>.</p>
+\]</span>
+donde cada <span class="math inline">\(r_{i j}\)</span> es la correlación de Pearson de las columnas correspondientes de <span class="math inline">\(X\)</span>. Esta matriz de correlaciones tiene siempre determinante entre 0 y 1 (ambos extremos incluidos) y todos sus valores propios son mayores o iguales que 0, y con R se puede calcular aplicando la misma instrucción <code>cor</code> a la tabla de datos, sea en forma de matriz o de <em>data frame</em>.</p>
 <p>Así, la matriz de correlaciones de nuestra tabla de datos <span class="math inline">\(X\)</span> es:</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">cor</span>(X)</code></pre></div>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">cor</span>(X)</code></pre>
 <pre><code>##           V1        V2        V3
 ## V1  1.000000  0.301511 -0.754337
 ## V2  0.301511  1.000000 -0.833950
@@ -779,57 +895,61 @@ r_{p 1} &amp; r_{p 2} &amp; \ldots &amp; 1
 <p><code>cor(X)</code> <em>da lo mismo que</em> <code>cov(scale(X))</code>.</p>
 </center>
 <p>Comprobemos esta igualdad para nuestra matriz de datos <span class="math inline">\(X\)</span>.</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">cor</span>(X)</code></pre></div>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">cor</span>(X)</code></pre>
 <pre><code>##           V1        V2        V3
 ## V1  1.000000  0.301511 -0.754337
 ## V2  0.301511  1.000000 -0.833950
 ## V3 -0.754337 -0.833950  1.000000</code></pre>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">cov</span>(<span class="kw">scale</span>(X))</code></pre></div>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">cov</span>(<span class="kw">scale</span>(X))</code></pre>
 <pre><code>##           V1        V2        V3
 ## V1  1.000000  0.301511 -0.754337
 ## V2  0.301511  1.000000 -0.833950
 ## V3 -0.754337 -0.833950  1.000000</code></pre>
-<p>Cuando se calcula la covarianza o la correlación de Pearson de dos vectores que contienen valores NA, lo usual es no tenerlos en cuenta: es decir, si un vector contiene un NA en una posición, se eliminan de los dos vectores sus entradas en dicha posición. De esta manera, se tomaría como covarianza de <span class="math display">\[
+<p>Cuando se calcula la covarianza o la correlación de Pearson de dos vectores que contienen valores NA, lo usual es no tenerlos en cuenta: es decir, si un vector contiene un NA en una posición, se eliminan de los dos vectores sus entradas en dicha posición. De esta manera, se tomaría como covarianza de
+<span class="math display">\[
 \left(\begin{array}{c}
 1\\ 2\\ NA\\ 4\\ 6\\ 2\end{array}\right)\mbox{ y }
 \left(\begin{array}{c} 2\\ 4\\ -3\\ 5\\ 7\\ NA \end{array}\right)
-\]</span> la de <span class="math display">\[
+\]</span>
+la de
+<span class="math display">\[
 \left(\begin{array}{c}1\\ 2\\ 4\\ 6\end{array}\right)\mbox{ y }
 \left(\begin{array}{c} 2\\ 4\\ 5\\ 7\end{array}\right).
 \]</span></p>
 <p>Como ya nos pasaba con las funciones de estadística descriptiva univariante com <code>mean</code> o <code>var</code>, cuando aplicamos <code>cov</code> o <code>cor</code> a un par de vectores que contengan entradas NA, obtenemos por defecto NA. En las funciones univariantes usábamos <code>na.rm=TRUE</code> para pedir a R que obviara los NA, pero esta solución ahora no es posible, porque las posiciones de los NA también cuentan, y si los borramos tal cual se desmonta el emparejamiento de los datos. Así que, si se quiere que R calcule el valor de <code>cov</code> o <code>cor</code> sin tener en cuenta los NA, se ha de especificar añadiendo el parámetro <code>use=&quot;complete.obs&quot;</code>, que le indica que ha de usar las observaciones completas, es decir, las posiciones que no tienen NA en ninguno de los dos vectores.</p>
 <p>Veamos el efecto sobre los dos vectores anteriores. Llamémosles <span class="math inline">\(x\)</span> e <span class="math inline">\(y\)</span>, y sean <span class="math inline">\(x_1\)</span> e <span class="math inline">\(y_1\)</span> los vectores que se obtienen eliminando las entradas que contienen un NA en alguno de los dos vectores.</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">x=<span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">2</span>,<span class="ot">NA</span>,<span class="dv">4</span>,<span class="dv">6</span>,<span class="dv">2</span>)
+<pre class="sourceCode r"><code class="sourceCode r">x=<span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">2</span>,<span class="ot">NA</span>,<span class="dv">4</span>,<span class="dv">6</span>,<span class="dv">2</span>)
 y=<span class="kw">c</span>(<span class="dv">2</span>,<span class="dv">4</span>,<span class="op">-</span><span class="dv">3</span>,<span class="dv">5</span>,<span class="dv">7</span>,<span class="ot">NA</span>)
 x1=x[<span class="kw">is.na</span>(x)<span class="op">!=</span><span class="ot">TRUE</span> <span class="op">&amp;</span><span class="st"> </span><span class="kw">is.na</span>(y)<span class="op">!=</span><span class="ot">TRUE</span>]  
 y1=y[<span class="kw">is.na</span>(x)<span class="op">!=</span><span class="ot">TRUE</span> <span class="op">&amp;</span><span class="st"> </span><span class="kw">is.na</span>(y)<span class="op">!=</span><span class="ot">TRUE</span>]  
-x1</code></pre></div>
+x1</code></pre>
 <pre><code>## [1] 1 2 4 6</code></pre>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">y1</code></pre></div>
+<pre class="sourceCode r"><code class="sourceCode r">y1</code></pre>
 <pre><code>## [1] 2 4 5 7</code></pre>
 <p>Si calculamos la covarianza de <span class="math inline">\(x\)</span> e <span class="math inline">\(y\)</span> tal cual con la función <code>cov</code>, da NA:</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">cov</span>(x, y)</code></pre></div>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">cov</span>(x, y)</code></pre>
 <pre><code>## [1] NA</code></pre>
 <p>Usando <code>use=&quot;complete.obs&quot;</code>, obtenemos la covarianza de <span class="math inline">\(x_1\)</span> e <span class="math inline">\(y_1\)</span>:</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">cov</span>(x, y, <span class="dt">use=</span><span class="st">&quot;complete.obs&quot;</span>)</code></pre></div>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">cov</span>(x, y, <span class="dt">use=</span><span class="st">&quot;complete.obs&quot;</span>)</code></pre>
 <pre><code>## [1] 4.5</code></pre>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">cov</span>(x1, y1)</code></pre></div>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">cov</span>(x1, y1)</code></pre>
 <pre><code>## [1] 4.5</code></pre>
 <p>Lo mismo sucede con la función <code>cor</code>:</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">cor</span>(x, y)</code></pre></div>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">cor</span>(x, y)</code></pre>
 <pre><code>## [1] NA</code></pre>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">cor</span>(x, y, <span class="dt">use=</span><span class="st">&quot;complete.obs&quot;</span>)</code></pre></div>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">cor</span>(x, y, <span class="dt">use=</span><span class="st">&quot;complete.obs&quot;</span>)</code></pre>
 <pre><code>## [1] 0.974913</code></pre>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">cor</span>(x1, y1)</code></pre></div>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">cor</span>(x1, y1)</code></pre>
 <pre><code>## [1] 0.974913</code></pre>
 <p>Al calcular las matrices de covarianzas o correlaciones de una tabla de datos que contenga valores NA, se suele seguir una de las dos estrategias siguientes, según lo que interese al usuario:</p>
 <ul>
-<li><p>Para cada par de columnas, se calcula su covarianza o su correlación con la estrategia explicada más arriba para dos vectores, obviando el hecho de que forman parte de una tabla de datos mayor; es decir, al efectuar el cálculo para cada par de columnas concreto, se eliminan de cada una de ellas solo las entradas de las filas en las que alguna de las dos tiene un NA, sin tener en cuenta para nada las otras columnas. Esta opción se especifica dentro de la función <code>cov</code> o <code>cor</code> con el parámetro <code>use=&quot;pairwise.complete.obs&quot;</code>.</p></li>
+<li><p>Para cada par de columnas, se calcula su covarianza o su correlación
+con la estrategia explicada más arriba para dos vectores, obviando el hecho de que forman parte de una tabla de datos mayor; es decir, al efectuar el cálculo para cada par de columnas concreto, se eliminan de cada una de ellas solo las entradas de las filas en las que alguna de las dos tiene un NA, sin tener en cuenta para nada las otras columnas. Esta opción se especifica dentro de la función <code>cov</code> o <code>cor</code> con el parámetro <code>use=&quot;pairwise.complete.obs&quot;</code>.</p></li>
 <li><p>Antes de nada, se eliminan las filas de la tabla que contienen algún NA en alguna columna, dejando solo en la tabla las filas “completas”, las que no contienen ningún NA. Luego se calcula la matriz de covarianzas o de correlaciones de la tabla resultante. Esta opción se especifica con el parámetro <code>use=&quot;complete.obs&quot;</code>.</p></li>
 </ul>
 <p>Veamos un ejemplo. Consideremos la matriz de datos <span class="math inline">\(Y\)</span> siguiente, cuyas dos primeras columnas son los vectores <span class="math inline">\(x\)</span> e <span class="math inline">\(y\)</span> anteriores:</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">Y=<span class="kw">cbind</span>(<span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">2</span>,<span class="ot">NA</span>,<span class="dv">4</span>,<span class="dv">6</span>,<span class="dv">2</span>), <span class="kw">c</span>(<span class="dv">2</span>,<span class="dv">4</span>,<span class="op">-</span><span class="dv">3</span>,<span class="dv">5</span>,<span class="dv">7</span>,<span class="ot">NA</span>), <span class="kw">c</span>(<span class="op">-</span><span class="dv">2</span>,<span class="dv">1</span>,<span class="dv">0</span>,<span class="dv">2</span>,<span class="ot">NA</span>,<span class="dv">0</span>))
-Y</code></pre></div>
+<pre class="sourceCode r"><code class="sourceCode r">Y=<span class="kw">cbind</span>(<span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">2</span>,<span class="ot">NA</span>,<span class="dv">4</span>,<span class="dv">6</span>,<span class="dv">2</span>), <span class="kw">c</span>(<span class="dv">2</span>,<span class="dv">4</span>,<span class="op">-</span><span class="dv">3</span>,<span class="dv">5</span>,<span class="dv">7</span>,<span class="ot">NA</span>), <span class="kw">c</span>(<span class="op">-</span><span class="dv">2</span>,<span class="dv">1</span>,<span class="dv">0</span>,<span class="dv">2</span>,<span class="ot">NA</span>,<span class="dv">0</span>))
+Y</code></pre>
 <pre><code>##      [,1] [,2] [,3]
 ## [1,]    1    2   -2
 ## [2,]    2    4    1
@@ -837,35 +957,36 @@ Y</code></pre></div>
 ## [4,]    4    5    2
 ## [5,]    6    7   NA
 ## [6,]    2   NA    0</code></pre>
-<p>Supongamos que queremos calcular su matriz de correlaciones de Pearson. Como todas las filas de <span class="math inline">\(Y\)</span> tienen entradas NA, todas las correlaciones fuera de la diagonal dan NA (R sabe que la correlación de un columna consigo misma siempre es 1, y ya no la calcula):</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">cor</span>(Y)</code></pre></div>
+<p>Supongamos que queremos calcular su matriz de correlaciones de Pearson.
+Como todas las filas de <span class="math inline">\(Y\)</span> tienen entradas NA, todas las correlaciones fuera de la diagonal dan NA (R sabe que la correlación de un columna consigo misma siempre es 1, y ya no la calcula):</p>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">cor</span>(Y)</code></pre>
 <pre><code>##      [,1] [,2] [,3]
 ## [1,]    1   NA   NA
 ## [2,]   NA    1   NA
 ## [3,]   NA   NA    1</code></pre>
 <p>Una opción es calcular las correlaciones de Pearson de cada par de variables eliminando sus valores NA pero sin tener en cuenta los posibles valores NA de la otra variable:</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">cor</span>(Y, <span class="dt">use=</span><span class="st">&quot;pairwise.complete.obs&quot;</span>)</code></pre></div>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">cor</span>(Y, <span class="dt">use=</span><span class="st">&quot;pairwise.complete.obs&quot;</span>)</code></pre>
 <pre><code>##          [,1]     [,2]     [,3]
 ## [1,] 1.000000 0.974913 0.891902
 ## [2,] 0.974913 1.000000 0.438727
 ## [3,] 0.891902 0.438727 1.000000</code></pre>
 <p>Observad que la entrada (1,2) de esta matriz es la correlación de los vectores <span class="math inline">\(x\)</span> e <span class="math inline">\(y\)</span> calculada con <code>use=&quot;complete.obs&quot;</code>.</p>
 <p>Calculemos ahora la matriz de correlaciones de Pearson de la matriz con filas completas:</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">cor</span>(Y, <span class="dt">use=</span><span class="st">&quot;complete.obs&quot;</span>)</code></pre></div>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">cor</span>(Y, <span class="dt">use=</span><span class="st">&quot;complete.obs&quot;</span>)</code></pre>
 <pre><code>##          [,1]     [,2]     [,3]
 ## [1,] 1.000000 0.928571 0.891042
 ## [2,] 0.928571 1.000000 0.995871
 ## [3,] 0.891042 0.995871 1.000000</code></pre>
 <p>Veamos que efectivamente coincide con la matriz de correlaciones de Pearson de la matriz que se obtiene eliminando las filas que contienen algún NA. Esta matriz es:</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">noNAs=<span class="kw">is.na</span>(Y[,<span class="dv">1</span>])<span class="op">!=</span><span class="ot">TRUE</span> <span class="op">&amp;</span><span class="st"> </span><span class="kw">is.na</span>(Y[,<span class="dv">2</span>])<span class="op">!=</span><span class="ot">TRUE</span> <span class="op">&amp;</span><span class="st"> </span><span class="kw">is.na</span>(Y[,<span class="dv">3</span>])<span class="op">!=</span><span class="ot">TRUE</span>
+<pre class="sourceCode r"><code class="sourceCode r">noNAs=<span class="kw">is.na</span>(Y[,<span class="dv">1</span>])<span class="op">!=</span><span class="ot">TRUE</span> <span class="op">&amp;</span><span class="st"> </span><span class="kw">is.na</span>(Y[,<span class="dv">2</span>])<span class="op">!=</span><span class="ot">TRUE</span> <span class="op">&amp;</span><span class="st"> </span><span class="kw">is.na</span>(Y[,<span class="dv">3</span>])<span class="op">!=</span><span class="ot">TRUE</span>
 Y1=Y[noNAs,] 
-Y1</code></pre></div>
+Y1</code></pre>
 <pre><code>##      [,1] [,2] [,3]
 ## [1,]    1    2   -2
 ## [2,]    2    4    1
 ## [3,]    4    5    2</code></pre>
 <p>y su matriz de correlaciones de Pearson es:</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">cor</span>(Y1)</code></pre></div>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">cor</span>(Y1)</code></pre>
 <pre><code>##          [,1]     [,2]     [,3]
 ## [1,] 1.000000 0.928571 0.891042
 ## [2,] 0.928571 1.000000 0.995871
@@ -889,29 +1010,33 @@ Y1</code></pre></div>
 2&amp;3 &amp; 3&amp; 4 \\
 3&amp;4 &amp; 0&amp;  2.5\\\hline
 \end{array}
-\]</span> ¿Cómo hemos obtenido los rangos? Fijaos por ejemplo en la primera columna: los dos 1 ocuparían la posición 1 y 2, les asignamos a ambos como rango la media de estas posiciones, 1.5; el 2 ocuparía la posición 3 y el 3 ocuparía la posición 4, y estos son también sus rangos. Dejamos como ejercicio que comprobéis los rangos de los elementos de <span class="math inline">\(x_{\bullet 2}\)</span>.</p>
+\]</span>
+¿Cómo hemos obtenido los rangos? Fijaos por ejemplo en la primera columna: los dos 1 ocuparían la posición 1 y 2, les asignamos a ambos como rango la media de estas posiciones, 1.5; el 2 ocuparía la posición 3 y el 3 ocuparía la posición 4, y estos son también sus rangos. Dejamos como ejercicio que comprobéis los rangos de los elementos de <span class="math inline">\(x_{\bullet 2}\)</span>.</p>
 <p>Con R estos rangos se calculan con la función <code>rank</code>. Así, los rangos de los elementos de <span class="math inline">\(x_{\bullet 1}\)</span> son</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">rank</span>(X<span class="op">$</span>V1)</code></pre></div>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">rank</span>(X<span class="op">$</span>V1)</code></pre>
 <pre><code>## [1] 1.5 1.5 3.0 4.0</code></pre>
 <p>y los de los elementos de <span class="math inline">\(x_{\bullet 2}\)</span> son</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">rank</span>(X<span class="op">$</span>V2)</code></pre></div>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">rank</span>(X<span class="op">$</span>V2)</code></pre>
 <pre><code>## [1] 1.0 2.5 4.0 2.5</code></pre>
-<p>Por lo tanto, la correlación de Spearman de <span class="math display">\[
+<p>Por lo tanto, la correlación de Spearman de
+<span class="math display">\[
 (1,1,2,3)\mbox{ y }(-1,0,3,0)
-\]</span> es la correlación de Pearson de <span class="math display">\[
+\]</span>
+es la correlación de Pearson de
+<span class="math display">\[
 (1.5, 1.5, 3, 4)\mbox{ y }(1, 2.5, 4, 2.5)
 \]</span></p>
 <p>Veámoslo:</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">cor</span>(X<span class="op">$</span>V1,X<span class="op">$</span>V2,<span class="dt">method=</span><span class="st">&quot;spearman&quot;</span>)</code></pre></div>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">cor</span>(X<span class="op">$</span>V1,X<span class="op">$</span>V2,<span class="dt">method=</span><span class="st">&quot;spearman&quot;</span>)</code></pre>
 <pre><code>## [1] 0.5</code></pre>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">cor</span>(<span class="kw">rank</span>(X<span class="op">$</span>V1),<span class="kw">rank</span>(X<span class="op">$</span>V2))</code></pre></div>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">cor</span>(<span class="kw">rank</span>(X<span class="op">$</span>V1),<span class="kw">rank</span>(X<span class="op">$</span>V2))</code></pre>
 <pre><code>## [1] 0.5</code></pre>
 </div>
 <div id="contrastes-de-correlacion" class="section level2">
 <h2><span class="header-section-number">8.5</span> Contrastes de correlación</h2>
 <p>Como ya hemos comentado, podemos usar la correlación de Pearson <span class="math inline">\(r_{xy}\)</span> de dos vectores <span class="math inline">\(x\)</span> e <span class="math inline">\(y\)</span>, formados por los valores de dos variables cuantitativas <span class="math inline">\(X,Y\)</span> medidos sobre una misma muestra de individuos, para estimar la correlación <span class="math inline">\(\rho_{XY}\)</span> de estas variables poblacionales. Cuando además ambas variables aleatorias son normales, disponemos de una fórmula para calcular intervalos de confianza para la correlación poblacional y de un método para efectuar contrastes de hipótesis con hipótesis nula <span class="math inline">\(H_0: \rho_{XY}=0\)</span> (“no hay correlación entre <span class="math inline">\(X\)</span> e <span class="math inline">\(Y\)</span>”). No vamos a entrar en los detalles de las fórmulas ni de los teoremas en que se basan, pero es importante que recordéis que la función de R que lleva a cabo dichos contrastes “de correlación” es la función <code>cor.test</code>. En particular, esta función calcula el intervalo de confianza asociado a un contraste de estos: si el contraste es bilateral, es decir, con hipótesis alternativa <span class="math inline">\(H_1: \rho_{XY}\neq 0\)</span>, el intervalo que produce esta función es el intervalo de confianza usual para <span class="math inline">\(\rho_{XY}\)</span> con nivel de confianza correspondiente al nivel de significación del contraste.</p>
 <p>La sintaxis de <code>cor.test</code> es la misma que la del resto de funciones para realizar contrastes de hipótesis básicos:</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">cor.test</span>(x, y, <span class="dt">alternative=</span>..., <span class="dt">conf.level=</span>...)</code></pre></div>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">cor.test</span>(x, y, <span class="dt">alternative=</span>..., <span class="dt">conf.level=</span>...)</code></pre>
 <p>donde <code>x</code> e <code>y</code> son los dos vectores de datos, que también se pueden especificar mediante una fórmula. Estos dos vectores han de tener la misma longitud, puesto que se entiende que son mediciones sobre el mismo conjunto de individuos. El parámetro <code>alternative</code> puede tomar los tres valores usuales y su valor por defecto es, como siempre, <code>&quot;two.sided&quot;</code>, que corresponde al contraste bilateral, con hipótesis alternativa <span class="math inline">\(H_1: \rho_{XY}\neq 0\)</span>. Los valores <code>alternative=&quot;greater&quot;</code> y <code>alternative=&quot;less&quot;</code> permiten contrastar si <span class="math inline">\(X\)</span> e <span class="math inline">\(Y\)</span> tienen correlación mayor o menor que 0, respectivamente.</p>
 <p>Como en el resto de funciones de contrastes, el resultado es una <code>list</code> que, entre otros objetos, contiene:</p>
 <ul>
@@ -921,16 +1046,18 @@ Y1</code></pre></div>
 </ul>
 
 <div class="example">
-<p><span id="exm:unnamed-chunk-377" class="example"><strong>Ejemplo 8.10  </strong></span>Queremos contrastar si hay correlación positiva entre el peso de una madre en el momento de la concepción del hijo y el peso de su hijo en el momento de nacer. Para ello vamos a usar la tabla de datos <code>birthwt</code> incluida en el paquete <strong>MASS</strong> que ya usamos en una lección anterior, que contiene información sobre recién nacidos y sus madres, y que en particular dispone de las variables <code>bwt</code>, que da el peso del recién nacido en gramos, y <code>lwt</code>, que da el peso de la madre en libras en el momento de su última menstruación. Vamos a suponer que ambos pesos siguen distribuciones normales. Si denotamos por <span class="math inline">\(X\)</span> e <span class="math inline">\(Y\)</span> las correspondientes variables poblacionales, queremos realizar el contraste <span class="math display">\[
+<p><span id="exm:unnamed-chunk-377" class="example"><strong>Ejemplo 8.10  </strong></span>Queremos contrastar si hay correlación positiva entre el peso de una madre en el momento de la concepción del hijo y el peso de su hijo en el momento de nacer. Para ello vamos a usar la tabla de datos <code>birthwt</code> incluida en el paquete <strong>MASS</strong> que ya usamos en una lección anterior, que contiene información sobre recién nacidos y sus madres, y que en particular dispone de las variables <code>bwt</code>, que da el peso del recién nacido en gramos, y <code>lwt</code>, que da el peso de la madre en libras en el momento de su última menstruación. Vamos a suponer que ambos pesos siguen distribuciones normales. Si denotamos por <span class="math inline">\(X\)</span> e <span class="math inline">\(Y\)</span> las correspondientes variables poblacionales, queremos realizar el contraste
+<span class="math display">\[
 \left\{\begin{array}{l}
 H_0: \rho_{XY}=0\\
 H_1: \rho_{XY}&gt;0
 \end{array}\right.
-\]</span> Vamos a usar la función <code>cor.test</code>.</p>
+\]</span>
+Vamos a usar la función <code>cor.test</code>.</p>
 </div>
 
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(MASS)
-<span class="kw">cor.test</span>(birthwt<span class="op">$</span>bwt, birthwt<span class="op">$</span>lwt, <span class="dt">alternative=</span><span class="st">&quot;greater&quot;</span>)</code></pre></div>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(MASS)
+<span class="kw">cor.test</span>(birthwt<span class="op">$</span>bwt, birthwt<span class="op">$</span>lwt, <span class="dt">alternative=</span><span class="st">&quot;greater&quot;</span>)</code></pre>
 <pre><code>## 
 ##  Pearson&#39;s product-moment correlation
 ## 
@@ -944,20 +1071,20 @@ H_1: \rho_{XY}&gt;0
 ## 0.185733</code></pre>
 <p>El p-valor 0.005 nos da evidencia estadísticamente significativa de que, en efecto, hay una correlación positiva entre el peso de la madre y el peso del recién nacido. El último valor, el 0.185733 bajo el <em>cor</em>, es la correlación de Pearson de los dos vectores de pesos, y el <em>95 percent confidence interval</em> es el intervalo de confianza del 95% del contraste unilateral planteado y nos dice que tenemos un 95% de confianza en que la correlación entre el peso de la madre y el peso del recién nacido es superior a 0.067.</p>
 <p>Podríamos haber obtenido el p-valor del contraste de correlación anterior directamente con la instrucción</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">cor.test</span>(birthwt<span class="op">$</span>bwt, birthwt<span class="op">$</span>lwt, <span class="dt">alternative=</span><span class="st">&quot;greater&quot;</span>)<span class="op">$</span>p.value</code></pre></div>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">cor.test</span>(birthwt<span class="op">$</span>bwt, birthwt<span class="op">$</span>lwt, <span class="dt">alternative=</span><span class="st">&quot;greater&quot;</span>)<span class="op">$</span>p.value</code></pre>
 <pre><code>## [1] 0.00525209</code></pre>
 <p>Si hubiéramos querido calcular un intervalo de confianza del 95% para <span class="math inline">\(\rho_{XY}\)</span> que repartiera por igual a ambos lados el 5% de probabilidad de no contener su valor real, hubiéramos podido usar el intervalo de confianza del contraste bilateral:</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">cor.test</span>(birthwt<span class="op">$</span>bwt, birthwt<span class="op">$</span>lwt)<span class="op">$</span>conf.int</code></pre></div>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">cor.test</span>(birthwt<span class="op">$</span>bwt, birthwt<span class="op">$</span>lwt)<span class="op">$</span>conf.int</code></pre>
 <pre><code>## [1] 0.044174 0.319981
 ## attr(,&quot;conf.level&quot;)
 ## [1] 0.95</code></pre>
 <p>La potencia de un contraste de correlación se calcula con la función <code>pwr.r.test</code> del paquete <strong>pwr</strong>. En este caso, el tamaño del efecto es simplemente la correlación de Pearson, que se entra en la función mediante el parámetro <code>r</code>. Apliquémosla para calcular la potencia del contraste de correlación anterior:</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(pwr)
-<span class="kw">dim</span>(birthwt)</code></pre></div>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(pwr)
+<span class="kw">dim</span>(birthwt)</code></pre>
 <pre><code>## [1] 189  10</code></pre>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">round</span>(<span class="kw">cor</span>(birthwt<span class="op">$</span>bwt,birthwt<span class="op">$</span>lwt),<span class="dv">4</span>)</code></pre></div>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">round</span>(<span class="kw">cor</span>(birthwt<span class="op">$</span>bwt,birthwt<span class="op">$</span>lwt),<span class="dv">4</span>)</code></pre>
 <pre><code>## [1] 0.1857</code></pre>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">pwr.r.test</span>(<span class="dt">n=</span><span class="dv">189</span>,<span class="dt">r=</span><span class="fl">0.1857</span>,<span class="dt">sig.level=</span><span class="fl">0.05</span>,<span class="dt">alternative=</span><span class="st">&quot;greater&quot;</span>)</code></pre></div>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">pwr.r.test</span>(<span class="dt">n=</span><span class="dv">189</span>,<span class="dt">r=</span><span class="fl">0.1857</span>,<span class="dt">sig.level=</span><span class="fl">0.05</span>,<span class="dt">alternative=</span><span class="st">&quot;greater&quot;</span>)</code></pre>
 <pre><code>## 
 ##      approximate correlation power calculation (arctangh transformation) 
 ## 
@@ -968,14 +1095,14 @@ H_1: \rho_{XY}&gt;0
 ##     alternative = greater</code></pre>
 <p>La probabilidad de error de tipo II en este contraste era de un poco menos del 18%.</p>
 <p>Si quisiéramos realizar este contraste de correlación con una potencia del 90% suponiendo que la magnitud del efecto va ser pequeña, usaríamos primero <code>cohen.ES</code> con <code>test=&quot;r&quot;</code> para determinar qué magnitud del efecto se considera pequeña y a continuación <code>pwr.r.test</code> dejando sin especificar la <code>n</code>:</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">cohen.ES</span>(<span class="dt">test=</span><span class="st">&quot;r&quot;</span>,<span class="dt">size=</span><span class="st">&quot;small&quot;</span>)</code></pre></div>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">cohen.ES</span>(<span class="dt">test=</span><span class="st">&quot;r&quot;</span>,<span class="dt">size=</span><span class="st">&quot;small&quot;</span>)</code></pre>
 <pre><code>## 
 ##      Conventional effect size from Cohen (1982) 
 ## 
 ##            test = r
 ##            size = small
 ##     effect.size = 0.1</code></pre>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">pwr.r.test</span>(<span class="dt">power=</span><span class="fl">0.9</span>,<span class="dt">r=</span><span class="fl">0.1</span>,<span class="dt">sig.level=</span><span class="fl">0.05</span>,<span class="dt">alternative=</span><span class="st">&quot;greater&quot;</span>)</code></pre></div>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">pwr.r.test</span>(<span class="dt">power=</span><span class="fl">0.9</span>,<span class="dt">r=</span><span class="fl">0.1</span>,<span class="dt">sig.level=</span><span class="fl">0.05</span>,<span class="dt">alternative=</span><span class="st">&quot;greater&quot;</span>)</code></pre>
 <pre><code>## 
 ##      approximate correlation power calculation (arctangh transformation) 
 ## 
@@ -989,38 +1116,38 @@ H_1: \rho_{XY}&gt;0
 <div id="un-ejemplo" class="section level2">
 <h2><span class="header-section-number">8.6</span> Un ejemplo</h2>
 <p>Recordaréis el <em>data frame</em> <code>iris</code>, que tabulaba las longitudes y anchuras de los pétalos y los sépalos de una muestra de flores iris de tres especies. Vamos a extraer una subtabla con sus cuatro variables numéricas, que llamaremos <code>iris_num</code>, y calcularemos sus matrices de covarianzas y correlaciones.</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">str</span>(iris)</code></pre></div>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">str</span>(iris)</code></pre>
 <pre><code>## &#39;data.frame&#39;:    150 obs. of  5 variables:
 ##  $ Sepal.Length: num  5.1 4.9 4.7 4.6 5 5.4 4.6 5 4.4 4.9 ...
 ##  $ Sepal.Width : num  3.5 3 3.2 3.1 3.6 3.9 3.4 3.4 2.9 3.1 ...
 ##  $ Petal.Length: num  1.4 1.4 1.3 1.5 1.4 1.7 1.4 1.5 1.4 1.5 ...
 ##  $ Petal.Width : num  0.2 0.2 0.2 0.2 0.2 0.4 0.3 0.2 0.2 0.1 ...
 ##  $ Species     : Factor w/ 3 levels &quot;setosa&quot;,&quot;versicolor&quot;,..: 1 1 1 1 1 1 1 1 1 1 ...</code></pre>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">iris_num=iris[, <span class="dv">1</span><span class="op">:</span><span class="dv">4</span>]
-n=<span class="kw">dim</span>(iris_num)[<span class="dv">1</span>] <span class="co">#Número de filas</span></code></pre></div>
+<pre class="sourceCode r"><code class="sourceCode r">iris_num=iris[, <span class="dv">1</span><span class="op">:</span><span class="dv">4</span>]
+n=<span class="kw">dim</span>(iris_num)[<span class="dv">1</span>] <span class="co">#Número de filas</span></code></pre>
 <p>Su matriz de covarianzas muestrales es:</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">cov</span>(iris_num)  </code></pre></div>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">cov</span>(iris_num)  </code></pre>
 <pre><code>##              Sepal.Length Sepal.Width Petal.Length Petal.Width
 ## Sepal.Length     0.685694   -0.042434     1.274315    0.516271
 ## Sepal.Width     -0.042434    0.189979    -0.329656   -0.121639
 ## Petal.Length     1.274315   -0.329656     3.116278    1.295609
 ## Petal.Width      0.516271   -0.121639     1.295609    0.581006</code></pre>
 <p>Su matriz de covarianzas “verdaderas” es:</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">cov</span>(iris_num)<span class="op">*</span>(n<span class="op">-</span><span class="dv">1</span>)<span class="op">/</span>n  </code></pre></div>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">cov</span>(iris_num)<span class="op">*</span>(n<span class="dv">-1</span>)<span class="op">/</span>n  </code></pre>
 <pre><code>##              Sepal.Length Sepal.Width Petal.Length Petal.Width
 ## Sepal.Length    0.6811222  -0.0421511     1.265820    0.512829
 ## Sepal.Width    -0.0421511   0.1887129    -0.327459   -0.120828
 ## Petal.Length    1.2658200  -0.3274587     3.095503    1.286972
 ## Petal.Width     0.5128289  -0.1208284     1.286972    0.577133</code></pre>
 <p>Su matriz de correlaciones de Pearson es:</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">cor</span>(iris_num)   </code></pre></div>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">cor</span>(iris_num)   </code></pre>
 <pre><code>##              Sepal.Length Sepal.Width Petal.Length Petal.Width
 ## Sepal.Length     1.000000   -0.117570     0.871754    0.817941
 ## Sepal.Width     -0.117570    1.000000    -0.428440   -0.366126
 ## Petal.Length     0.871754   -0.428440     1.000000    0.962865
 ## Petal.Width      0.817941   -0.366126     0.962865    1.000000</code></pre>
 <p>Observamos, por ejemplo, una gran correlación de Pearson positiva entre la longitud y la anchura de los pétalos, 0.963, lo que indica una estrecha relación lineal con pendiente positiva entre estas magnitudes. Valdría la pena, entonces, calcular la recta de regresión lineal de una de estas medidas en función de la otra.</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">lm</span>(Petal.Length<span class="op">~</span>Petal.Width, <span class="dt">data=</span>iris_num)</code></pre></div>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">lm</span>(Petal.Length<span class="op">~</span>Petal.Width, <span class="dt">data=</span>iris_num)</code></pre>
 <pre><code>## 
 ## Call:
 ## lm(formula = Petal.Length ~ Petal.Width, data = iris_num)
@@ -1030,7 +1157,7 @@ n=<span class="kw">dim</span>(iris_num)[<span class="dv">1</span>] <span class="
 ##        1.08         2.23</code></pre>
 <p>En cambio, la correlación de Pearson entre la longitud y la anchura de los sépalos es -0.11757, muy cercana a cero, lo que es señal de que la variación conjunta de las longitudes y anchuras de los sépalos no tiene una tendencia clara.</p>
 <p>Vamos a ordenar ahora los pares de variables numéricas de <code>iris</code> en orden decreciente de su correlación en valor absoluto, para saber cuáles están más correlacionadas (en positivo o negativo). Para ello, en primer lugar creamos un <em>data frame</em> cuyas filas están formadas por pares diferentes de variables numéricas de <code>iris</code>, su correlación de Pearson y el valor absoluto de esta última, y a continuación ordenamos las filas de este <em>data frame</em> en orden decreciente de estos valores absolutos. Todo esto lo llevamos a cabo en el siguiente bloque de código, que luego explicamos:</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">medidas=<span class="kw">names</span>(iris_num)
+<pre class="sourceCode r"><code class="sourceCode r">medidas=<span class="kw">names</span>(iris_num)
 n=<span class="kw">length</span>(medidas)  <span class="co">#En este caso, n=4</span>
 indices=<span class="kw">upper.tri</span>(<span class="kw">diag</span>(n))
 medida1=<span class="kw">matrix</span>(<span class="kw">rep</span>(medidas, <span class="dt">times=</span>n), <span class="dt">nrow=</span>n, <span class="dt">byrow=</span><span class="ot">FALSE</span>)[indices]
@@ -1039,7 +1166,7 @@ corrs=<span class="kw">as.vector</span>(<span class="kw">cor</span>(iris_num))[i
 corrs.abs=<span class="kw">abs</span>(corrs)
 corrs_df=<span class="kw">data.frame</span>(medida1, medida2, corrs, corrs.abs)
 corrs_df_sort=corrs_df[<span class="kw">order</span>(corrs_df<span class="op">$</span>corrs.abs, <span class="dt">decreasing=</span><span class="ot">TRUE</span>), ]
-corrs_df_sort</code></pre></div>
+corrs_df_sort</code></pre>
 <pre><code>##        medida1      medida2     corrs corrs.abs
 ## 6 Petal.Length  Petal.Width  0.962865  0.962865
 ## 2 Sepal.Length Petal.Length  0.871754  0.871754
@@ -1049,51 +1176,51 @@ corrs_df_sort</code></pre></div>
 ## 1 Sepal.Length  Sepal.Width -0.117570  0.117570</code></pre>
 <p>Vemos que el par de variables con mayor correlación de Pearson en valor absoluto son <code>Petal.Length</code> y <code>Petal.Width</code>, como ya habíamos observado, seguidos por <code>Petal.Length</code> y <code>Sepal.Length</code>.</p>
 <p>Vamos a explicar el código. La función <code>upper.tri</code>, aplicada a una matriz cuadrada <span class="math inline">\(M\)</span>, produce la matriz <strong>triangular superior</strong> de valores lógicos del mismo orden que <span class="math inline">\(M\)</span>, cuyas entradas <span class="math inline">\((i,j)\)</span> con <span class="math inline">\(i&lt;j\)</span> son todas <code>TRUE</code> y el resto todas <code>FALSE</code>. Existe una función similar, <code>lower.tri</code>, para producir matrices <strong>triangulares inferiores</strong> de valores lógicos.</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">upper.tri</span>(<span class="kw">diag</span>(<span class="dv">4</span>))</code></pre></div>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">upper.tri</span>(<span class="kw">diag</span>(<span class="dv">4</span>))</code></pre>
 <pre><code>##       [,1]  [,2]  [,3]  [,4]
 ## [1,] FALSE  TRUE  TRUE  TRUE
 ## [2,] FALSE FALSE  TRUE  TRUE
 ## [3,] FALSE FALSE FALSE  TRUE
 ## [4,] FALSE FALSE FALSE FALSE</code></pre>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">lower.tri</span>(<span class="kw">diag</span>(<span class="dv">4</span>))</code></pre></div>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">lower.tri</span>(<span class="kw">diag</span>(<span class="dv">4</span>))</code></pre>
 <pre><code>##       [,1]  [,2]  [,3]  [,4]
 ## [1,] FALSE FALSE FALSE FALSE
 ## [2,]  TRUE FALSE FALSE FALSE
 ## [3,]  TRUE  TRUE FALSE FALSE
 ## [4,]  TRUE  TRUE  TRUE FALSE</code></pre>
 <p>Ambas funciones disponen del parámetro <code>diag</code> que, igualado a <code>TRUE</code>, define también como <code>TRUE</code> las entradas de la diagonal principal.</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">upper.tri</span>(<span class="kw">diag</span>(<span class="dv">4</span>), <span class="dt">diag=</span><span class="ot">TRUE</span>)</code></pre></div>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">upper.tri</span>(<span class="kw">diag</span>(<span class="dv">4</span>), <span class="dt">diag=</span><span class="ot">TRUE</span>)</code></pre>
 <pre><code>##       [,1]  [,2]  [,3] [,4]
 ## [1,]  TRUE  TRUE  TRUE TRUE
 ## [2,] FALSE  TRUE  TRUE TRUE
 ## [3,] FALSE FALSE  TRUE TRUE
 ## [4,] FALSE FALSE FALSE TRUE</code></pre>
 <p>Si <span class="math inline">\(M\)</span> es una matriz y <span class="math inline">\(L\)</span> es una matriz de valores lógicos del mismo orden, <code>M[L]</code> produce el vector construido de la manera siguiente: de cada columna, se queda sólo con las entradas de <span class="math inline">\(M\)</span> cuya entrada correspondiente en <span class="math inline">\(L\)</span> es <code>TRUE</code>, y a continuación concatena estas columnas, de izquierda a derecha, en un vector. Así, por ejemplo, tomemos la matriz <span class="math inline">\(M\)</span> siguiente:</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">M=<span class="kw">matrix</span>(<span class="dv">1</span><span class="op">:</span><span class="dv">16</span>, <span class="dt">nrow=</span><span class="dv">4</span>, <span class="dt">byrow=</span>T)
-M</code></pre></div>
+<pre class="sourceCode r"><code class="sourceCode r">M=<span class="kw">matrix</span>(<span class="dv">1</span><span class="op">:</span><span class="dv">16</span>, <span class="dt">nrow=</span><span class="dv">4</span>, <span class="dt">byrow=</span>T)
+M</code></pre>
 <pre><code>##      [,1] [,2] [,3] [,4]
 ## [1,]    1    2    3    4
 ## [2,]    5    6    7    8
 ## [3,]    9   10   11   12
 ## [4,]   13   14   15   16</code></pre>
 <p>El vector formado por las entradas de su triángulo superior, concatenadas por columnas, se obtiene de la manera siguiente:</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">M[<span class="kw">upper.tri</span>(<span class="kw">diag</span>(<span class="dv">4</span>))]</code></pre></div>
+<pre class="sourceCode r"><code class="sourceCode r">M[<span class="kw">upper.tri</span>(<span class="kw">diag</span>(<span class="dv">4</span>))]</code></pre>
 <pre><code>## [1]  2  3  7  4  8 12</code></pre>
 <p>Ahora definimos las matrices siguientes, formadas por 4 copias (la primera por columnas, la segunda, por filas) del vector, al que hemos llamado <code>medidas</code>, de nombres de las variables numéricas de <code>iris</code>:</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">matrix</span>(<span class="kw">rep</span>(medidas, <span class="dt">times=</span><span class="dv">4</span>), <span class="dt">nrow=</span><span class="dv">4</span>, <span class="dt">byrow=</span><span class="ot">FALSE</span>)</code></pre></div>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">matrix</span>(<span class="kw">rep</span>(medidas, <span class="dt">times=</span><span class="dv">4</span>), <span class="dt">nrow=</span><span class="dv">4</span>, <span class="dt">byrow=</span><span class="ot">FALSE</span>)</code></pre>
 <pre><code>##      [,1]           [,2]           [,3]           [,4]          
 ## [1,] &quot;Sepal.Length&quot; &quot;Sepal.Length&quot; &quot;Sepal.Length&quot; &quot;Sepal.Length&quot;
 ## [2,] &quot;Sepal.Width&quot;  &quot;Sepal.Width&quot;  &quot;Sepal.Width&quot;  &quot;Sepal.Width&quot; 
 ## [3,] &quot;Petal.Length&quot; &quot;Petal.Length&quot; &quot;Petal.Length&quot; &quot;Petal.Length&quot;
 ## [4,] &quot;Petal.Width&quot;  &quot;Petal.Width&quot;  &quot;Petal.Width&quot;  &quot;Petal.Width&quot;</code></pre>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">matrix</span>(<span class="kw">rep</span>(medidas, <span class="dt">times=</span><span class="dv">4</span>), <span class="dt">nrow=</span><span class="dv">4</span>, <span class="dt">byrow=</span><span class="ot">TRUE</span>)</code></pre></div>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">matrix</span>(<span class="kw">rep</span>(medidas, <span class="dt">times=</span><span class="dv">4</span>), <span class="dt">nrow=</span><span class="dv">4</span>, <span class="dt">byrow=</span><span class="ot">TRUE</span>)</code></pre>
 <pre><code>##      [,1]           [,2]          [,3]           [,4]         
 ## [1,] &quot;Sepal.Length&quot; &quot;Sepal.Width&quot; &quot;Petal.Length&quot; &quot;Petal.Width&quot;
 ## [2,] &quot;Sepal.Length&quot; &quot;Sepal.Width&quot; &quot;Petal.Length&quot; &quot;Petal.Width&quot;
 ## [3,] &quot;Sepal.Length&quot; &quot;Sepal.Width&quot; &quot;Petal.Length&quot; &quot;Petal.Width&quot;
 ## [4,] &quot;Sepal.Length&quot; &quot;Sepal.Width&quot; &quot;Petal.Length&quot; &quot;Petal.Width&quot;</code></pre>
 <p>Al aplicar estas dos matrices a la matriz de valores lógicos <code>upper.tri(diag(4))</code> obtenemos los nombres de las variables correspondientes a las filas y las columnas del triángulo superior, respectivamente, y al aplicar la matriz de correlaciones a esta matriz de valores lógicos, obtenemos sus entradas en este triángulo; en los tres vectores, las entradas siguen el mismo orden. Esto nos permite construir el <em>data frame</em> <code>corrs_df</code> cuyas filas están formadas por pares diferentes de variables numéricas de <code>iris</code>, su correlación de Pearson (columna <code>corrs</code>) y, aplicando <code>abs</code> a esta última variable, dicha correlación en valor absoluto (columna <code>corrs.abs</code>).</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">corrs_df</code></pre></div>
+<pre class="sourceCode r"><code class="sourceCode r">corrs_df</code></pre>
 <pre><code>##        medida1      medida2     corrs corrs.abs
 ## 1 Sepal.Length  Sepal.Width -0.117570  0.117570
 ## 2 Sepal.Length Petal.Length  0.871754  0.871754
@@ -1108,8 +1235,8 @@ M</code></pre></div>
 <p>La representación gráfica de tablas de datos multidimensionales tiene la dificultad de las dimensiones; para dos o tres variables es sencillo visualizar las relaciones entre las mismas, pero para más variables ya no nos bastan nuestras tres dimensiones espaciales y tenemos que usar algunos trucos, tales como representaciones gráficas conjuntas de pares de variables.</p>
 <p>La manera más sencilla de representar gráficamente una tabla de datos formada por dos variables numéricas es aplicando la función <code>plot</code> a la matriz de datos o al <em>data frame</em>. Esta función produce el <strong>diagrama de dispersión</strong> (<em>scatter plot</em>) de los datos: el gráfico de los puntos del plano definidos por las filas de la tabla.</p>
 <p>A modo de ejemplo, si extrajéramos de la tabla <code>iris</code> una subtabla conteniendo sólo las longitudes y anchuras de los pétalos y quisiéramos visualizar la relación entre estas dimensiones, podríamos dibujar su diagrama de dispersión con el código del bloque siguiente. El resultado es la Figura <a href="introduccion-a-la-estadistica-descriptiva-multidimensional.html#fig:iris1">8.1</a>, que muestra una clara tendencia positiva: cuanto más largos son los pétalos, más anchos tienden a ser. Esto se corresponde con la correlación de Pearson de 0.963 que hemos obtenido en la sección anterior.</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">iris.pet=iris[ ,<span class="kw">c</span>(<span class="st">&quot;Petal.Length&quot;</span>,<span class="st">&quot;Petal.Width&quot;</span>)]
-<span class="kw">plot</span>(iris.pet, <span class="dt">pch=</span><span class="dv">20</span>, <span class="dt">xlab=</span><span class="st">&quot;Largo&quot;</span>, <span class="dt">ylab=</span><span class="st">&quot;Ancho&quot;</span>)</code></pre></div>
+<pre class="sourceCode r"><code class="sourceCode r">iris.pet=iris[ ,<span class="kw">c</span>(<span class="st">&quot;Petal.Length&quot;</span>,<span class="st">&quot;Petal.Width&quot;</span>)]
+<span class="kw">plot</span>(iris.pet, <span class="dt">pch=</span><span class="dv">20</span>, <span class="dt">xlab=</span><span class="st">&quot;Largo&quot;</span>, <span class="dt">ylab=</span><span class="st">&quot;Ancho&quot;</span>)</code></pre>
 <div class="figure" style="text-align: center"><span id="fig:iris1"></span>
 <img src="AprendeR-Parte-II_files/figure-html/iris1-1.png" alt="Diagrama de dispersión  de las longitudes y anchuras de los pétalos  de las flores de la tabla iris." width="480" />
 <p class="caption">
@@ -1117,8 +1244,8 @@ Figura 8.1: Diagrama de dispersión de las longitudes y anchuras de los pétalos
 </p>
 </div>
 <p>Para tablas de datos de tres columnas numéricas, podemos usar con un fin similar la instrucción <code>scatterplot3d</code> del paquete homónimo, que dibuja un diagrama de dispersión tridimensional. Como <code>plot</code>, se puede aplicar a un <em>data frame</em> o a una matriz; por ejemplo, para representar gráficamente las tres primeras variables numéricas de <code>iris</code>, podríamos usar el código siguiente y obtendríamos la Figura <a href="introduccion-a-la-estadistica-descriptiva-multidimensional.html#fig:iris2">8.2</a>:</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(scatterplot3d)
-<span class="kw">scatterplot3d</span>(iris[ , <span class="dv">1</span><span class="op">:</span><span class="dv">3</span>], <span class="dt">pch=</span><span class="dv">20</span>)</code></pre></div>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(scatterplot3d)
+<span class="kw">scatterplot3d</span>(iris[ , <span class="dv">1</span><span class="op">:</span><span class="dv">3</span>], <span class="dt">pch=</span><span class="dv">20</span>)</code></pre>
 <div class="figure" style="text-align: center"><span id="fig:iris2"></span>
 <img src="AprendeR-Parte-II_files/figure-html/iris2-1.png" alt="Diagrama de dispersión tridimensional de las tres primeras columnas de la tabla iris." width="480" />
 <p class="caption">
@@ -1127,7 +1254,7 @@ Figura 8.2: Diagrama de dispersión tridimensional de las tres primeras columnas
 </div>
 <p>Podéis consultar la Ayuda de la instrucción para saber cómo modificar su apariencia: cómo ponerle un título, poner nombres adecuados a los ejes, usar colores, cambiar el estilo del gráfico, etc.</p>
 <p>Una representación gráfica muy popular de las tablas de datos de tres o más columnas numéricas son las matrices formadas por los diagramas de dispersión de todos sus pares de columnas. Si la tabla de datos es un <em>data frame</em>, esta matriz de diagramas de dispersión se obtiene simplemente aplicando la función <code>plot</code> al <em>data frame</em>; por ejemplo, la instrucción</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">plot</span>(iris[ , <span class="dv">1</span><span class="op">:</span><span class="dv">4</span>])</code></pre></div>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">plot</span>(iris[ , <span class="dv">1</span><span class="op">:</span><span class="dv">4</span>])</code></pre>
 <p>produce el gráfico de la Figura <a href="introduccion-a-la-estadistica-descriptiva-multidimensional.html#fig:iris3">8.3</a>. En este gráfico, los cuadrados en la diagonal indican a qué variables corresponden cada fila y cada columna, de manera que podamos identificar fácilmente qué variables compara cada diagrama de dispersión; así, en el diagrama de la primera fila y segunda columna de esta figura, las abscisas corresponden a anchuras de sépalos y las ordenadas a longitudes de sépalos. Observad que la nube de puntos no muestra una tendencia clara y en todo caso ligeramente negativa, lo que se corresponde con la correlación de Pearson entre estas variables de -0.118 que hemos obtenido en la sección anterior.</p>
 <div class="figure" style="text-align: center"><span id="fig:iris3"></span>
 <img src="AprendeR-Parte-II_files/figure-html/iris3-1.png" alt="Matriz de diagramas de dispersión  de la tabla iris." width="480" />
@@ -1136,7 +1263,7 @@ Figura 8.3: Matriz de diagramas de dispersión de la tabla iris.
 </p>
 </div>
 <p>Podemos usar los parámetros usuales de <code>plot</code> para mejorar el gráfico resultante; por ejemplo, podemos usar colores para distinguir las flores según su especie. Así, la instrucción siguiente produce el gráfico de la Figura <a href="introduccion-a-la-estadistica-descriptiva-multidimensional.html#fig:iris3b">8.4</a>.</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">plot</span>(iris[ , <span class="dv">1</span><span class="op">:</span><span class="dv">4</span>], <span class="dt">col=</span>iris<span class="op">$</span>Species, <span class="dt">pch=</span><span class="dv">20</span>, <span class="dt">cex=</span><span class="fl">0.7</span>)</code></pre></div>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">plot</span>(iris[ , <span class="dv">1</span><span class="op">:</span><span class="dv">4</span>], <span class="dt">col=</span>iris<span class="op">$</span>Species, <span class="dt">pch=</span><span class="dv">20</span>, <span class="dt">cex=</span><span class="fl">0.7</span>)</code></pre>
 <div class="figure" style="text-align: center"><span id="fig:iris3b"></span>
 <img src="AprendeR-Parte-II_files/figure-html/iris3b-1.png" alt="Matriz de diagramas de dispersión  de la tabla iris, con las especies distinguidas por colores." width="480" />
 <p class="caption">
@@ -1145,8 +1272,8 @@ Figura 8.4: Matriz de diagramas de dispersión de la tabla iris, con las especie
 </div>
 <p>Para obtener la matriz de diagramas de dispersión de una tabla de datos multidimensional también se puede usar la función <code>pairs</code>: así, <code>pairs(iris[, 1:4])</code> produce exactamente el mismo gráfico que <code>plot(iris[, 1:4])</code>. La ventaja principal de <code>pairs</code> es que se puede aplicar a una matriz para obtener la matriz de diagramas de dispersión de sus columnas, mientras que <code>plot</code> no.</p>
 <p>El paquete <strong>car</strong> incorpora una función que permite dibujar matrices de diagramas de dispersión enriquecidos con información descriptiva extra de las variables de la tabla de datos y que además facilita el control del gráfico resultante, por lo que os recomendamos su uso frente a las funciones básicas <code>plot</code> y <code>pairs</code>. Se trata de la función <code>spm</code> (abreviatura de <code>scatterplotMatrix</code>); por ejemplo, el código siguiente produce el gráfico la Figura <a href="introduccion-a-la-estadistica-descriptiva-multidimensional.html#fig:iris51">8.5</a>.</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(car)
-<span class="kw">spm</span>(iris[ , <span class="dv">1</span><span class="op">:</span><span class="dv">4</span>], <span class="dt">var.labels=</span><span class="kw">c</span>(<span class="st">&quot;Long. Sep.&quot;</span>,<span class="st">&quot;Ancho Sep.&quot;</span>,<span class="st">&quot;Long. Pet.&quot;</span>,<span class="st">&quot;Ancho Pet.&quot;</span>))</code></pre></div>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(car)
+<span class="kw">spm</span>(iris[ , <span class="dv">1</span><span class="op">:</span><span class="dv">4</span>], <span class="dt">var.labels=</span><span class="kw">c</span>(<span class="st">&quot;Long. Sep.&quot;</span>,<span class="st">&quot;Ancho Sep.&quot;</span>,<span class="st">&quot;Long. Pet.&quot;</span>,<span class="st">&quot;Ancho Pet.&quot;</span>))</code></pre>
 <div class="figure" style="text-align: center"><span id="fig:iris51"></span>
 <img src="AprendeR-Parte-II_files/figure-html/iris51-1.png" alt="Una matriz de diagramas de dispersión de la tabla iris producida con la función spm." width="480" />
 <p class="caption">
@@ -1154,8 +1281,8 @@ Figura 8.5: Una matriz de diagramas de dispersión de la tabla iris producida co
 </p>
 </div>
 <p>Observad para empezar que hemos cambiado los nombres que identifican las variables en los cuadrados de la diagonal, con el parámetro <code>var.labels</code>, y que en dichos cuadrados aparecen además unas curvas: se trata de la curva de densidad estimada de la variable correspondiente de la que hablábamos en la Lección <a href="#chap:agrup"><strong>??</strong></a> de la primera parte del curso. La información gráfica contenida en estos cuadrados de la diagonal se puede modificar con el parámetro <code>diagonal</code>: podemos pedir, por ejemplo, que dibuje un histograma de cada variable (con <code>diagonal=list(method =&quot;histogram&quot;)</code>) o su <em>boxplot</em> (con <code>diagonal=list(method=&quot;boxplot&quot;)</code>) o un QQ-plot (con <code>diagonal=list(method=&quot;qqplot&quot;)</code>). Así, el código siguiente produce el gráfico la Figura <a href="introduccion-a-la-estadistica-descriptiva-multidimensional.html#fig:iris52">8.6</a>.</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">spm</span>(iris[ , <span class="dv">1</span><span class="op">:</span><span class="dv">4</span>], <span class="dt">var.labels=</span><span class="kw">c</span>(<span class="st">&quot;Long. Sep.&quot;</span>,<span class="st">&quot;Ancho Sep.&quot;</span>,<span class="st">&quot;Long. Pet.&quot;</span>,<span class="st">&quot;Ancho Pet.&quot;</span>), 
-    <span class="dt">diagonal=</span><span class="kw">list</span>(<span class="dt">method=</span><span class="st">&quot;boxplot&quot;</span>), <span class="dt">pch=</span><span class="dv">20</span>,<span class="dt">cex=</span><span class="fl">0.75</span>)</code></pre></div>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">spm</span>(iris[ , <span class="dv">1</span><span class="op">:</span><span class="dv">4</span>], <span class="dt">var.labels=</span><span class="kw">c</span>(<span class="st">&quot;Long. Sep.&quot;</span>,<span class="st">&quot;Ancho Sep.&quot;</span>,<span class="st">&quot;Long. Pet.&quot;</span>,<span class="st">&quot;Ancho Pet.&quot;</span>), 
+    <span class="dt">diagonal=</span><span class="kw">list</span>(<span class="dt">method=</span><span class="st">&quot;boxplot&quot;</span>), <span class="dt">pch=</span><span class="dv">20</span>,<span class="dt">cex=</span><span class="fl">0.75</span>)</code></pre>
 <div class="figure" style="text-align: center"><span id="fig:iris52"></span>
 <img src="AprendeR-Parte-II_files/figure-html/iris52-1.png" alt="Matriz de diagramas de dispersión de la tabla iris con boxplots en la diagonal." width="480" />
 <p class="caption">
@@ -1163,8 +1290,9 @@ Figura 8.6: Matriz de diagramas de dispersión de la tabla iris con boxplots en 
 </p>
 </div>
 <p>Observad también que los diagramas de dispersión de la matriz producida con <code>spm</code> contienen algunas líneas. La línea recta es la recta de regresión por mínimos cuadrados y, sin entrar en detalle sobre su significado exacto, las curvas discontinuas representan la tendencia de los datos. Podéis eliminar la recta de regresión con <code>regLine=FALSE</code> (no os lo recomendamos) y las curvas discontinuas con <code>smooth=FALSE</code>; si las queréis mantener, consultad la Ayuda de la función para saber cómo cambiar su estilo, color, etc.</p>
-<p>A veces querremos agrupar los datos de las variables numéricas de una tabla de datos. Los motivos serán los mismos que cuando se trata de una sola variable: por ejemplo, si los datos son aproximaciones de valores reales, o si son muy heterogéneos. Cuando tenemos dos variables emparejadas agrupadas, se pueden representar gráficamente las frecuencias de sus pares de clases mediante un <strong>histograma bidimensional</strong>, que divide el conjunto de todos los pares de valores en rectángulos definidos por los pares de intervalos e indica sobre cada rectángulo su frecuencia absoluta, por ejemplo mediante colores o intensidades de gris (dibujar barras verticales sobre las regiones es una mala idea, las de delante pueden ocultar las de detrás). Hay muchos paquetes de R que ofrecen funciones para dibujar histogramas bidimensionales; aquí explicaremos la función <code>hist2d</code> del paquete <strong>gplots</strong>. Su sintaxis básica es</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">hist2d</span>(x,y, <span class="dt">nbins=</span>..., <span class="dt">col=</span>...)</code></pre></div>
+<p>A veces querremos agrupar los datos de las variables numéricas de una tabla de datos. Los motivos serán los mismos que cuando se trata de una sola variable: por ejemplo, si los datos son aproximaciones de valores reales, o si son muy heterogéneos. Cuando tenemos dos variables emparejadas agrupadas, se pueden representar gráficamente las frecuencias de sus pares de clases mediante un <strong>histograma bidimensional</strong>, que divide el conjunto de todos los pares de valores en rectángulos definidos por los pares de intervalos
+e indica sobre cada rectángulo su frecuencia absoluta, por ejemplo mediante colores o intensidades de gris (dibujar barras verticales sobre las regiones es una mala idea, las de delante pueden ocultar las de detrás). Hay muchos paquetes de R que ofrecen funciones para dibujar histogramas bidimensionales; aquí explicaremos la función <code>hist2d</code> del paquete <strong>gplots</strong>. Su sintaxis básica es</p>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">hist2d</span>(x,y, <span class="dt">nbins=</span>..., <span class="dt">col=</span>...)</code></pre>
 <p>donde:</p>
 <ul>
 <li><p><code>x</code> e <code>y</code> son los vectores de primeras y segundas coordenadas de los puntos. Si son las dos columnas de un <em>data frame</em> de dos variables numéricas, lo podemos entrar en su lugar.</p></li>
@@ -1173,9 +1301,9 @@ Figura 8.6: Matriz de diagramas de dispersión de la tabla iris con boxplots en 
 </ul>
 <p>Además, podemos usar los parámetros usuales de <code>plot</code> para poner un título, etiquetar los ejes, etc.</p>
 <p>A modo de ejemplo, vamos a dibujar el histograma bidimensional de las longitudes y anchuras de los pétalos de las flores iris, agrupando ambas dimensiones en los números de clases que da la regla de Freedman-Diaconis (y que calcula la función <code>nclass.FD</code>):</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(gplots)
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(gplots)
 <span class="kw">hist2d</span>(iris<span class="op">$</span>Petal.Length, iris<span class="op">$</span>Petal.Width, 
-  <span class="dt">nbins=</span><span class="kw">c</span>(<span class="kw">nclass.FD</span>(iris<span class="op">$</span>Petal.Length),<span class="kw">nclass.FD</span>(iris<span class="op">$</span>Petal.Width)))</code></pre></div>
+  <span class="dt">nbins=</span><span class="kw">c</span>(<span class="kw">nclass.FD</span>(iris<span class="op">$</span>Petal.Length),<span class="kw">nclass.FD</span>(iris<span class="op">$</span>Petal.Width)))</code></pre>
 <p>Obtenemos (junto con una serie de información en la consola que hemos omitido) la Figura <a href="introduccion-a-la-estadistica-descriptiva-multidimensional.html#fig:hist2d1">8.7</a>, que podéis comparar con el diagrama de dispersión de los mismos datos de la Figura <a href="introduccion-a-la-estadistica-descriptiva-multidimensional.html#fig:iris1">8.1</a>.</p>
 <div class="figure" style="text-align: center"><span id="fig:hist2d1"></span>
 <img src="AprendeR-Parte-II_files/figure-html/hist2d1-1.png" alt="Histograma bidimensional de longitudes y anchuras de pétalos de flores iris." width="480" />
@@ -1187,7 +1315,7 @@ Figura 8.7: Histograma bidimensional de longitudes y anchuras de pétalos de flo
 <ul>
 <li><code>brewer.pal(n,&quot;paleta predefinida&quot;)</code>, que carga en un vector de colores (una <strong>paleta</strong>) una secuencia de <span class="math inline">\(n\)</span> colores de la <strong>paleta predefinida</strong> en el paquete. Los nombres y contenidos de todas las paletas predefinidas que se pueden usar en esta función se obtienen, en la ventana de gráficos, ejecutando la instrucción <code>display.brewer.all()</code>. Por ejemplo, la paleta de colores de la Figura <a href="introduccion-a-la-estadistica-descriptiva-multidimensional.html#fig:pal1">8.8</a> se define con el código siguiente:</li>
 </ul>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">brewer.pal</span>(<span class="dv">11</span>,<span class="st">&quot;Spectral&quot;</span>)</code></pre></div>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">brewer.pal</span>(<span class="dv">11</span>,<span class="st">&quot;Spectral&quot;</span>)</code></pre>
 <div class="figure" style="text-align: center"><span id="fig:pal1"></span>
 <img src="AprendeR-Parte-II_files/figure-html/figpal1.png" alt="Paleta brewer.pal(11,&quot;Spectral&quot;)" width="500px" height="350px" />
 <p class="caption">
@@ -1197,7 +1325,7 @@ Figura 8.8: Paleta brewer.pal(11,“Spectral”)
 <ul>
 <li><code>colorRampPalette(brewer.pal(...))(m)</code>, produce una nueva paleta de <span class="math inline">\(m\)</span> colores a partir del resultado de <code>brewer.pal</code>, interpolando nuevos colores. Luego se puede usar la función <code>rev</code> para invertir el orden de los colores, lo que es conveniente en los histogramas bidimensionales si queremos que las frecuencias bajas correspondan a tonos azules y las frecuencias altas a tonos rojos. Así, la paleta de colores que se define con</li>
 </ul>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">rev</span>(<span class="kw">colorRampPalette</span>(<span class="kw">brewer.pal</span>(<span class="dv">11</span>,<span class="st">&quot;Spectral&quot;</span>))(<span class="dv">50</span>))</code></pre></div>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">rev</span>(<span class="kw">colorRampPalette</span>(<span class="kw">brewer.pal</span>(<span class="dv">11</span>,<span class="st">&quot;Spectral&quot;</span>))(<span class="dv">50</span>))</code></pre>
 <p>es la de la Figura <a href="introduccion-a-la-estadistica-descriptiva-multidimensional.html#fig:pal2">8.9</a>.</p>
 <div class="figure" style="text-align: center"><span id="fig:pal2"></span>
 <img src="AprendeR-Parte-II_files/figure-html/figpal2.png" alt="Paleta rev(colorRampPalette(brewer.pal(11,&quot;Spectral&quot;))(50))" width="500px" height="350px" />
@@ -1206,10 +1334,10 @@ Figura 8.9: Paleta rev(colorRampPalette(brewer.pal(11,“Spectral”))(50))
 </p>
 </div>
 <p>Vamos a usar esta última paleta en un histograma bidimensional de la tabla de alturas de padres e hijos recogidas por Karl Pearson en 1903 y que tenemos guardada en el url <a href="https://raw.githubusercontent.com/AprendeR-UIB/Material/master/pearson.txt" class="uri">https://raw.githubusercontent.com/AprendeR-UIB/Material/master/pearson.txt</a>; el resultado es la Figura <a href="introduccion-a-la-estadistica-descriptiva-multidimensional.html#fig:hist2dpearson">8.10</a>.</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(RCurl)
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(RCurl)
 df_pearson=<span class="kw">read.table</span>(<span class="dt">text=</span><span class="kw">getURL</span>(<span class="st">&quot;https://raw.githubusercontent.com/AprendeR-UIB/Material/master/pearson.txt&quot;</span>),<span class="dt">header=</span><span class="ot">TRUE</span>)
 <span class="kw">hist2d</span>(df_pearson, <span class="dt">nbins=</span><span class="dv">30</span>,
-   <span class="dt">col=</span><span class="kw">rev</span>(<span class="kw">colorRampPalette</span>(<span class="kw">brewer.pal</span>(<span class="dv">11</span>,<span class="st">&quot;Spectral&quot;</span>))(<span class="dv">50</span>)))</code></pre></div>
+   <span class="dt">col=</span><span class="kw">rev</span>(<span class="kw">colorRampPalette</span>(<span class="kw">brewer.pal</span>(<span class="dv">11</span>,<span class="st">&quot;Spectral&quot;</span>))(<span class="dv">50</span>)))</code></pre>
 <div class="figure" style="text-align: center"><span id="fig:hist2dpearson"></span>
 <img src="AprendeR-Parte-II_files/figure-html/hist2dpearson-1.png" alt="Histograma bidimensional de las alturas de padres e hijos recogidas por Karl Pearson." width="480" />
 <p class="caption">
@@ -1217,7 +1345,7 @@ Figura 8.10: Histograma bidimensional de las alturas de padres e hijos recogidas
 </p>
 </div>
 <p>Para terminar, veamos cómo producir un gráfico conjunto de un histograma bidimensional y los dos histogramas unidimensionales. Se trata de una modificación del gráfico similar explicado en <a href="http://www.everydayanalytics.ca/2014/09/5-ways-to-do-2d-histograms-in-r.html" class="uri">http://www.everydayanalytics.ca/2014/09/5-ways-to-do-2d-histograms-in-r.html</a>, el cual a su vez se inspira en un gráfico de la p. 62 de <em>Computational Actuarial Science with R</em> de Arthur Charpentier (Chapman and Hall/CRC, 2014). Considerad la función siguiente, cuyos parámetros son un <em>data frame</em> <code>df</code> de dos variables y un número <code>n</code> de clases, común para las dos variables:</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">hist.doble=<span class="cf">function</span>(df,n){
+<pre class="sourceCode r"><code class="sourceCode r">hist.doble=<span class="cf">function</span>(df,n){
   par.anterior=<span class="kw">par</span>()
   h1=<span class="kw">hist</span>(df[,<span class="dv">1</span>], <span class="dt">breaks=</span>n, <span class="dt">plot=</span>F)
   h2=<span class="kw">hist</span>(df[,<span class="dv">2</span>], <span class="dt">breaks=</span>n, <span class="dt">plot=</span>F)
@@ -1229,9 +1357,9 @@ Figura 8.10: Histograma bidimensional de las alturas de padres e hijos recogidas
   <span class="kw">barplot</span>(h1<span class="op">$</span>counts, <span class="dt">axes=</span>F, <span class="dt">ylim=</span><span class="kw">c</span>(<span class="dv">0</span>, m), <span class="dt">col=</span><span class="st">&quot;red&quot;</span>)
   <span class="kw">par</span>(<span class="dt">mar=</span><span class="kw">c</span>(<span class="dv">2</span>,<span class="dv">0</span>,<span class="fl">0.5</span>,<span class="dv">1</span>))
   <span class="kw">barplot</span>(h2<span class="op">$</span>counts, <span class="dt">axes=</span>F, <span class="dt">xlim=</span><span class="kw">c</span>(<span class="dv">0</span>, m), <span class="dt">col=</span><span class="st">&quot;red&quot;</span>, <span class="dt">horiz=</span>T)
-  par.anterior}</code></pre></div>
+  par.anterior}</code></pre>
 <p>Entonces, la instrucción</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">hist.doble</span>(df_pearson,<span class="dv">25</span>)</code></pre></div>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">hist.doble</span>(df_pearson,<span class="dv">25</span>)</code></pre>
 <p>produce la Figura <a href="introduccion-a-la-estadistica-descriptiva-multidimensional.html#fig:hist2dcomplet">8.11</a>.</p>
 <div class="figure" style="text-align: center"><span id="fig:hist2dcomplet"></span>
 <img src="AprendeR-Parte-II_files/figure-html/hist2dcomplet-1.png" alt="Histograma bidimensional con histogramas unidimensionales de las alturas de padres e hijos recogidas por Karl Pearson." width="480" />
@@ -1245,10 +1373,13 @@ Figura 8.11: Histograma bidimensional con histogramas unidimensionales de las al
 <li><p>El parámetro <code>axes=FALSE</code> en los <code>barplot</code> indica que no dibuje sus ejes de coordenadas.</p></li>
 <li><p>La función <code>par</code> establece los parámetros generales básicos de los gráficos. Como con esta función los modificamos, guardamos los parámetros anteriores en <code>par.anterior</code> y al final los restauramos.</p></li>
 <li><p>El parámetro <code>mar</code> de la función <code>par</code> sirve para especificar, por este orden, los márgenes inferior, izquierdo, superior y derecho de la próxima figura, en números de líneas.</p></li>
-<li><p>La instrucción <code>layout</code> divide la figura a producir en sectores con la misma estructura que la matriz de su primer argumento. Dentro de esta matriz, cada entrada indica qué figura de las próximas se ha de situar en ese sector. Las alturas y amplitudes relativas de los sectores se especifican con los parámetros <code>heights</code> y <code>widths</code>, respectivamente. Así, la instrucción</p></li>
+<li><p>La instrucción <code>layout</code> divide la figura a producir en sectores con la misma estructura que la matriz de su primer argumento.
+Dentro de esta matriz, cada entrada indica qué figura de las próximas se ha de situar en ese sector. Las alturas y amplitudes relativas de los sectores
+se especifican con los parámetros <code>heights</code> y <code>widths</code>, respectivamente. Así, la instrucción</p></li>
 </ul>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">layout</span>(<span class="kw">matrix</span>(<span class="kw">c</span>(<span class="dv">2</span>,<span class="dv">0</span>,<span class="dv">1</span>,<span class="dv">3</span>),<span class="dt">nrow=</span><span class="dv">2</span>,<span class="dt">byrow=</span>T), <span class="dt">heights=</span><span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">3</span>),<span class="dt">widths=</span><span class="kw">c</span>(<span class="dv">3</span>,<span class="dv">1</span>))</code></pre></div>
-<p>divide la figura en 4 sectores. Los sectores de la izquierda serán el triple de anchos que los de la derecha (<code>widths=c(3,1)</code>), y los sectores inferiores serán el triple de altos que los superiores (<code>heights=c(1,3)</code>). En estos sectores, R dibujará los próximos gráficos según el esquema definido por la matriz del argumento: <span class="math display">\[
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">layout</span>(<span class="kw">matrix</span>(<span class="kw">c</span>(<span class="dv">2</span>,<span class="dv">0</span>,<span class="dv">1</span>,<span class="dv">3</span>),<span class="dt">nrow=</span><span class="dv">2</span>,<span class="dt">byrow=</span>T), <span class="dt">heights=</span><span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">3</span>),<span class="dt">widths=</span><span class="kw">c</span>(<span class="dv">3</span>,<span class="dv">1</span>))</code></pre>
+<p>divide la figura en 4 sectores. Los sectores de la izquierda serán el triple de anchos que los de la derecha (<code>widths=c(3,1)</code>), y los sectores inferiores serán el triple de altos que los superiores (<code>heights=c(1,3)</code>). En estos sectores, R dibujará los próximos gráficos según el esquema definido por la matriz del argumento:
+<span class="math display">\[
 \left(\begin{array}{cc}
 \mbox{segundo} &amp; \mbox{ninguno}\\
 \mbox{primero} &amp; \mbox{tercero}
@@ -1264,12 +1395,11 @@ Figura 8.11: Histograma bidimensional con histogramas unidimensionales de las al
 <li><p><code>center</code>: especifica el vector que restamos a sus columnas; por defecto, el vector de medias muestrales.</p></li>
 <li><p><code>scale</code>: especifica el vector por el que dividimos sus columnas; por defecto, el vector de desviaciones típicas muestrales.</p></li>
 </ul></li>
-<li><p><code>cov</code>, aplicada a dos vectores, calcula su covarianza muestral; aplicada a un <em>data frame</em> o a una matriz, calcula su matriz de covarianzas muestrales. Dispone del parámetro <code>use</code>, que:</p>
+<li><p><code>cov</code>, aplicada a dos vectores, calcula su covarianza muestral; aplicada a un <em>data frame</em> o a una matriz, calcula su matriz de covarianzas muestrales.
+Dispone del parámetro <code>use</code>, que:</p>
 <ul>
 <li><p>Para dos vectores:</p>
-<ul>
-<li>Igualado a <code>&quot;complete.obs&quot;</code>, calcula las covarianzas teniendo en cuenta sólo sus observaciones completas (las posiciones en las que ninguno de los dos vectores tiene un NA).</li>
-</ul></li>
+<pre><code>* Igualado a `&quot;complete.obs&quot;`, calcula las covarianzas teniendo en cuenta sólo  sus observaciones completas (las posiciones en las que ninguno de los dos vectores tiene un NA).</code></pre></li>
 <li><p>Para más de dos vectores:</p>
 <ul>
 <li><p>Igualado a <code>&quot;pairwise.complete.obs&quot;</code>, calcula la covarianza de cada par de columnas teniendo en cuenta sólo sus observaciones completas, independientemente del resto de la tabla; es decir, como si en el cálculo de la covarianza de cada par de columnas usáramos <code>use=&quot;complete.obs&quot;</code>, sin tener en cuenta que forman parte de una tabla de datos con más columnas.</p></li>
@@ -1302,12 +1432,16 @@ Figura 8.11: Histograma bidimensional con histogramas unidimensionales de las al
 <h2><span class="header-section-number">8.9</span> Ejercicios</h2>
 <div id="modelo-de-test-4" class="section level3 unnumbered">
 <h3>Modelo de test</h3>
-<p><em>(1)</em> Considerad la matriz de datos <span class="math display">\[\left(\begin{array}{ccc} 10.6 &amp; 2.4 &amp; 7.5 \\ 7.4 &amp; 3.7 &amp; 10.9\\ 10.7 &amp; 2.6 &amp; 9.6 \\ 8.4 &amp; 4.9 &amp; 9.9\\16.7 &amp; 6.2 &amp; 13.2 \\ 11.3 &amp; 4.3 &amp; 7.7\end{array} \right).\]</span> Calculad la entrada (4,2) de su matriz de datos tipificada, redondeada a 3 cifras decimales y sin ceros innecesarios a la derecha.</p>
-<p><em>(2)</em> Considerad la matriz de datos <span class="math display">\[\left(\begin{array}{ccc} 10.6 &amp; 2.4 &amp; 7.5 \\ 7.4 &amp; 3.7 &amp; 10.9\\ 10.7 &amp; 2.6 &amp; 9.6 \\ 8.4 &amp; 4.9 &amp; 9.9\\16.7 &amp; 6.2 &amp; 13.2 \\ 11.3 &amp; 4.3 &amp; 7.7\end{array}\right).\]</span> Calculad la covarianza muestral <span class="math inline">\(\widetilde{s}_{3,2}\)</span>, redondeada a 3 cifras decimales y sin ceros innecesarios a la derecha.</p>
+<p><em>(1)</em> Considerad la matriz de datos
+<span class="math display">\[\left(\begin{array}{ccc} 10.6 &amp; 2.4 &amp; 7.5 \\ 7.4 &amp; 3.7 &amp; 10.9\\ 10.7 &amp; 2.6 &amp; 9.6 \\ 8.4 &amp; 4.9 &amp; 9.9\\16.7 &amp; 6.2 &amp; 13.2 \\ 11.3 &amp; 4.3 &amp; 7.7\end{array} \right).\]</span>
+Calculad la entrada (4,2) de su matriz de datos tipificada, redondeada a 3 cifras decimales y sin ceros innecesarios a la derecha.</p>
+<p><em>(2)</em> Considerad la matriz de datos <span class="math display">\[\left(\begin{array}{ccc} 10.6 &amp; 2.4 &amp; 7.5 \\ 7.4 &amp; 3.7 &amp; 10.9\\ 10.7 &amp; 2.6 &amp; 9.6 \\ 8.4 &amp; 4.9 &amp; 9.9\\16.7 &amp; 6.2 &amp; 13.2 \\ 11.3 &amp; 4.3 &amp; 7.7\end{array}\right).\]</span>
+Calculad la covarianza muestral <span class="math inline">\(\widetilde{s}_{3,2}\)</span>, redondeada a 3 cifras decimales y sin ceros innecesarios a la derecha.</p>
 <p><em>(3)</em> Considerad la matriz de datos <span class="math display">\[\left(\begin{array}{ccc} 10.6 &amp; 2.4 &amp; 7.5 \\ 7.4 &amp; 3.7 &amp; 10.9\\ 10.7 &amp; 2.6 &amp; 9.6 \\ 8.4 &amp; 4.9 &amp; 9.9\\16.7 &amp; 6.2 &amp; 13.2 \\ 11.3 &amp; 4.3 &amp; 7.7\end{array}\right).\]</span> Calculad la correlación de Pearson <span class="math inline">\(r_{3,2}\)</span>, redondeada a 3 cifras decimales y sin ceros innecesarios a la derecha.</p>
 <p><em>(4)</em> Usando la función <code>cor.test</code>, realizad el contraste bilateral de correlación entre el perímetro del tronco y la altura de los cerezos negros americanos usando la muestra del dataframe <em>trees</em> que viene con la instalación básica de R. Dad el p-valor redondeado a 3 cifras decimales, sin ceros innecesarios a la derecha, e indicad si la conclusión, con un nivel de significación del 5%, es que hay correlación o no entre estas dos variables, escribiendo SI o NO, según corresponda. Separad el p-valor de la conclusión con un único espacio en blanco.</p>
 <p><em>(5)</em> Calculad la correlación de Spearman de los vectores <span class="math inline">\(x=(4,8,6,9,5,9 ,4,7,10, 8)\)</span> e <span class="math inline">\(y=(0,6,2,1,4,4,3,7,11,5)\)</span>. Dad el resultado redondeado a 3 cifras decimales sin ceros innecesarios a la derecha.</p>
-<p><em>(6)</em> ¿Cuál de las cuatro matrices siguientes es la matriz de covarianzas de una tabla de datos de 2 columnas y 5 filas? Solo hay una. <span class="math display">\[
+<p><em>(6)</em> ¿Cuál de las cuatro matrices siguientes es la matriz de covarianzas de una tabla de datos de 2 columnas y 5 filas? Solo hay una.
+<span class="math display">\[
 \begin{array}{l}
 A=\left(\begin{array}{cc} 0.7 &amp; 3 \cr 3 &amp; 1.2 \end{array}\right)\\
 B=\left(\begin{array}{cc} 0.6 &amp; 0.8\cr -0.8 &amp; 0.6 \end{array}\right)\\
@@ -1349,30 +1483,30 @@ a. Dibujad una matriz de diagramas de dispersión de estas notas añadiendo en c
 <h3>Respuestas al test</h3>
 <p><em>(1)</em> 0.673</p>
 <p>Nosotros lo hemos calculado con</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">X=<span class="kw">matrix</span>(<span class="kw">c</span>(<span class="fl">10.6</span>,<span class="fl">2.4</span>,<span class="fl">7.5</span>,<span class="fl">7.4</span>,<span class="fl">3.7</span>,<span class="fl">10.9</span>,<span class="fl">10.7</span>,<span class="fl">2.6</span>,<span class="fl">9.6</span>,<span class="fl">8.4</span>,<span class="fl">4.9</span>,<span class="fl">9.9</span>,<span class="fl">16.7</span>,<span class="fl">6.2</span>,<span class="fl">13.2</span>,<span class="fl">11.3</span>,<span class="fl">4.3</span>,<span class="fl">7.7</span>), <span class="dt">nrow=</span><span class="dv">6</span>, <span class="dt">byrow=</span><span class="ot">TRUE</span>)
+<pre class="sourceCode r"><code class="sourceCode r">X=<span class="kw">matrix</span>(<span class="kw">c</span>(<span class="fl">10.6</span>,<span class="fl">2.4</span>,<span class="fl">7.5</span>,<span class="fl">7.4</span>,<span class="fl">3.7</span>,<span class="fl">10.9</span>,<span class="fl">10.7</span>,<span class="fl">2.6</span>,<span class="fl">9.6</span>,<span class="fl">8.4</span>,<span class="fl">4.9</span>,<span class="fl">9.9</span>,<span class="fl">16.7</span>,<span class="fl">6.2</span>,<span class="fl">13.2</span>,<span class="fl">11.3</span>,<span class="fl">4.3</span>,<span class="fl">7.7</span>), <span class="dt">nrow=</span><span class="dv">6</span>, <span class="dt">byrow=</span><span class="ot">TRUE</span>)
 n=<span class="kw">dim</span>(X)[<span class="dv">1</span>]
-X.tip.Ex=<span class="kw">scale</span>(X)<span class="op">*</span><span class="kw">sqrt</span>(n<span class="op">/</span>(n<span class="op">-</span><span class="dv">1</span>)) 
-<span class="kw">round</span>(X.tip.Ex[<span class="dv">4</span>,<span class="dv">2</span>],<span class="dv">3</span>)</code></pre></div>
+X.tip.Ex=<span class="kw">scale</span>(X)<span class="op">*</span><span class="kw">sqrt</span>(n<span class="op">/</span>(n<span class="dv">-1</span>)) 
+<span class="kw">round</span>(X.tip.Ex[<span class="dv">4</span>,<span class="dv">2</span>],<span class="dv">3</span>)</code></pre>
 <pre><code>## [1] 0.673</code></pre>
 <p><em>(2)</em> 2.114</p>
 <p>Nosotros lo hemos calculado con</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">X=<span class="kw">matrix</span>(<span class="kw">c</span>(<span class="fl">10.6</span>,<span class="fl">2.4</span>,<span class="fl">7.5</span>,<span class="fl">7.4</span>,<span class="fl">3.7</span>,<span class="fl">10.9</span>,<span class="fl">10.7</span>,<span class="fl">2.6</span>,<span class="fl">9.6</span>,<span class="fl">8.4</span>,<span class="fl">4.9</span>,<span class="fl">9.9</span>,<span class="fl">16.7</span>,<span class="fl">6.2</span>,<span class="fl">13.2</span>,<span class="fl">11.3</span>,<span class="fl">4.3</span>,<span class="fl">7.7</span>), <span class="dt">nrow=</span><span class="dv">6</span>, <span class="dt">byrow=</span><span class="ot">TRUE</span>)
-<span class="kw">round</span>(<span class="kw">cov</span>(X)[<span class="dv">3</span>,<span class="dv">2</span>],<span class="dv">3</span>)</code></pre></div>
+<pre class="sourceCode r"><code class="sourceCode r">X=<span class="kw">matrix</span>(<span class="kw">c</span>(<span class="fl">10.6</span>,<span class="fl">2.4</span>,<span class="fl">7.5</span>,<span class="fl">7.4</span>,<span class="fl">3.7</span>,<span class="fl">10.9</span>,<span class="fl">10.7</span>,<span class="fl">2.6</span>,<span class="fl">9.6</span>,<span class="fl">8.4</span>,<span class="fl">4.9</span>,<span class="fl">9.9</span>,<span class="fl">16.7</span>,<span class="fl">6.2</span>,<span class="fl">13.2</span>,<span class="fl">11.3</span>,<span class="fl">4.3</span>,<span class="fl">7.7</span>), <span class="dt">nrow=</span><span class="dv">6</span>, <span class="dt">byrow=</span><span class="ot">TRUE</span>)
+<span class="kw">round</span>(<span class="kw">cov</span>(X)[<span class="dv">3</span>,<span class="dv">2</span>],<span class="dv">3</span>)</code></pre>
 <pre><code>## [1] 2.114</code></pre>
 <p><em>(3)</em> 0.692</p>
 <p>Nosotros lo hemos calculado con</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">X=<span class="kw">matrix</span>(<span class="kw">c</span>(<span class="fl">10.6</span>,<span class="fl">2.4</span>,<span class="fl">7.5</span>,<span class="fl">7.4</span>,<span class="fl">3.7</span>,<span class="fl">10.9</span>,<span class="fl">10.7</span>,<span class="fl">2.6</span>,<span class="fl">9.6</span>,<span class="fl">8.4</span>,<span class="fl">4.9</span>,<span class="fl">9.9</span>,<span class="fl">16.7</span>,<span class="fl">6.2</span>,<span class="fl">13.2</span>,<span class="fl">11.3</span>,<span class="fl">4.3</span>,<span class="fl">7.7</span>), <span class="dt">nrow=</span><span class="dv">6</span>, <span class="dt">byrow=</span><span class="ot">TRUE</span>)
-<span class="kw">round</span>(<span class="kw">cor</span>(X)[<span class="dv">3</span>,<span class="dv">2</span>],<span class="dv">3</span>)</code></pre></div>
+<pre class="sourceCode r"><code class="sourceCode r">X=<span class="kw">matrix</span>(<span class="kw">c</span>(<span class="fl">10.6</span>,<span class="fl">2.4</span>,<span class="fl">7.5</span>,<span class="fl">7.4</span>,<span class="fl">3.7</span>,<span class="fl">10.9</span>,<span class="fl">10.7</span>,<span class="fl">2.6</span>,<span class="fl">9.6</span>,<span class="fl">8.4</span>,<span class="fl">4.9</span>,<span class="fl">9.9</span>,<span class="fl">16.7</span>,<span class="fl">6.2</span>,<span class="fl">13.2</span>,<span class="fl">11.3</span>,<span class="fl">4.3</span>,<span class="fl">7.7</span>), <span class="dt">nrow=</span><span class="dv">6</span>, <span class="dt">byrow=</span><span class="ot">TRUE</span>)
+<span class="kw">round</span>(<span class="kw">cor</span>(X)[<span class="dv">3</span>,<span class="dv">2</span>],<span class="dv">3</span>)</code></pre>
 <pre><code>## [1] 0.692</code></pre>
 <p><em>(4)</em> 0.003 SI</p>
 <p>Nosotros lo hemos calculado con</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">round</span>(<span class="kw">cor.test</span>(trees<span class="op">$</span>Height,trees<span class="op">$</span>Girth)<span class="op">$</span>p.value,<span class="dv">3</span>)</code></pre></div>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">round</span>(<span class="kw">cor.test</span>(trees<span class="op">$</span>Height,trees<span class="op">$</span>Girth)<span class="op">$</span>p.value,<span class="dv">3</span>)</code></pre>
 <pre><code>## [1] 0.003</code></pre>
 <p><em>(5)</em> 0.488</p>
 <p>Nosotros lo hemos calculado con</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">x=<span class="kw">c</span>(<span class="dv">4</span>,<span class="dv">8</span>,<span class="dv">6</span>,<span class="dv">9</span>,<span class="dv">5</span>,<span class="dv">9</span> ,<span class="dv">4</span>,<span class="dv">7</span>,<span class="dv">10</span>, <span class="dv">8</span>)
+<pre class="sourceCode r"><code class="sourceCode r">x=<span class="kw">c</span>(<span class="dv">4</span>,<span class="dv">8</span>,<span class="dv">6</span>,<span class="dv">9</span>,<span class="dv">5</span>,<span class="dv">9</span> ,<span class="dv">4</span>,<span class="dv">7</span>,<span class="dv">10</span>, <span class="dv">8</span>)
 y=<span class="kw">c</span>(<span class="dv">0</span>,<span class="dv">6</span>,<span class="dv">2</span>,<span class="dv">1</span>,<span class="dv">4</span>,<span class="dv">4</span>,<span class="dv">3</span>,<span class="dv">7</span>,<span class="dv">11</span>,<span class="dv">5</span>)
-<span class="kw">round</span>(<span class="kw">cor</span>(x,y,<span class="dt">method=</span><span class="st">&quot;spearman&quot;</span>),<span class="dv">3</span>)</code></pre></div>
+<span class="kw">round</span>(<span class="kw">cor</span>(x,y,<span class="dt">method=</span><span class="st">&quot;spearman&quot;</span>),<span class="dv">3</span>)</code></pre>
 <pre><code>## [1] 0.488</code></pre>
 <p><em>(6)</em> A</p>
 
@@ -1435,7 +1569,7 @@ gitbook.start({
   (function () {
     var script = document.createElement("script");
     script.type = "text/javascript";
-    var src = "";
+    var src = "true";
     if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
     if (location.protocol !== "file:" && /^https?:/.test(src))
       src = src.replace(/^https?:/, '');

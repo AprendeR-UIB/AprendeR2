@@ -25,7 +25,7 @@
 <meta name="author" content="The AprendeR team">
 
 
-<meta name="date" content="2019-04-20">
+<meta name="date" content="2019-05-21">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -51,41 +51,67 @@
 
 
 <style type="text/css">
-div.sourceCode { overflow-x: auto; }
-table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
-  margin: 0; padding: 0; vertical-align: baseline; border: none; }
-table.sourceCode { width: 100%; line-height: 100%; }
-td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
-td.sourceCode { padding-left: 5px; }
-code > span.kw { color: #007020; font-weight: bold; } /* Keyword */
-code > span.dt { color: #902000; } /* DataType */
-code > span.dv { color: #40a070; } /* DecVal */
-code > span.bn { color: #40a070; } /* BaseN */
-code > span.fl { color: #40a070; } /* Float */
-code > span.ch { color: #4070a0; } /* Char */
-code > span.st { color: #4070a0; } /* String */
-code > span.co { color: #60a0b0; font-style: italic; } /* Comment */
-code > span.ot { color: #007020; } /* Other */
-code > span.al { color: #ff0000; font-weight: bold; } /* Alert */
-code > span.fu { color: #06287e; } /* Function */
-code > span.er { color: #ff0000; font-weight: bold; } /* Error */
-code > span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
-code > span.cn { color: #880000; } /* Constant */
-code > span.sc { color: #4070a0; } /* SpecialChar */
-code > span.vs { color: #4070a0; } /* VerbatimString */
-code > span.ss { color: #bb6688; } /* SpecialString */
-code > span.im { } /* Import */
-code > span.va { color: #19177c; } /* Variable */
-code > span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
-code > span.op { color: #666666; } /* Operator */
-code > span.bu { } /* BuiltIn */
-code > span.ex { } /* Extension */
-code > span.pp { color: #bc7a00; } /* Preprocessor */
-code > span.at { color: #7d9029; } /* Attribute */
-code > span.do { color: #ba2121; font-style: italic; } /* Documentation */
-code > span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
-code > span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
-code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+a.sourceLine { display: inline-block; line-height: 1.25; }
+a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
+a.sourceLine:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode { white-space: pre; position: relative; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+code.sourceCode { white-space: pre-wrap; }
+a.sourceLine { text-indent: -1em; padding-left: 1em; }
+}
+pre.numberSource a.sourceLine
+  { position: relative; left: -4em; }
+pre.numberSource a.sourceLine::before
+  { content: attr(data-line-number);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; pointer-events: all; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {  }
+@media screen {
+a.sourceLine::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
 </style>
 
 <link rel="stylesheet" href="style.css" type="text/css" />
@@ -209,6 +235,27 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li class="chapter" data-level="" data-path="chap-ANOVA.html"><a href="chap-ANOVA.html#respuestas-al-test-8"><i class="fa fa-check"></i>Respuestas al test</a></li>
 </ul></li>
 </ul></li>
+<li class="chapter" data-level="10" data-path="chap-regresion.html"><a href="chap-regresion.html"><i class="fa fa-check"></i><b>10</b> Regresión lineal</a><ul>
+<li class="chapter" data-level="10.1" data-path="chap-regresion.html"><a href="chap-regresion.html#sec:1"><i class="fa fa-check"></i><b>10.1</b> El modelo de regresión lineal en R</a></li>
+<li class="chapter" data-level="10.2" data-path="chap-regresion.html"><a href="chap-regresion.html#intervalos-de-confianza-en-el-modelo-de-regresion-lineal"><i class="fa fa-check"></i><b>10.2</b> Intervalos de confianza en el modelo de regresión lineal</a></li>
+<li class="chapter" data-level="10.3" data-path="chap-regresion.html"><a href="chap-regresion.html#sec:seleccion"><i class="fa fa-check"></i><b>10.3</b> Selección del modelo en base al ajuste de los datos</a></li>
+<li class="chapter" data-level="10.4" data-path="chap-regresion.html"><a href="chap-regresion.html#sec:diagn"><i class="fa fa-check"></i><b>10.4</b> Diagnósticos de regresión</a></li>
+<li class="chapter" data-level="10.5" data-path="chap-regresion.html"><a href="chap-regresion.html#guia-rapida-8"><i class="fa fa-check"></i><b>10.5</b> Guía rápida</a></li>
+<li class="chapter" data-level="10.6" data-path="chap-regresion.html"><a href="chap-regresion.html#ejercicios-9"><i class="fa fa-check"></i><b>10.6</b> Ejercicios</a><ul>
+<li class="chapter" data-level="" data-path="chap-regresion.html"><a href="chap-regresion.html#test-4"><i class="fa fa-check"></i>Test</a></li>
+<li class="chapter" data-level="" data-path="chap-regresion.html"><a href="chap-regresion.html#respuestas-al-test-9"><i class="fa fa-check"></i>Respuestas al test</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="11" data-path="chap-clustering.html"><a href="chap-clustering.html"><i class="fa fa-check"></i><b>11</b> <em>Clustering</em> básico</a><ul>
+<li class="chapter" data-level="11.1" data-path="chap-clustering.html"><a href="chap-clustering.html#metodo-de-k-medias-o-k-means"><i class="fa fa-check"></i><b>11.1</b> Método de k-medias o <em>k-means</em></a></li>
+<li class="chapter" data-level="11.2" data-path="chap-clustering.html"><a href="chap-clustering.html#eleccion-del-numero-de-clusters"><i class="fa fa-check"></i><b>11.2</b> Elección del número de <em>clusters</em></a></li>
+<li class="chapter" data-level="11.3" data-path="chap-clustering.html"><a href="chap-clustering.html#metodos-jerarquicos-aglomerativos"><i class="fa fa-check"></i><b>11.3</b> Métodos jerárquicos aglomerativos</a></li>
+<li class="chapter" data-level="11.4" data-path="chap-clustering.html"><a href="chap-clustering.html#guia-rapida-9"><i class="fa fa-check"></i><b>11.4</b> Guía rápida</a></li>
+<li class="chapter" data-level="11.5" data-path="chap-clustering.html"><a href="chap-clustering.html#ejercicios-10"><i class="fa fa-check"></i><b>11.5</b> Ejercicios</a><ul>
+<li class="chapter" data-level="" data-path="chap-clustering.html"><a href="chap-clustering.html#test-5"><i class="fa fa-check"></i>Test</a></li>
+<li class="chapter" data-level="" data-path="chap-clustering.html"><a href="chap-clustering.html#respuestas-al-test-10"><i class="fa fa-check"></i>Respuestas al test</a></li>
+</ul></li>
+</ul></li>
 <li class="divider"></li>
 <li><a href="https://github.com/cescrossello/AprendeR-II" target="blank">Publicado con  bookdown</a></li>
 
@@ -265,9 +312,9 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li><p>El estadístico de contraste en este experimento es simplemente el número de caras en un serie de lanzamientos de la moneda.</p></li>
 <li><p>El p-valor es la probabilidad de obtener 15 o más caras al lanzar al aire 20 veces la moneda si fuera verdad que <span class="math inline">\(p=0.5\)</span>. Como en este caso el número de caras seguiría una distribución binomial <span class="math inline">\(B(20,0.5)\)</span>, podemos calcular fácilmente esta probabilidad:</p></li>
 </ul>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="dv">1</span><span class="op">-</span><span class="kw">pbinom</span>(<span class="dv">14</span>,<span class="dv">20</span>,<span class="fl">0.5</span>)</code></pre></div>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="dv">1</span><span class="op">-</span><span class="kw">pbinom</span>(<span class="dv">14</span>,<span class="dv">20</span>,<span class="fl">0.5</span>)</code></pre>
 <pre><code>## [1] 0.0206947</code></pre>
-<div style="white-space: pre-line;">       Por lo tanto, el p-valor es 0.021.</div>
+<div class="line-block">       Por lo tanto, el p-valor es 0.021.</div>
 <ul>
 <li>El intervalo de confianza del 95% de este contraste está formado por los valores de <span class="math inline">\(p\)</span> para los que la probabilidad de obtener 15 o más caras al lanzar al aire 20 veces la moneda es mayor o igual que el 5%, y es [0.5444, 1].</li>
 </ul>
@@ -290,7 +337,7 @@ Figura 5.1: “Hipótesis Nula” (<a href="http://imgs.xkcd.com/comics/null_hyp
 </ul>
 <p>Al final de esta sección explicamos las funciones asociadas a algunos contrastes no paramétricos que pueden usarse cuando estas condiciones no se cumplen.</p>
 <p>La sintaxis básica de la función <code>t.test</code> es</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">t.test</span>(x, y, <span class="dt">mu=</span>..., <span class="dt">alternative=</span>..., <span class="dt">conf.level=</span>..., <span class="dt">paired=</span>..., <span class="dt">var.equal=</span>...)</code></pre></div>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">t.test</span>(x, y, <span class="dt">mu=</span>..., <span class="dt">alternative=</span>..., <span class="dt">conf.level=</span>..., <span class="dt">paired=</span>..., <span class="dt">var.equal=</span>...)</code></pre>
 <p>donde:</p>
 <ul>
 <li><p><code>x</code> es el vector de datos que forma la muestra que analizamos.</p></li>
@@ -300,7 +347,8 @@ Figura 5.1: “Hipótesis Nula” (<a href="http://imgs.xkcd.com/comics/null_hyp
 <li><p>El parámetro <code>alternative</code> puede tomar tres valores: <code>&quot;two.sided&quot;</code>, para contrastes bilaterales, y <code>&quot;less&quot;</code> y <code>&quot;greater&quot;</code>, para contrastes unilaterales. En esta función, y en todas las que explicamos en esta lección, su valor por defecto, que no hace falta especificar, es <code>&quot;two.sided&quot;</code>. El significado de estos valores depende del tipo de test que efectuemos:</p>
 <ul>
 <li><p>Si el test es de una sola muestra, <code>&quot;two.sided&quot;</code> representa la hipótesis alternativa <span class="math inline">\(H_1: \mu\neq \mu_0\)</span>, <code>&quot;less&quot;</code> corresponde a <span class="math inline">\(H_1: \mu&lt; \mu_0\)</span>, y <code>&quot;greater&quot;</code> corresponde a <span class="math inline">\(H_1: \mu&gt; \mu_0\)</span>.</p></li>
-<li><p>Si hemos entrado dos muestras y llamamos <span class="math inline">\(\mu_x\)</span> y <span class="math inline">\(\mu_y\)</span> a las medias de las poblaciones de las que hemos extraído las muestras <span class="math inline">\(x\)</span> e <span class="math inline">\(y\)</span>, respectivamente, entonces <code>&quot;two.sided&quot;</code> representa la hipótesis alternativa <span class="math inline">\(H_1: \mu_x \neq \mu_y\)</span>; <code>&quot;less&quot;</code> indica que la hipótesis alternativa es <span class="math inline">\(H_1: \mu_x&lt; \mu_y\)</span>; y <code>&quot;greater&quot;</code>, que la hipótesis alternativa es <span class="math inline">\(H_1: \mu_x&gt; \mu_y\)</span>.</p></li>
+<li><p>Si hemos entrado dos muestras y llamamos <span class="math inline">\(\mu_x\)</span> y <span class="math inline">\(\mu_y\)</span> a las medias de las poblaciones de las que hemos extraído las muestras <span class="math inline">\(x\)</span> e <span class="math inline">\(y\)</span>, respectivamente, entonces
+<code>&quot;two.sided&quot;</code> representa la hipótesis alternativa <span class="math inline">\(H_1: \mu_x \neq \mu_y\)</span>; <code>&quot;less&quot;</code> indica que la hipótesis alternativa es <span class="math inline">\(H_1: \mu_x&lt; \mu_y\)</span>; y <code>&quot;greater&quot;</code>, que la hipótesis alternativa es <span class="math inline">\(H_1: \mu_x&gt; \mu_y\)</span>.</p></li>
 </ul></li>
 <li><p>El valor del parámetro <code>conf.level</code> es el nivel de confianza <span class="math inline">\(1-\alpha\)</span>. En esta función, y en todas las que explicamos en esta lección, su valor por defecto, que no es necesario especificar, es 0.95, que corresponde a un nivel de confianza del 95%, es decir, a un nivel de significación <span class="math inline">\(\alpha=0.05\)</span>.</p></li>
 <li><p>El parámetro <code>paired</code> solo lo tenemos que especificar si llevamos a cabo un contraste de dos medias. En este caso, con <code>paired=TRUE</code> indicamos que las muestras son emparejadas, y con <code>paired=FALSE</code> (que es su valor por defecto) que son independientes. Si se trata de muestras emparejadas, los vectores <code>x</code> e <code>y</code> tienen que tener la misma longitud, naturalmente.</p></li>
@@ -313,15 +361,17 @@ Figura 5.1: “Hipótesis Nula” (<a href="http://imgs.xkcd.com/comics/null_hyp
 <span id="exm:norm1bis" class="example"><strong>Ejemplo 5.2  </strong></span>Consideremos el siguiente vector de longitud 25:
 </div>
 
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">x=<span class="kw">c</span>(<span class="fl">2.2</span>,<span class="fl">2.66</span>,<span class="fl">2.74</span>,<span class="fl">3.41</span>,<span class="fl">2.46</span>,<span class="fl">2.96</span>,<span class="fl">3.34</span>,<span class="fl">2.16</span>,<span class="fl">2.46</span>,<span class="fl">2.71</span>,<span class="fl">2.04</span>,<span class="fl">3.74</span>,<span class="fl">3.24</span>,<span class="fl">3.92</span>,<span class="fl">2.38</span>,<span class="fl">2.82</span>,<span class="fl">2.2</span>,
-    <span class="fl">2.42</span>,<span class="fl">2.82</span>,<span class="fl">2.84</span>,<span class="fl">4.22</span>,<span class="fl">3.64</span>,<span class="fl">1.77</span>,<span class="fl">3.44</span>,<span class="fl">1.53</span>)</code></pre></div>
-<p>Supongamos que esta muestra ha sido extraída de una población normal. Postulamos que el valor medio <span class="math inline">\(\mu\)</span> de la población no es 2. Para confirmarlo, vamos realizar el contraste <span class="math display">\[
+<pre class="sourceCode r"><code class="sourceCode r">x=<span class="kw">c</span>(<span class="fl">2.2</span>,<span class="fl">2.66</span>,<span class="fl">2.74</span>,<span class="fl">3.41</span>,<span class="fl">2.46</span>,<span class="fl">2.96</span>,<span class="fl">3.34</span>,<span class="fl">2.16</span>,<span class="fl">2.46</span>,<span class="fl">2.71</span>,<span class="fl">2.04</span>,<span class="fl">3.74</span>,<span class="fl">3.24</span>,<span class="fl">3.92</span>,<span class="fl">2.38</span>,<span class="fl">2.82</span>,<span class="fl">2.2</span>,
+    <span class="fl">2.42</span>,<span class="fl">2.82</span>,<span class="fl">2.84</span>,<span class="fl">4.22</span>,<span class="fl">3.64</span>,<span class="fl">1.77</span>,<span class="fl">3.44</span>,<span class="fl">1.53</span>)</code></pre>
+<p>Supongamos que esta muestra ha sido extraída de una población normal. Postulamos que el valor medio <span class="math inline">\(\mu\)</span> de la población no es 2. Para confirmarlo, vamos realizar el contraste
+<span class="math display">\[
 \left\{\begin{array}{l}
 H_{0}:\mu=2\\
 H_{1}:\mu\neq 2
 \end{array}\right.
-\]</span> con nivel de significación <span class="math inline">\(\alpha=0.05\)</span>:</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">t.test</span>(x, <span class="dt">mu=</span><span class="dv">2</span>, <span class="dt">alternative=</span><span class="st">&quot;two.sided&quot;</span>, <span class="dt">conf.level=</span><span class="fl">0.95</span>)</code></pre></div>
+\]</span>
+con nivel de significación <span class="math inline">\(\alpha=0.05\)</span>:</p>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">t.test</span>(x, <span class="dt">mu=</span><span class="dv">2</span>, <span class="dt">alternative=</span><span class="st">&quot;two.sided&quot;</span>, <span class="dt">conf.level=</span><span class="fl">0.95</span>)</code></pre>
 <pre><code>## 
 ##  One Sample t-test
 ## 
@@ -333,7 +383,8 @@ H_{1}:\mu\neq 2
 ## sample estimates:
 ## mean of x 
 ##    2.8048</code></pre>
-<p>(Como los parámetros <code>alternative=&quot;two.sided&quot;</code> y <code>conf.level=0.95</code> eran los que toma R por defecto, en realidad no hacía falta especificarlos.) Observad la información que obtenemos con esta instrucción:</p>
+<p>(Como los parámetros <code>alternative=&quot;two.sided&quot;</code> y <code>conf.level=0.95</code> eran los que toma R por defecto, en realidad no hacía falta especificarlos.)
+Observad la información que obtenemos con esta instrucción:</p>
 <ul>
 <li><p>Información sobre la muestra <span class="math inline">\(x\)</span>: su media muestral (<code>mean of x</code>) <span class="math inline">\(\overline{x}\)</span>, que vale 2.8048.</p></li>
 <li><p>La hipótesis alternativa (<code>alternative hypothesis</code>), en este caso <code>true mean is not equal to 2</code>: la media verdadera, o poblacional, <span class="math inline">\(\mu\)</span> es diferente de 2.</p></li>
@@ -348,8 +399,9 @@ H_{1}:\mu\neq 2
 H_{0}:\mu=3\\
 H_{1}:\mu&lt; 3
 \end{array}\right.
-\]</span> y tomando como nivel de significación <span class="math inline">\(\alpha=0.1\)</span>:</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">t.test</span>(x, <span class="dt">mu=</span><span class="dv">3</span>, <span class="dt">alternative=</span><span class="st">&quot;less&quot;</span>, <span class="dt">conf.level=</span><span class="fl">0.9</span>)</code></pre></div>
+\]</span>
+y tomando como nivel de significación <span class="math inline">\(\alpha=0.1\)</span>:</p>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">t.test</span>(x, <span class="dt">mu=</span><span class="dv">3</span>, <span class="dt">alternative=</span><span class="st">&quot;less&quot;</span>, <span class="dt">conf.level=</span><span class="fl">0.9</span>)</code></pre>
 <pre><code>## 
 ##  One Sample t-test
 ## 
@@ -361,26 +413,28 @@ H_{1}:\mu&lt; 3
 ## sample estimates:
 ## mean of x 
 ##    2.8048</code></pre>
-<p>En este caso, el p-valor es 0.082, por lo que podemos rechazar la hipótesis nula con un nivel de significación del 10% y concluir, con este nivel de significación (es decir, asumiendo esta probabilidad de equivocarnos), que <span class="math inline">\(\mu&lt;3\)</span>; pero fijaos en que con un nivel de significación del 5% no podríamos rechazar la hipótesis nula. El intervalo de confianza del 90% es ahora <span class="math inline">\((-\infty,2.984]\)</span> (<code>Inf</code> representa <span class="math inline">\(\infty\)</span>). Que no contenga el 3 (aunque por muy poco) también indica que podemos rechazar la hipótesis nula <span class="math inline">\(\mu=3\)</span> en favor de la alternativa <span class="math inline">\(\mu&lt; 3\)</span> con este nivel de confianza.</p>
+<p>En este caso, el p-valor es 0.082, por lo que podemos rechazar la hipótesis nula con un nivel de significación del 10% y concluir, con este nivel de significación (es decir, asumiendo esta probabilidad de equivocarnos), que <span class="math inline">\(\mu&lt;3\)</span>; pero fijaos en que con un nivel de significación del 5% no podríamos rechazar la hipótesis nula.
+El intervalo de confianza del 90% es ahora <span class="math inline">\((-\infty,2.984]\)</span> (<code>Inf</code> representa <span class="math inline">\(\infty\)</span>). Que no contenga el 3 (aunque por muy poco) también indica que podemos rechazar la hipótesis nula <span class="math inline">\(\mu=3\)</span> en favor de la alternativa <span class="math inline">\(\mu&lt; 3\)</span> con este nivel de confianza.</p>
 <p>El p-valor y el intervalo de confianza se pueden obtener directamente, añadiendo a la instrucción <code>t.test</code> los sufijos <code>$p.value</code> o <code>$conf.int</code>, respectivamente. Esperamos que recordéis que en la lección anterior ya usábamos la construcción <code>t.test(...)$conf.int</code> para calcular un intervalo de confianza para la media usando la fórmula basada en la t de Student. Es lo correcto, puesto que el intervalo de confianza de un test t bilateral es el que explicamos entonces y no depende para nada de la hipótesis nula (por eso no especificábamos la <span class="math inline">\(\mu\)</span>, y dejábamos que la función tomase su valor por defecto, 0). Pero ahora podemos calcular dos intervalos de confianza más, correspondientes a los dos tipos de contrastes unilaterales. En ellos toda la “probabilidad de equivocarnos” se concentra a un lado del intervalo de confianza, en lugar de repartirse por igual a ambos lados.</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">t.test</span>(x, <span class="dt">mu=</span><span class="dv">2</span>)<span class="op">$</span>p.value</code></pre></div>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">t.test</span>(x, <span class="dt">mu=</span><span class="dv">2</span>)<span class="op">$</span>p.value</code></pre>
 <pre><code>## [1] 4.23159e-06</code></pre>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">t.test</span>(x, <span class="dt">mu=</span><span class="dv">2</span>)<span class="op">$</span>conf.int</code></pre></div>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">t.test</span>(x, <span class="dt">mu=</span><span class="dv">2</span>)<span class="op">$</span>conf.int</code></pre>
 <pre><code>## [1] 2.52384 3.08576
 ## attr(,&quot;conf.level&quot;)
 ## [1] 0.95</code></pre>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">t.test</span>(x, <span class="dt">mu=</span><span class="dv">2</span>)<span class="op">$</span>conf.int[<span class="dv">1</span>]</code></pre></div>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">t.test</span>(x, <span class="dt">mu=</span><span class="dv">2</span>)<span class="op">$</span>conf.int[<span class="dv">1</span>]</code></pre>
 <pre><code>## [1] 2.52384</code></pre>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">t.test</span>(x, <span class="dt">mu=</span><span class="dv">2</span>)<span class="op">$</span>conf.int[<span class="dv">2</span>]</code></pre></div>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">t.test</span>(x, <span class="dt">mu=</span><span class="dv">2</span>)<span class="op">$</span>conf.int[<span class="dv">2</span>]</code></pre>
 <pre><code>## [1] 3.08576</code></pre>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">t.test</span>(x, <span class="dt">mu=</span><span class="dv">3</span>, <span class="dt">alternative=</span><span class="st">&quot;less&quot;</span>, <span class="dt">conf.level=</span><span class="fl">0.9</span>)<span class="op">$</span>conf.int</code></pre></div>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">t.test</span>(x, <span class="dt">mu=</span><span class="dv">3</span>, <span class="dt">alternative=</span><span class="st">&quot;less&quot;</span>, <span class="dt">conf.level=</span><span class="fl">0.9</span>)<span class="op">$</span>conf.int</code></pre>
 <pre><code>## [1]   -Inf 2.9842
 ## attr(,&quot;conf.level&quot;)
 ## [1] 0.9</code></pre>
 <p>Podéis consultar los sufijos necesarios para obtener las otras componentes del resultado en la Ayuda de la función.</p>
 
 <div class="example">
-<span id="exm:colesterol" class="example"><strong>Ejemplo 5.3  </strong></span>Queremos contrastar si el valor medio del nivel de colesterol en una población es de 220 mg/dl o no, a un nivel de significación del 5%. Es decir, si llamamos <span class="math inline">\(\mu\)</span> a la media de la variable aleatoria “Nivel de colesterol de un individuo de esta población, en mg/dl”, queremos realizar el contraste bilateral <span class="math display">\[
+<span id="exm:colesterol" class="example"><strong>Ejemplo 5.3  </strong></span>Queremos contrastar si el valor medio del nivel de colesterol en una población es de 220 mg/dl o no, a un nivel de significación del 5%. Es decir, si llamamos <span class="math inline">\(\mu\)</span> a la media de la variable aleatoria “Nivel de colesterol de un individuo de esta población, en mg/dl”, queremos realizar el contraste bilateral
+<span class="math display">\[
 \left\{\begin{array}{l}
 H_{0}:\mu=220\\
 H_{1}:\mu \neq 220
@@ -389,9 +443,10 @@ H_{1}:\mu \neq 220
 </div>
 
 <p>Para ello, hemos tomado una muestra del nivel de colesterol en plasma de 9 individuos de la población. Los datos obtenidos, en mg/dl, son los siguientes:</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">colesterol=<span class="kw">c</span>(<span class="dv">203</span>,<span class="dv">229</span>,<span class="dv">215</span>,<span class="dv">220</span>,<span class="dv">223</span>,<span class="dv">233</span>,<span class="dv">208</span>,<span class="dv">228</span>,<span class="dv">209</span>)</code></pre></div>
-<p>Suponemos que el nivel de colesterol en plasma sigue una ley normal y que por lo tanto nos podemos fiar del resultado de un test t:</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">t.test</span>(colesterol, <span class="dt">mu=</span><span class="dv">220</span>)</code></pre></div>
+<pre class="sourceCode r"><code class="sourceCode r">colesterol=<span class="kw">c</span>(<span class="dv">203</span>,<span class="dv">229</span>,<span class="dv">215</span>,<span class="dv">220</span>,<span class="dv">223</span>,<span class="dv">233</span>,<span class="dv">208</span>,<span class="dv">228</span>,<span class="dv">209</span>)</code></pre>
+<p>Suponemos que el nivel de colesterol en plasma sigue una ley normal y que
+por lo tanto nos podemos fiar del resultado de un test t:</p>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">t.test</span>(colesterol, <span class="dt">mu=</span><span class="dv">220</span>)</code></pre>
 <pre><code>## 
 ##  One Sample t-test
 ## 
@@ -410,7 +465,7 @@ H_{1}:\mu \neq 220
 <p><span id="exm:iris" class="example"><strong>Ejemplo 5.4  </strong></span>Recordad el <em>dataframe</em> <code>iris</code>, que recoge datos de las flores de 50 ejemplares de cada una de tres especies de iris.</p>
 </div>
 
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">str</span>(iris)</code></pre></div>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">str</span>(iris)</code></pre>
 <pre><code>## &#39;data.frame&#39;:    150 obs. of  5 variables:
 ##  $ Sepal.Length: num  5.1 4.9 4.7 4.6 5 5.4 4.6 5 4.4 4.9 ...
 ##  $ Sepal.Width : num  3.5 3 3.2 3.1 3.6 3.9 3.4 3.4 2.9 3.1 ...
@@ -423,12 +478,13 @@ H_{1}:\mu \neq 220
 H_{0}:\mu_s=\mu_v\\
 H_{1}:\mu_s&lt; \mu_v
 \end{array}\right.
-\]</span> En este caso, se trata de un contraste de dos muestras independientes, y como las muestras son grandes, podemos usar con garantías un test t.</p>
-<p>Ahora bien, recordad que el test t concreto que hay que usar depende de si las varianzas de las dos variables cuyas medias comparamos son iguales o diferentes. Como no sabemos nada de las varianzas de las longitudes de los sépalos de estas dos especies, y no nos supone apenas esfuerzo realizar los tests, llevaremos a cabo el contraste en los dos casos: varianzas iguales y varianzas diferentes.<a href="#fn1" class="footnoteRef" id="fnref1"><sup>1</sup></a> Más adelante, en el Ejemplo <a href="chap-contrastes.html#exm:variris">5.11</a>, explicamos cómo contrastar si estas dos varianzas son iguales o diferentes.</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">S=iris[iris<span class="op">$</span>Species<span class="op">==</span><span class="st">&quot;setosa&quot;</span>,]<span class="op">$</span>Sepal.Length
-V=iris[iris<span class="op">$</span>Species<span class="op">==</span><span class="st">&quot;virginica&quot;</span>,]<span class="op">$</span>Sepal.Length</code></pre></div>
+\]</span>
+En este caso, se trata de un contraste de dos muestras independientes, y como las muestras son grandes, podemos usar con garantías un test t.</p>
+<p>Ahora bien, recordad que el test t concreto que hay que usar depende de si las varianzas de las dos variables cuyas medias comparamos son iguales o diferentes. Como no sabemos nada de las varianzas de las longitudes de los sépalos de estas dos especies, y no nos supone apenas esfuerzo realizar los tests, llevaremos a cabo el contraste en los dos casos: varianzas iguales y varianzas diferentes.<a href="#fn1" class="footnote-ref" id="fnref1"><sup>1</sup></a> Más adelante, en el Ejemplo <a href="chap-contrastes.html#exm:variris">5.11</a>, explicamos cómo contrastar si estas dos varianzas son iguales o diferentes.</p>
+<pre class="sourceCode r"><code class="sourceCode r">S=iris[iris<span class="op">$</span>Species<span class="op">==</span><span class="st">&quot;setosa&quot;</span>,]<span class="op">$</span>Sepal.Length
+V=iris[iris<span class="op">$</span>Species<span class="op">==</span><span class="st">&quot;virginica&quot;</span>,]<span class="op">$</span>Sepal.Length</code></pre>
 <p>El test suponiendo que las dos varianzas son iguales:</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">t.test</span>(S, V, <span class="dt">alternative=</span><span class="st">&quot;less&quot;</span>, <span class="dt">var.equal=</span><span class="ot">TRUE</span>) </code></pre></div>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">t.test</span>(S, V, <span class="dt">alternative=</span><span class="st">&quot;less&quot;</span>, <span class="dt">var.equal=</span><span class="ot">TRUE</span>) </code></pre>
 <pre><code>## 
 ##  Two Sample t-test
 ## 
@@ -441,7 +497,7 @@ V=iris[iris<span class="op">$</span>Species<span class="op">==</span><span class
 ## mean of x mean of y 
 ##     5.006     6.588</code></pre>
 <p>El test suponiendo que las dos varianzas son diferentes:</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">t.test</span>(S, V, <span class="dt">alternative=</span><span class="st">&quot;less&quot;</span>, <span class="dt">var.equal=</span><span class="ot">FALSE</span>) </code></pre></div>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">t.test</span>(S, V, <span class="dt">alternative=</span><span class="st">&quot;less&quot;</span>, <span class="dt">var.equal=</span><span class="ot">FALSE</span>) </code></pre>
 <pre><code>## 
 ##  Welch Two Sample t-test
 ## 
@@ -522,9 +578,9 @@ V=iris[iris<span class="op">$</span>Species<span class="op">==</span><span class
 </table>
 <p>Una manera de comparar el efecto en las horas de sueño de estos compuestos es comparando las medias de estas diferencias de promedios de horas de sueño: una diferencia media mayor significa que, de media, el compuesto “ha añadido” más horas de sueño al promedio normal. Digamos <span class="math inline">\(\mu_1\)</span> a la media de las diferencias individuales del promedio de horas de sueño tomando hiosciamina menos el promedio en condiciones normales y <span class="math inline">\(\mu_2\)</span> a la media de las diferencias individuales del promedio de horas de sueño tomando hioscina menos el promedio en condiciones normales. Tomaremos como hipótesis nula <span class="math inline">\(H_0: \mu_1= \mu_2\)</span> (ambos compuestos tienen el mismo efecto medio sobre las horas de sueño de los individuos) e hipótesis alternativa <span class="math inline">\(H_1: \mu_1&lt;\mu_2\)</span> (la hioscina aumenta más las horas de sueño que la hiosciamina). Si podemos rechazar la hipótesis nula en favor de la alternativa, concluiremos que la hioscina tiene un mayor efecto somnífero que la hiosciamina.</p>
 <p>Observad que se trata de un contraste de dos muestras emparejadas, porque los datos refieren a los mismos 10 pacientes. Vamos a suponer que las diferencias medias en horas de sueño en ambos casos siguen leyes normales (Student así lo hizo) y que, por lo tanto, el resultado de un test t es fiable.</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">Hiosciamina=<span class="kw">c</span>(<span class="fl">0.7</span>,<span class="op">-</span><span class="fl">1.6</span>,<span class="op">-</span><span class="fl">0.2</span>,<span class="op">-</span><span class="fl">1.2</span>,<span class="op">-</span><span class="fl">0.1</span>,<span class="fl">3.4</span>,<span class="fl">3.7</span>,<span class="fl">0.8</span>,<span class="dv">0</span>,<span class="fl">2.0</span>)
+<pre class="sourceCode r"><code class="sourceCode r">Hiosciamina=<span class="kw">c</span>(<span class="fl">0.7</span>,<span class="op">-</span><span class="fl">1.6</span>,<span class="op">-</span><span class="fl">0.2</span>,<span class="op">-</span><span class="fl">1.2</span>,<span class="op">-</span><span class="fl">0.1</span>,<span class="fl">3.4</span>,<span class="fl">3.7</span>,<span class="fl">0.8</span>,<span class="dv">0</span>,<span class="fl">2.0</span>)
 Hioscina=<span class="kw">c</span>(<span class="fl">1.9</span>,<span class="fl">0.8</span>,<span class="fl">1.1</span>,<span class="fl">0.1</span>,<span class="op">-</span><span class="fl">0.1</span>,<span class="fl">4.4</span>,<span class="fl">5.5</span>,<span class="fl">1.6</span>,<span class="fl">4.6</span>,<span class="fl">3.4</span>)
-<span class="kw">t.test</span>(Hiosciamina, Hioscina, <span class="dt">alternative=</span><span class="st">&quot;less&quot;</span>, <span class="dt">paired=</span><span class="ot">TRUE</span>)</code></pre></div>
+<span class="kw">t.test</span>(Hiosciamina, Hioscina, <span class="dt">alternative=</span><span class="st">&quot;less&quot;</span>, <span class="dt">paired=</span><span class="ot">TRUE</span>)</code></pre>
 <pre><code>## 
 ##  Paired t-test
 ## 
@@ -539,16 +595,18 @@ Hioscina=<span class="kw">c</span>(<span class="fl">1.9</span>,<span class="fl">
 <p>El p-valor es 0.001, mucho menor que 0.05, y por lo tanto podemos rechazar la hipótesis nula con un nivel de significación del 5%. Observad también que el intervalo de confianza del 95% para la diferencia de medias <span class="math inline">\(\mu_1-\mu_2\)</span> es <span class="math inline">\((-\infty,-0.867]\)</span> y está totalmente a la izquierda del 0. La conclusión es, pues, que efectivamente la hioscina tiene un mayor efecto somnífero que la hiosciamina y que con un 95% de confianza podemos afirmar que añade, de media, como mínimo 52 minutos (-0.867 horas) diarios más de sueño.</p>
 
 <div class="example">
-<p><span id="exm:fumar" class="example"><strong>Ejemplo 5.6  </strong></span>Veamos un ejemplo de aplicación de <code>t.test</code> a una fórmula. Queremos contrastar si es cierto que fumar durante el embarazo está asociado a un peso menor del recién nacido. Si llamamos <span class="math inline">\(\mu_n\)</span> y <span class="math inline">\(\mu_f\)</span> al peso medio de un recién nacido de madre no fumadora y fumadora, respectivamente, el contraste que queremos realizar es <span class="math display">\[
+<p><span id="exm:fumar" class="example"><strong>Ejemplo 5.6  </strong></span>Veamos un ejemplo de aplicación de <code>t.test</code> a una fórmula. Queremos contrastar si es cierto que fumar durante el embarazo está asociado a un peso menor del recién nacido. Si llamamos <span class="math inline">\(\mu_n\)</span> y <span class="math inline">\(\mu_f\)</span> al peso medio de un recién nacido de madre no fumadora y fumadora, respectivamente, el contraste que queremos realizar es
+<span class="math display">\[
 \left\{\begin{array}{l}
 H_{0}:\mu_n=\mu_f\\
 H_{1}:\mu_n&gt; \mu_f
 \end{array}\right.
-\]</span> Vamos a usar los datos incluidos en la tabla <code>birthwt</code> incluida en el paquete <strong>MASS</strong>, que recoge información sobre una muestra de madres y sus hijos.</p>
+\]</span>
+Vamos a usar los datos incluidos en la tabla <code>birthwt</code> incluida en el paquete <strong>MASS</strong>, que recoge información sobre una muestra de madres y sus hijos.</p>
 </div>
 
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(MASS)
-<span class="kw">str</span>(birthwt)</code></pre></div>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(MASS)
+<span class="kw">str</span>(birthwt)</code></pre>
 <pre><code>## &#39;data.frame&#39;:    189 obs. of  10 variables:
 ##  $ low  : int  0 0 0 0 0 0 0 0 0 0 ...
 ##  $ age  : int  19 33 20 21 18 21 22 17 29 26 ...
@@ -561,14 +619,14 @@ H_{1}:\mu_n&gt; \mu_f
 ##  $ ftv  : int  0 3 1 2 0 0 1 1 1 0 ...
 ##  $ bwt  : int  2523 2551 2557 2594 2600 2622 2637 2637 2663 2665 ...</code></pre>
 <p>En la Ayuda de <code>birthwt</code> nos enteramos de que la variable <code>smoke</code> indica si la madre ha fumado durante el embarazo (1) o no (0), y que la variable <code>bwt</code> da el peso del recién nacido en gramos. Lo primero que haremos será mirar si las muestras de madres fumadoras y no fumadoras contenidas en esta tabla son lo suficientemente grandes como para que el resultado del test t sea fiable.</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">table</span>(birthwt<span class="op">$</span>smoke)</code></pre></div>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">table</span>(birthwt<span class="op">$</span>smoke)</code></pre>
 <pre><code>## 
 ##   0   1 
 ## 115  74</code></pre>
 <p>Vemos que sí, que ambas son suficientemente grandes.</p>
 <p>Para entrar en la instrucción <code>t.test</code> los vectores de pesos de hijos de fumadoras y no fumadoras, usaremos la fórmula <code>bwt~smoke</code> especificando que <code>data=birthwt</code>. Fijaos en que los valores de <code>smoke</code> son 0 y 1, y que R los considera ordenados en este orden (basta ver el resultado de la función <code>table</code> anterior). Por consiguiente, <code>bwt~smoke</code> representa, en este orden, el vector de pesos de recién nacidos de madres no fumadoras (<code>smoke=0</code>) y el vector de pesos de recién nacidos de madres fumadoras (<code>smoke=1</code>). Como la hipótesis alternativa es <span class="math inline">\(\mu_n&gt;\mu_f\)</span>, deberemos especificar en la función <code>t.test</code> que <code>alternative=&quot;greater&quot;</code>.</p>
 <p>Es un contraste de muestras independientes, y por lo tanto el procedimiento para llevarlo a cabo depende de la igualdad o no de las varianzas de los pesos de los recién nacidos en los dos grupos de madres. Como en el Ejemplo <a href="chap-contrastes.html#exm:iris">5.4</a>, vamos a llevar a cabo el test t suponiendo que estas varianzas son iguales y que son diferentes, y cruzaremos los dedos para que la conclusión sea la misma. Otra posibilidad es contrastar antes la igualdad de las varianzas.</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">t.test</span>(bwt<span class="op">~</span>smoke, <span class="dt">data=</span>birthwt, <span class="dt">alternative=</span><span class="st">&quot;greater&quot;</span>, <span class="dt">paired=</span><span class="ot">FALSE</span>, <span class="dt">var.equal=</span><span class="ot">TRUE</span>)</code></pre></div>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">t.test</span>(bwt<span class="op">~</span>smoke, <span class="dt">data=</span>birthwt, <span class="dt">alternative=</span><span class="st">&quot;greater&quot;</span>, <span class="dt">paired=</span><span class="ot">FALSE</span>, <span class="dt">var.equal=</span><span class="ot">TRUE</span>)</code></pre>
 <pre><code>## 
 ##  Two Sample t-test
 ## 
@@ -580,7 +638,7 @@ H_{1}:\mu_n&gt; \mu_f
 ## sample estimates:
 ## mean in group 0 mean in group 1 
 ##         3055.70         2771.92</code></pre>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">t.test</span>(bwt<span class="op">~</span>smoke, <span class="dt">data=</span>birthwt, <span class="dt">alternative=</span><span class="st">&quot;greater&quot;</span>, <span class="dt">paired=</span><span class="ot">FALSE</span>, <span class="dt">var.equal=</span><span class="ot">FALSE</span>)</code></pre></div>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">t.test</span>(bwt<span class="op">~</span>smoke, <span class="dt">data=</span>birthwt, <span class="dt">alternative=</span><span class="st">&quot;greater&quot;</span>, <span class="dt">paired=</span><span class="ot">FALSE</span>, <span class="dt">var.equal=</span><span class="ot">FALSE</span>)</code></pre>
 <pre><code>## 
 ##  Welch Two Sample t-test
 ## 
@@ -594,7 +652,7 @@ H_{1}:\mu_n&gt; \mu_f
 ##         3055.70         2771.92</code></pre>
 <p>En ambos casos hemos obtenido un p-valor un orden de magnitud inferior a 0.05, lo que nos permite concluir que, en efecto, los hijos de las madres no fumadoras pesan más al nacer que los de las fumadoras.</p>
 <p>En vez de especificar los vectores de pesos con <code>bwt~smoke,data=birthwt</code>, hubiéramos podido usar <code>birthwt$bwt~birthwt$smoke</code>. Por ejemplo:</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">t.test</span>(birthwt<span class="op">$</span>bwt<span class="op">~</span>birthwt<span class="op">$</span>smoke, <span class="dt">alternative=</span><span class="st">&quot;greater&quot;</span>, <span class="dt">paired=</span><span class="ot">FALSE</span>, <span class="dt">var.equal=</span><span class="ot">TRUE</span>)</code></pre></div>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">t.test</span>(birthwt<span class="op">$</span>bwt<span class="op">~</span>birthwt<span class="op">$</span>smoke, <span class="dt">alternative=</span><span class="st">&quot;greater&quot;</span>, <span class="dt">paired=</span><span class="ot">FALSE</span>, <span class="dt">var.equal=</span><span class="ot">TRUE</span>)</code></pre>
 <pre><code>## 
 ##  Two Sample t-test
 ## 
@@ -621,8 +679,8 @@ H_{1}:\mu_n&gt; \mu_f
 <p><span id="exm:wilcox-colesterol" class="example"><strong>Ejemplo 5.7  </strong></span>Si los niveles de colesterol no siguen una distribución normal, el test t realizado en el Ejemplo <a href="chap-contrastes.html#exm:colesterol">5.3</a> no sirve para nada. Una posibilidad es entonces no contrastar si el nivel medio de colesterol es 220, sino si el nivel <em>mediano</em> es 220. Para ello vamos realizar un test de signos. Los parámetros <code>alternative=&quot;two.sided&quot;</code> y <code>conf.level=0.95</code> son los que usa la función <code>SIGN.test</code> por defecto, así que no haría falta especificarlos; los incluimos para que los veáis.</p>
 </div>
 
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(BSDA)
-<span class="kw">SIGN.test</span>(colesterol, <span class="dt">md=</span><span class="dv">220</span>, <span class="dt">alternative=</span><span class="st">&quot;two.sided&quot;</span>, <span class="dt">conf.level=</span><span class="fl">0.95</span>)</code></pre></div>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(BSDA)
+<span class="kw">SIGN.test</span>(colesterol, <span class="dt">md=</span><span class="dv">220</span>, <span class="dt">alternative=</span><span class="st">&quot;two.sided&quot;</span>, <span class="dt">conf.level=</span><span class="fl">0.95</span>)</code></pre>
 <pre><code>## 
 ##  One-sample Sign-Test
 ## 
@@ -643,7 +701,7 @@ H_{1}:\mu_n&gt; \mu_f
 ## Upper Achieved CI     0.9609 208.000 229.000</code></pre>
 <p>Observad que la salida de la función es muy similar a la de <code>t.test</code> (salvo por los últimos intervalos de confianza, que no vamos a explicar). El p-valor ha dado directamente 1 y el intervalo de confianza al 95% para la mediana ha dado [208.1, 228.9]: por lo tanto, no podemos rechazar que la mediana del nivel de colesterol en la población de la que hemos extraído la muestra sea 220.</p>
 <p>También podríamos usar el test de Wilcoxon para realizar este contraste de una mediana:</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">wilcox.test</span>(colesterol, <span class="dt">mu=</span><span class="dv">220</span>, <span class="dt">alternative=</span><span class="st">&quot;two.sided&quot;</span>,<span class="dt">conf.level=</span><span class="fl">0.95</span>)</code></pre></div>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">wilcox.test</span>(colesterol, <span class="dt">mu=</span><span class="dv">220</span>, <span class="dt">alternative=</span><span class="st">&quot;two.sided&quot;</span>,<span class="dt">conf.level=</span><span class="fl">0.95</span>)</code></pre>
 <pre><code>## Warning in wilcox.test.default(colesterol, mu = 220, alternative =
 ## &quot;two.sided&quot;, : cannot compute exact p-value with zeroes</code></pre>
 <pre><code>## 
@@ -655,10 +713,11 @@ H_{1}:\mu_n&gt; \mu_f
 <p>El p-valor es 0.726, la conclusión es la misma. El mensaje de advertencia nos avisa de que la muestra ha contenido valores iguales al valor de la mediana contrastado, por lo que el p-valor obtenido no es exacto. Solo os tenéis que preocupar de un mensaje como este si el p-valor fuera muy cercano al nivel de significación deseado, que no es el caso.</p>
 
 <div class="example">
-<p><span id="exm:unnamed-chunk-144" class="example"><strong>Ejemplo 5.8  </strong></span>Si las diferencias en promedios de horas de sueño no siguen distribuciones normales, el test t realizado en el Ejemplo <a href="chap-contrastes.html#exm:sueño">5.5</a> no sirve para nada. En este caso, vamos a usar un test de Wilcoxon para muestras emparejadas. Este test en realidad contrastará la <em>hipótesis nula</em> de que si para cada individuo calculamos la diferencia entre el aumento promedio de horas de sueño cuando toma hiosciamina y el aumento promedio tomando hioscina, la <strong>mediana</strong> de la variable aleatoria que define estas diferencias es 0, y como hipótesis alternativa que esta mediana es menor que 0 (y que por lo tanto más de la mitad de las veces es negativa, es decir, que a más de la mitad de la población la hioscina le añade más tiempo promedio de sueño que la hiosciamina). Si las variables “aumento de horas de sueño” en juego son simétricas, estas medianas coinciden con las correspondientes medias y llevamos a cabo el contraste del Ejemplo <a href="chap-contrastes.html#exm:sueño">5.5</a>. Si no son simétricas, igualmente estamos contrastando si la hioscina es más efectiva que la hiosciamina, solo que planteándolo de otra manera.</p>
+<p><span id="exm:unnamed-chunk-144" class="example"><strong>Ejemplo 5.8  </strong></span>Si las diferencias en promedios de horas de sueño no siguen distribuciones normales, el test t realizado en el Ejemplo <a href="chap-contrastes.html#exm:sueño">5.5</a> no sirve para nada. En este caso, vamos a usar un test de Wilcoxon para muestras emparejadas. Este test en realidad contrastará la <em>hipótesis nula</em> de que
+si para cada individuo calculamos la diferencia entre el aumento promedio de horas de sueño cuando toma hiosciamina y el aumento promedio tomando hioscina, la <strong>mediana</strong> de la variable aleatoria que define estas diferencias es 0, y como hipótesis alternativa que esta mediana es menor que 0 (y que por lo tanto más de la mitad de las veces es negativa, es decir, que a más de la mitad de la población la hioscina le añade más tiempo promedio de sueño que la hiosciamina). Si las variables “aumento de horas de sueño” en juego son simétricas, estas medianas coinciden con las correspondientes medias y llevamos a cabo el contraste del Ejemplo <a href="chap-contrastes.html#exm:sueño">5.5</a>. Si no son simétricas, igualmente estamos contrastando si la hioscina es más efectiva que la hiosciamina, solo que planteándolo de otra manera.</p>
 </div>
 
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">wilcox.test</span>(Hiosciamina, Hioscina, <span class="dt">alternative=</span><span class="st">&quot;less&quot;</span>, <span class="dt">paired=</span><span class="ot">TRUE</span>)</code></pre></div>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">wilcox.test</span>(Hiosciamina, Hioscina, <span class="dt">alternative=</span><span class="st">&quot;less&quot;</span>, <span class="dt">paired=</span><span class="ot">TRUE</span>)</code></pre>
 <pre><code>## Warning in wilcox.test.default(Hiosciamina, Hioscina, alternative =
 ## &quot;less&quot;, : cannot compute exact p-value with ties</code></pre>
 <pre><code>## Warning in wilcox.test.default(Hiosciamina, Hioscina, alternative =
@@ -675,12 +734,13 @@ H_{1}:\mu_n&gt; \mu_f
 <p><span id="exm:unnamed-chunk-146" class="example"><strong>Ejemplo 5.9  </strong></span>Nos preguntamos si los hijos de madres de 20 años pesan lo mismo al nacer que los de madres de 30 años, o no. Querríamos responder esta pregunta planteándola como un contraste bilateral de los pesos medios de los hijos de madres de 20 y 30 años y usando la muestra recogida en la tabla de datos <code>birthwt</code> del paquete <strong>MASS</strong>, que contiene la variable <code>age</code> con la edad de las madres.</p>
 </div>
 
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">hijos.<span class="dv">20</span>=birthwt[birthwt<span class="op">$</span>age<span class="op">==</span><span class="dv">20</span>,<span class="st">&quot;bwt&quot;</span>]
-hijos.<span class="dv">30</span>=birthwt[birthwt<span class="op">$</span>age<span class="op">==</span><span class="dv">30</span>,<span class="st">&quot;bwt&quot;</span>]
-<span class="kw">c</span>(<span class="kw">length</span>(hijos.<span class="dv">20</span>),<span class="kw">length</span>(hijos.<span class="dv">30</span>))</code></pre></div>
+<pre class="sourceCode r"><code class="sourceCode r">hijos<span class="fl">.20</span>=birthwt[birthwt<span class="op">$</span>age<span class="op">==</span><span class="dv">20</span>,<span class="st">&quot;bwt&quot;</span>]
+hijos<span class="fl">.30</span>=birthwt[birthwt<span class="op">$</span>age<span class="op">==</span><span class="dv">30</span>,<span class="st">&quot;bwt&quot;</span>]
+<span class="kw">c</span>(<span class="kw">length</span>(hijos<span class="fl">.20</span>),<span class="kw">length</span>(hijos<span class="fl">.30</span>))</code></pre>
 <pre><code>## [1] 18  7</code></pre>
-<p>Las muestras no son lo suficientemente grandes como para usar un test t si no estamos seguros de que las variables poblacionales sean normales. Como las muestras son independientes, vamos a usar un test de Mann-Whitney para comparar los pesos medianos. Es decir, en vez de traducir “los hijos de madres de 20 años pesan lo mismo al nacer que los de madres de 30 años” en términos de igualdad de pesos medios, lo traducimos en términos de igualdad de pesos medianos. (En realidad, la hipótesis nula de este test es que “Es igual de probable que un hijo de madre de 20 años pese más que un hijo de madre de 30 años que al revés”, pero no vamos a entrar en este nivel de precisión. Es otra manera de decir que no hay tendencia a que unos pesen más que los otros.)</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">wilcox.test</span>(hijos.<span class="dv">20</span>, hijos.<span class="dv">30</span>, <span class="dt">alternative=</span><span class="st">&quot;two.sided&quot;</span>,<span class="dt">paired=</span><span class="ot">FALSE</span>)</code></pre></div>
+<p>Las muestras no son lo suficientemente grandes como para usar un test t si no estamos seguros de que las variables poblacionales sean normales. Como las muestras son independientes, vamos a usar un test de Mann-Whitney para comparar los pesos medianos. Es decir, en vez de traducir
+“los hijos de madres de 20 años pesan lo mismo al nacer que los de madres de 30 años” en términos de igualdad de pesos medios, lo traducimos en términos de igualdad de pesos medianos. (En realidad, la hipótesis nula de este test es que “Es igual de probable que un hijo de madre de 20 años pese más que un hijo de madre de 30 años que al revés”, pero no vamos a entrar en este nivel de precisión. Es otra manera de decir que no hay tendencia a que unos pesen más que los otros.)</p>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">wilcox.test</span>(hijos<span class="fl">.20</span>, hijos<span class="fl">.30</span>, <span class="dt">alternative=</span><span class="st">&quot;two.sided&quot;</span>,<span class="dt">paired=</span><span class="ot">FALSE</span>)</code></pre>
 <pre><code>## Warning in wilcox.test.default(hijos.20, hijos.30, alternative =
 ## &quot;two.sided&quot;, : cannot compute exact p-value with ties</code></pre>
 <pre><code>## 
@@ -694,23 +754,28 @@ hijos.<span class="dv">30</span>=birthwt[birthwt<span class="op">$</span>age<spa
 </div>
 <div id="contrastes-para-varianzas" class="section level2">
 <h2><span class="header-section-number">5.2</span> Contrastes para varianzas</h2>
-<p>El <strong>test <span class="math inline">\(\chi^2\)</span></strong> para comparar la varianza <span class="math inline">\(\sigma^2\)</span> (o la desviación típica <span class="math inline">\(\sigma\)</span>) de una población normal con un valor dado <span class="math inline">\(\sigma_0^2\)</span> (o <span class="math inline">\(\sigma_0\)</span>) usa el estadístico <span class="math display">\[
+<p>El <strong>test <span class="math inline">\(\chi^2\)</span></strong> para comparar la varianza <span class="math inline">\(\sigma^2\)</span> (o la desviación típica <span class="math inline">\(\sigma\)</span>) de una población normal con un valor dado <span class="math inline">\(\sigma_0^2\)</span> (o <span class="math inline">\(\sigma_0\)</span>) usa el estadístico
+<span class="math display">\[
 \frac{(n-1)\widetilde{S}_X^2}{\sigma_0^2}
-\]</span> que, si la hipótesis nula <span class="math inline">\(\sigma^2=\sigma_0^2\)</span> es verdadera, sigue una distribución <span class="math inline">\(\chi^2_{n-1}\)</span>, de ahí su nombre. Dicho test está convenientemente implementado en la función <code>sigma.test</code> del paquete <strong>TeachingDemos</strong>. Su sintaxis es la misma que la de la función <code>t.test</code> para una muestra, substituyendo el parámetro <code>mu</code> de <code>t.test</code> por el parámetro <code>sigma</code> (para especificar el valor de la desviación típica que contrastamos, <span class="math inline">\(\sigma_0\)</span>) o <code>sigmasq</code> (por “sigma al cuadrado”, para especificar el valor de la varianza que contrastamos, <span class="math inline">\(\sigma_0^2\)</span>). Como siempre, los valores por defecto de <code>alternative</code> y <code>conf.level</code> son <code>&quot;two.sided&quot;</code> y 0.95, respectivamente. La salida de la función es también similar a la de <code>t.test</code>. Veamos un ejemplo.</p>
+\]</span>
+que, si la hipótesis nula <span class="math inline">\(\sigma^2=\sigma_0^2\)</span> es verdadera, sigue una distribución <span class="math inline">\(\chi^2_{n-1}\)</span>, de ahí su nombre. Dicho test está convenientemente implementado en la función <code>sigma.test</code> del paquete <strong>TeachingDemos</strong>. Su sintaxis es la misma que la de la función <code>t.test</code> para una muestra, substituyendo el parámetro <code>mu</code> de <code>t.test</code> por el parámetro <code>sigma</code> (para especificar el valor de la desviación típica que contrastamos, <span class="math inline">\(\sigma_0\)</span>) o <code>sigmasq</code> (por “sigma al cuadrado”, para especificar el valor de la varianza que contrastamos, <span class="math inline">\(\sigma_0^2\)</span>). Como siempre, los valores por defecto de <code>alternative</code> y <code>conf.level</code> son <code>&quot;two.sided&quot;</code> y 0.95, respectivamente. La salida de la función es también similar a la de <code>t.test</code>. Veamos un ejemplo.</p>
 
 <div class="example">
 <p><span id="exm:unnamed-chunk-149" class="example"><strong>Ejemplo 5.10  </strong></span>Se ha realizado un experimento para estudiar el tiempo <span class="math inline">\(X\)</span> (en minutos) que tarda un lagarto del desierto en llegar a los 45<sup>o</sup> partiendo de su temperatura normal mientras está a la sombra. Los tiempos obtenidos (en minutos) en una muestra aleatoria de lagartos fueron los siguientes:</p>
 </div>
 
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">TL45=<span class="kw">c</span>(<span class="fl">10.1</span>,<span class="fl">12.5</span>,<span class="fl">12.2</span>,<span class="fl">10.2</span>,<span class="fl">12.8</span>,<span class="fl">12.1</span>,<span class="fl">11.2</span>,<span class="fl">11.4</span>,<span class="fl">10.7</span>,<span class="fl">14.9</span>,<span class="fl">13.9</span>,<span class="fl">13.3</span>)</code></pre></div>
-<p>Supongamos que estos tiempos siguen una ley normal. ¿Aporta este experimento evidencia de que la desviación típica <span class="math inline">\(\sigma\)</span> de <span class="math inline">\(X\)</span> es inferior a 1.5 minutos? Para responder esta pregunta, hemos de realizar el contraste <span class="math display">\[
+<pre class="sourceCode r"><code class="sourceCode r">TL45=<span class="kw">c</span>(<span class="fl">10.1</span>,<span class="fl">12.5</span>,<span class="fl">12.2</span>,<span class="fl">10.2</span>,<span class="fl">12.8</span>,<span class="fl">12.1</span>,<span class="fl">11.2</span>,<span class="fl">11.4</span>,<span class="fl">10.7</span>,<span class="fl">14.9</span>,<span class="fl">13.9</span>,<span class="fl">13.3</span>)</code></pre>
+<p>Supongamos que estos tiempos siguen una ley normal. ¿Aporta este experimento evidencia de que la desviación típica <span class="math inline">\(\sigma\)</span> de <span class="math inline">\(X\)</span> es inferior a 1.5 minutos?
+Para responder esta pregunta, hemos de realizar el contraste
+<span class="math display">\[
 \left\{\begin{array}{l}
 H_{0}:\sigma= 1.5 \\
 H_{1}:\sigma&lt; 1.5
 \end{array}\right.
-\]</span> Para ello, usaremos la función <code>sigma.test</code> aplicada a esta muestra y a <code>sigma=1.5</code>:</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(TeachingDemos)
-<span class="kw">sigma.test</span>(TL45, <span class="dt">sigma=</span><span class="fl">1.5</span>, <span class="dt">alternative=</span><span class="st">&quot;less&quot;</span>)</code></pre></div>
+\]</span>
+Para ello, usaremos la función <code>sigma.test</code> aplicada a esta muestra y a <code>sigma=1.5</code>:</p>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(TeachingDemos)
+<span class="kw">sigma.test</span>(TL45, <span class="dt">sigma=</span><span class="fl">1.5</span>, <span class="dt">alternative=</span><span class="st">&quot;less&quot;</span>)</code></pre>
 <pre><code>## 
 ##  One sample Chi-squared test for variance
 ## 
@@ -724,24 +789,26 @@ H_{1}:\sigma&lt; 1.5
 ##     2.18629</code></pre>
 <p>El p-valor que obtenemos es 0.53, muy grande, por lo que no tenemos evidencia que nos permita concluir que <span class="math inline">\(\sigma&lt;1.5\)</span>.</p>
 <p><strong>¡Atención!</strong> El intervalo de confianza que da la función <code>sigma.test</code> es siempre para la varianza, aunque le entréis el valor de la desviación típica. Así que si queréis un intervalo de confianza para la desviación típica, tenéis que tomar la raíz cuadrada del que os da <code>sigma.test</code>:</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">sqrt</span>(<span class="kw">sigma.test</span>(TL45, <span class="dt">sigma=</span><span class="fl">1.5</span>, <span class="dt">alternative=</span><span class="st">&quot;less&quot;</span>)<span class="op">$</span>conf.int)</code></pre></div>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">sqrt</span>(<span class="kw">sigma.test</span>(TL45, <span class="dt">sigma=</span><span class="fl">1.5</span>, <span class="dt">alternative=</span><span class="st">&quot;less&quot;</span>)<span class="op">$</span>conf.int)</code></pre>
 <pre><code>## [1] 0.00000 2.29279
 ## attr(,&quot;conf.level&quot;)
 ## [1] 0.95</code></pre>
-<p>El test <span class="math inline">\(\chi^2\)</span> no se usa mucho en la práctica. En parte, porque realmente es poco interesante ya que suele ser difícil conjeturar la desviación típica a contrastar, y en parte porque su validez depende fuertemente de la hipótesis de que la variable aleatoria poblacional sea normal. En cambio, el contraste de las desviaciones típicas de dos poblaciones sí que es muy utilizado. Por ejemplo, en un contraste de dos medias usando un test t sobre dos muestras independientes, nos puede interesar conocer <em>a priori</em> si las varianzas poblacionales son iguales o diferentes, en lugar de realizar el test bajo ambas suposiciones. Si no las conocemos, ¿cómo podemos saber cuál es el caso? Si las dos variables poblacionales son normales, podemos contrastar la igualdad de las varianzas con el <strong>test F</strong>, basado en el estadístico <span class="math display">\[
+<p>El test <span class="math inline">\(\chi^2\)</span> no se usa mucho en la práctica. En parte, porque realmente es poco interesante ya que suele ser difícil conjeturar la desviación típica a contrastar, y en parte porque su validez depende fuertemente de la hipótesis de que la variable aleatoria poblacional sea normal. En cambio, el contraste de las desviaciones típicas de dos poblaciones sí que es muy utilizado. Por ejemplo, en un contraste de dos medias usando un test t sobre dos muestras independientes, nos puede interesar conocer <em>a priori</em> si las varianzas poblacionales son iguales o diferentes, en lugar de realizar el test bajo ambas suposiciones. Si no las conocemos, ¿cómo podemos saber cuál es el caso? Si las dos variables poblacionales son normales, podemos contrastar la igualdad de las varianzas con el <strong>test F</strong>, basado en el estadístico
+<span class="math display">\[
 \frac{\widetilde{S}_{X_1}^2} {\widetilde{S}_{X_2}^2}
-\]</span> que, si las dos poblaciones son normales y tienen la misma varianza, sigue una distribución F de Fisher-Snedecor. Por desgracia, este test es también muy sensible a la no normalidad de las poblaciones objeto de estudio: a la que una de ellas se aleja un poco de la normalidad, el test deja de dar resultados fiables.<a href="#fn2" class="footnoteRef" id="fnref2"><sup>2</sup></a></p>
+\]</span>
+que, si las dos poblaciones son normales y tienen la misma varianza, sigue una distribución F de Fisher-Snedecor. Por desgracia, este test es también muy sensible a la no normalidad de las poblaciones objeto de estudio: a la que una de ellas se aleja un poco de la normalidad, el test deja de dar resultados fiables.<a href="#fn2" class="footnote-ref" id="fnref2"><sup>2</sup></a></p>
 <p>La función para efectuar este test es <code>var.test</code> y su sintaxis básica es la misma que la de <code>t.test</code> para dos muestras:</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">var.test</span>(x, y, <span class="dt">alternative=</span>..., <span class="dt">conf.level=</span>...)</code></pre></div>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">var.test</span>(x, y, <span class="dt">alternative=</span>..., <span class="dt">conf.level=</span>...)</code></pre>
 <p>donde <code>x</code> e <code>y</code> son los dos vectores de datos, que se pueden especificar mediante una fórmula como en el caso de <code>t.test</code>, y el parámetro <code>alternative</code> puede tomar los tres mismos valores que en los tests anteriores: su valor por defecto es, como siempre, <code>&quot;two.sided&quot;</code>, que es el que nos permite contrastar si las varianzas son iguales o diferentes.</p>
 
 <div class="example">
 <p><span id="exm:variris" class="example"><strong>Ejemplo 5.11  </strong></span>Suponiendo que las longitudes de los sépalos de las flores de las diferentes especies de iris siguen leyes normales, ¿hubiéramos podido considerar <em>a priori</em> iguales las varianzas de las dos muestras en el Ejemplo <a href="chap-contrastes.html#exm:iris">5.4</a>? Veamos:</p>
 </div>
 
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">S=iris[iris<span class="op">$</span>Species<span class="op">==</span><span class="st">&quot;setosa&quot;</span>,]<span class="op">$</span>Sepal.Length
+<pre class="sourceCode r"><code class="sourceCode r">S=iris[iris<span class="op">$</span>Species<span class="op">==</span><span class="st">&quot;setosa&quot;</span>,]<span class="op">$</span>Sepal.Length
 V=iris[iris<span class="op">$</span>Species<span class="op">==</span><span class="st">&quot;virginica&quot;</span>,]<span class="op">$</span>Sepal.Length
-<span class="kw">var.test</span>(S,V)</code></pre></div>
+<span class="kw">var.test</span>(S,V)</code></pre>
 <pre><code>## 
 ##  F test to compare two variances
 ## 
@@ -760,23 +827,28 @@ V=iris[iris<span class="op">$</span>Species<span class="op">==</span><span class
 <p><span id="exm:unnamed-chunk-155" class="example"><strong>Ejemplo 5.12  </strong></span>Queremos contrastar si los gatos adultos macho pesan más que los gatos adultos hembra. Para ello usaremos los datos recogidos en el <em>dataframe</em> <code>cats</code> del paquete <strong>MASS</strong>, que contiene información sobre el peso de una muestra de gatos adultos, separados por su sexo.</p>
 </div>
 
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">str</span>(cats)</code></pre></div>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">str</span>(cats)</code></pre>
 <pre><code>## &#39;data.frame&#39;:    144 obs. of  3 variables:
 ##  $ Sex: Factor w/ 2 levels &quot;F&quot;,&quot;M&quot;: 1 1 1 1 1 1 1 1 1 1 ...
 ##  $ Bwt: num  2 2 2 2.1 2.1 2.1 2.1 2.1 2.1 2.1 ...
 ##  $ Hwt: num  7 7.4 9.5 7.2 7.3 7.6 8.1 8.2 8.3 8.5 ...</code></pre>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">table</span>(cats<span class="op">$</span>Sex)</code></pre></div>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">table</span>(cats<span class="op">$</span>Sex)</code></pre>
 <pre><code>## 
 ##  F  M 
 ## 47 97</code></pre>
 <p>Consultando la Ayuda de <code>cats</code> nos enteramos de que la variable <code>Bwt</code> contiene el peso de cada gato en kg, y la variable <code>Sex</code> contiene el sexo de cada gato: F para hembra (<em>female</em>) y M para macho (<em>male</em>). Como vemos en la tabla de frecuencias, los números de ejemplares de cada sexo son grandes.</p>
-<p>Así pues, si llamamos <span class="math inline">\(\mu_m\)</span> al peso medio de un gato macho adulto y <span class="math inline">\(\mu_h\)</span> al peso medio de un gato hembra adulto, el contraste que vamos a realizar es <span class="math display">\[
+<p>Así pues, si llamamos <span class="math inline">\(\mu_m\)</span> al peso medio de un gato macho adulto y
+<span class="math inline">\(\mu_h\)</span> al peso medio de un gato hembra adulto, el contraste que vamos a realizar es
+<span class="math display">\[
 \left\{\begin{array}{l}
 H_{0}:\mu_m=\mu_h\\
 H_{1}:\mu_m&gt;\mu_h
 \end{array}\right.
-\]</span> y para ello antes vamos a contrastar si las varianzas de ambas poblaciones son iguales o diferentes, para luego poder aplicar la función <code>t.test</code> con el valor de <code>var.equal</code> adecuado. Vamos a suponer que los pesos en ambos sexos siguen leyes normales. Para que el contraste de las varianzas sea fiable es necesario que esta suposición sea cierta; para el de los pesos medios, no, ya que ambas muestras son grandes. El contraste de la igualdad de varianzas es el siguiente:</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">var.test</span>(Bwt<span class="op">~</span>Sex, <span class="dt">data=</span>cats)</code></pre></div>
+\]</span>
+y para ello antes vamos a contrastar si las varianzas de ambas poblaciones son iguales o diferentes, para luego poder aplicar la función <code>t.test</code> con el valor de <code>var.equal</code> adecuado.
+Vamos a suponer que los pesos en ambos sexos siguen leyes normales. Para que el contraste de las varianzas sea fiable es necesario que esta suposición sea cierta; para el de los pesos medios, no, ya que ambas muestras son grandes.
+El contraste de la igualdad de varianzas es el siguiente:</p>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">var.test</span>(Bwt<span class="op">~</span>Sex, <span class="dt">data=</span>cats)</code></pre>
 <pre><code>## 
 ##  F test to compare two variances
 ## 
@@ -789,8 +861,9 @@ H_{1}:\mu_m&gt;\mu_h
 ## ratio of variances 
 ##           0.343501</code></pre>
 <p>El p-valor es <span class="math inline">\(1.2\times 10^{-4}\)</span>, y por lo tanto podemos rechazar la hipótesis nula de que las varianzas son iguales y concluir que son diferentes. Así que en el test t las consideraremos diferentes.</p>
-<p>Recordemos ahora que la hipótesis alternativa que queremos contrastar es <span class="math inline">\(H_{1}:\mu_m&gt;\mu_h\)</span>. En el factor <code>cats$Sex</code>, la F (hembra) va antes que la M (macho), y, por tanto, si entramos los vectores de pesos mediante <code>Bwt~Sex,data=cats</code>, el primer vector corresponderá a las gatas y el segundo a los gatos. Así pues, la hipótesis alternativa que tenemos que especificar es que la media del primer vector es inferior a la del segundo vector: <code>alternative=&quot;less&quot;</code>.</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">t.test</span>(Bwt<span class="op">~</span>Sex, <span class="dt">data=</span>cats, <span class="dt">alternative=</span><span class="st">&quot;less&quot;</span>,<span class="dt">var.equal=</span><span class="ot">FALSE</span>)</code></pre></div>
+<p>Recordemos ahora que la hipótesis alternativa que queremos contrastar es <span class="math inline">\(H_{1}:\mu_m&gt;\mu_h\)</span>. En el factor <code>cats$Sex</code>, la F (hembra) va antes que la M (macho), y, por tanto,
+si entramos los vectores de pesos mediante <code>Bwt~Sex,data=cats</code>, el primer vector corresponderá a las gatas y el segundo a los gatos. Así pues, la hipótesis alternativa que tenemos que especificar es que la media del primer vector es inferior a la del segundo vector: <code>alternative=&quot;less&quot;</code>.</p>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">t.test</span>(Bwt<span class="op">~</span>Sex, <span class="dt">data=</span>cats, <span class="dt">alternative=</span><span class="st">&quot;less&quot;</span>,<span class="dt">var.equal=</span><span class="ot">FALSE</span>)</code></pre>
 <pre><code>## 
 ##  Welch Two Sample t-test
 ## 
@@ -809,7 +882,7 @@ H_{1}:\mu_m&gt;\mu_h
 <p><span id="exm:unnamed-chunk-159" class="example"><strong>Ejemplo 5.13  </strong></span>Si queremos contrastar si las varianzas de las longitudes de los sépalos de las flores iris setosa y virginica son iguales o no sin presuponer que siguen leyes normales, podemos usar el test de Fligner-Killeen de la manera siguiente:</p>
 </div>
 
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">fligner.test</span>(<span class="kw">list</span>(S,V))</code></pre></div>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">fligner.test</span>(<span class="kw">list</span>(S,V))</code></pre>
 <pre><code>## 
 ##  Fligner-Killeen test of homogeneity of variances
 ## 
@@ -821,7 +894,7 @@ H_{1}:\mu_m&gt;\mu_h
 <p><span id="exm:unnamed-chunk-161" class="example"><strong>Ejemplo 5.14  </strong></span>Si queremos contrastar si las varianzas de los pesos de los gatos y las gatas adultos son iguales o no sin presuponer que dichos pesos tienen distribuciones normales, podemos usar el test de Fligner-Killeen de la manera siguiente:</p>
 </div>
 
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">fligner.test</span>(Bwt<span class="op">~</span>Sex, <span class="dt">data=</span>cats)</code></pre></div>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">fligner.test</span>(Bwt<span class="op">~</span>Sex, <span class="dt">data=</span>cats)</code></pre>
 <pre><code>## 
 ##  Fligner-Killeen test of homogeneity of variances
 ## 
@@ -833,7 +906,7 @@ H_{1}:\mu_m&gt;\mu_h
 <div id="contrastes-para-proporciones" class="section level2">
 <h2><span class="header-section-number">5.3</span> Contrastes para proporciones</h2>
 <p>Cuando tenemos que efectuar un contraste sobre una probabilidad de éxito <span class="math inline">\(p\)</span> de una variable Bernoulli, podemos emplear el <strong>test binomial exacto</strong>. Este test se basa en que, si la hipótesis nula <span class="math inline">\(H_0: p=p_0\)</span> es verdadera, los números de éxitos en muestras aleatorias simples de tamaño <span class="math inline">\(n\)</span> de la variable poblacional, que será de tipo <span class="math inline">\(Be(p_0)\)</span>, siguen una ley binomial <span class="math inline">\(B(n,p_0)\)</span>. Este test está implementado en la función <code>binom.test</code>, cuya sintaxis es</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">binom.test</span>(x, n, <span class="dt">p=</span>..., <span class="dt">alternative=</span>..., <span class="dt">conf.level=</span>...)</code></pre></div>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">binom.test</span>(x, n, <span class="dt">p=</span>..., <span class="dt">alternative=</span>..., <span class="dt">conf.level=</span>...)</code></pre>
 <p>donde</p>
 <ul>
 <li><p><code>x</code> y <code>n</code> son números naturales: el número de éxitos y el tamaño de la muestra.</p></li>
@@ -848,15 +921,18 @@ H_{1}:\mu_m&gt;\mu_h
 
 
 <div class="example">
-<p><span id="exm:unnamed-chunk-165" class="example"><strong>Ejemplo 5.15  </strong></span>Recordemos el Ejemplo <a href="chap-contrastes.html#exm:monedabase">5.1</a>, donde, en una serie de 20 lanzamientos de una moneda, había obtenido 15 caras. ¿Podemos sospechar que la moneda está trucada a favor de cara? Como comentamos en ese ejemplo, si llamamos <span class="math inline">\(p\)</span> a la probabilidad de obtener cara con esta moneda, el contraste que queremos realizar es <span class="math display">\[
+<p><span id="exm:unnamed-chunk-165" class="example"><strong>Ejemplo 5.15  </strong></span>Recordemos el Ejemplo <a href="chap-contrastes.html#exm:monedabase">5.1</a>, donde,
+en una serie de 20 lanzamientos de una moneda, había obtenido 15 caras. ¿Podemos sospechar que la moneda está trucada a favor de cara? Como comentamos en ese ejemplo, si llamamos <span class="math inline">\(p\)</span> a la probabilidad de obtener cara con esta moneda, el contraste que queremos realizar es
+<span class="math display">\[
 \left\{\begin{array}{l}
 H_{0}:p=0.5\\
 H_{1}:p&gt; 0.5
 \end{array}\right.
-\]</span> Usaremos la función <code>binom.test</code>:</p>
+\]</span>
+Usaremos la función <code>binom.test</code>:</p>
 </div>
 
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">binom.test</span>(<span class="dv">15</span>,<span class="dv">20</span>, <span class="dt">p=</span><span class="fl">0.5</span>, <span class="dt">alternative=</span><span class="st">&quot;greater&quot;</span>)</code></pre></div>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">binom.test</span>(<span class="dv">15</span>,<span class="dv">20</span>, <span class="dt">p=</span><span class="fl">0.5</span>, <span class="dt">alternative=</span><span class="st">&quot;greater&quot;</span>)</code></pre>
 <pre><code>## 
 ##  Exact binomial test
 ## 
@@ -870,7 +946,7 @@ H_{1}:p&gt; 0.5
 ##                   0.75</code></pre>
 <p>El p-valor del test es 0.0207 y el intervalo de confianza que nos da este test para la <span class="math inline">\(p\)</span> es [0.5444, 1]. Ambos valores coinciden con los dados en el ejemplo original</p>
 <p>Cuando la muestra es grande, pongamos de 40 o más sujetos, podemos usar también el <strong>test aproximado</strong>, basado en la aproximación de la distribución de la proporción muestral por medio de una normal dada por el Teorema Central del Límite. En R está implementado en la función <code>prop.test</code>, que además también sirve para contrastar dos proporciones por medio de muestras independientes grandes. Su sintaxis es</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">prop.test</span>(x, n, <span class="dt">p =</span>..., <span class="dt">alternative=</span>..., <span class="dt">conf.level=</span>...)</code></pre></div>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">prop.test</span>(x, n, <span class="dt">p =</span>..., <span class="dt">alternative=</span>..., <span class="dt">conf.level=</span>...)</code></pre>
 <p>donde:</p>
 <ul>
 <li><p><code>x</code> puede ser dos cosas:</p>
@@ -885,17 +961,19 @@ H_{1}:p&gt; 0.5
 <p>Veamos algunos ejemplos más.</p>
 
 <div class="example">
-<p><span id="exm:unnamed-chunk-168" class="example"><strong>Ejemplo 5.16  </strong></span>Queremos contrastar si la proporción de estudiantes zurdos en la UIB es diferente del 10%, el porcentaje estimado de zurdos en España. Es decir, si llamamos <span class="math inline">\(p\)</span> a la proporción de estudiantes zurdos en la UIB, queremos realizar el contraste <span class="math display">\[
+<p><span id="exm:unnamed-chunk-168" class="example"><strong>Ejemplo 5.16  </strong></span>Queremos contrastar si la proporción de estudiantes zurdos en la UIB es diferente del 10%, el porcentaje estimado de zurdos en España. Es decir, si llamamos <span class="math inline">\(p\)</span> a la proporción de estudiantes zurdos en la UIB, queremos realizar el contraste
+<span class="math display">\[
 \left\{
 \begin{array}{l}
 H_0:p=0.1\\
 H_1:p\neq 0.1
 \end{array}
 \right.
-\]</span> Para ello, tomamos una muestra de 50 estudiantes de la UIB encuestados al azar y resulta que 3 son zurdos. Vamos a suponer que forman una muestra aleatoria simple. Como la muestra es grande (<span class="math inline">\(n=50\)</span>) usaremos la función <code>prop.test</code>.</p>
+\]</span>
+Para ello, tomamos una muestra de 50 estudiantes de la UIB encuestados al azar y resulta que 3 son zurdos. Vamos a suponer que forman una muestra aleatoria simple. Como la muestra es grande (<span class="math inline">\(n=50\)</span>) usaremos la función <code>prop.test</code>.</p>
 </div>
 
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">prop.test</span>(<span class="dv">3</span>, <span class="dv">50</span>, <span class="dt">p=</span><span class="fl">0.1</span>)</code></pre></div>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">prop.test</span>(<span class="dv">3</span>, <span class="dv">50</span>, <span class="dt">p=</span><span class="fl">0.1</span>)</code></pre>
 <pre><code>## 
 ##  1-sample proportions test with continuity correction
 ## 
@@ -909,7 +987,7 @@ H_1:p\neq 0.1
 ## 0.06</code></pre>
 <p>El p-valor obtenido en el test es 0.48, muy superior a 0.05. Por lo tanto, no podemos rechazar que un 10% de los estudiantes de la UIB sean zurdos. El intervalo de confianza del 95% para <span class="math inline">\(p\)</span> que hemos obtenido es [0.016, 0.175].</p>
 <p>La conclusión usando el test binomial hubiera sido la misma:</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">binom.test</span>(<span class="dv">3</span>, <span class="dv">50</span>, <span class="dt">p=</span><span class="fl">0.1</span>)</code></pre></div>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">binom.test</span>(<span class="dv">3</span>, <span class="dv">50</span>, <span class="dt">p=</span><span class="fl">0.1</span>)</code></pre>
 <pre><code>## 
 ##  Exact binomial test
 ## 
@@ -922,8 +1000,8 @@ H_1:p\neq 0.1
 ## probability of success 
 ##                   0.06</code></pre>
 <p>Ya que estamos, comprobemos que el intervalo de confianza del 95% obtenido con <code>binom.test</code> es efectivamente el de Clopper-Pearson:</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(epitools)
-<span class="kw">binom.exact</span>(<span class="dv">3</span>,<span class="dv">50</span>)</code></pre></div>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(epitools)
+<span class="kw">binom.exact</span>(<span class="dv">3</span>,<span class="dv">50</span>)</code></pre>
 <pre><code>##   x  n proportion     lower    upper conf.level
 ## 1 3 50       0.06 0.0125486 0.165482       0.95</code></pre>
 
@@ -931,7 +1009,7 @@ H_1:p\neq 0.1
 <p> <span class="remark"><em>Nota. </em></span> El intervalo de confianza que se obtiene con <code>prop.test</code> en un contraste bilateral es el de Wilson modificado mediante una <strong>corrección de continuidad</strong>, un ajuste que se recomienda realizar cuando una distribución discreta (en este caso, una binomial) se aproxima mediante una distribución continua. En concreto, la fórmula que utiliza <code>prop.test</code> es la que se explica en <a href="https://en.wikipedia.org/wiki/Binomial_proportion_confidence_interval#Wilson_score_interval_with_continuity_correction">esta entrada de la Wikipedia</a>. Podéis indicar que R no efectue esta corrección de continuidad con el parámetro <code>correct=FALSE</code>:</p>
 </div>
 
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">prop.test</span>(<span class="dv">3</span>, <span class="dv">50</span>, <span class="dt">p=</span><span class="fl">0.1</span>, <span class="dt">correct=</span><span class="ot">FALSE</span>)</code></pre></div>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">prop.test</span>(<span class="dv">3</span>, <span class="dv">50</span>, <span class="dt">p=</span><span class="fl">0.1</span>, <span class="dt">correct=</span><span class="ot">FALSE</span>)</code></pre>
 <pre><code>## 
 ##  1-sample proportions test without continuity correction
 ## 
@@ -944,7 +1022,7 @@ H_1:p\neq 0.1
 ##    p 
 ## 0.06</code></pre>
 <p>(Observad que sin el <code>correct=FALSE</code>, el encabezamiento del resultado del <code>prop.test</code> es <code>1-sample proportions test with continuity correction</code>, mientras que con <code>correct=FALSE</code> es <code>1-sample proportions test without continuity correction</code>). Comprobemos que el intervalo de confianza del 95% que hemos obtenido ahora sí que es el de Wilson:</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">binom.wilson</span>(<span class="dv">3</span>, <span class="dv">50</span>)</code></pre></div>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">binom.wilson</span>(<span class="dv">3</span>, <span class="dv">50</span>)</code></pre>
 <pre><code>##   x  n proportion    lower    upper conf.level
 ## 1 3 50       0.06 0.020615 0.162171       0.95</code></pre>
 
@@ -953,7 +1031,7 @@ H_1:p\neq 0.1
 </div>
 
 <p>Digamos <span class="math inline">\(p_v\)</span> y <span class="math inline">\(p_n\)</span> a las proporciones de cucarachas que matan la trampa vieja y la trampa nueva, respectivamente. La hipótesis nula será que las trampas de los dos tipos son igual de efectivas, <span class="math inline">\(H_0:p_v=p_n\)</span>, y la hipótesis alternativa que las trampas nuevas son más efectivas que las viejas, <span class="math inline">\(H_1:p_v&lt;p_n\)</span>. Los tamaños de las muestras nos permiten usar la función <code>prop.test</code>.</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">prop.test</span>(<span class="kw">c</span>(<span class="dv">40</span>,<span class="dv">48</span>),<span class="kw">c</span>(<span class="dv">60</span>,<span class="dv">60</span>),<span class="dt">alternative=</span><span class="st">&quot;less&quot;</span>)</code></pre></div>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">prop.test</span>(<span class="kw">c</span>(<span class="dv">40</span>,<span class="dv">48</span>),<span class="kw">c</span>(<span class="dv">60</span>,<span class="dv">60</span>),<span class="dt">alternative=</span><span class="st">&quot;less&quot;</span>)</code></pre>
 <pre><code>## 
 ##  2-sample test for equality of proportions with continuity
 ##  correction
@@ -987,19 +1065,19 @@ H_1:p\neq 0.1
  \end{array}
 \]</span></p>
 <p>El test exacto de Fisher está implementado en la función <code>fisher.test</code>. Su sintaxis es</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">fisher.test</span>(x, <span class="dt">alternative=</span>..., <span class="dt">conf.level=</span>...)</code></pre></div>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">fisher.test</span>(x, <span class="dt">alternative=</span>..., <span class="dt">conf.level=</span>...)</code></pre>
 <p>donde</p>
 <ul>
 <li><p><code>x</code> es la matriz <span class="math inline">\(\left(\begin{array}{cc} a &amp; b\\ c &amp; d\end{array}\right)\)</span>, en la que los números de éxitos van en la primera fila y los de fracasos en la segunda, y las poblaciones se ordenan por columnas.</p></li>
 <li><p>El significado de <code>alternative</code> y <code>conf.level</code>, y sus posibles valores, son los usuales.</p></li>
 </ul>
 <p>Así, en el ejemplo de las trampas para cucarachas, entraríamos:</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">Datos=<span class="kw">rbind</span>(<span class="kw">c</span>(<span class="dv">40</span>,<span class="dv">48</span>),<span class="kw">c</span>(<span class="dv">20</span>,<span class="dv">12</span>))
-Datos</code></pre></div>
+<pre class="sourceCode r"><code class="sourceCode r">Datos=<span class="kw">rbind</span>(<span class="kw">c</span>(<span class="dv">40</span>,<span class="dv">48</span>),<span class="kw">c</span>(<span class="dv">20</span>,<span class="dv">12</span>))
+Datos</code></pre>
 <pre><code>##      [,1] [,2]
 ## [1,]   40   48
 ## [2,]   20   12</code></pre>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">fisher.test</span>(Datos, <span class="dt">alternative=</span><span class="st">&quot;less&quot;</span>)</code></pre></div>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">fisher.test</span>(Datos, <span class="dt">alternative=</span><span class="st">&quot;less&quot;</span>)</code></pre>
 <pre><code>## 
 ##  Fisher&#39;s Exact Test for Count Data
 ## 
@@ -1012,25 +1090,39 @@ Datos</code></pre></div>
 ## odds ratio 
 ##   0.502909</code></pre>
 <p>y obtenemos de nuevo un p-valor cercano a 0.074.</p>
-<p>Hay que ir con cuidado con la interpretación del intervalo de confianza que da esta función: no es ni para la diferencia de las proporciones ni para su cociente, sino para su <strong>odds ratio</strong>: el cociente <span class="math display">\[
+<p>Hay que ir con cuidado con la interpretación del intervalo de confianza que da esta función: no es ni para la diferencia de las proporciones ni para su cociente, sino para su <strong>odds ratio</strong>: el cociente
+<span class="math display">\[
 \Big({\frac{p_v}{1-p_v}}\Big)\Big/\Big({\frac{p_n}{1-p_n}}\Big).
 \]</span></p>
-<p>Recordad que si la probabilidad de un suceso <span class="math inline">\(A\)</span> es <span class="math inline">\(P(A)\)</span>, sus <strong>odds</strong> son el cociente <span class="math display">\[
+<p>Recordad que si la probabilidad de un suceso <span class="math inline">\(A\)</span> es <span class="math inline">\(P(A)\)</span>, sus <strong>odds</strong> son el cociente
+<span class="math display">\[
 \mbox{Odds}(A)=\frac{P(A)}{1-P(A)}
-\]</span> que mide cuántas veces es más probable <span class="math inline">\(A\)</span> que su contrario. Las <em>odds</em> son una función creciente de la probabilidad, y por lo tanto <span class="math display">\[
+\]</span>
+que mide cuántas veces es más probable <span class="math inline">\(A\)</span> que su contrario. Las <em>odds</em> son una función creciente de la probabilidad, y por lo tanto
+<span class="math display">\[
 \mbox{Odds}(A)&lt;\mbox{Odds}(B)\Longleftrightarrow P(A)&lt;P(B).
-\]</span> Esto permite comparar <em>odds</em> en vez de probabilidades, con la misma conclusión. Por ejemplo, en nuestro caso, como el intervalo de confianza para la <em>odds ratio</em> va de 0 a 1.084, en particular contiene el 1, por lo que no podemos rechazar que <span class="math display">\[
+\]</span>
+Esto permite comparar <em>odds</em> en vez de probabilidades, con la misma conclusión. Por ejemplo, en nuestro caso, como el intervalo de confianza para la <em>odds ratio</em> va de 0 a 1.084, en particular contiene el 1, por lo que no podemos rechazar que
+<span class="math display">\[
 \Big({\frac{p_v}{1-p_v}}\Big)\Big/\Big({\frac{p_n}{1-p_n}}\Big)=1,
-\]</span> es decir, no podemos rechazar que <span class="math display">\[
+\]</span>
+es decir, no podemos rechazar que
+<span class="math display">\[
 \frac{p_v}{1-p_v}=\frac{p_n}{1-p_n}
-\]</span> y esto es equivalente a <span class="math inline">\(p_v=p_n\)</span>. Si, por ejemplo, el intervalo de confianza hubiera ido de 0 a 0.8, entonces la conclusión a este nivel de confianza hubiera sido que <span class="math display">\[
+\]</span>
+y esto es equivalente a <span class="math inline">\(p_v=p_n\)</span>. Si, por ejemplo, el intervalo de confianza hubiera ido de 0 a 0.8, entonces la conclusión a este nivel de confianza hubiera sido que
+<span class="math display">\[
 \Big({\frac{p_v}{1-p_v}}\Big)\Big/\Big({\frac{p_n}{1-p_n}}\Big)&lt;1
-\]</span> es decir, que <span class="math display">\[
+\]</span>
+es decir, que
+<span class="math display">\[
 \frac{p_v}{1-p_v}&lt;\frac{p_n}{1-p_n}
-\]</span> y esto es equivalente a <span class="math inline">\(p_v&lt;p_n\)</span>.</p>
+\]</span>
+y esto es equivalente a <span class="math inline">\(p_v&lt;p_n\)</span>.</p>
 
 <div class="example">
-<span id="exm:unnamed-chunk-178" class="example"><strong>Ejemplo 5.18  </strong></span>Para determinar si el Síndrome de Muerte Súbita del Recién Nacido (<em>SIDS</em>, por sus siglas en inglés) tiene algún componente genético, se estudiaron parejas de gemelos y mellizos en las que se dio algún caso de SIDS. Sean <span class="math inline">\(p_1\)</span> la proporción de casos con exactamente una muerte por SIDS entre las parejas de gemelos con algún caso de SIDS, y <span class="math inline">\(p_2\)</span> la proporción de casos con exactamente una muerte por SIDS entre las parejas de mellizos con algún caso de SIDS. La hipótesis de trabajo es que si el SIDS tiene componente genético, será más probable que un gemelo de un muerto por SIDS también lo sufra que si solo es mellizo, y por lo tanto que en las parejas de gemelos ha de ser más raro que haya exactamente un caso de SIDS que en las parejas de mellizos. Es decir, que <span class="math inline">\(p_1&lt;p_2\)</span>. Así pues, queremos realizar el contraste <span class="math display">\[
+<span id="exm:unnamed-chunk-178" class="example"><strong>Ejemplo 5.18  </strong></span>Para determinar si el Síndrome de Muerte Súbita del Recién Nacido (<em>SIDS</em>, por sus siglas en inglés) tiene algún componente genético, se estudiaron parejas de gemelos y mellizos en las que se dio algún caso de SIDS. Sean <span class="math inline">\(p_1\)</span> la proporción de casos con exactamente una muerte por SIDS entre las parejas de gemelos con algún caso de SIDS, y <span class="math inline">\(p_2\)</span> la proporción de casos con exactamente una muerte por SIDS entre las parejas de mellizos con algún caso de SIDS. La hipótesis de trabajo es que si el SIDS tiene componente genético, será más probable que un gemelo de un muerto por SIDS también lo sufra que si solo es mellizo, y por lo tanto que en las parejas de gemelos ha de ser más raro que haya exactamente un caso de SIDS que en las parejas de mellizos. Es decir, que <span class="math inline">\(p_1&lt;p_2\)</span>. Así pues, queremos realizar el contraste
+<span class="math display">\[
 \left\{\begin{array}{l}
 H_0:p_1=p_2\\
 H_1:p_1&lt; p_2
@@ -1048,12 +1140,12 @@ H_1:p_1&lt; p_2
  \end{array}
 \]</span></p>
 <p>Vamos a realizar el contraste. Observad que damos la tabla de manera que <span class="math inline">\(p_1\)</span> es la proporción de parejas con un solo caso de SIDS entre las de la población 1 (gemelos), y <span class="math inline">\(p_{2}\)</span> es la proporción de parejas con un solo caso de SIDS entre las de la población 2 (mellizos). Por tanto hemos de aplicar <code>fisher.test</code> a esta matriz y <span class="math inline">\(p_1&lt;p_2\)</span> corresponderá a <code>alternative=&quot;less&quot;</code>.</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">Datos=<span class="kw">rbind</span>(<span class="kw">c</span>(<span class="dv">23</span>,<span class="dv">35</span>),<span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">2</span>))
-Datos</code></pre></div>
+<pre class="sourceCode r"><code class="sourceCode r">Datos=<span class="kw">rbind</span>(<span class="kw">c</span>(<span class="dv">23</span>,<span class="dv">35</span>),<span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">2</span>))
+Datos</code></pre>
 <pre><code>##      [,1] [,2]
 ## [1,]   23   35
 ## [2,]    1    2</code></pre>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">fisher.test</span>(Datos, <span class="dt">alternative=</span><span class="st">&quot;less&quot;</span>)</code></pre></div>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">fisher.test</span>(Datos, <span class="dt">alternative=</span><span class="st">&quot;less&quot;</span>)</code></pre>
 <pre><code>## 
 ##  Fisher&#39;s Exact Test for Count Data
 ## 
@@ -1077,17 +1169,21 @@ Datos</code></pre></div>
 \]</span></p>
 <p>donde <span class="math inline">\(a+b+c+d=n\)</span>. Esta tabla quiere decir, naturalmente, que <span class="math inline">\(a\)</span> sujetos de la muestra tuvieron la característica 1 y la característica 2, que <span class="math inline">\(b\)</span> sujetos de la muestra tuvieron la característica 2 pero no tuvieron la característica 1, etc.</p>
 <p>Vamos a llamar <span class="math inline">\(p_{1}\)</span> a la proporción poblacional de individuos con la característica 1, y <span class="math inline">\(p_{2}\)</span> a la proporción poblacional de individuos con la característica 2. Queremos contrastar la hipótesis nula <span class="math inline">\(H_{0}:p_1=p_2\)</span> contra alguna hipótesis alternativa. En este caso, no pueden usarse las funciones <code>prop.test</code> o <code>fisher.test</code>. Tenemos dos soluciones posibles.</p>
-<p>La primera nos permite realizar el contraste bilateral <span class="math display">\[
+<p>La primera nos permite realizar el contraste bilateral
+<span class="math display">\[
 \left\{\begin{array}{l}
 H_{0}:p_1=p_2\\
 H_{1}:p_1\neq p_2
 \end{array}\right.
-\]</span> cuando <span class="math inline">\(n\)</span> es grande (digamos que <span class="math inline">\(n{\geqslant}100\)</span>) y el número <span class="math inline">\(b+c\)</span> de <strong>casos discordantes</strong> (en los que una característica da Sí y la otra da No) es razonablemente grande, pongamos <span class="math inline">\({\geqslant}20\)</span>. En esta situación podemos usar el <strong>test de McNemar</strong>, que se lleva a cabo en R con la instrucción <code>mcnemar.test</code>. Su sintaxis básica es</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">mcnemar.test</span>(X)</code></pre></div>
-<p>donde <code>X</code> es la matriz <span class="math inline">\(\left(\begin{array}{cc} a &amp; b\\ c&amp; d \end{array}\right)\)</span> que corresponde a la tabla anterior.</p>
+\]</span>
+cuando <span class="math inline">\(n\)</span> es grande (digamos que <span class="math inline">\(n\geqslant 100\)</span>) y el número <span class="math inline">\(b+c\)</span> de <strong>casos discordantes</strong> (en los que una característica da Sí y la otra da No) es razonablemente grande, pongamos <span class="math inline">\(\geqslant 20\)</span>. En esta situación podemos usar el <strong>test de McNemar</strong>, que se lleva a cabo en R con la instrucción <code>mcnemar.test</code>. Su sintaxis básica es</p>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">mcnemar.test</span>(X)</code></pre>
+<p>donde <code>X</code> es la matriz <span class="math inline">\(\left(\begin{array}{cc} a &amp; b\\ c&amp; d \end{array}\right)\)</span>
+que corresponde a la tabla anterior.</p>
 
 <div class="example">
-<p><span id="exm:asma1" class="example"><strong>Ejemplo 5.19  </strong></span>Para comparar la efectividad de dos tratamientos del asma, se escogieron 200 pacientes con asma severo, y a cada uno se le trató durante un mes con el tratamiento A o el tratamiento B, decidiéndose cada tratamiento al azar; tras esta fase de tratamiento, se les dejó sin tratamiento durante un mes, y a continuación a cada uno se le trató durante un mes con el otro tratamiento (B si antes había recibido A, A si antes había recibido B). Se anotó si durante cada periodo de tratamiento cada enfermo visitó o no el servicio de urgencias por dificultades respiratorias. Los resultados del experimento se resumen en la tabla siguiente (“Sí” significa que sí que acudió a urgencias por dificultades respiratorias):</p>
+<p><span id="exm:asma1" class="example"><strong>Ejemplo 5.19  </strong></span>Para comparar la efectividad de dos tratamientos del asma, se escogieron 200 pacientes con asma severo, y a cada uno se le trató durante un mes con el tratamiento A o el tratamiento B, decidiéndose cada tratamiento al azar; tras esta fase de tratamiento, se les dejó sin tratamiento durante un mes, y a continuación a cada uno se le trató durante un mes con el otro tratamiento (B si antes había recibido A, A si antes había recibido B).
+Se anotó si durante cada periodo de tratamiento cada enfermo visitó o no el servicio de urgencias por dificultades respiratorias. Los resultados del experimento se resumen en la tabla siguiente (“Sí” significa que sí que acudió a urgencias por dificultades respiratorias):</p>
 </div>
 
 <p><span class="math display">\[
@@ -1099,19 +1195,20 @@ H_{1}:p_1\neq p_2
  \end{array}
 \]</span></p>
 <p>Queremos determinar si hay diferencia en la efectividad de los dos tratamientos. Para ello, entramos la tabla anterior en una matriz y le aplicamos la función <code>mcnemar.test</code>:</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">Datos=<span class="kw">matrix</span>(<span class="kw">c</span>(<span class="dv">71</span>,<span class="dv">48</span>,<span class="dv">30</span>,<span class="dv">51</span>),<span class="dt">nrow=</span><span class="dv">2</span>,<span class="dt">byrow=</span><span class="ot">TRUE</span>)
-Datos</code></pre></div>
+<pre class="sourceCode r"><code class="sourceCode r">Datos=<span class="kw">matrix</span>(<span class="kw">c</span>(<span class="dv">71</span>,<span class="dv">48</span>,<span class="dv">30</span>,<span class="dv">51</span>),<span class="dt">nrow=</span><span class="dv">2</span>,<span class="dt">byrow=</span><span class="ot">TRUE</span>)
+Datos</code></pre>
 <pre><code>##      [,1] [,2]
 ## [1,]   71   48
 ## [2,]   30   51</code></pre>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">mcnemar.test</span>(Datos)</code></pre></div>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">mcnemar.test</span>(Datos)</code></pre>
 <pre><code>## 
 ##  McNemar&#39;s Chi-squared test with continuity correction
 ## 
 ## data:  Datos
 ## McNemar&#39;s chi-squared = 3.705, df = 1, p-value = 0.0542</code></pre>
 <p>El p-valor del test es 0.054, ligeramente superior a 0.05, por lo tanto no permite concluir a un nivel de significación del 5% que haya evidencia de que la efectividad de los dos tratamientos sea diferente, pero sería conveniente llevar a cabo un estudio más amplio.</p>
-<p>Otra posibilidad para realizar un contraste de dos proporciones usando muestras emparejadas, que no requiere de ninguna hipótesis sobre los tamaños de las muestras, es usar de manera adecuada la función <code>binom.test</code>. Para explicar este método, consideremos la tabla siguiente, donde ahora damos las probabilidades poblacionales de las cuatro combinaciones de resultados: <span class="math display">\[
+<p>Otra posibilidad para realizar un contraste de dos proporciones usando muestras emparejadas, que no requiere de ninguna hipótesis sobre los tamaños de las muestras, es usar de manera adecuada la función <code>binom.test</code>. Para explicar este método, consideremos la tabla siguiente, donde ahora damos las probabilidades poblacionales de las cuatro combinaciones de resultados:
+<span class="math display">\[
 \begin{array}{r|c}
  &amp; \ \mbox{Característica 1}\  \\
 \mbox{Característica 2} &amp;\quad \ \!\mbox{Sí}\qquad\quad\, \mbox{No}\quad \\\hline
@@ -1125,7 +1222,7 @@ Datos</code></pre></div>
 <p><span id="exm:unnamed-chunk-182" class="example"><strong>Ejemplo 5.20  </strong></span>Usemos el test binomial para llevar a cabo el contraste bilateral del Ejemplo <a href="chap-contrastes.html#exm:asma1">5.19</a>. Habíamos obtenido 30+48=78 casos discordantes, de los que 48 eran casos en los que el tratamiento A había dado Sí y el tratamiento B había dado No.</p>
 </div>
 
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">binom.test</span>(<span class="dv">48</span>, <span class="dv">78</span>, <span class="dt">p=</span><span class="fl">0.5</span>)</code></pre></div>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">binom.test</span>(<span class="dv">48</span>, <span class="dv">78</span>, <span class="dt">p=</span><span class="fl">0.5</span>)</code></pre>
 <pre><code>## 
 ##  Exact binomial test
 ## 
@@ -1151,14 +1248,16 @@ Datos</code></pre></div>
  \mbox{Negativo} &amp; \quad\quad   2 \qquad\qquad\quad\quad \  157  \quad
  \end{array}
 \]</span></p>
-<p>Si llamamos <span class="math inline">\(p_{c}\)</span> a la probabilidad de que el test casero dé positivo y <span class="math inline">\(p_{e}\)</span> a la probabilidad de que el test estándar dé positivo, queremos realizar el contraste <span class="math display">\[
+<p>Si llamamos <span class="math inline">\(p_{c}\)</span> a la probabilidad de que el test casero dé positivo y
+<span class="math inline">\(p_{e}\)</span> a la probabilidad de que el test estándar dé positivo, queremos realizar el contraste
+<span class="math display">\[
 \left\{\begin{array}{l}
 H_{0}:p_{e}=p_{c}\\
 H_{1}:p_{e}&lt; p_{c}
 \end{array}\right.
 \]</span></p>
 <p>El número de casos discordantes es pequeño (10+2=12) y además el test es unilateral, así que usaremos el test binomial. Como queremos realizar un contraste unilateral, hay que pensar en cómo traducir la hipótesis alternativa en términos de una hipótesis sobre la probabilidad <span class="math inline">\(p=p_{10}/(p_{10}+p_{01})\)</span> de que un caso discordante tenga la característica 1 (la de las columnas). Veamos, <span class="math inline">\(p_{e}&lt; p_{c}\)</span> significa que la característica de las columnas es menos probable que la de las filas, por tanto se ha de traducir en que la probabilidad de tener la característica de las columnas y no la de las filas es más pequeña que la probabilidad de tener la característica de las filas y no la de las columnas, es decir, en que <span class="math inline">\(p&lt;0.5\)</span>: hemos de usar <code>alternative=less</code>.</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">binom.test</span>(<span class="dv">2</span>, <span class="dv">12</span>, <span class="dt">alternative=</span><span class="st">&quot;less&quot;</span>, <span class="dt">p=</span><span class="fl">0.5</span>)</code></pre></div>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">binom.test</span>(<span class="dv">2</span>, <span class="dv">12</span>, <span class="dt">alternative=</span><span class="st">&quot;less&quot;</span>, <span class="dt">p=</span><span class="fl">0.5</span>)</code></pre>
 <pre><code>## 
 ##  Exact binomial test
 ## 
@@ -1177,15 +1276,15 @@ H_{1}:p_{e}&lt; p_{c}
 <p>Recordemos que la <strong>potencia</strong> de un contraste de hipótesis es la probabilidad de no cometer un <strong>error de tipo II</strong>, es decir, la probabilidad de aceptar la hipótesis alternativa si es verdadera. Usualmente, la probabilidad de cometer un error de tipo II se denota por <span class="math inline">\(\beta\)</span>, y por lo tanto la potencia es <span class="math inline">\(1-\beta\)</span>.</p>
 <p>La potencia de un contraste está relacionada con lo que se llama la <strong>magnitud del efecto</strong> (<em>effect size</em>). En un contraste, el <strong>efecto</strong> es la diferencia entre el valor estimado del parámetro a partir de la muestra usada y el valor que se da a dicho parámetro como hipótesis nula: por ejemplo, en el contraste de una media, la diferencia entre la media muestral <span class="math inline">\(\overline{x}\)</span> y el valor contrastado <span class="math inline">\(\mu_0\)</span>; o, en el contraste de dos medias, la diferencia entre las dos medias muestrales. Se rechaza entonces la hipótesis nula si el efecto observado es tan grande que es muy improbable cuando la hipótesis nula es verdadera. Pero recordad que, en realidad, no se tiene en cuenta si el efecto observado ha sido grande o no por si mismo, solo si es estadísticamente significativo, es decir, si es improbable cuando la hipótesis nula es verdadera. Entonces, sin entrar en detalle, digamos que la <strong>magnitud del efecto</strong> es una medida estadística específica del tamaño del efecto observado respecto de su valor esperado si la hipótesis nula es verdadera. La fórmula para calcular la magnitud del efecto depende del contraste y del estadístico usado.</p>
 <p>Para cada tipo de test se han consensuado unos valores de la magnitud del efecto considerados como “pequeño”, “medio” y “grande”. Estos valores se obtienen con R con la función <code>cohen.ES</code> del paquete <strong>pwr</strong>. Su sintaxis básica es</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">cohen.ES</span>(<span class="dt">test=</span>..., <span class="dt">size=</span>...)</code></pre></div>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">cohen.ES</span>(<span class="dt">test=</span>..., <span class="dt">size=</span>...)</code></pre>
 <p>donde:</p>
 <ul>
 <li><p>el parámetro <code>test</code> sirve para indicar el tipo de test: por ejemplo, <code>test=&quot;t&quot;</code> para un test t usando <code>t.test</code>, o <code>test=&quot;p&quot;</code> para un test aproximado de proporciones usando <code>prop.test</code>;</p></li>
 <li><p>el parámetro <code>size</code> sirve para indicar la magnitud esperada: <code>&quot;small&quot;</code>, <code>&quot;medium&quot;</code> o <code>&quot;large&quot;</code>.</p></li>
 </ul>
 <p>A modo de ejemplo, la siguiente instrucción nos da la magnitud de efecto que se considera pequeña en un test t:</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(pwr)
-<span class="kw">cohen.ES</span>(<span class="dt">test=</span><span class="st">&quot;t&quot;</span>,<span class="dt">size=</span><span class="st">&quot;small&quot;</span>)</code></pre></div>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(pwr)
+<span class="kw">cohen.ES</span>(<span class="dt">test=</span><span class="st">&quot;t&quot;</span>,<span class="dt">size=</span><span class="st">&quot;small&quot;</span>)</code></pre>
 <pre><code>## 
 ##      Conventional effect size from Cohen (1982) 
 ## 
@@ -1193,7 +1292,7 @@ H_{1}:p_{e}&lt; p_{c}
 ##            size = small
 ##     effect.size = 0.2</code></pre>
 <p>De manera similar, para saber la magnitud de efecto que se considera media en un test aproximado de proporciones podemos usar instrucción siguiente:</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">cohen.ES</span>(<span class="dt">test=</span><span class="st">&quot;p&quot;</span>,<span class="dt">size=</span><span class="st">&quot;medium&quot;</span>)</code></pre></div>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">cohen.ES</span>(<span class="dt">test=</span><span class="st">&quot;p&quot;</span>,<span class="dt">size=</span><span class="st">&quot;medium&quot;</span>)</code></pre>
 <pre><code>## 
 ##      Conventional effect size from Cohen (1982) 
 ## 
@@ -1201,9 +1300,13 @@ H_{1}:p_{e}&lt; p_{c}
 ##            size = medium
 ##     effect.size = 0.5</code></pre>
 <p>Si se desea solo el valor de la magnitud del efecto, para poderlo entrar en otras funciones, se obtiene con el sufijo <code>$effect.size</code>:</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">cohen.ES</span>(<span class="dt">test=</span><span class="st">&quot;p&quot;</span>,<span class="dt">size=</span><span class="st">&quot;medium&quot;</span>)<span class="op">$</span>effect.size</code></pre></div>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">cohen.ES</span>(<span class="dt">test=</span><span class="st">&quot;p&quot;</span>,<span class="dt">size=</span><span class="st">&quot;medium&quot;</span>)<span class="op">$</span>effect.size</code></pre>
 <pre><code>## [1] 0.5</code></pre>
-<p>Así pues, en un contraste de hipótesis intervienen cuatro cantidades fundamentales: el <strong>tamaño</strong> de la muestra, <span class="math inline">\(n\)</span>; el <strong>nivel de significación</strong>, <span class="math inline">\(\alpha\)</span>; la <strong>potencia</strong>, <span class="math inline">\(1-\beta\)</span>; y la <strong>magnitud del efecto</strong>. El tamaño de la muestra y el nivel de significación están bajo el control del investigador; sin embargo, la potencia del contraste y la magnitud del efecto afectan al contraste de forma más indirecta y su control escapa al investigador. Por ejemplo, si incrementamos el tamaño de la muestra, la potencia aumenta, pero el aumento preciso depende de la magnitud del efecto esperada. De hecho, las cuatro cantidades anteriores no son independientes, sino que, a partir de tres cualesquiera de ellas, se puede calcular la cuarta. Las funciones del paquete <strong>pwr</strong> permiten realizar estos cálculos para los contrastes de medias y proporciones.</p>
+<p>Así pues, en un contraste de hipótesis intervienen cuatro cantidades fundamentales:
+el <strong>tamaño</strong> de la muestra, <span class="math inline">\(n\)</span>; el <strong>nivel de significación</strong>, <span class="math inline">\(\alpha\)</span>; la <strong>potencia</strong>, <span class="math inline">\(1-\beta\)</span>; y la <strong>magnitud del efecto</strong>.
+El tamaño de la muestra y el nivel de significación están bajo el control del investigador; sin embargo, la potencia del contraste y la magnitud del efecto afectan al contraste de forma más indirecta y su control escapa al investigador. Por ejemplo, si incrementamos el tamaño de la muestra, la potencia aumenta, pero el aumento preciso depende de la magnitud del efecto esperada.
+De hecho, las cuatro cantidades anteriores no son independientes, sino que, a partir de tres cualesquiera de ellas, se puede calcular la cuarta.
+Las funciones del paquete <strong>pwr</strong> permiten realizar estos cálculos para los contrastes de medias y proporciones.</p>
 <p>Las funciones de dicho paquete que por ahora nos interesan en este sentido son las siguientes:</p>
 <ul>
 <li><p><code>pwr.t.test</code>, para utilizar en tests t de una media, de dos medias usando muestras emparejadas o de dos medias usando muestras independientes del mismo tamaño.</p></li>
@@ -1231,16 +1334,18 @@ H_{1}:p_{e}&lt; p_{c}
 
 <ul>
 <li><p><code>n</code>, el tamaño de la muestra; en este ejemplo, <span class="math inline">\(n=25\)</span>.</p></li>
-<li><p><code>d</code>, la magnitud del efecto. Para tests t de una media e hipótesis nula <span class="math inline">\(H_0: \mu = \mu_0\)</span>, la magnitud del efecto se calcula con la fórmula <span class="math display">\[
+<li><p><code>d</code>, la magnitud del efecto. Para tests t de una media e hipótesis nula <span class="math inline">\(H_0: \mu = \mu_0\)</span>, la magnitud del efecto se calcula con la fórmula
+<span class="math display">\[
 d=\frac{|\overline{x}-\mu_0|}{\widetilde{s}_x}.
-\]</span> En nuestro ejemplo, <span class="math inline">\(d=\frac{|2.8048-2|}{0.68064}= 1.1824\)</span>.</p></li>
+\]</span>
+En nuestro ejemplo, <span class="math inline">\(d=\frac{|2.8048-2|}{0.68064}= 1.1824\)</span>.</p></li>
 <li><p><code>sig.level</code>, el nivel de significación; en este ejemplo, <span class="math inline">\(\alpha=0.05\)</span>.</p></li>
 </ul>
 <p>Además como es un contraste bliateral de una media, especificaremos <code>type=&quot;one.sample&quot;</code> y <code>alternative=&quot;two.sided&quot;</code> (esto último en realidad no hace falta: como siempre, este es su valor por defecto).</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">x=<span class="kw">c</span>(<span class="fl">2.2</span>,<span class="fl">2.66</span>,<span class="fl">2.74</span>,<span class="fl">3.41</span>,<span class="fl">2.46</span>,<span class="fl">2.96</span>,<span class="fl">3.34</span>,<span class="fl">2.16</span>,<span class="fl">2.46</span>,<span class="fl">2.71</span>,<span class="fl">2.04</span>,<span class="fl">3.74</span>,<span class="fl">3.24</span>,
+<pre class="sourceCode r"><code class="sourceCode r">x=<span class="kw">c</span>(<span class="fl">2.2</span>,<span class="fl">2.66</span>,<span class="fl">2.74</span>,<span class="fl">3.41</span>,<span class="fl">2.46</span>,<span class="fl">2.96</span>,<span class="fl">3.34</span>,<span class="fl">2.16</span>,<span class="fl">2.46</span>,<span class="fl">2.71</span>,<span class="fl">2.04</span>,<span class="fl">3.74</span>,<span class="fl">3.24</span>,
   <span class="fl">3.92</span>,<span class="fl">2.38</span>,<span class="fl">2.82</span>,<span class="fl">2.2</span>,<span class="fl">2.42</span>,<span class="fl">2.82</span>,<span class="fl">2.84</span>,<span class="fl">4.22</span>,<span class="fl">3.64</span>,<span class="fl">1.77</span>,<span class="fl">3.44</span>,<span class="fl">1.53</span>)
 mag.ef=<span class="kw">abs</span>(<span class="kw">mean</span>(x)<span class="op">-</span><span class="dv">2</span>)<span class="op">/</span><span class="kw">sd</span>(x) <span class="co">#Magnitud del efecto</span>
-<span class="kw">pwr.t.test</span>(<span class="dt">n=</span><span class="dv">25</span>, <span class="dt">d=</span>mag.ef, <span class="dt">sig.level=</span><span class="fl">0.05</span>, <span class="dt">type=</span><span class="st">&quot;one.sample&quot;</span>, <span class="dt">alternative=</span><span class="st">&quot;two.sided&quot;</span>)</code></pre></div>
+<span class="kw">pwr.t.test</span>(<span class="dt">n=</span><span class="dv">25</span>, <span class="dt">d=</span>mag.ef, <span class="dt">sig.level=</span><span class="fl">0.05</span>, <span class="dt">type=</span><span class="st">&quot;one.sample&quot;</span>, <span class="dt">alternative=</span><span class="st">&quot;two.sided&quot;</span>)</code></pre>
 <pre><code>## 
 ##      One-sample t test power calculation 
 ## 
@@ -1251,10 +1356,10 @@ mag.ef=<span class="kw">abs</span>(<span class="kw">mean</span>(x)<span class="o
 ##     alternative = two.sided</code></pre>
 <p>Obtenemos que la potencia del test es prácticamente 1.</p>
 <p>Si estuviéramos diseñando el experimento y quisiéramos calcular el tamaño mínimo de una muestra para tener un nivel de significación del 5% y potencia del 99%, suponiendo <em>a priori</em> que la magnitud del efecto esperado va a ser grande (y que por lo tanto detectar que la hipótesis alternativa es verdadera va a ser fácil), primero calcularíamos cuánto vale una magnitud del efecto grande:</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">cohen.ES</span>(<span class="dt">test=</span><span class="st">&quot;t&quot;</span>,<span class="dt">size=</span><span class="st">&quot;large&quot;</span>)<span class="op">$</span>effect.size</code></pre></div>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">cohen.ES</span>(<span class="dt">test=</span><span class="st">&quot;t&quot;</span>,<span class="dt">size=</span><span class="st">&quot;large&quot;</span>)<span class="op">$</span>effect.size</code></pre>
 <pre><code>## [1] 0.8</code></pre>
 <p>y a continuación la usaríamos en la función <code>pwr.t.test</code>:</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">pwr.t.test</span>(<span class="dt">d=</span><span class="fl">0.8</span>, <span class="dt">sig.level=</span><span class="fl">0.05</span>, <span class="dt">power=</span><span class="fl">0.99</span>, <span class="dt">type=</span><span class="st">&quot;one.sample&quot;</span>)</code></pre></div>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">pwr.t.test</span>(<span class="dt">d=</span><span class="fl">0.8</span>, <span class="dt">sig.level=</span><span class="fl">0.05</span>, <span class="dt">power=</span><span class="fl">0.99</span>, <span class="dt">type=</span><span class="st">&quot;one.sample&quot;</span>)</code></pre>
 <pre><code>## 
 ##      One-sample t test power calculation 
 ## 
@@ -1264,8 +1369,8 @@ mag.ef=<span class="kw">abs</span>(<span class="kw">mean</span>(x)<span class="o
 ##           power = 0.99
 ##     alternative = two.sided</code></pre>
 <p>Bastarían 31 observaciones para tener la potencia deseada. Si en cambio esperáramos una magnitud del efecto pequeña:</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">pwr.t.test</span>(<span class="dt">d=</span><span class="kw">cohen.ES</span>(<span class="dt">test=</span><span class="st">&quot;t&quot;</span>,<span class="dt">size=</span><span class="st">&quot;small&quot;</span>)<span class="op">$</span>effect.size,
-           <span class="dt">sig.level=</span><span class="fl">0.05</span>, <span class="dt">power=</span><span class="fl">0.99</span>, <span class="dt">type=</span><span class="st">&quot;one.sample&quot;</span>)</code></pre></div>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">pwr.t.test</span>(<span class="dt">d=</span><span class="kw">cohen.ES</span>(<span class="dt">test=</span><span class="st">&quot;t&quot;</span>,<span class="dt">size=</span><span class="st">&quot;small&quot;</span>)<span class="op">$</span>effect.size,
+           <span class="dt">sig.level=</span><span class="fl">0.05</span>, <span class="dt">power=</span><span class="fl">0.99</span>, <span class="dt">type=</span><span class="st">&quot;one.sample&quot;</span>)</code></pre>
 <pre><code>## 
 ##      One-sample t test power calculation 
 ## 
@@ -1276,9 +1381,9 @@ mag.ef=<span class="kw">abs</span>(<span class="kw">mean</span>(x)<span class="o
 ##     alternative = two.sided</code></pre>
 <p>En este caso necesitaríamos 462 observaciones.</p>
 <p>Podemos obtener solo una de las componentes del resultado de una de estas funciones añadiéndole el sufijo adecuado. Por ejemplo, la potencia se obtiene con el sufijo <code>$power</code> y el valor de <span class="math inline">\(n\)</span> con el sufijo <code>$n</code>:</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">pwr.t.test</span>(<span class="dt">n=</span><span class="dv">25</span>, <span class="dt">d=</span>mag.ef, <span class="dt">sig.level=</span><span class="fl">0.05</span>, <span class="dt">type=</span><span class="st">&quot;one.sample&quot;</span>, <span class="dt">alternative=</span><span class="st">&quot;two.sided&quot;</span>)<span class="op">$</span>power</code></pre></div>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">pwr.t.test</span>(<span class="dt">n=</span><span class="dv">25</span>, <span class="dt">d=</span>mag.ef, <span class="dt">sig.level=</span><span class="fl">0.05</span>, <span class="dt">type=</span><span class="st">&quot;one.sample&quot;</span>, <span class="dt">alternative=</span><span class="st">&quot;two.sided&quot;</span>)<span class="op">$</span>power</code></pre>
 <pre><code>## [1] 0.999893</code></pre>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">pwr.t.test</span>(<span class="dt">d=</span><span class="fl">0.8</span>, <span class="dt">sig.level=</span><span class="fl">0.05</span>, <span class="dt">power=</span><span class="fl">0.99</span>, <span class="dt">type=</span><span class="st">&quot;one.sample&quot;</span>)<span class="op">$</span>n</code></pre></div>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">pwr.t.test</span>(<span class="dt">d=</span><span class="fl">0.8</span>, <span class="dt">sig.level=</span><span class="fl">0.05</span>, <span class="dt">power=</span><span class="fl">0.99</span>, <span class="dt">type=</span><span class="st">&quot;one.sample&quot;</span>)<span class="op">$</span>n</code></pre>
 <pre><code>## [1] 30.7143</code></pre>
 
 <div class="example">
@@ -1296,36 +1401,38 @@ mag.ef=<span class="kw">abs</span>(<span class="kw">mean</span>(x)<span class="o
 <p>del Ejemplo <a href="chap-contrastes.html#exm:trampas1">5.17</a>. En este caso, usamos la función <code>pwr.2p.test</code>, ya que usamos dos muestras del mismo tamaño, y le entramos los parámetros siguientes:</p>
 <ul>
 <li><p><code>n</code>, el tamaño de las muestras; en este ejemplo, <span class="math inline">\(n=60\)</span>.</p></li>
-<li><p><code>h</code>, la magnitud del efecto. Para calcularla,<a href="#fn3" class="footnoteRef" id="fnref3"><sup>3</sup></a> usamos la función <code>ES.h</code> del mismo paquete <strong>pwr</strong> y que se aplica a las proporciones muestrales de éxitos: en este ejemplo, <span class="math inline">\(\widehat{p}_v=0.67\)</span> y <span class="math inline">\(\widehat{p}_n =0.8\)</span> y la magnitud del efecto vale:</p></li>
+<li><p><code>h</code>, la magnitud del efecto. Para calcularla,<a href="#fn3" class="footnote-ref" id="fnref3"><sup>3</sup></a> usamos la función <code>ES.h</code> del mismo paquete <strong>pwr</strong> y que se aplica a las proporciones muestrales de éxitos: en este ejemplo, <span class="math inline">\(\widehat{p}_v=0.67\)</span> y <span class="math inline">\(\widehat{p}_n =0.8\)</span> y la magnitud del efecto vale:</p></li>
 </ul>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"> <span class="kw">ES.h</span>(<span class="fl">0.67</span>,<span class="fl">0.8</span>)</code></pre></div>
+<pre class="sourceCode r"><code class="sourceCode r"> <span class="kw">ES.h</span>(<span class="fl">0.67</span>,<span class="fl">0.8</span>)</code></pre>
 <pre><code>## [1] -0.296584</code></pre>
 <ul>
 <li><code>sig.level</code>, el nivel de significación, 0.05.</li>
 </ul>
 <p>Como solo nos interesa la potencia, añadiremos al <code>pwr.2p.test</code> el sufijo <code>$power</code>:</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">pwr.2p.test</span>(<span class="dt">h=</span><span class="kw">ES.h</span>(<span class="fl">0.67</span>,<span class="fl">0.8</span>), <span class="dt">n=</span><span class="dv">60</span>, <span class="dt">sig.level=</span><span class="fl">0.05</span>,<span class="dt">alternative=</span><span class="st">&quot;less&quot;</span>)<span class="op">$</span>power</code></pre></div>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">pwr.2p.test</span>(<span class="dt">h=</span><span class="kw">ES.h</span>(<span class="fl">0.67</span>,<span class="fl">0.8</span>), <span class="dt">n=</span><span class="dv">60</span>, <span class="dt">sig.level=</span><span class="fl">0.05</span>,<span class="dt">alternative=</span><span class="st">&quot;less&quot;</span>)<span class="op">$</span>power</code></pre>
 <pre><code>## [1] 0.491864</code></pre>
 <p>Hemos obtenido una potencia de, aproximadamente, un 49%.</p>
 <p>Si estuviéramos diseñando el experimento y quisiéramos calcular el tamaño de las muestras necesario para tener una potencia del 90% al nivel de significación del 5% y esperando una magnitud del efecto pequeña (porque esperamos una mejora con las nuevas trampas, pero solo pequeña), entraríamos:</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">cohen.ES</span>(<span class="dt">test=</span><span class="st">&quot;p&quot;</span>,<span class="dt">size=</span><span class="st">&quot;small&quot;</span>)<span class="op">$</span>effect.size</code></pre></div>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">cohen.ES</span>(<span class="dt">test=</span><span class="st">&quot;p&quot;</span>,<span class="dt">size=</span><span class="st">&quot;small&quot;</span>)<span class="op">$</span>effect.size</code></pre>
 <pre><code>## [1] 0.2</code></pre>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">pwr.2p.test</span>(<span class="dt">h=</span><span class="op">-</span><span class="fl">0.2</span>, <span class="dt">sig.level=</span><span class="fl">0.05</span>, <span class="dt">power=</span><span class="fl">0.9</span>,<span class="dt">alternative=</span><span class="st">&quot;less&quot;</span>)<span class="op">$</span>n</code></pre></div>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">pwr.2p.test</span>(<span class="dt">h=</span><span class="op">-</span><span class="fl">0.2</span>, <span class="dt">sig.level=</span><span class="fl">0.05</span>, <span class="dt">power=</span><span class="fl">0.9</span>,<span class="dt">alternative=</span><span class="st">&quot;less&quot;</span>)<span class="op">$</span>n</code></pre>
 <pre><code>## [1] 428.192</code></pre>
 <p>Tendríamos que usar dos muestras de 429 cucarachas cada una. Observad que en <code>pwr.2p.test</code> hemos entrado en <code>h</code> la magnitud del efecto en negativo: esto es debido a que usamos <code>alternative=&quot;less&quot;</code> y por lo tanto esperamos que la primera proporción sea menor que la segunda.</p>
 
 <div class="example">
 <p><span id="exm:fumarbis" class="example"><strong>Ejemplo 5.24  </strong></span>En el contraste</p>
 </div>
-<p> <span class="math display">\[
+
+<p><span class="math display">\[
 \left\{\begin{array}{l}
 H_{0}:\mu_n=\mu_f\\
 H_{1}:\mu_n&gt; \mu_f
 \end{array}\right.
-\]</span> del Ejemplo <a href="chap-contrastes.html#exm:fumar">5.6</a>, ¿qué tamaño de la muestra de mujeres fumadoras tendríamos que tomar si usáramos una muestra de 100 no fumadoras, quisiéramos una potencia del 90% y un nivel de significación del 5% y esperáramos una magnitud del efecto media?</p>
+\]</span>
+del Ejemplo <a href="chap-contrastes.html#exm:fumar">5.6</a>, ¿qué tamaño de la muestra de mujeres fumadoras tendríamos que tomar si usáramos una muestra de 100 no fumadoras, quisiéramos una potencia del 90% y un nivel de significación del 5% y esperáramos una magnitud del efecto media?</p>
 <p>Como es un contraste de dos medias independientes y los tamaños de las muestras pueden ser diferentes, usaremos la función <code>pwr.t2n.test</code>. Entraremos como <code>n1</code> el tamaño de la muestra de fumadoras y le pediremos que nos dé solo el valor de <code>n2</code>, el tamaño de la “otra” muestra:</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">pwr.t2n.test</span>(<span class="dt">n1=</span><span class="dv">100</span>, <span class="dt">d=</span><span class="kw">cohen.ES</span>(<span class="dt">test=</span><span class="st">&quot;t&quot;</span>,<span class="dt">size=</span><span class="st">&quot;medium&quot;</span>)<span class="op">$</span>effect.size,  
-             <span class="dt">sig.level=</span><span class="fl">0.05</span>, <span class="dt">power=</span><span class="fl">0.9</span>, <span class="dt">alternative=</span><span class="st">&quot;greater&quot;</span>)<span class="op">$</span>n2</code></pre></div>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">pwr.t2n.test</span>(<span class="dt">n1=</span><span class="dv">100</span>, <span class="dt">d=</span><span class="kw">cohen.ES</span>(<span class="dt">test=</span><span class="st">&quot;t&quot;</span>,<span class="dt">size=</span><span class="st">&quot;medium&quot;</span>)<span class="op">$</span>effect.size,  
+             <span class="dt">sig.level=</span><span class="fl">0.05</span>, <span class="dt">power=</span><span class="fl">0.9</span>, <span class="dt">alternative=</span><span class="st">&quot;greater&quot;</span>)<span class="op">$</span>n2</code></pre>
 <pre><code>## [1] 52.8251</code></pre>
 <p>Bastaría estudiar 53 madres fumadoras.</p>
 </div>
@@ -1421,26 +1528,26 @@ Contrastad si ambas técnicas de diagnóstico tienen la misma probabilidad de da
 <h3>Respuestas al test</h3>
 <p><em>(1)</em> 0.487 NO</p>
 <p>Nosotros lo hemos resuelto con</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">x=<span class="kw">c</span>(<span class="dv">2</span>,<span class="dv">5</span>,<span class="dv">3</span>,<span class="dv">5</span>,<span class="dv">6</span>,<span class="dv">6</span>,<span class="dv">7</span>,<span class="dv">2</span>)
-<span class="kw">round</span>(<span class="kw">t.test</span>(x,<span class="dt">mu=</span><span class="dv">4</span>)<span class="op">$</span>p.value,<span class="dv">3</span>)</code></pre></div>
+<pre class="sourceCode r"><code class="sourceCode r">x=<span class="kw">c</span>(<span class="dv">2</span>,<span class="dv">5</span>,<span class="dv">3</span>,<span class="dv">5</span>,<span class="dv">6</span>,<span class="dv">6</span>,<span class="dv">7</span>,<span class="dv">2</span>)
+<span class="kw">round</span>(<span class="kw">t.test</span>(x,<span class="dt">mu=</span><span class="dv">4</span>)<span class="op">$</span>p.value,<span class="dv">3</span>)</code></pre>
 <pre><code>## [1] 0.487</code></pre>
 <p><em>(2)</em> 0.083 SI</p>
 <p>Nosotros lo hemos resuelto con</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">x1=<span class="kw">c</span>(<span class="dv">2</span>,<span class="dv">5</span>,<span class="dv">3</span>,<span class="dv">5</span>,<span class="dv">6</span>,<span class="dv">6</span>,<span class="dv">7</span>,<span class="dv">2</span>)
+<pre class="sourceCode r"><code class="sourceCode r">x1=<span class="kw">c</span>(<span class="dv">2</span>,<span class="dv">5</span>,<span class="dv">3</span>,<span class="dv">5</span>,<span class="dv">6</span>,<span class="dv">6</span>,<span class="dv">7</span>,<span class="dv">2</span>)
 x2=<span class="kw">c</span>(<span class="dv">3</span>,<span class="dv">2</span>,<span class="dv">5</span>,<span class="dv">4</span>,<span class="dv">2</span>,<span class="dv">2</span>,<span class="dv">4</span>,<span class="dv">5</span>,<span class="dv">1</span>,<span class="dv">6</span>,<span class="dv">2</span>)
-<span class="kw">round</span>(<span class="kw">t.test</span>(x1,x2,<span class="dt">alternative=</span><span class="st">&quot;greater&quot;</span>)<span class="op">$</span>p.value,<span class="dv">3</span>)</code></pre></div>
+<span class="kw">round</span>(<span class="kw">t.test</span>(x1,x2,<span class="dt">alternative=</span><span class="st">&quot;greater&quot;</span>)<span class="op">$</span>p.value,<span class="dv">3</span>)</code></pre>
 <pre><code>## [1] 0.083</code></pre>
 <p><em>(3)</em> 0.078 1.465 NO</p>
 <p>Nosotros lo hemos resuelto con</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">x1=<span class="kw">c</span>(<span class="dv">2</span>,<span class="dv">5</span>,<span class="dv">3</span>,<span class="dv">5</span>,<span class="dv">6</span>,<span class="dv">6</span>,<span class="dv">7</span>,<span class="dv">2</span>)
+<pre class="sourceCode r"><code class="sourceCode r">x1=<span class="kw">c</span>(<span class="dv">2</span>,<span class="dv">5</span>,<span class="dv">3</span>,<span class="dv">5</span>,<span class="dv">6</span>,<span class="dv">6</span>,<span class="dv">7</span>,<span class="dv">2</span>)
 x2=<span class="kw">c</span>(<span class="dv">3</span>,<span class="dv">2</span>,<span class="dv">10</span>,<span class="dv">9</span>,<span class="dv">2</span>,<span class="dv">2</span>,<span class="dv">4</span>,<span class="dv">5</span>,<span class="dv">1</span>,<span class="dv">10</span>,<span class="dv">2</span>)
-<span class="kw">round</span>(<span class="kw">var.test</span>(x1,x2)<span class="op">$</span>conf.int,<span class="dv">3</span>)</code></pre></div>
+<span class="kw">round</span>(<span class="kw">var.test</span>(x1,x2)<span class="op">$</span>conf.int,<span class="dv">3</span>)</code></pre>
 <pre><code>## [1] 0.078 1.465
 ## attr(,&quot;conf.level&quot;)
 ## [1] 0.95</code></pre>
 <p><em>(4)</em> 0.145 NO</p>
 <p>Nosotros lo hemos resuelto con</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">round</span>(<span class="kw">prop.test</span>(<span class="kw">c</span>(<span class="dv">20</span>,<span class="dv">40</span>),<span class="kw">c</span>(<span class="dv">100</span>,<span class="dv">150</span>),<span class="dt">alternative=</span><span class="st">&quot;less&quot;</span>)<span class="op">$</span>p.value,<span class="dv">3</span>)</code></pre></div>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">round</span>(<span class="kw">prop.test</span>(<span class="kw">c</span>(<span class="dv">20</span>,<span class="dv">40</span>),<span class="kw">c</span>(<span class="dv">100</span>,<span class="dv">150</span>),<span class="dt">alternative=</span><span class="st">&quot;less&quot;</span>)<span class="op">$</span>p.value,<span class="dv">3</span>)</code></pre>
 <pre><code>## [1] 0.145</code></pre>
 <!--
 ### Respuestas sucintas a los ejercicios {-}
@@ -1516,11 +1623,13 @@ binom.test(3,11, p=0.5)
 <div class="footnotes">
 <hr />
 <ol start="1">
-<li id="fn1"><p>Se sabe que si las dos muestras provienen de poblaciones normales y son del mismo tamaño, el test t tiende a dar la misma conclusión tanto si se supone que las dos varianzas son iguales como si se supone que son diferentes: véase C. A. Markowski y E. P. Markowski, “Conditions for the Effectiveness of a Preliminary Test of Variance,” <em>The American Statistician</em> 44 (1990), pp. 322-326. Pero no sabemos si estas longitudes siguen distribuciones normales o no, y que “tienda a dar” la misma conclusión no significa que en un ejemplo concreto con p-valores cercanos al nivel de significación no pueda dar conclusiones diferentes.<a href="chap-contrastes.html#fnref1">↩</a></p></li>
-<li id="fn2"><p>Véanse: E. S. Pearson, “The analysis of variance in cases of non-normal variation,” <em>Biometrika</em> 23 (1931), pp. 114-133; G. E. P. Box, “Non-normality and tests on variances,” <em>Biometrika</em> 40 (1953), pp. 318-335.<a href="chap-contrastes.html#fnref2">↩</a></p></li>
-<li id="fn3"><p>Por si a alguien le interesa, la fórmula para esta magnitud del efecto es <span class="math display">\[
+<li id="fn1"><p>Se sabe que si las dos muestras provienen de poblaciones normales y son del mismo tamaño, el test t tiende a dar la misma conclusión tanto si se supone que las dos varianzas son iguales como si se supone que son diferentes: véase C. A. Markowski y E. P. Markowski, “Conditions for the Effectiveness of a Preliminary Test of Variance,” <em>The American Statistician</em> 44 (1990), pp. 322-326. Pero no sabemos si estas longitudes siguen distribuciones normales o no, y que “tienda a dar” la misma conclusión no significa que en un ejemplo concreto con p-valores cercanos al nivel de significación no pueda dar conclusiones diferentes.<a href="chap-contrastes.html#fnref1" class="footnote-back">↩</a></p></li>
+<li id="fn2"><p>Véanse: E. S. Pearson, “The analysis of variance in cases of non-normal variation,” <em>Biometrika</em> 23 (1931), pp. 114-133; G. E. P. Box, “Non-normality and tests on variances,” <em>Biometrika</em> 40 (1953), pp. 318-335.<a href="chap-contrastes.html#fnref2" class="footnote-back">↩</a></p></li>
+<li id="fn3"><p>Por si a alguien le interesa, la fórmula para esta magnitud del efecto es
+<span class="math display">\[
 h=2\left(\arcsin\big(\sqrt{\widehat{p}_1}\,\big)-\arcsin\big(\sqrt{\widehat{p}_2}\,\big)\right),
-\]</span> siendo <span class="math inline">\(\widehat{p}_1\)</span> y <span class="math inline">\(\widehat{p}_2\)</span> las proporciones muestrales de éxitos de las dos muestras.<a href="chap-contrastes.html#fnref3">↩</a></p></li>
+\]</span>
+siendo <span class="math inline">\(\widehat{p}_1\)</span> y <span class="math inline">\(\widehat{p}_2\)</span> las proporciones muestrales de éxitos de las dos muestras.<a href="chap-contrastes.html#fnref3" class="footnote-back">↩</a></p></li>
 </ol>
 </div>
             </section>
@@ -1579,7 +1688,7 @@ gitbook.start({
   (function () {
     var script = document.createElement("script");
     script.type = "text/javascript";
-    var src = "";
+    var src = "true";
     if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
     if (location.protocol !== "file:" && /^https?:/.test(src))
       src = src.replace(/^https?:/, '');

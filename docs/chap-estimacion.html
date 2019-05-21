@@ -25,7 +25,7 @@
 <meta name="author" content="The AprendeR team">
 
 
-<meta name="date" content="2019-04-20">
+<meta name="date" content="2019-05-21">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -51,41 +51,67 @@
 
 
 <style type="text/css">
-div.sourceCode { overflow-x: auto; }
-table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
-  margin: 0; padding: 0; vertical-align: baseline; border: none; }
-table.sourceCode { width: 100%; line-height: 100%; }
-td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
-td.sourceCode { padding-left: 5px; }
-code > span.kw { color: #007020; font-weight: bold; } /* Keyword */
-code > span.dt { color: #902000; } /* DataType */
-code > span.dv { color: #40a070; } /* DecVal */
-code > span.bn { color: #40a070; } /* BaseN */
-code > span.fl { color: #40a070; } /* Float */
-code > span.ch { color: #4070a0; } /* Char */
-code > span.st { color: #4070a0; } /* String */
-code > span.co { color: #60a0b0; font-style: italic; } /* Comment */
-code > span.ot { color: #007020; } /* Other */
-code > span.al { color: #ff0000; font-weight: bold; } /* Alert */
-code > span.fu { color: #06287e; } /* Function */
-code > span.er { color: #ff0000; font-weight: bold; } /* Error */
-code > span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
-code > span.cn { color: #880000; } /* Constant */
-code > span.sc { color: #4070a0; } /* SpecialChar */
-code > span.vs { color: #4070a0; } /* VerbatimString */
-code > span.ss { color: #bb6688; } /* SpecialString */
-code > span.im { } /* Import */
-code > span.va { color: #19177c; } /* Variable */
-code > span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
-code > span.op { color: #666666; } /* Operator */
-code > span.bu { } /* BuiltIn */
-code > span.ex { } /* Extension */
-code > span.pp { color: #bc7a00; } /* Preprocessor */
-code > span.at { color: #7d9029; } /* Attribute */
-code > span.do { color: #ba2121; font-style: italic; } /* Documentation */
-code > span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
-code > span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
-code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+a.sourceLine { display: inline-block; line-height: 1.25; }
+a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
+a.sourceLine:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode { white-space: pre; position: relative; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+code.sourceCode { white-space: pre-wrap; }
+a.sourceLine { text-indent: -1em; padding-left: 1em; }
+}
+pre.numberSource a.sourceLine
+  { position: relative; left: -4em; }
+pre.numberSource a.sourceLine::before
+  { content: attr(data-line-number);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; pointer-events: all; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {  }
+@media screen {
+a.sourceLine::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
 </style>
 
 <link rel="stylesheet" href="style.css" type="text/css" />
@@ -209,6 +235,27 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li class="chapter" data-level="" data-path="chap-ANOVA.html"><a href="chap-ANOVA.html#respuestas-al-test-8"><i class="fa fa-check"></i>Respuestas al test</a></li>
 </ul></li>
 </ul></li>
+<li class="chapter" data-level="10" data-path="chap-regresion.html"><a href="chap-regresion.html"><i class="fa fa-check"></i><b>10</b> Regresión lineal</a><ul>
+<li class="chapter" data-level="10.1" data-path="chap-regresion.html"><a href="chap-regresion.html#sec:1"><i class="fa fa-check"></i><b>10.1</b> El modelo de regresión lineal en R</a></li>
+<li class="chapter" data-level="10.2" data-path="chap-regresion.html"><a href="chap-regresion.html#intervalos-de-confianza-en-el-modelo-de-regresion-lineal"><i class="fa fa-check"></i><b>10.2</b> Intervalos de confianza en el modelo de regresión lineal</a></li>
+<li class="chapter" data-level="10.3" data-path="chap-regresion.html"><a href="chap-regresion.html#sec:seleccion"><i class="fa fa-check"></i><b>10.3</b> Selección del modelo en base al ajuste de los datos</a></li>
+<li class="chapter" data-level="10.4" data-path="chap-regresion.html"><a href="chap-regresion.html#sec:diagn"><i class="fa fa-check"></i><b>10.4</b> Diagnósticos de regresión</a></li>
+<li class="chapter" data-level="10.5" data-path="chap-regresion.html"><a href="chap-regresion.html#guia-rapida-8"><i class="fa fa-check"></i><b>10.5</b> Guía rápida</a></li>
+<li class="chapter" data-level="10.6" data-path="chap-regresion.html"><a href="chap-regresion.html#ejercicios-9"><i class="fa fa-check"></i><b>10.6</b> Ejercicios</a><ul>
+<li class="chapter" data-level="" data-path="chap-regresion.html"><a href="chap-regresion.html#test-4"><i class="fa fa-check"></i>Test</a></li>
+<li class="chapter" data-level="" data-path="chap-regresion.html"><a href="chap-regresion.html#respuestas-al-test-9"><i class="fa fa-check"></i>Respuestas al test</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="11" data-path="chap-clustering.html"><a href="chap-clustering.html"><i class="fa fa-check"></i><b>11</b> <em>Clustering</em> básico</a><ul>
+<li class="chapter" data-level="11.1" data-path="chap-clustering.html"><a href="chap-clustering.html#metodo-de-k-medias-o-k-means"><i class="fa fa-check"></i><b>11.1</b> Método de k-medias o <em>k-means</em></a></li>
+<li class="chapter" data-level="11.2" data-path="chap-clustering.html"><a href="chap-clustering.html#eleccion-del-numero-de-clusters"><i class="fa fa-check"></i><b>11.2</b> Elección del número de <em>clusters</em></a></li>
+<li class="chapter" data-level="11.3" data-path="chap-clustering.html"><a href="chap-clustering.html#metodos-jerarquicos-aglomerativos"><i class="fa fa-check"></i><b>11.3</b> Métodos jerárquicos aglomerativos</a></li>
+<li class="chapter" data-level="11.4" data-path="chap-clustering.html"><a href="chap-clustering.html#guia-rapida-9"><i class="fa fa-check"></i><b>11.4</b> Guía rápida</a></li>
+<li class="chapter" data-level="11.5" data-path="chap-clustering.html"><a href="chap-clustering.html#ejercicios-10"><i class="fa fa-check"></i><b>11.5</b> Ejercicios</a><ul>
+<li class="chapter" data-level="" data-path="chap-clustering.html"><a href="chap-clustering.html#test-5"><i class="fa fa-check"></i>Test</a></li>
+<li class="chapter" data-level="" data-path="chap-clustering.html"><a href="chap-clustering.html#respuestas-al-test-10"><i class="fa fa-check"></i>Respuestas al test</a></li>
+</ul></li>
+</ul></li>
 <li class="divider"></li>
 <li><a href="https://github.com/cescrossello/AprendeR-II" target="blank">Publicado con  bookdown</a></li>
 
@@ -238,9 +285,11 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 </ul>
 <p>En ambos casos, existen tres vías para obtener información sobre los parámetros de la distribución (conocida o desconocida) de la variable aleatoria que nos interesa:</p>
 <ul>
-<li><p><strong>Estimación puntual</strong>. Se trata de obtener expresiones matemáticas, llamadas <strong>estimadores puntuales</strong>, que aplicadas a los valores de una muestra nos dan una aproximación (el término exacto es una <strong>estimación</strong>) del valor de dicho parámetro para la población. A modo de ejemplo, la media aritmética de los datos <span class="math inline">\(x_1,\ldots,x_n\)</span> de una muestra aleatoria, <span class="math display">\[
+<li><p><strong>Estimación puntual</strong>. Se trata de obtener expresiones matemáticas, llamadas <strong>estimadores puntuales</strong>, que aplicadas a los valores de una muestra nos dan una aproximación (el término exacto es una <strong>estimación</strong>) del valor de dicho parámetro para la población. A modo de ejemplo, la media aritmética de los datos <span class="math inline">\(x_1,\ldots,x_n\)</span> de una muestra aleatoria,
+<span class="math display">\[
 \overline{x}=\frac{x_1+\cdots +x_n}{n},
-\]</span> es un estimador del <strong>valor medio</strong> (<strong>valor esperado</strong>, <strong>esperanza</strong>) de la variable aleatoria de la que hemos extraído la muestra.</p></li>
+\]</span>
+es un estimador del <strong>valor medio</strong> (<strong>valor esperado</strong>, <strong>esperanza</strong>) de la variable aleatoria de la que hemos extraído la muestra.</p></li>
 <li><p><strong>Estimación por intervalos de confianza</strong>. Se trata de obtener intervalos que contengan con probabilidad alta el parámetro objeto de estudio. Trataremos este tema en la Lección <a href="chap-IC.html#chap:IC">4</a>.</p></li>
 <li><p><strong>Contraste de hipótesis</strong>. <em>Grosso modo</em>, se establecen dos hipótesis opuestas sobre el parámetro o, más en general, sobre la distribución de la variable aleatoria, y se contrastan para intentar decidir cuál es la verdadera. Los estudiaremos en próximas lecciones.</p></li>
 </ul>
@@ -262,20 +311,20 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 </ul>
 <p>Cuando se estima algún parámetro de una distribución a partir de una muestra, es conveniente aportar el <strong>error típico</strong>, o <strong>estándar</strong>, como medida de la finura de la estimación. Recordemos que el <strong>error típico de un estimador</strong> es la desviación típica de su distribución muestral, y que el <strong>error típico de una estimación</strong> a partir de una muestra es la estimación del error típico del estimador usando dicha muestra.</p>
 <p>Veamos un ejemplo sencillo. Supongamos que tenemos una muestra aleatoria simple de tamaño <span class="math inline">\(n\)</span> de una variable <span class="math inline">\(X\)</span> que sigue una distribución Bernoulli de probabilidad poblacional <span class="math inline">\(p\)</span> desconocida que queremos estimar. Por ejemplo, puede ser que tengamos una moneda posiblemente trucada, la hayamos lanzado 100 veces al aire y hayamos anotado los resultados (1, cara, 0, cruz), y a partir de este experimento queramos estimar la probabilidad de sacar cara con esta moneda. O que hayamos anotado para 100 individuos de una población elegidos al azar si tienen o no una determinada enfermedad (1 significa que sí, 0 que no) y a partir de esta muestra deseemos estimar la <strong>prevalencia</strong> de la enfermedad en la población, es decir, la proporción real de enfermos, que coincide con la probabilidad de que un individuo elegido al azar tenga dicha enfermedad. Tomemos, para fijar ideas, la siguiente muestra de tamaño 100:</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">x=<span class="kw">c</span>(<span class="dv">0</span>,<span class="dv">1</span>,<span class="dv">1</span>,<span class="dv">1</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">1</span>,<span class="dv">1</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">1</span>,<span class="dv">1</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">1</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">1</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">1</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">1</span>,<span class="dv">0</span>,<span class="dv">1</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,
+<pre class="sourceCode r"><code class="sourceCode r">x=<span class="kw">c</span>(<span class="dv">0</span>,<span class="dv">1</span>,<span class="dv">1</span>,<span class="dv">1</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">1</span>,<span class="dv">1</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">1</span>,<span class="dv">1</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">1</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">1</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">1</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">1</span>,<span class="dv">0</span>,<span class="dv">1</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,
 <span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">1</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">1</span>,<span class="dv">1</span>,<span class="dv">0</span>,<span class="dv">1</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">1</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">1</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,
-<span class="dv">1</span>,<span class="dv">1</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">1</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">1</span>,<span class="dv">0</span>)</code></pre></div>
+<span class="dv">1</span>,<span class="dv">1</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">1</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">1</span>,<span class="dv">0</span>)</code></pre>
 <p>En este caso, podemos estimar <span class="math inline">\(p\)</span> mediante la proporción muestral de éxitos <span class="math inline">\(\widehat{p}\)</span>, que coincide con la media muestral. El error típico de este estimador es <span class="math inline">\(\sqrt{p(1-p)/n}\)</span>, y el error típico de una estimación concreta es <span class="math inline">\(\sqrt{\widehat{p}(1-\widehat{p})/n}\)</span>. Por lo tanto, a mano podemos estimar <span class="math inline">\(p\)</span> y calcular el error típico de dicha estimación de la manera siguiente:</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">n=<span class="kw">length</span>(x)  <span class="co">#Tamaño de la muestra</span>
+<pre class="sourceCode r"><code class="sourceCode r">n=<span class="kw">length</span>(x)  <span class="co">#Tamaño de la muestra</span>
 estim.p=<span class="kw">mean</span>(x)  <span class="co">#Proporción muestral</span>
-estim.p</code></pre></div>
+estim.p</code></pre>
 <pre><code>## [1] 0.22</code></pre>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">error.tip.p=<span class="kw">sqrt</span>(estim.p<span class="op">*</span>(<span class="dv">1</span><span class="op">-</span>estim.p)<span class="op">/</span>n) <span class="co">#Error típico de la estimación</span>
-error.tip.p</code></pre></div>
+<pre class="sourceCode r"><code class="sourceCode r">error.tip.p=<span class="kw">sqrt</span>(estim.p<span class="op">*</span>(<span class="dv">1</span><span class="op">-</span>estim.p)<span class="op">/</span>n) <span class="co">#Error típico de la estimación</span>
+error.tip.p</code></pre>
 <pre><code>## [1] 0.04142463</code></pre>
 <p>De esta manera, estimamos que <span class="math inline">\(p\)</span>=0.22 con un error típico de 0.04.</p>
 <p>Con R podemos estimar un parámetro de una distribución por el método de máxima verosimilitud a partir de una muestra y además obtener el error típico de dicha estimación usando la función <code>fitdistr</code> del paquete <strong>MASS</strong>. Esta función calcula los estimadores máximo verosímiles de los parámetros de la mayoría de las familias de distribuciones disponibles en R. Su sintaxis básica es</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">fitdistr</span>(x, <span class="dt">densfun=</span>..., <span class="dt">start=</span>...)</code></pre></div>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">fitdistr</span>(x, <span class="dt">densfun=</span>..., <span class="dt">start=</span>...)</code></pre>
 <p>donde</p>
 <ul>
 <li><p><code>x</code> es la muestra, un vector numérico.</p></li>
@@ -283,67 +332,70 @@ error.tip.p</code></pre></div>
 <li><p>Si <code>fitdistr</code> no dispone de una fórmula cerrada para el estimador máximo verosímil de algún parámetro, usa un algoritmo numérico para aproximarlo que requiere de un valor inicial para arrancar. Este valor (o valores) se puede especificar igualando el parámetro <code>start</code> a una <code>list</code> con cada parámetro a estimar igualado a un valor inicial. Para algunas distribuciones, como la <code>&quot;t&quot;</code>, <code>fitdistr</code> sabe tomar valores iniciales razonables, y no es necesario especificar el parámetro <code>start</code>. Pero para otras distribuciones, como por ejemplo la <code>&quot;chi-squared&quot;</code>, es obligatorio especificarlo. Para las distribuciones que disponen de fórmula cerrada, como la <code>&quot;normal&quot;</code> o la <code>&quot;poisson&quot;</code>, se tiene que omitir el parámetro <code>start</code>.</p></li>
 </ul>
 <p>Como no podemos usar <code>fitdistr</code> para estimar el parámetro <span class="math inline">\(p\)</span> de una Bernoulli (los autores del paquete debieron de considerar que era más fácil estimarlo directamente), vamos a usarla en otro ejemplo. Consideremos la siguiente muestra <em>y</em> de 100 valores generados con distribución de Poisson de parámetro <span class="math inline">\(\lambda=10\)</span>:</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">set.seed</span>(<span class="dv">100</span>) 
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">set.seed</span>(<span class="dv">100</span>) 
 y=<span class="kw">rpois</span>(<span class="dv">100</span>,<span class="dv">10</span>)
 <span class="kw">set.seed</span>(<span class="ot">NULL</span>) 
-y</code></pre></div>
+y</code></pre>
 <pre><code>##   [1]  8 10  9 12 10 11  8 12  7 11 11 12  7 10  9  8 11  7  6 12 10 12  7
 ##  [24]  7 10  6  7 15  9  9  7  8 15 11 12  5 14  4  7 14  8 14 10  4  9  8
 ##  [47] 11 11 10 12  7 14  7  9 10  3 10  7  9 21 14  6 13  3 10  6  3 13  9
 ##  [70] 12  8 11 10 11 11  8  6 17  7  8 10 12 15 12 13 10  9 12  8 11 12  4
 ##  [93] 10  8  5  8  8 10  8 11</code></pre>
 <p>Vamos a estimar el parámetro <span class="math inline">\(\lambda\)</span> de una distribución Poisson que haya generado este vector:</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(MASS)
-<span class="kw">fitdistr</span>(y, <span class="dt">densfun=</span><span class="st">&quot;poisson&quot;</span>)</code></pre></div>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(MASS)
+<span class="kw">fitdistr</span>(y, <span class="dt">densfun=</span><span class="st">&quot;poisson&quot;</span>)</code></pre>
 <pre><code>##     lambda  
 ##   9.5600000 
 ##  (0.3091925)</code></pre>
 <p>El resultado dice que el valor estimado de <span class="math inline">\(\lambda\)</span> es 9.56, con un error típico estimado de 0.31. Veámoslo directamente: el estimador máximo verosímil de <span class="math inline">\(\lambda\)</span> es la media aritmética <span class="math inline">\(\overline{X}\)</span> y el error típico de este estimador es <span class="math inline">\(\sqrt{\lambda}/\sqrt{n}\)</span> (recordad que la desviación típica de una Poisson de parámetro <span class="math inline">\(\lambda\)</span> es <span class="math inline">\(\sqrt{\lambda}\)</span> y que el error típico de la media muestral es la desviación típica poblacional dividida por la raíz cuadrada del tamaño de la muestra), por lo que el error típico de una estimación es <span class="math inline">\(\sqrt{\overline{X}}/\sqrt{n}\)</span>.</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">mean</span>(y)</code></pre></div>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">mean</span>(y)</code></pre>
 <pre><code>## [1] 9.56</code></pre>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">sqrt</span>(<span class="kw">mean</span>(y)<span class="op">/</span><span class="kw">length</span>(y))</code></pre></div>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">sqrt</span>(<span class="kw">mean</span>(y)<span class="op">/</span><span class="kw">length</span>(y))</code></pre>
 <pre><code>## [1] 0.3091925</code></pre>
 <p>También podemos estimar la media y la desviación típica de una variable normal que hubiera producido esta muestra.</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">fitdistr</span>(y, <span class="dt">densfun=</span><span class="st">&quot;normal&quot;</span>)</code></pre></div>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">fitdistr</span>(y, <span class="dt">densfun=</span><span class="st">&quot;normal&quot;</span>)</code></pre>
 <pre><code>##      mean         sd    
 ##   9.5600000   3.0832450 
 ##  (0.3083245) (0.2180183)</code></pre>
 <p>Observad que la estimación de la desviación típica que nos da <code>fitdistr</code> es la desviación típica “verdadera” (que es su estimador máximo verosímil) y no la muestral:</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">sd</span>(y)</code></pre></div>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">sd</span>(y)</code></pre>
 <pre><code>## [1] 3.098778</code></pre>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">sqrt</span>((<span class="kw">length</span>(y)<span class="op">-</span><span class="dv">1</span>)<span class="op">/</span><span class="kw">length</span>(y))<span class="op">*</span><span class="kw">sd</span>(y)</code></pre></div>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">sqrt</span>((<span class="kw">length</span>(y)<span class="op">-</span><span class="dv">1</span>)<span class="op">/</span><span class="kw">length</span>(y))<span class="op">*</span><span class="kw">sd</span>(y)</code></pre>
 <pre><code>## [1] 3.083245</code></pre>
 <p>Vamos a estimar ahora el número de grados de libertad de una t de Student que hubiera producido esta muestra.</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">fitdistr</span>(y, <span class="dt">densfun=</span><span class="st">&quot;t&quot;</span>)</code></pre></div>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">fitdistr</span>(y, <span class="dt">densfun=</span><span class="st">&quot;t&quot;</span>)</code></pre>
 <pre><code>##        m           s          df    
 ##   9.5085516   2.7517475   9.9229027 
 ##  (0.2997949) (0.3072053) (8.4890355)</code></pre>
 <p>¡Vaya!, aparte del número de grados de libertad, <code>df</code>, han aparecido parámetros que no esperábamos. Los parámetros <code>m</code> y <code>s</code> son los parámetros de posición, <span class="math inline">\(\mu\)</span>, y de escala, <span class="math inline">\(\sigma\)</span>, respectivamente, que definen una familia más general de distribuciones t de Student (si os interesa, consultad esta <a href="http://en.wikipedia.org/wiki/Noncentral_t-distribution">entrada de la Wikipedia</a>). Las que usamos en este curso tienen <span class="math inline">\(\mu=0\)</span> y <span class="math inline">\(\sigma=1\)</span>. ¿Cómo podríamos estimar los grados de libertad de una t de Student de las nuestras? Especificando dentro de <code>fitdistr</code> los valores de los parámetros que queremos que tomen un valor concreto: en este caso, añadiendo <code>m=0</code> y <code>s=1</code>.</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">fitdistr</span>(y, <span class="dt">densfun=</span><span class="st">&quot;t&quot;</span>, <span class="dt">m=</span><span class="dv">0</span>, <span class="dt">s=</span><span class="dv">1</span>)</code></pre></div>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">fitdistr</span>(y, <span class="dt">densfun=</span><span class="st">&quot;t&quot;</span>, <span class="dt">m=</span><span class="dv">0</span>, <span class="dt">s=</span><span class="dv">1</span>)</code></pre>
 <pre><code>## Error in fitdistr(y, densfun = &quot;t&quot;, m = 0, s = 1): &#39;start&#39; must be a named list</code></pre>
-<p>Ahora R nos pide que demos un valor inicial al número de grados de libertad, <code>df</code>, para poder arrancar el algoritmo numérico que usará. Vamos a inicializarlo a 1, y de paso veremos cómo se usa este parámetro:</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">fitdistr</span>(y, <span class="dt">densfun=</span><span class="st">&quot;t&quot;</span>, <span class="dt">m=</span><span class="dv">0</span>, <span class="dt">s=</span><span class="dv">1</span>, <span class="dt">start=</span><span class="kw">list</span>(<span class="dt">df=</span><span class="dv">1</span>))</code></pre></div>
+<p>Ahora R nos pide que demos un valor inicial al número de grados de libertad, <code>df</code>, para poder arrancar el algoritmo numérico que usará.
+Vamos a inicializarlo a 1, y de paso veremos cómo se usa este parámetro:</p>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">fitdistr</span>(y, <span class="dt">densfun=</span><span class="st">&quot;t&quot;</span>, <span class="dt">m=</span><span class="dv">0</span>, <span class="dt">s=</span><span class="dv">1</span>, <span class="dt">start=</span><span class="kw">list</span>(<span class="dt">df=</span><span class="dv">1</span>))</code></pre>
 <pre><code>## Warning in stats::optim(x = c(8L, 10L, 9L, 12L, 10L, 11L, 8L, 12L, 7L, 11L, : one-dimensional optimization by Nelder-Mead is unreliable:
 ## use &quot;Brent&quot; or optimize() directly</code></pre>
 <pre><code>## Warning in dt((x - m)/s, df, log = TRUE): NaNs produced</code></pre>
 <pre><code>##        df    
 ##   0.37265625 
 ##  (0.04277075)</code></pre>
-<p>Obtenemos un número estimado de grados de libertad de la t de Student de aproximadamente 0.37 grados de libertad (sí, los grados de libertad de una t de Student pueden ser un número real positivo cualquiera). Por otro lado, R nos avisa de que el resultado es poco de fiar, pero tampoco nos importa mucho, porque el objetivo era mostrar un ejemplo de cómo fijar valores de parámetros, igualándolos a dichos valores, y cómo especificar el parámetro <code>start</code>, como una <code>list</code> donde asignamos a cada parámetro un valor inicial.</p>
-<p>El resultado de <code>fitdistr</code> es una <code>list</code>, y por lo tanto el valor de cada estimador y su error típico se pueden obtener con los sufijos adecuados. En concreto, los valores estimados forman la componente <code>estimate</code> y los errores típicos la componente <code>sd</code>. Para obtenerlos directamente, basta usar los sufijos <code>$estimate</code> y <code>$sd</code>, respectivamente:</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">fitdistr</span>(y,<span class="st">&quot;poisson&quot;</span>)<span class="op">$</span>estimate  <span class="co">#Estimación de lambda</span></code></pre></div>
+<p>Obtenemos un número estimado de grados de libertad de la t de Student de aproximadamente 0.37 grados de libertad (sí, los grados de libertad de una t de Student pueden ser un número real positivo cualquiera).
+Por otro lado, R nos avisa de que el resultado es poco de fiar, pero tampoco nos importa mucho, porque el objetivo era mostrar un ejemplo de cómo fijar valores de parámetros, igualándolos a dichos valores, y cómo especificar el parámetro <code>start</code>, como una <code>list</code> donde asignamos a cada parámetro un valor inicial.</p>
+<p>El resultado de <code>fitdistr</code> es una <code>list</code>, y por lo tanto el
+valor de cada estimador y su error típico se pueden obtener con los sufijos adecuados. En concreto, los valores estimados forman la componente <code>estimate</code> y los errores típicos la componente <code>sd</code>. Para obtenerlos directamente, basta usar los sufijos <code>$estimate</code> y <code>$sd</code>, respectivamente:</p>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">fitdistr</span>(y,<span class="st">&quot;poisson&quot;</span>)<span class="op">$</span>estimate  <span class="co">#Estimación de lambda</span></code></pre>
 <pre><code>## lambda 
 ##   9.56</code></pre>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">fitdistr</span>(y,<span class="st">&quot;poisson&quot;</span>)<span class="op">$</span>sd   <span class="co">#Error típico</span></code></pre></div>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">fitdistr</span>(y,<span class="st">&quot;poisson&quot;</span>)<span class="op">$</span>sd   <span class="co">#Error típico</span></code></pre>
 <pre><code>##    lambda 
 ## 0.3091925</code></pre>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">fitdistr</span>(y,<span class="st">&quot;normal&quot;</span>)<span class="op">$</span>estimate  <span class="co">#Estimaciones </span></code></pre></div>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">fitdistr</span>(y,<span class="st">&quot;normal&quot;</span>)<span class="op">$</span>estimate  <span class="co">#Estimaciones </span></code></pre>
 <pre><code>##     mean       sd 
 ## 9.560000 3.083245</code></pre>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">fitdistr</span>(y,<span class="st">&quot;normal&quot;</span>)<span class="op">$</span>estimate[<span class="dv">1</span>]  <span class="co">#Estimación de mu</span></code></pre></div>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">fitdistr</span>(y,<span class="st">&quot;normal&quot;</span>)<span class="op">$</span>estimate[<span class="dv">1</span>]  <span class="co">#Estimación de mu</span></code></pre>
 <pre><code>## mean 
 ## 9.56</code></pre>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">fitdistr</span>(y,<span class="st">&quot;normal&quot;</span>)<span class="op">$</span>estimate[<span class="dv">2</span>]  <span class="co">#Estimación de sigma</span></code></pre></div>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">fitdistr</span>(y,<span class="st">&quot;normal&quot;</span>)<span class="op">$</span>estimate[<span class="dv">2</span>]  <span class="co">#Estimación de sigma</span></code></pre>
 <pre><code>##       sd 
 ## 3.083245</code></pre>
 </div>
@@ -368,13 +420,13 @@ y</code></pre></div>
 <h3>Respuestas al test</h3>
 <p><em>(1)</em> 2.116</p>
 <p>Nosotros lo hemos calculado con</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">x=<span class="kw">c</span>(<span class="fl">2.46</span>, <span class="fl">2.28</span>, <span class="fl">1.7</span>, <span class="fl">0.62</span>, <span class="fl">0.87</span>, <span class="fl">2.81</span>, <span class="fl">2.35</span>, <span class="fl">2.08</span>, <span class="fl">2.11</span>, <span class="fl">1.72</span>)
-<span class="kw">round</span>(<span class="kw">fitdistr</span>(x,<span class="st">&quot;weibull&quot;</span>)<span class="op">$</span>estimate,<span class="dv">3</span>)</code></pre></div>
+<pre class="sourceCode r"><code class="sourceCode r">x=<span class="kw">c</span>(<span class="fl">2.46</span>, <span class="fl">2.28</span>, <span class="fl">1.7</span>, <span class="fl">0.62</span>, <span class="fl">0.87</span>, <span class="fl">2.81</span>, <span class="fl">2.35</span>, <span class="fl">2.08</span>, <span class="fl">2.11</span>, <span class="fl">1.72</span>)
+<span class="kw">round</span>(<span class="kw">fitdistr</span>(x,<span class="st">&quot;weibull&quot;</span>)<span class="op">$</span>estimate,<span class="dv">3</span>)</code></pre>
 <p><em>(2)</em> 0.038</p>
 <p>Nosotros lo hemos calculado con</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">set.seed</span>(<span class="dv">42</span>)
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">set.seed</span>(<span class="dv">42</span>)
 x=<span class="kw">rgeom</span>(<span class="dv">100</span>,<span class="fl">0.6</span>)
-<span class="kw">round</span>(<span class="kw">fitdistr</span>(x,<span class="st">&quot;geometric&quot;</span>)<span class="op">$</span>sd,<span class="dv">3</span>)</code></pre></div>
+<span class="kw">round</span>(<span class="kw">fitdistr</span>(x,<span class="st">&quot;geometric&quot;</span>)<span class="op">$</span>sd,<span class="dv">3</span>)</code></pre>
 
 </div>
 </div>
@@ -435,7 +487,7 @@ gitbook.start({
   (function () {
     var script = document.createElement("script");
     script.type = "text/javascript";
-    var src = "";
+    var src = "true";
     if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
     if (location.protocol !== "file:" && /^https?:/.test(src))
       src = src.replace(/^https?:/, '');

@@ -25,7 +25,7 @@
 <meta name="author" content="The AprendeR team">
 
 
-<meta name="date" content="2019-04-20">
+<meta name="date" content="2019-05-21">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -51,41 +51,67 @@
 
 
 <style type="text/css">
-div.sourceCode { overflow-x: auto; }
-table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
-  margin: 0; padding: 0; vertical-align: baseline; border: none; }
-table.sourceCode { width: 100%; line-height: 100%; }
-td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
-td.sourceCode { padding-left: 5px; }
-code > span.kw { color: #007020; font-weight: bold; } /* Keyword */
-code > span.dt { color: #902000; } /* DataType */
-code > span.dv { color: #40a070; } /* DecVal */
-code > span.bn { color: #40a070; } /* BaseN */
-code > span.fl { color: #40a070; } /* Float */
-code > span.ch { color: #4070a0; } /* Char */
-code > span.st { color: #4070a0; } /* String */
-code > span.co { color: #60a0b0; font-style: italic; } /* Comment */
-code > span.ot { color: #007020; } /* Other */
-code > span.al { color: #ff0000; font-weight: bold; } /* Alert */
-code > span.fu { color: #06287e; } /* Function */
-code > span.er { color: #ff0000; font-weight: bold; } /* Error */
-code > span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
-code > span.cn { color: #880000; } /* Constant */
-code > span.sc { color: #4070a0; } /* SpecialChar */
-code > span.vs { color: #4070a0; } /* VerbatimString */
-code > span.ss { color: #bb6688; } /* SpecialString */
-code > span.im { } /* Import */
-code > span.va { color: #19177c; } /* Variable */
-code > span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
-code > span.op { color: #666666; } /* Operator */
-code > span.bu { } /* BuiltIn */
-code > span.ex { } /* Extension */
-code > span.pp { color: #bc7a00; } /* Preprocessor */
-code > span.at { color: #7d9029; } /* Attribute */
-code > span.do { color: #ba2121; font-style: italic; } /* Documentation */
-code > span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
-code > span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
-code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+a.sourceLine { display: inline-block; line-height: 1.25; }
+a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
+a.sourceLine:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode { white-space: pre; position: relative; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+code.sourceCode { white-space: pre-wrap; }
+a.sourceLine { text-indent: -1em; padding-left: 1em; }
+}
+pre.numberSource a.sourceLine
+  { position: relative; left: -4em; }
+pre.numberSource a.sourceLine::before
+  { content: attr(data-line-number);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; pointer-events: all; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {  }
+@media screen {
+a.sourceLine::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
 </style>
 
 <link rel="stylesheet" href="style.css" type="text/css" />
@@ -209,6 +235,27 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li class="chapter" data-level="" data-path="chap-ANOVA.html"><a href="chap-ANOVA.html#respuestas-al-test-8"><i class="fa fa-check"></i>Respuestas al test</a></li>
 </ul></li>
 </ul></li>
+<li class="chapter" data-level="10" data-path="chap-regresion.html"><a href="chap-regresion.html"><i class="fa fa-check"></i><b>10</b> Regresión lineal</a><ul>
+<li class="chapter" data-level="10.1" data-path="chap-regresion.html"><a href="chap-regresion.html#sec:1"><i class="fa fa-check"></i><b>10.1</b> El modelo de regresión lineal en R</a></li>
+<li class="chapter" data-level="10.2" data-path="chap-regresion.html"><a href="chap-regresion.html#intervalos-de-confianza-en-el-modelo-de-regresion-lineal"><i class="fa fa-check"></i><b>10.2</b> Intervalos de confianza en el modelo de regresión lineal</a></li>
+<li class="chapter" data-level="10.3" data-path="chap-regresion.html"><a href="chap-regresion.html#sec:seleccion"><i class="fa fa-check"></i><b>10.3</b> Selección del modelo en base al ajuste de los datos</a></li>
+<li class="chapter" data-level="10.4" data-path="chap-regresion.html"><a href="chap-regresion.html#sec:diagn"><i class="fa fa-check"></i><b>10.4</b> Diagnósticos de regresión</a></li>
+<li class="chapter" data-level="10.5" data-path="chap-regresion.html"><a href="chap-regresion.html#guia-rapida-8"><i class="fa fa-check"></i><b>10.5</b> Guía rápida</a></li>
+<li class="chapter" data-level="10.6" data-path="chap-regresion.html"><a href="chap-regresion.html#ejercicios-9"><i class="fa fa-check"></i><b>10.6</b> Ejercicios</a><ul>
+<li class="chapter" data-level="" data-path="chap-regresion.html"><a href="chap-regresion.html#test-4"><i class="fa fa-check"></i>Test</a></li>
+<li class="chapter" data-level="" data-path="chap-regresion.html"><a href="chap-regresion.html#respuestas-al-test-9"><i class="fa fa-check"></i>Respuestas al test</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="11" data-path="chap-clustering.html"><a href="chap-clustering.html"><i class="fa fa-check"></i><b>11</b> <em>Clustering</em> básico</a><ul>
+<li class="chapter" data-level="11.1" data-path="chap-clustering.html"><a href="chap-clustering.html#metodo-de-k-medias-o-k-means"><i class="fa fa-check"></i><b>11.1</b> Método de k-medias o <em>k-means</em></a></li>
+<li class="chapter" data-level="11.2" data-path="chap-clustering.html"><a href="chap-clustering.html#eleccion-del-numero-de-clusters"><i class="fa fa-check"></i><b>11.2</b> Elección del número de <em>clusters</em></a></li>
+<li class="chapter" data-level="11.3" data-path="chap-clustering.html"><a href="chap-clustering.html#metodos-jerarquicos-aglomerativos"><i class="fa fa-check"></i><b>11.3</b> Métodos jerárquicos aglomerativos</a></li>
+<li class="chapter" data-level="11.4" data-path="chap-clustering.html"><a href="chap-clustering.html#guia-rapida-9"><i class="fa fa-check"></i><b>11.4</b> Guía rápida</a></li>
+<li class="chapter" data-level="11.5" data-path="chap-clustering.html"><a href="chap-clustering.html#ejercicios-10"><i class="fa fa-check"></i><b>11.5</b> Ejercicios</a><ul>
+<li class="chapter" data-level="" data-path="chap-clustering.html"><a href="chap-clustering.html#test-5"><i class="fa fa-check"></i>Test</a></li>
+<li class="chapter" data-level="" data-path="chap-clustering.html"><a href="chap-clustering.html#respuestas-al-test-10"><i class="fa fa-check"></i>Respuestas al test</a></li>
+</ul></li>
+</ul></li>
 <li class="divider"></li>
 <li><a href="https://github.com/cescrossello/AprendeR-II" target="blank">Publicado con  bookdown</a></li>
 
@@ -236,70 +283,71 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <div id="sec:ICT" class="section level2">
 <h2><span class="header-section-number">4.1</span> Intervalo de confianza para la media basado en la t de Student</h2>
 <p>Supongamos que queremos estimar a partir de una m.a.s. la media <span class="math inline">\(\mu\)</span> de una población que sigue una distribución normal o tomando la muestra grande (por fijar una cota, de tamaño 40 o mayor). En esta situación, si <span class="math inline">\(\overline{X}\)</span>, <span class="math inline">\(\widetilde{S}_{X}\)</span> y <span class="math inline">\(n\)</span> son, respectivamente, la media muestral, la desviación típica muestral y el tamaño de la muestra, un intervalo de confianza del <span class="math inline">\(q\times 100\%\)</span> para <span class="math inline">\(\mu\)</span> es</p>
-<span class="math display" id="eq:form1">\[\begin{equation}
+<p><span class="math display" id="eq:form1">\[\begin{equation}
 \overline{X}\pm t_{n-1,(1+q)/2} \cdot \frac{\widetilde{S}_{X}}{\sqrt{n}}
 \tag{4.1}
-\end{equation}\]</span>
+\end{equation}\]</span></p>
 <p>donde <span class="math inline">\(t_{n-1,(1+q)/2}\)</span> es el cuantil de orden <span class="math inline">\((1+q)/2\)</span> de una variable aleatoria con distribución t de Student con <span class="math inline">\(n-1\)</span> grados de libertad. Fijaos en que <span class="math inline">\(\widetilde{S}_{X}/\sqrt{n}\)</span> es el error típico de la estimación de la media.</p>
 <p>A la hora de calcular este intervalo de confianza, tenemos dos posibles situaciones. Una, típica de ejercicios, es cuando de la muestra sólo conocemos su media muestral <span class="math inline">\(\overline{X}\)</span>, su desviación típica muestral <span class="math inline">\(\widetilde{S}_X\)</span> y su tamaño <span class="math inline">\(n\)</span>. Si los denotamos por <code>x.b</code>, <code>sdm</code> y <code>n</code>, respectivamente, y denotamos el nivel de confianza en tanto por uno <span class="math inline">\(q\)</span> por <code>q</code>, podemos calcular los extremos de este intervalo de confianza con la expresión siguiente:</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">x.b<span class="op">+</span>(<span class="kw">qt</span>((<span class="dv">1</span><span class="op">+</span>q)<span class="op">/</span><span class="dv">2</span>,n<span class="op">-</span><span class="dv">1</span>)<span class="op">*</span>sdm<span class="op">/</span><span class="kw">sqrt</span>(n))<span class="op">*</span><span class="kw">c</span>(<span class="op">-</span><span class="dv">1</span>,<span class="dv">1</span>)</code></pre></div>
+<pre class="sourceCode r"><code class="sourceCode r">x.b<span class="op">+</span>(<span class="kw">qt</span>((<span class="dv">1</span><span class="op">+</span>q)<span class="op">/</span><span class="dv">2</span>,n<span class="dv">-1</span>)<span class="op">*</span>sdm<span class="op">/</span><span class="kw">sqrt</span>(n))<span class="op">*</span><span class="kw">c</span>(<span class="op">-</span><span class="dv">1</span>,<span class="dv">1</span>)</code></pre>
 <p>Ahora bien, “en la vida real” lo usual es disponer de un vector numérico <code>X</code> con los valores de la muestra. En este caso, podemos usar la función <code>t.test</code> de R, que, entre otra información, calcula estos intervalos de confianza para <span class="math inline">\(\mu\)</span>. Si solo nos interesa el intervalo de confianza, podemos usar la sintaxis siguiente:</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">t.test</span>(X,<span class="dt">conf.level=</span>...)<span class="op">$</span>conf.int</code></pre></div>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">t.test</span>(X,<span class="dt">conf.level=</span>...)<span class="op">$</span>conf.int</code></pre>
 <p>donde tenemos que igualar el parámetro <code>conf.level</code> al nivel de confianza <span class="math inline">\(q\)</span> en tanto por uno. Si <span class="math inline">\(q=0.95\)</span>, no hace falta entrarlo, porque es su valor por defecto.</p>
 
 <div class="example">
 <span id="exm:lux" class="example"><strong>Ejemplo 4.1  </strong></span>Tenemos una muestra de pesos en gramos de 28 recién nacidos con luxación severa de cadera:
 </div>
 
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">pesos=<span class="kw">c</span>(<span class="dv">2466</span>,<span class="dv">3941</span>,<span class="dv">2807</span>,<span class="dv">3118</span>,<span class="dv">3175</span>,<span class="dv">3515</span>,<span class="dv">3317</span>,<span class="dv">3742</span>,<span class="dv">3062</span>,<span class="dv">3033</span>,<span class="dv">2353</span>,<span class="dv">3515</span>,<span class="dv">3260</span>,<span class="dv">2892</span>,
-<span class="dv">4423</span>,<span class="dv">3572</span>,<span class="dv">2750</span>,<span class="dv">3459</span>,<span class="dv">3374</span>,<span class="dv">3062</span>,<span class="dv">3205</span>,<span class="dv">2608</span>,<span class="dv">3118</span>,<span class="dv">2637</span>,<span class="dv">3438</span>,<span class="dv">2722</span>,<span class="dv">2863</span>,<span class="dv">3513</span>)</code></pre></div>
+<pre class="sourceCode r"><code class="sourceCode r">pesos=<span class="kw">c</span>(<span class="dv">2466</span>,<span class="dv">3941</span>,<span class="dv">2807</span>,<span class="dv">3118</span>,<span class="dv">3175</span>,<span class="dv">3515</span>,<span class="dv">3317</span>,<span class="dv">3742</span>,<span class="dv">3062</span>,<span class="dv">3033</span>,<span class="dv">2353</span>,<span class="dv">3515</span>,<span class="dv">3260</span>,<span class="dv">2892</span>,
+<span class="dv">4423</span>,<span class="dv">3572</span>,<span class="dv">2750</span>,<span class="dv">3459</span>,<span class="dv">3374</span>,<span class="dv">3062</span>,<span class="dv">3205</span>,<span class="dv">2608</span>,<span class="dv">3118</span>,<span class="dv">2637</span>,<span class="dv">3438</span>,<span class="dv">2722</span>,<span class="dv">2863</span>,<span class="dv">3513</span>)</code></pre>
 <p>Vamos a suponer que nuestra muestra es aleatoria simple y que los pesos al nacer de los bebés con esta patología siguen una distribución normal. A partir de esta muestra, queremos calcular un intervalo de confianza del 95% para el peso medio de un recién nacido con luxación severa de cadera, y ver si contiene el peso medio de la población global de recién nacidos, que es de unos 3400 g.</p>
 <p>Como suponemos que la variable aleatoria poblacional es normal, para calcular un intervalo de confianza del 95% para su valor medio vamos a usar la fórmula basada en la distribución t de Student, y por lo tanto la función <code>t.test</code>:</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">t.test</span>(pesos)<span class="op">$</span>conf.int</code></pre></div>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">t.test</span>(pesos)<span class="op">$</span>conf.int</code></pre>
 <pre><code>## [1] 2997.849 3355.008
 ## attr(,&quot;conf.level&quot;)
 ## [1] 0.95</code></pre>
 <p>El intervalo que obtenemos es [2997.8, 3355] y está completamente a la izquierda del peso medio global de 3400 g, por lo que tenemos evidencia (a un 95% de confianza) de que los niños con luxación severa de cadera pesan de media al nacer por debajo de la media global. La apostilla entre paréntesis “a un 95% de confianza” aquí significa que hemos basado esta conclusión en un intervalo obtenido con una fórmula que acierta con una probabilidad del 95%, en el sentido de que el 95% de las ocasiones que aplicamos esta fórmula a una m.a.s. de una variable aleatoria normal, produce un intervalo que contiene la media de esta variable.</p>
 <p>Observad que el resultado de <code>t.test(pesos)$conf.int</code> tiene un atributo, <code>conf.level</code>, que indica su nivel de confianza. En principio este atributo no molesta para nada en cálculos posteriores con los extremos de este intervalo de confianza, pero si os molesta, lo podéis quitar igualándolo a <code>NULL</code>.</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">IC.lux=<span class="kw">t.test</span>(pesos)<span class="op">$</span>conf.int
+<pre class="sourceCode r"><code class="sourceCode r">IC.lux=<span class="kw">t.test</span>(pesos)<span class="op">$</span>conf.int
 <span class="kw">attr</span>(IC.lux,<span class="st">&quot;conf.level&quot;</span>)=<span class="ot">NULL</span>
-IC.lux</code></pre></div>
+IC.lux</code></pre>
 <pre><code>## [1] 2997.849 3355.008</code></pre>
 <p>Veamos cómo podríamos haber obtenido este intervalo directamente con la fórmula <a href="chap-IC.html#eq:form1">(4.1)</a>:</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">x=<span class="kw">mean</span>(pesos)
+<pre class="sourceCode r"><code class="sourceCode r">x=<span class="kw">mean</span>(pesos)
 sdm=<span class="kw">sd</span>(pesos)
 n=<span class="kw">length</span>(pesos)
 q=<span class="fl">0.95</span>
-x<span class="op">+</span>(<span class="kw">qt</span>((<span class="dv">1</span><span class="op">+</span>q)<span class="op">/</span><span class="dv">2</span>,n<span class="op">-</span><span class="dv">1</span>)<span class="op">*</span>sdm<span class="op">/</span><span class="kw">sqrt</span>(n))<span class="op">*</span><span class="kw">c</span>(<span class="op">-</span><span class="dv">1</span>,<span class="dv">1</span>)</code></pre></div>
+x<span class="op">+</span>(<span class="kw">qt</span>((<span class="dv">1</span><span class="op">+</span>q)<span class="op">/</span><span class="dv">2</span>,n<span class="dv">-1</span>)<span class="op">*</span>sdm<span class="op">/</span><span class="kw">sqrt</span>(n))<span class="op">*</span><span class="kw">c</span>(<span class="op">-</span><span class="dv">1</span>,<span class="dv">1</span>)</code></pre>
 <pre><code>## [1] 2997.849 3355.008</code></pre>
 <p>Como podéis ver, coincide con el intervalo obtenido con la función <code>t.test</code>.</p>
 
 <div class="example">
-<p><span id="exm:experiment" class="example"><strong>Ejemplo 4.2  </strong></span>Vamos a comprobar con un experimento esto de la “confianza” de los intervalos de confianza, y en concreto de la fórmula <a href="chap-IC.html#eq:form1">(4.1)</a>. Vamos a generar al azar una <em>Población</em> de 10,000,000 “individuos” con distribución normal estándard. Vamos a tomar 200 muestras aleatorias simples de tamaño 50 de esta población y calcularemos el intervalo de confianza para la media poblacional usando dicha fórmula. Finalmente, contaremos cuántos de estos intervalos de confianza contienen la media de la <em>Población</em>. Fijaremos la semilla de aleatoriedad para que el experimento sea reproducible y podáis comprobar que no hacemos trampa. En otras simulaciones habríamos obtenido resultados mejores o peores, es lo que tienen las simulaciones aleatorias.</p>
+<p><span id="exm:experiment" class="example"><strong>Ejemplo 4.2  </strong></span>Vamos a comprobar con un experimento esto de la “confianza” de los intervalos de confianza, y en concreto de la fórmula <a href="chap-IC.html#eq:form1">(4.1)</a>.
+Vamos a generar al azar una <em>Población</em> de 10,000,000 “individuos” con distribución normal estándard. Vamos a tomar 200 muestras aleatorias simples de tamaño 50 de esta población y calcularemos el intervalo de confianza para la media poblacional usando dicha fórmula. Finalmente, contaremos cuántos de estos intervalos de confianza contienen la media de la <em>Población</em>. Fijaremos la semilla de aleatoriedad para que el experimento sea reproducible y podáis comprobar que no hacemos trampa. En otras simulaciones habríamos obtenido resultados mejores o peores, es lo que tienen las simulaciones aleatorias.</p>
 </div>
 
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">set.seed</span>(<span class="dv">42</span>)
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">set.seed</span>(<span class="dv">42</span>)
 Poblacion=<span class="kw">rnorm</span>(<span class="dv">10</span><span class="op">^</span><span class="dv">7</span>) <span class="co">#La población</span>
 mu=<span class="kw">mean</span>(Poblacion)  <span class="co"># La media poblacional</span>
 M=<span class="kw">replicate</span>(<span class="dv">200</span>, <span class="kw">sample</span>(Poblacion,<span class="dv">50</span>,<span class="dt">replace=</span><span class="ot">TRUE</span>)) <span class="co"># Las muestras</span>
-<span class="kw">dim</span>(M)</code></pre></div>
+<span class="kw">dim</span>(M)</code></pre>
 <pre><code>## [1]  50 200</code></pre>
 <p>Tenemos una matriz M de 200 columnas y 50 filas, donde cada columna es una m.a.s. de nuestra población. Vamos a aplicar a cada una de estas muestras la función <code>t.test</code> para calcular un intervalo de confianza del 95% y luego contaremos los aciertos, es decir, cuántos de ellos contienen la media poblacional</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">IC.t=<span class="cf">function</span>(X){<span class="kw">t.test</span>(X)<span class="op">$</span>conf.int}
+<pre class="sourceCode r"><code class="sourceCode r">IC.t=<span class="cf">function</span>(X){<span class="kw">t.test</span>(X)<span class="op">$</span>conf.int}
 ICs=<span class="kw">apply</span>(M,<span class="dt">FUN=</span>IC.t,<span class="dt">MARGIN=</span><span class="dv">2</span>)
 Aciertos=<span class="kw">length</span>(<span class="kw">which</span>((mu<span class="op">&gt;=</span>ICs[<span class="dv">1</span>,]) <span class="op">&amp;</span><span class="st"> </span>(mu<span class="op">&lt;=</span>ICs[<span class="dv">2</span>,])))
-Aciertos</code></pre></div>
+Aciertos</code></pre>
 <pre><code>## [1] 189</code></pre>
 <p>Hemos acertado 189 veces, es decir, un 94.5% de los intervalos obtenidos contienen la media poblacional. No hemos quedado muy lejos del 95% esperado.</p>
 <p>Para visualizar mejor los aciertos, vamos a dibujar los intervalos apilados en un gráfico, donde aparecerán en azul claro los que aciertan y en rojo los que no aciertan.</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">plot</span>(<span class="dv">1</span>,<span class="dt">type=</span><span class="st">&quot;n&quot;</span>,<span class="dt">xlim=</span><span class="kw">c</span>(<span class="op">-</span><span class="fl">0.8</span>,<span class="fl">0.8</span>),<span class="dt">ylim=</span><span class="kw">c</span>(<span class="dv">0</span>,<span class="dv">200</span>),<span class="dt">xlab=</span><span class="st">&quot;Valores&quot;</span>,<span class="dt">ylab=</span><span class="st">&quot;Repeticiones&quot;</span>,<span class="dt">main=</span><span class="st">&quot;&quot;</span>)
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">plot</span>(<span class="dv">1</span>,<span class="dt">type=</span><span class="st">&quot;n&quot;</span>,<span class="dt">xlim=</span><span class="kw">c</span>(<span class="op">-</span><span class="fl">0.8</span>,<span class="fl">0.8</span>),<span class="dt">ylim=</span><span class="kw">c</span>(<span class="dv">0</span>,<span class="dv">200</span>),<span class="dt">xlab=</span><span class="st">&quot;Valores&quot;</span>,<span class="dt">ylab=</span><span class="st">&quot;Repeticiones&quot;</span>,<span class="dt">main=</span><span class="st">&quot;&quot;</span>)
 seg.int=<span class="cf">function</span>(i){
   color=<span class="st">&quot;light blue&quot;</span>;
   <span class="cf">if</span>((mu<span class="op">&lt;</span>ICs[<span class="dv">1</span>,i]) <span class="op">|</span><span class="st"> </span>(mu<span class="op">&gt;</span>ICs[<span class="dv">2</span>,i])){color =<span class="st"> &quot;red&quot;</span>}
   <span class="kw">segments</span>(ICs[<span class="dv">1</span>,i],i,ICs[<span class="dv">2</span>,i],i,<span class="dt">col=</span>color,<span class="dt">lwd=</span><span class="dv">2</span>)
   }
 <span class="kw">sapply</span>(<span class="dv">1</span><span class="op">:</span><span class="dv">200</span>,<span class="dt">FUN=</span>seg.int)
-<span class="kw">abline</span>(<span class="dt">v=</span>mu,<span class="dt">lwd=</span><span class="dv">2</span>)</code></pre></div>
+<span class="kw">abline</span>(<span class="dt">v=</span>mu,<span class="dt">lwd=</span><span class="dv">2</span>)</code></pre>
 <div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-86"></span>
 <img src="AprendeR-Parte-II_files/figure-html/unnamed-chunk-86-1.png" alt="Aciertos y errores en 200 Intervalos de confianza al 95%" width="480" />
 <p class="caption">
@@ -317,7 +365,7 @@ Figura 4.1: Aciertos y errores en 200 Intervalos de confianza al 95%
 \displaystyle\sum_{k=0}^x\binom{n}{k}p_1^k(1-p_1)^{n-k}=(1-q)/2
 \]</span></p>
 <p>y dar el intervalo <span class="math inline">\([p_0,p_1]\)</span>. Para calcular este intervalo se puede usar la función <code>binom.exact</code> del paquete <strong>epitools</strong>. Su sintaxis es</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">binom.exact</span>(x,n,conf.level)</code></pre></div>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">binom.exact</span>(x,n,conf.level)</code></pre>
 <p>donde <code>x</code> y <code>n</code> representan, respectivamente, el número de éxitos y el tamaño de la muestra, y <code>conf.level</code> es <span class="math inline">\(q\)</span>, el nivel de confianza en tanto por uno. El valor por defecto de <code>conf.level</code> es 0.95.</p>
 
 <div class="example">
@@ -325,21 +373,23 @@ Figura 4.1: Aciertos y errores en 200 Intervalos de confianza al 95%
 </div>
 
 <p>Tenemos una población Bernoulli, formada por los enfermos tratados con el medicamento en cuestión, donde los éxitos son los enfermos que desarrollan taquicardia. La fracción de éstos es la fracción poblacional <span class="math inline">\(p\)</span> para la que queremos calcular el intervalo de confianza del 95%. Para ello cargamos el paquete <strong>epitools</strong> y usamos <code>binom.exact</code>:</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(epitools)
-<span class="kw">binom.exact</span>(<span class="dv">1</span>,<span class="dv">15</span>)</code></pre></div>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(epitools)
+<span class="kw">binom.exact</span>(<span class="dv">1</span>,<span class="dv">15</span>)</code></pre>
 <pre><code>##   x  n proportion      lower     upper conf.level
 ## 1 1 15 0.06666667 0.00168643 0.3194846       0.95</code></pre>
 <p>El resultado de la función <code>binom.exact</code> es un <em>data frame</em>; el intervalo de confianza deseado está formado por los números en las columnas <code>lower</code> (extremo inferior) y <code>upper</code> (extremo superior):</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">binom.exact</span>(<span class="dv">1</span>,<span class="dv">15</span>)<span class="op">$</span>lower</code></pre></div>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">binom.exact</span>(<span class="dv">1</span>,<span class="dv">15</span>)<span class="op">$</span>lower</code></pre>
 <pre><code>## [1] 0.00168643</code></pre>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">binom.exact</span>(<span class="dv">1</span>,<span class="dv">15</span>)<span class="op">$</span>upper</code></pre></div>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">binom.exact</span>(<span class="dv">1</span>,<span class="dv">15</span>)<span class="op">$</span>upper</code></pre>
 <pre><code>## [1] 0.3194846</code></pre>
 <p>Hemos obtenido el intervalo de confianza [0.002,0.319]: podemos afirmar con un nivel de confianza del 95% que el porcentaje de enfermos tratados con este medicamento que presentan este efecto adverso está entre el 0.2% y el 31.9%.</p>
-<p>Supongamos ahora que el tamaño <span class="math inline">\(n\)</span> de la muestra aleatoria simple es grande; de nuevo, digamos que <span class="math inline">\(n{\geqslant}40\)</span>. En esta situación, podemos usar el <strong>Método de Wilson</strong> para aproximar, a partir del Teorema Central del Límite, un intervalo de confianza del parámetro <span class="math inline">\(p\)</span> al nivel de confianza <span class="math inline">\(q\times 100\%\)</span>, mediante la fórmula <span class="math display">\[
+<p>Supongamos ahora que el tamaño <span class="math inline">\(n\)</span> de la muestra aleatoria simple es grande; de nuevo, digamos que <span class="math inline">\(n\geqslant 40\)</span>. En esta situación, podemos usar el <strong>Método de Wilson</strong> para aproximar, a partir del Teorema Central del Límite, un intervalo de confianza del parámetro <span class="math inline">\(p\)</span> al nivel de confianza <span class="math inline">\(q\times 100\%\)</span>, mediante la fórmula
+<span class="math display">\[
 \frac{\widehat{p}_{X}+\frac{z_{(1+q)/2}^2}{2n}\pm z_{(1+q)/2}\sqrt{\frac{\widehat{p}_{X}(1-\widehat{p}_{X})}{n}+\frac{z_{(1+q)/2}^2}{4n^2}}}{1+\frac{z_{(1+q)/2}^2}{n}}
-\]</span> donde <span class="math inline">\(z_{(1+q)/2}\)</span> es el cuantil de orden <span class="math inline">\((1+q)/2\)</span> de una variable aleatoria normal estándar.</p>
+\]</span>
+donde <span class="math inline">\(z_{(1+q)/2}\)</span> es el cuantil de orden <span class="math inline">\((1+q)/2\)</span> de una variable aleatoria normal estándar.</p>
 <p>Para calcular este intervalo se puede usar la función <code>binom.wilson</code> del paquete <strong>epitools</strong>. Su sintaxis es</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">binom.wilson</span>(x,n,conf.level)</code></pre></div>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">binom.wilson</span>(x,n,conf.level)</code></pre>
 <p>con los mismos parámetros que <code>binom.exact</code>.</p>
 
 <div class="example">
@@ -347,63 +397,68 @@ Figura 4.1: Aciertos y errores en 200 Intervalos de confianza al 95%
 </div>
 
 <p>Como 45 es relativamente grande, usaremos el método de Wilson. Para comparar los resultados, usaremos también el método exacto. Fijaos que, en este ejemplo, <span class="math inline">\(q=0.9\)</span>.</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">binom.wilson</span>(<span class="dv">10</span>,<span class="dv">45</span>,<span class="fl">0.9</span>)</code></pre></div>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">binom.wilson</span>(<span class="dv">10</span>,<span class="dv">45</span>,<span class="fl">0.9</span>)</code></pre>
 <pre><code>##    x  n proportion     lower     upper conf.level
 ## 1 10 45  0.2222222 0.1377238 0.3382281        0.9</code></pre>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">binom.exact</span>(<span class="dv">10</span>,<span class="dv">45</span>,<span class="fl">0.9</span>)</code></pre></div>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">binom.exact</span>(<span class="dv">10</span>,<span class="dv">45</span>,<span class="fl">0.9</span>)</code></pre>
 <pre><code>##    x  n proportion     lower     upper conf.level
 ## 1 10 45  0.2222222 0.1258186 0.3477285        0.9</code></pre>
 <p>Con el método de Wilson obtenemos el intervalo [0.138,0.338] y con el método de Clopper-Pearson, el intervalo [0.126,0.348], un poco más ancho: hay una diferencia en los extremos de alrededor de un punto porcentual.</p>
-<p>Supongamos finalmente que la muestra aleatoria simple es considerablemente más grande que la usada en el método de Wilson y que, además, la proporción muestral de éxitos <span class="math inline">\(\widehat{p}_{X}\)</span> está alejada de 0 y de 1. Una posible manera de formalizar estas condiciones es requerir que <span class="math inline">\(n{\geqslant}100\)</span> y que <span class="math inline">\(n\widehat{p}_{X}{\geqslant}10\)</span> y <span class="math inline">\(n(1-\widehat{p}_{X}){\geqslant}10\)</span>; observad que estas dos últimas condiciones son equivalentes a que tanto el número de éxitos como el número de fracasos en la muestra sean como mínimo 10. En este caso, se puede usar la <strong>fórmula de Laplace</strong>, que simplifica la de Wilson (aunque, en realidad, la precede en más de 100 años): un intervalo de confianza del parámetro <span class="math inline">\(p\)</span> al nivel de confianza <span class="math inline">\(q\times 100\%\)</span> viene dado aproximadamente por la fórmula <span class="math display">\[
+<p>Supongamos finalmente que la muestra aleatoria simple es considerablemente más grande que la usada en el método de Wilson y que, además, la proporción muestral de éxitos <span class="math inline">\(\widehat{p}_{X}\)</span> está alejada de 0 y de 1. Una posible manera de formalizar estas condiciones es requerir que <span class="math inline">\(n\geqslant 100\)</span> y que <span class="math inline">\(n\widehat{p}_{X}\geqslant 10\)</span> y <span class="math inline">\(n(1-\widehat{p}_{X})\geqslant 10\)</span>; observad que estas dos últimas condiciones son equivalentes a que tanto el número de éxitos como el número de fracasos en la muestra sean como mínimo 10. En este caso, se puede usar la <strong>fórmula de Laplace</strong>, que simplifica la de Wilson (aunque, en realidad, la precede en más de 100 años): un intervalo de confianza del parámetro <span class="math inline">\(p\)</span> al nivel de confianza <span class="math inline">\(q\times 100\%\)</span> viene dado aproximadamente por la fórmula
+<span class="math display">\[
 \widehat{p}_{X}\pm z_{(1+q)/2}\sqrt{\frac{\widehat{p}_{X}
 (1-\widehat{p}_{X})}{n}}
-\]</span> Esta fórmula está implementada en la función <code>binom.approx</code> del paquete <strong>epitools</strong>, de uso similar al de las dos funciones anteriores.</p>
+\]</span>
+Esta fórmula está implementada en la función <code>binom.approx</code> del paquete <strong>epitools</strong>, de uso similar al de las dos funciones anteriores.</p>
 
 <div class="example">
 <p><span id="exm:unnamed-chunk-94" class="example"><strong>Ejemplo 4.5  </strong></span>En una muestra aleatoria de 500 familias con niños en edad escolar de una determinada ciudad se ha observado que 340 introducen fruta de forma diaria en la dieta de sus hijos. A partir de este dato, queremos encontrar un intervalo de confianza del 95% para la proporción real de familias de esta ciudad con niños en edad escolar que incorporan fruta fresca de forma diaria en la dieta de sus hijos.</p>
 </div>
 
 <p>Tenemos una población Bernoulli donde los éxitos son las familias que aportan fruta de forma diaria a la dieta de sus hijos, y la fracción de estas familias en el total de la población es la proporción poblacional <span class="math inline">\(p\)</span> para la que queremos calcular el intervalo de confianza. Como <span class="math inline">\(n\)</span> es muy grande y los números de éxitos y fracasos también lo son, podemos emplear el método de Laplace.</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">binom.approx</span>(<span class="dv">340</span>,<span class="dv">500</span>)</code></pre></div>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">binom.approx</span>(<span class="dv">340</span>,<span class="dv">500</span>)</code></pre>
 <pre><code>##     x   n proportion     lower     upper conf.level
 ## 1 340 500       0.68 0.6391123 0.7208877       0.95</code></pre>
 <p>Por lo tanto, según la fórmula de Laplace, un intervalo de confianza al 95% para la proporción poblacional es [0.639,0.721]. ¿Qué hubiéramos obtenido con los otros dos métodos?</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">binom.wilson</span>(<span class="dv">340</span>,<span class="dv">500</span>)</code></pre></div>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">binom.wilson</span>(<span class="dv">340</span>,<span class="dv">500</span>)</code></pre>
 <pre><code>##     x   n proportion    lower     upper conf.level
 ## 1 340 500       0.68 0.637873 0.7193822       0.95</code></pre>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">binom.exact</span>(<span class="dv">340</span>,<span class="dv">500</span>)</code></pre></div>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">binom.exact</span>(<span class="dv">340</span>,<span class="dv">500</span>)</code></pre>
 <pre><code>##     x   n proportion     lower     upper conf.level
 ## 1 340 500       0.68 0.6371369 0.7207188       0.95</code></pre>
 <p>Como podéis ver, los resultados son muy parecidos, con diferencias de unas pocas milésimas.</p>
 </div>
 <div id="sec:ICvar" class="section level2">
 <h2><span class="header-section-number">4.3</span> Intervalo de confianza para la varianza de una población normal</h2>
-<p>Supongamos ahora que queremos estimar la varianza <span class="math inline">\(\sigma^2\)</span>, o la desviación típica <span class="math inline">\(\sigma\)</span>, de una población que sigue una distribución normal. Tomamos una muestra aleatoria simple de tamaño <span class="math inline">\(n\)</span>, y sea <span class="math inline">\(\widetilde{S}_{X}\)</span> su desviación típica muestral. En esta situación, un intervalo de confianza del <span class="math inline">\(q\times 100\%\)</span> para la varianza <span class="math inline">\(\sigma^2\)</span> es <span class="math display">\[
+<p>Supongamos ahora que queremos estimar la varianza <span class="math inline">\(\sigma^2\)</span>, o la desviación típica <span class="math inline">\(\sigma\)</span>, de una población que sigue una distribución normal. Tomamos una muestra aleatoria simple de tamaño <span class="math inline">\(n\)</span>, y sea <span class="math inline">\(\widetilde{S}_{X}\)</span> su desviación típica muestral. En esta situación, un intervalo de confianza del <span class="math inline">\(q\times 100\%\)</span> para la varianza <span class="math inline">\(\sigma^2\)</span> es
+<span class="math display">\[
 \left[ \frac{(n-1)\widetilde{S}_{X}^2}{\chi_{n-1,(1+q)/2}^2},\
 \frac{(n-1)\widetilde{S}_{X}^2}{\chi_{n-1,(1-q)/2}^2}\right],
-\]</span> donde <span class="math inline">\(\chi_{n-1,(1-q)/2}^2\)</span> y <span class="math inline">\(\chi_{n-1,(1+q)/2}^2\)</span> son, respectivamente, los cuantiles de orden <span class="math inline">\((1-q)/2\)</span> y <span class="math inline">\((1+q)/2\)</span> de una variable aleatoria que sigue una distribución <span class="math inline">\(\chi^2\)</span> con <span class="math inline">\(n-1\)</span> grados de libertad.</p>
+\]</span>
+donde <span class="math inline">\(\chi_{n-1,(1-q)/2}^2\)</span> y <span class="math inline">\(\chi_{n-1,(1+q)/2}^2\)</span> son, respectivamente, los cuantiles de orden <span class="math inline">\((1-q)/2\)</span> y <span class="math inline">\((1+q)/2\)</span> de una variable aleatoria que sigue una distribución <span class="math inline">\(\chi^2\)</span> con
+<span class="math inline">\(n-1\)</span> grados de libertad.</p>
 <p>Si conocéis la varianza muestral <span class="math inline">\(\widetilde{S}_{X}^2\)</span>, que denotaremos por <code>varm</code>, podéis calcular este intervalo de confianza para la varianza con la fórmula siguiente (donde <code>q</code>indica el nivel de confianza en tanto por uno <span class="math inline">\(q\)</span>):</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">c</span>((n<span class="op">-</span><span class="dv">1</span>)<span class="op">*</span>varm<span class="op">/</span><span class="kw">qchisq</span>((<span class="dv">1</span><span class="op">+</span>q)<span class="op">/</span><span class="dv">2</span>,n<span class="op">-</span><span class="dv">1</span>),(n<span class="op">-</span><span class="dv">1</span>)<span class="op">*</span>varm<span class="op">/</span><span class="kw">qchisq</span>((<span class="dv">1</span><span class="op">-</span>q)<span class="op">/</span><span class="dv">2</span>,n<span class="op">-</span><span class="dv">1</span>))</code></pre></div>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">c</span>((n<span class="dv">-1</span>)<span class="op">*</span>varm<span class="op">/</span><span class="kw">qchisq</span>((<span class="dv">1</span><span class="op">+</span>q)<span class="op">/</span><span class="dv">2</span>,n<span class="dv">-1</span>),(n<span class="dv">-1</span>)<span class="op">*</span>varm<span class="op">/</span><span class="kw">qchisq</span>((<span class="dv">1</span><span class="op">-</span>q)<span class="op">/</span><span class="dv">2</span>,n<span class="dv">-1</span>))</code></pre>
 <p>Si, en cambio, disponéis de la muestra, podéis calcular este intervalo de confianza con la función <code>varTest</code> del paquete <strong>EnvStats</strong>. La sintaxis es similar a la usada con <code>t.test</code>:</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">varTest</span>(X,conf.level)<span class="op">$</span>conf.int</code></pre></div>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">varTest</span>(X,conf.level)<span class="op">$</span>conf.int</code></pre>
 <p>donde <code>X</code> es el vector que contiene la muestra y <code>conf.level</code> el nivel de confianza, que por defecto es igual a 0.95.</p>
 
 <div class="example">
 <p><span id="exm:unnamed-chunk-99" class="example"><strong>Ejemplo 4.6  </strong></span>Un índice de calidad de un reactivo químico es el tiempo que tarda en actuar. Se supone que la distribución de este tiempo de actuación del reactivo es aproximadamente normal. Se realizaron 30 pruebas independientes, que forman una muestra aleatoria simple, en las que se midió el tiempo de actuación del reactivo. Los tiempos obtenidos fueron</p>
 </div>
 
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">reactivo =<span class="st"> </span><span class="kw">c</span>(<span class="dv">12</span>,<span class="dv">13</span>,<span class="dv">13</span>,<span class="dv">14</span>,<span class="dv">14</span>,<span class="dv">14</span>,<span class="dv">15</span>,<span class="dv">15</span>,<span class="dv">16</span>,<span class="dv">17</span>,<span class="dv">17</span>,<span class="dv">18</span>,<span class="dv">18</span>,<span class="dv">19</span>,<span class="dv">19</span>,<span class="dv">25</span>,<span class="dv">25</span>,<span class="dv">26</span>,<span class="dv">27</span>,<span class="dv">30</span>,<span class="dv">33</span>,<span class="dv">34</span>,<span class="dv">35</span>,
-<span class="dv">40</span>,<span class="dv">40</span>,<span class="dv">51</span>,<span class="dv">51</span>,<span class="dv">58</span>,<span class="dv">59</span>,<span class="dv">83</span>)</code></pre></div>
+<pre class="sourceCode r"><code class="sourceCode r">reactivo =<span class="st"> </span><span class="kw">c</span>(<span class="dv">12</span>,<span class="dv">13</span>,<span class="dv">13</span>,<span class="dv">14</span>,<span class="dv">14</span>,<span class="dv">14</span>,<span class="dv">15</span>,<span class="dv">15</span>,<span class="dv">16</span>,<span class="dv">17</span>,<span class="dv">17</span>,<span class="dv">18</span>,<span class="dv">18</span>,<span class="dv">19</span>,<span class="dv">19</span>,<span class="dv">25</span>,<span class="dv">25</span>,<span class="dv">26</span>,<span class="dv">27</span>,<span class="dv">30</span>,<span class="dv">33</span>,<span class="dv">34</span>,<span class="dv">35</span>,
+<span class="dv">40</span>,<span class="dv">40</span>,<span class="dv">51</span>,<span class="dv">51</span>,<span class="dv">58</span>,<span class="dv">59</span>,<span class="dv">83</span>)</code></pre>
 <p>Queremos usar estos datos para calcular un intervalo de confianza del 95% para la desviación típica de este tiempo de actuación.</p>
 <p>El siguiente código calcula un intervalo de confianza al 95% para la varianza a partir del vector <code>reactivo</code>:</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(EnvStats)
-<span class="kw">varTest</span>(reactivo)<span class="op">$</span>conf.int</code></pre></div>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(EnvStats)
+<span class="kw">varTest</span>(reactivo)<span class="op">$</span>conf.int</code></pre>
 <pre><code>##      LCL      UCL 
 ## 191.2627 544.9572 
 ## attr(,&quot;conf.level&quot;)
 ## [1] 0.95</code></pre>
 <p>Este intervalo de confianza es para la varianza. Como la desviación típica es la raíz cuadrada de la varianza, para obtener un intervalo de confianza al 95% para la desviación típica, tenemos que tomar la raíz cuadrada de este intervalo para la varianza:</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">sqrt</span>(<span class="kw">varTest</span>(reactivo)<span class="op">$</span>conf.int)</code></pre></div>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">sqrt</span>(<span class="kw">varTest</span>(reactivo)<span class="op">$</span>conf.int)</code></pre>
 <pre><code>##      LCL      UCL 
 ## 13.82977 23.34432 
 ## attr(,&quot;conf.level&quot;)
@@ -426,34 +481,34 @@ Figura 4.1: Aciertos y errores en 200 Intervalos de confianza al 95%
 </div>
 
 <p>Para ello, vamos a general 1000 muestras aleatorias simples de la muestra, todas ellas del mismo tamaño que la muestra, calcularemos la media de cada una de estas muestras simples, construiremos un vector con estas medias muestrales, y daremos como extremos del intervalo de confianza los cuantiles de orden 0.025 y 0.975 del vector así obtenido.</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">set.seed</span>(<span class="dv">42</span>)
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">set.seed</span>(<span class="dv">42</span>)
 n=<span class="kw">length</span>(pesos)
 X=<span class="kw">replicate</span>(<span class="dv">1000</span>,<span class="kw">mean</span>(<span class="kw">sample</span>(pesos,n,<span class="dt">replace=</span><span class="ot">TRUE</span>)))
 IC.boot=<span class="kw">c</span>(<span class="kw">quantile</span>(X,<span class="fl">0.025</span>),<span class="kw">quantile</span>(X,<span class="fl">0.975</span>))
-<span class="kw">round</span>(IC.boot,<span class="dv">1</span>)</code></pre></div>
+<span class="kw">round</span>(IC.boot,<span class="dv">1</span>)</code></pre>
 <pre><code>##   2.5%  97.5% 
-## 3000.0 3348.2</code></pre>
-<p>El intervalo obtenido en este caso es [3000, 3348.2]; como se trata de un método basado en una simulación aleatoria, seguramente con otra semilla de aleatoriedad daría un intervalo diferente. Para comparar, recordad que el intervalo de confianza obtenido con la fórmula basada en la t de Student ha sido [2997.8, 3355].</p>
+## 3027.3 3350.6</code></pre>
+<p>El intervalo obtenido en este caso es [3027.3, 3350.6]; como se trata de un método basado en una simulación aleatoria, seguramente con otra semilla de aleatoriedad daría un intervalo diferente. Para comparar, recordad que el intervalo de confianza obtenido con la fórmula basada en la t de Student ha sido [2997.8, 3355].</p>
 <p>El paquete <strong>boot</strong> dispone de la función <code>boot</code> para llevar a cabo simulaciones <em>bootstrap.</em> Aplicando luego la función <code>boot.ci</code> al resultado de la función <code>boot</code> obtenemos diversos intervalos de confianza basados en el enfoque <em>bootstrap</em>. La sintaxis básica de la función <code>boot</code> es</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">boot</span>(X,estadístico,R)</code></pre></div>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">boot</span>(X,estadístico,R)</code></pre>
 <p>donde:</p>
 <ul>
 <li><p><code>X</code> es el vector que forma la muestra de la que disponemos</p></li>
 <li><p><code>R</code> es el número de muestras que queremos extraer de la muestra original</p></li>
 <li><p>El <code>estadístico</code> es la función que calcula el estadístico deseado de la submuestra, y tiene que tener dos parámetros: el primero representa la muestra original <code>X</code> y el segundo representa el vector de índices de una m.a.s. de <code>X</code>. Por ejemplo, si vamos a usar la función <code>boot</code> para efectuar una simulación <em>bootstrap</em> de medias muestrales, podemos tomar como <code>estadístico</code> la función:</p></li>
 </ul>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">media.boot=<span class="cf">function</span>(X,índices){<span class="kw">mean</span>(X[índices])}</code></pre></div>
+<pre class="sourceCode r"><code class="sourceCode r">media.boot=<span class="cf">function</span>(X,índices){<span class="kw">mean</span>(X[índices])}</code></pre>
 <p>Por otro lado, el nivel de confianza se especifica en la función <code>boot.ci</code> mediante el parámetro <code>conf</code> (no <code>conf.level</code>, como hasta ahora), cuyo valor por defecto es, eso sí, el de siempre: 0.95.</p>
 <p>A modo de ejemplo, vamos a usar las funciones del paquete <strong>boot</strong> para calcular un intervalo de confianza del 95% para la media de la variable aleatoria que ha producido el vector <code>pesos</code>.</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(boot)
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(boot)
 <span class="kw">set.seed</span>(<span class="dv">42</span>)
-simulacion=<span class="kw">boot</span>(pesos,media.boot,<span class="dv">1000</span>)</code></pre></div>
+simulacion=<span class="kw">boot</span>(pesos,media.boot,<span class="dv">1000</span>)</code></pre>
 <p>El resultado <code>simulacion</code> de esta última instrucción es una <code>list</code> que incluye, en su componente <code>t</code>, el vector de 1000 medias muestrales obtenido mediante la simulación; sus 10 primeros valores son:</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">simulacion<span class="op">$</span>t[<span class="dv">1</span><span class="op">:</span><span class="dv">10</span>]</code></pre></div>
-<pre><code>##  [1] 3344.57 3107.43 3162.89 3038.86 3094.64 3202.71 3151.25 3020.39
-##  [9] 3072.75 3284.75</code></pre>
+<pre class="sourceCode r"><code class="sourceCode r">simulacion<span class="op">$</span>t[<span class="dv">1</span><span class="op">:</span><span class="dv">10</span>]</code></pre>
+<pre><code>##  [1] 3189.14 3237.11 3301.32 3103.00 3154.11 3294.11 3347.25 3239.93
+##  [9] 3304.07 3217.11</code></pre>
 <p>Calculemos ahora el intervalo de confianza deseado:</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">boot.ci</span>(simulacion)</code></pre></div>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">boot.ci</span>(simulacion)</code></pre>
 <pre><code>## Warning in boot.ci(simulacion): bootstrap variances needed for studentized
 ## intervals</code></pre>
 <pre><code>## BOOTSTRAP CONFIDENCE INTERVAL CALCULATIONS
@@ -464,10 +519,10 @@ simulacion=<span class="kw">boot</span>(pesos,media.boot,<span class="dv">1000</
 ## 
 ## Intervals : 
 ## Level      Normal              Basic         
-## 95%   (3022, 3345 )   (3021, 3336 )  
+## 95%   (3010, 3341 )   (3011, 3345 )  
 ## 
 ## Level     Percentile            BCa          
-## 95%   (3017, 3332 )   (3028, 3359 )  
+## 95%   (3008, 3342 )   (3009, 3344 )  
 ## Calculations and Intervals on Original Scale</code></pre>
 <p>Obtenemos cuatro intervalos de confianza para <span class="math inline">\(\mu\)</span>, calculados con cuatro métodos a partir de la simulación realizada (y un aviso de que no ha podido calcular un quinto intervalo). Cada uno de estos intervalos es un objeto de una <code>list</code> y por lo tanto se puede obtener con el sufijo adecuado, que podréis deducir del resultado de aplicar <code>str</code> al resultado de una función <code>boot.ci</code>. El intervalo <code>Percentile</code> es el calculado con el método de los percentiles que hemos explicado antes, y se obtiene con el sufijo <code>$percent[4:5]</code> (no ha dado lo mismo que antes, pese a usar la misma semilla de aleatoriedad, porque el procedimiento interno usado por la función <code>boot</code> para remuestrear el vector <code>pesos</code> ha sido diferente). No vamos a entrar en detalle sobre los métodos que usa para calcular el resto de intervalos, en realidad todos tienen ventajas e inconvenientes.</p>
 
@@ -475,15 +530,16 @@ simulacion=<span class="kw">boot</span>(pesos,media.boot,<span class="dv">1000</
 <p><span id="exm:unnamed-chunk-111" class="example"><strong>Ejemplo 4.8  </strong></span>¿Realmente funciona el enfoque <em>bootstrap</em>? Vamos a retomar el experimento realizado en el Ejemplo <a href="chap-IC.html#exm:experiment">4.2</a>, donde construimos una matriz M cuyas columnas son 200 muestras aleatorias simples de tamaño 50 de una población que sigue una distribución normal estándard.</p>
 </div>
 
-<p>En dicho ejemplo calculamos para cada una de estas muestras el intervalo de confianza del 95% para la media poblacional usando la fórmula <a href="chap-IC.html#eq:form1">(4.1)</a>, que es la recomendada por la teoría en este caso. De los 200 intervalos calculados, 189 contuvieron la media poblacional, lo que representa un 94.5% de aciertos. Ahora vamos a calcular para cada una de estas muestras un intervalo de confianza del 95% por el método <em>bootstrap</em> de los percentiles y compararemos las tasas de aciertos. Aunque se puede comprobar fácilmente que no es el caso, para mayor seguridad vamos a volver a generar en las mismas condiciones las 200 muestras de la población, no sea que a lo largo de la lección hayamos modificado inadvertidamente el contenido de la matriz <code>M</code> (y así de paso fijamos la semilla de aleatoriedad).</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">set.seed</span>(<span class="dv">42</span>)
+<p>En dicho ejemplo calculamos para cada una de estas muestras el intervalo de confianza del 95% para la media poblacional usando la fórmula <a href="chap-IC.html#eq:form1">(4.1)</a>, que es la recomendada por la teoría en este caso. De los 200 intervalos calculados, 189 contuvieron la media poblacional, lo que representa un 94.5% de aciertos.
+Ahora vamos a calcular para cada una de estas muestras un intervalo de confianza del 95% por el método <em>bootstrap</em> de los percentiles y compararemos las tasas de aciertos. Aunque se puede comprobar fácilmente que no es el caso, para mayor seguridad vamos a volver a generar en las mismas condiciones las 200 muestras de la población, no sea que a lo largo de la lección hayamos modificado inadvertidamente el contenido de la matriz <code>M</code> (y así de paso fijamos la semilla de aleatoriedad).</p>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">set.seed</span>(<span class="dv">42</span>)
 Poblacion=<span class="kw">rnorm</span>(<span class="dv">10</span><span class="op">^</span><span class="dv">7</span>) <span class="co">#La población</span>
 mu=<span class="kw">mean</span>(Poblacion)  <span class="co"># La media poblacional</span>
 M=<span class="kw">replicate</span>(<span class="dv">200</span>, <span class="kw">sample</span>(Poblacion,<span class="dv">50</span>,<span class="dt">replace=</span><span class="ot">TRUE</span>)) <span class="co"># Las muestras</span>
 IC.b=<span class="cf">function</span>(X){<span class="kw">boot.ci</span>(<span class="kw">boot</span>(X,media.boot,<span class="dv">1000</span>))<span class="op">$</span>percent[<span class="dv">4</span><span class="op">:</span><span class="dv">5</span>]}
 ICs.bootstrap=<span class="kw">apply</span>(M,<span class="dt">FUN=</span>IC.b,<span class="dt">MARGIN=</span><span class="dv">2</span>)
 Aciertos.bootstrap=<span class="kw">length</span>(<span class="kw">which</span>((mu<span class="op">&gt;=</span>ICs.bootstrap[<span class="dv">1</span>,]) <span class="op">&amp;</span><span class="st"> </span>(mu<span class="op">&lt;=</span>ICs.bootstrap[<span class="dv">2</span>,])))
-Aciertos.bootstrap</code></pre></div>
+Aciertos.bootstrap</code></pre>
 <pre><code>## [1] 186</code></pre>
 <p>Con el <em>bootstrap</em>, hemos acertado en 186 ocasiones, lo que supone un 93% de aciertos.</p>
 </div>
@@ -512,26 +568,26 @@ Aciertos.bootstrap</code></pre></div>
 <h3>Respuestas al test</h3>
 <p><em>(1)</em> 1.41,1.51</p>
 <p>Nosotros lo hemos calculado con</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">round</span>(<span class="kw">t.test</span>(iris[iris<span class="op">$</span>Species<span class="op">==</span><span class="st">&quot;setosa&quot;</span>,<span class="st">&quot;Petal.Length&quot;</span>])<span class="op">$</span>conf.int,<span class="dv">2</span>)</code></pre></div>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">round</span>(<span class="kw">t.test</span>(iris[iris<span class="op">$</span>Species<span class="op">==</span><span class="st">&quot;setosa&quot;</span>,<span class="st">&quot;Petal.Length&quot;</span>])<span class="op">$</span>conf.int,<span class="dv">2</span>)</code></pre>
 <pre><code>## [1] 1.41 1.51
 ## attr(,&quot;conf.level&quot;)
 ## [1] 0.95</code></pre>
 <p><em>(2)</em> 5.933,6.467</p>
 <p>Nosotros lo hemos calculado con</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">x=<span class="fl">6.2</span>
+<pre class="sourceCode r"><code class="sourceCode r">x=<span class="fl">6.2</span>
 n=<span class="dv">80</span>
 sdm=<span class="fl">1.2</span>
 conf.level=<span class="fl">0.95</span>
-<span class="kw">round</span>(x<span class="op">+</span>(<span class="kw">qt</span>((<span class="dv">1</span><span class="op">+</span>conf.level)<span class="op">/</span><span class="dv">2</span>,n<span class="op">-</span><span class="dv">1</span>)<span class="op">*</span>sdm<span class="op">/</span><span class="kw">sqrt</span>(n))<span class="op">*</span><span class="kw">c</span>(<span class="op">-</span><span class="dv">1</span>,<span class="dv">1</span>),<span class="dv">3</span>)</code></pre></div>
+<span class="kw">round</span>(x<span class="op">+</span>(<span class="kw">qt</span>((<span class="dv">1</span><span class="op">+</span>conf.level)<span class="op">/</span><span class="dv">2</span>,n<span class="dv">-1</span>)<span class="op">*</span>sdm<span class="op">/</span><span class="kw">sqrt</span>(n))<span class="op">*</span><span class="kw">c</span>(<span class="op">-</span><span class="dv">1</span>,<span class="dv">1</span>),<span class="dv">3</span>)</code></pre>
 <pre><code>## [1] 5.933 6.467</code></pre>
 <p><em>(3)</em> 0.255,0.459</p>
 <p>Nosotros lo hemos calculado con</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">round</span>(<span class="kw">binom.wilson</span>(<span class="fl">0.35</span><span class="op">*</span><span class="dv">80</span>,<span class="dv">80</span>),<span class="dv">3</span>)</code></pre></div>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">round</span>(<span class="kw">binom.wilson</span>(<span class="fl">0.35</span><span class="op">*</span><span class="dv">80</span>,<span class="dv">80</span>),<span class="dv">3</span>)</code></pre>
 <pre><code>##    x  n proportion lower upper conf.level
 ## 1 28 80       0.35 0.255 0.459       0.95</code></pre>
 <p><em>(4)</em> 0.021,0.047</p>
 <p>Nosotros lo hemos calculado con</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">round</span>(<span class="kw">varTest</span>(iris[iris<span class="op">$</span>Species<span class="op">==</span><span class="st">&quot;setosa&quot;</span>,<span class="st">&quot;Petal.Length&quot;</span>])<span class="op">$</span>conf.int,<span class="dv">3</span>)</code></pre></div>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">round</span>(<span class="kw">varTest</span>(iris[iris<span class="op">$</span>Species<span class="op">==</span><span class="st">&quot;setosa&quot;</span>,<span class="st">&quot;Petal.Length&quot;</span>])<span class="op">$</span>conf.int,<span class="dv">3</span>)</code></pre>
 <pre><code>##   LCL   UCL 
 ## 0.021 0.047 
 ## attr(,&quot;conf.level&quot;)
@@ -596,7 +652,7 @@ gitbook.start({
   (function () {
     var script = document.createElement("script");
     script.type = "text/javascript";
-    var src = "";
+    var src = "true";
     if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
     if (location.protocol !== "file:" && /^https?:/.test(src))
       src = src.replace(/^https?:/, '');

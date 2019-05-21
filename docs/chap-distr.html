@@ -25,7 +25,7 @@
 <meta name="author" content="The AprendeR team">
 
 
-<meta name="date" content="2019-04-20">
+<meta name="date" content="2019-05-21">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -51,41 +51,67 @@
 
 
 <style type="text/css">
-div.sourceCode { overflow-x: auto; }
-table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
-  margin: 0; padding: 0; vertical-align: baseline; border: none; }
-table.sourceCode { width: 100%; line-height: 100%; }
-td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
-td.sourceCode { padding-left: 5px; }
-code > span.kw { color: #007020; font-weight: bold; } /* Keyword */
-code > span.dt { color: #902000; } /* DataType */
-code > span.dv { color: #40a070; } /* DecVal */
-code > span.bn { color: #40a070; } /* BaseN */
-code > span.fl { color: #40a070; } /* Float */
-code > span.ch { color: #4070a0; } /* Char */
-code > span.st { color: #4070a0; } /* String */
-code > span.co { color: #60a0b0; font-style: italic; } /* Comment */
-code > span.ot { color: #007020; } /* Other */
-code > span.al { color: #ff0000; font-weight: bold; } /* Alert */
-code > span.fu { color: #06287e; } /* Function */
-code > span.er { color: #ff0000; font-weight: bold; } /* Error */
-code > span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
-code > span.cn { color: #880000; } /* Constant */
-code > span.sc { color: #4070a0; } /* SpecialChar */
-code > span.vs { color: #4070a0; } /* VerbatimString */
-code > span.ss { color: #bb6688; } /* SpecialString */
-code > span.im { } /* Import */
-code > span.va { color: #19177c; } /* Variable */
-code > span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
-code > span.op { color: #666666; } /* Operator */
-code > span.bu { } /* BuiltIn */
-code > span.ex { } /* Extension */
-code > span.pp { color: #bc7a00; } /* Preprocessor */
-code > span.at { color: #7d9029; } /* Attribute */
-code > span.do { color: #ba2121; font-style: italic; } /* Documentation */
-code > span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
-code > span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
-code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+a.sourceLine { display: inline-block; line-height: 1.25; }
+a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
+a.sourceLine:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode { white-space: pre; position: relative; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+code.sourceCode { white-space: pre-wrap; }
+a.sourceLine { text-indent: -1em; padding-left: 1em; }
+}
+pre.numberSource a.sourceLine
+  { position: relative; left: -4em; }
+pre.numberSource a.sourceLine::before
+  { content: attr(data-line-number);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; pointer-events: all; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {  }
+@media screen {
+a.sourceLine::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
 </style>
 
 <link rel="stylesheet" href="style.css" type="text/css" />
@@ -209,6 +235,27 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li class="chapter" data-level="" data-path="chap-ANOVA.html"><a href="chap-ANOVA.html#respuestas-al-test-8"><i class="fa fa-check"></i>Respuestas al test</a></li>
 </ul></li>
 </ul></li>
+<li class="chapter" data-level="10" data-path="chap-regresion.html"><a href="chap-regresion.html"><i class="fa fa-check"></i><b>10</b> Regresión lineal</a><ul>
+<li class="chapter" data-level="10.1" data-path="chap-regresion.html"><a href="chap-regresion.html#sec:1"><i class="fa fa-check"></i><b>10.1</b> El modelo de regresión lineal en R</a></li>
+<li class="chapter" data-level="10.2" data-path="chap-regresion.html"><a href="chap-regresion.html#intervalos-de-confianza-en-el-modelo-de-regresion-lineal"><i class="fa fa-check"></i><b>10.2</b> Intervalos de confianza en el modelo de regresión lineal</a></li>
+<li class="chapter" data-level="10.3" data-path="chap-regresion.html"><a href="chap-regresion.html#sec:seleccion"><i class="fa fa-check"></i><b>10.3</b> Selección del modelo en base al ajuste de los datos</a></li>
+<li class="chapter" data-level="10.4" data-path="chap-regresion.html"><a href="chap-regresion.html#sec:diagn"><i class="fa fa-check"></i><b>10.4</b> Diagnósticos de regresión</a></li>
+<li class="chapter" data-level="10.5" data-path="chap-regresion.html"><a href="chap-regresion.html#guia-rapida-8"><i class="fa fa-check"></i><b>10.5</b> Guía rápida</a></li>
+<li class="chapter" data-level="10.6" data-path="chap-regresion.html"><a href="chap-regresion.html#ejercicios-9"><i class="fa fa-check"></i><b>10.6</b> Ejercicios</a><ul>
+<li class="chapter" data-level="" data-path="chap-regresion.html"><a href="chap-regresion.html#test-4"><i class="fa fa-check"></i>Test</a></li>
+<li class="chapter" data-level="" data-path="chap-regresion.html"><a href="chap-regresion.html#respuestas-al-test-9"><i class="fa fa-check"></i>Respuestas al test</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="11" data-path="chap-clustering.html"><a href="chap-clustering.html"><i class="fa fa-check"></i><b>11</b> <em>Clustering</em> básico</a><ul>
+<li class="chapter" data-level="11.1" data-path="chap-clustering.html"><a href="chap-clustering.html#metodo-de-k-medias-o-k-means"><i class="fa fa-check"></i><b>11.1</b> Método de k-medias o <em>k-means</em></a></li>
+<li class="chapter" data-level="11.2" data-path="chap-clustering.html"><a href="chap-clustering.html#eleccion-del-numero-de-clusters"><i class="fa fa-check"></i><b>11.2</b> Elección del número de <em>clusters</em></a></li>
+<li class="chapter" data-level="11.3" data-path="chap-clustering.html"><a href="chap-clustering.html#metodos-jerarquicos-aglomerativos"><i class="fa fa-check"></i><b>11.3</b> Métodos jerárquicos aglomerativos</a></li>
+<li class="chapter" data-level="11.4" data-path="chap-clustering.html"><a href="chap-clustering.html#guia-rapida-9"><i class="fa fa-check"></i><b>11.4</b> Guía rápida</a></li>
+<li class="chapter" data-level="11.5" data-path="chap-clustering.html"><a href="chap-clustering.html#ejercicios-10"><i class="fa fa-check"></i><b>11.5</b> Ejercicios</a><ul>
+<li class="chapter" data-level="" data-path="chap-clustering.html"><a href="chap-clustering.html#test-5"><i class="fa fa-check"></i>Test</a></li>
+<li class="chapter" data-level="" data-path="chap-clustering.html"><a href="chap-clustering.html#respuestas-al-test-10"><i class="fa fa-check"></i>Respuestas al test</a></li>
+</ul></li>
+</ul></li>
 <li class="divider"></li>
 <li><a href="https://github.com/cescrossello/AprendeR-II" target="blank">Publicado con  bookdown</a></li>
 
@@ -262,92 +309,92 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <ul>
 <li><span class="math inline">\(f_X(5)=P(X=5)\)</span>:</li>
 </ul>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">dbinom</span>(<span class="dv">5</span>,<span class="dv">20</span>,<span class="fl">0.3</span>)</code></pre></div>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">dbinom</span>(<span class="dv">5</span>,<span class="dv">20</span>,<span class="fl">0.3</span>)</code></pre>
 <pre><code>## [1] 0.1788631</code></pre>
-<div style="white-space: pre-line;">       Comprobémoslo, recordando que si <span class="math inline">\(X\sim B(n,k)\)</span>, entonces <span class="math inline">\(P(X=k)=\binom{n}{k}p^k(1-p)^{n-k}\)</span>:</div>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">choose</span>(<span class="dv">20</span>,<span class="dv">5</span>)<span class="op">*</span><span class="fl">0.3</span><span class="op">^</span><span class="dv">5</span><span class="op">*</span><span class="fl">0.7</span><span class="op">^</span><span class="dv">15</span></code></pre></div>
+<div class="line-block">       Comprobémoslo, recordando que si <span class="math inline">\(X\sim B(n,k)\)</span>, entonces <span class="math inline">\(P(X=k)=\binom{n}{k}p^k(1-p)^{n-k}\)</span>:</div>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">choose</span>(<span class="dv">20</span>,<span class="dv">5</span>)<span class="op">*</span><span class="fl">0.3</span><span class="op">^</span><span class="dv">5</span><span class="op">*</span><span class="fl">0.7</span><span class="op">^</span><span class="dv">15</span></code></pre>
 <pre><code>## [1] 0.1788631</code></pre>
 <ul>
 <li><span class="math inline">\(f_X(8)=P(X=8)\)</span>:</li>
 </ul>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">dbinom</span>(<span class="dv">8</span>,<span class="dv">20</span>,<span class="fl">0.3</span>)  </code></pre></div>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">dbinom</span>(<span class="dv">8</span>,<span class="dv">20</span>,<span class="fl">0.3</span>)  </code></pre>
 <pre><code>## [1] 0.1143967</code></pre>
 <ul>
-<li><span class="math inline">\(F_X(5)=P(X{\leqslant}5)\)</span>:</li>
+<li><span class="math inline">\(F_X(5)=P(X\leqslant 5)\)</span>:</li>
 </ul>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">pbinom</span>(<span class="dv">5</span>,<span class="dv">20</span>,<span class="fl">0.3</span>)  </code></pre></div>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">pbinom</span>(<span class="dv">5</span>,<span class="dv">20</span>,<span class="fl">0.3</span>)  </code></pre>
 <pre><code>## [1] 0.4163708</code></pre>
-<div style="white-space: pre-line;">       Comprobémoslo, usando que <span class="math inline">\(P(X{\leqslant}5)=\sum_{k=0}^5 P(X=k)\)</span>:</div>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">sum</span>(<span class="kw">dbinom</span>(<span class="dv">0</span><span class="op">:</span><span class="dv">5</span>,<span class="dv">20</span>,<span class="fl">0.3</span>))</code></pre></div>
+<div class="line-block">       Comprobémoslo, usando que <span class="math inline">\(P(X\leqslant 5)=\sum_{k=0}^5 P(X=k)\)</span>:</div>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">sum</span>(<span class="kw">dbinom</span>(<span class="dv">0</span><span class="op">:</span><span class="dv">5</span>,<span class="dv">20</span>,<span class="fl">0.3</span>))</code></pre>
 <pre><code>## [1] 0.4163708</code></pre>
 <ul>
-<li><span class="math inline">\(F_X(8)=P(X{\leqslant}8)\)</span>:</li>
+<li><span class="math inline">\(F_X(8)=P(X\leqslant 8)\)</span>:</li>
 </ul>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">pbinom</span>(<span class="dv">8</span>,<span class="dv">20</span>,<span class="fl">0.3</span>)  </code></pre></div>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">pbinom</span>(<span class="dv">8</span>,<span class="dv">20</span>,<span class="fl">0.3</span>)  </code></pre>
 <pre><code>## [1] 0.8866685</code></pre>
 <ul>
 <li><span class="math inline">\(P(X&gt;8)\)</span></li>
 </ul>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">pbinom</span>(<span class="dv">8</span>,<span class="dv">20</span>,<span class="fl">0.3</span>,<span class="dt">lower.tail=</span><span class="ot">FALSE</span>)</code></pre></div>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">pbinom</span>(<span class="dv">8</span>,<span class="dv">20</span>,<span class="fl">0.3</span>,<span class="dt">lower.tail=</span><span class="ot">FALSE</span>)</code></pre>
 <pre><code>## [1] 0.1133315</code></pre>
-<div style="white-space: pre-line;">       En efecto:</div>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="dv">1</span><span class="op">-</span><span class="kw">pbinom</span>(<span class="dv">8</span>,<span class="dv">20</span>,<span class="fl">0.3</span>)</code></pre></div>
+<div class="line-block">       En efecto:</div>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="dv">1</span><span class="op">-</span><span class="kw">pbinom</span>(<span class="dv">8</span>,<span class="dv">20</span>,<span class="fl">0.3</span>)</code></pre>
 <pre><code>## [1] 0.1133315</code></pre>
 <ul>
-<li>El cuantil de orden <span class="math inline">\(0.5\)</span> de <span class="math inline">\(X\)</span>, o sea, su <strong>mediana</strong>: el valor <span class="math inline">\(x\)</span> más pequeño tal que <span class="math inline">\(P(X{\leqslant}x){\geqslant}0.5\)</span></li>
+<li>El cuantil de orden <span class="math inline">\(0.5\)</span> de <span class="math inline">\(X\)</span>, o sea, su <strong>mediana</strong>: el valor <span class="math inline">\(x\)</span> más pequeño tal que <span class="math inline">\(P(X\leqslant x)\geqslant 0.5\)</span></li>
 </ul>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">qbinom</span>(<span class="fl">0.5</span>,<span class="dv">20</span>,<span class="fl">0.3</span>)  </code></pre></div>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">qbinom</span>(<span class="fl">0.5</span>,<span class="dv">20</span>,<span class="fl">0.3</span>)  </code></pre>
 <pre><code>## [1] 6</code></pre>
-<div style="white-space: pre-line;">       Comprobemos que <span class="math inline">\(P(X{\leqslant}6){\geqslant}0.5\)</span> y en cambio <span class="math inline">\(P(X{\leqslant}5)&lt; 0.5\)</span>:</div>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">pbinom</span>(<span class="dv">6</span>,<span class="dv">20</span>,<span class="fl">0.3</span>) </code></pre></div>
+<div class="line-block">       Comprobemos que <span class="math inline">\(P(X\leqslant 6)\geqslant 0.5\)</span> y en cambio <span class="math inline">\(P(X\leqslant 5)&lt; 0.5\)</span>:</div>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">pbinom</span>(<span class="dv">6</span>,<span class="dv">20</span>,<span class="fl">0.3</span>) </code></pre>
 <pre><code>## [1] 0.6080098</code></pre>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">pbinom</span>(<span class="dv">5</span>,<span class="dv">20</span>,<span class="fl">0.3</span>) </code></pre></div>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">pbinom</span>(<span class="dv">5</span>,<span class="dv">20</span>,<span class="fl">0.3</span>) </code></pre>
 <pre><code>## [1] 0.4163708</code></pre>
 <ul>
 <li>El cuantil de orden <span class="math inline">\(0.25\)</span> de <span class="math inline">\(X\)</span>, es decir, su <strong>primer cuartil</strong>:</li>
 </ul>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">qbinom</span>(<span class="fl">0.25</span>,<span class="dv">20</span>,<span class="fl">0.3</span>)  </code></pre></div>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">qbinom</span>(<span class="fl">0.25</span>,<span class="dv">20</span>,<span class="fl">0.3</span>)  </code></pre>
 <pre><code>## [1] 5</code></pre>
 <ul>
 <li>Un vector aleatorio de 10 valores generado con la variable aleatoria <span class="math inline">\(X\)</span>:</li>
 </ul>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">rbinom</span>(<span class="dv">10</span>,<span class="dv">20</span>,<span class="fl">0.3</span>)</code></pre></div>
-<pre><code>##  [1] 5 7 6 6 6 9 4 6 4 3</code></pre>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">rbinom</span>(<span class="dv">10</span>,<span class="dv">20</span>,<span class="fl">0.3</span>)</code></pre>
+<pre><code>##  [1]  3  9  5  5  7 10  6  6  9  4</code></pre>
 <ul>
 <li>Dos vectores aleatorios más, de 10 valores cada uno, generados con la variable aleatoria <span class="math inline">\(X\)</span>:</li>
 </ul>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">rbinom</span>(<span class="dv">10</span>,<span class="dv">20</span>,<span class="fl">0.3</span>) </code></pre></div>
-<pre><code>##  [1] 2 8 7 7 7 6 2 8 8 1</code></pre>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">rbinom</span>(<span class="dv">10</span>,<span class="dv">20</span>,<span class="fl">0.3</span>)</code></pre></div>
-<pre><code>##  [1] 8 7 8 3 5 9 5 7 4 7</code></pre>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">rbinom</span>(<span class="dv">10</span>,<span class="dv">20</span>,<span class="fl">0.3</span>) </code></pre>
+<pre><code>##  [1] 5 3 4 7 6 8 7 3 8 3</code></pre>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">rbinom</span>(<span class="dv">10</span>,<span class="dv">20</span>,<span class="fl">0.3</span>)</code></pre>
+<pre><code>##  [1] 7 6 9 4 9 4 6 4 7 7</code></pre>
 <p>Del mismo modo, si estamos trabajando con una variable aleatoria <span class="math inline">\(Y\)</span> de Poisson con parámetro <span class="math inline">\(\lambda=5\)</span>:</p>
 <ul>
 <li><span class="math inline">\(P(Y=8)\)</span>:</li>
 </ul>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">dpois</span>(<span class="dv">8</span>,<span class="dv">5</span>) </code></pre></div>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">dpois</span>(<span class="dv">8</span>,<span class="dv">5</span>) </code></pre>
 <pre><code>## [1] 0.06527804</code></pre>
 <ul>
-<li><span class="math inline">\(P(Y{\leqslant}8)\)</span>:</li>
+<li><span class="math inline">\(P(Y\leqslant 8)\)</span>:</li>
 </ul>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ppois</span>(<span class="dv">8</span>,<span class="dv">5</span>) </code></pre></div>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ppois</span>(<span class="dv">8</span>,<span class="dv">5</span>) </code></pre>
 <pre><code>## [1] 0.9319064</code></pre>
 <ul>
 <li>El cuantil de orden 0.6 de <span class="math inline">\(Y\)</span>:</li>
 </ul>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">qpois</span>(<span class="fl">0.6</span>,<span class="dv">5</span>)</code></pre></div>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">qpois</span>(<span class="fl">0.6</span>,<span class="dv">5</span>)</code></pre>
 <pre><code>## [1] 5</code></pre>
 <ul>
 <li>Un vector aleatorio de 20 valores generado con la variable aleatoria <span class="math inline">\(Y\)</span>:</li>
 </ul>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">rpois</span>(<span class="dv">20</span>,<span class="dv">5</span>)</code></pre></div>
-<pre><code>##  [1] 4 5 9 6 3 6 1 8 2 6 4 7 6 7 2 6 6 3 3 2</code></pre>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">rpois</span>(<span class="dv">20</span>,<span class="dv">5</span>)</code></pre>
+<pre><code>##  [1]  7  6  8  5  4  6  6  6  5  3  4  4  8 13  1  3  6  4  7  3</code></pre>
 <p>Si no entramos ningún parámetro en las funciones asociadas a la distribución normal, R entiende que se trata de la normal estándar (con media <span class="math inline">\(\mu=0\)</span> y desviación típica <span class="math inline">\(\sigma=1\)</span>): por ejemplo, las dos instrucciones siguientes nos dan el valor <span class="math inline">\(f_Z(0.3)\)</span> de la función densidad de una normal estándar <span class="math inline">\(Z\)</span> aplicada a 0.3 (que <em>no</em> es igual a <span class="math inline">\(P(Z=0.3)\)</span>):</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">dnorm</span>(<span class="fl">0.3</span>)</code></pre></div>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">dnorm</span>(<span class="fl">0.3</span>)</code></pre>
 <pre><code>## [1] 0.3813878</code></pre>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">dnorm</span>(<span class="fl">0.3</span>,<span class="dv">0</span>,<span class="dv">1</span>)</code></pre></div>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">dnorm</span>(<span class="fl">0.3</span>,<span class="dv">0</span>,<span class="dv">1</span>)</code></pre>
 <pre><code>## [1] 0.3813878</code></pre>
 <p>Las funciones densidad y distribución de una variable aleatoria se pueden dibujar con la función <code>curve</code>. Así, la función siguiente dibuja la gráfica de la densidad de una variable normal estándard de la Figura <a href="chap-distr.html#fig:dnorm">1.1</a>:</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">curve</span>(<span class="kw">dnorm</span>(x,<span class="dv">0</span>,<span class="fl">1.5</span>),<span class="op">-</span><span class="dv">5</span>,<span class="dv">5</span>,<span class="dt">xlab=</span><span class="st">&quot;&quot;</span>,<span class="dt">ylab=</span><span class="st">&quot;&quot;</span>,<span class="dt">main=</span><span class="st">&quot;&quot;</span>)</code></pre></div>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">curve</span>(<span class="kw">dnorm</span>(x,<span class="dv">0</span>,<span class="fl">1.5</span>),<span class="op">-</span><span class="dv">5</span>,<span class="dv">5</span>,<span class="dt">xlab=</span><span class="st">&quot;&quot;</span>,<span class="dt">ylab=</span><span class="st">&quot;&quot;</span>,<span class="dt">main=</span><span class="st">&quot;&quot;</span>)</code></pre>
 <div class="figure" style="text-align: center"><span id="fig:dnorm"></span>
 <img src="AprendeR-Parte-II_files/figure-html/dnorm-1.png" alt="Función densidad de una variable N(0,1)." width="480" />
 <p class="caption">
@@ -355,7 +402,7 @@ Figura 1.1: Función densidad de una variable N(0,1).
 </p>
 </div>
 <p>De manera similar, la función siguiente dibuja la gráfica de la función de distribución de una variable normal estándard de la Figura <a href="chap-distr.html#fig:pnorm">1.2</a>:</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">curve</span>(<span class="kw">pnorm</span>(x,<span class="dv">0</span>,<span class="fl">1.5</span>),<span class="op">-</span><span class="dv">5</span>,<span class="dv">5</span>,<span class="dt">xlab=</span><span class="st">&quot;&quot;</span>,<span class="dt">ylab=</span><span class="st">&quot;&quot;</span>,<span class="dt">main=</span><span class="st">&quot;&quot;</span>)</code></pre></div>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">curve</span>(<span class="kw">pnorm</span>(x,<span class="dv">0</span>,<span class="fl">1.5</span>),<span class="op">-</span><span class="dv">5</span>,<span class="dv">5</span>,<span class="dt">xlab=</span><span class="st">&quot;&quot;</span>,<span class="dt">ylab=</span><span class="st">&quot;&quot;</span>,<span class="dt">main=</span><span class="st">&quot;&quot;</span>)</code></pre>
 <div class="figure" style="text-align: center"><span id="fig:pnorm"></span>
 <img src="AprendeR-Parte-II_files/figure-html/pnorm-1.png" alt="Función distribución de una variable N(0,1)." width="480" />
 <p class="caption">
@@ -367,8 +414,8 @@ Figura 1.2: Función distribución de una variable N(0,1).
 <div id="test" class="section level3 unnumbered">
 <h3>Test</h3>
 <p><em>(1)</em> Sea <span class="math inline">\(f\)</span> la función de densidad de una variable aleatoria normal con <span class="math inline">\(\mu=0.2\)</span> y <span class="math inline">\(\sigma=1.2\)</span>. Dad el valor de <span class="math inline">\(f(0.5)\)</span> redondeado a 4 cifras decimales.</p>
-<p><em>(2)</em> Sea <span class="math inline">\(X\)</span> una variable aleatoria normal con <span class="math inline">\(\mu=0.2\)</span> y <span class="math inline">\(\sigma=1.2\)</span>. Dad el valor de <span class="math inline">\(P(3{\leqslant}X{\leqslant}7)\)</span> redondeado a 4 cifras decimales.</p>
-<p><em>(3)</em> Sea <span class="math inline">\(X\)</span> una variable aleatoria <span class="math inline">\(B(10,0.2)\)</span>. Dad el valor de <span class="math inline">\(P(3{\leqslant}X{\leqslant}7)\)</span> redondeado a 4 cifras decimales.</p>
+<p><em>(2)</em> Sea <span class="math inline">\(X\)</span> una variable aleatoria normal con <span class="math inline">\(\mu=0.2\)</span> y <span class="math inline">\(\sigma=1.2\)</span>. Dad el valor de <span class="math inline">\(P(3\leqslant X\leqslant 7)\)</span> redondeado a 4 cifras decimales.</p>
+<p><em>(3)</em> Sea <span class="math inline">\(X\)</span> una variable aleatoria <span class="math inline">\(B(10,0.2)\)</span>. Dad el valor de <span class="math inline">\(P(3\leqslant X\leqslant 7)\)</span> redondeado a 4 cifras decimales.</p>
 <p><em>(4)</em> Dad una instrucción que calcule la mediana de una lista de 20 números aleatorios generados con distribución <span class="math inline">\(B(10,0.2)\)</span>. No deis el resultado, solo la instrucción.</p>
 <!--
 ### Problemas {-}
@@ -494,7 +541,7 @@ gitbook.start({
   (function () {
     var script = document.createElement("script");
     script.type = "text/javascript";
-    var src = "";
+    var src = "true";
     if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
     if (location.protocol !== "file:" && /^https?:/.test(src))
       src = src.replace(/^https?:/, '');
