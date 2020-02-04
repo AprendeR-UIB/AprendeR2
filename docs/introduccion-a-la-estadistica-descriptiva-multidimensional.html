@@ -25,7 +25,7 @@
 <meta name="author" content="The AprendeR team">
 
 
-<meta name="date" content="2019-05-21">
+<meta name="date" content="2020-01-08">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -135,7 +135,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="1" data-path="chap-distr.html"><a href="chap-distr.html"><i class="fa fa-check"></i><b>1</b> Distribuciones de probabilidad</a><ul>
 <li class="chapter" data-level="1.1" data-path="chap-distr.html"><a href="chap-distr.html#ejercicios"><i class="fa fa-check"></i><b>1.1</b> Ejercicios</a><ul>
 <li class="chapter" data-level="" data-path="chap-distr.html"><a href="chap-distr.html#test"><i class="fa fa-check"></i>Test</a></li>
+<li class="chapter" data-level="" data-path="chap-distr.html"><a href="chap-distr.html#problemas"><i class="fa fa-check"></i>Problemas</a></li>
 <li class="chapter" data-level="" data-path="chap-distr.html"><a href="chap-distr.html#respuestas-al-test"><i class="fa fa-check"></i>Respuestas al test</a></li>
+<li class="chapter" data-level="" data-path="chap-distr.html"><a href="chap-distr.html#soluciones-sucintas-de-los-problemas"><i class="fa fa-check"></i>Soluciones sucintas de los problemas</a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="2" data-path="chap-muestreo.html"><a href="chap-muestreo.html"><i class="fa fa-check"></i><b>2</b> Conceptos básicos de muestreo</a><ul>
@@ -144,7 +146,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="2.3" data-path="chap-muestreo.html"><a href="chap-muestreo.html#guia-rapida"><i class="fa fa-check"></i><b>2.3</b> Guía rápida</a></li>
 <li class="chapter" data-level="2.4" data-path="chap-muestreo.html"><a href="chap-muestreo.html#ejercicios-1"><i class="fa fa-check"></i><b>2.4</b> Ejercicios</a><ul>
 <li class="chapter" data-level="" data-path="chap-muestreo.html"><a href="chap-muestreo.html#test-1"><i class="fa fa-check"></i>Test</a></li>
+<li class="chapter" data-level="" data-path="chap-muestreo.html"><a href="chap-muestreo.html#problemas-1"><i class="fa fa-check"></i>Problemas</a></li>
 <li class="chapter" data-level="" data-path="chap-muestreo.html"><a href="chap-muestreo.html#respuestas-al-test-1"><i class="fa fa-check"></i>Respuestas al test</a></li>
+<li class="chapter" data-level="" data-path="chap-muestreo.html"><a href="chap-muestreo.html#soluciones-sucintas-de-los-problemas-1"><i class="fa fa-check"></i>Soluciones sucintas de los problemas</a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="3" data-path="chap-estimacion.html"><a href="chap-estimacion.html"><i class="fa fa-check"></i><b>3</b> Estimación puntual</a><ul>
@@ -667,7 +671,7 @@ Su covarianza muestral se obtendría multiplicando por <span class="math inline"
 Para obtener su covarianza “verdadera”, hay que multiplicar el resultado de <code>cov</code> por <span class="math inline">\((n-1)/n\)</span>.</p>
 
 <div class="example">
-<p><span id="exm:unnamed-chunk-349" class="example"><strong>Ejemplo 8.6  </strong></span>La covarianza muestral de las dos primeras columnas de la tabla de datos <span class="math inline">\(X\)</span>, que tenemos guardada en el <em>data frame</em> <code>X</code>, es:</p>
+<p><span id="exm:unnamed-chunk-364" class="example"><strong>Ejemplo 8.6  </strong></span>La covarianza muestral de las dos primeras columnas de la tabla de datos <span class="math inline">\(X\)</span>, que tenemos guardada en el <em>data frame</em> <code>X</code>, es:</p>
 </div>
 
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">cov</span>(X<span class="op">$</span>V1, X<span class="op">$</span>V2)</code></pre>
@@ -827,7 +831,7 @@ variables <span class="math inline">\({x}_{\bullet i}\)</span> y <span class="ma
 <p>Con R, la correlación de Pearson de dos vectores se puede calcular aplicándoles la función <code>cor</code>.</p>
 
 <div class="example">
-<p><span id="exm:unnamed-chunk-354" class="example"><strong>Ejemplo 8.8  </strong></span>En ejemplos anteriores hemos calculado la covarianza y las varianzas de las dos primeras columnas de la matriz de datos
+<p><span id="exm:unnamed-chunk-369" class="example"><strong>Ejemplo 8.8  </strong></span>En ejemplos anteriores hemos calculado la covarianza y las varianzas de las dos primeras columnas de la matriz de datos
 <span class="math display">\[
 {X}=\left(\begin{array}{rrr}
 1&amp;-1&amp;3\\
@@ -881,7 +885,7 @@ donde cada <span class="math inline">\(r_{i j}\)</span> es la correlación de Pe
 <p>Se tiene el teorema siguiente, que se puede demostrar mediante un simple, aunque farragoso, cálculo algebraico:</p>
 
 <div class="theorem">
-<p><span id="thm:unnamed-chunk-359" class="theorem"><strong>Teorema 8.1  </strong></span>La matriz de correlaciones de Pearson de <span class="math inline">\(X\)</span> es igual a:</p>
+<p><span id="thm:unnamed-chunk-374" class="theorem"><strong>Teorema 8.1  </strong></span>La matriz de correlaciones de Pearson de <span class="math inline">\(X\)</span> es igual a:</p>
 <ul>
 <li><p>La matriz de covarianzas de su matriz tipificada.</p></li>
 <li><p>La matriz de covarianzas muestrales de su matriz tipificada obtenida dividiendo por las desviaciones típicas muestrales en vez de por las “verdaderas”.</p></li>
@@ -997,7 +1001,7 @@ Y1</code></pre>
 <p>La correlación de Pearson mide específicamente la tendencia de dos variables cuantitativas continuas a depender linealmente una de otra. En circunstancias en las que no esperemos esta dependencia lineal, o en las que nuestras variables sean cuantitativas discretas o simplemente cualitativas, usar la correlación de Pearson para analizar la relación entre dos variables no es lo más adecuado. Entre las propuestas alternativas, la más popular es la <strong>correlación de Spearman</strong>. Este índice asigna a cada valor de cada vector su <strong>rango</strong> (su posición en el vector ordenado de menor a mayor, y en caso de empates la media de las posiciones que ocuparían todos los empates) y calcula la correlación de Pearson de estos rangos. Con R, la correlación de Spearman se calcula directamente con la función <code>cor</code> entrándole el parámetro <code>method=&quot;spearman&quot;</code>. (El valor por defecto del parámetro <code>method</code> es <code>&quot;pearson&quot;</code> y por eso no lo indicamos cuando calculamos la correlación de Pearson.)</p>
 
 <div class="example">
-<p><span id="exm:unnamed-chunk-371" class="example"><strong>Ejemplo 8.9  </strong></span>Vamos a calcular la correlación de Spearman de las dos primeras columnas de la matriz de datos <span class="math inline">\(X\)</span> que hemos venido usando en nuestros ejemplos. En la tabla siguiente calculamos los rangos de sus entradas:</p>
+<p><span id="exm:unnamed-chunk-386" class="example"><strong>Ejemplo 8.9  </strong></span>Vamos a calcular la correlación de Spearman de las dos primeras columnas de la matriz de datos <span class="math inline">\(X\)</span> que hemos venido usando en nuestros ejemplos. En la tabla siguiente calculamos los rangos de sus entradas:</p>
 </div>
 
 <p><span class="math display">\[
@@ -1046,7 +1050,7 @@ es la correlación de Pearson de
 </ul>
 
 <div class="example">
-<p><span id="exm:unnamed-chunk-377" class="example"><strong>Ejemplo 8.10  </strong></span>Queremos contrastar si hay correlación positiva entre el peso de una madre en el momento de la concepción del hijo y el peso de su hijo en el momento de nacer. Para ello vamos a usar la tabla de datos <code>birthwt</code> incluida en el paquete <strong>MASS</strong> que ya usamos en una lección anterior, que contiene información sobre recién nacidos y sus madres, y que en particular dispone de las variables <code>bwt</code>, que da el peso del recién nacido en gramos, y <code>lwt</code>, que da el peso de la madre en libras en el momento de su última menstruación. Vamos a suponer que ambos pesos siguen distribuciones normales. Si denotamos por <span class="math inline">\(X\)</span> e <span class="math inline">\(Y\)</span> las correspondientes variables poblacionales, queremos realizar el contraste
+<p><span id="exm:unnamed-chunk-392" class="example"><strong>Ejemplo 8.10  </strong></span>Queremos contrastar si hay correlación positiva entre el peso de una madre en el momento de la concepción del hijo y el peso de su hijo en el momento de nacer. Para ello vamos a usar la tabla de datos <code>birthwt</code> incluida en el paquete <strong>MASS</strong> que ya usamos en una lección anterior, que contiene información sobre recién nacidos y sus madres, y que en particular dispone de las variables <code>bwt</code>, que da el peso del recién nacido en gramos, y <code>lwt</code>, que da el peso de la madre en libras en el momento de su última menstruación. Vamos a suponer que ambos pesos siguen distribuciones normales. Si denotamos por <span class="math inline">\(X\)</span> e <span class="math inline">\(Y\)</span> las correspondientes variables poblacionales, queremos realizar el contraste
 <span class="math display">\[
 \left\{\begin{array}{l}
 H_0: \rho_{XY}=0\\
