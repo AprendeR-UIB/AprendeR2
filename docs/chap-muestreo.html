@@ -25,7 +25,7 @@
 <meta name="author" content="The UIB-AprendeR team">
 
 
-<meta name="date" content="2020-02-06">
+<meta name="date" content="2020-02-16">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -228,7 +228,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="8.8" data-path="chap-estmult.html"><a href="chap-estmult.html#guia-rapida-6"><i class="fa fa-check"></i><b>8.8</b> Guía rápida</a></li>
 <li class="chapter" data-level="8.9" data-path="chap-estmult.html"><a href="chap-estmult.html#ejercicios-9"><i class="fa fa-check"></i><b>8.9</b> Ejercicios</a><ul>
 <li class="chapter" data-level="" data-path="chap-estmult.html"><a href="chap-estmult.html#modelo-de-test-3"><i class="fa fa-check"></i>Modelo de test</a></li>
+<li class="chapter" data-level="" data-path="chap-estmult.html"><a href="chap-estmult.html#problemas-5"><i class="fa fa-check"></i>Problemas</a></li>
 <li class="chapter" data-level="" data-path="chap-estmult.html"><a href="chap-estmult.html#respuestas-al-test-7"><i class="fa fa-check"></i>Respuestas al test</a></li>
+<li class="chapter" data-level="" data-path="chap-estmult.html"><a href="chap-estmult.html#soluciones-sucintas-de-los-problemas-6"><i class="fa fa-check"></i>Soluciones sucintas de los problemas</a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="9" data-path="chap-ANOVA.html"><a href="chap-ANOVA.html"><i class="fa fa-check"></i><b>9</b> ANOVA básico</a><ul>
@@ -412,7 +414,7 @@ Figura 2.5: Una muestra aleatoria sistemática
 <p>Cuando no disponemos de una lista de toda la población pero sí que tenemos una manera de acceder de manera ordenada a sujetos de la misma (por ejemplo, enfermos que acuden a un hospital), podemos realizar un muestreo sistemático tomando los sujetos a intervalos constantes a medida que los encontramos y hasta completar el tamaño deseado de la muestra. Por ejemplo, para escoger una muestra de 10 estudiantes de la UIB, podríamos escoger cada décimo estudiante que entrase en un edificio del Campus por una puerta concreta hasta llegar a los 10.</p>
 <p>Cuando el orden de los individuos de la población en la lista es aleatorio, el muestreo sistemático aleatorio es equivalente al muestreo aleatorio sin reposición. Pero en general este no es el caso, y se pueden producir sesgos. Por poner un caso extremo, si una clase de 100 estudiantes estuviera formada por 50 parejas de hermanos y tomáramos una muestra sistemática de 50 estudiantes, eligiéndolos por orden alfabético de los apellidos uno sí, uno no, es seguro que no aparecería ninguna pareja de hermanos en la muestra (porque dos hermanos son siempre consecutivos en la lista, y en nuestra muestra no habría ningún par de sujetos consecutivos). En cambio, la probabilidad de que una muestra aleatoria sin reposición del mismo tamaño contuviera una pareja de hermanos es prácticamente 1; en concreto esta probabilidad sería</p>
 <p><span class="math display">\[
-1-\frac{100\times 98\times 96\times\cdots\times 2}{100\times 99\times 98\times\cdots\times 51}=1-\frac{2^{50}\cdot 50!^2}{100!}=0.999999999999989.
+1-\frac{100\times 98\times 96\times\cdots\times 2}{100\times 99\times 98\times\cdots\times 51}=1-\frac{2^{50}\cdot 50!^2}{100!}=1.
 \]</span></p>
 </div>
 <div id="muestreo-aleatorio-estratificado" class="section level4 unnumbered">
@@ -467,7 +469,7 @@ Figura 2.9: Una muestra aleatoria por conglomerados
 <p>Otro tipo de muestras no aleatorias son las <strong>oportunistas</strong>. Este es el caso, por ejemplo, si para estimar la opinión que de un profesor tienen los alumnos de una asignatura se visita un día la clase y se pasa la encuesta a los estudiantes que ese día asistieron a clase. De nuevo, puede que los alumnos presentes no sean representativos del alumnado de la asignatura (pueden ser los más aplicados, o los que no tienen la gripe, o a los que la asignatura no les coincide con otra). Veamos otros ejemplos de muestreo oportunista. Supongamos que queremos estudiar una característica de los animales de una determinada especie en un hábitat, y la medimos en los animales que capturamos. Estos ejemplares no tienen por qué ser representativos de la población: a lo mejor son los menos espabilados. O imaginad que tenéis una bolsa con bolas de diferentes tamaños. Si las removéis bien, las pequeñas tenderán a ir a parar al fondo y las grandes a quedar en la parte superior. Por lo tanto, si tomáis una muestra de la capa superior (que será lo más cómodo), no será representativa del total de la bolsa.</p>
 <p>La Figura <a href="chap-muestreo.html#fig:oport">2.10</a> describe una muestra oportunista de nuestra urna: sus 15 primeras bolas. Aunque toda muestra de un mismo tamaño tiene la misma probabilidad de obtenerse por medio de un muestreo aleatorio sin reposición, es difícil de creer que esta muestra sea aleatoria; basta que calculéis cuál es la probabilidad de que en una muestra aleatoria de 15 bolas de nuestra urna todas tengan el mismo color:</p>
 <p><span class="math display">\[
-\frac{40\times 39\times \cdots\times 26+60\times 59\times \cdots\times 46}{100\times 99\times \cdots\times 86}=0.00021
+\frac{40\times 39\times \cdots\times 26+60\times 59\times \cdots\times 46}{100\times 99\times \cdots\times 86}=2.1\times 10^{-4}
 \]</span></p>
 <div class="figure" style="text-align: center"><span id="fig:oport"></span>
 <img src="AprendeR-Parte-II_files/figure-html/oport.png" alt="Una muestra oportunista"  />

@@ -25,7 +25,7 @@
 <meta name="author" content="The UIB-AprendeR team">
 
 
-<meta name="date" content="2020-02-06">
+<meta name="date" content="2020-02-16">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -228,7 +228,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="8.8" data-path="chap-estmult.html"><a href="chap-estmult.html#guia-rapida-6"><i class="fa fa-check"></i><b>8.8</b> Guía rápida</a></li>
 <li class="chapter" data-level="8.9" data-path="chap-estmult.html"><a href="chap-estmult.html#ejercicios-9"><i class="fa fa-check"></i><b>8.9</b> Ejercicios</a><ul>
 <li class="chapter" data-level="" data-path="chap-estmult.html"><a href="chap-estmult.html#modelo-de-test-3"><i class="fa fa-check"></i>Modelo de test</a></li>
+<li class="chapter" data-level="" data-path="chap-estmult.html"><a href="chap-estmult.html#problemas-5"><i class="fa fa-check"></i>Problemas</a></li>
 <li class="chapter" data-level="" data-path="chap-estmult.html"><a href="chap-estmult.html#respuestas-al-test-7"><i class="fa fa-check"></i>Respuestas al test</a></li>
+<li class="chapter" data-level="" data-path="chap-estmult.html"><a href="chap-estmult.html#soluciones-sucintas-de-los-problemas-6"><i class="fa fa-check"></i>Soluciones sucintas de los problemas</a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="9" data-path="chap-ANOVA.html"><a href="chap-ANOVA.html"><i class="fa fa-check"></i><b>9</b> ANOVA básico</a><ul>
@@ -570,12 +572,12 @@ Aciertos.bootstrap</code></pre>
 <h2><span class="header-section-number">4.5</span> Guía rápida</h2>
 <ul>
 <li><p><code>t.test(X, conf.level=...)$conf.int</code> calcula el intervalo de confianza del <code>conf.level</code><span class="math inline">\(\times 100\%\)</span> para la media poblacional usando la fórmula basada en la t de Student aplicada a la muestra <code>X</code>.</p></li>
-<li><p><code>binom.exact(x,n,conf.level=...)</code> del paquete <strong>epitools</strong>, calcula el intervalo de confianza del <code>conf.level</code><span class="math inline">\(\times 100\%\)</span> para la proporción poblacional aplicando el método de Clopper-Pearson a una muestra de tamaño <code>n</code> con <code>x</code> éxitos.</p></li>
-<li><p><code>binom.wilson(x,n,conf.level=...)</code> del paquete <strong>epitools</strong>, calcula el intervalo de confianza del <code>conf.level</code><span class="math inline">\(\times 100\%\)</span> para la proporción poblacional aplicando el método de Wilson a una muestra de tamaño <code>n</code> con <code>x</code> éxitos.</p></li>
-<li><p><code>binom.approx(x,n,conf.level=...)</code> del paquete <strong>epitools</strong>, calcula el intervalo de confianza del <code>conf.level</code><span class="math inline">\(\times 100\%\)</span> para la proporción poblacional aplicando la fórmula de Laplace a una muestra de tamaño <code>n</code> con <code>x</code> éxitos.</p></li>
-<li><p><code>varTest(X,conf.level=...)$conf.int</code> del paquete <strong>EnvStats</strong>, calcula el intervalo de confianza del <code>conf.level</code><span class="math inline">\(\times 100\%\)</span> para la varianza poblacional usando la fórmula basada en la ji cuadrado aplicada a la muestra <code>X</code>.</p></li>
-<li><p><code>boot(X,E,R)</code> del paquete <strong>boot</strong>, lleva a cabo una simulación <em>bootstrap</em>, tomando <code>R</code> submuestras del vector <code>X</code> y calculando sobre ellas el estadístico representado por la función <code>E</code>.</p></li>
-<li><p><code>boot.ci</code> del paquete <strong>boot</strong>, aplicado al resultado de una función <code>boot</code>, calcula diversos intervalos de confianza a partir del resultado de la simulación efectuada con <code>boot</code>. El nivel de confianza se especifica con el parámetro <code>conf</code>.</p></li>
+<li><p><code>binom.exact(x,n,conf.level=...)</code>, del paquete <strong>epitools</strong>, calcula el intervalo de confianza del <code>conf.level</code><span class="math inline">\(\times 100\%\)</span> para la proporción poblacional aplicando el método de Clopper-Pearson a una muestra de tamaño <code>n</code> con <code>x</code> éxitos.</p></li>
+<li><p><code>binom.wilson(x,n,conf.level=...)</code>, del paquete <strong>epitools</strong>, calcula el intervalo de confianza del <code>conf.level</code><span class="math inline">\(\times 100\%\)</span> para la proporción poblacional aplicando el método de Wilson a una muestra de tamaño <code>n</code> con <code>x</code> éxitos.</p></li>
+<li><p><code>binom.approx(x,n,conf.level=...)</code>, del paquete <strong>epitools</strong>, calcula el intervalo de confianza del <code>conf.level</code><span class="math inline">\(\times 100\%\)</span> para la proporción poblacional aplicando la fórmula de Laplace a una muestra de tamaño <code>n</code> con <code>x</code> éxitos.</p></li>
+<li><p><code>varTest(X,conf.level=...)$conf.int</code>, del paquete <strong>EnvStats</strong>, calcula el intervalo de confianza del <code>conf.level</code><span class="math inline">\(\times 100\%\)</span> para la varianza poblacional usando la fórmula basada en la ji cuadrado aplicada a la muestra <code>X</code>.</p></li>
+<li><p><code>boot(X,E,R)</code>, del paquete <strong>boot</strong>, lleva a cabo una simulación <em>bootstrap</em>, tomando <code>R</code> submuestras del vector <code>X</code> y calculando sobre ellas el estadístico representado por la función <code>E</code>.</p></li>
+<li><p><code>boot.ci</code>, del paquete <strong>boot</strong>, aplicado al resultado de una función <code>boot</code>, calcula diversos intervalos de confianza a partir del resultado de la simulación efectuada con <code>boot</code>. El nivel de confianza se especifica con el parámetro <code>conf</code>.</p></li>
 </ul>
 </div>
 <div id="ejercicios-3" class="section level2">

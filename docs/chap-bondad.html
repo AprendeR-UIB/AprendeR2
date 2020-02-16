@@ -25,7 +25,7 @@
 <meta name="author" content="The UIB-AprendeR team">
 
 
-<meta name="date" content="2020-02-06">
+<meta name="date" content="2020-02-16">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -228,7 +228,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="8.8" data-path="chap-estmult.html"><a href="chap-estmult.html#guia-rapida-6"><i class="fa fa-check"></i><b>8.8</b> Guía rápida</a></li>
 <li class="chapter" data-level="8.9" data-path="chap-estmult.html"><a href="chap-estmult.html#ejercicios-9"><i class="fa fa-check"></i><b>8.9</b> Ejercicios</a><ul>
 <li class="chapter" data-level="" data-path="chap-estmult.html"><a href="chap-estmult.html#modelo-de-test-3"><i class="fa fa-check"></i>Modelo de test</a></li>
+<li class="chapter" data-level="" data-path="chap-estmult.html"><a href="chap-estmult.html#problemas-5"><i class="fa fa-check"></i>Problemas</a></li>
 <li class="chapter" data-level="" data-path="chap-estmult.html"><a href="chap-estmult.html#respuestas-al-test-7"><i class="fa fa-check"></i>Respuestas al test</a></li>
+<li class="chapter" data-level="" data-path="chap-estmult.html"><a href="chap-estmult.html#soluciones-sucintas-de-los-problemas-6"><i class="fa fa-check"></i>Soluciones sucintas de los problemas</a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="9" data-path="chap-ANOVA.html"><a href="chap-ANOVA.html"><i class="fa fa-check"></i><b>9</b> ANOVA básico</a><ul>
@@ -1027,7 +1029,7 @@ x=<span class="kw">runif</span>(<span class="dv">10</span>,<span class="dv">0</s
 <div id="guia-rapida-4" class="section level2">
 <h2><span class="header-section-number">6.6</span> Guía rápida</h2>
 <ul>
-<li><p><code>qqPlot</code> del paquete <strong>car</strong>, sirve para dibujar un Q-Q-plot de una muestra contra una distribución teórica. Sus parámetros principales son:</p>
+<li><p><code>qqPlot</code>, del paquete <strong>car</strong>, sirve para dibujar un Q-Q-plot de una muestra contra una distribución teórica. Sus parámetros principales son:</p>
 <ul>
 <li><code>distribution</code>: el nombre de la familia de distribuciones, entre comillas.</li>
 <li>Los parámetros de la distribución: <code>mean</code> para la media, <code>sd</code> para la desviación típica, <code>df</code> para los grados de libertad, etc.</li>
@@ -1045,10 +1047,10 @@ x=<span class="kw">runif</span>(<span class="dv">10</span>,<span class="dv">0</s
 <li><code>ks.test(x,y)</code>: contrasta si los vectores <code>x</code> e <code>y</code> han sido generados por la misma distribución continua.</li>
 <li><code>ks.test(x, &quot;distribución&quot;, parámetros)</code>: contrasta si el vector <code>x</code> ha sido generado por la distribución especificada, que se ha de indicar con el nombre de la función de distribución de R (la que empieza con p).</li>
 </ul></li>
-<li><p><code>lillie.test</code> del paquete <strong>nortest</strong>, realiza el test de normalidad de Kolmogorov-Smirnov-Lilliefors.</p></li>
-<li><p><code>ad.test</code> del paquete <strong>nortest</strong>, realiza el test de normalidad de Anderson-Darling.</p></li>
-<li><p><code>shapiro.test</code>, realiza el test de normalidad de Shapiro-Wilk.</p></li>
-<li><p><code>dagoTest</code> del paquete <strong>fBasics</strong>, realiza el test ómnibus de D’Agostino-Pearson.</p></li>
+<li><p><code>lillie.test</code>, del paquete <strong>nortest</strong>, realiza el test de normalidad de Kolmogorov-Smirnov-Lilliefors.</p></li>
+<li><p><code>ad.test</code>, del paquete <strong>nortest</strong>, realiza el test de normalidad de Anderson-Darling.</p></li>
+<li><p><code>shapiro.test</code> realiza el test de normalidad de Shapiro-Wilk.</p></li>
+<li><p><code>dagoTest</code>, del paquete <strong>fBasics</strong>, realiza el test ómnibus de D’Agostino-Pearson.</p></li>
 </ul>
 </div>
 <div id="ejercicios-6" class="section level2">

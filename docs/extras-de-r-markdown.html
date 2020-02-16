@@ -25,7 +25,7 @@
 <meta name="author" content="The UIB-AprendeR team">
 
 
-<meta name="date" content="2020-02-06">
+<meta name="date" content="2020-02-16">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -228,7 +228,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="8.8" data-path="chap-estmult.html"><a href="chap-estmult.html#guia-rapida-6"><i class="fa fa-check"></i><b>8.8</b> Guía rápida</a></li>
 <li class="chapter" data-level="8.9" data-path="chap-estmult.html"><a href="chap-estmult.html#ejercicios-9"><i class="fa fa-check"></i><b>8.9</b> Ejercicios</a><ul>
 <li class="chapter" data-level="" data-path="chap-estmult.html"><a href="chap-estmult.html#modelo-de-test-3"><i class="fa fa-check"></i>Modelo de test</a></li>
+<li class="chapter" data-level="" data-path="chap-estmult.html"><a href="chap-estmult.html#problemas-5"><i class="fa fa-check"></i>Problemas</a></li>
 <li class="chapter" data-level="" data-path="chap-estmult.html"><a href="chap-estmult.html#respuestas-al-test-7"><i class="fa fa-check"></i>Respuestas al test</a></li>
+<li class="chapter" data-level="" data-path="chap-estmult.html"><a href="chap-estmult.html#soluciones-sucintas-de-los-problemas-6"><i class="fa fa-check"></i>Soluciones sucintas de los problemas</a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="9" data-path="chap-ANOVA.html"><a href="chap-ANOVA.html"><i class="fa fa-check"></i><b>9</b> ANOVA básico</a><ul>
@@ -345,8 +347,8 @@ encabezados con dos marcas de comentario <code>##</code>, y literales, sin que e
 x</code></pre>
 <pre><code>##  [1]  1  2  3  4  5  6  7  8  9 10</code></pre>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">sqrt</span>(x)</code></pre>
-<pre><code>##  [1] 1.00000 1.41421 1.73205 2.00000 2.23607 2.44949 2.64575 2.82843
-##  [9] 3.00000 3.16228</code></pre>
+<pre><code>##  [1] 1.000000 1.414214 1.732051 2.000000 2.236068 2.449490 2.645751
+##  [8] 2.828427 3.000000 3.162278</code></pre>
 <ul>
 <li>El bloque</li>
 </ul>
@@ -360,8 +362,8 @@ x</code></pre>
 x</code></pre>
 <p>[1] 1 2 3 4 5 6 7 8 9 10</p>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">sqrt</span>(x)</code></pre>
-<p>[1] 1.00000 1.41421 1.73205 2.00000 2.23607 2.44949 2.64575 2.82843
-[9] 3.00000 3.16228</p>
+<p>[1] 1.000000 1.414214 1.732051 2.000000 2.236068 2.449490 2.645751
+[8] 2.828427 3.000000 3.162278</p>
 <ul>
 <li>El bloque</li>
 </ul>
@@ -375,8 +377,8 @@ x</code></pre>
 x
 <span class="kw">sqrt</span>(x)</code></pre>
 <pre><code>##  [1]  1  2  3  4  5  6  7  8  9 10
-##  [1] 1.00000 1.41421 1.73205 2.00000 2.23607 2.44949 2.64575 2.82843
-##  [9] 3.00000 3.16228</code></pre>
+##  [1] 1.000000 1.414214 1.732051 2.000000 2.236068 2.449490 2.645751
+##  [8] 2.828427 3.000000 3.162278</code></pre>
 <ul>
 <li>El bloque</li>
 </ul>
@@ -387,8 +389,8 @@ x
 <span class="bn">```</span></code></pre>
 <p>no aparece en el documento final, y sólo se muestra el resultado:</p>
 <pre><code>##  [1]  1  2  3  4  5  6  7  8  9 10</code></pre>
-<pre><code>##  [1] 1.00000 1.41421 1.73205 2.00000 2.23607 2.44949 2.64575 2.82843
-##  [9] 3.00000 3.16228</code></pre>
+<pre><code>##  [1] 1.000000 1.414214 1.732051 2.000000 2.236068 2.449490 2.645751
+##  [8] 2.828427 3.000000 3.162278</code></pre>
 <ul>
 <li>El bloque</li>
 </ul>
@@ -397,15 +399,47 @@ x
 <span class="bn">magic(5)</span>
 <span class="bn">```</span></code></pre>
 <p>produce, en el documento final:</p>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(magic)</code></pre>
-<pre><code>## Loading required package: abind</code></pre>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">magic</span>(<span class="dv">5</span>)</code></pre>
-<pre><code>##      [,1] [,2] [,3] [,4] [,5]
-## [1,]    9    2   25   18   11
-## [2,]    3   21   19   12   10
-## [3,]   22   20   13    6    4
-## [4,]   16   14    7    5   23
-## [5,]   15    8    1   24   17</code></pre>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(magic)
+<span class="kw">magic</span>(<span class="dv">5</span>)</code></pre>
+<table>
+<tbody>
+<tr class="odd">
+<td align="right">9</td>
+<td align="right">2</td>
+<td align="right">25</td>
+<td align="right">18</td>
+<td align="right">11</td>
+</tr>
+<tr class="even">
+<td align="right">3</td>
+<td align="right">21</td>
+<td align="right">19</td>
+<td align="right">12</td>
+<td align="right">10</td>
+</tr>
+<tr class="odd">
+<td align="right">22</td>
+<td align="right">20</td>
+<td align="right">13</td>
+<td align="right">6</td>
+<td align="right">4</td>
+</tr>
+<tr class="even">
+<td align="right">16</td>
+<td align="right">14</td>
+<td align="right">7</td>
+<td align="right">5</td>
+<td align="right">23</td>
+</tr>
+<tr class="odd">
+<td align="right">15</td>
+<td align="right">8</td>
+<td align="right">1</td>
+<td align="right">24</td>
+<td align="right">17</td>
+</tr>
+</tbody>
+</table>
 <ul>
 <li>El bloque</li>
 </ul>
@@ -416,12 +450,45 @@ x
 <p>produce, en el documento final:</p>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(magic)
 <span class="kw">magic</span>(<span class="dv">5</span>)</code></pre>
-<pre><code>##      [,1] [,2] [,3] [,4] [,5]
-## [1,]    9    2   25   18   11
-## [2,]    3   21   19   12   10
-## [3,]   22   20   13    6    4
-## [4,]   16   14    7    5   23
-## [5,]   15    8    1   24   17</code></pre>
+<table>
+<tbody>
+<tr class="odd">
+<td align="right">9</td>
+<td align="right">2</td>
+<td align="right">25</td>
+<td align="right">18</td>
+<td align="right">11</td>
+</tr>
+<tr class="even">
+<td align="right">3</td>
+<td align="right">21</td>
+<td align="right">19</td>
+<td align="right">12</td>
+<td align="right">10</td>
+</tr>
+<tr class="odd">
+<td align="right">22</td>
+<td align="right">20</td>
+<td align="right">13</td>
+<td align="right">6</td>
+<td align="right">4</td>
+</tr>
+<tr class="even">
+<td align="right">16</td>
+<td align="right">14</td>
+<td align="right">7</td>
+<td align="right">5</td>
+<td align="right">23</td>
+</tr>
+<tr class="odd">
+<td align="right">15</td>
+<td align="right">8</td>
+<td align="right">1</td>
+<td align="right">24</td>
+<td align="right">17</td>
+</tr>
+</tbody>
+</table>
 <p>Si queréis cambiar el valor de algún parámetro en todos los <em>chunks</em> de un documento, por ejemplo para esconderlos todos (con <code>echo=FALSE</code>) o para modificar las dimensiones de la figuras como explicaremos más adelante, lo más práctico es incluir al principio del fichero <em>R Markdown</em> un <em>chunk</em> de opciones globales, indicado con la etiqueta <code>global_options</code>. En este <em>chunk</em> las opcions globales se han de incluir en el argumento de la función</p>
 <pre class="sourceCode r"><code class="sourceCode r">opts_chunk<span class="op">$</span><span class="kw">set</span>(...)</code></pre>
 <p>del paquete <strong>knitr</strong>. También es una buena idea cargar en este <em>chunk</em> todos los paquetes que se van a usar en el documento. Y como seguramente no querréis que se note su existencia en el documento final, usad la opción <code>include=FALSE</code>. Así, por ejemplo, incluyendo al principio del fichero <em>R Markdown</em> el <em>chunk</em></p>

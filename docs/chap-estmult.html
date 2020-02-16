@@ -25,7 +25,7 @@
 <meta name="author" content="The UIB-AprendeR team">
 
 
-<meta name="date" content="2020-02-06">
+<meta name="date" content="2020-02-16">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -228,7 +228,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="8.8" data-path="chap-estmult.html"><a href="chap-estmult.html#guia-rapida-6"><i class="fa fa-check"></i><b>8.8</b> Guía rápida</a></li>
 <li class="chapter" data-level="8.9" data-path="chap-estmult.html"><a href="chap-estmult.html#ejercicios-9"><i class="fa fa-check"></i><b>8.9</b> Ejercicios</a><ul>
 <li class="chapter" data-level="" data-path="chap-estmult.html"><a href="chap-estmult.html#modelo-de-test-3"><i class="fa fa-check"></i>Modelo de test</a></li>
+<li class="chapter" data-level="" data-path="chap-estmult.html"><a href="chap-estmult.html#problemas-5"><i class="fa fa-check"></i>Problemas</a></li>
 <li class="chapter" data-level="" data-path="chap-estmult.html"><a href="chap-estmult.html#respuestas-al-test-7"><i class="fa fa-check"></i>Respuestas al test</a></li>
+<li class="chapter" data-level="" data-path="chap-estmult.html"><a href="chap-estmult.html#soluciones-sucintas-de-los-problemas-6"><i class="fa fa-check"></i>Soluciones sucintas de los problemas</a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="9" data-path="chap-ANOVA.html"><a href="chap-ANOVA.html"><i class="fa fa-check"></i><b>9</b> ANOVA básico</a><ul>
@@ -529,17 +531,17 @@ del Ejemplo <a href="chap-estmult.html#exm:multex0">8.1</a>. Ya la hemos centrad
 <p><span class="math display">\[
 \begin{array}{rl}
 Z &amp; =\left(\begin{array}{rrr}
--0.75/0.829156&amp;-1.5/1.5&amp;1.25/1.299038\\
--0.75/0.829156&amp;-0.5/1.5&amp;1.25/1.299038\\
-0.25/0.829156&amp;2.5/1.5&amp;-1.75/1.299038\\
-1.25/0.829156&amp;-0.5/1.5&amp;-0.75/1.299038
+-0.75/0.8291562&amp;-1.5/1.5&amp;1.25/1.2990381\\
+-0.75/0.8291562&amp;-0.5/1.5&amp;1.25/1.2990381\\
+0.25/0.8291562&amp;2.5/1.5&amp;-1.75/1.2990381\\
+1.25/0.8291562&amp;-0.5/1.5&amp;-0.75/1.2990381
 \end{array}\right)\\
 &amp; =
 \left(\begin{array}{rrr}
--0.9045340&amp;-1.0000000&amp;0.96225\\
--0.9045340&amp;-0.333333&amp;0.96225\\
-0.301511&amp;1.666667&amp;-1.347151\\
-1.507557&amp;-0.333333&amp;-0.57735
+-0.9045340&amp;-1.0000000&amp;0.9622504\\
+-0.9045340&amp;-0.3333333&amp;0.9622504\\
+0.3015113&amp;1.6666667&amp;-1.3471506\\
+1.5075567&amp;-0.3333333&amp;-0.5773503
 \end{array}\right)
 \end{array}
 \]</span></p>
@@ -548,8 +550,8 @@ Z &amp; =\left(\begin{array}{rrr}
 <p>donde:</p>
 <ul>
 <li><p><code>X</code> puede ser tanto una matriz como un <em>data frame</em>; el resultado será siempre una matriz.</p></li>
-<li><p>El valor del parámetro <code>center</code> es el vector que restamos a sus columnas, en el sentido de que cada entrada de este vector se restará a todas las entradas de la columna correspondiente. Su valor por defecto (que no es necesario especificar, aunque también se puede especificar con <code>center=TRUE</code>) es el vector <span class="math inline">\(\overline{X}\)</span> de medias de <span class="math inline">\(X\)</span>; para especificar que no se reste nada, podemos usar <code>center=FALSE</code>.</p></li>
-<li><p>El valor del parámetro <code>scale</code> es el vector por el que dividimos las columnas de <span class="math inline">\(X\)</span>:cada columna se divide por la entrada correspondiente de este vector.Su valor por defecto (de nuevo, se puede especificar igualando el parámetro a <code>TRUE</code>) es el vector <span class="math inline">\(\widetilde{s}_X\)</span> de desviaciones típicas <em>muestrales</em>; para especificar que no se divida por nada, podemos usar <code>scale=FALSE</code>.</p></li>
+<li><p>El valor del parámetro <code>center</code> es el vector que restamos a sus columnas, en el sentido de que cada entrada de este vector se restará a todas las entradas de la columna correspondiente. Su valor por defecto (que no es necesario especificar, aunque también se puede especificar con <code>center=TRUE</code>) es el vector <span class="math inline">\(\overline{X}\)</span> de medias de <span class="math inline">\(X\)</span>; para indicar que no se reste nada, podemos usar <code>center=FALSE</code>.</p></li>
+<li><p>El valor del parámetro <code>scale</code> es el vector por el que dividimos las columnas de <span class="math inline">\(X\)</span>: cada columna se divide por la entrada correspondiente de este vector. Su valor por defecto (que, de nuevo, se puede especificar igualando el parámetro a <code>TRUE</code>) es el vector <span class="math inline">\(\widetilde{s}_X\)</span> de desviaciones típicas <em>muestrales</em>; para indicar que no se divida por nada, podemos usar <code>scale=FALSE</code>.</p></li>
 </ul>
 <p>En particular, la instrucción <code>scale(X)</code> centra la tabla de datos <span class="math inline">\(X\)</span> y divide sus columnas por sus <em>desviaciones típicas muestrales</em>; por lo tanto, no la tipifica según nuestra definición, ya que no las divide por sus desviaciones típicas “verdaderas”.</p>
 
@@ -861,11 +863,11 @@ variables <span class="math inline">\({x}_{\bullet i}\)</span> y <span class="ma
 
 <p>Hemos obtenido los valores siguientes
 <span class="math display">\[
-s_{12}=0.375,\quad s_1=0.829156,\quad s_2=1.5.
+s_{12}=0.375,\quad s_1=0.8291562,\quad s_2=1.5.
 \]</span>
 Por lo tanto, su correlación de Pearson es
 <span class="math display">\[
-r_{1 2}=\frac{0.375}{0.829156\cdot 1.5}=0.301511.
+r_{1 2}=\frac{0.375}{0.8291562\cdot 1.5}=0.3015113.
 \]</span></p>
 <p>Ahora vamos a calcularla con R, y aprovecharemos para confirmar su relación con el valor de <span class="math inline">\(R^2\)</span> de la regresión lineal de la segunda columna respecto de la primera. Recordemos que esta tabla de datos sigue guardada en el <em>data frame</em> <code>X</code>.</p>
 <pre class="sourceCode r"><code class="sourceCode r">X</code></pre>
@@ -1055,7 +1057,7 @@ es la correlación de Pearson de
 </div>
 <div id="contrastes-de-correlacion" class="section level2">
 <h2><span class="header-section-number">8.5</span> Contrastes de correlación</h2>
-<p>Como ya hemos comentado, podemos usar la correlación de Pearson <span class="math inline">\(r_{xy}\)</span> de dos vectores <span class="math inline">\(x\)</span> e <span class="math inline">\(y\)</span>, formados por los valores de dos variables cuantitativas <span class="math inline">\(X,Y\)</span> medidos sobre una misma muestra de individuos, para estimar la correlación <span class="math inline">\(\rho_{XY}\)</span> de estas variables poblacionales. Cuando además ambas variables aleatorias son normales, disponemos de una fórmula para calcular intervalos de confianza para la correlación poblacional y de un método para efectuar contrastes de hipótesis con hipótesis nula <span class="math inline">\(H_0: \rho_{XY}=0\)</span> (“no hay correlación entre <span class="math inline">\(X\)</span> e <span class="math inline">\(Y\)</span>”). No vamos a entrar en los detalles de las fórmulas ni de los teoremas en que se basan, pero es importante que recordéis que la función de R que lleva a cabo dichos contrastes “de correlación” es la función <code>cor.test</code>. En particular, esta función calcula el intervalo de confianza asociado a un contraste de estos: si el contraste es bilateral, es decir, con hipótesis alternativa <span class="math inline">\(H_1: \rho_{XY}\neq 0\)</span>, el intervalo que produce esta función es el intervalo de confianza usual para <span class="math inline">\(\rho_{XY}\)</span> con nivel de confianza correspondiente al nivel de significación del contraste.</p>
+<p>Como ya hemos comentado, podemos usar la correlación de Pearson <span class="math inline">\(r_{xy}\)</span> de dos vectores <span class="math inline">\(x\)</span> e <span class="math inline">\(y\)</span>, formados por los valores de dos variables cuantitativas <span class="math inline">\(X,Y\)</span> medidos sobre una misma muestra de individuos, para estimar la correlación <span class="math inline">\(\rho_{XY}\)</span> de estas variables poblacionales. Cuando además el vector aleatorio <span class="math inline">\((X,Y)\)</span> tiene distribución normal bivariante, disponemos de una fórmula para calcular intervalos de confianza para la correlación poblacional y de un método para efectuar contrastes de hipótesis con hipótesis nula <span class="math inline">\(H_0: \rho_{XY}=0\)</span> (“no hay correlación entre <span class="math inline">\(X\)</span> e <span class="math inline">\(Y\)</span>”). No vamos a entrar en los detalles de las fórmulas ni de los teoremas en que se basan, pero es importante que recordéis que la función de R que lleva a cabo dichos contrastes “de correlación” es la función <code>cor.test</code>. En particular, esta función calcula el intervalo de confianza asociado a un contraste de estos: si el contraste es bilateral, es decir, con hipótesis alternativa <span class="math inline">\(H_1: \rho_{XY}\neq 0\)</span>, el intervalo que produce esta función es el intervalo de confianza usual para <span class="math inline">\(\rho_{XY}\)</span> con nivel de confianza correspondiente al nivel de significación del contraste.</p>
 <p>La sintaxis de <code>cor.test</code> es la misma que la del resto de funciones para realizar contrastes de hipótesis básicos:</p>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">cor.test</span>(x, y, <span class="dt">alternative=</span>..., <span class="dt">conf.level=</span>...)</code></pre>
 <p>donde <code>x</code> e <code>y</code> son los dos vectores de datos, que también se pueden especificar mediante una fórmula. Estos dos vectores han de tener la misma longitud, puesto que se entiende que son mediciones sobre el mismo conjunto de individuos. El parámetro <code>alternative</code> puede tomar los tres valores usuales y su valor por defecto es, como siempre, <code>&quot;two.sided&quot;</code>, que corresponde al contraste bilateral, con hipótesis alternativa <span class="math inline">\(H_1: \rho_{XY}\neq 0\)</span>. Los valores <code>alternative=&quot;greater&quot;</code> y <code>alternative=&quot;less&quot;</code> permiten contrastar si <span class="math inline">\(X\)</span> e <span class="math inline">\(Y\)</span> tienen correlación mayor o menor que 0, respectivamente.</p>
@@ -1090,7 +1092,7 @@ Vamos a usar la función <code>cor.test</code>.</p>
 ## sample estimates:
 ##      cor 
 ## 0.185733</code></pre>
-<p>El p-valor 0.005 nos da evidencia estadísticamente significativa de que, en efecto, hay una correlación positiva entre el peso de la madre y el peso del recién nacido. El último valor, el 0.185733 bajo el <em>cor</em>, es la correlación de Pearson de los dos vectores de pesos, y el <em>95 percent confidence interval</em> es el intervalo de confianza del 95% del contraste unilateral planteado y nos dice que tenemos un 95% de confianza en que la correlación entre el peso de la madre y el peso del recién nacido es superior a 0.067.</p>
+<p>El p-valor 0.005 nos da evidencia estadísticamente significativa de que, en efecto, hay una correlación positiva entre el peso de la madre y el peso del recién nacido. El último valor, el 0.1857333 bajo el <em>cor</em>, es la correlación de Pearson de los dos vectores de pesos, y el <em>95 percent confidence interval</em> es el intervalo de confianza del 95% del contraste unilateral planteado y nos dice que tenemos un 95% de confianza en que la correlación entre el peso de la madre y el peso del recién nacido es superior a 0.067.</p>
 <p>Podríamos haber obtenido el p-valor del contraste de correlación anterior directamente con la instrucción</p>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">cor.test</span>(birthwt<span class="op">$</span>bwt, birthwt<span class="op">$</span>lwt, <span class="dt">alternative=</span><span class="st">&quot;greater&quot;</span>)<span class="op">$</span>p.value</code></pre>
 <pre><code>## [1] 0.00525209</code></pre>
@@ -1176,7 +1178,7 @@ n=<span class="kw">dim</span>(iris_num)[<span class="dv">1</span>] <span class="
 ## Coefficients:
 ## (Intercept)  Petal.Width  
 ##        1.08         2.23</code></pre>
-<p>En cambio, la correlación de Pearson entre la longitud y la anchura de los sépalos es -0.11757, muy cercana a cero, lo que es señal de que la variación conjunta de las longitudes y anchuras de los sépalos no tiene una tendencia clara.</p>
+<p>En cambio, la correlación de Pearson entre la longitud y la anchura de los sépalos es -0.1175698, muy cercana a cero, lo que es señal de que la variación conjunta de las longitudes y anchuras de los sépalos no tiene una tendencia clara.</p>
 <p>Vamos a ordenar ahora los pares de variables numéricas de <code>iris</code> en orden decreciente de su correlación en valor absoluto, para saber cuáles están más correlacionadas (en positivo o negativo). Para ello, en primer lugar creamos un <em>data frame</em> cuyas filas están formadas por pares diferentes de variables numéricas de <code>iris</code>, su correlación de Pearson y el valor absoluto de esta última, y a continuación ordenamos las filas de este <em>data frame</em> en orden decreciente de estos valores absolutos. Todo esto lo llevamos a cabo en el siguiente bloque de código, que luego explicamos:</p>
 <pre class="sourceCode r"><code class="sourceCode r">medidas=<span class="kw">names</span>(iris_num)
 n=<span class="kw">length</span>(medidas)  <span class="co">#En este caso, n=4</span>
@@ -1301,7 +1303,7 @@ Figura 8.4: Matriz de diagramas de dispersión de la tabla iris, con las especie
 Figura 8.5: Una matriz de diagramas de dispersión de la tabla iris producida con la función spm.
 </p>
 </div>
-<p>Observad para empezar que hemos cambiado los nombres que identifican las variables en los cuadrados de la diagonal, con el parámetro <code>var.labels</code>, y que en dichos cuadrados aparecen además unas curvas: se trata de la curva de densidad estimada de la variable correspondiente de la que hablábamos en la Lección <a href="#chap:agrup"><strong>??</strong></a> de la primera parte del curso. La información gráfica contenida en estos cuadrados de la diagonal se puede modificar con el parámetro <code>diagonal</code>: podemos pedir, por ejemplo, que dibuje un histograma de cada variable (con <code>diagonal=list(method =&quot;histogram&quot;)</code>) o su <em>boxplot</em> (con <code>diagonal=list(method=&quot;boxplot&quot;)</code>) o un QQ-plot (con <code>diagonal=list(method=&quot;qqplot&quot;)</code>). Así, el código siguiente produce el gráfico la Figura <a href="chap-estmult.html#fig:iris52">8.6</a>.</p>
+<p>Observad para empezar que hemos cambiado los nombres que identifican las variables en los cuadrados de la diagonal, con el parámetro <code>var.labels</code>, y que en dichos cuadrados aparecen además unas curvas: se trata de la curva de densidad estimada de la variable correspondiente de la que hablábamos en la Lección <a href="#chap:agrup"><strong>??</strong></a> de la primera parte del curso. La información gráfica contenida en estos cuadrados de la diagonal se puede modificar con el parámetro <code>diagonal</code>: podemos pedir, por ejemplo, que dibuje un histograma de cada variable (con <code>diagonal=list(method =&quot;histogram&quot;)</code>) o su <em>boxplot</em> (con <code>diagonal=list(method=&quot;boxplot&quot;)</code>) o un normal-plot (con <code>diagonal=list(method=&quot;qqplot&quot;)</code>). Así, el código siguiente produce el gráfico la Figura <a href="chap-estmult.html#fig:iris52">8.6</a>.</p>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">spm</span>(iris[ , <span class="dv">1</span><span class="op">:</span><span class="dv">4</span>], <span class="dt">var.labels=</span><span class="kw">c</span>(<span class="st">&quot;Long. Sep.&quot;</span>,<span class="st">&quot;Ancho Sep.&quot;</span>,<span class="st">&quot;Long. Pet.&quot;</span>,<span class="st">&quot;Ancho Pet.&quot;</span>), 
     <span class="dt">diagonal=</span><span class="kw">list</span>(<span class="dt">method=</span><span class="st">&quot;boxplot&quot;</span>), <span class="dt">pch=</span><span class="dv">20</span>,<span class="dt">cex=</span><span class="fl">0.75</span>)</code></pre>
 <div class="figure" style="text-align: center"><span id="fig:iris52"></span>
@@ -1355,8 +1357,7 @@ Figura 8.9: Paleta rev(colorRampPalette(brewer.pal(11,“Spectral”))(50))
 </p>
 </div>
 <p>Vamos a usar esta última paleta en un histograma bidimensional de la tabla de alturas de padres e hijos recogidas por Karl Pearson en 1903 y que tenemos guardada en el url <a href="https://raw.githubusercontent.com/AprendeR-UIB/Material/master/pearson.txt" class="uri">https://raw.githubusercontent.com/AprendeR-UIB/Material/master/pearson.txt</a>; el resultado es la Figura <a href="chap-estmult.html#fig:hist2dpearson">8.10</a>.</p>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(RCurl)
-df_pearson=<span class="kw">read.table</span>(<span class="dt">text=</span><span class="kw">getURL</span>(<span class="st">&quot;https://raw.githubusercontent.com/AprendeR-UIB/Material/master/pearson.txt&quot;</span>),<span class="dt">header=</span><span class="ot">TRUE</span>)
+<pre class="sourceCode r"><code class="sourceCode r">df_pearson=<span class="kw">read.table</span>(<span class="st">&quot;https://raw.githubusercontent.com/AprendeR-UIB/Material/master/pearson.txt&quot;</span>,<span class="dt">header=</span><span class="ot">TRUE</span>)
 <span class="kw">hist2d</span>(df_pearson, <span class="dt">nbins=</span><span class="dv">30</span>,
    <span class="dt">col=</span><span class="kw">rev</span>(<span class="kw">colorRampPalette</span>(<span class="kw">brewer.pal</span>(<span class="dv">11</span>,<span class="st">&quot;Spectral&quot;</span>))(<span class="dv">50</span>)))</code></pre>
 <div class="figure" style="text-align: center"><span id="fig:hist2dpearson"></span>
@@ -1429,22 +1430,22 @@ Dispone del parámetro <code>use</code>, que:</p>
 </ul></li>
 <li><p><code>cor</code>, aplicada a dos vectores, calcula su correlación de Pearson; aplicada a un <em>data frame</em> o a una matriz, calcula su matriz de correlaciones de Pearson. Se puede usar el parámetro <code>use</code> de <code>cov</code>. Usando el parámetro <code>method=&quot;spearman&quot;</code> calcula la correlación (o la matriz de correlaciones, si se aplica a un <em>data frame</em> o a una matriz) de Spearman.</p></li>
 <li><p><code>cor.test</code> realiza un contraste de correlación, con hipótesis nula que la correlación poblacional sea 0. Su sintaxis es la usual en funciones de contrastes.</p></li>
-<li><p><code>pwr.r.test</code> del paquete <strong>pwr</strong>, sirve para calcular la potencia de un contraste de correlación. Sus parámetros son: <code>n</code>, el tamaño de las muestras; <code>r</code>, su correlación de Pearson; <code>sig.level</code>, el nivel de significación; <code>power</code>, la potencia; y <code>alternative</code>, el tipo de contraste. Si se entran los valores de tres de los cuatro primeros parámetros, se obtiene el cuarto.</p></li>
+<li><p><code>pwr.r.test</code>, del paquete <strong>pwr</strong>, sirve para calcular la potencia de un contraste de correlación. Sus parámetros son: <code>n</code>, el tamaño de las muestras; <code>r</code>, su correlación de Pearson; <code>sig.level</code>, el nivel de significación; <code>power</code>, la potencia; y <code>alternative</code>, el tipo de contraste. Si se entran los valores de tres de los cuatro primeros parámetros, se obtiene el cuarto.</p></li>
 <li><p><code>upper.tri</code>, aplicada a una matriz cuadrada <em>M</em>, produce la matriz triangular superior de valores lógicos del mismo orden que <em>M</em>. Con el parámetro <code>diag=TRUE</code> se impone que el triángulo de valores <code>TRUE</code> incluya la diagonal principal.</p></li>
 <li><p><code>lower.tri</code>, aplicada a una matriz cuadrada <em>M</em>, produce la matriz triangular inferior de valores lógicos del mismo orden que <em>M</em>. Dispone del mismo parámetro <code>diag=TRUE</code>.</p></li>
 <li><p><code>order</code> ordena el primer vector al que se aplica, desempatando empates mediante el orden de los vectores subsiguientes a los que se aplica; el parámetro <code>decreasing=TRUE</code> sirve para especificar que sea en orden decreciente.</p></li>
 <li><p><code>plot</code>, aplicado a un <em>data frame</em> de dos variables numéricas, dibuja su diagrama de dispersión; aplicado a un <em>data frame</em> de más de dos variables numéricas, produce la matriz formada por los diagramas de dispersión de todos sus pares de variables.</p></li>
 <li><p><code>pairs</code> es equivalente a <code>plot</code> en el sentido anterior, y se puede aplicar a matrices.</p></li>
-<li><p><code>spm</code> del paquete <strong>cars</strong>, produce matrices de dispersión más informativas y fáciles de modificar.</p></li>
-<li><p><code>scatterplot3d</code> del paquete <strong>scatterplot3d</strong>, dibuja diagramas de dispersión tridimensionales.</p></li>
-<li><p><code>hist2d</code> del paquete <strong>gplots</strong>, dibuja histogramas bidimensionales. Dispone de los parámetros específicos siguientes:</p>
+<li><p><code>spm</code>, del paquete <strong>cars</strong>, produce matrices de dispersión más informativas y fáciles de modificar.</p></li>
+<li><p><code>scatterplot3d</code>, del paquete <strong>scatterplot3d</strong>, dibuja diagramas de dispersión tridimensionales.</p></li>
+<li><p><code>hist2d</code>, del paquete <strong>gplots</strong>, dibuja histogramas bidimensionales. Dispone de los parámetros específicos siguientes:</p>
 <ul>
 <li><p><code>nbins</code>: indica los números de clases.</p></li>
 <li><p><code>col</code>: especifica la paleta de colores que ha de usar para representar las frecuencias.</p></li>
 </ul></li>
-<li><p><code>brewer.pal(n,&quot;paleta predefinida&quot;)</code> del paquete <strong>RColorBrewer</strong>, carga en una paleta de colores una secuencia de <em>n</em> colores de la <em>paleta predefinida</em> en dicho paquete.</p></li>
-<li><p><code>colorRampPalette(brewer.pal(...))(m)</code> del paquete <strong>RColorBrewer</strong>, genera una nueva paleta de <span class="math inline">\(m\)</span> colores a partir del resultado de <code>brewer.pal</code>, interpolando nuevos colores.</p></li>
-<li><p><code>display.brewer.all()</code> del paquete <strong>RColorBrewer</strong>, muestra los nombres y contenidos de todas las paletas predefinidas en dicho paquete.</p></li>
+<li><p><code>brewer.pal(n,&quot;paleta predefinida&quot;)</code>, del paquete <strong>RColorBrewer</strong>, carga en una paleta de colores una secuencia de <em>n</em> colores de la <em>paleta predefinida</em> en dicho paquete.</p></li>
+<li><p><code>colorRampPalette(brewer.pal(...))(m)</code>, del paquete <strong>RColorBrewer</strong>, genera una nueva paleta de <span class="math inline">\(m\)</span> colores a partir del resultado de <code>brewer.pal</code>, interpolando nuevos colores.</p></li>
+<li><p><code>display.brewer.all()</code>, del paquete <strong>RColorBrewer</strong>, muestra los nombres y contenidos de todas las paletas predefinidas en dicho paquete.</p></li>
 <li><p><code>par</code> sirve para establecer los parámetros generales básicos de los gráficos.</p></li>
 <li><p><code>layout</code> divide en sectores la figura a producir, para que pueda incluir varios gráficos independientes simultáneamente.</p></li>
 </ul>
@@ -1475,30 +1476,22 @@ D=\left(\begin{array}{ccccc}
  -0.1 &amp; -0.1 &amp;  0.4 &amp;  0.2&amp; 2.9\end{array}\right)
 \end{array}
 \]</span></p>
-<!--
-### Ejercicio  {-}
-
-El fichero https://raw.githubusercontent.com/AprendeR-UIB/Material/master/NotasMatesI14.csv recoge las notas medias (sobre 100) obtenidas en las diferentes actividades de evaluación de la asignatura Matemáticas I del grado de Biología, en el curso 2013/14, por parte de los estudiantes que fueron considerados "presentados" en la primera convocatoria. Estas actividades consistieron en:
-
-* Dos controles (columnas `Control1` y `Control2`).
-* Talleres de resolución de problemas (columna `Talleres`).
-* Ejercicios para resolver en casa (columna `Casa`).
-* Cuestionarios en línea sobre los contenidos de la asignatura y sobre R  (columnas `TestsCont` y `TestsR`, respectivamente).
-
-Cargad este fichero en un *data frame*.
-
-a. Calculad el vector de medias y el vector de desviaciones típicas de esta tabla de datos. ¿Cuáles son las actividades de evaluación cuyas notas presentan mayor y menor variabilidad? 
-
-a. Calculad las matrices de covarianzas "verdaderas" y de correlaciones de Pearson de esta tabla de datos. 
-
-a. ¿Qué variable tiene la mayor correlación media con las otras variables? ¿Cuál  tiene la menor?
-
-a. Ordenad los pares de variables de esta tabla por su correlación. ¿Cuáles son los dos pares con mayor correlación?  ¿Cuáles son los dos pares con menor correlación?
- 
-a. Comprobad en esta tabla de datos que su matriz de correlaciones es igual a la matriz de covarianzas de su tabla tipificada.
-
-a. Dibujad una matriz de diagramas de dispersión de estas notas añadiendo en cada uno la recta de regresión lineal por mínimos cuadrados (pero sin otras curvas que indiquen la tendencia de los datos). ¿Se pueden ver en este diagrama los  dos pares de actividades de evaluación con mayor correlación y los dos pares con menor correlación que habéis encontrado en el apartado (d)?
--->
+</div>
+<div id="problemas-5" class="section level3 unnumbered">
+<h3>Problemas</h3>
+<p><strong>(1)</strong> El fichero <a href="https://raw.githubusercontent.com/AprendeR-UIB/Material/master/NotasMatesI14.csv" class="uri">https://raw.githubusercontent.com/AprendeR-UIB/Material/master/NotasMatesI14.csv</a> recoge las notas medias (sobre 100) obtenidas en las diferentes actividades de evaluación de la asignatura Matemáticas I del grado de Biología, en el curso 2013/14, por parte de los estudiantes que fueron considerados “presentados” en la primera convocatoria. Estas actividades consistieron en:</p>
+<ul>
+<li>Dos controles (columnas <code>Control1</code> y <code>Control2</code>).</li>
+<li>Talleres de resolución de problemas (columna <code>Talleres</code>).</li>
+<li>Ejercicios para resolver en casa (columna <code>Casa</code>).</li>
+<li>Cuestionarios en línea sobre los contenidos de la asignatura y sobre R (columnas <code>TestsCont</code> y <code>TestsR</code>, respectivamente).</li>
+</ul>
+<p>Cargad este fichero en un <em>data frame</em>.</p>
+<p><em>(a)</em> Calculad el vector de medias y el vector de desviaciones típicas de esta tabla de datos. ¿Cuáles son las actividades de evaluación cuyas notas presentan mayor y menor variabilidad?</p>
+<p><em>(b)</em> Calculad las matrices de covarianzas “verdaderas” y de correlaciones de Pearson de esta tabla de datos.</p>
+<p><em>(c)</em> ¿Qué par de variables tiene mayor correlación? ¿Qué par de variables tiene menor correlación?</p>
+<p><em>(d)</em> Comprobad en esta tabla de datos que su matriz de correlaciones es igual a la matriz de covarianzas de su tabla tipificada.</p>
+<p><em>(e)</em> Dibujad una matriz de diagramas de dispersión de estas notas añadiendo en cada uno la recta de regresión lineal por mínimos cuadrados (pero sin otras curvas que indiquen la tendencia de los datos). ¿Se pueden ver en este diagrama los pares de actividades de evaluación con mayor y menor correlación que habéis encontrado en el apartado (c)?</p>
 </div>
 <div id="respuestas-al-test-7" class="section level3 unnumbered">
 <h3>Respuestas al test</h3>
@@ -1530,6 +1523,405 @@ y=<span class="kw">c</span>(<span class="dv">0</span>,<span class="dv">6</span>,
 <span class="kw">round</span>(<span class="kw">cor</span>(x,y,<span class="dt">method=</span><span class="st">&quot;spearman&quot;</span>),<span class="dv">3</span>)</code></pre>
 <pre><code>## [1] 0.488</code></pre>
 <p><em>(6)</em> A</p>
+</div>
+<div id="soluciones-sucintas-de-los-problemas-6" class="section level3 unnumbered">
+<h3>Soluciones sucintas de los problemas</h3>
+<p><strong>(1)</strong></p>
+<pre class="sourceCode r"><code class="sourceCode r">notas=<span class="kw">read.table</span>(<span class="st">&quot;https://raw.githubusercontent.com/AprendeR-UIB/Material/master/NotasMatesI14.csv&quot;</span>,<span class="dt">sep=</span><span class="st">&quot;,&quot;</span>,<span class="dt">header=</span><span class="ot">TRUE</span>)
+<span class="kw">str</span>(notas)</code></pre>
+<pre><code>## &#39;data.frame&#39;:    107 obs. of  6 variables:
+##  $ Control1 : int  22 30 30 38 30 38 40 24 78 46 ...
+##  $ Control2 : int  0 0 0 0 3 4 5 6 7 7 ...
+##  $ Talleres : int  49 51 59 63 56 56 51 59 56 57 ...
+##  $ Casa     : int  3 39 19 22 48 42 42 26 26 49 ...
+##  $ TestsR   : int  2 24 48 45 59 68 38 34 37 66 ...
+##  $ TestsCont: int  14 31 33 38 59 58 26 18 39 47 ...</code></pre>
+<p><em>(a)</em></p>
+<pre class="sourceCode r"><code class="sourceCode r">Medias=<span class="kw">round</span>(<span class="kw">sapply</span>(notas,mean),<span class="dv">1</span>)
+sd_ver=<span class="cf">function</span>(x){<span class="kw">sqrt</span>(<span class="kw">var</span>(x)<span class="op">*</span>(<span class="kw">length</span>(x)<span class="op">-</span><span class="dv">1</span>)<span class="op">/</span><span class="kw">length</span>(x))}
+Desv.Tip=<span class="kw">round</span>(<span class="kw">sapply</span>(notas,sd_ver),<span class="dv">1</span>)
+Medias</code></pre>
+<pre><code>##  Control1  Control2  Talleres      Casa    TestsR TestsCont 
+##      58.3      26.7      58.6      57.4      64.8      59.9</code></pre>
+<pre class="sourceCode r"><code class="sourceCode r">Desv.Tip</code></pre>
+<pre><code>##  Control1  Control2  Talleres      Casa    TestsR TestsCont 
+##      19.9      16.9      16.0      20.5      20.7      20.0</code></pre>
+<pre class="sourceCode r"><code class="sourceCode r">Desv.Tip[<span class="kw">which.max</span>(Desv.Tip)]</code></pre>
+<pre><code>## TestsR 
+##   20.7</code></pre>
+<pre class="sourceCode r"><code class="sourceCode r">Desv.Tip[<span class="kw">which.min</span>(Desv.Tip)]</code></pre>
+<pre><code>## Talleres 
+##       16</code></pre>
+<p><em>(b)</em></p>
+<pre class="sourceCode r"><code class="sourceCode r">n=<span class="kw">dim</span>(notas)[<span class="dv">1</span>]
+Covariancias=((n<span class="dv">-1</span>)<span class="op">/</span>n)<span class="op">*</span><span class="kw">cov</span>(notas)
+Correlaciones=<span class="kw">cor</span>(notas)
+Covariancias</code></pre>
+<table>
+<thead>
+<tr class="header">
+<th></th>
+<th align="right">Control1</th>
+<th align="right">Control2</th>
+<th align="right">Talleres</th>
+<th align="right">Casa</th>
+<th align="right">TestsR</th>
+<th align="right">TestsCont</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Control1</td>
+<td align="right">394.8244</td>
+<td align="right">209.7321</td>
+<td align="right">168.6785</td>
+<td align="right">198.7234</td>
+<td align="right">225.4755</td>
+<td align="right">224.4155</td>
+</tr>
+<tr class="even">
+<td>Control2</td>
+<td align="right">209.7321</td>
+<td align="right">285.7027</td>
+<td align="right">137.4756</td>
+<td align="right">225.4590</td>
+<td align="right">228.6795</td>
+<td align="right">247.2568</td>
+</tr>
+<tr class="odd">
+<td>Talleres</td>
+<td align="right">168.6785</td>
+<td align="right">137.4756</td>
+<td align="right">254.7333</td>
+<td align="right">170.6966</td>
+<td align="right">174.0035</td>
+<td align="right">182.4254</td>
+</tr>
+<tr class="even">
+<td>Casa</td>
+<td align="right">198.7234</td>
+<td align="right">225.4590</td>
+<td align="right">170.6966</td>
+<td align="right">419.2941</td>
+<td align="right">284.8189</td>
+<td align="right">333.0139</td>
+</tr>
+<tr class="odd">
+<td>TestsR</td>
+<td align="right">225.4755</td>
+<td align="right">228.6795</td>
+<td align="right">174.0035</td>
+<td align="right">284.8189</td>
+<td align="right">426.6009</td>
+<td align="right">356.6300</td>
+</tr>
+<tr class="even">
+<td>TestsCont</td>
+<td align="right">224.4155</td>
+<td align="right">247.2568</td>
+<td align="right">182.4254</td>
+<td align="right">333.0139</td>
+<td align="right">356.6300</td>
+<td align="right">401.8417</td>
+</tr>
+</tbody>
+</table>
+<pre class="sourceCode r"><code class="sourceCode r">Correlaciones</code></pre>
+<table>
+<thead>
+<tr class="header">
+<th></th>
+<th align="right">Control1</th>
+<th align="right">Control2</th>
+<th align="right">Talleres</th>
+<th align="right">Casa</th>
+<th align="right">TestsR</th>
+<th align="right">TestsCont</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Control1</td>
+<td align="right">1.0000000</td>
+<td align="right">0.6244617</td>
+<td align="right">0.5318814</td>
+<td align="right">0.4884135</td>
+<td align="right">0.5493973</td>
+<td align="right">0.5634084</td>
+</tr>
+<tr class="even">
+<td>Control2</td>
+<td align="right">0.6244617</td>
+<td align="right">1.0000000</td>
+<td align="right">0.5095954</td>
+<td align="right">0.6514049</td>
+<td align="right">0.6550271</td>
+<td align="right">0.7297323</td>
+</tr>
+<tr class="odd">
+<td>Talleres</td>
+<td align="right">0.5318814</td>
+<td align="right">0.5095954</td>
+<td align="right">1.0000000</td>
+<td align="right">0.5223030</td>
+<td align="right">0.5278423</td>
+<td align="right">0.5701837</td>
+</tr>
+<tr class="even">
+<td>Casa</td>
+<td align="right">0.4884135</td>
+<td align="right">0.6514049</td>
+<td align="right">0.5223030</td>
+<td align="right">1.0000000</td>
+<td align="right">0.6734395</td>
+<td align="right">0.8112888</td>
+</tr>
+<tr class="odd">
+<td>TestsR</td>
+<td align="right">0.5493973</td>
+<td align="right">0.6550271</td>
+<td align="right">0.5278423</td>
+<td align="right">0.6734395</td>
+<td align="right">1.0000000</td>
+<td align="right">0.8613496</td>
+</tr>
+<tr class="even">
+<td>TestsCont</td>
+<td align="right">0.5634084</td>
+<td align="right">0.7297323</td>
+<td align="right">0.5701837</td>
+<td align="right">0.8112888</td>
+<td align="right">0.8613496</td>
+<td align="right">1.0000000</td>
+</tr>
+</tbody>
+</table>
+<p><em>(c)</em> ¿Qué par de variables tiene mayor correlación? ¿Qué par de variables tiene menor correlación?</p>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">which.max</span>(Correlaciones[Correlaciones<span class="op">!=</span><span class="dv">1</span>])</code></pre>
+<pre><code>## [1] 25</code></pre>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="co"># La entrada 25 sin contar la diagonal es (TestsCont,TestsR)</span>
+Correlaciones[Correlaciones<span class="op">!=</span><span class="dv">1</span>][<span class="kw">which.max</span>(Correlaciones[Correlaciones<span class="op">!=</span><span class="dv">1</span>])]</code></pre>
+<pre><code>## [1] 0.8613496</code></pre>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">which.min</span>(Correlaciones[Correlaciones<span class="op">!=</span><span class="dv">1</span>])</code></pre>
+<pre><code>## [1] 3</code></pre>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="co"># La entrada 3 sin contar la diagonal es (Casa,Control1)</span>
+Correlaciones[Correlaciones<span class="op">!=</span><span class="dv">1</span>][<span class="kw">which.min</span>(Correlaciones[Correlaciones<span class="op">!=</span><span class="dv">1</span>])]</code></pre>
+<pre><code>## [1] 0.4884135</code></pre>
+<p><em>(d)</em></p>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">cov</span>(<span class="kw">scale</span>(notas))</code></pre>
+<table>
+<thead>
+<tr class="header">
+<th></th>
+<th align="right">Control1</th>
+<th align="right">Control2</th>
+<th align="right">Talleres</th>
+<th align="right">Casa</th>
+<th align="right">TestsR</th>
+<th align="right">TestsCont</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Control1</td>
+<td align="right">1.0000000</td>
+<td align="right">0.6244617</td>
+<td align="right">0.5318814</td>
+<td align="right">0.4884135</td>
+<td align="right">0.5493973</td>
+<td align="right">0.5634084</td>
+</tr>
+<tr class="even">
+<td>Control2</td>
+<td align="right">0.6244617</td>
+<td align="right">1.0000000</td>
+<td align="right">0.5095954</td>
+<td align="right">0.6514049</td>
+<td align="right">0.6550271</td>
+<td align="right">0.7297323</td>
+</tr>
+<tr class="odd">
+<td>Talleres</td>
+<td align="right">0.5318814</td>
+<td align="right">0.5095954</td>
+<td align="right">1.0000000</td>
+<td align="right">0.5223030</td>
+<td align="right">0.5278423</td>
+<td align="right">0.5701837</td>
+</tr>
+<tr class="even">
+<td>Casa</td>
+<td align="right">0.4884135</td>
+<td align="right">0.6514049</td>
+<td align="right">0.5223030</td>
+<td align="right">1.0000000</td>
+<td align="right">0.6734395</td>
+<td align="right">0.8112888</td>
+</tr>
+<tr class="odd">
+<td>TestsR</td>
+<td align="right">0.5493973</td>
+<td align="right">0.6550271</td>
+<td align="right">0.5278423</td>
+<td align="right">0.6734395</td>
+<td align="right">1.0000000</td>
+<td align="right">0.8613496</td>
+</tr>
+<tr class="even">
+<td>TestsCont</td>
+<td align="right">0.5634084</td>
+<td align="right">0.7297323</td>
+<td align="right">0.5701837</td>
+<td align="right">0.8112888</td>
+<td align="right">0.8613496</td>
+<td align="right">1.0000000</td>
+</tr>
+</tbody>
+</table>
+<pre class="sourceCode r"><code class="sourceCode r">((n<span class="dv">-1</span>)<span class="op">/</span>n)<span class="op">*</span><span class="kw">cov</span>(<span class="kw">scale</span>(notas,<span class="dt">scale=</span><span class="kw">sapply</span>(notas,sd_ver)))</code></pre>
+<table>
+<thead>
+<tr class="header">
+<th></th>
+<th align="right">Control1</th>
+<th align="right">Control2</th>
+<th align="right">Talleres</th>
+<th align="right">Casa</th>
+<th align="right">TestsR</th>
+<th align="right">TestsCont</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Control1</td>
+<td align="right">1.0000000</td>
+<td align="right">0.6244617</td>
+<td align="right">0.5318814</td>
+<td align="right">0.4884135</td>
+<td align="right">0.5493973</td>
+<td align="right">0.5634084</td>
+</tr>
+<tr class="even">
+<td>Control2</td>
+<td align="right">0.6244617</td>
+<td align="right">1.0000000</td>
+<td align="right">0.5095954</td>
+<td align="right">0.6514049</td>
+<td align="right">0.6550271</td>
+<td align="right">0.7297323</td>
+</tr>
+<tr class="odd">
+<td>Talleres</td>
+<td align="right">0.5318814</td>
+<td align="right">0.5095954</td>
+<td align="right">1.0000000</td>
+<td align="right">0.5223030</td>
+<td align="right">0.5278423</td>
+<td align="right">0.5701837</td>
+</tr>
+<tr class="even">
+<td>Casa</td>
+<td align="right">0.4884135</td>
+<td align="right">0.6514049</td>
+<td align="right">0.5223030</td>
+<td align="right">1.0000000</td>
+<td align="right">0.6734395</td>
+<td align="right">0.8112888</td>
+</tr>
+<tr class="odd">
+<td>TestsR</td>
+<td align="right">0.5493973</td>
+<td align="right">0.6550271</td>
+<td align="right">0.5278423</td>
+<td align="right">0.6734395</td>
+<td align="right">1.0000000</td>
+<td align="right">0.8613496</td>
+</tr>
+<tr class="even">
+<td>TestsCont</td>
+<td align="right">0.5634084</td>
+<td align="right">0.7297323</td>
+<td align="right">0.5701837</td>
+<td align="right">0.8112888</td>
+<td align="right">0.8613496</td>
+<td align="right">1.0000000</td>
+</tr>
+</tbody>
+</table>
+<pre class="sourceCode r"><code class="sourceCode r">Correlaciones              </code></pre>
+<table>
+<thead>
+<tr class="header">
+<th></th>
+<th align="right">Control1</th>
+<th align="right">Control2</th>
+<th align="right">Talleres</th>
+<th align="right">Casa</th>
+<th align="right">TestsR</th>
+<th align="right">TestsCont</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Control1</td>
+<td align="right">1.0000000</td>
+<td align="right">0.6244617</td>
+<td align="right">0.5318814</td>
+<td align="right">0.4884135</td>
+<td align="right">0.5493973</td>
+<td align="right">0.5634084</td>
+</tr>
+<tr class="even">
+<td>Control2</td>
+<td align="right">0.6244617</td>
+<td align="right">1.0000000</td>
+<td align="right">0.5095954</td>
+<td align="right">0.6514049</td>
+<td align="right">0.6550271</td>
+<td align="right">0.7297323</td>
+</tr>
+<tr class="odd">
+<td>Talleres</td>
+<td align="right">0.5318814</td>
+<td align="right">0.5095954</td>
+<td align="right">1.0000000</td>
+<td align="right">0.5223030</td>
+<td align="right">0.5278423</td>
+<td align="right">0.5701837</td>
+</tr>
+<tr class="even">
+<td>Casa</td>
+<td align="right">0.4884135</td>
+<td align="right">0.6514049</td>
+<td align="right">0.5223030</td>
+<td align="right">1.0000000</td>
+<td align="right">0.6734395</td>
+<td align="right">0.8112888</td>
+</tr>
+<tr class="odd">
+<td>TestsR</td>
+<td align="right">0.5493973</td>
+<td align="right">0.6550271</td>
+<td align="right">0.5278423</td>
+<td align="right">0.6734395</td>
+<td align="right">1.0000000</td>
+<td align="right">0.8613496</td>
+</tr>
+<tr class="even">
+<td>TestsCont</td>
+<td align="right">0.5634084</td>
+<td align="right">0.7297323</td>
+<td align="right">0.5701837</td>
+<td align="right">0.8112888</td>
+<td align="right">0.8613496</td>
+<td align="right">1.0000000</td>
+</tr>
+</tbody>
+</table>
+<p><em>(e)</em> Dibujad una matriz de diagramas de dispersión de estas notas añadiendo en cada uno la recta de regresión lineal por mínimos cuadrados (pero sin otras curvas que indiquen la tendencia de los datos). ¿Se pueden ver en este diagrama los pares de actividades de evaluación con mayor y menor correlación que habéis encontrado en el apartado (c)?</p>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(car)
+<span class="kw">spm</span>(notas, <span class="dt">smooth=</span><span class="ot">FALSE</span>,<span class="dt">pch=</span><span class="dv">20</span>,<span class="dt">cex=</span><span class="fl">0.75</span>)</code></pre>
+<p><img src="AprendeR-Parte-II_files/figure-html/unnamed-chunk-464-1.png" width="480" style="display: block; margin: auto;" /></p>
 
 </div>
 </div>
