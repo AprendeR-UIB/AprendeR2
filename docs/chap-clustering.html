@@ -25,7 +25,7 @@
 <meta name="author" content="The UIB-AprendeR team">
 
 
-<meta name="date" content="2020-02-16">
+<meta name="date" content="2020-03-18">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -248,7 +248,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="9.8" data-path="chap-ANOVA.html"><a href="chap-ANOVA.html#guia-rapida-7"><i class="fa fa-check"></i><b>9.8</b> Guía rápida</a></li>
 <li class="chapter" data-level="9.9" data-path="chap-ANOVA.html"><a href="chap-ANOVA.html#ejercicios-10"><i class="fa fa-check"></i><b>9.9</b> Ejercicios</a><ul>
 <li class="chapter" data-level="" data-path="chap-ANOVA.html"><a href="chap-ANOVA.html#test-4"><i class="fa fa-check"></i>Test</a></li>
+<li class="chapter" data-level="9.9.1" data-path="chap-ANOVA.html"><a href="chap-ANOVA.html#ejercicio"><i class="fa fa-check"></i><b>9.9.1</b> Ejercicio</a></li>
 <li class="chapter" data-level="" data-path="chap-ANOVA.html"><a href="chap-ANOVA.html#respuestas-al-test-8"><i class="fa fa-check"></i>Respuestas al test</a></li>
+<li class="chapter" data-level="9.9.2" data-path="chap-ANOVA.html"><a href="chap-ANOVA.html#soluciones-sucintas-del-ejercicio"><i class="fa fa-check"></i><b>9.9.2</b> Soluciones sucintas del ejercicio</a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="10" data-path="chap-regresion.html"><a href="chap-regresion.html"><i class="fa fa-check"></i><b>10</b> Regresión lineal</a><ul>
@@ -279,9 +281,6 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="12.4" data-path="extras-de-r-markdown.html"><a href="extras-de-r-markdown.html#tablas"><i class="fa fa-check"></i><b>12.4</b> Tablas</a></li>
 <li class="chapter" data-level="12.5" data-path="extras-de-r-markdown.html"><a href="extras-de-r-markdown.html#formulas-matematicas"><i class="fa fa-check"></i><b>12.5</b> Fórmulas matemáticas</a></li>
 </ul></li>
-<li class="divider"></li>
-<li><a href="https://github.com/cescrossello/AprendeR-II" target="blank">Publicado con  bookdown</a></li>
-
 </ul>
 
       </nav>
@@ -344,7 +343,7 @@ SSC_i=\sum_{l=1}^{n_i} \|x_{i,l}-c_i\|^2.
 <li><p>Si <span class="math inline">\(x_i\)</span> está más cerca de otro centro, se traslada al <em>cluster</em> definido por este centro, se recalculan los centros de los dos <em>clusters</em> afectados (el que ha abandonado <span class="math inline">\(x_i\)</span> y aquél al que se ha incorporado), y se reinicia el bucle, empezando de nuevo con <span class="math inline">\(x_1\)</span>.</p></li>
 </ul>
 <p>El <em>clustering</em> resultante está formado por los <em>clusters</em> existentes en el momento de parar.</p>
-<p>Ninguno de estos algoritmos garantiza un <em>clustering</em> óptimo, en el que la <span class="math inline">\(SSC\)</span> resultante sea mínima. Lo que se suele hacer entonces es repetir varias veces el algoritmo con distintos conjuntos iniciales de <em>k</em> centros, y cruzar los dedos para que la <span class="math inline">\(SSC\)</span> más pequeña que se obtenga en alguna de estas repeticiones sea efectivamente mínima. En todo caso, se ha demostrado que el algoritmo de Hartigan-Wong es, en general, más rápido y también más eficiente, en el sentido de que con mayor probabilidad da un <em>clustering</em> óptimo.<a href="#fn14" class="footnote-ref" id="fnref14"><sup>14</sup></a></p>
+<p>Ninguno de estos algoritmos garantiza un <em>clustering</em> óptimo, en el que la <span class="math inline">\(SSC\)</span> resultante sea mínima. Lo que se suele hacer entonces es repetir varias veces el algoritmo con distintos conjuntos iniciales de <em>k</em> centros, y cruzar los dedos para que la <span class="math inline">\(SSC\)</span> más pequeña que se obtenga en alguna de estas repeticiones sea efectivamente mínima. En todo caso, se ha demostrado que el algoritmo de Hartigan-Wong es, en general, más rápido y también más eficiente, en el sentido de que con mayor probabilidad da un <em>clustering</em> óptimo.<a href="#fn9" class="footnote-ref" id="fnref9"><sup>9</sup></a></p>
 <p>El método de k-medias está implementado en R en la función <code>kmeans</code>. Su sintaxis básica es la siguiente:</p>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">kmeans</span>(x, <span class="dt">centers=</span>..., <span class="dt">iter.max=</span>..., <span class="dt">algorithm =</span>...)</code></pre>
 <p>donde:</p>
@@ -373,68 +372,13 @@ SSC_i=\sum_{l=1}^{n_i} \|x_{i,l}-c_i\|^2.
 ##  $ dpi  : num  2330 1508 2108 189 728 ...
 ##  $ ddpi : num  2.87 3.93 3.82 0.22 4.56 2.43 2.67 6.51 3.08 2.8 ...</code></pre>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">head</span>(savings)</code></pre>
-<table>
-<thead>
-<tr class="header">
-<th></th>
-<th align="right">sr</th>
-<th align="right">pop15</th>
-<th align="right">pop75</th>
-<th align="right">dpi</th>
-<th align="right">ddpi</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>Australia</td>
-<td align="right">11.43</td>
-<td align="right">29.35</td>
-<td align="right">2.87</td>
-<td align="right">2329.68</td>
-<td align="right">2.87</td>
-</tr>
-<tr class="even">
-<td>Austria</td>
-<td align="right">12.07</td>
-<td align="right">23.32</td>
-<td align="right">4.41</td>
-<td align="right">1507.99</td>
-<td align="right">3.93</td>
-</tr>
-<tr class="odd">
-<td>Belgium</td>
-<td align="right">13.17</td>
-<td align="right">23.80</td>
-<td align="right">4.43</td>
-<td align="right">2108.47</td>
-<td align="right">3.82</td>
-</tr>
-<tr class="even">
-<td>Bolivia</td>
-<td align="right">5.75</td>
-<td align="right">41.89</td>
-<td align="right">1.67</td>
-<td align="right">189.13</td>
-<td align="right">0.22</td>
-</tr>
-<tr class="odd">
-<td>Brazil</td>
-<td align="right">12.88</td>
-<td align="right">42.19</td>
-<td align="right">0.83</td>
-<td align="right">728.47</td>
-<td align="right">4.56</td>
-</tr>
-<tr class="even">
-<td>Canada</td>
-<td align="right">8.79</td>
-<td align="right">31.72</td>
-<td align="right">2.85</td>
-<td align="right">2982.88</td>
-<td align="right">2.43</td>
-</tr>
-</tbody>
-</table>
+<pre><code>##              sr pop15 pop75     dpi ddpi
+## Australia 11.43 29.35  2.87 2329.68 2.87
+## Austria   12.07 23.32  4.41 1507.99 3.93
+## Belgium   13.17 23.80  4.43 2108.47 3.82
+## Bolivia    5.75 41.89  1.67  189.13 0.22
+## Brazil    12.88 42.19  0.83  728.47 4.56
+## Canada     8.79 31.72  2.85 2982.88 2.43</code></pre>
 <p>En este ejemplo, para poder representar gráficamente los resultados obtenidos, sólo usaremos los indicadores <em>tasa de ahorro</em> (<code>sr</code>) y <em>renta per cápita</em> (<code>dpi</code>) de los países.</p>
 <pre class="sourceCode r"><code class="sourceCode r">savings2=savings[,<span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">4</span>)]</code></pre>
 <p>Vamos a clasificar los 50 países en 4 <em>clusters</em>. Este número lo hemos elegido por ahora de manera arbitraria, en la próxima sección ya explicaremos cómo se puede hallar el número más adecuado de <em>clusters</em> en el que clasificar una determinada tabla de datos. Vamos a usar el método por defecto de R, y le dejaremos generar al azar los centros iniciales, pero fijaremos la semilla de aleatoriedad con la función <code>set.seed</code> para que el resultado sea reproducible.</p>
@@ -670,97 +614,23 @@ Resultados=<span class="kw">c</span>()
   Resultados=<span class="kw">rbind</span>(Resultados,<span class="kw">c</span>(k,SSC.min))}
 <span class="kw">dimnames</span>(Resultados)=<span class="kw">list</span>(<span class="ot">NULL</span>, <span class="kw">c</span>(<span class="st">&quot;k&quot;</span>, <span class="st">&quot;semilla&quot;</span>, <span class="st">&quot;SSC&quot;</span>))
 Resultados</code></pre>
-<table>
-<thead>
-<tr class="header">
-<th align="right">k</th>
-<th align="right">semilla</th>
-<th align="right">SSC</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td align="right">2</td>
-<td align="right">48465</td>
-<td align="right">10550652.77</td>
-</tr>
-<tr class="even">
-<td align="right">3</td>
-<td align="right">48465</td>
-<td align="right">5290876.37</td>
-</tr>
-<tr class="odd">
-<td align="right">4</td>
-<td align="right">763</td>
-<td align="right">2867247.28</td>
-</tr>
-<tr class="even">
-<td align="right">5</td>
-<td align="right">48465</td>
-<td align="right">1561126.26</td>
-</tr>
-<tr class="odd">
-<td align="right">6</td>
-<td align="right">29454</td>
-<td align="right">1067250.81</td>
-</tr>
-<tr class="even">
-<td align="right">7</td>
-<td align="right">24564</td>
-<td align="right">672060.28</td>
-</tr>
-<tr class="odd">
-<td align="right">8</td>
-<td align="right">24564</td>
-<td align="right">506455.05</td>
-</tr>
-<tr class="even">
-<td align="right">9</td>
-<td align="right">49964</td>
-<td align="right">385292.98</td>
-</tr>
-<tr class="odd">
-<td align="right">10</td>
-<td align="right">9125</td>
-<td align="right">302132.14</td>
-</tr>
-<tr class="even">
-<td align="right">11</td>
-<td align="right">45374</td>
-<td align="right">224846.04</td>
-</tr>
-<tr class="odd">
-<td align="right">12</td>
-<td align="right">430</td>
-<td align="right">176821.57</td>
-</tr>
-<tr class="even">
-<td align="right">13</td>
-<td align="right">7115</td>
-<td align="right">130373.92</td>
-</tr>
-<tr class="odd">
-<td align="right">14</td>
-<td align="right">23066</td>
-<td align="right">108975.59</td>
-</tr>
-<tr class="even">
-<td align="right">15</td>
-<td align="right">7115</td>
-<td align="right">97564.19</td>
-</tr>
-<tr class="odd">
-<td align="right">16</td>
-<td align="right">37528</td>
-<td align="right">80886.18</td>
-</tr>
-<tr class="even">
-<td align="right">17</td>
-<td align="right">37528</td>
-<td align="right">75940.10</td>
-</tr>
-</tbody>
-</table>
+<pre><code>##        k semilla         SSC
+##  [1,]  2   48465 10550652.77
+##  [2,]  3   48465  5290876.37
+##  [3,]  4     763  2867247.28
+##  [4,]  5   48465  1561126.26
+##  [5,]  6   29454  1067250.81
+##  [6,]  7   24564   672060.28
+##  [7,]  8   24564   506455.05
+##  [8,]  9   49964   385292.98
+##  [9,] 10    9125   302132.14
+## [10,] 11   45374   224846.04
+## [11,] 12     430   176821.57
+## [12,] 13    7115   130373.92
+## [13,] 14   23066   108975.59
+## [14,] 15    7115    97564.19
+## [15,] 16   37528    80886.18
+## [16,] 17   37528    75940.10</code></pre>
 <p>Si ahora, por ejemplo, quisiéramos aplicar la regla del 90%, calcularíamos para cada <em>k</em> el valor de <span class="math inline">\((SST-SS(k))/SST\)</span> y tomaríamos el primer <em>k</em> para el que este cociente fuera mayor de 0.9</p>
 <pre class="sourceCode r"><code class="sourceCode r">SST <span class="co">#Recordemos el valor de SST</span></code></pre>
 <pre><code>## [1] 48110220</code></pre>
@@ -800,100 +670,30 @@ F_k=(SSC[<span class="op">-</span><span class="dv">16</span>]<span class="op">-<
 p.valores=<span class="dv">1</span><span class="op">-</span><span class="kw">pf</span>(F_k,p,p<span class="op">*</span>(n<span class="op">-</span>k<span class="dv">-1</span>))
 F.test=<span class="kw">cbind</span>(k,F_k,p.valores)
 F.test</code></pre>
-<table>
-<thead>
-<tr class="header">
-<th align="right">k</th>
-<th align="right">F_k</th>
-<th align="right">p.valores</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td align="right">2</td>
-<td align="right">46.723732</td>
-<td align="right">0.0000000</td>
-</tr>
-<tr class="even">
-<td align="right">3</td>
-<td align="right">38.882917</td>
-<td align="right">0.0000000</td>
-</tr>
-<tr class="odd">
-<td align="right">4</td>
-<td align="right">37.649386</td>
-<td align="right">0.0000000</td>
-</tr>
-<tr class="even">
-<td align="right">5</td>
-<td align="right">20.361211</td>
-<td align="right">0.0000001</td>
-</tr>
-<tr class="odd">
-<td align="right">6</td>
-<td align="right">25.285221</td>
-<td align="right">0.0000000</td>
-</tr>
-<tr class="even">
-<td align="right">7</td>
-<td align="right">13.733538</td>
-<td align="right">0.0000069</td>
-</tr>
-<tr class="odd">
-<td align="right">8</td>
-<td align="right">12.893163</td>
-<td align="right">0.0000135</td>
-</tr>
-<tr class="even">
-<td align="right">9</td>
-<td align="right">11.009863</td>
-<td align="right">0.0000597</td>
-</tr>
-<tr class="odd">
-<td align="right">10</td>
-<td align="right">13.405429</td>
-<td align="right">0.0000099</td>
-</tr>
-<tr class="even">
-<td align="right">11</td>
-<td align="right">10.320742</td>
-<td align="right">0.0001083</td>
-</tr>
-<tr class="odd">
-<td align="right">12</td>
-<td align="right">13.181803</td>
-<td align="right">0.0000127</td>
-</tr>
-<tr class="even">
-<td align="right">13</td>
-<td align="right">7.068920</td>
-<td align="right">0.0015739</td>
-</tr>
-<tr class="odd">
-<td align="right">14</td>
-<td align="right">4.093705</td>
-<td align="right">0.0208278</td>
-</tr>
-<tr class="even">
-<td align="right">15</td>
-<td align="right">7.010500</td>
-<td align="right">0.0017055</td>
-</tr>
-<tr class="odd">
-<td align="right">16</td>
-<td align="right">2.149334</td>
-<td align="right">0.1246509</td>
-</tr>
-</tbody>
-</table>
+<pre><code>##        k       F_k    p.valores
+##  [1,]  2 46.723732 8.215650e-15
+##  [2,]  3 38.882917 5.768719e-13
+##  [3,]  4 37.649386 1.314504e-12
+##  [4,]  5 20.361212 5.400730e-08
+##  [5,]  6 25.285221 2.307249e-09
+##  [6,]  7 13.733538 6.911503e-06
+##  [7,]  8 12.893163 1.352875e-05
+##  [8,]  9 11.009864 5.973559e-05
+##  [9,] 10 13.405429 9.904776e-06
+## [10,] 11 10.320742 1.083179e-04
+## [11,] 12 13.181803 1.268388e-05
+## [12,] 13  7.068920 1.573935e-03
+## [13,] 14  4.093705 2.082776e-02
+## [14,] 15  7.010500 1.705498e-03
+## [15,] 16  2.149334 1.246509e-01</code></pre>
 <p>El p-valor más pequeño se obtiene para <span class="math inline">\(k=2\)</span>, por lo que éste sería el número adecuado de <em>clusters</em> según este test. Para terminar esta sección, vamos a dibujar los <em>clusters</em> que se obtienen para <span class="math inline">\(k=2\)</span> y <span class="math inline">\(k=5\)</span>:</p>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="co">#k=2</span>
 <span class="kw">set.seed</span>(<span class="dv">48465</span>)
 kmeans2=<span class="kw">kmeans</span>(savings2,<span class="dt">centers=</span><span class="dv">2</span>)
 <span class="kw">plot</span>(savings2, <span class="dt">col=</span>kmeans2<span class="op">$</span>cluster, <span class="dt">xlab=</span><span class="st">&quot;Tasa de ahorro&quot;</span>, <span class="dt">ylab=</span><span class="st">&quot;Renta per cápita&quot;</span>,<span class="dt">pch=</span><span class="dv">20</span>)
 <span class="kw">text</span>(savings2, <span class="kw">rownames</span>(savings2), <span class="dt">cex=</span><span class="fl">0.6</span>, <span class="dt">pos=</span><span class="dv">1</span>, <span class="dt">col=</span>kmeans2<span class="op">$</span>cluster) </code></pre>
-<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-636"></span>
-<img src="AprendeR-Parte-II_files/figure-html/unnamed-chunk-636-1.png" alt="Clustering óptimo de la tabla de datos &quot;savings2&quot; con 2 clusters." width="480" />
+<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-644"></span>
+<img src="AprendeR-Parte-II_files/figure-html/unnamed-chunk-644-1.png" alt="Clustering óptimo de la tabla de datos &quot;savings2&quot; con 2 clusters." width="480" />
 <p class="caption">
 Figura 11.4: Clustering óptimo de la tabla de datos “savings2” con 2 clusters.
 </p>
@@ -903,8 +703,8 @@ Figura 11.4: Clustering óptimo de la tabla de datos “savings2” con 2 cluste
 kmeans5=<span class="kw">kmeans</span>(savings2,<span class="dt">centers=</span><span class="dv">5</span>)
 <span class="kw">plot</span>(savings2, <span class="dt">col=</span>kmeans5<span class="op">$</span>cluster, <span class="dt">xlab=</span><span class="st">&quot;Tasa de ahorro&quot;</span>, <span class="dt">ylab=</span><span class="st">&quot;Renta per cápita&quot;</span>,<span class="dt">pch=</span><span class="dv">20</span>)
 <span class="kw">text</span>(savings2, <span class="kw">rownames</span>(savings2), <span class="dt">cex=</span><span class="fl">0.6</span>, <span class="dt">pos=</span><span class="dv">1</span>, <span class="dt">col=</span>kmeans5<span class="op">$</span>cluster) </code></pre>
-<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-637"></span>
-<img src="AprendeR-Parte-II_files/figure-html/unnamed-chunk-637-1.png" alt="Clustering óptimo de la tabla de datos &quot;savings2&quot; con 5 clusters." width="480" />
+<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-645"></span>
+<img src="AprendeR-Parte-II_files/figure-html/unnamed-chunk-645-1.png" alt="Clustering óptimo de la tabla de datos &quot;savings2&quot; con 5 clusters." width="480" />
 <p class="caption">
 Figura 11.5: Clustering óptimo de la tabla de datos “savings2” con 5 clusters.
 </p>
@@ -985,126 +785,23 @@ flores.virginica=iris.virginica[<span class="kw">sample</span>(<span class="dv">
 flores=<span class="kw">rbind</span>(flores.setosa,flores.versicolor,flores.virginica) <span class="co">#Tabla de datos con las 15 flores</span></code></pre>
 <p>En el <em>data frame</em> <code>flores</code>, las filas han heredado sus números de la tabla <code>iris</code> original, como podemos comprobar:</p>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">head</span>(flores)</code></pre>
-<table>
-<thead>
-<tr class="header">
-<th></th>
-<th align="right">Sepal.Length</th>
-<th align="right">Sepal.Width</th>
-<th align="right">Petal.Length</th>
-<th align="right">Petal.Width</th>
-<th align="left">Species</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>10</td>
-<td align="right">4.9</td>
-<td align="right">3.1</td>
-<td align="right">1.5</td>
-<td align="right">0.1</td>
-<td align="left">setosa</td>
-</tr>
-<tr class="even">
-<td>38</td>
-<td align="right">4.9</td>
-<td align="right">3.6</td>
-<td align="right">1.4</td>
-<td align="right">0.1</td>
-<td align="left">setosa</td>
-</tr>
-<tr class="odd">
-<td>48</td>
-<td align="right">4.6</td>
-<td align="right">3.2</td>
-<td align="right">1.4</td>
-<td align="right">0.2</td>
-<td align="left">setosa</td>
-</tr>
-<tr class="even">
-<td>25</td>
-<td align="right">4.8</td>
-<td align="right">3.4</td>
-<td align="right">1.9</td>
-<td align="right">0.2</td>
-<td align="left">setosa</td>
-</tr>
-<tr class="odd">
-<td>14</td>
-<td align="right">4.3</td>
-<td align="right">3.0</td>
-<td align="right">1.1</td>
-<td align="right">0.1</td>
-<td align="left">setosa</td>
-</tr>
-<tr class="even">
-<td>94</td>
-<td align="right">5.0</td>
-<td align="right">2.3</td>
-<td align="right">3.3</td>
-<td align="right">1.0</td>
-<td align="left">versicolor</td>
-</tr>
-</tbody>
-</table>
+<pre><code>##    Sepal.Length Sepal.Width Petal.Length Petal.Width    Species
+## 10          4.9         3.1          1.5         0.1     setosa
+## 38          4.9         3.6          1.4         0.1     setosa
+## 48          4.6         3.2          1.4         0.2     setosa
+## 25          4.8         3.4          1.9         0.2     setosa
+## 14          4.3         3.0          1.1         0.1     setosa
+## 94          5.0         2.3          3.3         1.0 versicolor</code></pre>
 <p>Renumeremos las filas del 1 al 15:</p>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">rownames</span>(flores)=<span class="dv">1</span><span class="op">:</span><span class="dv">15</span>
 <span class="kw">head</span>(flores)</code></pre>
-<table>
-<thead>
-<tr class="header">
-<th align="right">Sepal.Length</th>
-<th align="right">Sepal.Width</th>
-<th align="right">Petal.Length</th>
-<th align="right">Petal.Width</th>
-<th align="left">Species</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td align="right">4.9</td>
-<td align="right">3.1</td>
-<td align="right">1.5</td>
-<td align="right">0.1</td>
-<td align="left">setosa</td>
-</tr>
-<tr class="even">
-<td align="right">4.9</td>
-<td align="right">3.6</td>
-<td align="right">1.4</td>
-<td align="right">0.1</td>
-<td align="left">setosa</td>
-</tr>
-<tr class="odd">
-<td align="right">4.6</td>
-<td align="right">3.2</td>
-<td align="right">1.4</td>
-<td align="right">0.2</td>
-<td align="left">setosa</td>
-</tr>
-<tr class="even">
-<td align="right">4.8</td>
-<td align="right">3.4</td>
-<td align="right">1.9</td>
-<td align="right">0.2</td>
-<td align="left">setosa</td>
-</tr>
-<tr class="odd">
-<td align="right">4.3</td>
-<td align="right">3.0</td>
-<td align="right">1.1</td>
-<td align="right">0.1</td>
-<td align="left">setosa</td>
-</tr>
-<tr class="even">
-<td align="right">5.0</td>
-<td align="right">2.3</td>
-<td align="right">3.3</td>
-<td align="right">1.0</td>
-<td align="left">versicolor</td>
-</tr>
-</tbody>
-</table>
+<pre><code>##   Sepal.Length Sepal.Width Petal.Length Petal.Width    Species
+## 1          4.9         3.1          1.5         0.1     setosa
+## 2          4.9         3.6          1.4         0.1     setosa
+## 3          4.6         3.2          1.4         0.2     setosa
+## 4          4.8         3.4          1.9         0.2     setosa
+## 5          4.3         3.0          1.1         0.1     setosa
+## 6          5.0         2.3          3.3         1.0 versicolor</code></pre>
 <p>Vamos a guardar en una matriz llamada <code>distancias.iris</code> las distancias euclídeas entre los vectores de longitudes y amplitudes de pares de miembros de la tabla <code>flores</code>.</p>
 <pre class="sourceCode r"><code class="sourceCode r">distancias.iris=<span class="kw">dist</span>(flores[ ,<span class="dv">1</span><span class="op">:</span><span class="dv">4</span>])</code></pre>
 <p>Calculamos finalmente el <em>clustering</em> jerárquico de estas 15 flores usando el método del enlace completo, y lo llamamos <code>estudio.flores</code> para poder referirnos a él en lo sucesivo:</p>
@@ -1120,8 +817,8 @@ nombres.flores</code></pre>
 <pre><code>##  [1] &quot;Set1&quot;  &quot;Set2&quot;  &quot;Set3&quot;  &quot;Set4&quot;  &quot;Set5&quot;  &quot;Vers1&quot; &quot;Vers2&quot; &quot;Vers3&quot;
 ##  [9] &quot;Vers4&quot; &quot;Vers5&quot; &quot;Vir1&quot;  &quot;Vir2&quot;  &quot;Vir3&quot;  &quot;Vir4&quot;  &quot;Vir5&quot;</code></pre>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">plot</span>(estudio.flores, <span class="dt">labels=</span>nombres.flores, <span class="dt">xlab=</span><span class="st">&quot;flores&quot;</span>, <span class="dt">ylab=</span><span class="st">&quot;distancias&quot;</span>, <span class="dt">main=</span><span class="st">&quot;&quot;</span>, <span class="dt">sub=</span><span class="st">&quot;&quot;</span>)</code></pre>
-<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-646"></span>
-<img src="AprendeR-Parte-II_files/figure-html/unnamed-chunk-646-1.png" alt="Dendrograma para 15 flores de iris producido con el método de enlace completo y dibujado con hang=0.1." width="480" />
+<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-654"></span>
+<img src="AprendeR-Parte-II_files/figure-html/unnamed-chunk-654-1.png" alt="Dendrograma para 15 flores de iris producido con el método de enlace completo y dibujado con hang=0.1." width="480" />
 <p class="caption">
 Figura 11.6: Dendrograma para 15 flores de iris producido con el método de enlace completo y dibujado con hang=0.1.
 </p>
@@ -1137,23 +834,23 @@ Figura 11.7: Dendrograma para 15 flores de iris producido con el método de enla
 <p>¿Cuál sería el resultado de usar otros métodos para calcular las distancias entre <em>clusters</em>? Veamos los resultados con los métodos de enlace simple, promedio y Ward.</p>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">plot</span>(<span class="kw">hclust</span>(distancias.iris,<span class="dt">method=</span><span class="st">&quot;single&quot;</span>), <span class="dt">hang=</span><span class="op">-</span><span class="dv">1</span>, 
   <span class="dt">labels=</span>nombres.flores, <span class="dt">xlab=</span><span class="st">&quot;flores&quot;</span>, <span class="dt">ylab=</span><span class="st">&quot;distancias&quot;</span>, <span class="dt">main=</span><span class="st">&quot;&quot;</span>, <span class="dt">sub=</span><span class="st">&quot;&quot;</span>) </code></pre>
-<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-647"></span>
-<img src="AprendeR-Parte-II_files/figure-html/unnamed-chunk-647-1.png" alt="Dendrograma para 15 flores de iris producido con el método de enlace simple." width="480" />
+<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-655"></span>
+<img src="AprendeR-Parte-II_files/figure-html/unnamed-chunk-655-1.png" alt="Dendrograma para 15 flores de iris producido con el método de enlace simple." width="480" />
 <p class="caption">
 Figura 11.8: Dendrograma para 15 flores de iris producido con el método de enlace simple.
 </p>
 </div>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">plot</span>(<span class="kw">hclust</span>(distancias.iris,<span class="dt">method=</span><span class="st">&quot;average&quot;</span>), <span class="dt">hang=</span><span class="op">-</span><span class="dv">1</span>, <span class="dt">main=</span><span class="st">&quot;&quot;</span>, <span class="dt">sub=</span><span class="st">&quot;&quot;</span>)</code></pre>
-<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-648"></span>
-<img src="AprendeR-Parte-II_files/figure-html/unnamed-chunk-648-1.png" alt="Dendrograma para 15 flores de iris producido con el método de enlace promedio." width="480" />
+<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-656"></span>
+<img src="AprendeR-Parte-II_files/figure-html/unnamed-chunk-656-1.png" alt="Dendrograma para 15 flores de iris producido con el método de enlace promedio." width="480" />
 <p class="caption">
 Figura 11.9: Dendrograma para 15 flores de iris producido con el método de enlace promedio.
 </p>
 </div>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">plot</span>(<span class="kw">hclust</span>(distancias.iris,<span class="dt">method=</span><span class="st">&quot;ward.D&quot;</span>), <span class="dt">hang=</span><span class="op">-</span><span class="dv">1</span>, 
   <span class="dt">labels=</span>nombres.flores, <span class="dt">xlab=</span><span class="st">&quot;flores&quot;</span>, <span class="dt">ylab=</span><span class="st">&quot;distancias&quot;</span>, <span class="dt">main=</span><span class="st">&quot;&quot;</span>, <span class="dt">sub=</span><span class="st">&quot;&quot;</span>)</code></pre>
-<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-649"></span>
-<img src="AprendeR-Parte-II_files/figure-html/unnamed-chunk-649-1.png" alt="Dendrograma para 15 flores de iris producido con el método de Ward." width="480" />
+<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-657"></span>
+<img src="AprendeR-Parte-II_files/figure-html/unnamed-chunk-657-1.png" alt="Dendrograma para 15 flores de iris producido con el método de Ward." width="480" />
 <p class="caption">
 Figura 11.10: Dendrograma para 15 flores de iris producido con el método de Ward.
 </p>
@@ -1173,66 +870,21 @@ Figura 11.10: Dendrograma para 15 flores de iris producido con el método de War
 <p>Como vemos, un <em>clustering</em> jerárquico producido con <code>hclust</code> es una <code>list</code>. Sus dos componentes más interesantes para nosotros son las siguientes.</p>
 <p>Por un lado, la componente <code>merge</code> es una matriz de dos columnas que indica el orden en el que se han ido agrupando los objetos de dos en dos. En esta matriz, los objetos originales se representan con números negativos, y los nuevos <em>clusters</em> con números positivos que indican el paso en el que se han creado. En nuestro ejemplo:</p>
 <pre class="sourceCode r"><code class="sourceCode r">estudio.flores<span class="op">$</span>merge</code></pre>
-<table>
-<tbody>
-<tr class="odd">
-<td align="right">-1</td>
-<td align="right">-3</td>
-</tr>
-<tr class="even">
-<td align="right">-7</td>
-<td align="right">-12</td>
-</tr>
-<tr class="odd">
-<td align="right">-2</td>
-<td align="right">1</td>
-</tr>
-<tr class="even">
-<td align="right">-4</td>
-<td align="right">3</td>
-</tr>
-<tr class="odd">
-<td align="right">-8</td>
-<td align="right">-9</td>
-</tr>
-<tr class="even">
-<td align="right">-15</td>
-<td align="right">2</td>
-</tr>
-<tr class="odd">
-<td align="right">-10</td>
-<td align="right">5</td>
-</tr>
-<tr class="even">
-<td align="right">-14</td>
-<td align="right">6</td>
-</tr>
-<tr class="odd">
-<td align="right">-5</td>
-<td align="right">4</td>
-</tr>
-<tr class="even">
-<td align="right">-13</td>
-<td align="right">7</td>
-</tr>
-<tr class="odd">
-<td align="right">-6</td>
-<td align="right">10</td>
-</tr>
-<tr class="even">
-<td align="right">-11</td>
-<td align="right">8</td>
-</tr>
-<tr class="odd">
-<td align="right">9</td>
-<td align="right">11</td>
-</tr>
-<tr class="even">
-<td align="right">12</td>
-<td align="right">13</td>
-</tr>
-</tbody>
-</table>
+<pre><code>##       [,1] [,2]
+##  [1,]   -1   -3
+##  [2,]   -7  -12
+##  [3,]   -2    1
+##  [4,]   -4    3
+##  [5,]   -8   -9
+##  [6,]  -15    2
+##  [7,]  -10    5
+##  [8,]  -14    6
+##  [9,]   -5    4
+## [10,]  -13    7
+## [11,]   -6   10
+## [12,]  -11    8
+## [13,]    9   11
+## [14,]   12   13</code></pre>
 <p>Este resultado nos dice que: en el primer paso del algoritmo, se han agrupado las flores 1 y 3; en el segundo paso del algoritmo, se han agrupado las flores 7 y 12; en el tercer paso del algoritmo, se han agrupado el <em>cluster</em> formado en el primer paso (flores 1 y 3) y la flor 2; en el cuarto paso, se han agrupado el <em>cluster</em> formado en el tercer paso (flores 1, 2 y 3) y la flor 4; y así sucesivamente. Es conveniente que dediquéis un rato a comparar esta matriz de emparejamientos con los dendrogramas que representan el <em>clustering</em>, como por ejemplo el de la Figura <a href="chap-clustering.html#fig:hclustiris">11.7</a>.</p>
 <p>La otra componente que nos interesa es <code>height</code>, un vector que contiene las distancias a las que se han ido agrupando los pares de <em>clusters</em>, representadas como alturas en el eje de ordenadas en el dendrograma. Por ejemplo:</p>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">round</span>(estudio.flores<span class="op">$</span>height,<span class="dv">4</span>)</code></pre>
@@ -1255,16 +907,16 @@ Figura 11.10: Dendrograma para 15 flores de iris producido con el método de War
 <p>Veamos el resultado de su aplicación por defecto en los mismos casos que hemos aplicado <code>cutree</code>:</p>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">plot</span>(estudio.flores, <span class="dt">labels=</span>nombres.flores, <span class="dt">xlab=</span><span class="st">&quot;flores&quot;</span>, <span class="dt">ylab=</span><span class="st">&quot;distancias&quot;</span>, <span class="dt">main=</span><span class="st">&quot;&quot;</span>, <span class="dt">sub=</span><span class="st">&quot;&quot;</span>, <span class="dt">hang=</span><span class="op">-</span><span class="dv">1</span>)
 <span class="kw">rect.hclust</span>(estudio.flores,<span class="dt">h=</span><span class="dv">3</span>)</code></pre>
-<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-656"></span>
-<img src="AprendeR-Parte-II_files/figure-html/unnamed-chunk-656-1.png" alt="Clustering de 15 flores de iris a partir de su dendrograma calculado con el método de enlace  completo, cortándolo a altura 3." width="480" />
+<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-664"></span>
+<img src="AprendeR-Parte-II_files/figure-html/unnamed-chunk-664-1.png" alt="Clustering de 15 flores de iris a partir de su dendrograma calculado con el método de enlace  completo, cortándolo a altura 3." width="480" />
 <p class="caption">
 Figura 11.11: Clustering de 15 flores de iris a partir de su dendrograma calculado con el método de enlace completo, cortándolo a altura 3.
 </p>
 </div>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">plot</span>(estudio.flores, <span class="dt">labels=</span>nombres.flores, <span class="dt">xlab=</span><span class="st">&quot;flores&quot;</span>, <span class="dt">ylab=</span><span class="st">&quot;distancias&quot;</span>, <span class="dt">main=</span><span class="st">&quot;&quot;</span>, <span class="dt">sub=</span><span class="st">&quot;&quot;</span>, <span class="dt">hang=</span><span class="op">-</span><span class="dv">1</span>)
 <span class="kw">rect.hclust</span>(estudio.flores,<span class="dt">k=</span><span class="dv">4</span>)  </code></pre>
-<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-657"></span>
-<img src="AprendeR-Parte-II_files/figure-html/unnamed-chunk-657-1.png" alt="Clustering de 15 flores de iris a partir de su dendrograma calculado con el método de enlace  completo, usando 4 grupos." width="480" />
+<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-665"></span>
+<img src="AprendeR-Parte-II_files/figure-html/unnamed-chunk-665-1.png" alt="Clustering de 15 flores de iris a partir de su dendrograma calculado con el método de enlace  completo, usando 4 grupos." width="480" />
 <p class="caption">
 Figura 11.12: Clustering de 15 flores de iris a partir de su dendrograma calculado con el método de enlace completo, usando 4 grupos.
 </p>
@@ -1355,54 +1007,24 @@ cluster<span class="fl">.5</span>=KM2<span class="op">$</span>cluster[<span clas
 <pre class="sourceCode r"><code class="sourceCode r">D=<span class="kw">dist</span>(kanga.mand)
 HC1=<span class="kw">hclust</span>(D,<span class="dt">method=</span><span class="st">&quot;average&quot;</span>)
 <span class="kw">table</span>(<span class="kw">cutree</span>(HC1,<span class="dt">k=</span><span class="dv">3</span>))</code></pre>
-<table>
-<thead>
-<tr class="header">
-<th align="right">1</th>
-<th align="right">2</th>
-<th align="right">3</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td align="right">76</td>
-<td align="right">5</td>
-<td align="right">55</td>
-</tr>
-</tbody>
-</table>
+<pre><code>## 
+##  1  2  3 
+## 76  5 55</code></pre>
 <p><em>(5)</em> 5</p>
 <p>Nosotros lo hemos calculado con</p>
 <pre class="sourceCode r"><code class="sourceCode r">HC2=<span class="kw">hclust</span>(D,<span class="dt">method=</span><span class="st">&quot;ward.D&quot;</span>)
 <span class="kw">table</span>(<span class="kw">cutree</span>(HC2,<span class="dt">h=</span><span class="dv">1000</span>))</code></pre>
-<table>
-<thead>
-<tr class="header">
-<th align="right">1</th>
-<th align="right">2</th>
-<th align="right">3</th>
-<th align="right">4</th>
-<th align="right">5</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td align="right">26</td>
-<td align="right">50</td>
-<td align="right">5</td>
-<td align="right">35</td>
-<td align="right">20</td>
-</tr>
-</tbody>
-</table>
+<pre><code>## 
+##  1  2  3  4  5 
+## 26 50  5 35 20</code></pre>
 
 </div>
 </div>
 </div>
 <div class="footnotes">
 <hr />
-<ol start="14">
-<li id="fn14"><p>Véase, por ejemplo, N. Slonim, E. Aharoni, K. Crammer, “Hartigan’s K-Means Versus Lloyd’s K-Means—Is It Time for a Change?”. <em>Proceedings of the XXIII International Joint Conference on Artificial Intelligence</em> (2013), pp. 1677-1684. Accesible (mayo 2019) en <a href="http://www.ijcai.org/Proceedings/13/Papers/249.pdf" class="uri">http://www.ijcai.org/Proceedings/13/Papers/249.pdf</a>.<a href="chap-clustering.html#fnref14" class="footnote-back">↩</a></p></li>
+<ol start="9">
+<li id="fn9"><p>Véase, por ejemplo, N. Slonim, E. Aharoni, K. Crammer, “Hartigan’s K-Means Versus Lloyd’s K-Means—Is It Time for a Change?”. <em>Proceedings of the XXIII International Joint Conference on Artificial Intelligence</em> (2013), pp. 1677-1684. Accesible (mayo 2019) en <a href="http://www.ijcai.org/Proceedings/13/Papers/249.pdf" class="uri">http://www.ijcai.org/Proceedings/13/Papers/249.pdf</a>.<a href="chap-clustering.html#fnref9" class="footnote-back">↩</a></p></li>
 </ol>
 </div>
             </section>
@@ -1441,16 +1063,17 @@ gitbook.start({
 "size": 2
 },
 "edit": {
-"link": "https://github.com/cescrossello/AprendeR-II/edit/master/11-Clustering.Rmd",
-"text": "Edit"
+"link": null,
+"text": null
 },
 "history": {
 "link": null,
 "text": null
 },
-"download": ["AprendeR-Parte-II.pdf", "AprendeR-Parte-II.epub"],
+"download": null,
 "toc": {
-"collapse": "subsection"
+"collapse": "subsection",
+"download": ["pdf", "epub"]
 }
 });
 });

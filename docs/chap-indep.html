@@ -25,7 +25,7 @@
 <meta name="author" content="The UIB-AprendeR team">
 
 
-<meta name="date" content="2020-02-16">
+<meta name="date" content="2020-03-18">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -248,7 +248,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="9.8" data-path="chap-ANOVA.html"><a href="chap-ANOVA.html#guia-rapida-7"><i class="fa fa-check"></i><b>9.8</b> Guía rápida</a></li>
 <li class="chapter" data-level="9.9" data-path="chap-ANOVA.html"><a href="chap-ANOVA.html#ejercicios-10"><i class="fa fa-check"></i><b>9.9</b> Ejercicios</a><ul>
 <li class="chapter" data-level="" data-path="chap-ANOVA.html"><a href="chap-ANOVA.html#test-4"><i class="fa fa-check"></i>Test</a></li>
+<li class="chapter" data-level="9.9.1" data-path="chap-ANOVA.html"><a href="chap-ANOVA.html#ejercicio"><i class="fa fa-check"></i><b>9.9.1</b> Ejercicio</a></li>
 <li class="chapter" data-level="" data-path="chap-ANOVA.html"><a href="chap-ANOVA.html#respuestas-al-test-8"><i class="fa fa-check"></i>Respuestas al test</a></li>
+<li class="chapter" data-level="9.9.2" data-path="chap-ANOVA.html"><a href="chap-ANOVA.html#soluciones-sucintas-del-ejercicio"><i class="fa fa-check"></i><b>9.9.2</b> Soluciones sucintas del ejercicio</a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="10" data-path="chap-regresion.html"><a href="chap-regresion.html"><i class="fa fa-check"></i><b>10</b> Regresión lineal</a><ul>
@@ -279,9 +281,6 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="12.4" data-path="extras-de-r-markdown.html"><a href="extras-de-r-markdown.html#tablas"><i class="fa fa-check"></i><b>12.4</b> Tablas</a></li>
 <li class="chapter" data-level="12.5" data-path="extras-de-r-markdown.html"><a href="extras-de-r-markdown.html#formulas-matematicas"><i class="fa fa-check"></i><b>12.5</b> Fórmulas matemáticas</a></li>
 </ul></li>
-<li class="divider"></li>
-<li><a href="https://github.com/cescrossello/AprendeR-II" target="blank">Publicado con  bookdown</a></li>
-
 </ul>
 
       </nav>
@@ -401,18 +400,18 @@ función que se aplica.</p>
 <p>También podemos calcular la tabla de proporciones por filas y con su marginal por filas comprobar que efectivamente la suma de cada fila es 1:</p>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">addmargins</span>(<span class="kw">prop.table</span>(tabla,<span class="dt">margin=</span><span class="dv">1</span>),<span class="dt">margin=</span><span class="dv">2</span>)</code></pre>
 <pre><code>##    
-##             a         c         g         t       Sum
-##   A 0.2550919 0.2491307 0.2478887 0.2478887 1.0000000
-##   B 0.4200868 0.4327661 0.0697364 0.0774107 1.0000000
-##   C 0.0822976 0.2022170 0.4880752 0.2274101 1.0000000</code></pre>
+##              a          c          g          t        Sum
+##   A 0.25509190 0.24913065 0.24788872 0.24788872 1.00000000
+##   B 0.42008675 0.43276610 0.06973640 0.07741074 1.00000000
+##   C 0.08229762 0.20221700 0.48807524 0.22741014 1.00000000</code></pre>
 <p>Y viceversa, podemos calcular la tabla de proporciones por columnas y con su marginal por columnas comprobar que efectivamente la suma de cada columna es 1:</p>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">addmargins</span>(<span class="kw">prop.table</span>(tabla,<span class="dt">margin=</span><span class="dv">2</span>),<span class="dt">margin=</span><span class="dv">1</span>)</code></pre>
 <pre><code>##      
-##               a         c         g         t
-##   A   0.4057685 0.3456237 0.3751880 0.5233351
-##   B   0.4974318 0.4469331 0.0785714 0.1216571
-##   C   0.0967997 0.2074431 0.5462406 0.3550079
-##   Sum 1.0000000 1.0000000 1.0000000 1.0000000</code></pre>
+##                a          c          g          t
+##   A   0.40576847 0.34562371 0.37518797 0.52333508
+##   B   0.49743185 0.44693315 0.07857143 0.12165705
+##   C   0.09679968 0.20744314 0.54624060 0.35500787
+##   Sum 1.00000000 1.00000000 1.00000000 1.00000000</code></pre>
 <p>Observad que el significado de <code>margin</code> en <code>addmargins</code> es diferente de, por ejemplo, en <code>prop.table</code> o en <code>apply</code>: en estas dos últimas instrucciones indica la dimensión en la que calculamos las proporciones o aplicamos la función, mientras que en <code>addmargins</code> indica la dimensión en la que <em>añadimos</em> el margen, que, por lo tanto, se calcula aplicando la función en la otra dimensión.</p>
 <p>Si sólo nos interesa la fila o la columna de marginales, podemos usar las instrucciones
 <code>colSums</code> y <code>rowSums</code>, que suman una tabla por columnas y por filas, respectivamente. Por ejemplo, para obtener los vectores de marginales por columnas y por filas, respectivamente, podríamos entrar:</p>
@@ -484,27 +483,27 @@ y podemos obtenerlas fácilmente mediante un producto de matrices:
 Por lo tanto, con R obtenemos esta tabla de frecuencias esperadas de la manera siguiente:</p>
 <pre class="sourceCode r"><code class="sourceCode r">frec.esperadas=frec.abs.tipo<span class="op">%*%</span><span class="kw">t</span>(frec.abs.max.frec)<span class="op">/</span>n
 frec.esperadas</code></pre>
-<pre><code>##            a     c     g       t
-## [1,] 12.3667 16.96 12.72 10.9533
-## [2,] 12.8333 17.60 13.20 11.3667
-## [3,]  9.8000 13.44 10.08  8.6800</code></pre>
+<pre><code>##             a     c     g        t
+## [1,] 12.36667 16.96 12.72 10.95333
+## [2,] 12.83333 17.60 13.20 11.36667
+## [3,]  9.80000 13.44 10.08  8.68000</code></pre>
 <p>Aunque vayamos a realizar el test de independencia con una función de R, es necesario comprobar que todas estas frecuencias esperadas son mayores o iguales que 5, por lo que no podemos evitar este cálculo. En este caso vemos que se cumple esta condición.</p>
 <p>Si queremos realizar el test <span class="math inline">\(\chi^2\)</span> de independencia a mano,
 podemos calcular el estadístico de forma directa con</p>
 <pre class="sourceCode r"><code class="sourceCode r">chi2.estadistico=<span class="kw">sum</span>((tabla.ind<span class="op">-</span>frec.esperadas)<span class="op">^</span><span class="dv">2</span><span class="op">/</span>frec.esperadas)
 chi2.estadistico</code></pre>
-<pre><code>## [1] 32.1211</code></pre>
+<pre><code>## [1] 32.12115</code></pre>
 <p>y el p-valor del contraste, con</p>
 <pre class="sourceCode r"><code class="sourceCode r">p.valor=<span class="dv">1</span><span class="op">-</span><span class="kw">pchisq</span>(chi2.estadistico,<span class="dt">df=</span>(<span class="kw">dim</span>(tabla.ind)[<span class="dv">1</span>]<span class="op">-</span><span class="dv">1</span>)<span class="op">*</span>(<span class="kw">dim</span>(tabla.ind)[<span class="dv">2</span>]<span class="op">-</span><span class="dv">1</span>))
 p.valor</code></pre>
-<pre><code>## [1] 1.54678e-05</code></pre>
+<pre><code>## [1] 1.546778e-05</code></pre>
 <p>Para realizar el test <span class="math inline">\(\chi^2\)</span> de independencia con R, es suficiente aplicar la función <code>chisq.test</code> a la tabla de contingencia de frecuencias absolutas:</p>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">chisq.test</span>(tabla.ind)</code></pre>
 <pre><code>## 
 ##  Pearson&#39;s Chi-squared test
 ## 
 ## data:  tabla.ind
-## X-squared = 32.12, df = 6, p-value = 1.55e-05</code></pre>
+## X-squared = 32.121, df = 6, p-value = 1.547e-05</code></pre>
 <p>Como el p-valor es muy pequeño, podemos rechazar la hipótesis de que las variables objeto de estudio sean independientes: hemos obtenido evidencia estadísticamente significativa de que la distribución de las bases de frecuencia máxima <em>sí que depende</em> del tipo de cadena.</p>
 <p>Si algunas frecuencias absolutas esperadas fueran inferiores a 5, la
 aproximación del p-valor por una distribución <span class="math inline">\(\chi^2\)</span> podría no ser adecuada.
@@ -532,7 +531,7 @@ tabla.ind2</code></pre>
 ##  Pearson&#39;s Chi-squared test
 ## 
 ## data:  tabla.ind2
-## X-squared = 21.84, df = 6, p-value = 0.00129</code></pre>
+## X-squared = 21.843, df = 6, p-value = 0.001293</code></pre>
 <p>¡Vaya! Veamos la tabla de frecuencias esperadas:</p>
 <pre class="sourceCode r"><code class="sourceCode r">frec.abs.tipo2=<span class="kw">rowSums</span>(tabla.ind2)
 frec.abs.max.frec2=<span class="kw">colSums</span>(tabla.ind2)
@@ -545,13 +544,13 @@ frec.esperadas2</code></pre>
 <p>Hay una frecuencia esperada inferior a 5. Por lo tanto, lo recomendable es estimar el p-valor del test <span class="math inline">\(\chi^2\)</span> de independencia mediante simulaciones. Pero ahora tenemos que ir con cuidado en una cosa: hemos fijado la semilla de aleatoriedad para obtener una muestra de cadenas con frecuencias esperadas inferiores a 5. Lo recomendable es reiniciar esta semilla a un valor aleatorio con <code>set.seed(NULL)</code>.</p>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">set.seed</span>(<span class="ot">NULL</span>)
 <span class="kw">chisq.test</span>(tabla.ind2,<span class="dt">simulate.p.value=</span><span class="ot">TRUE</span>,<span class="dt">B=</span><span class="dv">5000</span>)<span class="op">$</span>p.value</code></pre>
-<pre><code>## [1] 0.00139972</code></pre>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">chisq.test</span>(tabla.ind2,<span class="dt">simulate.p.value=</span><span class="ot">TRUE</span>,<span class="dt">B=</span><span class="dv">5000</span>)<span class="op">$</span>p.value</code></pre>
-<pre><code>## [1] 0.00139972</code></pre>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">chisq.test</span>(tabla.ind2,<span class="dt">simulate.p.value=</span><span class="ot">TRUE</span>,<span class="dt">B=</span><span class="dv">5000</span>)<span class="op">$</span>p.value</code></pre>
-<pre><code>## [1] 0.00159968</code></pre>
+<pre><code>## [1] 0.00119976</code></pre>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">chisq.test</span>(tabla.ind2,<span class="dt">simulate.p.value=</span><span class="ot">TRUE</span>,<span class="dt">B=</span><span class="dv">5000</span>)<span class="op">$</span>p.value</code></pre>
 <pre><code>## [1] 0.00239952</code></pre>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">chisq.test</span>(tabla.ind2,<span class="dt">simulate.p.value=</span><span class="ot">TRUE</span>,<span class="dt">B=</span><span class="dv">5000</span>)<span class="op">$</span>p.value</code></pre>
+<pre><code>## [1] 0.00079984</code></pre>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">chisq.test</span>(tabla.ind2,<span class="dt">simulate.p.value=</span><span class="ot">TRUE</span>,<span class="dt">B=</span><span class="dv">5000</span>)<span class="op">$</span>p.value</code></pre>
+<pre><code>## [1] 0.0009998</code></pre>
 <p>El p-valor es sistemáticamente pequeño, lo que nos permite rechazar la hipótesis de que las variables son independientes.</p>
 </div>
 <div id="sec:hom" class="section level2">
@@ -600,17 +599,17 @@ frec.abs.max.frec</code></pre>
 ## 42 40 47 21</code></pre>
 <pre class="sourceCode r"><code class="sourceCode r">frec.esperadas=frec.abs.tipo<span class="op">%*%</span><span class="kw">t</span>(frec.abs.max.frec)<span class="op">/</span><span class="kw">sum</span>(frec.abs.tipo)
 frec.esperadas  </code></pre>
-<pre><code>##       a       c       g t
-## [1,] 14 13.3333 15.6667 7
-## [2,] 14 13.3333 15.6667 7
-## [3,] 14 13.3333 15.6667 7</code></pre>
+<pre><code>##       a        c        g t
+## [1,] 14 13.33333 15.66667 7
+## [2,] 14 13.33333 15.66667 7
+## [3,] 14 13.33333 15.66667 7</code></pre>
 <p>Todas las frecuencias son mayores o iguales que 5, así que aplicamos la función <code>chisq.test</code> sin simular el p-valor:</p>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">chisq.test</span>(tabla.homo)</code></pre>
 <pre><code>## 
 ##  Pearson&#39;s Chi-squared test
 ## 
 ## data:  tabla.homo
-## X-squared = 44.99, df = 6, p-value = 4.71e-08</code></pre>
+## X-squared = 44.986, df = 6, p-value = 4.71e-08</code></pre>
 <p>El p-valor es muy pequeño, por lo que podemos rechazar que las distribuciones de los valores de las bases de máxima frecuencia sean la misma para cada valor de la variable <code>tipo</code>.</p>
 <p>En definitiva, el tipo de cadena afecta a la distribución de la base de mayor frecuencia. Es la misma conclusión a la que habíamos llegado con el test de independencia, solo que ahora hemos realizado un tipo de experimento diferente.</p>
 </div>
@@ -640,7 +639,7 @@ y obtuvimos que <span class="math inline">\(X^2=7.7\)</span>, por lo que la magn
 <pre><code>## 
 ##      Chi squared power calculation 
 ## 
-##               w = 0.438748
+##               w = 0.4387482
 ##               N = 40
 ##              df = 5
 ##       sig.level = 0.05
@@ -674,7 +673,7 @@ y obtuvimos que <span class="math inline">\(X^2=7.7\)</span>, por lo que la magn
 ##      Chi squared power calculation 
 ## 
 ##               w = 0.3
-##               N = 193.543
+##               N = 193.5425
 ##              df = 6
 ##       sig.level = 0.05
 ##           power = 0.9
@@ -683,7 +682,7 @@ y obtuvimos que <span class="math inline">\(X^2=7.7\)</span>, por lo que la magn
 <p>Hubiéramos necesitado como mínimo un total de unos 194 individuos: si queríamos tomar las tres muestras del mismo tamaño, esto significa tres muestras de como mínimo 65 individuos cada una.</p>
 <p>Para obtener solo el tamaño de la muestra, se puede añadir el sufijo <code>$N</code>:</p>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">pwr.chisq.test</span>(<span class="dt">df=</span><span class="dv">6</span>, <span class="dt">sig.level=</span><span class="fl">0.05</span>, <span class="dt">w=</span><span class="fl">0.3</span>, <span class="dt">power=</span><span class="fl">0.9</span>)<span class="op">$</span>N</code></pre>
-<pre><code>## [1] 193.543</code></pre>
+<pre><code>## [1] 193.5425</code></pre>
 </div>
 <div id="guia-rapida-5" class="section level2">
 <h2><span class="header-section-number">7.5</span> Guía rápida</h2>
@@ -761,10 +760,10 @@ RS=<span class="kw">rowSums</span>(A)
 CS=<span class="kw">colSums</span>(A)
 frec.esperadas=RS<span class="op">%*%</span><span class="kw">t</span>(CS)<span class="op">/</span><span class="kw">sum</span>(A)
 frec.esperadas</code></pre>
-<pre><code>##         [,1]     [,2]     [,3]
-## [1,] 4.10526 12.94737 12.94737
-## [2,] 5.88421 18.55789 18.55789
-## [3,] 3.01053  9.49474  9.49474</code></pre>
+<pre><code>##          [,1]      [,2]      [,3]
+## [1,] 4.105263 12.947368 12.947368
+## [2,] 5.884211 18.557895 18.557895
+## [3,] 3.010526  9.494737  9.494737</code></pre>
 <p><em>(2)</em> 0.128 NO</p>
 <p>Nosotros lo hemos resuelto con</p>
 <pre class="sourceCode r"><code class="sourceCode r">X=<span class="kw">matrix</span>(<span class="kw">c</span>(<span class="dv">50</span>,<span class="dv">19</span>,<span class="dv">17</span>,<span class="dv">21</span>,<span class="dv">69</span>,<span class="dv">47</span>,<span class="dv">56</span>,<span class="dv">37</span>,<span class="dv">33</span>,<span class="dv">23</span>,<span class="dv">18</span>,<span class="dv">21</span>),<span class="dt">nrow=</span><span class="dv">3</span>,<span class="dt">byrow=</span>T)
@@ -803,7 +802,7 @@ frec.esperadas</code></pre>
 ##  Pearson&#39;s Chi-squared test
 ## 
 ## data:  Datos
-## X-squared = 5.116, df = 6, p-value = 0.529</code></pre>
+## X-squared = 5.1163, df = 6, p-value = 0.529</code></pre>
 
 </div>
 </div>
@@ -850,16 +849,17 @@ gitbook.start({
 "size": 2
 },
 "edit": {
-"link": "https://github.com/cescrossello/AprendeR-II/edit/master/07-Independencia.Rmd",
-"text": "Edit"
+"link": null,
+"text": null
 },
 "history": {
 "link": null,
 "text": null
 },
-"download": ["AprendeR-Parte-II.pdf", "AprendeR-Parte-II.epub"],
+"download": null,
 "toc": {
-"collapse": "subsection"
+"collapse": "subsection",
+"download": ["pdf", "epub"]
 }
 });
 });

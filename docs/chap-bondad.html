@@ -25,7 +25,7 @@
 <meta name="author" content="The UIB-AprendeR team">
 
 
-<meta name="date" content="2020-02-16">
+<meta name="date" content="2020-03-18">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -248,7 +248,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="9.8" data-path="chap-ANOVA.html"><a href="chap-ANOVA.html#guia-rapida-7"><i class="fa fa-check"></i><b>9.8</b> Guía rápida</a></li>
 <li class="chapter" data-level="9.9" data-path="chap-ANOVA.html"><a href="chap-ANOVA.html#ejercicios-10"><i class="fa fa-check"></i><b>9.9</b> Ejercicios</a><ul>
 <li class="chapter" data-level="" data-path="chap-ANOVA.html"><a href="chap-ANOVA.html#test-4"><i class="fa fa-check"></i>Test</a></li>
+<li class="chapter" data-level="9.9.1" data-path="chap-ANOVA.html"><a href="chap-ANOVA.html#ejercicio"><i class="fa fa-check"></i><b>9.9.1</b> Ejercicio</a></li>
 <li class="chapter" data-level="" data-path="chap-ANOVA.html"><a href="chap-ANOVA.html#respuestas-al-test-8"><i class="fa fa-check"></i>Respuestas al test</a></li>
+<li class="chapter" data-level="9.9.2" data-path="chap-ANOVA.html"><a href="chap-ANOVA.html#soluciones-sucintas-del-ejercicio"><i class="fa fa-check"></i><b>9.9.2</b> Soluciones sucintas del ejercicio</a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="10" data-path="chap-regresion.html"><a href="chap-regresion.html"><i class="fa fa-check"></i><b>10</b> Regresión lineal</a><ul>
@@ -279,9 +281,6 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="12.4" data-path="extras-de-r-markdown.html"><a href="extras-de-r-markdown.html#tablas"><i class="fa fa-check"></i><b>12.4</b> Tablas</a></li>
 <li class="chapter" data-level="12.5" data-path="extras-de-r-markdown.html"><a href="extras-de-r-markdown.html#formulas-matematicas"><i class="fa fa-check"></i><b>12.5</b> Fórmulas matemáticas</a></li>
 </ul></li>
-<li class="divider"></li>
-<li><a href="https://github.com/cescrossello/AprendeR-II" target="blank">Publicado con  bookdown</a></li>
-
 </ul>
 
       </nav>
@@ -1000,7 +999,7 @@ x=<span class="kw">rt</span>(<span class="dv">50</span>,<span class="dv">3</span
 ##     Kurtosis Test: 0.07421 
 ## 
 ## Description:
-##  Thu Feb  6 20:32:32 2020 by user:</code></pre>
+##  Wed Mar 18 09:28:34 2020 by user:</code></pre>
 <p>El p-valor relevante es el del <em>“Omnibus test”</em>, en este caso 0.0568 cae en la zona de penumbra.</p>
 <p>Queremos hacer una última advertencia en esta sección. Aunque los tests que hemos explicado se pueden aplicar a muestras pequeñas, es muy difícil rechazar la normalidad de una muestra muy pequeña. Por ejemplo, una muestra de 10 valores escogidos con distribución uniforme entre 0 y 5 pasa holgadamente todos los tests de normalidad (salvo el de D’Agostino-Pearson, que requiere una muestra de al menos 20 elementos):</p>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">set.seed</span>(<span class="dv">100</span>)
@@ -1231,7 +1230,7 @@ x=<span class="kw">runif</span>(<span class="dv">10</span>,<span class="dv">0</s
 <pre class="sourceCode r"><code class="sourceCode r">x=<span class="kw">c</span>(<span class="dv">10</span>,<span class="dv">32</span>,<span class="dv">18</span>,<span class="dv">19</span>,<span class="dv">6</span>)
 lambda=<span class="kw">round</span>(<span class="kw">fitdistr</span>(<span class="kw">rep</span>(<span class="dv">0</span><span class="op">:</span><span class="dv">4</span>,x),<span class="st">&quot;poisson&quot;</span>)<span class="op">$</span>estimate,<span class="dv">3</span>)  <span class="co">#Estimamos la lambda</span>
 <span class="kw">c</span>(<span class="kw">dpois</span>(<span class="dv">0</span><span class="op">:</span><span class="dv">3</span>,lambda),<span class="dv">1</span><span class="op">-</span><span class="kw">ppois</span>(<span class="dv">3</span>,lambda))<span class="op">*</span><span class="dv">85</span>  <span class="co">#Frecuencias esperadas</span></code></pre>
-<pre><code>## [1] 14.7265 25.8156 22.6274 13.2219  8.6085</code></pre>
+<pre><code>## [1] 14.726539 25.815623 22.627394 13.221940  8.608503</code></pre>
 <pre class="sourceCode r"><code class="sourceCode r">ChiT2=<span class="kw">chisq.test</span>(x,<span class="dt">p=</span><span class="kw">c</span>(<span class="kw">dpois</span>(<span class="dv">0</span><span class="op">:</span><span class="dv">3</span>,lambda),<span class="dv">1</span><span class="op">-</span><span class="kw">ppois</span>(<span class="dv">3</span>,lambda)))  <span class="co">#Test</span>
 p.valor2=<span class="dv">1</span><span class="op">-</span><span class="kw">pchisq</span>(ChiT2<span class="op">$</span>statistic,<span class="dv">3</span>)  <span class="co">#p-valor correcto</span>
 <span class="kw">c</span>(lambda,<span class="kw">round</span>(p.valor2,<span class="dv">3</span>))</code></pre>
@@ -1244,9 +1243,9 @@ p.valor2=<span class="dv">1</span><span class="op">-</span><span class="kw">pchi
 <pre><code>## [1] 150</code></pre>
 <pre class="sourceCode r"><code class="sourceCode r">muestra=<span class="kw">rep</span>(<span class="kw">c</span>(<span class="fl">1.5</span>,<span class="fl">4.5</span>,<span class="fl">7.5</span>,<span class="fl">10.5</span>,<span class="fl">13.5</span>),x)
 <span class="kw">fitdistr</span>(muestra,<span class="st">&quot;normal&quot;</span>)</code></pre>
-<pre><code>##      mean        sd   
-##   8.200000   3.182766 
-##  (0.259872) (0.183757)</code></pre>
+<pre><code>##      mean         sd    
+##   8.2000000   3.1827661 
+##  (0.2598718) (0.1837571)</code></pre>
 <pre class="sourceCode r"><code class="sourceCode r">mu=<span class="kw">round</span>(<span class="kw">fitdistr</span>(muestra,<span class="st">&quot;normal&quot;</span>)<span class="op">$</span>estimate[<span class="dv">1</span>],<span class="dv">2</span>)
 sigma=<span class="kw">round</span>(<span class="kw">fitdistr</span>(muestra,<span class="st">&quot;normal&quot;</span>)<span class="op">$</span>estimate[<span class="dv">2</span>],<span class="dv">2</span>)
 left=<span class="kw">c</span>(<span class="op">-</span><span class="ot">Inf</span>,<span class="dv">3</span>,<span class="dv">6</span>,<span class="dv">9</span>,<span class="dv">12</span>)
@@ -1294,7 +1293,7 @@ Prob.Esp.INE=INE<span class="op">$</span>Población/<span class="kw">sum</span>(
 ##  Chi-squared test for given probabilities
 ## 
 ## data:  Freq.Obs.INE
-## X-squared = 8009, df = 18, p-value &lt;2e-16</code></pre>
+## X-squared = 8008.6, df = 18, p-value &lt; 2.2e-16</code></pre>
 <p>Como la muestra no es muy grande, es más conveniente efectuar un test <span class="math inline">\(\chi^2\)</span> de Montecarlo</p>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">chisq.test</span>(Freq.Obs.INE, <span class="dt">p=</span>Prob.Esp.INE, <span class="dt">simulate.p.value=</span><span class="ot">TRUE</span>)</code></pre>
 <pre><code>## 
@@ -1302,7 +1301,7 @@ Prob.Esp.INE=INE<span class="op">$</span>Población/<span class="kw">sum</span>(
 ##  (based on 2000 replicates)
 ## 
 ## data:  Freq.Obs.INE
-## X-squared = 8009, df = NA, p-value = 5e-04</code></pre>
+## X-squared = 8008.6, df = NA, p-value = 0.0004998</code></pre>
 <p>La conclusión es la misma.</p>
 <p><strong>(2)</strong></p>
 <pre class="sourceCode r"><code class="sourceCode r">Goles=<span class="kw">c</span>(<span class="dv">0</span>,<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">4</span>,<span class="dv">5</span>,<span class="dv">7</span>)
@@ -1311,7 +1310,7 @@ N=<span class="kw">sum</span>(Partidos)
 lambda=<span class="kw">sum</span>(Goles<span class="op">*</span>Partidos)<span class="op">/</span>N
 probs=<span class="kw">c</span>(<span class="kw">dpois</span>(<span class="dv">0</span><span class="op">:</span><span class="dv">5</span>,lambda),<span class="dv">1</span><span class="op">-</span><span class="kw">ppois</span>(<span class="dv">5</span>,lambda))  <span class="co">#Probabilidades teóricas</span>
 probs<span class="op">*</span>N  <span class="co">#Frecuencias esperadas</span></code></pre>
-<pre><code>## [1]  6.93642 15.30416 16.88316 12.41672  6.84890  3.02221  1.58843</code></pre>
+<pre><code>## [1]  6.936418 15.304161 16.883161 12.416717  6.848903  3.022214  1.588426</code></pre>
 <p>Habrá que agrupar las tres últimas clases:</p>
 <pre class="sourceCode r"><code class="sourceCode r">probs=<span class="kw">c</span>(<span class="kw">dpois</span>(<span class="dv">0</span><span class="op">:</span><span class="dv">3</span>,lambda),<span class="dv">1</span><span class="op">-</span><span class="kw">ppois</span>(<span class="dv">3</span>,lambda))
 Partidos=<span class="kw">c</span>(Partidos[<span class="dv">1</span><span class="op">:</span><span class="dv">4</span>],<span class="kw">sum</span>(Partidos[<span class="dv">5</span><span class="op">:</span><span class="dv">7</span>]))
@@ -1320,7 +1319,7 @@ Partidos=<span class="kw">c</span>(Partidos[<span class="dv">1</span><span class
 ##  Chi-squared test for given probabilities
 ## 
 ## data:  Partidos
-## X-squared = 1.309, df = 4, p-value = 0.86</code></pre>
+## X-squared = 1.309, df = 4, p-value = 0.8598</code></pre>
 <p><strong>(3)</strong></p>
 <pre class="sourceCode r"><code class="sourceCode r">Datos=<span class="kw">read.table</span>(<span class="st">&quot;https://www.dropbox.com/s/qcok2f7u51teqr6/pacientes.txt?raw=1&quot;</span>,
                 <span class="dt">header=</span><span class="ot">TRUE</span>)
@@ -1341,7 +1340,7 @@ Partidos=<span class="kw">c</span>(Partidos[<span class="dv">1</span><span class
 ##  Lilliefors (Kolmogorov-Smirnov) normality test
 ## 
 ## data:  X
-## D = 0.1541, p-value = 0.00903</code></pre>
+## D = 0.15413, p-value = 0.009027</code></pre>
 <p><em>(b)</em> Veamos cuántos datos tenemos</p>
 <pre class="sourceCode r"><code class="sourceCode r">n=<span class="kw">length</span>(X)
 n</code></pre>
@@ -1384,11 +1383,11 @@ test</code></pre>
 ##  Chi-squared test for given probabilities
 ## 
 ## data:  Frecs.Obs
-## X-squared = 9.148, df = 4, p-value = 0.0575</code></pre>
+## X-squared = 9.1484, df = 4, p-value = 0.05749</code></pre>
 <pre class="sourceCode r"><code class="sourceCode r">p.valor=<span class="dv">1</span><span class="op">-</span><span class="kw">pchisq</span>(test<span class="op">$</span>statistic,test<span class="op">$</span>parameter<span class="dv">-2</span>)
 p.valor</code></pre>
-<pre><code>## X-squared 
-## 0.0103144</code></pre>
+<pre><code>##  X-squared 
+## 0.01031437</code></pre>
 <p>La conclusión usando el test S-W y el test <span class="math inline">\(\chi^2\)</span> es la misma.</p>
 
 </div>
@@ -1439,16 +1438,17 @@ gitbook.start({
 "size": 2
 },
 "edit": {
-"link": "https://github.com/cescrossello/AprendeR-II/edit/master/06-BondadAjuste.Rmd",
-"text": "Edit"
+"link": null,
+"text": null
 },
 "history": {
 "link": null,
 "text": null
 },
-"download": ["AprendeR-Parte-II.pdf", "AprendeR-Parte-II.epub"],
+"download": null,
 "toc": {
-"collapse": "subsection"
+"collapse": "subsection",
+"download": ["pdf", "epub"]
 }
 });
 });

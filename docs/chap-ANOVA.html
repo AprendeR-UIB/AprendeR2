@@ -25,7 +25,7 @@
 <meta name="author" content="The UIB-AprendeR team">
 
 
-<meta name="date" content="2020-02-16">
+<meta name="date" content="2020-03-18">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -248,7 +248,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="9.8" data-path="chap-ANOVA.html"><a href="chap-ANOVA.html#guia-rapida-7"><i class="fa fa-check"></i><b>9.8</b> Guía rápida</a></li>
 <li class="chapter" data-level="9.9" data-path="chap-ANOVA.html"><a href="chap-ANOVA.html#ejercicios-10"><i class="fa fa-check"></i><b>9.9</b> Ejercicios</a><ul>
 <li class="chapter" data-level="" data-path="chap-ANOVA.html"><a href="chap-ANOVA.html#test-4"><i class="fa fa-check"></i>Test</a></li>
+<li class="chapter" data-level="9.9.1" data-path="chap-ANOVA.html"><a href="chap-ANOVA.html#ejercicio"><i class="fa fa-check"></i><b>9.9.1</b> Ejercicio</a></li>
 <li class="chapter" data-level="" data-path="chap-ANOVA.html"><a href="chap-ANOVA.html#respuestas-al-test-8"><i class="fa fa-check"></i>Respuestas al test</a></li>
+<li class="chapter" data-level="9.9.2" data-path="chap-ANOVA.html"><a href="chap-ANOVA.html#soluciones-sucintas-del-ejercicio"><i class="fa fa-check"></i><b>9.9.2</b> Soluciones sucintas del ejercicio</a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="10" data-path="chap-regresion.html"><a href="chap-regresion.html"><i class="fa fa-check"></i><b>10</b> Regresión lineal</a><ul>
@@ -279,9 +281,6 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="12.4" data-path="extras-de-r-markdown.html"><a href="extras-de-r-markdown.html#tablas"><i class="fa fa-check"></i><b>12.4</b> Tablas</a></li>
 <li class="chapter" data-level="12.5" data-path="extras-de-r-markdown.html"><a href="extras-de-r-markdown.html#formulas-matematicas"><i class="fa fa-check"></i><b>12.5</b> Fórmulas matemáticas</a></li>
 </ul></li>
-<li class="divider"></li>
-<li><a href="https://github.com/cescrossello/AprendeR-II" target="blank">Publicado con  bookdown</a></li>
-
 </ul>
 
       </nav>
@@ -329,7 +328,7 @@ sintaxis genérica es</p>
 </div>
 <div id="sec:ANOVA-1" class="section level2">
 <h2><span class="header-section-number">9.2</span> ANOVA de un factor</h2>
-<p>Para ilustrar el ANOVA de un factor con R utilizaremos un experimento en el que se quiso determinar si cuatro dietas concretas tenían alguna influencia en el tiempo de coagulación de la sangre en mamíferos.<a href="#fn8" class="footnote-ref" id="fnref8"><sup>8</sup></a> Para ello se escogieron 24 animales, se repartieron de manera aleatoria en 4 grupos de 6 ejemplares cada uno, y a cada grupo se le asignó de manera aleatoria una de las 4 dietas objeto de estudio, que indicaremos con A, B, C y D. Al cabo de un cierto tiempo se midió el tiempo de coagulación de la sangre en estos animales. Los resultados (redondeados a enteros) se muestran en la Tabla <a href="chap-ANOVA.html#tab:1">9.1</a>. Observad que estamos ante un diseño experimental de un solo factor: la dieta.</p>
+<p>Para ilustrar el ANOVA de un factor con R utilizaremos un experimento en el que se quiso determinar si cuatro dietas concretas tenían alguna influencia en el tiempo de coagulación de la sangre en mamíferos: véase <em>Statistics for Experimenters</em> (2a edición), de G. P. Box, W. G. Hunter y J. S. Hunte (Wiley, 2005), p. 133. Para ello se escogieron 24 animales, se repartieron de manera aleatoria en 4 grupos de 6 ejemplares cada uno, y a cada grupo se le asignó de manera aleatoria una de las 4 dietas objeto de estudio, que indicaremos con A, B, C y D. Al cabo de un cierto tiempo se midió el tiempo de coagulación de la sangre en estos animales. Los resultados (redondeados a enteros) se muestran en la Tabla <a href="chap-ANOVA.html#tab:1">9.1</a>. Observad que estamos ante un diseño experimental de un solo factor: la dieta.</p>
 <table>
 <caption><span id="tab:1">Tabla 9.1: </span>Tiempos de coagulación bajo diferentes dietas.</caption>
 <thead>
@@ -394,43 +393,16 @@ sintaxis genérica es</p>
 ##  $ coag: num  62 63 68 56 60 67 66 62 63 71 ...
 ##  $ diet: Factor w/ 4 levels &quot;A&quot;,&quot;B&quot;,&quot;C&quot;,&quot;D&quot;: 1 2 3 4 1 2 3 4 1 2 ...</code></pre>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">head</span>(coagulacion)</code></pre>
-<table>
-<thead>
-<tr class="header">
-<th align="right">coag</th>
-<th align="left">diet</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td align="right">62</td>
-<td align="left">A</td>
-</tr>
-<tr class="even">
-<td align="right">63</td>
-<td align="left">B</td>
-</tr>
-<tr class="odd">
-<td align="right">68</td>
-<td align="left">C</td>
-</tr>
-<tr class="even">
-<td align="right">56</td>
-<td align="left">D</td>
-</tr>
-<tr class="odd">
-<td align="right">60</td>
-<td align="left">A</td>
-</tr>
-<tr class="even">
-<td align="right">67</td>
-<td align="left">B</td>
-</tr>
-</tbody>
-</table>
+<pre><code>##   coag diet
+## 1   62    A
+## 2   63    B
+## 3   68    C
+## 4   56    D
+## 5   60    A
+## 6   67    B</code></pre>
 <p>Para analizar la igualdad de los tiempos medios de coagulación bajo las cuatro dietas, realizaremos un ANOVA de la variable <code>coag</code> separándola según (<strong>ajustándola a</strong>) el factor <code>diet</code>. Antes de empezar, es conveniente visualizar los datos para hacernos una idea de su distribución; por ejemplo, por medio de un diagrama de cajas con una caja por cada nivel:</p>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">boxplot</span>(coag<span class="op">~</span>diet, <span class="dt">data=</span>coagulacion)</code></pre>
-<p>Observad que también hemos empleado una fórmula para indicar que queremos los diagramas de cajas de la variable <code>coag</code> separada por la variable <code>diet</code> del <em>data frame</em> <code>coagulacion</code>. Obtenemos la Figura <a href="chap-ANOVA.html#fig:241">9.1</a>, donde podemos ver que las medias muestrales para las dietas A y C son muy diferentes, y que en cambio seguramente no podremos rechazar que las medias poblacionales de las dietas A y D sean iguales. Por lo tanto, el resultado que esperamos del ANOVA es que nos permita rechazar la hipótesis nula de que los cuatro tiempos medios de coagulación son iguales. Ahora bien, hasta que no realicemos el ANOVA no sabremos si las diferencias que observamos en este diagrama son estadísticamente significativas o no.</p>
+<p>Observad que también hemos empleado una fórmula para indicar que queremos los diagramas de cajas de la variable <code>coag</code> separada por la variable <code>diet</code> del <em>data frame</em> <code>coagulacion</code>. Obtenemos la Figura <a href="chap-ANOVA.html#fig:241">9.1</a>, donde podemos ver que las medias muestrales para las dietas A y C son muy diferentes, y que en cambio seguramente no podríamos rechazar que las medias poblacionales de las dietas A y D sean iguales. Por lo tanto, el resultado que esperamos del ANOVA es que nos permita rechazar la hipótesis nula de que los cuatro tiempos medios de coagulación son iguales. Ahora bien, hasta que no realicemos el ANOVA no sabremos si las diferencias que observamos en este diagrama son estadísticamente significativas o no.</p>
 <div class="figure" style="text-align: center"><span id="fig:241"></span>
 <img src="AprendeR-Parte-II_files/figure-html/241-1.png" alt="Diagrama de cajas de los tiempos de coagulación según las diferentes dietas." width="480" />
 <p class="caption">
@@ -481,36 +453,12 @@ de que las medias comparadas no son todas iguales.</p></li>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">options</span>(<span class="dt">show.signif.stars=</span><span class="ot">TRUE</span>)</code></pre>
 <p>Como hemos comentado, una manera alternativa de realizar un ANOVA es mediante <code>anova(lm(...))</code>. Con esta construcción obtenemos directamente la tabla, sin necesidad de aplicarle <code>summary</code>.</p>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">anova</span>(<span class="kw">lm</span>(coag<span class="op">~</span>diet, <span class="dt">data=</span>coagulacion))</code></pre>
-<table>
-<thead>
-<tr class="header">
-<th></th>
-<th align="right">Df</th>
-<th align="right">Sum Sq</th>
-<th align="right">Mean Sq</th>
-<th align="right">F value</th>
-<th align="right">Pr(&gt;F)</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>diet</td>
-<td align="right">3</td>
-<td align="right">228</td>
-<td align="right">76.0</td>
-<td align="right">13.57143</td>
-<td align="right">4.66e-05</td>
-</tr>
-<tr class="even">
-<td>Residuals</td>
-<td align="right">20</td>
-<td align="right">112</td>
-<td align="right">5.6</td>
-<td align="right">NA</td>
-<td align="right">NA</td>
-</tr>
-</tbody>
-</table>
+<pre><code>## Analysis of Variance Table
+## 
+## Response: coag
+##           Df Sum Sq Mean Sq F value    Pr(&gt;F)
+## diet       3    228    76.0  13.571 4.658e-05
+## Residuals 20    112     5.6</code></pre>
 <p>Para extraer los datos de la tabla ANOVA obtenida con la función <code>summary(aov(...))</code>, y así poder operar directamente con ellos, hay que añadirle los sufijos adecuados. Consultemos su estructura.</p>
 <pre class="sourceCode r"><code class="sourceCode r">tabla=<span class="kw">summary</span>(<span class="kw">aov</span>(coag<span class="op">~</span>diet, <span class="dt">data=</span>coagulacion)) 
 <span class="kw">str</span>(tabla)</code></pre>
@@ -528,7 +476,7 @@ de que las medias comparadas no son todas iguales.</p></li>
 <p>De manera similar, como el p-valor es el primer elemento de la columna <code>Pr(&gt;F)</code>, lo obtenemos con:</p>
 <pre class="sourceCode r"><code class="sourceCode r">tabla[[<span class="dv">1</span>]]<span class="op">$</span><span class="st">&quot;Pr(&gt;F)&quot;</span>[<span class="dv">1</span>]</code></pre>
 <pre><code>## [1] 4.658471e-05</code></pre>
-<p>Fijaos en que, como los nombres de estas columnas contienen espacios en blanco u otros símbolos no aceptados en los nombres de objetos de R (recordad la Lección 2 del primer volumen), hay que especificarlos entre comillas.</p>
+<p>Fijaos en que, como los nombres de estas columnas contienen espacios en blanco u otros símbolos no aceptados en los nombres de objetos de R (recordad la <a href="https://aprender-uib.github.io/AprendeR1/chap-vect.html">Lección 4 de la primera parte</a>), hay que especificarlos entre comillas.</p>
 <p>El resultado de <code>anova(lm(...))</code> ya es directamente un <em>data frame</em>, por lo que para extraer los valores de la tabla ANOVA que produce podemos usar la sintaxis usual de los <em>data frames</em>.</p>
 <pre class="sourceCode r"><code class="sourceCode r">tabla2=<span class="kw">anova</span>(<span class="kw">lm</span>(coag<span class="op">~</span>diet, <span class="dt">data=</span>coagulacion))
 <span class="kw">str</span>(tabla2)</code></pre>
@@ -546,7 +494,7 @@ de que las medias comparadas no son todas iguales.</p></li>
 <p>Veamos otro ejemplo de ANOVA de un factor.</p>
 
 <div class="example">
-<p><span id="exm:rabbits" class="example"><strong>Ejemplo 9.1  </strong></span>En un experimento, se estudió el efecto de seis dietas sobre el crecimiento de crías de conejo doméstico.<a href="#fn9" class="footnote-ref" id="fnref9"><sup>9</sup></a> Los datos obtenidos están recogidos en la tabla de datos <code>rabbit</code> del paquete <strong>faraway</strong>.</p>
+<p><span id="exm:rabbits" class="example"><strong>Ejemplo 9.1  </strong></span>En un experimento, se estudió el efecto de seis dietas sobre el crecimiento de crías de conejo doméstico: véase <em>Experimental Design and Analysis</em>, de M. Lentner y T. Bishop (Valley Book Co. 1986), p. 428. Los datos obtenidos están recogidos en la tabla de datos <code>rabbit</code> del paquete <strong>faraway</strong>.</p>
 </div>
 
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(faraway)
@@ -575,7 +523,7 @@ Figura 9.2: Diagrama de cajas de los crecimientos de crías de conejo según las
 <p>Es muy importante tener presente que, al usar las instrucciones <code>aov</code> o <code>anova(lm(...))</code> para realizar un ANOVA, se tiene que emplear un factor (o varios, en las próximas secciones) para separar la variable numérica en subpoblaciones. Veamos un ejemplo de lo que pasa si nos descuidamos en este punto.</p>
 
 <div class="example">
-<p><span id="exm:bliss" class="example"><strong>Ejemplo 9.2  </strong></span>En un experimento se estudió el efecto de la vitamina C en el crecimiento de los dientes.<a href="#fn10" class="footnote-ref" id="fnref10"><sup>10</sup></a> Se tomaron 60 cobayas y se trató cada uno de ellos con una combinación diferente de dosis de vitamina C (0.5, 1 o 2 mg) y método de suministro de la misma (mediante zumo de naranja o como ácido ascórbico) durante 6 semanas, y se cuantificó el crecimiento de sus dientes durante dicho período (más en concreto, se midió la longitud media de sus odontoblastos al final del mismo). El resultado es una tabla de 60 datos, que aparecen recogidos en el fichero <code>ToothGrowth</code> del paquete <strong>UsingR</strong>.</p>
+<p><span id="exm:bliss" class="example"><strong>Ejemplo 9.2  </strong></span>En un experimento se estudió el efecto de la vitamina C en el crecimiento de los dientes: véase <em>The Statistics of Bioassay</em> de C. I. Bliss (Academic Press, 1952), p. 499-501. Se tomaron 60 cobayas y se trató cada uno de ellos con una combinación diferente de dosis de vitamina C (0.5, 1 o 2 mg) y método de suministro de la misma (mediante zumo de naranja o como ácido ascórbico) durante 6 semanas, y se cuantificó el crecimiento de sus dientes durante dicho período (más en concreto, se midió la longitud media de sus odontoblastos al final del mismo). El resultado es una tabla de 60 datos, que aparecen recogidos en el fichero <code>ToothGrowth</code> del paquete <strong>UsingR</strong>.</p>
 </div>
 
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(UsingR)
@@ -606,7 +554,7 @@ ToothGrowth2<span class="op">$</span>dose=<span class="kw">as.factor</span>(Toot
 </div>
 <div id="anova-de-bloques-completos-aleatorios" class="section level2">
 <h2><span class="header-section-number">9.3</span> ANOVA de bloques completos aleatorios</h2>
-<p>Para ilustrar este tipo de ANOVA, analizaremos un experimento sobre producción de penicilina.<a href="#fn11" class="footnote-ref" id="fnref11"><sup>11</sup></a> En dicho experimento, se evaluaron cuatro procesos diferentes para determinar si había diferencias en su efectividad. Los cuatro procesos usaban una técnica de cultivo sumergido y empleaban agua de macerado de maíz como fuente de nitrógeno orgánico. Como la composición de este líquido puede afectar la producción final de penicilina, para evaluar los cuatro procesos se prepararon 5 mezclas diferentes de agua de macerado de maíz, de cada mezcla se tomaron 4 muestras y se asignaron de manera aleatoria a los cuatro procesos de producción. Los resultados obtenidos son los de la Tabla <a href="chap-ANOVA.html#tab:2">9.2</a>, y aparecen recogidos en la tabla de datos <code>penicillin</code> del paquete <strong>faraway</strong>.</p>
+<p>Para ilustrar este tipo de ANOVA, analizaremos un experimento sobre producción de penicilina: vVéase <em>Practical Regression and Anova using R</em>, de J. Faraway, p. 186 (este texto se puede descargar de la página web <a href="https://cran.r-project.org/doc/contrib/Faraway-PRA.pdf" class="uri">https://cran.r-project.org/doc/contrib/Faraway-PRA.pdf</a>). En dicho experimento, se evaluaron cuatro procesos diferentes para determinar si había diferencias en su efectividad. Los cuatro procesos usaban una técnica de cultivo sumergido y empleaban agua de macerado de maíz como fuente de nitrógeno orgánico. Como la composición de este líquido puede afectar la producción final de penicilina, para evaluar los cuatro procesos se prepararon 5 mezclas diferentes de agua de macerado de maíz, de cada mezcla se tomaron 4 muestras y se asignaron de manera aleatoria a los cuatro procesos de producción. Los resultados obtenidos son los de la Tabla <a href="chap-ANOVA.html#tab:2">9.2</a>, y aparecen recogidos en la tabla de datos <code>penicillin</code> del paquete <strong>faraway</strong>.</p>
 <table>
 <caption><span id="tab:2">Tabla 9.2: </span>Producción de penicilina bajo diferentes procesos de producción y mezclas.</caption>
 <thead>
@@ -656,8 +604,7 @@ ToothGrowth2<span class="op">$</span>dose=<span class="kw">as.factor</span>(Toot
 </tr>
 </tbody>
 </table>
-<p>Observad que estamos ante un diseño experimental de bloques completos aleatorios. Los bloques son las mezclas de agua de macerado de maíz y<br />
-los tratamientos (los procesos de producción) se han asignado de manera aleatoria a las unidades experimentales (las muestras) de cada bloque, de tal manera que cada bloque contiene exactamente una unidad experimental para cada tratamiento. Este es un ejemplo paradigmático de uso de bloques: para evitar la influencia de la variable “extraña” dada por la composición del agua de macerado de maíz, que puede influir en la producción, se escogen al azar unas mezclas y se prueban todos los procesos de manera independiente sobre cada mezcla.</p>
+<p>Observad que estamos ante un diseño experimental de bloques completos aleatorios. Los bloques son las mezclas de agua de macerado de maíz y los tratamientos (los procesos de producción) se han asignado de manera aleatoria a las unidades experimentales (las muestras) de cada bloque, de tal manera que cada bloque contiene exactamente una unidad experimental para cada tratamiento. Este es un ejemplo paradigmático de uso de bloques: para evitar la influencia de la variable “extraña” dada por la composición del agua de macerado de maíz, que puede influir en la producción, se escogen al azar unas mezclas y se prueban todos los procesos de manera independiente sobre cada mezcla.</p>
 <p>Demos un vistazo a esta tabla de datos.</p>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">str</span>(penicillin)</code></pre>
 <pre><code>## &#39;data.frame&#39;:    20 obs. of  3 variables:
@@ -665,52 +612,14 @@ los tratamientos (los procesos de producción) se han asignado de manera aleator
 ##  $ blend: Factor w/ 5 levels &quot;Blend1&quot;,&quot;Blend2&quot;,..: 1 1 1 1 2 2 2 2 3 3 ...
 ##  $ yield: num  89 88 97 94 84 77 92 79 81 87 ...</code></pre>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">head</span>(penicillin)</code></pre>
-<table>
-<thead>
-<tr class="header">
-<th align="left">treat</th>
-<th align="left">blend</th>
-<th align="right">yield</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td align="left">A</td>
-<td align="left">Blend1</td>
-<td align="right">89</td>
-</tr>
-<tr class="even">
-<td align="left">B</td>
-<td align="left">Blend1</td>
-<td align="right">88</td>
-</tr>
-<tr class="odd">
-<td align="left">C</td>
-<td align="left">Blend1</td>
-<td align="right">97</td>
-</tr>
-<tr class="even">
-<td align="left">D</td>
-<td align="left">Blend1</td>
-<td align="right">94</td>
-</tr>
-<tr class="odd">
-<td align="left">A</td>
-<td align="left">Blend2</td>
-<td align="right">84</td>
-</tr>
-<tr class="even">
-<td align="left">B</td>
-<td align="left">Blend2</td>
-<td align="right">77</td>
-</tr>
-<tr class="odd">
-<td align="left">Según la</td>
-<td align="left">Ayuda de</td>
-<td align="right"><code>penicillin</code>, la variable <code>treat</code> es el proceso de producción, con valores <code>A</code>, <code>B</code>, <code>C</code> y <code>D</code>; la variable <code>blend</code> es la mezcla usada (los bloques), con valores <code>Blend1</code> a <code>Blend5</code>; y la variable numérica <code>yield</code> es un valor que cuantifica la producción de penicilina.</td>
-</tr>
-</tbody>
-</table>
+<pre><code>##   treat  blend yield
+## 1     A Blend1    89
+## 2     B Blend1    88
+## 3     C Blend1    97
+## 4     D Blend1    94
+## 5     A Blend2    84
+## 6     B Blend2    77</code></pre>
+<p>Según la Ayuda de <code>penicillin</code>, la variable <code>treat</code> es el proceso de producción, con valores <code>A</code>, <code>B</code>, <code>C</code> y <code>D</code>; la variable <code>blend</code> es la mezcla usada (los bloques), con valores <code>Blend1</code> a <code>Blend5</code>; y la variable numérica <code>yield</code> es un valor que cuantifica la producción de penicilina.</p>
 <p>Veamos cómo son los diagramas de cajas de la producción de penicilina separada por procesos de producción y por mezclas:</p>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">boxplot</span>(yield<span class="op">~</span>treat, <span class="dt">data=</span>penicillin)</code></pre>
 <div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-490"></span>
@@ -742,15 +651,14 @@ Figura 9.4: Diagrama de cajas de la producción de penicilina según las diferen
 ## treat        3     70   23.33   1.239 0.3387
 ## blend        4    264   66.00   3.504 0.0407
 ## Residuals   12    226   18.83</code></pre>
-<p>El p-valor que nos interesa en esta tabla es el de la fila <code>treat</code>: es 0.3387, por lo que en este experimento de bloques tampoco detectamos evidencia de que haya diferencias en la productividad media de los procesos estudiados.
+<p>El p-valor que nos interesa en esta tabla es el de la fila <code>treat</code>: es 0.34, por lo que si tenemos en cuenta los bloques tampoco detectamos evidencia de que haya diferencias en la productividad media de los procesos estudiados.
 El segundo p-valor de la tabla, 0.0407, es el del ANOVA de bloques que resulta de intercambiar los bloques y el tratamiento, tomando las mezclas como el factor a analizar y los procesos de producción como los bloques:</p>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">summary</span>(<span class="kw">aov</span>(yield<span class="op">~</span>blend<span class="op">+</span>treat, <span class="dt">data=</span>penicillin))</code></pre>
 <pre><code>##             Df Sum Sq Mean Sq F value Pr(&gt;F)
 ## blend        4    264   66.00   3.504 0.0407
 ## treat        3     70   23.33   1.239 0.3387
 ## Residuals   12    226   18.83</code></pre>
-<p>Podemos extraer los resultados de una
-tabla de un ANOVA de bloques generada por <code>summary(aov(...))</code> añadiendo los mismos sufijos que en el caso de un factor. Así, por ejemplo, los p-valores son:</p>
+<p>Podemos extraer los resultados de una tabla de un ANOVA de bloques generada por <code>summary(aov(...))</code> añadiendo los mismos sufijos que en el caso de un factor. Así, por ejemplo, los p-valores son:</p>
 <pre class="sourceCode r"><code class="sourceCode r">tabla=<span class="kw">summary</span>(<span class="kw">aov</span>(yield<span class="op">~</span>treat<span class="op">+</span>blend, <span class="dt">data=</span>penicillin))
 tabla[[<span class="dv">1</span>]]<span class="op">$</span><span class="st">&quot;Pr(&gt;F)&quot;</span></code></pre>
 <pre><code>## [1] 0.33865812 0.04074617         NA</code></pre>
@@ -898,8 +806,9 @@ tabla[[<span class="dv">1</span>]]<span class="op">$</span><span class="st">&quo
 </tr>
 </tbody>
 </table>
-<p>Como podemos observar, se trata de un experimento de bloques completos aleatorios: hemos escogido de manera aleatoria unos bloques (los estudiantes) y para cada estudiante hemos apuntado el valor de cada uno de los niveles del factor a estudiar (las notas en las diferentes actividades).`Este diseño es el adecuado para este problema, puesto que hay una gran variabilidad en las notas obtenidas por estudiantes diferentes, desde matrículas a suspensos. Al tomar bloques, es decir, al considerar todas las notas de un conjunto aleatorio fijo de estudiantes, eliminamos el efecto de esta variabilidad.</p>
-<p>Vamos a construir un <em>data frame</em> con estos datos. Este <em>data frame</em> tendrá tres variables: <code>notas}, con las notas obtenidas por los estudiantes;</code>acts<code>, con los tipos de actividades de evaluación realizados; y</code>bloques<code>, con el indicador de cada estudiante. Entraremos las notas siguiendo las filas de la tabla anterior, y por lo tanto tenemos que construir estos dos factores entrando sus niveles en el orden adecuado: el factor</code>acts<code>ha de estar formado por 15 copias de la fila de actividades, y el factor</code>bloques<code>ha de estar formado por 5 copias de</code>1<code>, 5 copias de</code>2<code>, y así hasta 5 copias de</code>15<code>. Y recordad que</code>bloques` ha de ser un factor, puesto que queremos usarlo en un ANOVA.</p>
+<p>Como podemos observar, se trata de un experimento de bloques completos aleatorios: hemos escogido de manera aleatoria unos bloques (los estudiantes) y para cada estudiante hemos apuntado el valor de cada uno de los niveles del factor a estudiar (las notas en las diferentes actividades). Este diseño es el adecuado para este problema, puesto que hay una gran variabilidad en las notas obtenidas por estudiantes diferentes, desde matrículas a suspensos. Al tomar bloques, es decir, al considerar todas las notas de un conjunto aleatorio fijo de estudiantes, eliminamos el efecto de esta variabilidad.</p>
+<p>Vamos a construir un <em>data frame</em> con estos datos. Este <em>data frame</em> tendrá tres variables: <code>notas</code>, con las notas obtenidas por los estudiantes; <code>acts</code>, con los tipos de actividades de evaluación realizados; y <code>bloques</code>, con el indicador de cada estudiante.
+Entraremos las notas siguiendo las filas de la tabla anterior, y por lo tanto tenemos que construir estos dos factores entrando sus niveles en el orden adecuado: el factor <code>acts</code> ha de estar formado por 15 copias de la fila de actividades, y el factor <code>bloques</code> ha de estar formado por 5 copias de <code>1</code>, 5 copias de <code>2</code>, y así hasta 5 copias de <code>15</code>. Y recordad que <code>bloques</code> ha de ser un factor, puesto que queremos usarlo en un ANOVA.</p>
 <pre class="sourceCode r"><code class="sourceCode r">notas=<span class="kw">c</span>(<span class="dv">48</span>,<span class="dv">42</span>,<span class="dv">85</span>,<span class="dv">31</span>,<span class="dv">20</span>,<span class="dv">94</span>,<span class="dv">86</span>,<span class="dv">100</span>,<span class="dv">52</span>,<span class="dv">48</span>,<span class="dv">98</span>,<span class="dv">94</span>,<span class="dv">93</span>,<span class="dv">93</span>,<span class="dv">90</span>,<span class="dv">60</span>,<span class="dv">58</span>,
    <span class="dv">71</span>,<span class="dv">66</span>,<span class="dv">46</span>,<span class="dv">52</span>,<span class="dv">56</span>,<span class="dv">79</span>,<span class="dv">64</span>,<span class="dv">24</span>,<span class="dv">78</span>,<span class="dv">73</span>,<span class="dv">84</span>,<span class="dv">80</span>,<span class="dv">95</span>,<span class="dv">84</span>,<span class="dv">84</span>,<span class="dv">94</span>,<span class="dv">83</span>,<span class="dv">70</span>,<span class="dv">83</span>,<span class="dv">76</span>,
    <span class="dv">99</span>,<span class="dv">51</span>,<span class="dv">55</span>,<span class="dv">75</span>,<span class="dv">55</span>,<span class="dv">70</span>,<span class="dv">85</span>,<span class="dv">48</span>,<span class="dv">24</span>,<span class="dv">49</span>,<span class="dv">57</span>,<span class="dv">19</span>,<span class="dv">55</span>,<span class="dv">47</span>,<span class="dv">47</span>,<span class="dv">64</span>,<span class="dv">44</span>,<span class="dv">35</span>,<span class="dv">53</span>,<span class="dv">42</span>,
@@ -913,47 +822,13 @@ notas.bloques=<span class="kw">data.frame</span>(notas,acts,bloques)
 ##  $ acts   : Factor w/ 5 levels &quot;Casa&quot;,&quot;Control 1&quot;,..: 5 1 4 2 3 5 1 4 2 3 ...
 ##  $ bloques: Factor w/ 15 levels &quot;1&quot;,&quot;2&quot;,&quot;3&quot;,&quot;4&quot;,..: 1 1 1 1 1 2 2 2 2 2 ...</code></pre>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">head</span>(notas.bloques)</code></pre>
-<table>
-<thead>
-<tr class="header">
-<th align="right">notas</th>
-<th align="left">acts</th>
-<th align="left">bloques</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td align="right">48</td>
-<td align="left">Tests</td>
-<td align="left">1</td>
-</tr>
-<tr class="even">
-<td align="right">42</td>
-<td align="left">Casa</td>
-<td align="left">1</td>
-</tr>
-<tr class="odd">
-<td align="right">85</td>
-<td align="left">Talleres</td>
-<td align="left">1</td>
-</tr>
-<tr class="even">
-<td align="right">31</td>
-<td align="left">Control 1</td>
-<td align="left">1</td>
-</tr>
-<tr class="odd">
-<td align="right">20</td>
-<td align="left">Control 2</td>
-<td align="left">1</td>
-</tr>
-<tr class="even">
-<td align="right">94</td>
-<td align="left">Tests</td>
-<td align="left">2</td>
-</tr>
-</tbody>
-</table>
+<pre><code>##   notas      acts bloques
+## 1    48     Tests       1
+## 2    42      Casa       1
+## 3    85  Talleres       1
+## 4    31 Control 1       1
+## 5    20 Control 2       1
+## 6    94     Tests       2</code></pre>
 <p>Vamos a dibujar los diagramas de cajas de las notas de las diferentes actividades y de los diferentes estudiantes:</p>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">boxplot</span>(notas.bloques<span class="op">$</span>notas<span class="op">~</span>notas.bloques<span class="op">$</span>acts)</code></pre>
 <div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-498"></span>
@@ -976,13 +851,13 @@ Figura 9.6: Diagrama de cajas de las notas de los estudiantes.
 ## acts         4   9646  2411.5  13.133 1.31e-07
 ## bloques     14  19430  1387.9   7.558 1.47e-08
 ## Residuals   56  10283   183.6</code></pre>
-<p>El p-valor que nos interesa es el de la primera fila, etiquetada con el factor cuyos niveles queremos comparar, en este caso <code>acts</code>. Este p-valor es muy pequeño, del orden de <span class="math inline">\(10^{-7}\)</span>, lo que es evidencia de que, como nos temíamos, no todas las notas medias de las actividades de evaluación fueron iguales.</p>
+<p>El p-valor que nos interesa es el de la primera fila, etiquetada con el factor cuyos niveles queremos comparar, en este caso <code>acts</code>. Este p-valor es muy pequeño, del orden de <span class="math inline">\(10^{-7}\)</span>, lo que es evidencia de que, como nos temíamos, no todas las notas medias de las actividades de evaluación son iguales.</p>
 </div>
 <div id="sec:ANOVA2" class="section level2">
 <h2><span class="header-section-number">9.4</span> ANOVA de dos vías</h2>
-<p>Para ilustrar el ANOVA de dos vías, es decir, de dos factores que pueden interacccionar, analizaremos en primer lugar los resultados de un experimento sobre el efecto de venenos y antídotos.<a href="#fn12" class="footnote-ref" id="fnref12"><sup>12</sup></a> En este experimento se usaron tres venenos y cuatro antídotos, y cada combinación de veneno y antídoto se administró a cuatro ratas elegidas de manera aleatoria e independiente. A continuación, se anotó el tiempo de supervivencia de cada animal, en unidades de 10 horas. Se trata, pues, de un diseño experimental de dos factores, en el que cada individuo ha sido asignado al azar a cada nivel de los dos factores. Por otro lado, no podemos descartar <em>a priori</em> que haya interacción entre venenos y antídotos, puesto que un antídoto puede ser más efectivo para un veneno que para otro.</p>
+<p>Para ilustrar el ANOVA de dos vías, es decir, de dos factores que pueden interacccionar, analizaremos en primer lugar los resultados de un experimento sobre el efecto de venenos y antídotos: véase “An analysis of transformations”, de G. Box y D. Cox, <em>J. Roy. Stat. Soc. Series B</em> 26 (1964), pp. 211-252; véase también <em>Practical Regression and Anova using R</em>, de J. Faraway, p. 182. En este experimento se usaron tres venenos y cuatro antídotos, y cada combinación de veneno y antídoto se administró a cuatro ratas elegidas de manera aleatoria e independiente. A continuación, se anotó el tiempo de supervivencia de cada animal, en unidades de 10 horas. Se trata, pues, de un diseño experimental de dos factores, en el que cada individuo ha sido asignado al azar a cada nivel de los dos factores. Por otro lado, no podemos descartar <em>a priori</em> que haya interacción entre venenos y antídotos, puesto que un antídoto puede ser más efectivo para un veneno que para otro.</p>
 <p>El objetivo del experimento era contrastar la igualdad de los tiempos medios de supervivencia según el veneno, según el antídoto, y según la combinación veneno-antídoto. Los datos obtenidos en este experimento se han recogido en la tabla <code>rats</code> del paquete <strong>faraway</strong>.</p>
-<p>Pero ahora tenemos un problema con este <em>data frame</em>. Si cargamos en una misma sesión varios paquetes que contengan objetos con el mismo nombre, R entiende en cada momento que ese nombre refiere al objeto del paquete que se haya cargado más recientemente. Como en esta lección hemos cargado el paquete <strong>UsingR</strong> después del paquete <strong>faraway</strong>, en estos momentos <code>rats</code> refiere a una tabla de datos del paquete <strong>survival</strong> que se ha cargado con <strong>UsingR</strong> y que no tiene nada que ver con los datos de este experimento. Una solución posible sería en este punto volver a cargar el paquete <strong>faraway</strong>. Otra opción más rápida es definir <code>rats</code> como el objeto <code>rats</code> de <strong>faraway</strong> por medio de la instrucción <code>rats=faraway::rats</code>. La construcción <code>paquete::objeto</code> invoca el <code>objeto</code> (una función, una tabla de datos,…) del <strong>paquete</strong> y sirve para eliminar ambigüedades como la que nos encontramos aquí.</p>
+<p>Pero ahora tenemos un problema con este <em>data frame</em>. Si cargamos en una misma sesión varios paquetes que contengan objetos con el mismo nombre, R entiende en cada momento que ese nombre refiere al objeto del paquete que se haya cargado más recientemente. Como en esta lección hemos cargado el paquete <strong>UsingR</strong> después del paquete <strong>faraway</strong>, en estos momentos <code>rats</code> refiere a una tabla de datos del paquete <strong>survival</strong> que se ha cargado con <strong>UsingR</strong> y que no tiene nada que ver con los datos de este experimento. Una solución posible sería en este punto volver a cargar el paquete <strong>faraway</strong>. Otra opción más rápida es definir <code>rats</code> como el objeto <code>rats</code> de <strong>faraway</strong> por medio de la instrucción <code>rats=faraway::rats</code>. La construcción <code>paquete::objeto</code> invoca el <code>objeto</code> (una función, una tabla de datos,…) del <strong>paquete</strong> y sirve para eliminar ambigüedades como la que nos encontramos aquí. Además, tiene la ventaja de que no es necesario cargar el <strong>paquete</strong>, basta que esté instalado</p>
 <p>Vamos a cargar y explorar estos datos.</p>
 <pre class="sourceCode r"><code class="sourceCode r">rats=faraway<span class="op">::</span>rats
 <span class="kw">str</span>(rats)</code></pre>
@@ -991,52 +866,14 @@ Figura 9.6: Diagrama de cajas de las notas de los estudiantes.
 ##  $ poison: Factor w/ 3 levels &quot;I&quot;,&quot;II&quot;,&quot;III&quot;: 1 1 1 1 1 1 1 1 1 1 ...
 ##  $ treat : Factor w/ 4 levels &quot;A&quot;,&quot;B&quot;,&quot;C&quot;,&quot;D&quot;: 1 2 3 4 1 2 3 4 1 2 ...</code></pre>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">head</span>(rats)</code></pre>
-<table>
-<thead>
-<tr class="header">
-<th align="right">time</th>
-<th align="left">poison</th>
-<th align="left">treat</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td align="right">0.31</td>
-<td align="left">I</td>
-<td align="left">A</td>
-</tr>
-<tr class="even">
-<td align="right">0.82</td>
-<td align="left">I</td>
-<td align="left">B</td>
-</tr>
-<tr class="odd">
-<td align="right">0.43</td>
-<td align="left">I</td>
-<td align="left">C</td>
-</tr>
-<tr class="even">
-<td align="right">0.45</td>
-<td align="left">I</td>
-<td align="left">D</td>
-</tr>
-<tr class="odd">
-<td align="right">0.45</td>
-<td align="left">I</td>
-<td align="left">A</td>
-</tr>
-<tr class="even">
-<td align="right">1.10</td>
-<td align="left">I</td>
-<td align="left">B</td>
-</tr>
-<tr class="odd">
-<td align="right">En la A</td>
-<td align="left">yuda de `</td>
-<td align="left">rats<code>nos enteramos de que el factor</code>treat<code>contiene el antídoto, con niveles</code>A<code>,</code>B<code>,</code>C<code>y</code>D<code>; el factor</code>poison<code>contiene el veneno, con niveles</code>I<code>,</code>II<code>y</code>III<code>; y la variable numérica</code>time` contiene el tiempo de supervivencia de las ratas. Veamos cómo son los diagramas de cajas de estos tiempos, separados por venenos y por antídotos.</td>
-</tr>
-</tbody>
-</table>
+<pre><code>##   time poison treat
+## 1 0.31      I     A
+## 2 0.82      I     B
+## 3 0.43      I     C
+## 4 0.45      I     D
+## 5 0.45      I     A
+## 6 1.10      I     B</code></pre>
+<p>En la Ayuda de <code>rats</code> nos enteramos de que el factor <code>treat</code> contiene el antídoto, con niveles <code>A</code>, <code>B</code>, <code>C</code> y <code>D</code>; el factor <code>poison</code> contiene el veneno, con niveles <code>I</code>, <code>II</code> y <code>III</code>; y la variable numérica <code>time</code> contiene el tiempo de supervivencia de las ratas. Veamos cómo son los diagramas de cajas de estos tiempos, separados por venenos y por antídotos.</p>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">boxplot</span>(time<span class="op">~</span>poison, <span class="dt">data=</span>rats)</code></pre>
 <div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-502"></span>
 <img src="AprendeR-Parte-II_files/figure-html/unnamed-chunk-502-1.png" alt="Diagrama de cajas de los tiempos de supervivencia según los venenos." width="480" />
@@ -1130,7 +967,7 @@ Figura 9.13: Diagrama de cajas de las longitudes de los odontoblastos según el 
 Figura 9.14: Diagrama de cajas de las longitudes de los odontoblastos según la dosis y el método de suministro.
 </p>
 </div>
-<p>Podemos observar diferencias tanto según la dosis y como según el método de suministro. ¿Serán significativas?</p>
+<p>Podemos observar diferencias tanto según la dosis como según el método de suministro. ¿Serán significativas?</p>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">summary</span>(<span class="kw">aov</span>(len<span class="op">~</span>supp<span class="op">*</span>dose, <span class="dt">data=</span>ToothGrowth2))</code></pre>
 <pre><code>##             Df Sum Sq Mean Sq F value   Pr(&gt;F)
 ## supp         1  205.4   205.4  15.572 0.000231
@@ -1231,32 +1068,11 @@ de Anderson-Darling, de Shapiro-Wilk y de D’Agostino-Pearson. Cada uno tiene s
 <p>¿Cómo podríamos haber automatizado el cálculo de estos p-valores, para no tener que definir “a mano” cada vector de tiempos de coagulación? Con el código siguiente, donde definimos una función <code>Test.SW</code> que calcula el p-valor del test de Shapiro-Wilk y la aplicamos con un <code>aggregate</code> a los tiempos de coagulación del <em>data frame</em> <code>coagulacion</code> separados según la dieta. De esta manera obtenemos un <em>data frame</em> cuya columna <code>coag</code> contiene, para cada nivel de <code>diet</code>, el p-valor del test de Shapiro-Wilk para los tiempos de coagulación de la dieta correspondiente.</p>
 <pre class="sourceCode r"><code class="sourceCode r">Test.SW=<span class="cf">function</span>(x){<span class="kw">shapiro.test</span>(x)<span class="op">$</span>p.value}
 <span class="kw">aggregate</span>(coag<span class="op">~</span>diet, <span class="dt">data=</span>coagulacion,<span class="dt">FUN=</span>Test.SW)</code></pre>
-<table>
-<thead>
-<tr class="header">
-<th align="left">diet</th>
-<th align="right">coag</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td align="left">A</td>
-<td align="right">0.1130298</td>
-</tr>
-<tr class="even">
-<td align="left">B</td>
-<td align="right">0.5227052</td>
-</tr>
-<tr class="odd">
-<td align="left">C</td>
-<td align="right">0.2375366</td>
-</tr>
-<tr class="even">
-<td align="left">D</td>
-<td align="right">0.5227052</td>
-</tr>
-</tbody>
-</table>
+<pre><code>##   diet      coag
+## 1    A 0.1130298
+## 2    B 0.5227052
+## 3    C 0.2375366
+## 4    D 0.5227052</code></pre>
 
 <div class="example">
 <p><span id="exm:unnamed-chunk-523" class="example"><strong>Ejemplo 9.6  </strong></span>Vamos a contrastar si en el ANOVA de dos vías del ejemplo de venenos y antídotos explicado en la Sección <a href="chap-ANOVA.html#sec:ANOVA2">9.4</a> se satisface que cada combinación de veneno y antídoto define una población normal. Para ello, en principio deberíamos repetir 12 veces, una para cada combinación de veneno y antídoto, un par de instrucciones como las siguientes:</p>
@@ -1267,87 +1083,21 @@ de Anderson-Darling, de Shapiro-Wilk y de D’Agostino-Pearson. Cada uno tiene s
 <pre><code>## [1] 0.07414486</code></pre>
 <p>Para evitarnos trabajo, vamos a usar la estrategia explicada al final del ejemplo anterior: aplicaremos la función <code>Test.SW</code> que hemos definido en dicho ejemplo a la variable numérica <code>time</code> del <em>data frame</em> <code>rats</code> separándola por las combinaciones de veneno y antídoto.</p>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">aggregate</span>(time<span class="op">~</span>poison<span class="op">:</span>treat, <span class="dt">data=</span>rats, <span class="dt">FUN=</span>Test.SW)</code></pre>
-<table>
-<thead>
-<tr class="header">
-<th align="left">poison</th>
-<th align="left">treat</th>
-<th align="right">time</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td align="left">I</td>
-<td align="left">A</td>
-<td align="right">0.0741449</td>
-</tr>
-<tr class="even">
-<td align="left">II</td>
-<td align="left">A</td>
-<td align="right">0.8475641</td>
-</tr>
-<tr class="odd">
-<td align="left">III</td>
-<td align="left">A</td>
-<td align="right">0.5773549</td>
-</tr>
-<tr class="even">
-<td align="left">I</td>
-<td align="left">B</td>
-<td align="right">0.6998338</td>
-</tr>
-<tr class="odd">
-<td align="left">II</td>
-<td align="left">B</td>
-<td align="right">0.7008372</td>
-</tr>
-<tr class="even">
-<td align="left">III</td>
-<td align="left">B</td>
-<td align="right">0.1705700</td>
-</tr>
-<tr class="odd">
-<td align="left">I</td>
-<td align="left">C</td>
-<td align="right">0.4050349</td>
-</tr>
-<tr class="even">
-<td align="left">II</td>
-<td align="left">C</td>
-<td align="right">0.9209111</td>
-</tr>
-<tr class="odd">
-<td align="left">III</td>
-<td align="left">C</td>
-<td align="right">0.9718771</td>
-</tr>
-<tr class="even">
-<td align="left">I</td>
-<td align="left">D</td>
-<td align="right">0.4273912</td>
-</tr>
-<tr class="odd">
-<td align="left">II</td>
-<td align="left">D</td>
-<td align="right">0.9065096</td>
-</tr>
-<tr class="even">
-<td align="left">III</td>
-<td align="left">D</td>
-<td align="right">0.6889364</td>
-</tr>
-<tr class="odd">
-<td align="left">Todos los</td>
-<td align="left">p-valor</td>
-<td align="right">es que obtenemos son mayores que 0.05 (y de hecho, para garantizar un nivel de significación global de 0.05, deberíamos realizar cada test de Shapiro-Wilk con un nivel de significación 0.05/12=0.0042), por lo que no podemos rechazar que</td>
-</tr>
-<tr class="even">
-<td align="left">todas las</td>
-<td align="left">combina</td>
-<td align="right">ciones de veneno y antídoto definan unos tiempos de supervivencia que sigan leyes normales.</td>
-</tr>
-</tbody>
-</table>
+<pre><code>##    poison treat       time
+## 1       I     A 0.07414486
+## 2      II     A 0.84756406
+## 3     III     A 0.57735490
+## 4       I     B 0.69983383
+## 5      II     B 0.70083721
+## 6     III     B 0.17057001
+## 7       I     C 0.40503490
+## 8      II     C 0.92091109
+## 9     III     C 0.97187706
+## 10      I     D 0.42739119
+## 11     II     D 0.90650963
+## 12    III     D 0.68893644</code></pre>
+<p>Todos los p-valores que obtenemos son mayores que 0.05 (y de hecho, para garantizar un nivel de significación global de 0.05, deberíamos realizar cada test de Shapiro-Wilk con un nivel de significación 0.05/12=0.0042), por lo que no podemos rechazar que
+todas las combinaciones de veneno y antídoto definan unos tiempos de supervivencia que sigan leyes normales.</p>
 <p>Pasemos al contraste de igualdad de varianzas (su nombre técnico es <strong>contraste de homocedasticidad</strong>), en el que usaremos el llamado <strong>test de Bartlett</strong>. Supongamos, para fijar ideas, que tenemos <span class="math inline">\(k\)</span> vectores numéricos
 <span class="math display">\[
 x_i=(x_{i1},x_{i2},\ldots,x_{in_i}),\quad i=1,\ldots, k,
@@ -1386,7 +1136,7 @@ Si las variables poblacionales son normales, este estadístico sigue aproximadam
 ## 
 ## data:  time by interaction(poison, treat)
 ## Bartlett&#39;s K-squared = 45.137, df = 11, p-value = 4.59e-06</code></pre>
-<p>Obtenemos un p-valor de <span class="math inline">\(4.6\times 10^{-6}\)</span>, por lo tanto, hemos de rechazar la igualdad de varianzas: las conclusiones de ese ANOVA de dos vías no tienen en principio ninguna validez, puesto que no hay evidencia de que se cumpla una de las condiciones para realizarlo.</p>
+<p>Obtenemos un p-valor de <span class="math inline">\(4.6\times 10^{-6}\)</span>, por lo tanto, hemos de rechazar la igualdad de varianzas: las conclusiones de ese ANOVA de dos vías no tienen en principio ninguna validez, puesto que hay evidencia de que no se cumple una de las condiciones para realizarlo.</p>
 <p>Otros tests de igualdad de varianzas son el de Fligner-Killeen, implementado en la función
 <code>fligner.test</code> (y que tiene la misma particularidad que <code>bartlett.test</code> a la hora de especificar combinaciones de factores) y el test de Levene, implementado en la función
 <code>leveneTest</code> del paquete <strong>car</strong> (donde las combinaciones de factores sí que se pueden especificar con <code>:</code>). En cada caso, el test produce un p-valor con el significado usual. El test de Levene es muy popular, porque no requiere que las poblaciones sean normales, pero en el contexto del ANOVA esta propiedad no tiene ningún interés; además, cuando las poblaciones son normales, el test de Bartlett es más potente que el de Levene.</p>
@@ -1429,40 +1179,13 @@ se ha de especificar <code>paired=TRUE</code>.</p>
 <p>Contrastaremos la normalidad de las notas para cada actividad de evaluación con el test de Shapiro-Wilk, y para no trabajar más de la cuenta, usaremos la técnica explicada en el Ejemplo <a href="chap-ANOVA.html#exm:SW-auto">9.5</a>.</p>
 <pre class="sourceCode r"><code class="sourceCode r">Test.SW=<span class="cf">function</span>(x){<span class="kw">round</span>(<span class="kw">shapiro.test</span>(x)<span class="op">$</span>p.value,<span class="dv">4</span>)}
 <span class="kw">aggregate</span>(notas<span class="op">~</span>acts, <span class="dt">data=</span>notas.bloques, <span class="dt">FUN=</span>Test.SW)</code></pre>
-<table>
-<thead>
-<tr class="header">
-<th align="left">acts</th>
-<th align="right">notas</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td align="left">Casa</td>
-<td align="right">0.1384</td>
-</tr>
-<tr class="even">
-<td align="left">Control 1</td>
-<td align="right">0.7054</td>
-</tr>
-<tr class="odd">
-<td align="left">Control 2</td>
-<td align="right">0.5515</td>
-</tr>
-<tr class="even">
-<td align="left">Talleres</td>
-<td align="right">0.7612</td>
-</tr>
-<tr class="odd">
-<td align="left">Tests</td>
-<td align="right">0.5984</td>
-</tr>
-<tr class="even">
-<td align="left">Todos los p-</td>
-<td align="right">valores son altos, los que nos permite aceptar que las notas de cada actividad provienen de una distribución normal.</td>
-</tr>
-</tbody>
-</table>
+<pre><code>##        acts  notas
+## 1      Casa 0.1384
+## 2 Control 1 0.7054
+## 3 Control 2 0.5515
+## 4  Talleres 0.7612
+## 5     Tests 0.5984</code></pre>
+<p>Todos los p-valores son altos, los que nos permite aceptar que las notas de cada actividad provienen de una distribución normal.</p>
 <p>Así pues, podemos realizar el test t de Holm. En este caso tenemos que usar <code>paired=TRUE</code>, puesto que se trata de un ANOVA de bloques.</p>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">pairwise.t.test</span>(notas.bloques<span class="op">$</span>notas, notas.bloques<span class="op">$</span>acts, <span class="dt">paired=</span><span class="ot">TRUE</span>) </code></pre>
 <pre><code>## 
@@ -1477,7 +1200,7 @@ se ha de especificar <code>paired=TRUE</code>.</p>
 ## Tests     0.4562 0.1640    0.0271    0.0038  
 ## 
 ## P value adjustment method: holm</code></pre>
-<p>Los p-valores inferiores a 0.05 son los de los pares de actividades “Ejercicios de casa”-“Control 1”,
+<p>Los p-valores superiores a 0.05 son los de los pares de actividades “Ejercicios de casa”-“Control 1”,
 “Control 1”-“Control 2”, “Ejercicios de casa”-“Tests” y “Control 1”-“Tests”. Por lo tanto, a un nivel de significación global de 0.05,
 no podemos rechazar que las notas medias de estos pares de actividades sean iguales, mientras que en los otros tenemos evidencia de que son diferentes.</p>
 </div>
@@ -1502,108 +1225,23 @@ no podemos rechazar que las notas medias de estos pares de actividades sean igua
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(agricolae)
 anova.coag=<span class="kw">aov</span>(coag<span class="op">~</span>diet, <span class="dt">data=</span>coagulacion)
 <span class="kw">duncan.test</span>(anova.coag, <span class="st">&quot;diet&quot;</span>, <span class="dt">group=</span><span class="ot">FALSE</span>)<span class="op">$</span>comparison</code></pre>
-<table>
-<thead>
-<tr class="header">
-<th></th>
-<th align="right">difference</th>
-<th align="right">pvalue</th>
-<th align="left">signif.</th>
-<th align="right">LCL</th>
-<th align="right">UCL</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>A - B</td>
-<td align="right">-5</td>
-<td align="right">0.0016</td>
-<td align="left">**</td>
-<td align="right">-7.849969</td>
-<td align="right">-2.1500315</td>
-</tr>
-<tr class="even">
-<td>A - C</td>
-<td align="right">-7</td>
-<td align="right">0.0001</td>
-<td align="left">***</td>
-<td align="right">-9.991509</td>
-<td align="right">-4.0084906</td>
-</tr>
-<tr class="odd">
-<td>A - D</td>
-<td align="right">0</td>
-<td align="right">1.0000</td>
-<td align="left"></td>
-<td align="right">-2.849969</td>
-<td align="right">2.8499685</td>
-</tr>
-<tr class="even">
-<td>B - C</td>
-<td align="right">-2</td>
-<td align="right">0.1588</td>
-<td align="left"></td>
-<td align="right">-4.849969</td>
-<td align="right">0.8499685</td>
-</tr>
-<tr class="odd">
-<td>B - D</td>
-<td align="right">5</td>
-<td align="right">0.0021</td>
-<td align="left">**</td>
-<td align="right">2.008491</td>
-<td align="right">7.9915094</td>
-</tr>
-<tr class="even">
-<td>C - D</td>
-<td align="right">7</td>
-<td align="right">0.0001</td>
-<td align="left">***</td>
-<td align="right">3.918538</td>
-<td align="right">10.0814618</td>
-</tr>
-</tbody>
-</table>
+<pre><code>##       difference pvalue signif.       LCL        UCL
+## A - B         -5 0.0016      ** -7.849968 -2.1500315
+## A - C         -7 0.0001     *** -9.991509 -4.0084906
+## A - D          0 1.0000         -2.849968  2.8499685
+## B - C         -2 0.1588         -4.849968  0.8499685
+## B - D          5 0.0021      **  2.008491  7.9915094
+## C - D          7 0.0001     ***  3.918538 10.0814618</code></pre>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">duncan.test</span>(anova.coag, <span class="st">&quot;diet&quot;</span>, <span class="dt">group=</span><span class="ot">TRUE</span>)<span class="op">$</span>groups</code></pre>
-<table>
-<thead>
-<tr class="header">
-<th></th>
-<th align="right">coag</th>
-<th align="left">groups</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>C</td>
-<td align="right">68</td>
-<td align="left">a</td>
-</tr>
-<tr class="even">
-<td>B</td>
-<td align="right">66</td>
-<td align="left">a</td>
-</tr>
-<tr class="odd">
-<td>A</td>
-<td align="right">61</td>
-<td align="left">b</td>
-</tr>
-<tr class="even">
-<td>D</td>
-<td align="right">61</td>
-<td align="left">b</td>
-</tr>
-<tr class="odd">
-<td>Obser</td>
-<td align="right">vemos l</td>
-<td align="left">os resultados:</td>
-</tr>
-</tbody>
-</table>
+<pre><code>##   coag groups
+## C   68      a
+## B   66      a
+## A   61      b
+## D   61      b</code></pre>
+<p>Observemos los resultados:</p>
 <ul>
 <li><p>Con <code>group=FALSE</code> y sufijo <code>comparison</code>, obtenemos una tabla donde, para cada pareja de niveles del factor, se da, entre otros datos, un p-valor (la columna <code>p value</code>). Estos p-valores tienen el significado usual. En este ejemplo, de los p-valores se desprende que no podemos rechazar que las medias para los pares A-D y B-C sean iguales (los p-valores son grandes), mientras que, en cambio, hay evidencia significativa de que el resto de los pares de dietas tienen medias diferentes (los p-valores son pequeños). Las dos últimas columnas de la tabla definen intervalos de confianza (del nivel de confianza correspondiente al nivel de significación que hayamos entrado con <code>alpha</code>) para las diferencias de la medias en el orden especificado en la primera columna.</p></li>
-<li><p>Con <code>group=TRUE</code> y sufijo <code>groups</code>, obtenemos una tabla donde se agrupan los niveles según la igualdad de medias. En este caso, asigna las dietas B y C al grupo <code>a</code> y las dietas A y D al grupo <code>b</code>: dietas en el mismo grupo podemos aceptar que tienen medias iguales, dietas en grupos diferentes podemos concluir que tienen medias diferentes.</p></li>
+<li><p>Con <code>group=TRUE</code> y sufijo <code>groups</code>, obtenemos una tabla donde se agrupan los niveles según la igualdad de medias. En este caso, asigna las dietas B y C al grupo <code>a</code> y las dietas A y D al grupo <code>b</code>: dietas en el mismo grupo hemos de aceptar que tienen medias iguales, dietas en grupos diferentes podemos concluir que tienen medias diferentes.</p></li>
 </ul>
 </div>
 <div id="metodo-de-tukey" class="section level3">
@@ -1768,6 +1406,22 @@ Con el sufijo <code>$&quot;Pr(&gt;F)&quot;</code>, nos da directamente la column
 <p><em>(5)</em> En un experimento hemos comparado el valor medio de una cierta variable en cuatro poblaciones, A, B, C y D. Hemos tomado una muestra de 5 individuos de cada población y hemos medido en ellos la variable en cuestión. Los resultados para cada población han sido los siguientes: A=(23.1,17.2,20.1,19.5,18.8), B=(22.6,15.5,19.3,18.5,16.2), C=(21.1,26.4,24.7,21.4,20.9) y D=(20.4,24,23.4,24.9,21.5).
 Realizad un test t por parejas de Bonferroni sobre estos datos con un nivel de significación del 5%, para determinar qué pares de poblaciones podemos concluir que tienen medias diferentes con este nivel de significación. Tenéis que decir si podéis rechazar (con un SI) o no (con un NO), con un nivel de significación del 5%, la igualdad de las medias de las poblaciones B y C.</p>
 </div>
+<div id="ejercicio" class="section level3">
+<h3><span class="header-section-number">9.9.1</span> Ejercicio</h3>
+<p><em>(1)</em> La tabla de datos <code>butterfat</code> del paquete <strong>faraway</strong> contiene los porcentajes de contenido de grasa en la leche en muestras aleatorias de 5 razas. Para cada raza hay 20 vacas en la muestra: 10 vacas de dos años, <code>2year</code>, y 10 de más de 4 años, <code>Mature</code>. Las variables de la tabla de datos son:</p>
+<ul>
+<li><code>Butterfat</code>: Porcentaje de contenido de grasa en la leche.</li>
+<li><code>Breed</code>: un factor que indica la raza de la vaca. Los niveles son: <code>Ayrshire</code>, <code>Canadian</code>, <code>Guernsey</code>, <code>Holstein-Fresian</code> y <code>Jersey</code>.</li>
+<li><code>Age</code>: una variable factor con los valores ya comentados: <code>2year</code> y <code>Mature</code>.</li>
+</ul>
+<p>Queremos usar estos datos para contrastar si el porcentaje medio de contenido de grasa en la leche depende de la raza o de la edad de la vaca.</p>
+<p><em>(a)</em> Dibujad sendos gráficos con los diagrama de cajas de los porcentajes de contenido de grasa en la leche de las vacas de la muestra separados por la raza de la vaca y separados por su edad, respectivamente. Comentadlos.</p>
+<p><em>(b)</em> Contrastad si cada muestra de una combinación de niveles (raza,edad) proviene de una distribución normal usando el test de Shapiro-Wilks con un nivel de significación <span class="math inline">\(\alpha =0.05\)</span>.</p>
+<p><em>(c)</em> Contrastad si todas las muestras de combinaciones de niveles (raza,edad) tienen la misma varianza, con un nivel de significación <span class="math inline">\(\alpha =0.05\)</span>.</p>
+<p><em>(d)</em> Se satisfacen las hipótesis para poder usar un ANOVA de 2 vías para comprobar si el porcentaje medio de grasa en la leche depende de la raza o de la edad de la vaca?</p>
+<p><em>(e)</em> Sea cual sea vuestra respuesta a la pregunta anterior, realizad un test ANOVA de 2 vías para contrastar con un nivel de significación <span class="math inline">\(\alpha =0.05\)</span> si el porcentaje medio de grasa en la leche depende de la raza o de la edad de la vaca (no hace falta contrastar las combinaciones (raza,edad)). Hay interacción entre la raza de la vaca y la edad de la misma?</p>
+<p><em>(f)</em> Sea cual sea vuestra respuesta a la pregunta <em>(d)</em>, realizad también los contrastes de <em>(e)</em> mediante un test no paramétrico adecuado con un nivel de significación <span class="math inline">\(\alpha =0.05\)</span>. Coinciden las conclusiones?</p>
+</div>
 <div id="respuestas-al-test-8" class="section level3 unnumbered">
 <h3>Respuestas al test</h3>
 <p><em>(1)</em> 0.013 SI</p>
@@ -1877,19 +1531,71 @@ DF=<span class="kw">data.frame</span>(y,fact.A,fact.X)
 ## D 0.151 0.041 0.861
 ## 
 ## P value adjustment method: holm</code></pre>
+</div>
+<div id="soluciones-sucintas-del-ejercicio" class="section level3">
+<h3><span class="header-section-number">9.9.2</span> Soluciones sucintas del ejercicio</h3>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(faraway)
+BF=butterfat
+<span class="kw">str</span>(BF)</code></pre>
+<pre><code>## &#39;data.frame&#39;:    100 obs. of  3 variables:
+##  $ Butterfat: num  3.74 4.01 3.77 3.78 4.1 4.06 4.27 3.94 4.11 4.25 ...
+##  $ Breed    : Factor w/ 5 levels &quot;Ayrshire&quot;,&quot;Canadian&quot;,..: 1 1 1 1 1 1 1 1 1 1 ...
+##  $ Age      : Factor w/ 2 levels &quot;2year&quot;,&quot;Mature&quot;: 2 1 2 1 2 1 2 1 2 1 ...</code></pre>
+<p><em>(a)</em></p>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">boxplot</span>(Butterfat<span class="op">~</span>Breed, <span class="dt">data=</span>BF)</code></pre>
+<p><img src="AprendeR-Parte-II_files/figure-html/unnamed-chunk-556-1.png" width="480" style="display: block; margin: auto;" /></p>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">boxplot</span>(Butterfat<span class="op">~</span>Age, <span class="dt">data=</span>BF)</code></pre>
+<p><img src="AprendeR-Parte-II_files/figure-html/unnamed-chunk-557-1.png" width="480" style="display: block; margin: auto;" /></p>
+<p><em>(b)</em></p>
+<pre class="sourceCode r"><code class="sourceCode r">Test.SW=<span class="cf">function</span>(x){<span class="kw">shapiro.test</span>(x)<span class="op">$</span>p.value}
+<span class="kw">aggregate</span>(Butterfat<span class="op">~</span>Breed<span class="op">:</span>Age, <span class="dt">data=</span>BF,<span class="dt">FUN=</span>Test.SW)</code></pre>
+<pre><code>##               Breed    Age  Butterfat
+## 1          Ayrshire  2year 0.99921213
+## 2          Canadian  2year 0.20778457
+## 3          Guernsey  2year 0.95640414
+## 4  Holstein-Fresian  2year 0.16320779
+## 5            Jersey  2year 0.69510564
+## 6          Ayrshire Mature 0.21757333
+## 7          Canadian Mature 0.73627123
+## 8          Guernsey Mature 0.33518154
+## 9  Holstein-Fresian Mature 0.05739251
+## 10           Jersey Mature 0.10347415</code></pre>
+<p>Podemos concluir con un nivel de significación del 5% que todas las muestras provienen de variables normales.</p>
+<p><em>(c)</em></p>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">bartlett.test</span>(Butterfat<span class="op">~</span><span class="kw">interaction</span>(Breed,Age), <span class="dt">data=</span>BF)</code></pre>
+<pre><code>## 
+##  Bartlett test of homogeneity of variances
+## 
+## data:  Butterfat by interaction(Breed, Age)
+## Bartlett&#39;s K-squared = 24.356, df = 9, p-value = 0.003772</code></pre>
+<p>No podemos aceptar que se dé homocedasticidad.</p>
+<p><em>(d)</em> No.</p>
+<p><em>(e)</em></p>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">summary</span>(<span class="kw">aov</span>(Butterfat<span class="op">~</span>Breed<span class="op">*</span>Age,<span class="dt">data=</span>BF))</code></pre>
+<pre><code>##             Df Sum Sq Mean Sq F value Pr(&gt;F)    
+## Breed        4  34.32   8.580  49.565 &lt;2e-16 ***
+## Age          1   0.27   0.274   1.580  0.212    
+## Breed:Age    4   0.51   0.128   0.742  0.566    
+## Residuals   90  15.58   0.173                   
+## ---
+## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1</code></pre>
+<p><em>(f)</em></p>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(WRS2)
+<span class="kw">pbad2way</span>(Butterfat<span class="op">~</span>Breed<span class="op">*</span>Age,<span class="dt">data=</span>BF, <span class="dt">est=</span><span class="st">&quot;median&quot;</span>, <span class="dt">nboot=</span><span class="dv">500</span>)</code></pre>
+<pre><code>## Error in solve.default(cov, ...): system is computationally singular: reciprocal condition number = 4.97982e-19</code></pre>
+<p>¡Ups!</p>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">pbad2way</span>(Butterfat<span class="op">~</span>Breed<span class="op">*</span>Age,<span class="dt">data=</span>BF, <span class="dt">est=</span><span class="st">&quot;median&quot;</span>, <span class="dt">nboot=</span><span class="dv">500</span>,<span class="dt">pro.dis=</span><span class="ot">TRUE</span>)</code></pre>
+<pre><code>## Call:
+## pbad2way(formula = Butterfat ~ Breed * Age, data = BF, est = &quot;median&quot;, 
+##     nboot = 500, pro.dis = TRUE)
+## 
+##           p.value
+## Breed        0.00
+## Age          0.28
+## Breed:Age    0.83</code></pre>
 
 </div>
 </div>
-</div>
-<div class="footnotes">
-<hr />
-<ol start="8">
-<li id="fn8"><p>Véase <em>Statistics for Experimenters</em> (2a edición), de G. P. Box, W. G. Hunter y J. S. Hunte (Wiley, 2005), p. 133.<a href="chap-ANOVA.html#fnref8" class="footnote-back">↩</a></p></li>
-<li id="fn9"><p>Véase <em>Experimental Design and Analysis</em>, de M. Lentner y T. Bishop (Valley Book Co. 1986), p. 428.<a href="chap-ANOVA.html#fnref9" class="footnote-back">↩</a></p></li>
-<li id="fn10"><p>Véase <em>The Statistics of Bioassay</em> de C. I. Bliss (Academic Press, 1952), p. 499-501.<a href="chap-ANOVA.html#fnref10" class="footnote-back">↩</a></p></li>
-<li id="fn11"><p>Véase <em>Practical Regression and Anova using R</em>, de J. Faraway, p. 186. Este texto se puede descargar de la página web <a href="https://cran.r-project.org/doc/contrib/Faraway-PRA.pdf" class="uri">https://cran.r-project.org/doc/contrib/Faraway-PRA.pdf</a>.<a href="chap-ANOVA.html#fnref11" class="footnote-back">↩</a></p></li>
-<li id="fn12"><p>Véase “An analysis of transformations”, de G. Box y D. Cox, <em>J. Roy. Stat. Soc. Series B</em> 26 (1964), pp. 211-252. Véase también <em>Practical Regression and Anova using R</em>, de J. Faraway, p. 182.<a href="chap-ANOVA.html#fnref12" class="footnote-back">↩</a></p></li>
-</ol>
 </div>
             </section>
 
@@ -1927,16 +1633,17 @@ gitbook.start({
 "size": 2
 },
 "edit": {
-"link": "https://github.com/cescrossello/AprendeR-II/edit/master/09-ANOVA.Rmd",
-"text": "Edit"
+"link": null,
+"text": null
 },
 "history": {
 "link": null,
 "text": null
 },
-"download": ["AprendeR-Parte-II.pdf", "AprendeR-Parte-II.epub"],
+"download": null,
 "toc": {
-"collapse": "subsection"
+"collapse": "subsection",
+"download": ["pdf", "epub"]
 }
 });
 });

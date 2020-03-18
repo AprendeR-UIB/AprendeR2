@@ -25,7 +25,7 @@
 <meta name="author" content="The UIB-AprendeR team">
 
 
-<meta name="date" content="2020-02-16">
+<meta name="date" content="2020-03-18">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -248,7 +248,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="9.8" data-path="chap-ANOVA.html"><a href="chap-ANOVA.html#guia-rapida-7"><i class="fa fa-check"></i><b>9.8</b> Guía rápida</a></li>
 <li class="chapter" data-level="9.9" data-path="chap-ANOVA.html"><a href="chap-ANOVA.html#ejercicios-10"><i class="fa fa-check"></i><b>9.9</b> Ejercicios</a><ul>
 <li class="chapter" data-level="" data-path="chap-ANOVA.html"><a href="chap-ANOVA.html#test-4"><i class="fa fa-check"></i>Test</a></li>
+<li class="chapter" data-level="9.9.1" data-path="chap-ANOVA.html"><a href="chap-ANOVA.html#ejercicio"><i class="fa fa-check"></i><b>9.9.1</b> Ejercicio</a></li>
 <li class="chapter" data-level="" data-path="chap-ANOVA.html"><a href="chap-ANOVA.html#respuestas-al-test-8"><i class="fa fa-check"></i>Respuestas al test</a></li>
+<li class="chapter" data-level="9.9.2" data-path="chap-ANOVA.html"><a href="chap-ANOVA.html#soluciones-sucintas-del-ejercicio"><i class="fa fa-check"></i><b>9.9.2</b> Soluciones sucintas del ejercicio</a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="10" data-path="chap-regresion.html"><a href="chap-regresion.html"><i class="fa fa-check"></i><b>10</b> Regresión lineal</a><ul>
@@ -279,9 +281,6 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="12.4" data-path="extras-de-r-markdown.html"><a href="extras-de-r-markdown.html#tablas"><i class="fa fa-check"></i><b>12.4</b> Tablas</a></li>
 <li class="chapter" data-level="12.5" data-path="extras-de-r-markdown.html"><a href="extras-de-r-markdown.html#formulas-matematicas"><i class="fa fa-check"></i><b>12.5</b> Fórmulas matemáticas</a></li>
 </ul></li>
-<li class="divider"></li>
-<li><a href="https://github.com/cescrossello/AprendeR-II" target="blank">Publicado con  bookdown</a></li>
-
 </ul>
 
       </nav>
@@ -587,53 +586,53 @@ muestra_long_pet</code></pre>
 <pre><code>## [1] 10  7  6</code></pre>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">set.seed</span>(<span class="ot">NULL</span>)
 <span class="kw">sample</span>(<span class="dv">10</span>,<span class="dv">3</span>)</code></pre>
-<pre><code>## [1] 7 3 9</code></pre>
+<pre><code>## [1]  7 10  8</code></pre>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">set.seed</span>(<span class="dv">100</span>)
 <span class="kw">sample</span>(<span class="dv">10</span>,<span class="dv">3</span>)</code></pre>
 <pre><code>## [1] 10  7  6</code></pre>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">set.seed</span>(<span class="ot">NULL</span>)
 <span class="kw">sample</span>(<span class="dv">10</span>,<span class="dv">3</span>)</code></pre>
-<pre><code>## [1] 1 7 3</code></pre>
+<pre><code>## [1]  9  2 10</code></pre>
 <p>A veces querremos tomar diversas muestras aleatorias de una misma población y calcular algo sobre ellas. Para hacerlo podemos usar la función <code>replicate</code>. La sintaxis básica es</p>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">replicate</span>(n, instrucción)</code></pre>
 <p>donde <code>n</code> es el número de repeticiones de la <code>instrucción</code>. Por ejemplo, para tomar 10 muestras aleatorias simples de 15 longitudes de pétalos de flores iris, podemos hacer:</p>
 <pre class="sourceCode r"><code class="sourceCode r">muestras=<span class="kw">replicate</span>(<span class="dv">10</span>, <span class="kw">sample</span>(iris<span class="op">$</span>Petal.Length,<span class="dv">15</span>,<span class="dt">replace=</span><span class="ot">TRUE</span>))
 muestras</code></pre>
 <pre><code>##       [,1] [,2] [,3] [,4] [,5] [,6] [,7] [,8] [,9] [,10]
-##  [1,]  5.1  1.3  4.5  4.1  4.3  5.0  4.5  1.4  1.5   4.0
-##  [2,]  1.3  1.2  1.6  4.5  5.4  6.1  1.3  4.5  1.6   5.0
-##  [3,]  1.4  6.9  3.9  6.7  4.7  4.6  5.8  6.1  4.4   4.9
-##  [4,]  6.1  6.9  4.7  6.9  4.9  1.4  6.1  1.4  3.3   1.5
-##  [5,]  1.6  5.0  4.9  5.2  5.1  6.6  3.9  5.4  5.2   1.7
-##  [6,]  4.5  6.1  1.3  4.6  1.3  1.5  1.6  3.5  1.2   3.5
-##  [7,]  4.6  1.7  1.5  4.9  4.2  4.9  3.7  1.3  6.1   5.6
-##  [8,]  1.6  4.2  1.4  1.3  5.6  4.5  4.2  1.3  1.2   3.9
-##  [9,]  5.1  1.3  4.0  1.4  5.2  5.0  5.2  4.7  4.7   1.3
-## [10,]  5.1  5.0  5.6  1.6  5.7  1.3  4.1  5.7  5.6   1.3
-## [11,]  1.6  4.7  4.5  4.1  4.8  6.6  1.3  4.5  1.6   1.3
-## [12,]  4.9  1.6  1.4  5.5  5.9  4.0  5.9  1.4  5.5   4.8
-## [13,]  3.0  4.0  4.5  1.6  1.4  3.8  1.4  4.9  4.5   5.4
-## [14,]  1.7  6.1  5.6  4.5  1.0  5.9  4.3  3.5  1.6   5.6
-## [15,]  4.9  5.6  4.5  5.1  1.6  5.3  3.0  4.8  1.6   6.1</code></pre>
+##  [1,]  4.2  4.7  5.6  5.6  5.0  5.2  1.7  4.5  4.5   5.1
+##  [2,]  5.2  3.9  1.3  4.7  5.2  1.4  4.5  5.1  4.9   1.2
+##  [3,]  5.5  3.5  4.5  4.6  4.3  6.1  6.0  4.0  1.5   1.7
+##  [4,]  1.3  5.3  5.1  5.1  1.7  4.4  3.8  6.1  3.8   1.5
+##  [5,]  1.4  4.3  1.5  4.1  5.6  1.5  5.8  4.5  1.3   6.9
+##  [6,]  1.4  5.5  5.8  6.1  1.5  5.1  6.1  5.1  1.5   5.0
+##  [7,]  6.7  6.1  1.6  4.9  1.4  6.1  4.5  4.7  5.0   5.8
+##  [8,]  1.3  4.5  1.5  1.4  6.3  1.4  5.0  3.8  5.2   4.7
+##  [9,]  4.1  1.5  5.0  4.8  4.5  5.6  5.5  5.4  4.7   3.5
+## [10,]  5.0  4.3  3.7  4.6  5.6  4.7  6.0  5.1  5.1   5.6
+## [11,]  1.6  1.0  1.4  5.4  5.1  1.3  1.3  1.5  5.4   5.7
+## [12,]  1.4  5.5  4.4  1.5  3.9  4.5  1.5  1.4  1.5   4.2
+## [13,]  1.5  4.0  1.6  6.3  5.3  1.6  5.1  5.5  4.7   1.6
+## [14,]  1.4  6.0  1.9  1.6  1.6  4.5  5.0  5.1  5.2   1.4
+## [15,]  1.4  3.0  1.3  4.1  1.6  4.1  1.4  4.7  6.0   1.9</code></pre>
 <p>Observad que R ha organizado los 10 vectores generados con el <code>replicate</code> como columnas de una matriz.</p>
 <p>Si solo nos hubiera interesado calcular las medias, redondeadas a 2 cifras decimales, de 10 muestras aleatorias simples de 15 longitudes de pétalos de flores iris, podríamos haber hecho</p>
 <pre class="sourceCode r"><code class="sourceCode r">medias=<span class="kw">replicate</span>(<span class="dv">10</span>,<span class="kw">round</span>(<span class="kw">mean</span>(<span class="kw">sample</span>(iris<span class="op">$</span>Petal.Length,<span class="dv">15</span>,<span class="dt">replace=</span><span class="ot">TRUE</span>)),<span class="dv">2</span>))
 medias</code></pre>
-<pre><code>##  [1] 3.43 3.47 3.32 3.91 3.94 2.66 3.55 3.31 3.62 3.21</code></pre>
+<pre><code>##  [1] 3.42 3.85 4.00 4.17 3.91 4.11 3.08 3.69 3.67 3.76</code></pre>
 <p>En este caso, como el resultado de la instrucción que iteramos es un solo número, los resultados del <code>replicate</code> forman un vector.</p>
 <p>¿Y si quisiéramos la media y la desviación típica muestral de 10 muestras de estas? No podemos usar sin más dos <code>replicate</code>, como en</p>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">rbind</span>(<span class="kw">replicate</span>(<span class="dv">10</span>,<span class="kw">round</span>(<span class="kw">mean</span>(<span class="kw">sample</span>(iris<span class="op">$</span>Petal.Length,<span class="dv">15</span>,<span class="dt">replace=</span><span class="ot">TRUE</span>)),<span class="dv">2</span>)),
 <span class="kw">replicate</span>(<span class="dv">10</span>,<span class="kw">round</span>(<span class="kw">sd</span>(<span class="kw">sample</span>(iris<span class="op">$</span>Petal.Length,<span class="dv">15</span>,<span class="dt">replace=</span><span class="ot">TRUE</span>)),<span class="dv">2</span>)))</code></pre>
 <pre><code>##      [,1] [,2] [,3] [,4] [,5] [,6] [,7] [,8] [,9] [,10]
-## [1,] 3.73 3.99 3.38 4.57 3.85 2.93 3.38 3.53 3.70  3.96
-## [2,] 1.74 1.81 1.55 1.30 1.76 1.56 1.86 1.93 1.71  1.90</code></pre>
+## [1,] 4.05 3.69 3.77 3.61 3.43 2.98 3.93 4.37 3.35  4.09
+## [2,] 1.75 1.35 1.71 1.79 1.76 1.69 1.86 1.72 2.02  1.64</code></pre>
 <p>porque es muy probable que el conjunto de muestras de las que hemos calculado la media en el primer <code>replicate</code> sea diferente del conjunto de muestras de las que hemos calculado la desviación típica en el segundo <code>replicate</code>. Lo más adecuado es definir una función que calcule un vector con estos dos valores (la función <code>info</code> del <em>chunk</em> siguiente), y luego usarla dentro de un único <code>replicate</code>:</p>
 <pre class="sourceCode r"><code class="sourceCode r">info=<span class="cf">function</span>(x){<span class="kw">round</span>(<span class="kw">c</span>(<span class="kw">mean</span>(x),<span class="kw">sd</span>(x)),<span class="dv">2</span>)}
 info_lp=<span class="kw">replicate</span>(<span class="dv">10</span>,<span class="kw">info</span>(<span class="kw">sample</span>(iris<span class="op">$</span>Petal.Length,<span class="dv">15</span>,<span class="dt">replace=</span><span class="ot">TRUE</span>)))
 info_lp</code></pre>
 <pre><code>##      [,1] [,2] [,3] [,4] [,5] [,6] [,7] [,8] [,9] [,10]
-## [1,] 3.96 4.58 4.15 3.61 3.11 3.31 3.87 2.96 4.36  4.59
-## [2,] 2.00 1.48 1.57 1.91 1.71 2.03 1.89 1.81 1.72  1.72</code></pre>
+## [1,] 3.45 3.52 3.79 3.82 4.21 4.35 3.69 3.56 3.62  2.89
+## [2,] 1.71 1.83 1.72 1.64 1.63 1.93 1.93 1.85 1.72  1.85</code></pre>
 <p>En este último caso, R ha organizado la información obtenida como columnas de una matriz: la primera fila son las medias y la segunda las desviaciones típicas.</p>
 <p>Naturalmente, la función <code>set.seed</code> permite “fijar” el resultado de un <code>replicate</code> que incluya la generación de valores aleatorios:</p>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">set.seed</span>(<span class="dv">1000</span>)
@@ -983,16 +982,17 @@ gitbook.start({
 "size": 2
 },
 "edit": {
-"link": "https://github.com/cescrossello/AprendeR-II/edit/master/02-Muestreo.Rmd",
-"text": "Edit"
+"link": null,
+"text": null
 },
 "history": {
 "link": null,
 "text": null
 },
-"download": ["AprendeR-Parte-II.pdf", "AprendeR-Parte-II.epub"],
+"download": null,
 "toc": {
-"collapse": "subsection"
+"collapse": "subsection",
+"download": ["pdf", "epub"]
 }
 });
 });

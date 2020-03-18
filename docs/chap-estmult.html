@@ -25,7 +25,7 @@
 <meta name="author" content="The UIB-AprendeR team">
 
 
-<meta name="date" content="2020-02-16">
+<meta name="date" content="2020-03-18">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -248,7 +248,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="9.8" data-path="chap-ANOVA.html"><a href="chap-ANOVA.html#guia-rapida-7"><i class="fa fa-check"></i><b>9.8</b> Guía rápida</a></li>
 <li class="chapter" data-level="9.9" data-path="chap-ANOVA.html"><a href="chap-ANOVA.html#ejercicios-10"><i class="fa fa-check"></i><b>9.9</b> Ejercicios</a><ul>
 <li class="chapter" data-level="" data-path="chap-ANOVA.html"><a href="chap-ANOVA.html#test-4"><i class="fa fa-check"></i>Test</a></li>
+<li class="chapter" data-level="9.9.1" data-path="chap-ANOVA.html"><a href="chap-ANOVA.html#ejercicio"><i class="fa fa-check"></i><b>9.9.1</b> Ejercicio</a></li>
 <li class="chapter" data-level="" data-path="chap-ANOVA.html"><a href="chap-ANOVA.html#respuestas-al-test-8"><i class="fa fa-check"></i>Respuestas al test</a></li>
+<li class="chapter" data-level="9.9.2" data-path="chap-ANOVA.html"><a href="chap-ANOVA.html#soluciones-sucintas-del-ejercicio"><i class="fa fa-check"></i><b>9.9.2</b> Soluciones sucintas del ejercicio</a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="10" data-path="chap-regresion.html"><a href="chap-regresion.html"><i class="fa fa-check"></i><b>10</b> Regresión lineal</a><ul>
@@ -279,9 +281,6 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="12.4" data-path="extras-de-r-markdown.html"><a href="extras-de-r-markdown.html#tablas"><i class="fa fa-check"></i><b>12.4</b> Tablas</a></li>
 <li class="chapter" data-level="12.5" data-path="extras-de-r-markdown.html"><a href="extras-de-r-markdown.html#formulas-matematicas"><i class="fa fa-check"></i><b>12.5</b> Fórmulas matemáticas</a></li>
 </ul></li>
-<li class="divider"></li>
-<li><a href="https://github.com/cescrossello/AprendeR-II" target="blank">Publicado con  bookdown</a></li>
-
 </ul>
 
       </nav>
@@ -419,14 +418,14 @@ X</code></pre>
 <li>Su vector de varianzas muestrales es:</li>
 </ul>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">sapply</span>(X, var) </code></pre>
-<pre><code>##       V1       V2       V3 
-## 0.916667 3.000000 2.250000</code></pre>
+<pre><code>##        V1        V2        V3 
+## 0.9166667 3.0000000 2.2500000</code></pre>
 <ul>
 <li>Su vector de desviaciones típicas muestrales es:</li>
 </ul>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">sapply</span>(X, sd) </code></pre>
-<pre><code>##       V1       V2       V3 
-## 0.957427 1.732051 1.500000</code></pre>
+<pre><code>##        V1        V2        V3 
+## 0.9574271 1.7320508 1.5000000</code></pre>
 <ul>
 <li>Su vector de varianzas es:</li>
 </ul>
@@ -439,8 +438,8 @@ X</code></pre>
 </ul>
 <pre class="sourceCode r"><code class="sourceCode r">sd_ver=<span class="cf">function</span>(x){<span class="kw">sqrt</span>(<span class="kw">var_ver</span>(x))} <span class="co">#Desv. típica &quot;verdadera&quot;</span>
 <span class="kw">sapply</span>(X, sd_ver) </code></pre>
-<pre><code>##       V1       V2       V3 
-## 0.829156 1.500000 1.299038</code></pre>
+<pre><code>##        V1        V2        V3 
+## 0.8291562 1.5000000 1.2990381</code></pre>
 
 <div class="remark">
  <span class="remark"><em>Nota. </em></span> De ahora en adelante, supondremos que todos los vectores de datos cuantitativos que aparezcan en lo que queda de lección, incluidas las columnas de tablas de datos, son no constantes y, por lo tanto, tienen desviación típica no nula.
@@ -525,8 +524,8 @@ del Ejemplo <a href="chap-estmult.html#exm:multex0">8.1</a>. Ya la hemos centrad
 </div>
 
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">sapply</span>(X, sd_ver) </code></pre>
-<pre><code>##       V1       V2       V3 
-## 0.829156 1.500000 1.299038</code></pre>
+<pre><code>##        V1        V2        V3 
+## 0.8291562 1.5000000 1.2990381</code></pre>
 <p>Dividiendo cada columna de la matriz centrada <span class="math inline">\(\widetilde{X}\)</span> por la correspondiente desviación típica obtenemos:</p>
 <p><span class="math display">\[
 \begin{array}{rl}
@@ -590,57 +589,57 @@ X_centrada</code></pre>
 <p>Como ya hemos avisado, para tipificar esta tabla de datos <em>no</em> podemos hacer lo siguiente:</p>
 <pre class="sourceCode r"><code class="sourceCode r">X_tip=<span class="kw">scale</span>(X)
 X_tip</code></pre>
-<pre><code>##             V1        V2        V3
-## [1,] -0.783349 -0.866025  0.833333
-## [2,] -0.783349 -0.288675  0.833333
-## [3,]  0.261116  1.443376 -1.166667
-## [4,]  1.305582 -0.288675 -0.500000
+<pre><code>##              V1         V2         V3
+## [1,] -0.7833495 -0.8660254  0.8333333
+## [2,] -0.7833495 -0.2886751  0.8333333
+## [3,]  0.2611165  1.4433757 -1.1666667
+## [4,]  1.3055824 -0.2886751 -0.5000000
 ## attr(,&quot;scaled:center&quot;)
 ##   V1   V2   V3 
 ## 1.75 0.50 1.75 
 ## attr(,&quot;scaled:scale&quot;)
-##       V1       V2       V3 
-## 0.957427 1.732051 1.500000</code></pre>
+##        V1        V2        V3 
+## 0.9574271 1.7320508 1.5000000</code></pre>
 <p>Para hacerlo bien según la definición que hemos dado, tenemos dos opciones. Una es multiplicar la matriz anterior por <span class="math inline">\(\sqrt{n/(n-1)}\)</span>, donde <span class="math inline">\(n\)</span> es el número de filas de la tabla. (El motivo es que, como <span class="math inline">\(\widetilde{s}_X=\sqrt{\frac{n}{n-1}}\cdot s_X\)</span>, se tiene que <span class="math inline">\(\frac{1}{s_X}=\sqrt{\frac{n}{n-1}}\cdot \frac{1}{\widetilde{s}_X}\)</span>; por lo tanto, si queríamos dividir por <span class="math inline">\(s_X\)</span> y <code>scale(X)</code> ha dividido por <span class="math inline">\(\widetilde{s}_X\)</span>, basta multiplicar su resultado por <span class="math inline">\(\sqrt{\frac{n}{n-1}}\)</span> para obtener el efecto deseado.)</p>
 <pre class="sourceCode r"><code class="sourceCode r">n=<span class="kw">dim</span>(X)[<span class="dv">1</span>]  <span class="co">#Número de filas de X</span>
 X_tip=<span class="kw">scale</span>(X)<span class="op">*</span><span class="kw">sqrt</span>(n<span class="op">/</span>(n<span class="dv">-1</span>)) 
 X_tip</code></pre>
-<pre><code>##             V1        V2       V3
-## [1,] -0.904534 -1.000000  0.96225
-## [2,] -0.904534 -0.333333  0.96225
-## [3,]  0.301511  1.666667 -1.34715
-## [4,]  1.507557 -0.333333 -0.57735
+<pre><code>##              V1         V2         V3
+## [1,] -0.9045340 -1.0000000  0.9622504
+## [2,] -0.9045340 -0.3333333  0.9622504
+## [3,]  0.3015113  1.6666667 -1.3471506
+## [4,]  1.5075567 -0.3333333 -0.5773503
 ## attr(,&quot;scaled:center&quot;)
 ##   V1   V2   V3 
 ## 1.75 0.50 1.75 
 ## attr(,&quot;scaled:scale&quot;)
-##       V1       V2       V3 
-## 0.957427 1.732051 1.500000</code></pre>
+##        V1        V2        V3 
+## 0.9574271 1.7320508 1.5000000</code></pre>
 <p>Ahora sí que coincide con la matriz obtenida “a mano” en el Ejemplo <a href="chap-estmult.html#exm:multex1-3">8.3</a>.</p>
 <p>Otra posibilidad es usar, como valor del parámetro <code>scale</code>, el vector <span class="math inline">\(s_X\)</span> de desviaciones típicas de las columnas.</p>
 <pre class="sourceCode r"><code class="sourceCode r">X_tip1=<span class="kw">scale</span>(X, <span class="dt">scale=</span><span class="kw">sapply</span>(X, sd_ver)) 
 X_tip1</code></pre>
-<pre><code>##             V1        V2       V3
-## [1,] -0.904534 -1.000000  0.96225
-## [2,] -0.904534 -0.333333  0.96225
-## [3,]  0.301511  1.666667 -1.34715
-## [4,]  1.507557 -0.333333 -0.57735
+<pre><code>##              V1         V2         V3
+## [1,] -0.9045340 -1.0000000  0.9622504
+## [2,] -0.9045340 -0.3333333  0.9622504
+## [3,]  0.3015113  1.6666667 -1.3471506
+## [4,]  1.5075567 -0.3333333 -0.5773503
 ## attr(,&quot;scaled:center&quot;)
 ##   V1   V2   V3 
 ## 1.75 0.50 1.75 
 ## attr(,&quot;scaled:scale&quot;)
-##       V1       V2       V3 
-## 0.829156 1.500000 1.299038</code></pre>
+##        V1        V2        V3 
+## 0.8291562 1.5000000 1.2990381</code></pre>
 <p>Observaréis que la matriz resultante es la misma, pero el atributo que indica el vector por el que hemos dividido las columnas es diferente: en este caso, es el de desviaciones típicas.
 Ahora, en ambos casos, podemos usar la función <code>attr</code> para eliminar los dos atributos, <code>&quot;scaled:center&quot;</code> y <code>&quot;scaled:scale&quot;</code>, que se han añadido a la matriz tipificada. Por ejemplo:</p>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">attr</span>(X_tip, <span class="st">&quot;scaled:center&quot;</span>)=<span class="ot">NULL</span>
 <span class="kw">attr</span>(X_tip, <span class="st">&quot;scaled:scale&quot;</span>)=<span class="ot">NULL</span>
 X_tip</code></pre>
-<pre><code>##             V1        V2       V3
-## [1,] -0.904534 -1.000000  0.96225
-## [2,] -0.904534 -0.333333  0.96225
-## [3,]  0.301511  1.666667 -1.34715
-## [4,]  1.507557 -0.333333 -0.57735</code></pre>
+<pre><code>##              V1         V2         V3
+## [1,] -0.9045340 -1.0000000  0.9622504
+## [2,] -0.9045340 -0.3333333  0.9622504
+## [3,]  0.3015113  1.6666667 -1.3471506
+## [4,]  1.5075567 -0.3333333 -0.5773503</code></pre>
 </div>
 <div id="covarianzas-y-correlaciones" class="section level2">
 <h2><span class="header-section-number">8.3</span> Covarianzas y correlaciones</h2>
@@ -792,10 +791,10 @@ $$
 -->
 <p>Su matriz de covarianzas muestrales es</p>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">cov</span>(X)  </code></pre>
-<pre><code>##           V1       V2       V3
-## V1  0.916667  0.50000 -1.08333
-## V2  0.500000  3.00000 -2.16667
-## V3 -1.083333 -2.16667  2.25000</code></pre>
+<pre><code>##            V1        V2        V3
+## V1  0.9166667  0.500000 -1.083333
+## V2  0.5000000  3.000000 -2.166667
+## V3 -1.0833333 -2.166667  2.250000</code></pre>
 <p>y su matriz de covarianzas es</p>
 <pre class="sourceCode r"><code class="sourceCode r">n=<span class="kw">dim</span>(X)[<span class="dv">1</span>]
 ((n<span class="dv">-1</span>)<span class="op">/</span>n)<span class="op">*</span><span class="kw">cov</span>(X)  </code></pre>
@@ -878,12 +877,12 @@ r_{1 2}=\frac{0.375}{0.8291562\cdot 1.5}=0.3015113.
 ## 4  3  0  1</code></pre>
 <p>La correlación de sus dos primeras columnas es:</p>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">cor</span>(X<span class="op">$</span>V1, X<span class="op">$</span>V2)</code></pre>
-<pre><code>## [1] 0.301511</code></pre>
+<pre><code>## [1] 0.3015113</code></pre>
 <p>que coincide con el valor obtenido “a mano”. Comprobemos ahora que su cuadrado es igual al valor de <span class="math inline">\(R^2\)</span> de la regresión lineal:</p>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">cor</span>(X<span class="op">$</span>V1, X<span class="op">$</span>V2)<span class="op">^</span><span class="dv">2</span></code></pre>
-<pre><code>## [1] 0.0909091</code></pre>
+<pre><code>## [1] 0.09090909</code></pre>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">summary</span>(<span class="kw">lm</span>(X<span class="op">$</span>V2<span class="op">~</span>X<span class="op">$</span>V1))<span class="op">$</span>r.squared</code></pre>
-<pre><code>## [1] 0.0909091</code></pre>
+<pre><code>## [1] 0.09090909</code></pre>
 <p>La <strong>matriz de correlaciones de Pearson</strong> de <span class="math inline">\(X\)</span> es
 <span class="math display">\[
 {R}=
@@ -897,10 +896,10 @@ r_{p 1} &amp; r_{p 2} &amp; \ldots &amp; 1
 donde cada <span class="math inline">\(r_{i j}\)</span> es la correlación de Pearson de las columnas correspondientes de <span class="math inline">\(X\)</span>. Esta matriz de correlaciones tiene siempre determinante entre 0 y 1 (ambos extremos incluidos) y todos sus valores propios son mayores o iguales que 0, y con R se puede calcular aplicando la misma instrucción <code>cor</code> a la tabla de datos, sea en forma de matriz o de <em>data frame</em>.</p>
 <p>Así, la matriz de correlaciones de nuestra tabla de datos <span class="math inline">\(X\)</span> es:</p>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">cor</span>(X)</code></pre>
-<pre><code>##           V1        V2        V3
-## V1  1.000000  0.301511 -0.754337
-## V2  0.301511  1.000000 -0.833950
-## V3 -0.754337 -0.833950  1.000000</code></pre>
+<pre><code>##            V1         V2         V3
+## V1  1.0000000  0.3015113 -0.7543365
+## V2  0.3015113  1.0000000 -0.8339504
+## V3 -0.7543365 -0.8339504  1.0000000</code></pre>
 <p>Se tiene el teorema siguiente, que se puede demostrar mediante un simple, aunque farragoso, cálculo algebraico:</p>
 
 <div class="theorem">
@@ -919,15 +918,15 @@ donde cada <span class="math inline">\(r_{i j}\)</span> es la correlación de Pe
 </center>
 <p>Comprobemos esta igualdad para nuestra matriz de datos <span class="math inline">\(X\)</span>.</p>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">cor</span>(X)</code></pre>
-<pre><code>##           V1        V2        V3
-## V1  1.000000  0.301511 -0.754337
-## V2  0.301511  1.000000 -0.833950
-## V3 -0.754337 -0.833950  1.000000</code></pre>
+<pre><code>##            V1         V2         V3
+## V1  1.0000000  0.3015113 -0.7543365
+## V2  0.3015113  1.0000000 -0.8339504
+## V3 -0.7543365 -0.8339504  1.0000000</code></pre>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">cov</span>(<span class="kw">scale</span>(X))</code></pre>
-<pre><code>##           V1        V2        V3
-## V1  1.000000  0.301511 -0.754337
-## V2  0.301511  1.000000 -0.833950
-## V3 -0.754337 -0.833950  1.000000</code></pre>
+<pre><code>##            V1         V2         V3
+## V1  1.0000000  0.3015113 -0.7543365
+## V2  0.3015113  1.0000000 -0.8339504
+## V3 -0.7543365 -0.8339504  1.0000000</code></pre>
 <p>Cuando se calcula la covarianza o la correlación de Pearson de dos vectores que contienen valores NA, lo usual es no tenerlos en cuenta: es decir, si un vector contiene un NA en una posición, se eliminan de los dos vectores sus entradas en dicha posición. De esta manera, se tomaría como covarianza de
 <span class="math display">\[
 \left(\begin{array}{c}
@@ -961,9 +960,9 @@ x1</code></pre>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">cor</span>(x, y)</code></pre>
 <pre><code>## [1] NA</code></pre>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">cor</span>(x, y, <span class="dt">use=</span><span class="st">&quot;complete.obs&quot;</span>)</code></pre>
-<pre><code>## [1] 0.974913</code></pre>
+<pre><code>## [1] 0.9749135</code></pre>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">cor</span>(x1, y1)</code></pre>
-<pre><code>## [1] 0.974913</code></pre>
+<pre><code>## [1] 0.9749135</code></pre>
 <p>Al calcular las matrices de covarianzas o correlaciones de una tabla de datos que contenga valores NA, se suele seguir una de las dos estrategias siguientes, según lo que interese al usuario:</p>
 <ul>
 <li><p>Para cada par de columnas, se calcula su covarianza o su correlación
@@ -989,17 +988,17 @@ Como todas las filas de <span class="math inline">\(Y\)</span> tienen entradas N
 ## [3,]   NA   NA    1</code></pre>
 <p>Una opción es calcular las correlaciones de Pearson de cada par de variables eliminando sus valores NA pero sin tener en cuenta los posibles valores NA de la otra variable:</p>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">cor</span>(Y, <span class="dt">use=</span><span class="st">&quot;pairwise.complete.obs&quot;</span>)</code></pre>
-<pre><code>##          [,1]     [,2]     [,3]
-## [1,] 1.000000 0.974913 0.891902
-## [2,] 0.974913 1.000000 0.438727
-## [3,] 0.891902 0.438727 1.000000</code></pre>
+<pre><code>##           [,1]      [,2]      [,3]
+## [1,] 1.0000000 0.9749135 0.8919017
+## [2,] 0.9749135 1.0000000 0.4387268
+## [3,] 0.8919017 0.4387268 1.0000000</code></pre>
 <p>Observad que la entrada (1,2) de esta matriz es la correlación de los vectores <span class="math inline">\(x\)</span> e <span class="math inline">\(y\)</span> calculada con <code>use=&quot;complete.obs&quot;</code>.</p>
 <p>Calculemos ahora la matriz de correlaciones de Pearson de la matriz con filas completas:</p>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">cor</span>(Y, <span class="dt">use=</span><span class="st">&quot;complete.obs&quot;</span>)</code></pre>
-<pre><code>##          [,1]     [,2]     [,3]
-## [1,] 1.000000 0.928571 0.891042
-## [2,] 0.928571 1.000000 0.995871
-## [3,] 0.891042 0.995871 1.000000</code></pre>
+<pre><code>##           [,1]      [,2]      [,3]
+## [1,] 1.0000000 0.9285714 0.8910421
+## [2,] 0.9285714 1.0000000 0.9958706
+## [3,] 0.8910421 0.9958706 1.0000000</code></pre>
 <p>Veamos que efectivamente coincide con la matriz de correlaciones de Pearson de la matriz que se obtiene eliminando las filas que contienen algún NA. Esta matriz es:</p>
 <pre class="sourceCode r"><code class="sourceCode r">noNAs=<span class="kw">is.na</span>(Y[,<span class="dv">1</span>])<span class="op">!=</span><span class="ot">TRUE</span> <span class="op">&amp;</span><span class="st"> </span><span class="kw">is.na</span>(Y[,<span class="dv">2</span>])<span class="op">!=</span><span class="ot">TRUE</span> <span class="op">&amp;</span><span class="st"> </span><span class="kw">is.na</span>(Y[,<span class="dv">3</span>])<span class="op">!=</span><span class="ot">TRUE</span>
 Y1=Y[noNAs,] 
@@ -1010,10 +1009,10 @@ Y1</code></pre>
 ## [3,]    4    5    2</code></pre>
 <p>y su matriz de correlaciones de Pearson es:</p>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">cor</span>(Y1)</code></pre>
-<pre><code>##          [,1]     [,2]     [,3]
-## [1,] 1.000000 0.928571 0.891042
-## [2,] 0.928571 1.000000 0.995871
-## [3,] 0.891042 0.995871 1.000000</code></pre>
+<pre><code>##           [,1]      [,2]      [,3]
+## [1,] 1.0000000 0.9285714 0.8910421
+## [2,] 0.9285714 1.0000000 0.9958706
+## [3,] 0.8910421 0.9958706 1.0000000</code></pre>
 </div>
 <div id="correlacion-de-spearman" class="section level2">
 <h2><span class="header-section-number">8.4</span> Correlación de Spearman</h2>
@@ -1085,20 +1084,20 @@ Vamos a usar la función <code>cor.test</code>.</p>
 ##  Pearson&#39;s product-moment correlation
 ## 
 ## data:  birthwt$bwt and birthwt$lwt
-## t = 2.585, df = 187, p-value = 0.00525
+## t = 2.5848, df = 187, p-value = 0.005252
 ## alternative hypothesis: true correlation is greater than 0
 ## 95 percent confidence interval:
-##  0.0672064 1.0000000
+##  0.06720637 1.00000000
 ## sample estimates:
-##      cor 
-## 0.185733</code></pre>
+##       cor 
+## 0.1857333</code></pre>
 <p>El p-valor 0.005 nos da evidencia estadísticamente significativa de que, en efecto, hay una correlación positiva entre el peso de la madre y el peso del recién nacido. El último valor, el 0.1857333 bajo el <em>cor</em>, es la correlación de Pearson de los dos vectores de pesos, y el <em>95 percent confidence interval</em> es el intervalo de confianza del 95% del contraste unilateral planteado y nos dice que tenemos un 95% de confianza en que la correlación entre el peso de la madre y el peso del recién nacido es superior a 0.067.</p>
 <p>Podríamos haber obtenido el p-valor del contraste de correlación anterior directamente con la instrucción</p>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">cor.test</span>(birthwt<span class="op">$</span>bwt, birthwt<span class="op">$</span>lwt, <span class="dt">alternative=</span><span class="st">&quot;greater&quot;</span>)<span class="op">$</span>p.value</code></pre>
-<pre><code>## [1] 0.00525209</code></pre>
+<pre><code>## [1] 0.005252088</code></pre>
 <p>Si hubiéramos querido calcular un intervalo de confianza del 95% para <span class="math inline">\(\rho_{XY}\)</span> que repartiera por igual a ambos lados el 5% de probabilidad de no contener su valor real, hubiéramos podido usar el intervalo de confianza del contraste bilateral:</p>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">cor.test</span>(birthwt<span class="op">$</span>bwt, birthwt<span class="op">$</span>lwt)<span class="op">$</span>conf.int</code></pre>
-<pre><code>## [1] 0.044174 0.319981
+<pre><code>## [1] 0.04417405 0.31998094
 ## attr(,&quot;conf.level&quot;)
 ## [1] 0.95</code></pre>
 <p>La potencia de un contraste de correlación se calcula con la función <code>pwr.r.test</code> del paquete <strong>pwr</strong>. En este caso, el tamaño del efecto es simplemente la correlación de Pearson, que se entra en la función mediante el parámetro <code>r</code>. Apliquémosla para calcular la potencia del contraste de correlación anterior:</p>
@@ -1114,7 +1113,7 @@ Vamos a usar la función <code>cor.test</code>.</p>
 ##               n = 189
 ##               r = 0.1857
 ##       sig.level = 0.05
-##           power = 0.822373
+##           power = 0.8223733
 ##     alternative = greater</code></pre>
 <p>La probabilidad de error de tipo II en este contraste era de un poco menos del 18%.</p>
 <p>Si quisiéramos realizar este contraste de correlación con una potencia del 90% suponiendo que la magnitud del efecto va ser pequeña, usaríamos primero <code>cohen.ES</code> con <code>test=&quot;r&quot;</code> para determinar qué magnitud del efecto se considera pequeña y a continuación <code>pwr.r.test</code> dejando sin especificar la <code>n</code>:</p>
@@ -1129,7 +1128,7 @@ Vamos a usar la función <code>cor.test</code>.</p>
 <pre><code>## 
 ##      approximate correlation power calculation (arctangh transformation) 
 ## 
-##               n = 852.647
+##               n = 852.6473
 ##               r = 0.1
 ##       sig.level = 0.05
 ##           power = 0.9
@@ -1151,24 +1150,24 @@ n=<span class="kw">dim</span>(iris_num)[<span class="dv">1</span>] <span class="
 <p>Su matriz de covarianzas muestrales es:</p>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">cov</span>(iris_num)  </code></pre>
 <pre><code>##              Sepal.Length Sepal.Width Petal.Length Petal.Width
-## Sepal.Length     0.685694   -0.042434     1.274315    0.516271
-## Sepal.Width     -0.042434    0.189979    -0.329656   -0.121639
-## Petal.Length     1.274315   -0.329656     3.116278    1.295609
-## Petal.Width      0.516271   -0.121639     1.295609    0.581006</code></pre>
+## Sepal.Length    0.6856935  -0.0424340    1.2743154   0.5162707
+## Sepal.Width    -0.0424340   0.1899794   -0.3296564  -0.1216394
+## Petal.Length    1.2743154  -0.3296564    3.1162779   1.2956094
+## Petal.Width     0.5162707  -0.1216394    1.2956094   0.5810063</code></pre>
 <p>Su matriz de covarianzas “verdaderas” es:</p>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">cov</span>(iris_num)<span class="op">*</span>(n<span class="dv">-1</span>)<span class="op">/</span>n  </code></pre>
 <pre><code>##              Sepal.Length Sepal.Width Petal.Length Petal.Width
-## Sepal.Length    0.6811222  -0.0421511     1.265820    0.512829
-## Sepal.Width    -0.0421511   0.1887129    -0.327459   -0.120828
-## Petal.Length    1.2658200  -0.3274587     3.095503    1.286972
-## Petal.Width     0.5128289  -0.1208284     1.286972    0.577133</code></pre>
+## Sepal.Length   0.68112222 -0.04215111    1.2658200   0.5128289
+## Sepal.Width   -0.04215111  0.18871289   -0.3274587  -0.1208284
+## Petal.Length   1.26582000 -0.32745867    3.0955027   1.2869720
+## Petal.Width    0.51282889 -0.12082844    1.2869720   0.5771329</code></pre>
 <p>Su matriz de correlaciones de Pearson es:</p>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">cor</span>(iris_num)   </code></pre>
 <pre><code>##              Sepal.Length Sepal.Width Petal.Length Petal.Width
-## Sepal.Length     1.000000   -0.117570     0.871754    0.817941
-## Sepal.Width     -0.117570    1.000000    -0.428440   -0.366126
-## Petal.Length     0.871754   -0.428440     1.000000    0.962865
-## Petal.Width      0.817941   -0.366126     0.962865    1.000000</code></pre>
+## Sepal.Length    1.0000000  -0.1175698    0.8717538   0.8179411
+## Sepal.Width    -0.1175698   1.0000000   -0.4284401  -0.3661259
+## Petal.Length    0.8717538  -0.4284401    1.0000000   0.9628654
+## Petal.Width     0.8179411  -0.3661259    0.9628654   1.0000000</code></pre>
 <p>Observamos, por ejemplo, una gran correlación de Pearson positiva entre la longitud y la anchura de los pétalos, 0.963, lo que indica una estrecha relación lineal con pendiente positiva entre estas magnitudes. Valdría la pena, entonces, calcular la recta de regresión lineal de una de estas medidas en función de la otra.</p>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">lm</span>(Petal.Length<span class="op">~</span>Petal.Width, <span class="dt">data=</span>iris_num)</code></pre>
 <pre><code>## 
@@ -1177,7 +1176,7 @@ n=<span class="kw">dim</span>(iris_num)[<span class="dv">1</span>] <span class="
 ## 
 ## Coefficients:
 ## (Intercept)  Petal.Width  
-##        1.08         2.23</code></pre>
+##       1.084        2.230</code></pre>
 <p>En cambio, la correlación de Pearson entre la longitud y la anchura de los sépalos es -0.1175698, muy cercana a cero, lo que es señal de que la variación conjunta de las longitudes y anchuras de los sépalos no tiene una tendencia clara.</p>
 <p>Vamos a ordenar ahora los pares de variables numéricas de <code>iris</code> en orden decreciente de su correlación en valor absoluto, para saber cuáles están más correlacionadas (en positivo o negativo). Para ello, en primer lugar creamos un <em>data frame</em> cuyas filas están formadas por pares diferentes de variables numéricas de <code>iris</code>, su correlación de Pearson y el valor absoluto de esta última, y a continuación ordenamos las filas de este <em>data frame</em> en orden decreciente de estos valores absolutos. Todo esto lo llevamos a cabo en el siguiente bloque de código, que luego explicamos:</p>
 <pre class="sourceCode r"><code class="sourceCode r">medidas=<span class="kw">names</span>(iris_num)
@@ -1190,13 +1189,13 @@ corrs.abs=<span class="kw">abs</span>(corrs)
 corrs_df=<span class="kw">data.frame</span>(medida1, medida2, corrs, corrs.abs)
 corrs_df_sort=corrs_df[<span class="kw">order</span>(corrs_df<span class="op">$</span>corrs.abs, <span class="dt">decreasing=</span><span class="ot">TRUE</span>), ]
 corrs_df_sort</code></pre>
-<pre><code>##        medida1      medida2     corrs corrs.abs
-## 6 Petal.Length  Petal.Width  0.962865  0.962865
-## 2 Sepal.Length Petal.Length  0.871754  0.871754
-## 4 Sepal.Length  Petal.Width  0.817941  0.817941
-## 3  Sepal.Width Petal.Length -0.428440  0.428440
-## 5  Sepal.Width  Petal.Width -0.366126  0.366126
-## 1 Sepal.Length  Sepal.Width -0.117570  0.117570</code></pre>
+<pre><code>##        medida1      medida2      corrs corrs.abs
+## 6 Petal.Length  Petal.Width  0.9628654 0.9628654
+## 2 Sepal.Length Petal.Length  0.8717538 0.8717538
+## 4 Sepal.Length  Petal.Width  0.8179411 0.8179411
+## 3  Sepal.Width Petal.Length -0.4284401 0.4284401
+## 5  Sepal.Width  Petal.Width -0.3661259 0.3661259
+## 1 Sepal.Length  Sepal.Width -0.1175698 0.1175698</code></pre>
 <p>Vemos que el par de variables con mayor correlación de Pearson en valor absoluto son <code>Petal.Length</code> y <code>Petal.Width</code>, como ya habíamos observado, seguidos por <code>Petal.Length</code> y <code>Sepal.Length</code>.</p>
 <p>Vamos a explicar el código. La función <code>upper.tri</code>, aplicada a una matriz cuadrada <span class="math inline">\(M\)</span>, produce la matriz <strong>triangular superior</strong> de valores lógicos del mismo orden que <span class="math inline">\(M\)</span>, cuyas entradas <span class="math inline">\((i,j)\)</span> con <span class="math inline">\(i&lt;j\)</span> son todas <code>TRUE</code> y el resto todas <code>FALSE</code>. Existe una función similar, <code>lower.tri</code>, para producir matrices <strong>triangulares inferiores</strong> de valores lógicos.</p>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">upper.tri</span>(<span class="kw">diag</span>(<span class="dv">4</span>))</code></pre>
@@ -1244,13 +1243,13 @@ M</code></pre>
 ## [4,] &quot;Sepal.Length&quot; &quot;Sepal.Width&quot; &quot;Petal.Length&quot; &quot;Petal.Width&quot;</code></pre>
 <p>Al aplicar estas dos matrices a la matriz de valores lógicos <code>upper.tri(diag(4))</code> obtenemos los nombres de las variables correspondientes a las filas y las columnas del triángulo superior, respectivamente, y al aplicar la matriz de correlaciones a esta matriz de valores lógicos, obtenemos sus entradas en este triángulo; en los tres vectores, las entradas siguen el mismo orden. Esto nos permite construir el <em>data frame</em> <code>corrs_df</code> cuyas filas están formadas por pares diferentes de variables numéricas de <code>iris</code>, su correlación de Pearson (columna <code>corrs</code>) y, aplicando <code>abs</code> a esta última variable, dicha correlación en valor absoluto (columna <code>corrs.abs</code>).</p>
 <pre class="sourceCode r"><code class="sourceCode r">corrs_df</code></pre>
-<pre><code>##        medida1      medida2     corrs corrs.abs
-## 1 Sepal.Length  Sepal.Width -0.117570  0.117570
-## 2 Sepal.Length Petal.Length  0.871754  0.871754
-## 3  Sepal.Width Petal.Length -0.428440  0.428440
-## 4 Sepal.Length  Petal.Width  0.817941  0.817941
-## 5  Sepal.Width  Petal.Width -0.366126  0.366126
-## 6 Petal.Length  Petal.Width  0.962865  0.962865</code></pre>
+<pre><code>##        medida1      medida2      corrs corrs.abs
+## 1 Sepal.Length  Sepal.Width -0.1175698 0.1175698
+## 2 Sepal.Length Petal.Length  0.8717538 0.8717538
+## 3  Sepal.Width Petal.Length -0.4284401 0.4284401
+## 4 Sepal.Length  Petal.Width  0.8179411 0.8179411
+## 5  Sepal.Width  Petal.Width -0.3661259 0.3661259
+## 6 Petal.Length  Petal.Width  0.9628654 0.9628654</code></pre>
 <p>Finalmente, la función <code>order</code> ordena los valores del vector al que se aplica, en orden decreciente si se especifica el parámetro <code>decreasing=TRUE</code>. Cuando aplicamos un <em>data frame</em> a una de sus variables reordenada de esta manera, reordena sus filas según el orden de esta variable. En este caso hubiéramos conseguido lo mismo con la función <code>sort</code>, pero la función <code>order</code> se puede aplicar a más de una variable del <em>data frame</em>: esto permite ordenar las filas del <em>data frame</em> en el orden de la primera variable de manera que, en caso de empate, queden ordenadas por la segunda variable, y así sucesivamente.</p>
 </div>
 <div id="representacion-grafica-de-datos-multidimensionales" class="section level2">
@@ -1557,145 +1556,21 @@ Medias</code></pre>
 Covariancias=((n<span class="dv">-1</span>)<span class="op">/</span>n)<span class="op">*</span><span class="kw">cov</span>(notas)
 Correlaciones=<span class="kw">cor</span>(notas)
 Covariancias</code></pre>
-<table>
-<thead>
-<tr class="header">
-<th></th>
-<th align="right">Control1</th>
-<th align="right">Control2</th>
-<th align="right">Talleres</th>
-<th align="right">Casa</th>
-<th align="right">TestsR</th>
-<th align="right">TestsCont</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>Control1</td>
-<td align="right">394.8244</td>
-<td align="right">209.7321</td>
-<td align="right">168.6785</td>
-<td align="right">198.7234</td>
-<td align="right">225.4755</td>
-<td align="right">224.4155</td>
-</tr>
-<tr class="even">
-<td>Control2</td>
-<td align="right">209.7321</td>
-<td align="right">285.7027</td>
-<td align="right">137.4756</td>
-<td align="right">225.4590</td>
-<td align="right">228.6795</td>
-<td align="right">247.2568</td>
-</tr>
-<tr class="odd">
-<td>Talleres</td>
-<td align="right">168.6785</td>
-<td align="right">137.4756</td>
-<td align="right">254.7333</td>
-<td align="right">170.6966</td>
-<td align="right">174.0035</td>
-<td align="right">182.4254</td>
-</tr>
-<tr class="even">
-<td>Casa</td>
-<td align="right">198.7234</td>
-<td align="right">225.4590</td>
-<td align="right">170.6966</td>
-<td align="right">419.2941</td>
-<td align="right">284.8189</td>
-<td align="right">333.0139</td>
-</tr>
-<tr class="odd">
-<td>TestsR</td>
-<td align="right">225.4755</td>
-<td align="right">228.6795</td>
-<td align="right">174.0035</td>
-<td align="right">284.8189</td>
-<td align="right">426.6009</td>
-<td align="right">356.6300</td>
-</tr>
-<tr class="even">
-<td>TestsCont</td>
-<td align="right">224.4155</td>
-<td align="right">247.2568</td>
-<td align="right">182.4254</td>
-<td align="right">333.0139</td>
-<td align="right">356.6300</td>
-<td align="right">401.8417</td>
-</tr>
-</tbody>
-</table>
+<pre><code>##           Control1 Control2 Talleres     Casa   TestsR TestsCont
+## Control1  394.8244 209.7321 168.6785 198.7234 225.4755  224.4155
+## Control2  209.7321 285.7027 137.4756 225.4590 228.6795  247.2568
+## Talleres  168.6785 137.4756 254.7333 170.6966 174.0035  182.4254
+## Casa      198.7234 225.4590 170.6966 419.2941 284.8189  333.0139
+## TestsR    225.4755 228.6795 174.0035 284.8189 426.6009  356.6300
+## TestsCont 224.4155 247.2568 182.4254 333.0139 356.6300  401.8417</code></pre>
 <pre class="sourceCode r"><code class="sourceCode r">Correlaciones</code></pre>
-<table>
-<thead>
-<tr class="header">
-<th></th>
-<th align="right">Control1</th>
-<th align="right">Control2</th>
-<th align="right">Talleres</th>
-<th align="right">Casa</th>
-<th align="right">TestsR</th>
-<th align="right">TestsCont</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>Control1</td>
-<td align="right">1.0000000</td>
-<td align="right">0.6244617</td>
-<td align="right">0.5318814</td>
-<td align="right">0.4884135</td>
-<td align="right">0.5493973</td>
-<td align="right">0.5634084</td>
-</tr>
-<tr class="even">
-<td>Control2</td>
-<td align="right">0.6244617</td>
-<td align="right">1.0000000</td>
-<td align="right">0.5095954</td>
-<td align="right">0.6514049</td>
-<td align="right">0.6550271</td>
-<td align="right">0.7297323</td>
-</tr>
-<tr class="odd">
-<td>Talleres</td>
-<td align="right">0.5318814</td>
-<td align="right">0.5095954</td>
-<td align="right">1.0000000</td>
-<td align="right">0.5223030</td>
-<td align="right">0.5278423</td>
-<td align="right">0.5701837</td>
-</tr>
-<tr class="even">
-<td>Casa</td>
-<td align="right">0.4884135</td>
-<td align="right">0.6514049</td>
-<td align="right">0.5223030</td>
-<td align="right">1.0000000</td>
-<td align="right">0.6734395</td>
-<td align="right">0.8112888</td>
-</tr>
-<tr class="odd">
-<td>TestsR</td>
-<td align="right">0.5493973</td>
-<td align="right">0.6550271</td>
-<td align="right">0.5278423</td>
-<td align="right">0.6734395</td>
-<td align="right">1.0000000</td>
-<td align="right">0.8613496</td>
-</tr>
-<tr class="even">
-<td>TestsCont</td>
-<td align="right">0.5634084</td>
-<td align="right">0.7297323</td>
-<td align="right">0.5701837</td>
-<td align="right">0.8112888</td>
-<td align="right">0.8613496</td>
-<td align="right">1.0000000</td>
-</tr>
-</tbody>
-</table>
+<pre><code>##            Control1  Control2  Talleres      Casa    TestsR TestsCont
+## Control1  1.0000000 0.6244617 0.5318814 0.4884135 0.5493973 0.5634084
+## Control2  0.6244617 1.0000000 0.5095954 0.6514049 0.6550271 0.7297323
+## Talleres  0.5318814 0.5095954 1.0000000 0.5223030 0.5278423 0.5701837
+## Casa      0.4884135 0.6514049 0.5223030 1.0000000 0.6734395 0.8112888
+## TestsR    0.5493973 0.6550271 0.5278423 0.6734395 1.0000000 0.8613496
+## TestsCont 0.5634084 0.7297323 0.5701837 0.8112888 0.8613496 1.0000000</code></pre>
 <p><em>(c)</em> ¿Qué par de variables tiene mayor correlación? ¿Qué par de variables tiene menor correlación?</p>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">which.max</span>(Correlaciones[Correlaciones<span class="op">!=</span><span class="dv">1</span>])</code></pre>
 <pre><code>## [1] 25</code></pre>
@@ -1709,219 +1584,33 @@ Correlaciones[Correlaciones<span class="op">!=</span><span class="dv">1</span>][
 <pre><code>## [1] 0.4884135</code></pre>
 <p><em>(d)</em></p>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">cov</span>(<span class="kw">scale</span>(notas))</code></pre>
-<table>
-<thead>
-<tr class="header">
-<th></th>
-<th align="right">Control1</th>
-<th align="right">Control2</th>
-<th align="right">Talleres</th>
-<th align="right">Casa</th>
-<th align="right">TestsR</th>
-<th align="right">TestsCont</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>Control1</td>
-<td align="right">1.0000000</td>
-<td align="right">0.6244617</td>
-<td align="right">0.5318814</td>
-<td align="right">0.4884135</td>
-<td align="right">0.5493973</td>
-<td align="right">0.5634084</td>
-</tr>
-<tr class="even">
-<td>Control2</td>
-<td align="right">0.6244617</td>
-<td align="right">1.0000000</td>
-<td align="right">0.5095954</td>
-<td align="right">0.6514049</td>
-<td align="right">0.6550271</td>
-<td align="right">0.7297323</td>
-</tr>
-<tr class="odd">
-<td>Talleres</td>
-<td align="right">0.5318814</td>
-<td align="right">0.5095954</td>
-<td align="right">1.0000000</td>
-<td align="right">0.5223030</td>
-<td align="right">0.5278423</td>
-<td align="right">0.5701837</td>
-</tr>
-<tr class="even">
-<td>Casa</td>
-<td align="right">0.4884135</td>
-<td align="right">0.6514049</td>
-<td align="right">0.5223030</td>
-<td align="right">1.0000000</td>
-<td align="right">0.6734395</td>
-<td align="right">0.8112888</td>
-</tr>
-<tr class="odd">
-<td>TestsR</td>
-<td align="right">0.5493973</td>
-<td align="right">0.6550271</td>
-<td align="right">0.5278423</td>
-<td align="right">0.6734395</td>
-<td align="right">1.0000000</td>
-<td align="right">0.8613496</td>
-</tr>
-<tr class="even">
-<td>TestsCont</td>
-<td align="right">0.5634084</td>
-<td align="right">0.7297323</td>
-<td align="right">0.5701837</td>
-<td align="right">0.8112888</td>
-<td align="right">0.8613496</td>
-<td align="right">1.0000000</td>
-</tr>
-</tbody>
-</table>
+<pre><code>##            Control1  Control2  Talleres      Casa    TestsR TestsCont
+## Control1  1.0000000 0.6244617 0.5318814 0.4884135 0.5493973 0.5634084
+## Control2  0.6244617 1.0000000 0.5095954 0.6514049 0.6550271 0.7297323
+## Talleres  0.5318814 0.5095954 1.0000000 0.5223030 0.5278423 0.5701837
+## Casa      0.4884135 0.6514049 0.5223030 1.0000000 0.6734395 0.8112888
+## TestsR    0.5493973 0.6550271 0.5278423 0.6734395 1.0000000 0.8613496
+## TestsCont 0.5634084 0.7297323 0.5701837 0.8112888 0.8613496 1.0000000</code></pre>
 <pre class="sourceCode r"><code class="sourceCode r">((n<span class="dv">-1</span>)<span class="op">/</span>n)<span class="op">*</span><span class="kw">cov</span>(<span class="kw">scale</span>(notas,<span class="dt">scale=</span><span class="kw">sapply</span>(notas,sd_ver)))</code></pre>
-<table>
-<thead>
-<tr class="header">
-<th></th>
-<th align="right">Control1</th>
-<th align="right">Control2</th>
-<th align="right">Talleres</th>
-<th align="right">Casa</th>
-<th align="right">TestsR</th>
-<th align="right">TestsCont</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>Control1</td>
-<td align="right">1.0000000</td>
-<td align="right">0.6244617</td>
-<td align="right">0.5318814</td>
-<td align="right">0.4884135</td>
-<td align="right">0.5493973</td>
-<td align="right">0.5634084</td>
-</tr>
-<tr class="even">
-<td>Control2</td>
-<td align="right">0.6244617</td>
-<td align="right">1.0000000</td>
-<td align="right">0.5095954</td>
-<td align="right">0.6514049</td>
-<td align="right">0.6550271</td>
-<td align="right">0.7297323</td>
-</tr>
-<tr class="odd">
-<td>Talleres</td>
-<td align="right">0.5318814</td>
-<td align="right">0.5095954</td>
-<td align="right">1.0000000</td>
-<td align="right">0.5223030</td>
-<td align="right">0.5278423</td>
-<td align="right">0.5701837</td>
-</tr>
-<tr class="even">
-<td>Casa</td>
-<td align="right">0.4884135</td>
-<td align="right">0.6514049</td>
-<td align="right">0.5223030</td>
-<td align="right">1.0000000</td>
-<td align="right">0.6734395</td>
-<td align="right">0.8112888</td>
-</tr>
-<tr class="odd">
-<td>TestsR</td>
-<td align="right">0.5493973</td>
-<td align="right">0.6550271</td>
-<td align="right">0.5278423</td>
-<td align="right">0.6734395</td>
-<td align="right">1.0000000</td>
-<td align="right">0.8613496</td>
-</tr>
-<tr class="even">
-<td>TestsCont</td>
-<td align="right">0.5634084</td>
-<td align="right">0.7297323</td>
-<td align="right">0.5701837</td>
-<td align="right">0.8112888</td>
-<td align="right">0.8613496</td>
-<td align="right">1.0000000</td>
-</tr>
-</tbody>
-</table>
+<pre><code>##            Control1  Control2  Talleres      Casa    TestsR TestsCont
+## Control1  1.0000000 0.6244617 0.5318814 0.4884135 0.5493973 0.5634084
+## Control2  0.6244617 1.0000000 0.5095954 0.6514049 0.6550271 0.7297323
+## Talleres  0.5318814 0.5095954 1.0000000 0.5223030 0.5278423 0.5701837
+## Casa      0.4884135 0.6514049 0.5223030 1.0000000 0.6734395 0.8112888
+## TestsR    0.5493973 0.6550271 0.5278423 0.6734395 1.0000000 0.8613496
+## TestsCont 0.5634084 0.7297323 0.5701837 0.8112888 0.8613496 1.0000000</code></pre>
 <pre class="sourceCode r"><code class="sourceCode r">Correlaciones              </code></pre>
-<table>
-<thead>
-<tr class="header">
-<th></th>
-<th align="right">Control1</th>
-<th align="right">Control2</th>
-<th align="right">Talleres</th>
-<th align="right">Casa</th>
-<th align="right">TestsR</th>
-<th align="right">TestsCont</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>Control1</td>
-<td align="right">1.0000000</td>
-<td align="right">0.6244617</td>
-<td align="right">0.5318814</td>
-<td align="right">0.4884135</td>
-<td align="right">0.5493973</td>
-<td align="right">0.5634084</td>
-</tr>
-<tr class="even">
-<td>Control2</td>
-<td align="right">0.6244617</td>
-<td align="right">1.0000000</td>
-<td align="right">0.5095954</td>
-<td align="right">0.6514049</td>
-<td align="right">0.6550271</td>
-<td align="right">0.7297323</td>
-</tr>
-<tr class="odd">
-<td>Talleres</td>
-<td align="right">0.5318814</td>
-<td align="right">0.5095954</td>
-<td align="right">1.0000000</td>
-<td align="right">0.5223030</td>
-<td align="right">0.5278423</td>
-<td align="right">0.5701837</td>
-</tr>
-<tr class="even">
-<td>Casa</td>
-<td align="right">0.4884135</td>
-<td align="right">0.6514049</td>
-<td align="right">0.5223030</td>
-<td align="right">1.0000000</td>
-<td align="right">0.6734395</td>
-<td align="right">0.8112888</td>
-</tr>
-<tr class="odd">
-<td>TestsR</td>
-<td align="right">0.5493973</td>
-<td align="right">0.6550271</td>
-<td align="right">0.5278423</td>
-<td align="right">0.6734395</td>
-<td align="right">1.0000000</td>
-<td align="right">0.8613496</td>
-</tr>
-<tr class="even">
-<td>TestsCont</td>
-<td align="right">0.5634084</td>
-<td align="right">0.7297323</td>
-<td align="right">0.5701837</td>
-<td align="right">0.8112888</td>
-<td align="right">0.8613496</td>
-<td align="right">1.0000000</td>
-</tr>
-</tbody>
-</table>
+<pre><code>##            Control1  Control2  Talleres      Casa    TestsR TestsCont
+## Control1  1.0000000 0.6244617 0.5318814 0.4884135 0.5493973 0.5634084
+## Control2  0.6244617 1.0000000 0.5095954 0.6514049 0.6550271 0.7297323
+## Talleres  0.5318814 0.5095954 1.0000000 0.5223030 0.5278423 0.5701837
+## Casa      0.4884135 0.6514049 0.5223030 1.0000000 0.6734395 0.8112888
+## TestsR    0.5493973 0.6550271 0.5278423 0.6734395 1.0000000 0.8613496
+## TestsCont 0.5634084 0.7297323 0.5701837 0.8112888 0.8613496 1.0000000</code></pre>
 <p><em>(e)</em> Dibujad una matriz de diagramas de dispersión de estas notas añadiendo en cada uno la recta de regresión lineal por mínimos cuadrados (pero sin otras curvas que indiquen la tendencia de los datos). ¿Se pueden ver en este diagrama los pares de actividades de evaluación con mayor y menor correlación que habéis encontrado en el apartado (c)?</p>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(car)
 <span class="kw">spm</span>(notas, <span class="dt">smooth=</span><span class="ot">FALSE</span>,<span class="dt">pch=</span><span class="dv">20</span>,<span class="dt">cex=</span><span class="fl">0.75</span>)</code></pre>
-<p><img src="AprendeR-Parte-II_files/figure-html/unnamed-chunk-464-1.png" width="480" style="display: block; margin: auto;" /></p>
+<p><img src="AprendeR-Parte-II_files/figure-html/unnamed-chunk-463-1.png" width="480" style="display: block; margin: auto;" /></p>
 
 </div>
 </div>
@@ -1962,16 +1651,17 @@ gitbook.start({
 "size": 2
 },
 "edit": {
-"link": "https://github.com/cescrossello/AprendeR-II/edit/master/08-EstMult.Rmd",
-"text": "Edit"
+"link": null,
+"text": null
 },
 "history": {
 "link": null,
 "text": null
 },
-"download": ["AprendeR-Parte-II.pdf", "AprendeR-Parte-II.epub"],
+"download": null,
 "toc": {
-"collapse": "subsection"
+"collapse": "subsection",
+"download": ["pdf", "epub"]
 }
 });
 });

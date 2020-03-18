@@ -25,7 +25,7 @@
 <meta name="author" content="The UIB-AprendeR team">
 
 
-<meta name="date" content="2020-02-16">
+<meta name="date" content="2020-03-18">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -248,7 +248,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="9.8" data-path="chap-ANOVA.html"><a href="chap-ANOVA.html#guia-rapida-7"><i class="fa fa-check"></i><b>9.8</b> Guía rápida</a></li>
 <li class="chapter" data-level="9.9" data-path="chap-ANOVA.html"><a href="chap-ANOVA.html#ejercicios-10"><i class="fa fa-check"></i><b>9.9</b> Ejercicios</a><ul>
 <li class="chapter" data-level="" data-path="chap-ANOVA.html"><a href="chap-ANOVA.html#test-4"><i class="fa fa-check"></i>Test</a></li>
+<li class="chapter" data-level="9.9.1" data-path="chap-ANOVA.html"><a href="chap-ANOVA.html#ejercicio"><i class="fa fa-check"></i><b>9.9.1</b> Ejercicio</a></li>
 <li class="chapter" data-level="" data-path="chap-ANOVA.html"><a href="chap-ANOVA.html#respuestas-al-test-8"><i class="fa fa-check"></i>Respuestas al test</a></li>
+<li class="chapter" data-level="9.9.2" data-path="chap-ANOVA.html"><a href="chap-ANOVA.html#soluciones-sucintas-del-ejercicio"><i class="fa fa-check"></i><b>9.9.2</b> Soluciones sucintas del ejercicio</a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="10" data-path="chap-regresion.html"><a href="chap-regresion.html"><i class="fa fa-check"></i><b>10</b> Regresión lineal</a><ul>
@@ -279,9 +281,6 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="12.4" data-path="extras-de-r-markdown.html"><a href="extras-de-r-markdown.html#tablas"><i class="fa fa-check"></i><b>12.4</b> Tablas</a></li>
 <li class="chapter" data-level="12.5" data-path="extras-de-r-markdown.html"><a href="extras-de-r-markdown.html#formulas-matematicas"><i class="fa fa-check"></i><b>12.5</b> Fórmulas matemáticas</a></li>
 </ul></li>
-<li class="divider"></li>
-<li><a href="https://github.com/cescrossello/AprendeR-II" target="blank">Publicado con  bookdown</a></li>
-
 </ul>
 
       </nav>
@@ -360,7 +359,7 @@ toma su valor mínimo: de ahí la coletilla de <strong>mínimos cuadrados</stron
 <p>El siguiente ejemplo ilustra el uso de la función <code>lm</code> y de la salida que proporciona.</p>
 
 <div class="example">
-<p><span id="exm:exempDavis" class="example"><strong>Ejemplo 10.1  </strong></span>La tabla de datos <code>Davis</code> del paquete <strong>car</strong> contiene datos del peso y la altura de 200 hombres y mujeres que realizan ejercicio habitualmente obtenidos de dos formas distintas: los valores medidos con los instrumentos adecuados (báscula y escaliómetro, respectivamente) y los valores que notificaron estas personas antes de realizarse las mediciones.<a href="#fn13" class="footnote-ref" id="fnref13"><sup>13</sup></a> Veamos su estructura.</p>
+<p><span id="exm:exempDavis" class="example"><strong>Ejemplo 10.1  </strong></span>La tabla de datos <code>Davis</code> del paquete <strong>car</strong> contiene datos del peso y la altura de 200 hombres y mujeres que realizan ejercicio habitualmente obtenidos de dos formas distintas: los valores medidos con los instrumentos adecuados (báscula y escaliómetro, respectivamente) y los valores que notificaron estas personas antes de realizarse las mediciones.<a href="#fn8" class="footnote-ref" id="fnref8"><sup>8</sup></a> Veamos su estructura.</p>
 </div>
 
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(car)
@@ -378,40 +377,13 @@ toma su valor mínimo: de ahí la coletilla de <strong>mínimos cuadrados</stron
 <pre class="sourceCode r"><code class="sourceCode r">datospeso=<span class="kw">data.frame</span>(Davis<span class="op">$</span>weight,Davis<span class="op">$</span>repwt)
 <span class="kw">colnames</span>(datospeso)=<span class="kw">c</span>(<span class="st">&quot;peso&quot;</span>,<span class="st">&quot;pesonotif&quot;</span>)
 <span class="kw">head</span>(datospeso)</code></pre>
-<table>
-<thead>
-<tr class="header">
-<th align="right">peso</th>
-<th align="right">pesonotif</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td align="right">77</td>
-<td align="right">77</td>
-</tr>
-<tr class="even">
-<td align="right">58</td>
-<td align="right">51</td>
-</tr>
-<tr class="odd">
-<td align="right">53</td>
-<td align="right">54</td>
-</tr>
-<tr class="even">
-<td align="right">68</td>
-<td align="right">70</td>
-</tr>
-<tr class="odd">
-<td align="right">59</td>
-<td align="right">59</td>
-</tr>
-<tr class="even">
-<td align="right">76</td>
-<td align="right">76</td>
-</tr>
-</tbody>
-</table>
+<pre><code>##   peso pesonotif
+## 1   77        77
+## 2   58        51
+## 3   53        54
+## 4   68        70
+## 5   59        59
+## 6   76        76</code></pre>
 <pre class="sourceCode r"><code class="sourceCode r">datospeso=<span class="kw">na.omit</span>(datospeso)
 <span class="kw">dim</span>(datospeso)</code></pre>
 <pre><code>## [1] 183   2</code></pre>
@@ -432,8 +404,8 @@ toma su valor mínimo: de ahí la coletilla de <strong>mínimos cuadrados</stron
 <p>Vamos a representar gráficamente los puntos de la muestra conjuntamente con la recta de regresión encontrada:</p>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">plot</span>(datospeso<span class="op">$</span>pesonotif, datospeso<span class="op">$</span>peso, <span class="dt">pch=</span><span class="dv">20</span>, <span class="dt">xlab=</span><span class="st">&quot;peso notificado&quot;</span>, <span class="dt">ylab=</span><span class="st">&quot;peso medido&quot;</span>)
 <span class="kw">abline</span>(<span class="kw">lm</span>(peso<span class="op">~</span>pesonotif,<span class="dt">data=</span>datospeso), <span class="dt">col=</span><span class="st">&quot;red&quot;</span>)</code></pre>
-<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-562"></span>
-<img src="AprendeR-Parte-II_files/figure-html/unnamed-chunk-562-1.png" alt="Gráfico de los pares de observaciones (pesonotif,peso) junto con la correspondiente recta de regresión." width="480" />
+<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-570"></span>
+<img src="AprendeR-Parte-II_files/figure-html/unnamed-chunk-570-1.png" alt="Gráfico de los pares de observaciones (pesonotif,peso) junto con la correspondiente recta de regresión." width="480" />
 <p class="caption">
 Figura 10.1: Gráfico de los pares de observaciones (pesonotif,peso) junto con la correspondiente recta de regresión.
 </p>
@@ -444,27 +416,9 @@ Figura 10.1: Gráfico de los pares de observaciones (pesonotif,peso) junto con l
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">which</span>(datospeso<span class="op">$</span>peso<span class="op">&gt;</span><span class="dv">160</span>)</code></pre>
 <pre><code>## [1] 12</code></pre>
 <pre class="sourceCode r"><code class="sourceCode r">datospeso[<span class="kw">which</span>(datospeso<span class="op">$</span>peso<span class="op">&gt;</span><span class="dv">160</span>),]</code></pre>
-<table>
-<thead>
-<tr class="header">
-<th></th>
-<th align="right">peso</th>
-<th align="right">pesonotif</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>12</td>
-<td align="right">166</td>
-<td align="right">56</td>
-</tr>
-<tr class="even">
-<td>El pu</td>
-<td align="right">nto anó</td>
-<td align="right">malo, correspondiente al individuo 12 de la muestra, ¡dijo que pesaba 56 kg y en realidad pesaba 166! Más adelante, en la Sección <a href="chap-regresion.html#sec:diagn">10.4</a>, trataremos el procedimiento a seguir en estas situaciones.</td>
-</tr>
-</tbody>
-</table>
+<pre><code>##    peso pesonotif
+## 12  166        56</code></pre>
+<p>El punto anómalo, correspondiente al individuo 12 de la muestra, ¡dijo que pesaba 56 kg y en realidad pesaba 166! Más adelante, en la Sección <a href="chap-regresion.html#sec:diagn">10.4</a>, trataremos el procedimiento a seguir en estas situaciones.</p>
 <p>Veamos un segundo ejemplo.</p>
 
 <div class="example">
@@ -585,33 +539,9 @@ Observad que si <span class="math inline">\(\beta_1\)</span> fuera 0, los valore
 <li>La tabla de coeficientes se obtiene con el sufijo <code>$coefficients</code>:</li>
 </ul>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">summary</span>(<span class="kw">lm</span>(peso<span class="op">~</span>pesonotif,<span class="dt">data=</span>datospeso))<span class="op">$</span>coefficients </code></pre>
-<table>
-<thead>
-<tr class="header">
-<th></th>
-<th align="right">Estimate</th>
-<th align="right">Std. Error</th>
-<th align="right">t value</th>
-<th align="right">Pr(&gt;|t|)</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>(Intercept)</td>
-<td align="right">5.3362605</td>
-<td align="right">3.0369098</td>
-<td align="right">1.757135</td>
-<td align="right">0.0805856</td>
-</tr>
-<tr class="even">
-<td>pesonotif</td>
-<td align="right">0.9278428</td>
-<td align="right">0.0452961</td>
-<td align="right">20.483950</td>
-<td align="right">0.0000000</td>
-</tr>
-</tbody>
-</table>
+<pre><code>##              Estimate Std. Error   t value     Pr(&gt;|t|)
+## (Intercept) 5.3362605 3.03690979  1.757135 8.058558e-02
+## pesonotif   0.9278428 0.04529609 20.483950 5.102807e-49</code></pre>
 <ul>
 <li>Las estimaciones de los coeficientes forman la primera columna de la tabla anterior, y por lo tanto se obtienen con el sufijo <code>$coefficients[,1]</code>:</li>
 </ul>
@@ -663,8 +593,8 @@ Residuos=recta_regresion<span class="op">$</span>residuals
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">plot</span>(datospeso<span class="op">$</span>pesonotif, datospeso<span class="op">$</span>peso, <span class="dt">pch=</span><span class="dv">20</span>, <span class="dt">xlab=</span><span class="st">&quot;peso notificado&quot;</span>, <span class="dt">ylab=</span><span class="st">&quot;peso medido&quot;</span>)
 <span class="kw">abline</span>(<span class="kw">lm</span>(peso<span class="op">~</span>pesonotif,<span class="dt">data=</span>datospeso), <span class="dt">col=</span><span class="st">&quot;red&quot;</span>)
 <span class="kw">abline</span>(<span class="kw">lm</span>(peso<span class="op">~</span>pesonotif,<span class="dt">data=</span>datospeso,<span class="dt">subset=</span><span class="op">-</span><span class="dv">12</span>), <span class="dt">col=</span><span class="st">&quot;blue&quot;</span>,<span class="dt">lty=</span><span class="dv">2</span>)</code></pre>
-<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-577"></span>
-<img src="AprendeR-Parte-II_files/figure-html/unnamed-chunk-577-1.png" alt="Gráfico de los pares de observaciones (pesonotif,peso) junto con las  rectas de regresión teniendo en cuenta el valor anómalo (roja continua) y sin tenerlo en cuenta (azul discontinua)." width="480" />
+<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-585"></span>
+<img src="AprendeR-Parte-II_files/figure-html/unnamed-chunk-585-1.png" alt="Gráfico de los pares de observaciones (pesonotif,peso) junto con las  rectas de regresión teniendo en cuenta el valor anómalo (roja continua) y sin tenerlo en cuenta (azul discontinua)." width="480" />
 <p class="caption">
 Figura 10.2: Gráfico de los pares de observaciones (pesonotif,peso) junto con las rectas de regresión teniendo en cuenta el valor anómalo (roja continua) y sin tenerlo en cuenta (azul discontinua).
 </p>
@@ -711,63 +641,17 @@ Figura 10.2: Gráfico de los pares de observaciones (pesonotif,peso) junto con l
 </ul>
 <p>Veamos una aplicación de la función <code>confint</code>. Vamos a calcular los intervalos de confianza del 95% para los parámetros <span class="math inline">\(\beta_0\)</span> y <span class="math inline">\(\beta_1\)</span> del Ejemplo <a href="chap-regresion.html#exm:exempDavis">10.1</a>. Recordad que hemos llamado <code>recta_regresion</code> al resultado correspondiente de la función <code>lm</code>.</p>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">confint</span>(recta_regresion)</code></pre>
-<table>
-<thead>
-<tr class="header">
-<th></th>
-<th align="right">2.5 %</th>
-<th align="right">97.5 %</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>(Intercept)</td>
-<td align="right">-0.6560394</td>
-<td align="right">11.328561</td>
-</tr>
-<tr class="even">
-<td>pesonotif</td>
-<td align="right">0.8384665</td>
-<td align="right">1.017219</td>
-</tr>
-</tbody>
-</table>
+<pre><code>##                  2.5 %    97.5 %
+## (Intercept) -0.6560394 11.328560
+## pesonotif    0.8384665  1.017219</code></pre>
 <p>La salida de la función es una matriz cuyas filas son los extremos inferior y superior de los intervalos de confianza de los coeficientes deseados. Las filas se indican con el nombre de la variable dependiente correspondiente o con <code>(Intercept)</code> en el caso del término independiente, y las columnas se indican mediante el nivel del cuantil utilizado para el cálculo del intervalo. Así, el intervalo de confianza para <span class="math inline">\(\beta_0\)</span> es (-0.656, 11.329) y para <span class="math inline">\(\beta_1\)</span>, (0.838, 1.017).</p>
 <p>Si solo queremos calcular el intervalo de confianza para <span class="math inline">\(\beta_1\)</span> podemos usar cualquiera de las tres instrucciones siguientes (aunque la tercera en realidad calculará todos los intervalos de confianza y solo nos mostrará el de <span class="math inline">\(\beta_1\)</span>):</p>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">confint</span>(recta_regresion, <span class="dt">parm=</span><span class="dv">2</span>)</code></pre>
-<table>
-<thead>
-<tr class="header">
-<th></th>
-<th align="right">2.5 %</th>
-<th align="right">97.5 %</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>pesonotif</td>
-<td align="right">0.8384665</td>
-<td align="right">1.017219</td>
-</tr>
-</tbody>
-</table>
+<pre><code>##               2.5 %   97.5 %
+## pesonotif 0.8384665 1.017219</code></pre>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">confint</span>(recta_regresion, <span class="dt">parm=</span><span class="st">&quot;pesonotif&quot;</span>)</code></pre>
-<table>
-<thead>
-<tr class="header">
-<th></th>
-<th align="right">2.5 %</th>
-<th align="right">97.5 %</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>pesonotif</td>
-<td align="right">0.8384665</td>
-<td align="right">1.017219</td>
-</tr>
-</tbody>
-</table>
+<pre><code>##               2.5 %   97.5 %
+## pesonotif 0.8384665 1.017219</code></pre>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">confint</span>(recta_regresion)[<span class="dv">2</span>,]</code></pre>
 <pre><code>##     2.5 %    97.5 % 
 ## 0.8384665 1.0172191</code></pre>
@@ -775,32 +659,10 @@ Figura 10.2: Gráfico de los pares de observaciones (pesonotif,peso) junto con l
 <p>Si hacemos lo mismo para la regresión lineal del voto de Obama en función de las variables <code>grad_univ</code> y <code>veteranos</code>, obtenemos:</p>
 <pre class="sourceCode r"><code class="sourceCode r">recta_reg=<span class="kw">lm</span>(obama<span class="op">~</span>grad_univ<span class="op">+</span>veteranos,<span class="dt">data=</span>USA)
 <span class="kw">confint</span>(recta_reg)</code></pre>
-<table>
-<thead>
-<tr class="header">
-<th></th>
-<th align="right">2.5 %</th>
-<th align="right">97.5 %</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>(Intercept)</td>
-<td align="right">-9.6169060</td>
-<td align="right">37.080465</td>
-</tr>
-<tr class="even">
-<td>grad_univ</td>
-<td align="right">0.9650792</td>
-<td align="right">1.855656</td>
-</tr>
-<tr class="odd">
-<td>veteranos</td>
-<td align="right">-2.6293525</td>
-<td align="right">1.433104</td>
-</tr>
-</tbody>
-</table>
+<pre><code>##                  2.5 %    97.5 %
+## (Intercept) -9.6169060 37.080465
+## grad_univ    0.9650792  1.855656
+## veteranos   -2.6293525  1.433104</code></pre>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">summary</span>(recta_reg)</code></pre>
 <pre><code>## 
 ## Call:
@@ -849,52 +711,16 @@ Figura 10.2: Gráfico de los pares de observaciones (pesonotif,peso) junto con l
 <li>Los intervalos de confianza del 95% para lo que esperamos que pesen son:</li>
 </ul>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">round</span>(<span class="kw">predict</span>(recta_regresion,individuos,<span class="dt">interval=</span><span class="st">&quot;confidence&quot;</span>),<span class="dv">1</span>)</code></pre>
-<table>
-<thead>
-<tr class="header">
-<th align="right">fit</th>
-<th align="right">lwr</th>
-<th align="right">upr</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td align="right">70.3</td>
-<td align="right">69.0</td>
-<td align="right">71.6</td>
-</tr>
-<tr class="even">
-<td align="right">98.1</td>
-<td align="right">94.8</td>
-<td align="right">101.4</td>
-</tr>
-</tbody>
-</table>
+<pre><code>##    fit  lwr   upr
+## 1 70.3 69.0  71.6
+## 2 98.1 94.8 101.4</code></pre>
 <ul>
 <li>Los intervalos de confianza del 95% para lo que predecimos que pesan son:</li>
 </ul>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">round</span>(<span class="kw">predict</span>(recta_regresion,individuos,<span class="dt">interval=</span><span class="st">&quot;prediction&quot;</span>),<span class="dv">1</span>)</code></pre>
-<table>
-<thead>
-<tr class="header">
-<th align="right">fit</th>
-<th align="right">lwr</th>
-<th align="right">upr</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td align="right">70.3</td>
-<td align="right">53.6</td>
-<td align="right">86.9</td>
-</tr>
-<tr class="even">
-<td align="right">98.1</td>
-<td align="right">81.2</td>
-<td align="right">115.1</td>
-</tr>
-</tbody>
-</table>
+<pre><code>##    fit  lwr   upr
+## 1 70.3 53.6  86.9
+## 2 98.1 81.2 115.1</code></pre>
 <p>Como podéis ver, la salida de la función <code>predict</code> es una matriz cuyas filas corresponden a los individuos representados en el <em>data frame </em>que le entramos, en el mismo orden que las filas de ese <em>data frame</em> (o un vector, si el data frame tiene una sola fila) y tres columnas:</p>
 <ul>
 <li><code>fit</code>: los valores predichos por la función de regresión.</li>
@@ -908,39 +734,11 @@ Figura 10.2: Gráfico de los pares de observaciones (pesonotif,peso) junto con l
 <span class="dt">blancos=</span><span class="fl">63.1</span>,<span class="dt">evangelicos=</span><span class="dv">30</span>,<span class="dt">protestantes=</span><span class="dv">16</span>,<span class="dt">relig_afro=</span><span class="dv">12</span>,<span class="dt">catolicos=</span><span class="dv">12</span>,
 <span class="dt">mormones=</span><span class="dv">2</span>, <span class="dt">jubilados=</span><span class="fl">13.8</span>,<span class="dt">paro=</span><span class="fl">4.3</span>,<span class="dt">salario=</span><span class="dv">66155</span>)
 <span class="kw">predict</span>(<span class="kw">lm</span>(obama<span class="op">~</span>.,<span class="dt">data=</span>USA2),virginia2015,<span class="dt">interval=</span><span class="st">&quot;prediction&quot;</span>)</code></pre>
-<table>
-<thead>
-<tr class="header">
-<th align="right">fit</th>
-<th align="right">lwr</th>
-<th align="right">upr</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td align="right">49.87625</td>
-<td align="right">37.00499</td>
-<td align="right">62.74752</td>
-</tr>
-</tbody>
-</table>
+<pre><code>##        fit      lwr      upr
+## 1 49.87625 37.00499 62.74752</code></pre>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">predict</span>(<span class="kw">lm</span>(obama<span class="op">~</span>.,<span class="dt">data=</span>USA2),virginia2015,<span class="dt">interval=</span><span class="st">&quot;confidence&quot;</span>)</code></pre>
-<table>
-<thead>
-<tr class="header">
-<th align="right">fit</th>
-<th align="right">lwr</th>
-<th align="right">upr</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td align="right">49.87625</td>
-<td align="right">41.73612</td>
-<td align="right">58.01638</td>
-</tr>
-</tbody>
-</table>
+<pre><code>##        fit      lwr      upr
+## 1 49.87625 41.73612 58.01638</code></pre>
 <p>El modelo predice que en 2016 el partido demócrata iba a obtener un 49.88% de los votos, con un intervalo de confianza del 95% del 37% al 62.75%. Además, un intervalo de confianza del 95% para el valor <em>esperado</em> de este porcentaje de votos (es decir, la media de los porcentajes de votos que obendría el partido demócrata en estados con los mismos datos socio-económicos y demográficos que Virginia en 2015 si repitiésemos muchísimas veces las elecciones) va del 41.74% al 58.02%. El porcentaje de voto demócrata en Virginia en las elecciones del 2016 fue del 49.73%, así que la predicción del modelo en este caso es bastante acertada.</p>
 </div>
 <div id="sec:seleccion" class="section level2">
@@ -1162,8 +960,8 @@ Coefficients<span class="op">:</span>
 <p>A modo de ejemplo, vamos a determinar cuál és el mejor modelo lineal con hasta 9 variables independientes, que es la cantidad de variables que se han obtenido con las dos ejecuciones de <code>step</code>, para los datos del Ejemplo <a href="chap-regresion.html#exm:exempUSA">10.2</a>.</p>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(leaps)
 <span class="kw">plot</span>(<span class="kw">regsubsets</span>(obama<span class="op">~</span>.,<span class="dt">data=</span>USA2,<span class="dt">nbest=</span><span class="dv">1</span>,<span class="dt">nvmax=</span><span class="dv">9</span>))</code></pre>
-<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-603"></span>
-<img src="AprendeR-Parte-II_files/figure-html/unnamed-chunk-603-1.png" alt="Variables independientes involucradas en el mejor modelo según BIC para una cantidad fija de variables independientes entre 1 y 9. Los modelos se ordenan por filas en base al valor BIC." width="480" />
+<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-611"></span>
+<img src="AprendeR-Parte-II_files/figure-html/unnamed-chunk-611-1.png" alt="Variables independientes involucradas en el mejor modelo según BIC para una cantidad fija de variables independientes entre 1 y 9. Los modelos se ordenan por filas en base al valor BIC." width="480" />
 <p class="caption">
 Figura 10.3: Variables independientes involucradas en el mejor modelo según BIC para una cantidad fija de variables independientes entre 1 y 9. Los modelos se ordenan por filas en base al valor BIC.
 </p>
@@ -1195,8 +993,8 @@ Figura 10.3: Variables independientes involucradas en el mejor modelo según BIC
 <p>Realicemos el diagnóstico de regresión de los Ejemplos <a href="chap-regresion.html#exm:exempDavis">10.1</a> y <a href="chap-regresion.html#exm:exempUSA">10.2</a>. Empecemos por el primero. Vamos a tomar los gráficos que produce por defecto R. Si queréis modificarlos, por ejemplo traduciendo los textos a otro idioma, consultad la Ayuda de la función <code>plot.lm</code>.</p>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">par</span>(<span class="dt">mfrow=</span><span class="kw">c</span>(<span class="dv">2</span>,<span class="dv">2</span>))
 <span class="kw">plot</span>(<span class="kw">lm</span>(peso<span class="op">~</span>pesonotif,<span class="dt">data=</span>datospeso))</code></pre>
-<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-604"></span>
-<img src="AprendeR-Parte-II_files/figure-html/unnamed-chunk-604-1.png" alt="Gráficos del diagnóstico de regresión del modelo lineal del Ejemplo \@ref(exm:exempDavis)." width="960" />
+<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-612"></span>
+<img src="AprendeR-Parte-II_files/figure-html/unnamed-chunk-612-1.png" alt="Gráficos del diagnóstico de regresión del modelo lineal del Ejemplo \@ref(exm:exempDavis)." width="960" />
 <p class="caption">
 Figura 10.4: Gráficos del diagnóstico de regresión del modelo lineal del Ejemplo <a href="chap-regresion.html#exm:exempDavis">10.1</a>.
 </p>
@@ -1204,8 +1002,8 @@ Figura 10.4: Gráficos del diagnóstico de regresión del modelo lineal del Ejem
 <p>Como ya se podía intuir, la observación 12, que era muy optimista con respecto al peso real (o un olvido de la cifra de las centenas), distorsiona claramente el análisis destacando en cada gráfico y es la única observación que podría ser influyente según el cuarto gráfico. Veamos qué ocurre si eliminamos esta observación que claramente constituye un caso muy especial que no responde a la lógica.</p>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">par</span>(<span class="dt">mfrow=</span><span class="kw">c</span>(<span class="dv">2</span>,<span class="dv">2</span>))
 <span class="kw">plot</span>(<span class="kw">lm</span>(peso<span class="op">~</span>pesonotif,<span class="dt">subset=</span><span class="op">-</span><span class="dv">12</span>,<span class="dt">data=</span>datospeso))</code></pre>
-<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-605"></span>
-<img src="AprendeR-Parte-II_files/figure-html/unnamed-chunk-605-1.png" alt="Gráficos del diagnóstico de regresión del modelo lineal del Ejemplo \@ref(exm:exempDavis)  sin la observación 12." width="960" />
+<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-613"></span>
+<img src="AprendeR-Parte-II_files/figure-html/unnamed-chunk-613-1.png" alt="Gráficos del diagnóstico de regresión del modelo lineal del Ejemplo \@ref(exm:exempDavis)  sin la observación 12." width="960" />
 <p class="caption">
 Figura 10.5: Gráficos del diagnóstico de regresión del modelo lineal del Ejemplo <a href="chap-regresion.html#exm:exempDavis">10.1</a> sin la observación 12.
 </p>
@@ -1223,8 +1021,8 @@ Figura 10.5: Gráficos del diagnóstico de regresión del modelo lineal del Ejem
 modelo_obama=<span class="kw">lm</span>(obama<span class="op">~</span>mujeres<span class="op">+</span>grad_univ<span class="op">+</span>asia<span class="op">+</span>evangelicos<span class="op">+</span>protestantes<span class="op">+</span>mormones<span class="op">+</span>paro,
                 <span class="dt">data=</span>USA2)
 <span class="kw">plot</span>(modelo_obama)</code></pre>
-<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-607"></span>
-<img src="AprendeR-Parte-II_files/figure-html/unnamed-chunk-607-1.png" alt="Gráficos del diagnóstico de regresión del modelo lineal obtenido con la función `regsubsets` a partir de los datos del Ejemplo \@ref(exm:exempUSA)." width="960" />
+<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-615"></span>
+<img src="AprendeR-Parte-II_files/figure-html/unnamed-chunk-615-1.png" alt="Gráficos del diagnóstico de regresión del modelo lineal obtenido con la función `regsubsets` a partir de los datos del Ejemplo \@ref(exm:exempUSA)." width="960" />
 <p class="caption">
 Figura 10.6: Gráficos del diagnóstico de regresión del modelo lineal obtenido con la función <code>regsubsets</code> a partir de los datos del Ejemplo <a href="chap-regresion.html#exm:exempUSA">10.2</a>.
 </p>
@@ -1235,8 +1033,8 @@ e_{ij}=e_i+b_jx_{ij}.
 \]</span>
 Los residuos parciales se dibujan contra los valores de <span class="math inline">\(x_j\)</span> y se calcula su recta de regresión lineal simple, representada en azul en el gráfico. Además, se realiza una recta de regresión no paramétrica suave (las variables independientes no están predeterminadas y se construyen con los datos), representada en color morado. Si estas curvas divergen considerablemente en alguna de las variables independientes, no se cumple la linealidad del modelo. En nuestro caso coinciden en general y podemos suponer que el modelo sí es lineal:</p>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">crPlots</span>(modelo_obama)</code></pre>
-<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-609"></span>
-<img src="AprendeR-Parte-II_files/figure-html/unnamed-chunk-609-1.png" alt="Gráficos de residuos parciales del modelo lineal obtenido con la función `regsubsets` a partir de los datos del Ejemplo \@ref(exm:exempUSA)." width="960" />
+<div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-617"></span>
+<img src="AprendeR-Parte-II_files/figure-html/unnamed-chunk-617-1.png" alt="Gráficos de residuos parciales del modelo lineal obtenido con la función `regsubsets` a partir de los datos del Ejemplo \@ref(exm:exempUSA)." width="960" />
 <p class="caption">
 Figura 10.7: Gráficos de residuos parciales del modelo lineal obtenido con la función <code>regsubsets</code> a partir de los datos del Ejemplo <a href="chap-regresion.html#exm:exempUSA">10.2</a>.
 </p>
@@ -1360,7 +1158,7 @@ Figura 10.7: Gráficos de residuos parciales del modelo lineal obtenido con la f
 <p><em>(2)</em> 0.6767 SI</p>
 <p>Nosotros lo hemos resuelto mediante</p>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">plot</span>(<span class="kw">regsubsets</span>(medv<span class="op">~</span>.,<span class="dt">data=</span>boston,<span class="dt">nbest=</span><span class="dv">1</span>,<span class="dt">nvmax=</span><span class="dv">3</span>)) </code></pre>
-<p><img src="AprendeR-Parte-II_files/figure-html/unnamed-chunk-613-1.png" width="480" style="display: block; margin: auto;" />
+<p><img src="AprendeR-Parte-II_files/figure-html/unnamed-chunk-621-1.png" width="480" style="display: block; margin: auto;" />
 La fila con tres variables independientes es la superior y vemos que involucra las variables <code>rm</code>, <code>ptratio</code> y <code>lstat</code>. Ahora realizamos la regresión lineal correspondiente y calculamos el valor de <span class="math inline">\(R^2_{adj}\)</span>:</p>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">round</span>(<span class="kw">summary</span>(<span class="kw">lm</span>(medv<span class="op">~</span>rm<span class="op">+</span>ptratio<span class="op">+</span>lstat,<span class="dt">data=</span>boston))<span class="op">$</span>adj.r.squared,<span class="dv">4</span>)</code></pre>
 <pre><code>## [1] 0.6767</code></pre>
@@ -1386,7 +1184,7 @@ modelo=<span class="kw">lm</span>(Rings<span class="op">~</span>.,<span class="d
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">par</span>(<span class="dt">mfrow=</span><span class="kw">c</span>(<span class="dv">2</span>,<span class="dv">2</span>))
 <span class="kw">plot</span>(modelo)
 <span class="kw">par</span>(<span class="dt">mfrow=</span><span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">1</span>))</code></pre>
-<p><img src="AprendeR-Parte-II_files/figure-html/unnamed-chunk-615-1.png" width="960" style="display: block; margin: auto;" />
+<p><img src="AprendeR-Parte-II_files/figure-html/unnamed-chunk-623-1.png" width="960" style="display: block; margin: auto;" />
 Vemos la única observación influyente es la 2052.</p>
 <p><em>(4)</em> 7.096 15.83 11.053 11.873</p>
 <p>Nosotros lo hemos resuelto mediante</p>
@@ -1407,47 +1205,19 @@ modelo_completo=<span class="kw">lm</span>(Rings<span class="op">~</span>.,<span
 datos=<span class="kw">data.frame</span>(<span class="dt">LongestShell=</span><span class="fl">0.44</span>,<span class="dt">Diameter=</span><span class="fl">0.45</span>,<span class="dt">Height=</span><span class="fl">0.15</span>,<span class="dt">WholeWeight=</span><span class="fl">0.8</span>,
 <span class="dt">ShuckedWeight=</span><span class="fl">0.36</span>,<span class="dt">VisceraWeight=</span><span class="fl">0.2</span>,<span class="dt">ShellWeight=</span><span class="fl">0.4</span>) <span class="co">#Nuevo individuo</span>
 <span class="kw">round</span>(<span class="kw">predict</span>(modelo_step,datos,<span class="dt">interval=</span><span class="st">&quot;prediction&quot;</span>),<span class="dv">3</span>) <span class="co">#Intervalo de confianza del valor predicho</span></code></pre>
-<table>
-<thead>
-<tr class="header">
-<th align="right">fit</th>
-<th align="right">lwr</th>
-<th align="right">upr</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td align="right">11.463</td>
-<td align="right">7.096</td>
-<td align="right">15.83</td>
-</tr>
-</tbody>
-</table>
+<pre><code>##      fit   lwr   upr
+## 1 11.463 7.096 15.83</code></pre>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">round</span>(<span class="kw">predict</span>(modelo_step,datos,<span class="dt">interval=</span><span class="st">&quot;confidence&quot;</span>),<span class="dv">3</span>) <span class="co">#Intervalo de confianza del valor esperado</span></code></pre>
-<table>
-<thead>
-<tr class="header">
-<th align="right">fit</th>
-<th align="right">lwr</th>
-<th align="right">upr</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td align="right">11.463</td>
-<td align="right">11.053</td>
-<td align="right">11.873</td>
-</tr>
-</tbody>
-</table>
+<pre><code>##      fit    lwr    upr
+## 1 11.463 11.053 11.873</code></pre>
 
 </div>
 </div>
 </div>
 <div class="footnotes">
 <hr />
-<ol start="13">
-<li id="fn13"><p>Véase C. Davis. “Body image and weight preocuppation: A comparison between exercising and non-exercising women.” <em>Appetite</em> 15 (1990), pp. 13-21.<a href="chap-regresion.html#fnref13" class="footnote-back">↩</a></p></li>
+<ol start="8">
+<li id="fn8"><p>Véase C. Davis. “Body image and weight preocuppation: A comparison between exercising and non-exercising women.” <em>Appetite</em> 15 (1990), pp. 13-21.<a href="chap-regresion.html#fnref8" class="footnote-back">↩</a></p></li>
 </ol>
 </div>
             </section>
@@ -1486,16 +1256,17 @@ gitbook.start({
 "size": 2
 },
 "edit": {
-"link": "https://github.com/cescrossello/AprendeR-II/edit/master/10-Regresion.Rmd",
-"text": "Edit"
+"link": null,
+"text": null
 },
 "history": {
 "link": null,
 "text": null
 },
-"download": ["AprendeR-Parte-II.pdf", "AprendeR-Parte-II.epub"],
+"download": null,
 "toc": {
-"collapse": "subsection"
+"collapse": "subsection",
+"download": ["pdf", "epub"]
 }
 });
 });
