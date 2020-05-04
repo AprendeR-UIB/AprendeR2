@@ -1,39 +1,37 @@
 <!DOCTYPE html>
-<html >
-
+<html lang="" xml:lang="">
 <head>
 
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>AprendeR: Parte II</title>
-  <meta name="description" content="Apuntes AprendeR bookdown::gitbook.">
-  <meta name="generator" content="bookdown  and GitBook 2.6.7">
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Matemàtiques II</title>
+  <meta name="description" content="Apunts Matemàtiques II bookdown::gitbook." />
+  <meta name="generator" content="bookdown 0.18 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="AprendeR: Parte II" />
+  <meta property="og:title" content="Matemàtiques II" />
   <meta property="og:type" content="book" />
   
   
-  <meta property="og:description" content="Apuntes AprendeR bookdown::gitbook." />
-  <meta name="github-repo" content="AprendeR-UIB/AprendeR2" />
+  <meta property="og:description" content="Apunts Matemàtiques II bookdown::gitbook." />
+  <meta name="github-repo" content="cescrossello/MatesII" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="AprendeR: Parte II" />
+  <meta name="twitter:title" content="Matemàtiques II" />
   
-  <meta name="twitter:description" content="Apuntes AprendeR bookdown::gitbook." />
-  
-
-<meta name="author" content="The UIB-AprendeR team">
-
-
-<meta name="date" content="2020-03-18">
-
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="apple-mobile-web-app-capable" content="yes">
-  <meta name="apple-mobile-web-app-status-bar-style" content="black">
-  
+  <meta name="twitter:description" content="Apunts Matemàtiques II bookdown::gitbook." />
   
 
-<link rel="next" href="chap-distr.html">
+
+
+<meta name="date" content="2020-05-04" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+
+<link rel="next" href="repàs-de-la-distribució-normal.html"/>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -41,6 +39,9 @@
 <link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
 
 
 
@@ -56,7 +57,6 @@ a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
 a.sourceLine:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
 code.sourceCode { white-space: pre; position: relative; }
-div.sourceCode { margin: 1em 0; }
 pre.sourceCode { margin: 0; }
 @media screen {
 div.sourceCode { overflow: auto; }
@@ -127,159 +127,130 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
       <nav role="navigation">
 
 <ul class="summary">
-<li><a href="./">AprendeR: Parte II</a></li>
+<li><a href="./">Bioestadística II</a></li>
 
 <li class="divider"></li>
-<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Presentación</a></li>
-<li class="part"><span><b>Parte II: Estadística inferencial</b></span></li>
-<li class="chapter" data-level="1" data-path="chap-distr.html"><a href="chap-distr.html"><i class="fa fa-check"></i><b>1</b> Distribuciones de probabilidad</a><ul>
-<li class="chapter" data-level="1.1" data-path="chap-distr.html"><a href="chap-distr.html#ejercicios"><i class="fa fa-check"></i><b>1.1</b> Ejercicios</a><ul>
-<li class="chapter" data-level="" data-path="chap-distr.html"><a href="chap-distr.html#test"><i class="fa fa-check"></i>Test</a></li>
-<li class="chapter" data-level="" data-path="chap-distr.html"><a href="chap-distr.html#problemas"><i class="fa fa-check"></i>Problemas</a></li>
-<li class="chapter" data-level="" data-path="chap-distr.html"><a href="chap-distr.html#respuestas-al-test"><i class="fa fa-check"></i>Respuestas al test</a></li>
-<li class="chapter" data-level="" data-path="chap-distr.html"><a href="chap-distr.html#soluciones-sucintas-de-los-problemas"><i class="fa fa-check"></i>Soluciones sucintas de los problemas</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Presentació</a></li>
+<li class="part"><span><b>Part II: Estadística inferencial</b></span></li>
+<li class="chapter" data-level="1" data-path="repàs-de-la-distribució-normal.html"><a href="repàs-de-la-distribució-normal.html"><i class="fa fa-check"></i><b>1</b> Repàs de la distribució normal</a><ul>
+<li class="chapter" data-level="1.1" data-path="repàs-de-la-distribució-normal.html"><a href="repàs-de-la-distribució-normal.html#propietats-de-la-distribució-normal"><i class="fa fa-check"></i><b>1.1</b> Propietats de la distribució normal</a></li>
+<li class="chapter" data-level="1.2" data-path="repàs-de-la-distribució-normal.html"><a href="repàs-de-la-distribució-normal.html#amb-r"><i class="fa fa-check"></i><b>1.2</b> Amb R</a></li>
+<li class="chapter" data-level="1.3" data-path="repàs-de-la-distribució-normal.html"><a href="repàs-de-la-distribució-normal.html#combinacions-lineals"><i class="fa fa-check"></i><b>1.3</b> Combinacions lineals</a></li>
+<li class="chapter" data-level="1.4" data-path="repàs-de-la-distribució-normal.html"><a href="repàs-de-la-distribució-normal.html#intervals-de-referència"><i class="fa fa-check"></i><b>1.4</b> Intervals de referència</a></li>
+<li class="chapter" data-level="1.5" data-path="repàs-de-la-distribució-normal.html"><a href="repàs-de-la-distribució-normal.html#el-z-score"><i class="fa fa-check"></i><b>1.5</b> El z-score</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="estimació-puntual.html"><a href="estimació-puntual.html"><i class="fa fa-check"></i><b>2</b> Estimació puntual</a><ul>
+<li class="chapter" data-level="2.1" data-path="estimació-puntual.html"><a href="estimació-puntual.html#definicions-bàsiques"><i class="fa fa-check"></i><b>2.1</b> Definicions bàsiques</a></li>
+<li class="chapter" data-level="2.2" data-path="estimació-puntual.html"><a href="estimació-puntual.html#mitjana-mostral"><i class="fa fa-check"></i><b>2.2</b> Mitjana mostral</a></li>
+<li class="chapter" data-level="2.3" data-path="estimació-puntual.html"><a href="estimació-puntual.html#proporció-mostral"><i class="fa fa-check"></i><b>2.3</b> Proporció mostral</a></li>
+<li class="chapter" data-level="2.4" data-path="estimació-puntual.html"><a href="estimació-puntual.html#variància-mostral"><i class="fa fa-check"></i><b>2.4</b> Variància mostral</a></li>
+<li class="chapter" data-level="2.5" data-path="estimació-puntual.html"><a href="estimació-puntual.html#la-t-de-student"><i class="fa fa-check"></i><b>2.5</b> La t de Student</a></li>
+<li class="chapter" data-level="2.6" data-path="estimació-puntual.html"><a href="estimació-puntual.html#bons-estimadors"><i class="fa fa-check"></i><b>2.6</b> “Bons” estimadors</a><ul>
+<li class="chapter" data-level="2.6.1" data-path="estimació-puntual.html"><a href="estimació-puntual.html#estimadors-no-esbiaixats"><i class="fa fa-check"></i><b>2.6.1</b> Estimadors no esbiaixats</a></li>
+<li class="chapter" data-level="2.6.2" data-path="estimació-puntual.html"><a href="estimació-puntual.html#estimadors-eficients"><i class="fa fa-check"></i><b>2.6.2</b> Estimadors eficients</a></li>
+<li class="chapter" data-level="2.6.3" data-path="estimació-puntual.html"><a href="estimació-puntual.html#estimadors-màxim-versemblants"><i class="fa fa-check"></i><b>2.6.3</b> Estimadors màxim versemblants</a></li>
+</ul></li>
+<li class="chapter" data-level="2.7" data-path="estimació-puntual.html"><a href="estimació-puntual.html#sec:pobl"><i class="fa fa-check"></i><b>2.7</b> Estimació de poblacions</a><ul>
+<li class="chapter" data-level="2.7.1" data-path="estimació-puntual.html"><a href="estimació-puntual.html#estimació-de-poblacions-numerades"><i class="fa fa-check"></i><b>2.7.1</b> Estimació de poblacions numerades</a></li>
+<li class="chapter" data-level="2.7.2" data-path="estimació-puntual.html"><a href="estimació-puntual.html#marca-recaptura"><i class="fa fa-check"></i><b>2.7.2</b> Marca-recaptura</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="2" data-path="chap-muestreo.html"><a href="chap-muestreo.html"><i class="fa fa-check"></i><b>2</b> Conceptos básicos de muestreo</a><ul>
-<li class="chapter" data-level="2.1" data-path="chap-muestreo.html"><a href="chap-muestreo.html#sec:muestreo"><i class="fa fa-check"></i><b>2.1</b> Tipos de muestreo</a></li>
-<li class="chapter" data-level="2.2" data-path="chap-muestreo.html"><a href="chap-muestreo.html#muestreo-aleatorio-con-r"><i class="fa fa-check"></i><b>2.2</b> Muestreo aleatorio con R</a></li>
-<li class="chapter" data-level="2.3" data-path="chap-muestreo.html"><a href="chap-muestreo.html#guia-rapida"><i class="fa fa-check"></i><b>2.3</b> Guía rápida</a></li>
-<li class="chapter" data-level="2.4" data-path="chap-muestreo.html"><a href="chap-muestreo.html#ejercicios-1"><i class="fa fa-check"></i><b>2.4</b> Ejercicios</a><ul>
-<li class="chapter" data-level="" data-path="chap-muestreo.html"><a href="chap-muestreo.html#test-1"><i class="fa fa-check"></i>Test</a></li>
-<li class="chapter" data-level="" data-path="chap-muestreo.html"><a href="chap-muestreo.html#problemas-1"><i class="fa fa-check"></i>Problemas</a></li>
-<li class="chapter" data-level="" data-path="chap-muestreo.html"><a href="chap-muestreo.html#respuestas-al-test-1"><i class="fa fa-check"></i>Respuestas al test</a></li>
-<li class="chapter" data-level="" data-path="chap-muestreo.html"><a href="chap-muestreo.html#soluciones-sucintas-de-los-problemas-1"><i class="fa fa-check"></i>Soluciones sucintas de los problemas</a></li>
+<li class="chapter" data-level="3" data-path="intervals-de-confiança.html"><a href="intervals-de-confiança.html"><i class="fa fa-check"></i><b>3</b> Intervals de confiança</a><ul>
+<li class="chapter" data-level="3.1" data-path="intervals-de-confiança.html"><a href="intervals-de-confiança.html#definicions-bàsiques-1"><i class="fa fa-check"></i><b>3.1</b> Definicions bàsiques</a></li>
+<li class="chapter" data-level="3.2" data-path="intervals-de-confiança.html"><a href="intervals-de-confiança.html#exemple-interval-de-confiança-del-95-per-a-la-mitjana-duna-variable-aleatòria-normal"><i class="fa fa-check"></i><b>3.2</b> Exemple: Interval de confiança del 95% per a la mitjana d’una variable aleatòria normal</a></li>
+<li class="chapter" data-level="3.3" data-path="intervals-de-confiança.html"><a href="intervals-de-confiança.html#interval-de-confiança-per-a-la-mitjana-basat-en-la-t-de-student"><i class="fa fa-check"></i><b>3.3</b> Interval de confiança per a la mitjana basat en la t de Student</a><ul>
+<li class="chapter" data-level="" data-path="intervals-de-confiança.html"><a href="intervals-de-confiança.html#la-fórmula"><i class="fa fa-check"></i>La fórmula</a></li>
+<li class="chapter" data-level="" data-path="intervals-de-confiança.html"><a href="intervals-de-confiança.html#algunes-consideracions"><i class="fa fa-check"></i>Algunes consideracions</a></li>
+<li class="chapter" data-level="" data-path="intervals-de-confiança.html"><a href="intervals-de-confiança.html#amb-r-1"><i class="fa fa-check"></i>Amb R</a></li>
+<li class="chapter" data-level="" data-path="intervals-de-confiança.html"><a href="intervals-de-confiança.html#càlcul-de-la-mida-de-la-mostra-per-fixar-lerror"><i class="fa fa-check"></i>Càlcul de la mida de la mostra per fixar l’error</a></li>
+</ul></li>
+<li class="chapter" data-level="3.4" data-path="intervals-de-confiança.html"><a href="intervals-de-confiança.html#intervals-de-confiança-per-a-proporcions"><i class="fa fa-check"></i><b>3.4</b> Intervals de confiança per a proporcions</a><ul>
+<li class="chapter" data-level="" data-path="intervals-de-confiança.html"><a href="intervals-de-confiança.html#mètode-exacte-de-clopper-pearson"><i class="fa fa-check"></i>Mètode “exacte” de Clopper-Pearson</a></li>
+<li class="chapter" data-level="" data-path="intervals-de-confiança.html"><a href="intervals-de-confiança.html#mètode-de-wilson"><i class="fa fa-check"></i>Mètode de Wilson</a></li>
+<li class="chapter" data-level="" data-path="intervals-de-confiança.html"><a href="intervals-de-confiança.html#mètode-de-laplace"><i class="fa fa-check"></i>Mètode de Laplace</a></li>
+<li class="chapter" data-level="" data-path="intervals-de-confiança.html"><a href="intervals-de-confiança.html#més-exemples"><i class="fa fa-check"></i>Més exemples</a></li>
+<li class="chapter" data-level="" data-path="intervals-de-confiança.html"><a href="intervals-de-confiança.html#càlcul-de-la-mida-de-la-mostra-per-a-fixar-lerror"><i class="fa fa-check"></i>Càlcul de la mida de la mostra per a fixar l’error</a></li>
+</ul></li>
+<li class="chapter" data-level="3.5" data-path="intervals-de-confiança.html"><a href="intervals-de-confiança.html#intervals-de-confiança-per-a-la-variància-duna-variable-normal"><i class="fa fa-check"></i><b>3.5</b> Intervals de confiança per a la variància d’una variable normal</a></li>
+<li class="chapter" data-level="3.6" data-path="intervals-de-confiança.html"><a href="intervals-de-confiança.html#poblacions-finites"><i class="fa fa-check"></i><b>3.6</b> “Poblacions finites”</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="contrastos-dhipòtesis-generalitats.html"><a href="contrastos-dhipòtesis-generalitats.html"><i class="fa fa-check"></i><b>4</b> Contrastos d’hipòtesis: Generalitats</a><ul>
+<li class="chapter" data-level="4.1" data-path="contrastos-dhipòtesis-generalitats.html"><a href="contrastos-dhipòtesis-generalitats.html#hipòtesis-nulla-i-alternativa"><i class="fa fa-check"></i><b>4.1</b> Hipòtesis nul·la i alternativa</a></li>
+<li class="chapter" data-level="4.2" data-path="contrastos-dhipòtesis-generalitats.html"><a href="contrastos-dhipòtesis-generalitats.html#sec:moneda"><i class="fa fa-check"></i><b>4.2</b> Un exemple</a></li>
+<li class="chapter" data-level="4.3" data-path="contrastos-dhipòtesis-generalitats.html"><a href="contrastos-dhipòtesis-generalitats.html#sec:pval"><i class="fa fa-check"></i><b>4.3</b> El p-valor</a></li>
+<li class="chapter" data-level="4.4" data-path="contrastos-dhipòtesis-generalitats.html"><a href="contrastos-dhipòtesis-generalitats.html#tipus-derrors"><i class="fa fa-check"></i><b>4.4</b> Tipus d’errors</a></li>
+<li class="chapter" data-level="4.5" data-path="contrastos-dhipòtesis-generalitats.html"><a href="contrastos-dhipòtesis-generalitats.html#sec:exttest"><i class="fa fa-check"></i><b>4.5</b> Exemple: El test t</a></li>
+<li class="chapter" data-level="4.6" data-path="contrastos-dhipòtesis-generalitats.html"><a href="contrastos-dhipòtesis-generalitats.html#recapitulació"><i class="fa fa-check"></i><b>4.6</b> Recapitulació</a><ul>
+<li class="chapter" data-level="" data-path="contrastos-dhipòtesis-generalitats.html"><a href="contrastos-dhipòtesis-generalitats.html#interval-de-confiança-dun-contrast"><i class="fa fa-check"></i>Interval de confiança d’un contrast</a></li>
+<li class="chapter" data-level="" data-path="contrastos-dhipòtesis-generalitats.html"><a href="contrastos-dhipòtesis-generalitats.html#la-potència"><i class="fa fa-check"></i>La potència</a></li>
+<li class="chapter" data-level="" data-path="contrastos-dhipòtesis-generalitats.html"><a href="contrastos-dhipòtesis-generalitats.html#el-risc-de-positiu-fals-opcional"><i class="fa fa-check"></i>El risc de positiu fals (Opcional)</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="3" data-path="chap-estimacion.html"><a href="chap-estimacion.html"><i class="fa fa-check"></i><b>3</b> Estimación puntual</a><ul>
-<li class="chapter" data-level="3.1" data-path="chap-estimacion.html"><a href="chap-estimacion.html#estimacion-maximo-verosimil"><i class="fa fa-check"></i><b>3.1</b> Estimación máximo verosímil</a></li>
-<li class="chapter" data-level="3.2" data-path="chap-estimacion.html"><a href="chap-estimacion.html#guia-rapida-1"><i class="fa fa-check"></i><b>3.2</b> Guía rápida</a></li>
-<li class="chapter" data-level="3.3" data-path="chap-estimacion.html"><a href="chap-estimacion.html#ejercicios-2"><i class="fa fa-check"></i><b>3.3</b> Ejercicios</a><ul>
-<li class="chapter" data-level="" data-path="chap-estimacion.html"><a href="chap-estimacion.html#test-2"><i class="fa fa-check"></i>Test</a></li>
-<li class="chapter" data-level="" data-path="chap-estimacion.html"><a href="chap-estimacion.html#problemas-2"><i class="fa fa-check"></i>Problemas</a></li>
-<li class="chapter" data-level="" data-path="chap-estimacion.html"><a href="chap-estimacion.html#respuestas-al-test-2"><i class="fa fa-check"></i>Respuestas al test</a></li>
-<li class="chapter" data-level="" data-path="chap-estimacion.html"><a href="chap-estimacion.html#soluciones-sucintas-de-los-problemas-2"><i class="fa fa-check"></i>Soluciones sucintas de los problemas</a></li>
+<li class="chapter" data-level="5" data-path="contrastos-dhipòtesis-dun-i-dos-paràmetres.html"><a href="contrastos-dhipòtesis-dun-i-dos-paràmetres.html"><i class="fa fa-check"></i><b>5</b> Contrastos d’hipòtesis d’un i dos paràmetres</a><ul>
+<li class="chapter" data-level="5.1" data-path="contrastos-dhipòtesis-dun-i-dos-paràmetres.html"><a href="contrastos-dhipòtesis-dun-i-dos-paràmetres.html#contrastos-de-mitjanes"><i class="fa fa-check"></i><b>5.1</b> Contrastos de mitjanes</a><ul>
+<li class="chapter" data-level="5.1.1" data-path="contrastos-dhipòtesis-dun-i-dos-paràmetres.html"><a href="contrastos-dhipòtesis-dun-i-dos-paràmetres.html#test-t-per-a-una-mitjana"><i class="fa fa-check"></i><b>5.1.1</b> Test t per a una mitjana</a></li>
+<li class="chapter" data-level="5.1.2" data-path="contrastos-dhipòtesis-dun-i-dos-paràmetres.html"><a href="contrastos-dhipòtesis-dun-i-dos-paràmetres.html#test-t-per-a-dues-mitjanes"><i class="fa fa-check"></i><b>5.1.2</b> Test t per a dues mitjanes</a></li>
+<li class="chapter" data-level="5.1.3" data-path="contrastos-dhipòtesis-dun-i-dos-paràmetres.html"><a href="contrastos-dhipòtesis-dun-i-dos-paràmetres.html#tests-t-amb-r"><i class="fa fa-check"></i><b>5.1.3</b> Tests t amb R</a></li>
+<li class="chapter" data-level="5.1.4" data-path="contrastos-dhipòtesis-dun-i-dos-paràmetres.html"><a href="contrastos-dhipòtesis-dun-i-dos-paràmetres.html#exemples"><i class="fa fa-check"></i><b>5.1.4</b> Exemples</a></li>
+<li class="chapter" data-level="5.1.5" data-path="contrastos-dhipòtesis-dun-i-dos-paràmetres.html"><a href="contrastos-dhipòtesis-dun-i-dos-paràmetres.html#tests-no-paramètrics"><i class="fa fa-check"></i><b>5.1.5</b> Tests no paramètrics</a></li>
+</ul></li>
+<li class="chapter" data-level="5.2" data-path="contrastos-dhipòtesis-dun-i-dos-paràmetres.html"><a href="contrastos-dhipòtesis-dun-i-dos-paràmetres.html#sec:contrvar"><i class="fa fa-check"></i><b>5.2</b> Contrastos de variàncies</a><ul>
+<li class="chapter" data-level="5.2.1" data-path="contrastos-dhipòtesis-dun-i-dos-paràmetres.html"><a href="contrastos-dhipòtesis-dun-i-dos-paràmetres.html#test-chi2-duna-variància"><i class="fa fa-check"></i><b>5.2.1</b> Test <span class="math inline">\(\chi^2\)</span> d’una variància</a></li>
+<li class="chapter" data-level="5.2.2" data-path="contrastos-dhipòtesis-dun-i-dos-paràmetres.html"><a href="contrastos-dhipòtesis-dun-i-dos-paràmetres.html#test-f-per-a-dues-variàncies"><i class="fa fa-check"></i><b>5.2.2</b> Test F per a dues variàncies</a></li>
+<li class="chapter" data-level="5.2.3" data-path="contrastos-dhipòtesis-dun-i-dos-paràmetres.html"><a href="contrastos-dhipòtesis-dun-i-dos-paràmetres.html#tests-no-paramètrics-1"><i class="fa fa-check"></i><b>5.2.3</b> Tests no paramètrics</a></li>
+</ul></li>
+<li class="chapter" data-level="5.3" data-path="contrastos-dhipòtesis-dun-i-dos-paràmetres.html"><a href="contrastos-dhipòtesis-dun-i-dos-paràmetres.html#contrastos-per-a-proporcions"><i class="fa fa-check"></i><b>5.3</b> Contrastos per a proporcions</a><ul>
+<li class="chapter" data-level="5.3.1" data-path="contrastos-dhipòtesis-dun-i-dos-paràmetres.html"><a href="contrastos-dhipòtesis-dun-i-dos-paràmetres.html#contrastos-per-a-una-proporció"><i class="fa fa-check"></i><b>5.3.1</b> Contrastos per a una proporció</a></li>
+<li class="chapter" data-level="5.3.2" data-path="contrastos-dhipòtesis-dun-i-dos-paràmetres.html"><a href="contrastos-dhipòtesis-dun-i-dos-paràmetres.html#contrastos-per-a-2-proporcions-emprant-mostres-independents"><i class="fa fa-check"></i><b>5.3.2</b> Contrastos per a 2 proporcions emprant mostres independents</a></li>
+<li class="chapter" data-level="5.3.3" data-path="contrastos-dhipòtesis-dun-i-dos-paràmetres.html"><a href="contrastos-dhipòtesis-dun-i-dos-paràmetres.html#contrastos-per-a-2-proporcions-emprant-mostres-aparellades"><i class="fa fa-check"></i><b>5.3.3</b> Contrastos per a 2 proporcions emprant mostres aparellades</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="4" data-path="chap-IC.html"><a href="chap-IC.html"><i class="fa fa-check"></i><b>4</b> Intervalos de confianza</a><ul>
-<li class="chapter" data-level="4.1" data-path="chap-IC.html"><a href="chap-IC.html#sec:ICT"><i class="fa fa-check"></i><b>4.1</b> Intervalo de confianza para la media basado en la t de Student</a></li>
-<li class="chapter" data-level="4.2" data-path="chap-IC.html"><a href="chap-IC.html#intervalos-de-confianza-para-la-proporcion-poblacional"><i class="fa fa-check"></i><b>4.2</b> Intervalos de confianza para la proporción poblacional</a></li>
-<li class="chapter" data-level="4.3" data-path="chap-IC.html"><a href="chap-IC.html#sec:ICvar"><i class="fa fa-check"></i><b>4.3</b> Intervalo de confianza para la varianza de una población normal</a></li>
-<li class="chapter" data-level="4.4" data-path="chap-IC.html"><a href="chap-IC.html#bootstrap"><i class="fa fa-check"></i><b>4.4</b> Bootstrap</a></li>
-<li class="chapter" data-level="4.5" data-path="chap-IC.html"><a href="chap-IC.html#guia-rapida-2"><i class="fa fa-check"></i><b>4.5</b> Guía rápida</a></li>
-<li class="chapter" data-level="4.6" data-path="chap-IC.html"><a href="chap-IC.html#ejercicios-3"><i class="fa fa-check"></i><b>4.6</b> Ejercicios</a><ul>
-<li class="chapter" data-level="" data-path="chap-IC.html"><a href="chap-IC.html#test-3"><i class="fa fa-check"></i>Test</a></li>
-<li class="chapter" data-level="" data-path="chap-IC.html"><a href="chap-IC.html#problemas-3"><i class="fa fa-check"></i>Problemas</a></li>
-<li class="chapter" data-level="" data-path="chap-IC.html"><a href="chap-IC.html#respuestas-al-test-3"><i class="fa fa-check"></i>Respuestas al test</a></li>
-<li class="chapter" data-level="" data-path="chap-IC.html"><a href="chap-IC.html#soluciones-sucintas-de-los-problemas-3"><i class="fa fa-check"></i>Soluciones sucintas de los problemas</a></li>
+<li class="chapter" data-level="6" data-path="contrastos-de-bondat-dajust.html"><a href="contrastos-de-bondat-dajust.html"><i class="fa fa-check"></i><b>6</b> Contrastos de bondat d’ajust</a><ul>
+<li class="chapter" data-level="6.1" data-path="contrastos-de-bondat-dajust.html"><a href="contrastos-de-bondat-dajust.html#bondat-dajust"><i class="fa fa-check"></i><b>6.1</b> Bondat d’ajust</a></li>
+<li class="chapter" data-level="6.2" data-path="contrastos-de-bondat-dajust.html"><a href="contrastos-de-bondat-dajust.html#test-chi2-de-pearson"><i class="fa fa-check"></i><b>6.2</b> Test <span class="math inline">\(\chi^2\)</span> de Pearson</a><ul>
+<li class="chapter" data-level="6.2.1" data-path="contrastos-de-bondat-dajust.html"><a href="contrastos-de-bondat-dajust.html#el-test-bàsic"><i class="fa fa-check"></i><b>6.2.1</b> El test bàsic</a></li>
+<li class="chapter" data-level="6.2.2" data-path="contrastos-de-bondat-dajust.html"><a href="contrastos-de-bondat-dajust.html#mètode-de-montecarlo"><i class="fa fa-check"></i><b>6.2.2</b> Mètode de Montecarlo</a></li>
+<li class="chapter" data-level="6.2.3" data-path="contrastos-de-bondat-dajust.html"><a href="contrastos-de-bondat-dajust.html#test-chi2-amb-paràmetres-poblacionals-desconeguts"><i class="fa fa-check"></i><b>6.2.3</b> Test <span class="math inline">\(\chi^2\)</span> amb paràmetres poblacionals desconeguts</a></li>
+</ul></li>
+<li class="chapter" data-level="6.3" data-path="contrastos-de-bondat-dajust.html"><a href="contrastos-de-bondat-dajust.html#test-de-kolmogorov-smirnov"><i class="fa fa-check"></i><b>6.3</b> Test de Kolmogorov-Smirnov</a></li>
+<li class="chapter" data-level="6.4" data-path="contrastos-de-bondat-dajust.html"><a href="contrastos-de-bondat-dajust.html#test-de-kolmogorov-smirnov-lilliefors"><i class="fa fa-check"></i><b>6.4</b> Test de Kolmogorov-Smirnov-Lilliefors</a></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="contrastos-dindependència-i-homogeneïtat.html"><a href="contrastos-dindependència-i-homogeneïtat.html"><i class="fa fa-check"></i><b>7</b> Contrastos d’independència i homogeneïtat</a><ul>
+<li class="chapter" data-level="7.1" data-path="contrastos-dindependència-i-homogeneïtat.html"><a href="contrastos-dindependència-i-homogeneïtat.html#test-chi2-dindependència"><i class="fa fa-check"></i><b>7.1</b> Test <span class="math inline">\(\chi^2\)</span> d’independència</a></li>
+<li class="chapter" data-level="7.2" data-path="contrastos-dindependència-i-homogeneïtat.html"><a href="contrastos-dindependència-i-homogeneïtat.html#test-chi2-dhomogeneïtat"><i class="fa fa-check"></i><b>7.2</b> Test <span class="math inline">\(\chi^2\)</span> d’homogeneïtat</a></li>
+<li class="chapter" data-level="7.3" data-path="contrastos-dindependència-i-homogeneïtat.html"><a href="contrastos-dindependència-i-homogeneïtat.html#test-chi2-de-tendència-opcional"><i class="fa fa-check"></i><b>7.3</b> Test <span class="math inline">\(\chi^2\)</span> de tendència (Opcional)</a></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="introducció-a-lestadística-multidimensional.html"><a href="introducció-a-lestadística-multidimensional.html"><i class="fa fa-check"></i><b>8</b> Introducció a l’estadística multidimensional</a><ul>
+<li class="chapter" data-level="8.1" data-path="introducció-a-lestadística-multidimensional.html"><a href="introducció-a-lestadística-multidimensional.html#poblacions-vectors-aleatoris"><i class="fa fa-check"></i><b>8.1</b> Poblacions: vectors aleatoris</a><ul>
+<li class="chapter" data-level="8.1.1" data-path="introducció-a-lestadística-multidimensional.html"><a href="introducció-a-lestadística-multidimensional.html#covariància"><i class="fa fa-check"></i><b>8.1.1</b> Covariància</a></li>
+<li class="chapter" data-level="8.1.2" data-path="introducció-a-lestadística-multidimensional.html"><a href="introducció-a-lestadística-multidimensional.html#correlació"><i class="fa fa-check"></i><b>8.1.2</b> Correlació</a></li>
+</ul></li>
+<li class="chapter" data-level="8.2" data-path="introducció-a-lestadística-multidimensional.html"><a href="introducció-a-lestadística-multidimensional.html#estadística-descriptiva-mostres"><i class="fa fa-check"></i><b>8.2</b> Estadística descriptiva: Mostres</a><ul>
+<li class="chapter" data-level="8.2.1" data-path="introducció-a-lestadística-multidimensional.html"><a href="introducció-a-lestadística-multidimensional.html#covariàncies"><i class="fa fa-check"></i><b>8.2.1</b> Covariàncies</a></li>
+<li class="chapter" data-level="8.2.2" data-path="introducció-a-lestadística-multidimensional.html"><a href="introducció-a-lestadística-multidimensional.html#correlació-de-pearson"><i class="fa fa-check"></i><b>8.2.2</b> Correlació de Pearson</a></li>
+<li class="chapter" data-level="8.2.3" data-path="introducció-a-lestadística-multidimensional.html"><a href="introducció-a-lestadística-multidimensional.html#correlació-de-spearman"><i class="fa fa-check"></i><b>8.2.3</b> Correlació de Spearman</a></li>
+<li class="chapter" data-level="8.2.4" data-path="introducció-a-lestadística-multidimensional.html"><a href="introducció-a-lestadística-multidimensional.html#contrastos-de-correlació"><i class="fa fa-check"></i><b>8.2.4</b> Contrastos de correlació</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="5" data-path="chap-contrastes.html"><a href="chap-contrastes.html"><i class="fa fa-check"></i><b>5</b> Contrastes de hipótesis</a><ul>
-<li class="chapter" data-level="5.1" data-path="chap-contrastes.html"><a href="chap-contrastes.html#contrastes-para-medias"><i class="fa fa-check"></i><b>5.1</b> Contrastes para medias</a><ul>
-<li class="chapter" data-level="" data-path="chap-contrastes.html"><a href="chap-contrastes.html#el-test-t"><i class="fa fa-check"></i>El test t</a></li>
-<li class="chapter" data-level="" data-path="chap-contrastes.html"><a href="chap-contrastes.html#tests-no-parametricos"><i class="fa fa-check"></i>Tests no paramétricos</a></li>
+<li class="chapter" data-level="9" data-path="anova.html"><a href="anova.html"><i class="fa fa-check"></i><b>9</b> ANOVA</a><ul>
+<li class="chapter" data-level="9.1" data-path="anova.html"><a href="anova.html#nocions-bàsiques"><i class="fa fa-check"></i><b>9.1</b> Nocions bàsiques</a></li>
+<li class="chapter" data-level="9.2" data-path="anova.html"><a href="anova.html#anova-d1-via"><i class="fa fa-check"></i><b>9.2</b> ANOVA d’1 via</a><ul>
+<li class="chapter" data-level="9.2.1" data-path="anova.html"><a href="anova.html#contrast-bàsic"><i class="fa fa-check"></i><b>9.2.1</b> Contrast bàsic</a></li>
+<li class="chapter" data-level="9.2.2" data-path="anova.html"><a href="anova.html#amb-r-2"><i class="fa fa-check"></i><b>9.2.2</b> Amb R</a></li>
+<li class="chapter" data-level="9.2.3" data-path="anova.html"><a href="anova.html#comparacions-posteriors-per-parelles"><i class="fa fa-check"></i><b>9.2.3</b> Comparacions posteriors per parelles</a></li>
+<li class="chapter" data-level="9.2.4" data-path="anova.html"><a href="anova.html#verificació-de-les-condicions"><i class="fa fa-check"></i><b>9.2.4</b> Verificació de les condicions</a></li>
+<li class="chapter" data-level="9.2.5" data-path="anova.html"><a href="anova.html#test-no-paramètric"><i class="fa fa-check"></i><b>9.2.5</b> Test no paramètric</a></li>
 </ul></li>
-<li class="chapter" data-level="5.2" data-path="chap-contrastes.html"><a href="chap-contrastes.html#contrastes-para-varianzas"><i class="fa fa-check"></i><b>5.2</b> Contrastes para varianzas</a></li>
-<li class="chapter" data-level="5.3" data-path="chap-contrastes.html"><a href="chap-contrastes.html#contrastes-para-proporciones"><i class="fa fa-check"></i><b>5.3</b> Contrastes para proporciones</a></li>
-<li class="chapter" data-level="5.4" data-path="chap-contrastes.html"><a href="chap-contrastes.html#calculo-de-la-potencia-de-un-contraste"><i class="fa fa-check"></i><b>5.4</b> Cálculo de la potencia de un contraste</a></li>
-<li class="chapter" data-level="5.5" data-path="chap-contrastes.html"><a href="chap-contrastes.html#guia-rapida-3"><i class="fa fa-check"></i><b>5.5</b> Guía rápida</a></li>
-<li class="chapter" data-level="5.6" data-path="chap-contrastes.html"><a href="chap-contrastes.html#ejercicios-4"><i class="fa fa-check"></i><b>5.6</b> Ejercicios</a><ul>
-<li class="chapter" data-level="" data-path="chap-contrastes.html"><a href="chap-contrastes.html#modelo-de-test"><i class="fa fa-check"></i>Modelo de test</a></li>
-<li class="chapter" data-level="" data-path="chap-contrastes.html"><a href="chap-contrastes.html#ejercicios-5"><i class="fa fa-check"></i>Ejercicios</a></li>
-<li class="chapter" data-level="" data-path="chap-contrastes.html"><a href="chap-contrastes.html#respuestas-al-test-4"><i class="fa fa-check"></i>Respuestas al test</a></li>
-<li class="chapter" data-level="" data-path="chap-contrastes.html"><a href="chap-contrastes.html#respuestas-sucintas-a-los-ejercicios"><i class="fa fa-check"></i>Respuestas sucintas a los ejercicios</a></li>
+<li class="chapter" data-level="9.3" data-path="anova.html"><a href="anova.html#anova-de-blocs"><i class="fa fa-check"></i><b>9.3</b> ANOVA de blocs</a><ul>
+<li class="chapter" data-level="9.3.1" data-path="anova.html"><a href="anova.html#contrast-bàsic-1"><i class="fa fa-check"></i><b>9.3.1</b> Contrast bàsic</a></li>
+<li class="chapter" data-level="9.3.2" data-path="anova.html"><a href="anova.html#amb-r-3"><i class="fa fa-check"></i><b>9.3.2</b> Amb R</a></li>
+<li class="chapter" data-level="9.3.3" data-path="anova.html"><a href="anova.html#comparacions-posteriors-per-parelles-1"><i class="fa fa-check"></i><b>9.3.3</b> Comparacions posteriors per parelles</a></li>
+<li class="chapter" data-level="9.3.4" data-path="anova.html"><a href="anova.html#contrast-no-paramètric"><i class="fa fa-check"></i><b>9.3.4</b> Contrast no paramètric</a></li>
 </ul></li>
+<li class="chapter" data-level="9.4" data-path="anova.html"><a href="anova.html#anova-de-2-vies"><i class="fa fa-check"></i><b>9.4</b> ANOVA de 2 vies</a><ul>
+<li class="chapter" data-level="9.4.1" data-path="anova.html"><a href="anova.html#contrast-bàsic-2"><i class="fa fa-check"></i><b>9.4.1</b> Contrast bàsic</a></li>
+<li class="chapter" data-level="9.4.2" data-path="anova.html"><a href="anova.html#amb-r-4"><i class="fa fa-check"></i><b>9.4.2</b> Amb R</a></li>
 </ul></li>
-<li class="chapter" data-level="6" data-path="chap-bondad.html"><a href="chap-bondad.html"><i class="fa fa-check"></i><b>6</b> Contrastes de bondad de ajuste</a><ul>
-<li class="chapter" data-level="6.1" data-path="chap-bondad.html"><a href="chap-bondad.html#pruebas-graficas-q-q-plots"><i class="fa fa-check"></i><b>6.1</b> Pruebas gráficas: Q-Q-plots</a></li>
-<li class="chapter" data-level="6.2" data-path="chap-bondad.html"><a href="chap-bondad.html#el-test-chi2-de-pearson"><i class="fa fa-check"></i><b>6.2</b> El test <span class="math inline">\(\chi^2\)</span> de Pearson</a></li>
-<li class="chapter" data-level="6.3" data-path="chap-bondad.html"><a href="chap-bondad.html#el-test-chi2-para-distribuciones-continuas"><i class="fa fa-check"></i><b>6.3</b> El test <span class="math inline">\(\chi^2\)</span> para distribuciones continuas</a></li>
-<li class="chapter" data-level="6.4" data-path="chap-bondad.html"><a href="chap-bondad.html#el-test-de-kolgomorov-smirnov"><i class="fa fa-check"></i><b>6.4</b> El test de Kolgomorov-Smirnov</a></li>
-<li class="chapter" data-level="6.5" data-path="chap-bondad.html"><a href="chap-bondad.html#tests-de-normalidad"><i class="fa fa-check"></i><b>6.5</b> Tests de normalidad</a></li>
-<li class="chapter" data-level="6.6" data-path="chap-bondad.html"><a href="chap-bondad.html#guia-rapida-4"><i class="fa fa-check"></i><b>6.6</b> Guía rápida</a></li>
-<li class="chapter" data-level="6.7" data-path="chap-bondad.html"><a href="chap-bondad.html#ejercicios-6"><i class="fa fa-check"></i><b>6.7</b> Ejercicios</a><ul>
-<li class="chapter" data-level="" data-path="chap-bondad.html"><a href="chap-bondad.html#modelo-de-test-1"><i class="fa fa-check"></i>Modelo de test</a></li>
-<li class="chapter" data-level="" data-path="chap-bondad.html"><a href="chap-bondad.html#problemas-4"><i class="fa fa-check"></i>Problemas</a></li>
-<li class="chapter" data-level="" data-path="chap-bondad.html"><a href="chap-bondad.html#respuestas-al-test-5"><i class="fa fa-check"></i>Respuestas al test</a></li>
-<li class="chapter" data-level="" data-path="chap-bondad.html"><a href="chap-bondad.html#soluciones-sucintas-de-los-problemas-4"><i class="fa fa-check"></i>Soluciones sucintas de los problemas</a></li>
-</ul></li>
-</ul></li>
-<li class="chapter" data-level="7" data-path="chap-indep.html"><a href="chap-indep.html"><i class="fa fa-check"></i><b>7</b> Contrastes de independencia y homogeneidad</a><ul>
-<li class="chapter" data-level="7.1" data-path="chap-indep.html"><a href="chap-indep.html#tablas-de-contingencia"><i class="fa fa-check"></i><b>7.1</b> Tablas de contingencia</a></li>
-<li class="chapter" data-level="7.2" data-path="chap-indep.html"><a href="chap-indep.html#contraste-de-independencia"><i class="fa fa-check"></i><b>7.2</b> Contraste de independencia</a></li>
-<li class="chapter" data-level="7.3" data-path="chap-indep.html"><a href="chap-indep.html#sec:hom"><i class="fa fa-check"></i><b>7.3</b> Contraste de homogeneidad</a></li>
-<li class="chapter" data-level="7.4" data-path="chap-indep.html"><a href="chap-indep.html#potencia-de-un-contraste-chi2"><i class="fa fa-check"></i><b>7.4</b> Potencia de un contraste <span class="math inline">\(\chi^2\)</span></a></li>
-<li class="chapter" data-level="7.5" data-path="chap-indep.html"><a href="chap-indep.html#guia-rapida-5"><i class="fa fa-check"></i><b>7.5</b> Guía rápida</a></li>
-<li class="chapter" data-level="7.6" data-path="chap-indep.html"><a href="chap-indep.html#ejercicios-7"><i class="fa fa-check"></i><b>7.6</b> Ejercicios</a><ul>
-<li class="chapter" data-level="" data-path="chap-indep.html"><a href="chap-indep.html#modelo-de-test-2"><i class="fa fa-check"></i>Modelo de test</a></li>
-<li class="chapter" data-level="" data-path="chap-indep.html"><a href="chap-indep.html#ejercicios-8"><i class="fa fa-check"></i>Ejercicios</a></li>
-<li class="chapter" data-level="" data-path="chap-indep.html"><a href="chap-indep.html#respuestas-al-test-6"><i class="fa fa-check"></i>Respuestas al test</a></li>
-<li class="chapter" data-level="" data-path="chap-indep.html"><a href="chap-indep.html#soluciones-sucintas-de-los-problemas-5"><i class="fa fa-check"></i>Soluciones sucintas de los problemas</a></li>
-</ul></li>
-</ul></li>
-<li class="chapter" data-level="8" data-path="chap-estmult.html"><a href="chap-estmult.html"><i class="fa fa-check"></i><b>8</b> Introducción a la estadística descriptiva multidimensional</a><ul>
-<li class="chapter" data-level="8.1" data-path="chap-estmult.html"><a href="chap-estmult.html#matrices-de-datos-cuantitativos"><i class="fa fa-check"></i><b>8.1</b> Matrices de datos cuantitativos</a></li>
-<li class="chapter" data-level="8.2" data-path="chap-estmult.html"><a href="chap-estmult.html#transformaciones-lineales"><i class="fa fa-check"></i><b>8.2</b> Transformaciones lineales</a></li>
-<li class="chapter" data-level="8.3" data-path="chap-estmult.html"><a href="chap-estmult.html#covarianzas-y-correlaciones"><i class="fa fa-check"></i><b>8.3</b> Covarianzas y correlaciones</a></li>
-<li class="chapter" data-level="8.4" data-path="chap-estmult.html"><a href="chap-estmult.html#correlacion-de-spearman"><i class="fa fa-check"></i><b>8.4</b> Correlación de Spearman</a></li>
-<li class="chapter" data-level="8.5" data-path="chap-estmult.html"><a href="chap-estmult.html#contrastes-de-correlacion"><i class="fa fa-check"></i><b>8.5</b> Contrastes de correlación</a></li>
-<li class="chapter" data-level="8.6" data-path="chap-estmult.html"><a href="chap-estmult.html#un-ejemplo"><i class="fa fa-check"></i><b>8.6</b> Un ejemplo</a></li>
-<li class="chapter" data-level="8.7" data-path="chap-estmult.html"><a href="chap-estmult.html#representacion-grafica-de-datos-multidimensionales"><i class="fa fa-check"></i><b>8.7</b> Representación gráfica de datos multidimensionales</a></li>
-<li class="chapter" data-level="8.8" data-path="chap-estmult.html"><a href="chap-estmult.html#guia-rapida-6"><i class="fa fa-check"></i><b>8.8</b> Guía rápida</a></li>
-<li class="chapter" data-level="8.9" data-path="chap-estmult.html"><a href="chap-estmult.html#ejercicios-9"><i class="fa fa-check"></i><b>8.9</b> Ejercicios</a><ul>
-<li class="chapter" data-level="" data-path="chap-estmult.html"><a href="chap-estmult.html#modelo-de-test-3"><i class="fa fa-check"></i>Modelo de test</a></li>
-<li class="chapter" data-level="" data-path="chap-estmult.html"><a href="chap-estmult.html#problemas-5"><i class="fa fa-check"></i>Problemas</a></li>
-<li class="chapter" data-level="" data-path="chap-estmult.html"><a href="chap-estmult.html#respuestas-al-test-7"><i class="fa fa-check"></i>Respuestas al test</a></li>
-<li class="chapter" data-level="" data-path="chap-estmult.html"><a href="chap-estmult.html#soluciones-sucintas-de-los-problemas-6"><i class="fa fa-check"></i>Soluciones sucintas de los problemas</a></li>
-</ul></li>
-</ul></li>
-<li class="chapter" data-level="9" data-path="chap-ANOVA.html"><a href="chap-ANOVA.html"><i class="fa fa-check"></i><b>9</b> ANOVA básico</a><ul>
-<li class="chapter" data-level="9.1" data-path="chap-ANOVA.html"><a href="chap-ANOVA.html#sec:modelos"><i class="fa fa-check"></i><b>9.1</b> Los modelos del ANOVA en R</a></li>
-<li class="chapter" data-level="9.2" data-path="chap-ANOVA.html"><a href="chap-ANOVA.html#sec:ANOVA-1"><i class="fa fa-check"></i><b>9.2</b> ANOVA de un factor</a></li>
-<li class="chapter" data-level="9.3" data-path="chap-ANOVA.html"><a href="chap-ANOVA.html#anova-de-bloques-completos-aleatorios"><i class="fa fa-check"></i><b>9.3</b> ANOVA de bloques completos aleatorios</a></li>
-<li class="chapter" data-level="9.4" data-path="chap-ANOVA.html"><a href="chap-ANOVA.html#sec:ANOVA2"><i class="fa fa-check"></i><b>9.4</b> ANOVA de dos vías</a></li>
-<li class="chapter" data-level="9.5" data-path="chap-ANOVA.html"><a href="chap-ANOVA.html#condiciones-del-anova"><i class="fa fa-check"></i><b>9.5</b> Condiciones del ANOVA</a></li>
-<li class="chapter" data-level="9.6" data-path="chap-ANOVA.html"><a href="chap-ANOVA.html#sec:pares"><i class="fa fa-check"></i><b>9.6</b> Comparaciones de pares de medias</a><ul>
-<li class="chapter" data-level="9.6.1" data-path="chap-ANOVA.html"><a href="chap-ANOVA.html#tests-t-por-parejas"><i class="fa fa-check"></i><b>9.6.1</b> Tests t por parejas</a></li>
-<li class="chapter" data-level="9.6.2" data-path="chap-ANOVA.html"><a href="chap-ANOVA.html#test-de-duncan"><i class="fa fa-check"></i><b>9.6.2</b> Test de Duncan</a></li>
-<li class="chapter" data-level="9.6.3" data-path="chap-ANOVA.html"><a href="chap-ANOVA.html#metodo-de-tukey"><i class="fa fa-check"></i><b>9.6.3</b> Método de Tukey</a></li>
-</ul></li>
-<li class="chapter" data-level="9.7" data-path="chap-ANOVA.html"><a href="chap-ANOVA.html#metodos-no-parametricos"><i class="fa fa-check"></i><b>9.7</b> Métodos no paramétricos</a></li>
-<li class="chapter" data-level="9.8" data-path="chap-ANOVA.html"><a href="chap-ANOVA.html#guia-rapida-7"><i class="fa fa-check"></i><b>9.8</b> Guía rápida</a></li>
-<li class="chapter" data-level="9.9" data-path="chap-ANOVA.html"><a href="chap-ANOVA.html#ejercicios-10"><i class="fa fa-check"></i><b>9.9</b> Ejercicios</a><ul>
-<li class="chapter" data-level="" data-path="chap-ANOVA.html"><a href="chap-ANOVA.html#test-4"><i class="fa fa-check"></i>Test</a></li>
-<li class="chapter" data-level="9.9.1" data-path="chap-ANOVA.html"><a href="chap-ANOVA.html#ejercicio"><i class="fa fa-check"></i><b>9.9.1</b> Ejercicio</a></li>
-<li class="chapter" data-level="" data-path="chap-ANOVA.html"><a href="chap-ANOVA.html#respuestas-al-test-8"><i class="fa fa-check"></i>Respuestas al test</a></li>
-<li class="chapter" data-level="9.9.2" data-path="chap-ANOVA.html"><a href="chap-ANOVA.html#soluciones-sucintas-del-ejercicio"><i class="fa fa-check"></i><b>9.9.2</b> Soluciones sucintas del ejercicio</a></li>
-</ul></li>
-</ul></li>
-<li class="chapter" data-level="10" data-path="chap-regresion.html"><a href="chap-regresion.html"><i class="fa fa-check"></i><b>10</b> Regresión lineal</a><ul>
-<li class="chapter" data-level="10.1" data-path="chap-regresion.html"><a href="chap-regresion.html#sec:1"><i class="fa fa-check"></i><b>10.1</b> El modelo de regresión lineal en R</a></li>
-<li class="chapter" data-level="10.2" data-path="chap-regresion.html"><a href="chap-regresion.html#intervalos-de-confianza-en-el-modelo-de-regresion-lineal"><i class="fa fa-check"></i><b>10.2</b> Intervalos de confianza en el modelo de regresión lineal</a></li>
-<li class="chapter" data-level="10.3" data-path="chap-regresion.html"><a href="chap-regresion.html#sec:seleccion"><i class="fa fa-check"></i><b>10.3</b> Selección del modelo en base al ajuste de los datos</a></li>
-<li class="chapter" data-level="10.4" data-path="chap-regresion.html"><a href="chap-regresion.html#sec:diagn"><i class="fa fa-check"></i><b>10.4</b> Diagnósticos de regresión</a></li>
-<li class="chapter" data-level="10.5" data-path="chap-regresion.html"><a href="chap-regresion.html#guia-rapida-8"><i class="fa fa-check"></i><b>10.5</b> Guía rápida</a></li>
-<li class="chapter" data-level="10.6" data-path="chap-regresion.html"><a href="chap-regresion.html#ejercicios-11"><i class="fa fa-check"></i><b>10.6</b> Ejercicios</a><ul>
-<li class="chapter" data-level="" data-path="chap-regresion.html"><a href="chap-regresion.html#test-5"><i class="fa fa-check"></i>Test</a></li>
-<li class="chapter" data-level="" data-path="chap-regresion.html"><a href="chap-regresion.html#respuestas-al-test-9"><i class="fa fa-check"></i>Respuestas al test</a></li>
-</ul></li>
-</ul></li>
-<li class="chapter" data-level="11" data-path="chap-clustering.html"><a href="chap-clustering.html"><i class="fa fa-check"></i><b>11</b> <em>Clustering</em> básico</a><ul>
-<li class="chapter" data-level="11.1" data-path="chap-clustering.html"><a href="chap-clustering.html#metodo-de-k-medias-o-k-means"><i class="fa fa-check"></i><b>11.1</b> Método de k-medias o <em>k-means</em></a></li>
-<li class="chapter" data-level="11.2" data-path="chap-clustering.html"><a href="chap-clustering.html#eleccion-del-numero-de-clusters"><i class="fa fa-check"></i><b>11.2</b> Elección del número de <em>clusters</em></a></li>
-<li class="chapter" data-level="11.3" data-path="chap-clustering.html"><a href="chap-clustering.html#metodos-jerarquicos-aglomerativos"><i class="fa fa-check"></i><b>11.3</b> Métodos jerárquicos aglomerativos</a></li>
-<li class="chapter" data-level="11.4" data-path="chap-clustering.html"><a href="chap-clustering.html#guia-rapida-9"><i class="fa fa-check"></i><b>11.4</b> Guía rápida</a></li>
-<li class="chapter" data-level="11.5" data-path="chap-clustering.html"><a href="chap-clustering.html#ejercicios-12"><i class="fa fa-check"></i><b>11.5</b> Ejercicios</a><ul>
-<li class="chapter" data-level="" data-path="chap-clustering.html"><a href="chap-clustering.html#test-6"><i class="fa fa-check"></i>Test</a></li>
-<li class="chapter" data-level="" data-path="chap-clustering.html"><a href="chap-clustering.html#respuestas-al-test-10"><i class="fa fa-check"></i>Respuestas al test</a></li>
-</ul></li>
-</ul></li>
-<li class="chapter" data-level="12" data-path="extras-de-r-markdown.html"><a href="extras-de-r-markdown.html"><i class="fa fa-check"></i><b>12</b> Extras de <em>R Markdown</em></a><ul>
-<li class="chapter" data-level="12.1" data-path="extras-de-r-markdown.html"><a href="extras-de-r-markdown.html#parametros-de-los-chunks-de-r"><i class="fa fa-check"></i><b>12.1</b> Parámetros de los <em>chunks</em> de R</a></li>
-<li class="chapter" data-level="12.2" data-path="extras-de-r-markdown.html"><a href="extras-de-r-markdown.html#los-chunks-en-modo-linea"><i class="fa fa-check"></i><b>12.2</b> Los <em>chunks</em> en modo línea</a></li>
-<li class="chapter" data-level="12.3" data-path="extras-de-r-markdown.html"><a href="extras-de-r-markdown.html#figuras"><i class="fa fa-check"></i><b>12.3</b> Figuras</a></li>
-<li class="chapter" data-level="12.4" data-path="extras-de-r-markdown.html"><a href="extras-de-r-markdown.html#tablas"><i class="fa fa-check"></i><b>12.4</b> Tablas</a></li>
-<li class="chapter" data-level="12.5" data-path="extras-de-r-markdown.html"><a href="extras-de-r-markdown.html#formulas-matematicas"><i class="fa fa-check"></i><b>12.5</b> Fórmulas matemáticas</a></li>
 </ul></li>
 </ul>
 
@@ -290,7 +261,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
       <div class="body-inner">
         <div class="book-header" role="navigation">
           <h1>
-            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">AprendeR: Parte II</a>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Matemàtiques II</a>
           </h1>
         </div>
 
@@ -299,15 +270,65 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
             <section class="normal" id="section-">
 <div id="header">
-<h1 class="title">AprendeR: Parte II</h1>
-<p class="author"><em>The UIB-AprendeR team</em></p>
-<p class="date"><em>2020-03-18</em></p>
+<h1 class="title">Matemàtiques II</h1>
+<p class="date"><em>2020-05-04</em></p>
 </div>
-<div id="presentacion" class="section level1 unnumbered">
-<h1>Presentación</h1>
-<p>Esto es una edición preliminar en línea de la 2a parte del libro “AprendeR”, producido por un grupo de profesores del Departamento de Ciencias Matemáticas e Informática de la UIB.</p>
-<p>El libro está escrito en <em>R Markdown</em>, usando <em>RStudio</em> como editor de texto y el paquete <strong>bookdown</strong> para convertir los ficheros <em>markdown</em> en un libro.</p>
-<p>Este trabajo se publica bajo licencia <a href="https://creativecommons.org/licenses/by-nc-nd/4.0/">Atribución-No Comercial-SinDerivadas 4.0</a></p>
+<div id="presentació" class="section level1 unnumbered">
+<h1>Presentació</h1>
+<p>Això és una edició en línea dels apunts de Matemàtiques II dels graus de Biologia i Bioquímica de la UIB.</p>
+<p>Aquests apunts no són autocontinguts pel que fa al R: suposam que l’estudiant va llegint les lliçons de R corresponents a cada tema a la <a href="https://aprender-uib.github.io/AprendeR2/">2<sup>a</sup> part del manual <em>AprendeR</em></a>.</p>
+<p>Aquests apunts estan en construcció. A la llista següent hi anirem anunciant les actualitzacions.</p>
+<ul>
+<li>24-03-2020: Pujats temes 7 i 8</li>
+<li>19-03-2020: Pujat tema 6</li>
+<li>07-03-2020: Pujat tema 5 i corregits alguns errors irrellevants al tema 4</li>
+<li>02-03-2020: Afegits dos exemples a la Secció <a href="estimació-puntual.html#sec:pobl">2.7</a></li>
+<li>24-02-2020: Pujat tema 4 i corregits alguns errors irrellevants als temes anteriors</li>
+<li>17-02-2020: Pujats temes 1, 2 i 3</li>
+</ul>
+<p><strong>Significats d’algunes capses</strong>:</p>
+
+<div class="rmdimportant">
+Material molt important.
+</div>
+
+
+<div class="rmdcaution">
+Alerta!
+</div>
+
+
+<div class="rmdexercici">
+Exercici.
+</div>
+
+
+<div class="rmdcorbes">
+Detalls matemàtics que us poden interessar, però que no cal saber.
+</div>
+
+
+<div class="rmdnote">
+Comentari que volem emfatitzar.
+</div>
+
+
+<div class="rmdrecordau">
+Comentari que volem que recordeu.
+</div>
+
+
+<div class="rmdromans">
+Qüestió en què volem que caigueu.
+</div>
+
+
+<div class="rmderrorpetit">
+Acabam de matar un moixet.
+</div>
+
+<p>El llibre està escrit en <em>R Markdown</em>, emprant <em>RStudio</em> com a editor de textos i el paquet <strong>bookdown</strong> per convertir els fitxers <em>markdown</em> en un llibre</p>
+<p>Aquest treball se publica sota llicència <a href="https://creativecommons.org/licenses/by-nc-nd/4.0/">Atribució-No Comercial-SenseDerivats 4.0</a></p>
 
 </div>
 
@@ -319,16 +340,18 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
         </div>
       </div>
 
-<a href="chap-distr.html" class="navigation navigation-next navigation-unique" aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="repàs-de-la-distribució-normal.html" class="navigation navigation-next navigation-unique" aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
 <script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
 <script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
 <script>
 gitbook.require(["gitbook"], function(gitbook) {
 gitbook.start({
@@ -336,12 +359,11 @@ gitbook.start({
 "github": false,
 "facebook": true,
 "twitter": true,
-"google": false,
 "linkedin": false,
 "weibo": false,
 "instapaper": false,
 "vk": false,
-"all": ["facebook", "google", "twitter", "linkedin", "weibo", "instapaper"]
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
 },
 "fontsettings": {
 "theme": "white",
@@ -353,6 +375,10 @@ gitbook.start({
 "text": null
 },
 "history": {
+"link": null,
+"text": null
+},
+"view": {
 "link": null,
 "text": null
 },
@@ -372,8 +398,9 @@ gitbook.start({
     script.type = "text/javascript";
     var src = "true";
     if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
-    if (location.protocol !== "file:" && /^https?:/.test(src))
-      src = src.replace(/^https?:/, '');
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
     script.src = src;
     document.getElementsByTagName("head")[0].appendChild(script);
   })();
