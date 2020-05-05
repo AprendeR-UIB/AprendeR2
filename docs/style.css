@@ -1,0 +1,79 @@
+p.caption {
+  color: #777;
+  margin-top: 10px;
+}
+p code {
+  white-space: inherit;
+}
+pre {
+  word-break: normal;
+  word-wrap: normal;
+}
+pre code {
+  white-space: inherit;
+}
+.rmdcaution, .rmdimportant, .rmdnote, .rmdrecordau {
+  padding: 1em 1em 1em 4em;
+  margin-bottom: 10px;
+  background: #f5f5f5 5px center/3em no-repeat;
+}
+.rmdmercifulgod {
+  padding: 1em 1em 1em 6em;
+  margin-bottom: 10px;
+  background: #f5f5f5 5px center/5em no-repeat;
+}
+.rmdromans {
+  padding: 1em 1em 2em 6em;
+  margin-bottom: 10px;
+  background: #f5f5f5 5px center/5em no-repeat;
+}
+.rmdexercici {
+  padding: 1em 1em 1em 4em;
+  margin-bottom: 10px;
+  background: #f9f9f9 5px center/3em no-repeat;
+}
+.rmderror {
+  padding: 1em 1em 2em 7em;
+  margin-bottom: 10px;
+  background: #f5f5f5 5px center/6em no-repeat;
+}
+.rmderrorpetit {
+  padding: 1em 1em 2em 4em;
+  margin-bottom: 10px;
+  background: #f5f5f5 5px center/3em no-repeat;
+}
+.rmdcorbes {
+  padding: 1em 1em 1em 4em;
+  margin-bottom: 10px;
+  background: #f9f9f9  5px center/3em  no-repeat;
+}
+.rmdcaution {
+  background-image: url("Bioestadistica-II_files/figure-html/caution.png");
+}
+.rmdimportant {
+  background-image: url("Bioestadistica-II_files/figure-html/important.png");
+}
+.rmdnote {
+  background-image: url("Bioestadistica-II_files/figure-html/note.png");
+}
+.rmdcorbes {
+  background-image: url("Bioestadistica-II_files/figure-html/corbes.png");
+}
+.rmdrecordau {
+  background-image: url("Bioestadistica-II_files/figure-html/recordau.png");
+}
+.rmderror {
+  background-image: url("Bioestadistica-II_files/figure-html/error.png");
+}
+.rmderrorpetit{
+  background-image: url("Bioestadistica-II_files/figure-html/error.png");
+}
+.rmdmercifulgod {
+  background-image: url("Bioestadistica-II_files/figure-html/mercifulgod.png");
+}
+.rmdromans {
+  background-image: url("Bioestadistica-II_files/figure-html/romanos.png");
+}
+.rmdexercici {
+  background-image: url("Bioestadistica-II_files/figure-html/exercici.png");
+}

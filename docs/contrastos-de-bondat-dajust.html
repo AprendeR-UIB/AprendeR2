@@ -1,0 +1,1047 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Tema 6 Contrastos de bondat d’ajust | Matemàtiques II</title>
+  <meta name="description" content="Apunts Matemàtiques II bookdown::gitbook." />
+  <meta name="generator" content="bookdown 0.18 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Tema 6 Contrastos de bondat d’ajust | Matemàtiques II" />
+  <meta property="og:type" content="book" />
+  
+  
+  <meta property="og:description" content="Apunts Matemàtiques II bookdown::gitbook." />
+  <meta name="github-repo" content="cescrossello/MatesII" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Tema 6 Contrastos de bondat d’ajust | Matemàtiques II" />
+  
+  <meta name="twitter:description" content="Apunts Matemàtiques II bookdown::gitbook." />
+  
+
+
+
+<meta name="date" content="2020-05-04" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="contrastos-dhipòtesis-dun-i-dos-paràmetres.html"/>
+<link rel="next" href="contrastos-dindependència-i-homogeneïtat.html"/>
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+
+
+<style type="text/css">
+a.sourceLine { display: inline-block; line-height: 1.25; }
+a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
+a.sourceLine:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode { white-space: pre; position: relative; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+code.sourceCode { white-space: pre-wrap; }
+a.sourceLine { text-indent: -1em; padding-left: 1em; }
+}
+pre.numberSource a.sourceLine
+  { position: relative; left: -4em; }
+pre.numberSource a.sourceLine::before
+  { content: attr(data-line-number);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; pointer-events: all; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {  }
+@media screen {
+a.sourceLine::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">Bioestadística II</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Presentació</a></li>
+<li class="part"><span><b>Part II: Estadística inferencial</b></span></li>
+<li class="chapter" data-level="1" data-path="repàs-de-la-distribució-normal.html"><a href="repàs-de-la-distribució-normal.html"><i class="fa fa-check"></i><b>1</b> Repàs de la distribució normal</a><ul>
+<li class="chapter" data-level="1.1" data-path="repàs-de-la-distribució-normal.html"><a href="repàs-de-la-distribució-normal.html#propietats-de-la-distribució-normal"><i class="fa fa-check"></i><b>1.1</b> Propietats de la distribució normal</a></li>
+<li class="chapter" data-level="1.2" data-path="repàs-de-la-distribució-normal.html"><a href="repàs-de-la-distribució-normal.html#amb-r"><i class="fa fa-check"></i><b>1.2</b> Amb R</a></li>
+<li class="chapter" data-level="1.3" data-path="repàs-de-la-distribució-normal.html"><a href="repàs-de-la-distribució-normal.html#combinacions-lineals"><i class="fa fa-check"></i><b>1.3</b> Combinacions lineals</a></li>
+<li class="chapter" data-level="1.4" data-path="repàs-de-la-distribució-normal.html"><a href="repàs-de-la-distribució-normal.html#intervals-de-referència"><i class="fa fa-check"></i><b>1.4</b> Intervals de referència</a></li>
+<li class="chapter" data-level="1.5" data-path="repàs-de-la-distribució-normal.html"><a href="repàs-de-la-distribució-normal.html#el-z-score"><i class="fa fa-check"></i><b>1.5</b> El z-score</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="estimació-puntual.html"><a href="estimació-puntual.html"><i class="fa fa-check"></i><b>2</b> Estimació puntual</a><ul>
+<li class="chapter" data-level="2.1" data-path="estimació-puntual.html"><a href="estimació-puntual.html#definicions-bàsiques"><i class="fa fa-check"></i><b>2.1</b> Definicions bàsiques</a></li>
+<li class="chapter" data-level="2.2" data-path="estimació-puntual.html"><a href="estimació-puntual.html#mitjana-mostral"><i class="fa fa-check"></i><b>2.2</b> Mitjana mostral</a></li>
+<li class="chapter" data-level="2.3" data-path="estimació-puntual.html"><a href="estimació-puntual.html#proporció-mostral"><i class="fa fa-check"></i><b>2.3</b> Proporció mostral</a></li>
+<li class="chapter" data-level="2.4" data-path="estimació-puntual.html"><a href="estimació-puntual.html#variància-mostral"><i class="fa fa-check"></i><b>2.4</b> Variància mostral</a></li>
+<li class="chapter" data-level="2.5" data-path="estimació-puntual.html"><a href="estimació-puntual.html#la-t-de-student"><i class="fa fa-check"></i><b>2.5</b> La t de Student</a></li>
+<li class="chapter" data-level="2.6" data-path="estimació-puntual.html"><a href="estimació-puntual.html#bons-estimadors"><i class="fa fa-check"></i><b>2.6</b> “Bons” estimadors</a><ul>
+<li class="chapter" data-level="2.6.1" data-path="estimació-puntual.html"><a href="estimació-puntual.html#estimadors-no-esbiaixats"><i class="fa fa-check"></i><b>2.6.1</b> Estimadors no esbiaixats</a></li>
+<li class="chapter" data-level="2.6.2" data-path="estimació-puntual.html"><a href="estimació-puntual.html#estimadors-eficients"><i class="fa fa-check"></i><b>2.6.2</b> Estimadors eficients</a></li>
+<li class="chapter" data-level="2.6.3" data-path="estimació-puntual.html"><a href="estimació-puntual.html#estimadors-màxim-versemblants"><i class="fa fa-check"></i><b>2.6.3</b> Estimadors màxim versemblants</a></li>
+</ul></li>
+<li class="chapter" data-level="2.7" data-path="estimació-puntual.html"><a href="estimació-puntual.html#sec:pobl"><i class="fa fa-check"></i><b>2.7</b> Estimació de poblacions</a><ul>
+<li class="chapter" data-level="2.7.1" data-path="estimació-puntual.html"><a href="estimació-puntual.html#estimació-de-poblacions-numerades"><i class="fa fa-check"></i><b>2.7.1</b> Estimació de poblacions numerades</a></li>
+<li class="chapter" data-level="2.7.2" data-path="estimació-puntual.html"><a href="estimació-puntual.html#marca-recaptura"><i class="fa fa-check"></i><b>2.7.2</b> Marca-recaptura</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="intervals-de-confiança.html"><a href="intervals-de-confiança.html"><i class="fa fa-check"></i><b>3</b> Intervals de confiança</a><ul>
+<li class="chapter" data-level="3.1" data-path="intervals-de-confiança.html"><a href="intervals-de-confiança.html#definicions-bàsiques-1"><i class="fa fa-check"></i><b>3.1</b> Definicions bàsiques</a></li>
+<li class="chapter" data-level="3.2" data-path="intervals-de-confiança.html"><a href="intervals-de-confiança.html#exemple-interval-de-confiança-del-95-per-a-la-mitjana-duna-variable-aleatòria-normal"><i class="fa fa-check"></i><b>3.2</b> Exemple: Interval de confiança del 95% per a la mitjana d’una variable aleatòria normal</a></li>
+<li class="chapter" data-level="3.3" data-path="intervals-de-confiança.html"><a href="intervals-de-confiança.html#interval-de-confiança-per-a-la-mitjana-basat-en-la-t-de-student"><i class="fa fa-check"></i><b>3.3</b> Interval de confiança per a la mitjana basat en la t de Student</a><ul>
+<li class="chapter" data-level="" data-path="intervals-de-confiança.html"><a href="intervals-de-confiança.html#la-fórmula"><i class="fa fa-check"></i>La fórmula</a></li>
+<li class="chapter" data-level="" data-path="intervals-de-confiança.html"><a href="intervals-de-confiança.html#algunes-consideracions"><i class="fa fa-check"></i>Algunes consideracions</a></li>
+<li class="chapter" data-level="" data-path="intervals-de-confiança.html"><a href="intervals-de-confiança.html#amb-r-1"><i class="fa fa-check"></i>Amb R</a></li>
+<li class="chapter" data-level="" data-path="intervals-de-confiança.html"><a href="intervals-de-confiança.html#càlcul-de-la-mida-de-la-mostra-per-fixar-lerror"><i class="fa fa-check"></i>Càlcul de la mida de la mostra per fixar l’error</a></li>
+</ul></li>
+<li class="chapter" data-level="3.4" data-path="intervals-de-confiança.html"><a href="intervals-de-confiança.html#intervals-de-confiança-per-a-proporcions"><i class="fa fa-check"></i><b>3.4</b> Intervals de confiança per a proporcions</a><ul>
+<li class="chapter" data-level="" data-path="intervals-de-confiança.html"><a href="intervals-de-confiança.html#mètode-exacte-de-clopper-pearson"><i class="fa fa-check"></i>Mètode “exacte” de Clopper-Pearson</a></li>
+<li class="chapter" data-level="" data-path="intervals-de-confiança.html"><a href="intervals-de-confiança.html#mètode-de-wilson"><i class="fa fa-check"></i>Mètode de Wilson</a></li>
+<li class="chapter" data-level="" data-path="intervals-de-confiança.html"><a href="intervals-de-confiança.html#mètode-de-laplace"><i class="fa fa-check"></i>Mètode de Laplace</a></li>
+<li class="chapter" data-level="" data-path="intervals-de-confiança.html"><a href="intervals-de-confiança.html#més-exemples"><i class="fa fa-check"></i>Més exemples</a></li>
+<li class="chapter" data-level="" data-path="intervals-de-confiança.html"><a href="intervals-de-confiança.html#càlcul-de-la-mida-de-la-mostra-per-a-fixar-lerror"><i class="fa fa-check"></i>Càlcul de la mida de la mostra per a fixar l’error</a></li>
+</ul></li>
+<li class="chapter" data-level="3.5" data-path="intervals-de-confiança.html"><a href="intervals-de-confiança.html#intervals-de-confiança-per-a-la-variància-duna-variable-normal"><i class="fa fa-check"></i><b>3.5</b> Intervals de confiança per a la variància d’una variable normal</a></li>
+<li class="chapter" data-level="3.6" data-path="intervals-de-confiança.html"><a href="intervals-de-confiança.html#poblacions-finites"><i class="fa fa-check"></i><b>3.6</b> “Poblacions finites”</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="contrastos-dhipòtesis-generalitats.html"><a href="contrastos-dhipòtesis-generalitats.html"><i class="fa fa-check"></i><b>4</b> Contrastos d’hipòtesis: Generalitats</a><ul>
+<li class="chapter" data-level="4.1" data-path="contrastos-dhipòtesis-generalitats.html"><a href="contrastos-dhipòtesis-generalitats.html#hipòtesis-nulla-i-alternativa"><i class="fa fa-check"></i><b>4.1</b> Hipòtesis nul·la i alternativa</a></li>
+<li class="chapter" data-level="4.2" data-path="contrastos-dhipòtesis-generalitats.html"><a href="contrastos-dhipòtesis-generalitats.html#sec:moneda"><i class="fa fa-check"></i><b>4.2</b> Un exemple</a></li>
+<li class="chapter" data-level="4.3" data-path="contrastos-dhipòtesis-generalitats.html"><a href="contrastos-dhipòtesis-generalitats.html#sec:pval"><i class="fa fa-check"></i><b>4.3</b> El p-valor</a></li>
+<li class="chapter" data-level="4.4" data-path="contrastos-dhipòtesis-generalitats.html"><a href="contrastos-dhipòtesis-generalitats.html#tipus-derrors"><i class="fa fa-check"></i><b>4.4</b> Tipus d’errors</a></li>
+<li class="chapter" data-level="4.5" data-path="contrastos-dhipòtesis-generalitats.html"><a href="contrastos-dhipòtesis-generalitats.html#sec:exttest"><i class="fa fa-check"></i><b>4.5</b> Exemple: El test t</a></li>
+<li class="chapter" data-level="4.6" data-path="contrastos-dhipòtesis-generalitats.html"><a href="contrastos-dhipòtesis-generalitats.html#recapitulació"><i class="fa fa-check"></i><b>4.6</b> Recapitulació</a><ul>
+<li class="chapter" data-level="" data-path="contrastos-dhipòtesis-generalitats.html"><a href="contrastos-dhipòtesis-generalitats.html#interval-de-confiança-dun-contrast"><i class="fa fa-check"></i>Interval de confiança d’un contrast</a></li>
+<li class="chapter" data-level="" data-path="contrastos-dhipòtesis-generalitats.html"><a href="contrastos-dhipòtesis-generalitats.html#la-potència"><i class="fa fa-check"></i>La potència</a></li>
+<li class="chapter" data-level="" data-path="contrastos-dhipòtesis-generalitats.html"><a href="contrastos-dhipòtesis-generalitats.html#el-risc-de-positiu-fals-opcional"><i class="fa fa-check"></i>El risc de positiu fals (Opcional)</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="contrastos-dhipòtesis-dun-i-dos-paràmetres.html"><a href="contrastos-dhipòtesis-dun-i-dos-paràmetres.html"><i class="fa fa-check"></i><b>5</b> Contrastos d’hipòtesis d’un i dos paràmetres</a><ul>
+<li class="chapter" data-level="5.1" data-path="contrastos-dhipòtesis-dun-i-dos-paràmetres.html"><a href="contrastos-dhipòtesis-dun-i-dos-paràmetres.html#contrastos-de-mitjanes"><i class="fa fa-check"></i><b>5.1</b> Contrastos de mitjanes</a><ul>
+<li class="chapter" data-level="5.1.1" data-path="contrastos-dhipòtesis-dun-i-dos-paràmetres.html"><a href="contrastos-dhipòtesis-dun-i-dos-paràmetres.html#test-t-per-a-una-mitjana"><i class="fa fa-check"></i><b>5.1.1</b> Test t per a una mitjana</a></li>
+<li class="chapter" data-level="5.1.2" data-path="contrastos-dhipòtesis-dun-i-dos-paràmetres.html"><a href="contrastos-dhipòtesis-dun-i-dos-paràmetres.html#test-t-per-a-dues-mitjanes"><i class="fa fa-check"></i><b>5.1.2</b> Test t per a dues mitjanes</a></li>
+<li class="chapter" data-level="5.1.3" data-path="contrastos-dhipòtesis-dun-i-dos-paràmetres.html"><a href="contrastos-dhipòtesis-dun-i-dos-paràmetres.html#tests-t-amb-r"><i class="fa fa-check"></i><b>5.1.3</b> Tests t amb R</a></li>
+<li class="chapter" data-level="5.1.4" data-path="contrastos-dhipòtesis-dun-i-dos-paràmetres.html"><a href="contrastos-dhipòtesis-dun-i-dos-paràmetres.html#exemples"><i class="fa fa-check"></i><b>5.1.4</b> Exemples</a></li>
+<li class="chapter" data-level="5.1.5" data-path="contrastos-dhipòtesis-dun-i-dos-paràmetres.html"><a href="contrastos-dhipòtesis-dun-i-dos-paràmetres.html#tests-no-paramètrics"><i class="fa fa-check"></i><b>5.1.5</b> Tests no paramètrics</a></li>
+</ul></li>
+<li class="chapter" data-level="5.2" data-path="contrastos-dhipòtesis-dun-i-dos-paràmetres.html"><a href="contrastos-dhipòtesis-dun-i-dos-paràmetres.html#sec:contrvar"><i class="fa fa-check"></i><b>5.2</b> Contrastos de variàncies</a><ul>
+<li class="chapter" data-level="5.2.1" data-path="contrastos-dhipòtesis-dun-i-dos-paràmetres.html"><a href="contrastos-dhipòtesis-dun-i-dos-paràmetres.html#test-chi2-duna-variància"><i class="fa fa-check"></i><b>5.2.1</b> Test <span class="math inline">\(\chi^2\)</span> d’una variància</a></li>
+<li class="chapter" data-level="5.2.2" data-path="contrastos-dhipòtesis-dun-i-dos-paràmetres.html"><a href="contrastos-dhipòtesis-dun-i-dos-paràmetres.html#test-f-per-a-dues-variàncies"><i class="fa fa-check"></i><b>5.2.2</b> Test F per a dues variàncies</a></li>
+<li class="chapter" data-level="5.2.3" data-path="contrastos-dhipòtesis-dun-i-dos-paràmetres.html"><a href="contrastos-dhipòtesis-dun-i-dos-paràmetres.html#tests-no-paramètrics-1"><i class="fa fa-check"></i><b>5.2.3</b> Tests no paramètrics</a></li>
+</ul></li>
+<li class="chapter" data-level="5.3" data-path="contrastos-dhipòtesis-dun-i-dos-paràmetres.html"><a href="contrastos-dhipòtesis-dun-i-dos-paràmetres.html#contrastos-per-a-proporcions"><i class="fa fa-check"></i><b>5.3</b> Contrastos per a proporcions</a><ul>
+<li class="chapter" data-level="5.3.1" data-path="contrastos-dhipòtesis-dun-i-dos-paràmetres.html"><a href="contrastos-dhipòtesis-dun-i-dos-paràmetres.html#contrastos-per-a-una-proporció"><i class="fa fa-check"></i><b>5.3.1</b> Contrastos per a una proporció</a></li>
+<li class="chapter" data-level="5.3.2" data-path="contrastos-dhipòtesis-dun-i-dos-paràmetres.html"><a href="contrastos-dhipòtesis-dun-i-dos-paràmetres.html#contrastos-per-a-2-proporcions-emprant-mostres-independents"><i class="fa fa-check"></i><b>5.3.2</b> Contrastos per a 2 proporcions emprant mostres independents</a></li>
+<li class="chapter" data-level="5.3.3" data-path="contrastos-dhipòtesis-dun-i-dos-paràmetres.html"><a href="contrastos-dhipòtesis-dun-i-dos-paràmetres.html#contrastos-per-a-2-proporcions-emprant-mostres-aparellades"><i class="fa fa-check"></i><b>5.3.3</b> Contrastos per a 2 proporcions emprant mostres aparellades</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="contrastos-de-bondat-dajust.html"><a href="contrastos-de-bondat-dajust.html"><i class="fa fa-check"></i><b>6</b> Contrastos de bondat d’ajust</a><ul>
+<li class="chapter" data-level="6.1" data-path="contrastos-de-bondat-dajust.html"><a href="contrastos-de-bondat-dajust.html#bondat-dajust"><i class="fa fa-check"></i><b>6.1</b> Bondat d’ajust</a></li>
+<li class="chapter" data-level="6.2" data-path="contrastos-de-bondat-dajust.html"><a href="contrastos-de-bondat-dajust.html#test-chi2-de-pearson"><i class="fa fa-check"></i><b>6.2</b> Test <span class="math inline">\(\chi^2\)</span> de Pearson</a><ul>
+<li class="chapter" data-level="6.2.1" data-path="contrastos-de-bondat-dajust.html"><a href="contrastos-de-bondat-dajust.html#el-test-bàsic"><i class="fa fa-check"></i><b>6.2.1</b> El test bàsic</a></li>
+<li class="chapter" data-level="6.2.2" data-path="contrastos-de-bondat-dajust.html"><a href="contrastos-de-bondat-dajust.html#mètode-de-montecarlo"><i class="fa fa-check"></i><b>6.2.2</b> Mètode de Montecarlo</a></li>
+<li class="chapter" data-level="6.2.3" data-path="contrastos-de-bondat-dajust.html"><a href="contrastos-de-bondat-dajust.html#test-chi2-amb-paràmetres-poblacionals-desconeguts"><i class="fa fa-check"></i><b>6.2.3</b> Test <span class="math inline">\(\chi^2\)</span> amb paràmetres poblacionals desconeguts</a></li>
+</ul></li>
+<li class="chapter" data-level="6.3" data-path="contrastos-de-bondat-dajust.html"><a href="contrastos-de-bondat-dajust.html#test-de-kolmogorov-smirnov"><i class="fa fa-check"></i><b>6.3</b> Test de Kolmogorov-Smirnov</a></li>
+<li class="chapter" data-level="6.4" data-path="contrastos-de-bondat-dajust.html"><a href="contrastos-de-bondat-dajust.html#test-de-kolmogorov-smirnov-lilliefors"><i class="fa fa-check"></i><b>6.4</b> Test de Kolmogorov-Smirnov-Lilliefors</a></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="contrastos-dindependència-i-homogeneïtat.html"><a href="contrastos-dindependència-i-homogeneïtat.html"><i class="fa fa-check"></i><b>7</b> Contrastos d’independència i homogeneïtat</a><ul>
+<li class="chapter" data-level="7.1" data-path="contrastos-dindependència-i-homogeneïtat.html"><a href="contrastos-dindependència-i-homogeneïtat.html#test-chi2-dindependència"><i class="fa fa-check"></i><b>7.1</b> Test <span class="math inline">\(\chi^2\)</span> d’independència</a></li>
+<li class="chapter" data-level="7.2" data-path="contrastos-dindependència-i-homogeneïtat.html"><a href="contrastos-dindependència-i-homogeneïtat.html#test-chi2-dhomogeneïtat"><i class="fa fa-check"></i><b>7.2</b> Test <span class="math inline">\(\chi^2\)</span> d’homogeneïtat</a></li>
+<li class="chapter" data-level="7.3" data-path="contrastos-dindependència-i-homogeneïtat.html"><a href="contrastos-dindependència-i-homogeneïtat.html#test-chi2-de-tendència-opcional"><i class="fa fa-check"></i><b>7.3</b> Test <span class="math inline">\(\chi^2\)</span> de tendència (Opcional)</a></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="introducció-a-lestadística-multidimensional.html"><a href="introducció-a-lestadística-multidimensional.html"><i class="fa fa-check"></i><b>8</b> Introducció a l’estadística multidimensional</a><ul>
+<li class="chapter" data-level="8.1" data-path="introducció-a-lestadística-multidimensional.html"><a href="introducció-a-lestadística-multidimensional.html#poblacions-vectors-aleatoris"><i class="fa fa-check"></i><b>8.1</b> Poblacions: vectors aleatoris</a><ul>
+<li class="chapter" data-level="8.1.1" data-path="introducció-a-lestadística-multidimensional.html"><a href="introducció-a-lestadística-multidimensional.html#covariància"><i class="fa fa-check"></i><b>8.1.1</b> Covariància</a></li>
+<li class="chapter" data-level="8.1.2" data-path="introducció-a-lestadística-multidimensional.html"><a href="introducció-a-lestadística-multidimensional.html#correlació"><i class="fa fa-check"></i><b>8.1.2</b> Correlació</a></li>
+</ul></li>
+<li class="chapter" data-level="8.2" data-path="introducció-a-lestadística-multidimensional.html"><a href="introducció-a-lestadística-multidimensional.html#estadística-descriptiva-mostres"><i class="fa fa-check"></i><b>8.2</b> Estadística descriptiva: Mostres</a><ul>
+<li class="chapter" data-level="8.2.1" data-path="introducció-a-lestadística-multidimensional.html"><a href="introducció-a-lestadística-multidimensional.html#covariàncies"><i class="fa fa-check"></i><b>8.2.1</b> Covariàncies</a></li>
+<li class="chapter" data-level="8.2.2" data-path="introducció-a-lestadística-multidimensional.html"><a href="introducció-a-lestadística-multidimensional.html#correlació-de-pearson"><i class="fa fa-check"></i><b>8.2.2</b> Correlació de Pearson</a></li>
+<li class="chapter" data-level="8.2.3" data-path="introducció-a-lestadística-multidimensional.html"><a href="introducció-a-lestadística-multidimensional.html#correlació-de-spearman"><i class="fa fa-check"></i><b>8.2.3</b> Correlació de Spearman</a></li>
+<li class="chapter" data-level="8.2.4" data-path="introducció-a-lestadística-multidimensional.html"><a href="introducció-a-lestadística-multidimensional.html#contrastos-de-correlació"><i class="fa fa-check"></i><b>8.2.4</b> Contrastos de correlació</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="9" data-path="anova.html"><a href="anova.html"><i class="fa fa-check"></i><b>9</b> ANOVA</a><ul>
+<li class="chapter" data-level="9.1" data-path="anova.html"><a href="anova.html#nocions-bàsiques"><i class="fa fa-check"></i><b>9.1</b> Nocions bàsiques</a></li>
+<li class="chapter" data-level="9.2" data-path="anova.html"><a href="anova.html#anova-d1-via"><i class="fa fa-check"></i><b>9.2</b> ANOVA d’1 via</a><ul>
+<li class="chapter" data-level="9.2.1" data-path="anova.html"><a href="anova.html#contrast-bàsic"><i class="fa fa-check"></i><b>9.2.1</b> Contrast bàsic</a></li>
+<li class="chapter" data-level="9.2.2" data-path="anova.html"><a href="anova.html#amb-r-2"><i class="fa fa-check"></i><b>9.2.2</b> Amb R</a></li>
+<li class="chapter" data-level="9.2.3" data-path="anova.html"><a href="anova.html#comparacions-posteriors-per-parelles"><i class="fa fa-check"></i><b>9.2.3</b> Comparacions posteriors per parelles</a></li>
+<li class="chapter" data-level="9.2.4" data-path="anova.html"><a href="anova.html#verificació-de-les-condicions"><i class="fa fa-check"></i><b>9.2.4</b> Verificació de les condicions</a></li>
+<li class="chapter" data-level="9.2.5" data-path="anova.html"><a href="anova.html#test-no-paramètric"><i class="fa fa-check"></i><b>9.2.5</b> Test no paramètric</a></li>
+</ul></li>
+<li class="chapter" data-level="9.3" data-path="anova.html"><a href="anova.html#anova-de-blocs"><i class="fa fa-check"></i><b>9.3</b> ANOVA de blocs</a><ul>
+<li class="chapter" data-level="9.3.1" data-path="anova.html"><a href="anova.html#contrast-bàsic-1"><i class="fa fa-check"></i><b>9.3.1</b> Contrast bàsic</a></li>
+<li class="chapter" data-level="9.3.2" data-path="anova.html"><a href="anova.html#amb-r-3"><i class="fa fa-check"></i><b>9.3.2</b> Amb R</a></li>
+<li class="chapter" data-level="9.3.3" data-path="anova.html"><a href="anova.html#comparacions-posteriors-per-parelles-1"><i class="fa fa-check"></i><b>9.3.3</b> Comparacions posteriors per parelles</a></li>
+<li class="chapter" data-level="9.3.4" data-path="anova.html"><a href="anova.html#contrast-no-paramètric"><i class="fa fa-check"></i><b>9.3.4</b> Contrast no paramètric</a></li>
+</ul></li>
+<li class="chapter" data-level="9.4" data-path="anova.html"><a href="anova.html#anova-de-2-vies"><i class="fa fa-check"></i><b>9.4</b> ANOVA de 2 vies</a><ul>
+<li class="chapter" data-level="9.4.1" data-path="anova.html"><a href="anova.html#contrast-bàsic-2"><i class="fa fa-check"></i><b>9.4.1</b> Contrast bàsic</a></li>
+<li class="chapter" data-level="9.4.2" data-path="anova.html"><a href="anova.html#amb-r-4"><i class="fa fa-check"></i><b>9.4.2</b> Amb R</a></li>
+</ul></li>
+</ul></li>
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Matemàtiques II</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="contrastos-de-bondat-dajust" class="section level1">
+<h1><span class="header-section-number">Tema 6</span> Contrastos de bondat d’ajust</h1>
+<p>Els contrastos d’un paràmetre del tema anterior els empràvem bàsicament per cercar evidència que a un paràmetre poblacional (una mitjana, una proporció) “li passava qualque cosa”:</p>
+<ul>
+<li><p>Tenim evidència que la mitjana poblacional és diferent de 2?</p></li>
+<li><p>Tenim evidència que la proporció poblacional d’èxits és més gran que el 10%?</p></li>
+</ul>
+<p>Però també podem entendre que hi cercàvem si podem acceptar que el paràmetre poblacional de la variable que havia produit la mostra era igual a qualque cosa:</p>
+<ul>
+<li><p>Podem acceptar que la mitjana poblacional és igual de 2?</p></li>
+<li><p>Podem acceptar que la proporció poblacional d’èxits és del 10%?</p></li>
+</ul>
+<p>Als contrastos de bondat d’ajust anam una passa més enllà, i ens demanam si podem acceptar que la variable poblacional té una distribució concreta, o si per contra seria molt estrany que la nostra mostra hagués estat produïda per una variable amb aquella distribució. Per exemple:</p>
+<ul>
+<li><p>Llençam un dau en l’aire moltes vegades, apuntam els resultats, i ens demanam si podem acceptar que el dau és honrat (és a dir, que tots els resultats són equiprobables) o si per contra hi ha evidència que està trucat.</p></li>
+<li><p>Anotam els ingressos diaris per una determinada malaltia en un hospital i ens demanam si podem acceptar que segueixen una distribució de Poisson o si per contra hi ha evidència que no és el cas, la qual cosa seria senyal que hi ha un brot estrany de la malaltia.</p></li>
+<li><p>Volem emprar una mostra petita en un t-test. Podem acceptar que prové d’una distribució normal?</p></li>
+</ul>
+<p>De fet, ja hem estudiat un tipus de contrast de bondat d’ajust: els contrastos bilaterals d’una proporció, on ens demanàvem si podem acceptar que la mostra prové de tal variable Bernoulli o si per contra hi ha evidència que no.</p>
+<div id="bondat-dajust" class="section level2">
+<h2><span class="header-section-number">6.1</span> Bondat d’ajust</h2>
+<p>Considerau l’exemple següent:</p>
+
+<div class="example">
+<p><span id="exm:grossa" class="example"><strong>Exemple 6.1  </strong></span>Les freqüències de les darreres xifres dels primers premis de la Grossa de la loteria de Nadal als 211 sortejos de la seva història han estat les següents:</p>
+</div>
+
+<p><span class="math display">\[
+\begin{array}{r|cccccccccc}
+\hline
+\text{xifra}        &amp; 0 &amp; 1 &amp; 2 &amp; 3 &amp; 4 &amp; 5 &amp; 6 &amp; 7 &amp; 8 &amp; 9 \\ \hline
+\text{freqüència} &amp;  22 &amp; 8 &amp; 13 &amp; 21 &amp; 27 &amp; 31 &amp; 27 &amp; 22 &amp; 23 &amp; 17\\
+\hline
+\end{array}
+\]</span></p>
+<p>Hi ha evidència que no totes les xifres tenen la mateixa probabilitat de sortir com a darrera xifra de la Grossa?</p>
+<p>Aquesta és la típica pregunta d’un contrast de bondat d’ajust.</p>
+<ul>
+<li><p>En principi, estam disposats a acceptar que la nostra mostra prové d’una variable amb una certa distribució:</p>
+<p>Que totes les darreres xifres de la Grossa tenen la mateixa probabilitat d’aparèixer.</p></li>
+<li><p>Rebutjarem aquesta hipòtesi si seria molt estrany haver obtingut la nostra mostra si la variable seguís aquesta distribució:</p>
+<p>Si les darreres xifres tenguessin totes la mateixa probabilitat d’aparèixer, esperaríem una certa uniformitat en les seves freqüències a la nostra mostra. Si les freqüències reals se separen molt d’aquesta uniformitat, tendrem motius per dubtar que tots els dígits tenien la mateixa probabilitat d’aparèixer.</p></li>
+</ul>
+<div class="sourceCode" id="cb290"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb290-1" data-line-number="1">Grossa=<span class="kw">c</span>(<span class="dv">22</span>,<span class="dv">8</span>,<span class="dv">13</span>,<span class="dv">21</span>,<span class="dv">27</span>,<span class="dv">31</span>,<span class="dv">27</span>,<span class="dv">22</span>,<span class="dv">23</span>,<span class="dv">17</span>)</a>
+<a class="sourceLine" id="cb290-2" data-line-number="2"><span class="kw">barplot</span>(Grossa,<span class="dt">col=</span><span class="st">&quot;light blue&quot;</span>,<span class="dt">names=</span><span class="dv">0</span><span class="op">:</span><span class="dv">9</span>, </a>
+<a class="sourceLine" id="cb290-3" data-line-number="3">        <span class="dt">main=</span><span class="st">&quot;Darreres xifres  de la Grossa de Nadal&quot;</span>)</a></code></pre></div>
+<p><img src="Bioestadistica-II_files/figure-html/unnamed-chunk-365-1.png" width="50%" style="display: block; margin: auto;" /></p>
+<p>Més en general, un <strong>contrast de bondat d’ajust</strong> té la forma següent:
+<span class="math display">\[
+\left\{
+\begin{array}{l}
+H_0: \text{la mostra prové de la distribució esperada}\\
+H_1: \text{la mostra NO prové de la distribució esperada}
+\end{array}
+\right.
+\]</span>
+I, com sempre,</p>
+<ul>
+<li><p>Si obtenim evidència que ens permeti rebutjar la hipòtesi nul·la, conclourem que la mostra no prové de la distribució esperada</p></li>
+<li><p>Si no obtenim evidència que ens permeti rebutjar la hipòtesi nul·la, donarem per bo que la mostra prové de la distribució esperada</p></li>
+</ul>
+<p>Els tests de bondat d’ajust es basen bàsicament en:</p>
+<ol style="list-style-type: decimal">
+<li><p>Comparar les <strong>freqüències observades</strong> amb les <strong>freqüències teòriques</strong> de la distribució que contrastam</p></li>
+<li><p>Determinar si les freqüències observades són prou diferents de les teòriques com per fer inversemblant la hipòtesi nul·la</p></li>
+</ol>
+<p>Per exemple, continuant amb el nostre exemple de la Grossa, si totes les darreres xifres tinguessin la mateixa probabilitat d’aparèixer, la seva probabilitat seria 1/10, i per tant el valor esperat d’aparicions de cadascuna d’elles seria 211/10=21.1.</p>
+<div class="sourceCode" id="cb291"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb291-1" data-line-number="1"><span class="kw">barplot</span>(Grossa, <span class="dt">col=</span><span class="st">&quot;light blue&quot;</span>, <span class="dt">names=</span><span class="dv">0</span><span class="op">:</span><span class="dv">9</span>, </a>
+<a class="sourceLine" id="cb291-2" data-line-number="2">        <span class="dt">main=</span><span class="st">&quot;Darreres xifres de  la Grossa de Nadal&quot;</span>)</a>
+<a class="sourceLine" id="cb291-3" data-line-number="3"><span class="kw">abline</span>(<span class="dt">h=</span><span class="fl">21.1</span>, <span class="dt">col=</span><span class="st">&quot;red&quot;</span>, <span class="dt">lwd=</span><span class="dv">2</span>, <span class="dt">lty=</span><span class="st">&quot;dashed&quot;</span>)</a></code></pre></div>
+<p><img src="Bioestadistica-II_files/figure-html/unnamed-chunk-366-1.png" width="50%" style="display: block; margin: auto;" /></p>
+<p>Les desviacions observades respecte d’aquest valor, representat per la línia vermella al gràfic anterior, són prou grans com per dubtar que aquestes xifres són equiprobables, o podem acceptar que es deuen a l’atzar?</p>
+</div>
+<div id="test-chi2-de-pearson" class="section level2">
+<h2><span class="header-section-number">6.2</span> Test <span class="math inline">\(\chi^2\)</span> de Pearson</h2>
+<div id="el-test-bàsic" class="section level3">
+<h3><span class="header-section-number">6.2.1</span> El test bàsic</h3>
+<p>El test més popular per a variables aleatòries qualitatives, ordinals i quantitatives discretes (o contínues agrupades) és el <strong>test <span class="math inline">\(\chi^2\)</span> de Pearson</strong>.</p>
+<p>Suposem que tenim una mostra aleatòria simple de mida <span class="math inline">\(n\)</span>. Agrupam tots els resultats possibles en <span class="math inline">\(k\)</span> <strong>classes</strong>, <span class="math inline">\(C_1,\ldots,C_k\)</span> (poden ser tots els resultats individuals possibles, si només n’hi ha un conjunt finit). Així, al nostre exemple de les terminacions de la loteria, hi tenim 10 classes, definides pels 10 valors possibles de la darrera xifra: <span class="math inline">\(C_1=\{0\}\)</span>, <span class="math inline">\(C_2=\{1\}\)</span>,…, <span class="math inline">\(C_{10}=\{9\}\)</span>.</p>
+<p>Volem contrastar si les observacions segueixen una <em>distribució totalment coneguda</em>, per a la qual coneixem la probabilitat que una observació caigui dins cada una de les classes.</p>
+<p>El contrast és, recordem,
+<span class="math display">\[
+\left\{\begin{array}{l}
+H_{0}: \text{La població té aquesta distribució }\\
+H_{1}: \text{La població no té aquesta distribució}
+\end{array}
+\right.
+\]</span></p>
+<p>Per a cada classe <span class="math inline">\(C_i\)</span>, diguem</p>
+<ul>
+<li><p><span class="math inline">\(obs_i\)</span>: la freqüència absoluta <strong>observada</strong> d’aquesta classe. Per exemple, en el nostre exemple de la loteria, <span class="math inline">\(obs_1\)</span> és el nombre de vegades que la Grossa ha acabat en 0: 21; <span class="math inline">\(obs_2\)</span> és el nombre de vegades que la Grossa ha acabat en 1: 8; etc.</p></li>
+<li><p><span class="math inline">\(p_i\)</span>: la probabilitat <strong>teòrica</strong> que una observació pertanyi a aquesta classe si <span class="math inline">\(H_0\)</span> és vertadera. En el nostre exemple de la loteria, totes les probabilitats <span class="math inline">\(p_i\)</span> valen el mateix, 1/10.</p></li>
+<li><p><span class="math inline">\(esp_i\)</span>: la freqüència absoluta <strong>esperada</strong>, o <strong>teòrica</strong>, d’aquesta classe si <span class="math inline">\(H_0\)</span> és vertadera: <span class="math inline">\(esp_i=p_i\cdot n\)</span>. En el nostre exemple de la loteria, totes aquestes freqüències absolutes <span class="math inline">\(esp_i\)</span> valen el mateix, 211/10=21.1.</p></li>
+</ul>
+<p>Rebutjarem <span class="math inline">\(H_0\)</span> si les <span class="math inline">\(obs_i\)</span> són prou diferents de les <span class="math inline">\(esp_i\)</span>. Per mesurar-ho, empram el teorema següent:</p>
+
+<div class="theorem">
+<p><span id="thm:khi2BA" class="theorem"><strong>Teorema 6.1  </strong></span>Si <span class="math inline">\(H_0\)</span> és vertadera, la distribució contrastada està completament determinada i se satisfan les condicions següents:</p>
+<ul>
+<li><p>La mida <span class="math inline">\(n\)</span> de la mostra és gran (ho fixarem en <span class="math inline">\(n\geqslant 30\)</span>)</p></li>
+<li><p>Les classes cobreixen tots els resultats possibles: <span class="math inline">\(\sum\limits_{i=1}^kesp_i= n\)</span></p></li>
+<li><p>Totes les classes tenen prou probabilitat teòrica com per tenir-les en compte (nosaltres emprarem la <strong>Regla de Cochran</strong>: totes les <span class="math inline">\(esp_i\geqslant 5\)</span>)</p></li>
+</ul>
+<p>aleshores l’estadístic de contrast
+<span class="math display">\[
+\chi^2=\sum_{i=1}^k \frac{(obs_{i}-esp_{i})^2}{esp_{i}}
+\]</span>
+té (aproximadament) una distribució <span class="math inline">\(\chi_{k-1}^2\)</span>.</p>
+<p>Si la distribució contrastada no estava completament determinada i se n’han estimat <span class="math inline">\(m\)</span> paràmetres a partir de la mostra, s’ha de prendre com a distribució de l’estadístic de contrast una <span class="math inline">\(\chi_{k-1-m}^2\)</span>.</p>
+</div>
+
+
+<div class="rmdnote">
+<p>Fixau-vos que l’extadístic de contrast <span class="math inline">\(\chi^2\)</span> s’obté de la manera següent:</p>
+<ol style="list-style-type: decimal">
+<li><p>Per cada classe <span class="math inline">\(C_i\)</span>:</p>
+<ol style="list-style-type: lower-alpha">
+<li>Se resta <span class="math inline">\(obs_{i}-esp_{i}\)</span></li>
+<li>S’eleva el resultat al quadrat: <span class="math inline">\((obs_{i}-esp_{i})^2\)</span></li>
+<li>Es divideix el resultat per <span class="math inline">\(esp_i\)</span>: <span class="math inline">\((obs_{i}-esp_{i})^2/esp_{i}\)</span></li>
+</ol></li>
+<li>Se sumen aquests valors per a totes les classes <span class="math inline">\(C_i\)</span>.</li>
+</ol>
+</div>
+
+<p>Aleshores, el contrast se fa de la manera següent:</p>
+<ol style="list-style-type: decimal">
+<li><p>Se calcula el valor que pren l’estadístic de contrast sobre la nostra mostra, diguem-li <span class="math inline">\(\chi_0^2\)</span></p></li>
+<li><p>El p-valor del contrast és <span class="math inline">\(P(\chi^2\geqslant\chi_0^2)\)</span>, calculada tenint en compte que <span class="math inline">\(\chi^2\)</span> té distribució <span class="math inline">\(\chi^2\)</span> amb nombre de graus de llibertat:</p>
+<ul>
+<li><p>Si no s’ha estimat cap paràmetre de la distribució amb la mostra, el nombre de classes menys 1: <span class="math inline">\(\chi^2_{k-1}\)</span></p></li>
+<li><p>Si s’ha estimat qualque paràmetre de la distribució amb la mostra, el nombre de classes menys 1 i menys el nombre de paràmetres estimats: <span class="math inline">\(\chi^2_{k-1-m}\)</span> amb <span class="math inline">\(m\)</span> el nombre de paràmetres estimats</p></li>
+</ul></li>
+</ol>
+
+<div class="rmdimportant">
+Com més gran sigui el nombre de classes emprades, més potència té el contrast, per tant procurau emprar-ne el màxim nombre possible tot respectant la regla de Cochran.
+</div>
+
+
+<div class="example">
+<p><span id="exm:grossa2" class="example"><strong>Exemple 6.2  </strong></span>Tornem a l’Exemple <a href="contrastos-de-bondat-dajust.html#exm:grossa">6.1</a>. Recordem que la nostra mostra era</p>
+</div>
+
+<p><span class="math display">\[
+\begin{array}{r|cccccccccc}
+\hline
+\text{xifra}        &amp; 0 &amp; 1 &amp; 2 &amp; 3 &amp; 4 &amp; 5 &amp; 6 &amp; 7 &amp; 8 &amp; 9 \\ \hline
+\text{freqüència} &amp;  22 &amp; 8 &amp; 13 &amp; 21 &amp; 27 &amp; 31 &amp; 27 &amp; 22 &amp; 23 &amp; 17\\
+\hline
+\end{array}
+\]</span>
+Com que totes les feqüències esperades valen 21.1, el valor de l’estadístic de contrast sobre aquesta mostra és
+<span class="math display">\[
+\begin{array}{rl}
+ \chi_0^2&amp; \displaystyle=\frac{(22-21.1)^2}{21.1}+\frac{(8-21.1)^2}{21.1}+\cdots\\[2ex]
+ &amp; \qquad\quad\displaystyle +\frac{(23-21.1)^2}{21.1} +\frac{(17-21.1)^2}{21.1}=20.23
+\end{array}
+\]</span></p>
+<p>Calculat amb R:</p>
+<div class="sourceCode" id="cb292"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb292-1" data-line-number="1">Esp=<span class="kw">rep</span>(<span class="fl">21.1</span>,<span class="dv">10</span>)</a>
+<a class="sourceLine" id="cb292-2" data-line-number="2">X2=<span class="kw">sum</span>((Grossa<span class="op">-</span>Esp)<span class="op">^</span><span class="dv">2</span><span class="op">/</span>Esp)</a>
+<a class="sourceLine" id="cb292-3" data-line-number="3">X2</a></code></pre></div>
+<pre><code>## [1] 20.23223</code></pre>
+<p>En resum, per resoldre la qüestió plantejada en l’Exemple <a href="contrastos-de-bondat-dajust.html#exm:grossa">6.1</a> procedim de la manera següent:</p>
+<p><em>Contrast</em>:
+<span class="math display">\[
+\left\{\begin{array}{l}
+H_{0}: \text{Les darreres xifres de la Grossa són equiprobables}\\
+H_{1}: \text{Les darreres xifres de la Grossa NO són equiprobables}
+\end{array}
+\right.
+\]</span></p>
+<p><em>Estadístic de contrast</em>:
+<span class="math display">\[
+\chi^2=\sum_{i=1}^k \frac{(obs_{i}-esp_{i})^2}{esp_{i}}
+\]</span></p>
+<p>Estam en les condicions del Teorema <a href="contrastos-de-bondat-dajust.html#thm:khi2BA">6.1</a>:</p>
+<ul>
+<li><p><span class="math inline">\(n=211\)</span>, gran</p></li>
+<li><p>Les classes, que corresponen als dígits 0,…,9, cobreixen tots els resultats possibles; <span class="math inline">\(k=10\)</span></p></li>
+<li><p>Cada <span class="math inline">\(esp_i=21.1\geqslant 5\)</span></p></li>
+</ul>
+<p>Per tant, com que no estimam cap paràmetre de la distribució, aquest estadístic de contrast segueix una llei <span class="math inline">\(\chi^2_9\)</span>.</p>
+<p><em>Valor de l’estadístic de contrast</em>: Ja l’hem calculat, 20.23.</p>
+<p><em>p-valor</em>: <span class="math inline">\(P(\chi_9^2\geqslant 20.23)=\texttt{1-pchisq(20.23,9)}= 0.0165\)</span></p>
+<p><em>Conclusió</em>: Hem obtingut evidència estadísticament significativa que les darreres xifres de la Grossa no apareixen de manera equiprobable (test <span class="math inline">\(\chi^2\)</span> de Pearson, p-valor 0.0165).</p>
+<p><img src="Bioestadistica-II_files/figure-html/oops.png" width="50%" style="display: block; margin: auto;" /></p>
+
+<div class="example">
+<p><span id="exm:grossasim" class="example"><strong>Exemple 6.3  </strong></span>Anem a comprovar amb una simulació aquest p-valor. El que farem serà el següent: Repetirem 10000 vegades, amb un <code>replicate</code>, el procés d’extreure a l’atzar i de manera equiprobable 211 dígits, calcular-ne la taula de freqüències de cada una d’aquestes mostres i calcular l’estadístic de contrast <span class="math inline">\(\chi^2\)</span> sobre cada una d’aquestes taules. Finalment, calcularem la fracció de vegades que <span class="math inline">\(\chi^2\)</span> ha donat per sobre del valor de la nostra mostra, que era 20.23.</p>
+</div>
+
+<div class="sourceCode" id="cb294"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb294-1" data-line-number="1"><span class="kw">set.seed</span>(<span class="dv">42</span>)</a>
+<a class="sourceLine" id="cb294-2" data-line-number="2">X2sim=<span class="kw">replicate</span>(<span class="dv">10000</span>,<span class="kw">sum</span>((<span class="kw">table</span>(<span class="kw">sample</span>(<span class="dv">0</span><span class="op">:</span><span class="dv">9</span>,<span class="dv">211</span>,<span class="dt">rep=</span><span class="ot">TRUE</span>))<span class="op">-</span><span class="fl">21.1</span>)<span class="op">^</span><span class="dv">2</span><span class="op">/</span><span class="fl">21.1</span>))</a>
+<a class="sourceLine" id="cb294-3" data-line-number="3"><span class="kw">length</span>(<span class="kw">which</span>(X2sim<span class="op">&gt;=</span>X2))<span class="op">/</span><span class="dv">10000</span></a></code></pre></div>
+<pre><code>## [1] 0.0158</code></pre>
+<p>Només un 1.6% de les 10000 simulacions han donat un valor de <span class="math inline">\(\chi^2\)</span> més gran o igual que el de la mostra de Grosses de Nadal. Per tant, el valor de la <span class="math inline">\(\chi^2\)</span> de la mostra de Grosses de Nadal és anormalment gran si les darreres xifres tenen totes la mateixa probabilitat d’aparèixer. Naturalment, anormal no vol dir impossible, però…</p>
+<p>La funció per realitzar un test <span class="math inline">\(\chi^2\)</span> amb R és</p>
+<div class="sourceCode" id="cb296"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb296-1" data-line-number="1"><span class="kw">chisq.test</span>(obs, <span class="dt">p=</span>...)</a></code></pre></div>
+<p>on <code>obs</code> és el vector de les freqüències observades de les classes, <span class="math inline">\((obs_i)_i\)</span> i <code>p</code> s’ha d’igualar al vector de les probabilitats teòriques de les classes, <span class="math inline">\((p_i)_i\)</span>.</p>
+
+<div class="rmdcaution">
+Si no s’especifica aquest paràmetre <code>p</code>, R entén que totes les probabilitats són iguals.
+</div>
+
+
+<div class="rmdcaution">
+La suma de les probabilitats entrades a <code>p</code> ha de ser igual a 1. Recordau que les classes han de cobrir tots els casos possibles.
+</div>
+
+<p>Al nostre exemple de la Grossa de Nadal, entraríem simplement</p>
+<div class="sourceCode" id="cb297"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb297-1" data-line-number="1"><span class="kw">chisq.test</span>(Grossa)</a></code></pre></div>
+<pre><code>## 
+##  Chi-squared test for given probabilities
+## 
+## data:  Grossa
+## X-squared = 20.232, df = 9, p-value = 0.01653</code></pre>
+<p>Obtenim el valor de <span class="math inline">\(\chi^2\)</span>, <code>X-squared</code>, els graus de llibertat, <code>df</code>, i el p-valor, <code>p-value</code>.</p>
+
+<div class="example">
+<p><span id="exm:industrial" class="example"><strong>Exemple 6.4  </strong></span>Un tècnic de medi ambient vol estudiar l’augment de temperatura de l’aigua a dos quilòmetres dels abocaments d’aigua autoritzats d’una
+planta industrial.</p>
+</div>
+
+<p>El responsable de l’empresa afirma que</p>
+<blockquote>
+<p>aquests augments de temperatura segueixen una llei normal amb <span class="math inline">\(\mu=3.5\)</span> dècimes de grau C i <span class="math inline">\(\sigma=0.7\)</span> dècimes de grau C.</p>
+</blockquote>
+<p>El tècnic ho posa en dubte. Per decidir-ho, pren una mostra aleatòria d’observacions de l’augment de les temperatures (en dècimes de grau). Les dades són les de la taula següent, ja agrupades en classes:</p>
+<p><span class="math display">\[
+\begin{array}{c|c}
+\text{Rang d&#39;augments} &amp; \text{Freqüències}\\
+\hline
+1.45\text{ a }1.95 &amp; 2 \\
+1.95\text{ a }2.45 &amp; 1 \\
+2.45\text{ a }2.95 &amp; 4 \\
+2.95\text{ a }3.45 &amp; 15 \\
+3.45\text{ a }3.95 &amp; 10 \\
+3.95\text{ a }4.45 &amp; 5 \\
+4.45\text{ a }4.95 &amp; 3 \\
+\hline
+\text{Total} &amp; 40\\ 
+\end{array}
+\]</span></p>
+<p>Hi ha evidència que la sospita del tècnic sigui vertadera, amb un nivell de significació del 5%?</p>
+<p><em>Contrast</em>:
+<span class="math display">\[
+\left\{
+\begin{array}{l}
+H_{0}:\text{La distribució dels augments de temp. és $N(3.5,0.7)$}\\ 
+H_{1}: \text{La distribució dels augments de temp. NO és $N(3.5,0.7)$}
+\end{array}
+\right.
+\]</span></p>
+<p><em>Estadístic de contrast</em>: Volem emprar el test <span class="math inline">\(\chi^2\)</span>, així que l’estadístic de contrast serà
+<span class="math display">\[
+\chi^2=\sum_{i=1}^k \frac{(obs_{i}-esp_{i})^2}{esp_{i}}
+\]</span></p>
+<p>Cal comprovar que se satisfan les condicions del Teorema <a href="contrastos-de-bondat-dajust.html#thm:khi2BA">6.1</a>.</p>
+<ul>
+<li><p>La mida de la mostra és <span class="math inline">\(n=40\)</span>, suficient.</p></li>
+<li><p>Les classes, cobreixen tots els resultats possibles?</p></li>
+</ul>
+<p>No, perquè els possible valors d’una variable normal són tots els nombres reals, i les nostres classes només cobreixen l’interval [1.45,4.95]. El que farem serà afegir les cues a les dues classes dels extrems, i considerar les classes
+<span class="math display">\[
+\begin{array}{l|c}
+\text{Rang d&#39;augments} &amp; \text{Freqüències}\\
+\hline
+\text{menys de 1.95} &amp; 2 \\
+1.95 \text{ a } 2.45 &amp; 1 \\
+2.45\text{ a }2.95 &amp; 4 \\
+2.95\text{ a }3.45 &amp; 15 \\
+3.45\text{ a }3.95 &amp; 10 \\
+3.95\text{ a }4.45 &amp; 5 \\
+\text{més de 4.45} &amp; 3 \\
+\hline
+\text{Total} &amp; 40\\  
+\end{array}
+\]</span>
+Ara ja cobreixen tots els resultats possibles.</p>
+<ul>
+<li>Totes les freqüències esperades són com a mínim 5?</li>
+</ul>
+<p>Doncs no ho sabem, les haurem de calcular. Recordem que són les freqüències esperades de cada classe suposant que la variable poblacional és <span class="math inline">\(N(3.5,0.7)\)</span>, i s’obtenen multiplicant la probabilitat de cada interval (amb aquesta distribució) per la mida de la mostra, 40.</p>
+<p>La probabilitat de la 1<sup>a</sup> classe és
+<span class="math display">\[
+            p_1 =P(X\leqslant 1.95)=\texttt{pnorm(1.95,3.5,0.7)}=0.0134
+\]</span>
+i la seva freqüència esperada és
+<span class="math display">\[
+esp_1=p_1\cdot n= 0.0134\cdot 40=0.536
+\]</span></p>
+<p>La probabilitat de la 2<sup>a</sup> classe és
+<span class="math display">\[
+    \begin{array}{rl}
+    p_2 &amp; =P(1.95\leqslant X\leqslant 2.45)\\
+    &amp; =\texttt{pnorm(2.45,3.5,0.7)-pnorm(1.95,3.5,0.7)}=0.0534
+    \end{array}
+\]</span>
+i per tant la seva freqüència esperada és
+<span class="math display">\[
+    esp_2=p_2\cdot n= 0.0534\cdot 40= 2.136
+\]</span></p>
+<p>Anam a calcular amb R totes les freqüències esperades d’aquesta manera i d’un sol cop:</p>
+<div class="sourceCode" id="cb299"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb299-1" data-line-number="1">freq.obs=<span class="kw">c</span>(<span class="dv">2</span>,<span class="dv">1</span>,<span class="dv">4</span>,<span class="dv">15</span>,<span class="dv">10</span>,<span class="dv">5</span>,<span class="dv">3</span>)</a>
+<a class="sourceLine" id="cb299-2" data-line-number="2">n=<span class="kw">sum</span>(freq.obs)</a>
+<a class="sourceLine" id="cb299-3" data-line-number="3">lims=<span class="kw">c</span>(<span class="op">-</span><span class="ot">Inf</span>,<span class="fl">1.95</span>,<span class="fl">2.45</span>,<span class="fl">2.95</span>,<span class="fl">3.45</span>,<span class="fl">3.95</span>,<span class="fl">4.45</span>,<span class="ot">Inf</span>)</a>
+<a class="sourceLine" id="cb299-4" data-line-number="4">lim.esq=lims[<span class="op">-</span><span class="kw">length</span>(lims)]  <span class="co">#Els límits inferiors de les classes</span></a>
+<a class="sourceLine" id="cb299-5" data-line-number="5">lim.dret=lims[<span class="op">-</span><span class="dv">1</span>]  <span class="co">#Els límits superiors de les classes</span></a>
+<a class="sourceLine" id="cb299-6" data-line-number="6">mu=<span class="fl">3.5</span></a>
+<a class="sourceLine" id="cb299-7" data-line-number="7">sigma=<span class="fl">0.7</span></a>
+<a class="sourceLine" id="cb299-8" data-line-number="8">prob.esp=<span class="kw">pnorm</span>(lim.dret,mu,sigma)<span class="op">-</span><span class="kw">pnorm</span>(lim.esq,mu,sigma)</a>
+<a class="sourceLine" id="cb299-9" data-line-number="9">freq.esp=n<span class="op">*</span>prob.esp</a>
+<a class="sourceLine" id="cb299-10" data-line-number="10"><span class="kw">round</span>(freq.esp,<span class="dv">3</span>)</a></code></pre></div>
+<pre><code>## [1]  0.536  2.136  5.968 10.220 10.733  6.912  3.495</code></pre>
+<p>Per tant, tenim la taula
+<span class="math display">\[
+    \begin{array}{r|c|c}
+    \text{Rang de temperatures} &amp; obs_i &amp; esp_i\\
+    \hline
+    \text{menys de 1.95} &amp; 2 &amp;  0.536 \\
+    1.95\text{ a }2.45 &amp; 1 &amp; 2.136 \\
+    2.45\text{ a }2.95 &amp; 4  &amp; 5.968 \\
+    2.95\text{ a }3.45 &amp; 15 &amp; 10.220 \\
+    3.45\text{ a }3.95 &amp; 10 &amp; 10.733  \\
+    3.95\text{ a }4.45 &amp; 5 &amp; 6.912 \\
+    \text{més de 4.45} &amp; 3  &amp; 3.495
+    \end{array}
+\]</span>
+Tenim freqüències esperades per davall de 5, per tant no podem aplicar el test <span class="math inline">\(\chi^2\)</span> tal qual. El que farem serà agrupar classes contigües a fi d’obtenir freqüències esperades més grans o iguals que 5 amb el màxim de classes. En concret, haurem d’agrupar per un costat les tres primeres classes, i per un altre costat les dues darreres classes
+<span class="math display">\[
+    \begin{array}{r|c|c}
+    \text{Rang de temperatures} &amp; obs_i &amp; esp_i\\\hline
+\text{menys de  2.95} &amp; 7  &amp;  8.64\\
+2.95\text{ a }3.45 &amp; 15 &amp;  10.22 \\
+3.45\text{ a }3.95 &amp; 10 &amp;  10.733  \\
+\text{més de 3.95}  &amp; 8&amp; 10.407
+\end{array}
+\]</span></p>
+<p>Ara ja podem aplicar el text <span class="math inline">\(\chi^2\)</span> amb aquestes <span class="math inline">\(k=4\)</span> classes. Com que no hem estimat cap paràmetre, prendrem com a distribució de l’estadístic de contrast una <span class="math inline">\(\chi^2_3\)</span>.</p>
+<p><em>Valor de l’estadístic de contrast</em>:
+<span class="math display">\[
+\begin{array}{rl} 
+\chi_0^2 &amp;\displaystyle=\frac{(7-8.64)^2}{8.64}+\frac{(15-10.22)^2}{10.22}\\
+&amp;\displaystyle\qquad\quad +\frac{(10-10.733)^2}{10.733}+\frac{(8-10.407)^2}{10.407}=3.154
+\end{array}
+\]</span></p>
+<p><em>p-valor</em>:
+<span class="math display">\[
+P(\chi_{3}^2\geqslant 3.154)=\texttt{1-pchisq(3.154,3)}=0.37
+\]</span></p>
+<p><em>Conclusió</em>: Podem acceptar que els augments de temperatures observats segueixen una llei normal <span class="math inline">\(N(3.5,0.7)\)</span> (test <span class="math inline">\(\chi^2\)</span> de Pearson, p-valor=0.37).</p>
+<p>Amb R, si aplicam directament la funció <code>chisq-test</code> als vectors de freqüències i probabilitats de les classes originals (bé, de les esteses per cobrir tot <span class="math inline">\(\mathbb{R}\)</span>) R ens avisa que el resultat no és de fiar:</p>
+<div class="sourceCode" id="cb301"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb301-1" data-line-number="1"><span class="kw">chisq.test</span>(freq.obs,<span class="dt">p=</span>prob.esp)</a></code></pre></div>
+<pre><code>## Warning in chisq.test(freq.obs, p = prob.esp): Chi-squared approximation may be
+## incorrect</code></pre>
+<pre><code>## 
+##  Chi-squared test for given probabilities
+## 
+## data:  freq.obs
+## X-squared = 8.1337, df = 6, p-value = 0.2285</code></pre>
+<p>Haurem d’agrupar primer a mà les classes, abans d’aplicar <code>chisq.test</code>:</p>
+<div class="sourceCode" id="cb304"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb304-1" data-line-number="1">freq.obs.agrup=<span class="kw">c</span>(<span class="kw">sum</span>(freq.obs[<span class="dv">1</span><span class="op">:</span><span class="dv">3</span>]),</a>
+<a class="sourceLine" id="cb304-2" data-line-number="2">   freq.obs[<span class="dv">4</span><span class="op">:</span><span class="dv">5</span>], <span class="kw">sum</span>(freq.obs[<span class="dv">6</span><span class="op">:</span><span class="dv">7</span>]))</a>
+<a class="sourceLine" id="cb304-3" data-line-number="3">prob.esp.agrup=<span class="kw">c</span>(<span class="kw">sum</span>(prob.esp[<span class="dv">1</span><span class="op">:</span><span class="dv">3</span>]),</a>
+<a class="sourceLine" id="cb304-4" data-line-number="4">  prob.esp[<span class="dv">4</span><span class="op">:</span><span class="dv">5</span>], <span class="kw">sum</span>(prob.esp[<span class="dv">6</span><span class="op">:</span><span class="dv">7</span>]))</a>
+<a class="sourceLine" id="cb304-5" data-line-number="5"><span class="kw">chisq.test</span>(freq.obs.agrup, <span class="dt">p=</span>prob.esp.agrup)</a></code></pre></div>
+<pre><code>## 
+##  Chi-squared test for given probabilities
+## 
+## data:  freq.obs.agrup
+## X-squared = 3.1531, df = 3, p-value = 0.3686</code></pre>
+</div>
+<div id="mètode-de-montecarlo" class="section level3">
+<h3><span class="header-section-number">6.2.2</span> Mètode de Montecarlo</h3>
+<p>Quan volem realitzar un test <span class="math inline">\(\chi^2\)</span> i no es compleixen les condicions per que el p-valor tengui sentit, es pot emprar el <strong>mètode de Montecarlo</strong> (o <strong>basat en simulacions</strong>) per estimar el p-valor:</p>
+<ul>
+<li><p>Es genera un conjunt molt gran de mostres aleatòries amb la distribució esperada i de la mateixa mida que la nostra mostra</p></li>
+<li><p>Es calcula l’estadístic de contrast <span class="math inline">\(\chi^2\)</span> sobre cada mostra</p></li>
+<li><p>S’estima el p-valor mitjançant la fracció de mostres que han donat un <span class="math inline">\(\chi^2\)</span> més gran que el de la nostra mostra</p></li>
+</ul>
+<p>Recordau que ja hem emprat aquest mètode a l’Exemple <a href="contrastos-de-bondat-dajust.html#exm:grossasim">6.3</a> per “comprovar” el p-valor obtingut a l’Exemple <a href="contrastos-de-bondat-dajust.html#exm:grossa2">6.2</a> amb el test <span class="math inline">\(\chi^2\)</span> “exacte”. Però no cal complicar-se tant la vida per realitzar-lo.
+La funció <code>chisq.test</code> també permet usar el mètode de Montecarlo, entrant-hi el paràmetre <code>simulate.p.value=TRUE</code> i, si es vol, igualant el paràmetre <code>B</code> al nombre de simulacions desitjat (per defecte, en farà 2000). Naturalment, com que es basa en una simulació aleatòria, pot ser que en cada execució doni un p-valor diferent.</p>
+<p>Per exemple, podíem emprar el mètode de Montecarlo per realitzar el contrast de l’Exemple <a href="contrastos-de-bondat-dajust.html#exm:industrial">6.4</a> amb les classes originals esteses, sense agrupar-les.</p>
+<div class="sourceCode" id="cb306"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb306-1" data-line-number="1"><span class="kw">set.seed</span>(<span class="dv">42</span>)</a>
+<a class="sourceLine" id="cb306-2" data-line-number="2"><span class="kw">chisq.test</span>(freq.obs, <span class="dt">p=</span>prob.esp, <span class="dt">simulate.p.value=</span><span class="ot">TRUE</span>, <span class="dt">B=</span><span class="dv">5000</span>)</a></code></pre></div>
+<pre><code>## 
+##  Chi-squared test for given probabilities with simulated p-value (based
+##  on 5000 replicates)
+## 
+## data:  freq.obs
+## X-squared = 8.1337, df = NA, p-value = 0.2206</code></pre>
+<p><em>Conclusió</em>: Podem acceptar que els augments de temperatures observats segueixen una llei normal <span class="math inline">\(N(3.5,0.7)\)</span> (test <span class="math inline">\(\chi^2\)</span> de Montercarlo, p-valor=0.22).</p>
+<p>Arribam, doncs, a la mateixa conclusió que amb el test <span class="math inline">\(\chi^2\)</span> aplicat a les dades agrupades.</p>
+</div>
+<div id="test-chi2-amb-paràmetres-poblacionals-desconeguts" class="section level3">
+<h3><span class="header-section-number">6.2.3</span> Test <span class="math inline">\(\chi^2\)</span> amb paràmetres poblacionals desconeguts</h3>
+<p>De vegades ens interessarà contrastar si les observacions segueixen algun tipus determinat de distribució (Poisson, normal…) amb algun paràmetre indeterminat. En aquest cas, primer estimam els paràmetres desconeguts a partir de les observacions i a continuació contrastam l’ajustament de la mostra a la distribució amb aquests paràmetres.</p>
+
+<div class="rmdimportant">
+El test és exactament el mateix, excepte que ara cal restar al nombre <span class="math inline">\(k-1\)</span> de graus de llibertat de la <span class="math inline">\(\chi^2\)</span> el nombre <span class="math inline">\(m\)</span> de paràmetres que hem estimat.
+</div>
+
+
+<div class="example">
+<p><span id="exm:gataca" class="example"><strong>Exemple 6.5  </strong></span>Volem determinar si el nombre de vegades que apareix la seqüència GATACA en una
+cadena d’ADN humà de longitud 1000 segueix una llei de Poisson.</p>
+</div>
+
+<p>Per fer-ho, prenem 576 mostres de cadenes d’ADN humà de longitud 1000 i hi comptam els nombres de GATACA. Els resultats són els de la taula següent:
+<span class="math display">\[
+\begin{array}{r|rrrrrr}
+\hline
+\text{nombre $x_i$ de vegades} &amp; 0 &amp; 1 &amp; 2 &amp; 3 &amp; 4 &amp; 5 \\[-1ex]
+\text{que hi apareix GATACA} &amp; &amp; &amp; &amp; &amp; &amp; \\
+\hline
+\text{freqüència $obs_{i}$} &amp; 229 &amp; 211 &amp; 93 &amp; 35 &amp; 7 &amp; 1 \\
+\hline
+\end{array}
+\]</span></p>
+<p><em>Contrast</em>:
+<span class="math display">\[
+\left\{ 
+\begin{array}{ll}
+H_0: \text{La mostra prové d&#39;una distribució $Po(\lambda)$}\\
+H_1: \text{La mostra no prové d&#39;aquesta distribució}
+\end{array}
+\right.
+\]</span></p>
+<p>Necessitam estimar el paràmetre <span class="math inline">\(\lambda\)</span>, que és el valor esperat d’una variable Poisson i per tant l’estimarem amb la mitjana mostral:
+<span class="math display">\[
+\lambda  =\dfrac{229 + 211 +  93 + 35 +7 + 1 }{576}=\dfrac{576}{576}=1
+\]</span></p>
+
+<div class="rmderror">
+Aquesta no és la mitjana de la mostra!
+</div>
+
+<p>Ara sí:
+<span class="math display">\[
+\begin{array}{rl}
+\lambda &amp; =\dfrac{229\cdot 0+ 211\cdot 1+  93\cdot 2+ 35\cdot 3+7\cdot 4+ 1\cdot 5}{229+ 211+ 93 +35 + 7 + 1}\\
+ &amp; =\dfrac{535}{576}=0.929
+ \end{array}
+\]</span></p>
+<p><em>Estadístic de contrast</em>: Volem emprar el test <span class="math inline">\(\chi^2\)</span>, així que l’estadístic de contrast serà
+<span class="math display">\[
+\chi^2=\sum_{i=1}^k \frac{(obs_{i}-esp_{i})^2}{esp_{i}}
+\]</span></p>
+<p>Cal comprovar que se satisfan les condicions del Teorema <a href="contrastos-de-bondat-dajust.html#thm:khi2BA">6.1</a>.</p>
+<ul>
+<li><p>La mida de la mostra és <span class="math inline">\(n=576\)</span>, ben gran.</p></li>
+<li><p>Per veure si les freqüències esperades són totes més grans o iguals que 5, les hem de calcular.</p></li>
+</ul>
+<p>Recordem que, si <span class="math inline">\(X\)</span> és una variable aleatòria de Poisson <span class="math inline">\(Po(\lambda)\)</span>,
+<span class="math display">\[
+P(X=k)=e^{-\lambda}\cdot \frac{\lambda^k}{k!}
+\]</span></p>
+<p>Les probabilitats <span class="math inline">\(p_i\)</span> d’obtenir <span class="math inline">\(i=0,1,2,3,4,5\)</span> són</p>
+<div class="sourceCode" id="cb308"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb308-1" data-line-number="1"><span class="kw">round</span>(<span class="kw">dpois</span>(<span class="dv">0</span><span class="op">:</span><span class="dv">5</span>,<span class="fl">0.929</span>),<span class="dv">3</span>)</a></code></pre></div>
+<pre><code>## [1] 0.395 0.367 0.170 0.053 0.012 0.002</code></pre>
+<p>i les freqüències esperades <span class="math inline">\(esp_i=p_i\cdot n\)</span> d’aquests valors són</p>
+<div class="sourceCode" id="cb310"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb310-1" data-line-number="1"><span class="kw">round</span>(<span class="kw">dpois</span>(<span class="dv">0</span><span class="op">:</span><span class="dv">5</span>,<span class="fl">0.929</span>)<span class="op">*</span><span class="dv">576</span>,<span class="dv">2</span>)</a></code></pre></div>
+<pre><code>## [1] 227.49 211.34  98.17  30.40   7.06   1.31</code></pre>
+<p>Obtenim la taula
+<span class="math display">\[
+\begin{array}{l|rrrrrr}
+\hline
+x_i &amp; 0 &amp; 1 &amp; 2 &amp; 3 &amp; 4 &amp; 5 \\
+\hline
+obs_{i} &amp; 229 &amp; 211 &amp; 93 &amp; 35 &amp; 7 &amp; 1 \\
+\hline
+p_i &amp;0.395 &amp;  0.367  &amp;0.170 &amp; 0.053 &amp; 0.012 &amp; 0.002 \\ \hline
+esp_i &amp;  227.49 &amp; 211.34 &amp; 98.17 &amp; 30.40  &amp; 7.06 &amp;  1.31\\ \hline
+\end{array}
+\]</span></p>
+
+<div class="rmderror">
+Aquestes classes estan malament! Recordau que les classes han de cobrir tots els resultats possibles! Els resultats possibles d’una variable Poisson són tots els nombres naturals.
+</div>
+
+<p>Per cobrir tots els resultats possibles, cal canviar el 5 per “5 o més” i recalcular la probabilitat i la freqüència esperada d’aquesta classe: la seva probabilitat és</p>
+<div class="sourceCode" id="cb312"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb312-1" data-line-number="1"><span class="kw">round</span>(<span class="dv">1</span><span class="op">-</span><span class="kw">ppois</span>(<span class="dv">4</span>,<span class="fl">0.929</span>),<span class="dv">3</span>)</a></code></pre></div>
+<pre><code>## [1] 0.003</code></pre>
+<p>i la seva freqüència esperada és</p>
+<div class="sourceCode" id="cb314"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb314-1" data-line-number="1"><span class="kw">round</span>((<span class="dv">1</span><span class="op">-</span><span class="kw">ppois</span>(<span class="dv">4</span>,<span class="fl">0.929</span>))<span class="op">*</span><span class="dv">576</span>,<span class="dv">2</span>)</a></code></pre></div>
+<pre><code>## [1] 1.55</code></pre>
+<p>Obtenim la taula
+<span class="math display">\[
+\begin{array}{l|rrrrrr}
+\hline
+x_i &amp; 0 &amp; 1 &amp; 2 &amp; 3 &amp; 4 &amp; \geqslant 5 \\
+\hline
+obs_{i}&amp; 229 &amp; 211 &amp; 93 &amp; 35 &amp; 7 &amp; 1 \\
+\hline
+p_i &amp;0.395 &amp;  0.367  &amp;0.170 &amp; 0.053 &amp; 0.012 &amp; 0.003 \\ \hline
+esp_i &amp;  227.49 &amp; 211.34 &amp; 98.17 &amp; 30.40  &amp; 7.06 &amp;  1.55\\ \hline
+\end{array}
+\]</span></p>
+<p>Per que totes les classes tenguin freqüència esperada més gran o igual que 5, agruparem les dues darreres classes</p>
+<p><span class="math display">\[
+\begin{array}{l|rrrrr}
+\hline
+x_i &amp; 0 &amp; 1 &amp; 2 &amp; 3 &amp; \geqslant 4 \\
+\hline
+obs_{i}&amp; 229 &amp; 211 &amp; 93 &amp; 35 &amp; 8 \\
+\hline
+p_i &amp;0.395 &amp;  0.367  &amp;0.170 &amp; 0.053 &amp; 0.015 \\ \hline
+esp_i &amp;  227.49 &amp; 211.34 &amp; 98.17 &amp; 30.40  &amp; 8.61\\ \hline
+\end{array}
+\]</span></p>
+<p>Ara totes les freqüències esperades són prou grans i les classes cobreixen tots els valors possibles de la variable. L’estadístic de contrast té distribució <span class="math inline">\(\chi_{k-1}^2\)</span> amb <span class="math inline">\(k=5\)</span>, per tant <span class="math inline">\(\chi_{4}^2\)</span>.</p>
+<p><img src="Bioestadistica-II_files/figure-html/batman.png" width="40%" style="display: block; margin: auto;" /></p>
+
+<div class="rmderror">
+Com que hem estimat la <span class="math inline">\(\lambda\)</span>, hem de considerar l’estadístic de contrast amb distribució <span class="math inline">\(\chi_{k-1-m}^2\)</span> amb <span class="math inline">\(k\)</span> el nombre de classes i <span class="math inline">\(m\)</span> el nombre de paràmetres estimats.
+</div>
+
+<p>Perdó. L’estadístic de contrast té distribució <span class="math inline">\(\chi_{3}^2\)</span>. Podem continuar.</p>
+<p><em>Valor de l’estadístic de contrast</em>:</p>
+<div class="sourceCode" id="cb316"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb316-1" data-line-number="1">obs.gataca=<span class="kw">c</span>(<span class="dv">229</span>,<span class="dv">211</span>,<span class="dv">93</span>,<span class="dv">35</span>,<span class="dv">8</span>)</a>
+<a class="sourceLine" id="cb316-2" data-line-number="2">n=<span class="kw">sum</span>(obs.gataca)</a>
+<a class="sourceLine" id="cb316-3" data-line-number="3">probs.gataca=<span class="kw">c</span>(<span class="kw">dpois</span>(<span class="dv">0</span><span class="op">:</span><span class="dv">3</span>,<span class="fl">0.929</span>),<span class="dv">1</span><span class="op">-</span><span class="kw">ppois</span>(<span class="dv">3</span>,<span class="fl">0.929</span>))</a>
+<a class="sourceLine" id="cb316-4" data-line-number="4">esp.gataca=probs.gataca<span class="op">*</span>n</a>
+<a class="sourceLine" id="cb316-5" data-line-number="5">X02=<span class="kw">sum</span>((obs.gataca<span class="op">-</span>esp.gataca)<span class="op">^</span><span class="dv">2</span><span class="op">/</span>esp.gataca)</a>
+<a class="sourceLine" id="cb316-6" data-line-number="6"><span class="kw">round</span>(X02,<span class="dv">2</span>)</a></code></pre></div>
+<pre><code>## [1] 1.02</code></pre>
+<p><em>p-valor</em>: <span class="math inline">\(P(\chi_3^2\geqslant 1.02)=\texttt{1-pchisq(1.02,3)}=0.796\)</span></p>
+<p><em>Conclusió</em>: Podem acceptar que les observacions trobades segueixen una llei de Poisson (test <span class="math inline">\(\chi^2\)</span> de Pearson, p-valor 0.796).</p>
+<p>Amb R simplement ens estalviam el càlcul explícit de <span class="math inline">\(\chi_0^2\)</span> i del p-valor, perquè tota la saragata de calcular freqüències esperades i agrupar a fi que se satisfaci la llei de Cochran no ens la podem estalviar.</p>
+<div class="sourceCode" id="cb318"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb318-1" data-line-number="1"><span class="kw">chisq.test</span>(obs.gataca,<span class="dt">p=</span>probs.gataca)</a></code></pre></div>
+<pre><code>## 
+##  Chi-squared test for given probabilities
+## 
+## data:  obs.gataca
+## X-squared = 1.0215, df = 4, p-value = 0.9065</code></pre>
+<p><em>Conclusió</em>: No podem rebutjar que les observacions trobades segueixin una llei de Poisson (test <span class="math inline">\(\chi^2\)</span> de Pearson, p-valor <strong>0.9065????</strong>).</p>
+
+<div class="rmderror">
+No havíem quedat que el nombre de graus de llibertat era 3? R n’ha emprat 4, <code>df=4</code>, perquè no sap que hem estimat un paràmetre
+</div>
+
+<p>R ha calculat el p-valor prenent <span class="math inline">\(\chi_4^2\)</span>, nosaltres l’hem de calcular amb <span class="math inline">\(\chi_3^2\)</span></p>
+<div class="sourceCode" id="cb320"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb320-1" data-line-number="1"><span class="dv">1</span><span class="op">-</span><span class="kw">pchisq</span>(<span class="fl">1.0215</span>,<span class="dv">3</span>)</a></code></pre></div>
+<pre><code>## [1] 0.7960498</code></pre>
+<p>Ara ja tenim el mateix p-valor que abans.</p>
+</div>
+</div>
+<div id="test-de-kolmogorov-smirnov" class="section level2">
+<h2><span class="header-section-number">6.3</span> Test de Kolmogorov-Smirnov</h2>
+<p>El <strong>test de Kolgomorov-Smirnov</strong> (<strong>test K-S</strong>, per abreviar) és el test més popular per contrastar si una mostra segueix o no una distribució contínua concreta, <strong>sense restriccions sobre la mida de la mostra</strong>. Es pot emprar amb tota distribució contínua sempre que estigui completament especificada.</p>
+
+<div class="rmdnote">
+Per a distribucions concretes, mides de mostres dins marges concrets o quan estimam els paràmetres, existeixen tests específics millors que el K-S, però no els veurem aquí. Estan a la <a href="https://aprender-uib.github.io/AprendeR2/chap-bondad.html#tests-de-normalidad">lliçó corresponent de R</a> i potser que les hàgiu d’emprar als tallers.
+</div>
+
+<p>Tot seguit explicam com funciona aquest test.</p>
+<p>Partim d’una mostra <span class="math inline">\(x_1,x_2,\ldots,x_n\)</span> <em>amb tots els valors diferents</em> i volem contrastar si ha estat produïda per una variable <span class="math inline">\(X\)</span> contínua amb funció de distribució <span class="math inline">\(F_X\)</span>.</p>
+<p>Per exemple, suposem que volem constrastar si podem acceptar que els valors del vector següent provenen d’una distribució normal <span class="math inline">\(N(3,1.5)\)</span>.</p>
+<div class="sourceCode" id="cb322"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb322-1" data-line-number="1">valors=<span class="kw">c</span>(<span class="fl">5.84</span>,<span class="fl">4.57</span>,<span class="fl">1.34</span>,<span class="fl">3.58</span>,<span class="fl">1.54</span>,<span class="fl">2.25</span>)</a></code></pre></div>
+<p>Per tant, el <em>contrast</em> és
+<span class="math display">\[
+\left\{
+\begin{array}{l}
+H_0: \text{ aquesta mostra prové d&#39;una $X\sim N(3,1.5)$}\\
+H_0: \text{ aquesta mostra no prové d&#39;una $X\sim N(3,1.5)$}
+\end{array}
+\right.
+\]</span></p>
+<ol style="list-style-type: decimal">
+<li>Ordenam la mostra: <span class="math inline">\(x_{(1)}&lt; x_{(2)}&lt;\cdots&lt; x_{(n)}\)</span>.</li>
+</ol>
+<div class="sourceCode" id="cb323"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb323-1" data-line-number="1">valors=<span class="kw">sort</span>(valors)</a>
+<a class="sourceLine" id="cb323-2" data-line-number="2">valors</a></code></pre></div>
+<pre><code>## [1] 1.34 1.54 2.25 3.58 4.57 5.84</code></pre>
+<ol start="2" style="list-style-type: decimal">
+<li><p>Consideram la <strong>funció de distribució mostral</strong> <span class="math inline">\(F_{n}\)</span>
+d’aquesta mostra: la funció de distribució d’una variable <span class="math inline">\(n\)</span> amb domini tot <span class="math inline">\(\mathbb{R}\)</span> per a la qual cada <span class="math inline">\(x_{(i)}\)</span> tingués probabilitat <span class="math inline">\(1/n\)</span> i la resta de reals tingués probabilitat 0:
+<span class="math display">\[
+F_n(x)=\left\{\begin{array}{ll}
+0 &amp;\text{ si } x&lt; x_{(1)} \\
+\dfrac{k}{n}&amp;\text{ si } x_{(k)}\leqslant x &lt; x_{(k+1)}\\
+1 &amp; \text{ si } x_{(n)} \leqslant x
+\end{array}
+\right.
+\]</span></p>
+<p>A la nostra mostra ja ordenada, seria
+<span class="math display">\[
+F_6(x)=\left\{\begin{array}{ll}
+0 &amp;\text{ si } x&lt; 1.34 \\
+1/6 &amp;\text{ si } 1.34\leqslant x &lt;1.54\\
+2/6 &amp;\text{ si } 1.54\leqslant x &lt;2.25\\
+3/6 &amp;\text{ si } 2.25\leqslant x &lt;3.58\\
+4/6 &amp;\text{ si } 3.58\leqslant x &lt;4.57\\
+5/6 &amp;\text{ si } 4.57\leqslant x &lt;5.84\\
+1 &amp;\text{ si } 5.84\leqslant x 
+\end{array}
+\right.
+\]</span>
+El gràfic d’aquesta distribució és el següent:</p></li>
+</ol>
+<div class="sourceCode" id="cb325"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb325-1" data-line-number="1"><span class="kw">plot</span>(<span class="kw">c</span>(<span class="dv">1</span>,valors,<span class="dv">7</span>), <span class="kw">c</span>(<span class="dv">0</span>,(<span class="dv">0</span><span class="op">:</span><span class="dv">5</span>)<span class="op">/</span><span class="dv">5</span>,<span class="dv">1</span>), <span class="dt">type=</span><span class="st">&quot;s&quot;</span>, <span class="dt">lwd=</span><span class="fl">1.5</span>, </a>
+<a class="sourceLine" id="cb325-2" data-line-number="2">     <span class="dt">xlab=</span><span class="st">&quot;&quot;</span>, <span class="dt">ylab=</span><span class="st">&quot;&quot;</span>)</a></code></pre></div>
+<p><img src="Bioestadistica-II_files/figure-html/unnamed-chunk-396-1.png" width="50%" style="display: block; margin: auto;" /></p>
+<ol start="3" style="list-style-type: decimal">
+<li>Comparam <span class="math inline">\(F_n(x)\)</span> amb <span class="math inline">\(F_X(x)\)</span>. Si són molt diferents, rebutjarem que la mostra s’ha produït amb distribució <span class="math inline">\(F_X\)</span>.</li>
+</ol>
+<div class="sourceCode" id="cb326"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb326-1" data-line-number="1"><span class="kw">plot</span>(<span class="kw">c</span>(<span class="dv">1</span>,valors,<span class="dv">6</span>),<span class="kw">c</span>(<span class="dv">0</span>,(<span class="dv">0</span><span class="op">:</span><span class="dv">5</span>)<span class="op">/</span><span class="dv">5</span>,<span class="dv">1</span>),<span class="dt">type=</span><span class="st">&quot;s&quot;</span>, <span class="dt">xlab=</span><span class="st">&quot;&quot;</span>,<span class="dt">ylab=</span><span class="st">&quot;&quot;</span>,<span class="dt">lwd=</span><span class="fl">1.5</span>)</a>
+<a class="sourceLine" id="cb326-2" data-line-number="2"><span class="kw">curve</span>(<span class="kw">pnorm</span>(x,<span class="dv">3</span>,<span class="fl">1.5</span>),<span class="dt">col=</span><span class="st">&quot;red&quot;</span>,<span class="dt">lwd=</span><span class="fl">1.5</span>,<span class="dt">add=</span><span class="ot">TRUE</span>)</a>
+<a class="sourceLine" id="cb326-3" data-line-number="3"><span class="kw">legend</span>(<span class="st">&quot;topleft&quot;</span>,<span class="dt">col=</span><span class="kw">c</span>(<span class="st">&quot;black&quot;</span>,<span class="st">&quot;red&quot;</span>),<span class="dt">lty=</span><span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">1</span>),</a>
+<a class="sourceLine" id="cb326-4" data-line-number="4">       <span class="dt">legend=</span><span class="kw">c</span>(<span class="kw">expression</span>(F[<span class="dv">6</span>]),<span class="st">&quot;N(3,1.5)&quot;</span>),<span class="dt">cex=</span><span class="fl">0.7</span>)</a></code></pre></div>
+<p><img src="Bioestadistica-II_files/figure-html/unnamed-chunk-397-1.png" width="50%" style="display: block; margin: auto;" /></p>
+<p>Per comparar <span class="math inline">\(F_n(x)\)</span> amb <span class="math inline">\(F_X(x)\)</span>, calcularem
+<span class="math display">\[
+\max\{|F_n(x)-F_X(x)|\mid x\in \mathbb{R}\}
+\]</span>
+Com que <span class="math inline">\(F_X\)</span> és creixent, aquest màxim s’assoleix a qualque escaló.
+Per tant, per calcular aquest màxim primer calculam, per a cada <span class="math inline">\(x_{(i)}\)</span>, la seva <strong>discrepància</strong>: la distància entre <span class="math inline">\(F_X(x_{(i)})\)</span> i els extrems de l’escaló corresponent,
+<span class="math display">\[
+D_n(x_{(i)})=\max\Big\{\Big| F_X(x_{(i)})-\frac{i-1}{n}\Big|, \Big|F_{X}(x_{(i)})-\frac{i}{n}\Big|\Big\}
+\]</span>
+i prenem la <strong>discrepància màxima</strong>, és a dir, el màxim d’aquestes discrepàncies:
+<span class="math display">\[
+D_n=\max\big\{D_n(x_{(i)})\mid i=1,\ldots, n\big\}
+\]</span></p>
+<p>Al nostre exemple, els valors <span class="math inline">\(F_X(x_{(i)})\)</span> són:</p>
+<div class="sourceCode" id="cb327"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb327-1" data-line-number="1"><span class="kw">round</span>(<span class="kw">pnorm</span>(valors,<span class="dv">3</span>,<span class="fl">1.5</span>),<span class="dv">3</span>)</a></code></pre></div>
+<pre><code>## [1] 0.134 0.165 0.309 0.650 0.852 0.971</code></pre>
+<p>i per tant les discrepàncies són
+<span class="math display">\[
+\begin{array}{rl}
+D_6(x_{(1)}) &amp; =\max\{| F_X(1.34)-0|, |F_X(1.34)-1/6|\}\\
+&amp; =\max\{|0.134-0|, |0.134-1/6|\}\\
+&amp; =\max\{ 0.134, 0.033\}=0.134\\[2ex]
+D_6(x_{(2)}) &amp; =\max\{| F_X(1.54)-1/6|, |F_X(1.54)-2/6|\}\\
+&amp; =\max\{| 0.165-1/6|, |0.165-2/6|\}\\
+&amp; =\max\{ 0.002, 0.168\}=0.168\\[2ex]
+D_6(x_{(3)}) &amp; =\max\{| F_X(2.25)-2/6|, |F_X(2.25)-3/6|\}\\
+&amp; =\max\{|0.309-2/6|, |0.309-3/6|\}\\
+&amp; =\max\{ 0.024, 0.191\}=0.191\\[2ex]
+D_6(x_{(4)}) &amp; =\max\{| F_X(3.58)-3/6|, |F_X(3.58)-4/6|\}\\
+&amp; =\max\{| 0.65-3/6|, |0.65-4/6|\}\\
+&amp; =\max\{ 0.15, 0.017\}=0.15\\[2ex]
+D_6(x_{(5)})  &amp; =\max\{| F_X(4.57)-4/6|, |F_X(4.57)-5/6|\}\\
+&amp; =\max\{|0.852-4/6|, |0.852-5/6|\}\\
+&amp; =\max\{ 0.185, 0.019\}=0.185\\[2ex]
+D_6(x_{(6)}) &amp; =\max\{| F_X(5.84)-5/6|, |F_X(5.84)-6/6|\}\\
+&amp; =\max\{| 0.971-5/6|, |0.971-1|\}\\
+&amp; =\max\{ 0.138, 0.029\}=0.138
+\end{array}
+\]</span>
+i la discrepància màxima és
+<span class="math display">\[
+D_6=\max\{0.134,0.168,0.191,0.15,0.185,0.138\}=0.191
+\]</span></p>
+<ol start="4" style="list-style-type: decimal">
+<li>Aquesta discrepància màxima segueix una distribució coneguda (que no depèn de la <span class="math inline">\(X\)</span> mentre sigui contínua) que permet calcular el p-valor com la probabilitat que <span class="math inline">\(D_n\)</span> prengui un valor més gran o igual que l’obtingut sobre la nostra mostra. La corresponent funció de distribució acumulada és donada per la funció <code>pkolm</code> del paquet <strong>kolmim</strong>. Per tant, el p-valor és</li>
+</ol>
+<div class="sourceCode" id="cb329"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb329-1" data-line-number="1"><span class="kw">library</span>(kolmim)</a>
+<a class="sourceLine" id="cb329-2" data-line-number="2"><span class="kw">round</span>(<span class="dv">1</span><span class="op">-</span><span class="kw">pkolm</span>(<span class="fl">0.191</span>,<span class="dv">6</span>),<span class="dv">3</span>)</a></code></pre></div>
+<pre><code>## [1] 0.951</code></pre>
+<p><em>Conclusió</em>: Podem acceptar que la mostra prové d’una variable aleatòria normal amb <span class="math inline">\(\mu=3\)</span> i <span class="math inline">\(\sigma=1.5\)</span> (test de Kolmogorov-Smirnov, p-valor 0.95)</p>
+<p>Per realitzar un test K-S amb R, disposam de la instrucció</p>
+<div class="sourceCode" id="cb331"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb331-1" data-line-number="1"><span class="kw">ks.test</span>(x,<span class="st">&quot;pdistribució&quot;,paràmetres)</span></a></code></pre></div>
+<p>on <code>x</code> és el vector que conté la mostra, la <code>pdistribució</code> és la funció de distribució que contrastam, i els <code>paràmetres</code> són els de la distribució. Al nostre exemple, simplement entraríem</p>
+<div class="sourceCode" id="cb332"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb332-1" data-line-number="1">valors=<span class="kw">c</span>(<span class="fl">5.84</span>,<span class="fl">4.57</span>,<span class="fl">1.34</span>,<span class="fl">3.58</span>,<span class="fl">1.54</span>,<span class="fl">2.25</span>)</a>
+<a class="sourceLine" id="cb332-2" data-line-number="2"><span class="kw">ks.test</span>(valors,<span class="st">&quot;pnorm&quot;</span>,<span class="dv">3</span>,<span class="fl">1.5</span>)</a></code></pre></div>
+<pre><code>## 
+##  One-sample Kolmogorov-Smirnov test
+## 
+## data:  valors
+## D = 0.19146, p-value = 0.95
+## alternative hypothesis: two-sided</code></pre>
+<p>Dóna el valor de l’estadístic (la <code>D</code>) i el p-valor</p>
+</div>
+<div id="test-de-kolmogorov-smirnov-lilliefors" class="section level2">
+<h2><span class="header-section-number">6.4</span> Test de Kolmogorov-Smirnov-Lilliefors</h2>
+<p>Quan es vol emprar el test K-S per contrastar si una mostra prové de <strong>qualque</strong> distribució normal, i no d’una concreta, l’opció més popular és:</p>
+<ul>
+<li><p>Estimar els paràmetres de la normal a partir de la mostra</p></li>
+<li><p>Calcular l’estadístic del test K-S amb aquests paràmetres</p></li>
+<li><p>Emprar la distribució del <strong>test K-S-Lilliefors</strong> per calcular el p-valor</p></li>
+</ul>
+<p>Amb R, aquest test està implementat en la funció <code>lillie.test</code> del paquet <strong>nortest</strong>.</p>
+<p>Per exemple, si ens haguéssim demanat d’entrada si la nostra mostra prové de qualque variable normal, haguéssim entrat</p>
+<div class="sourceCode" id="cb334"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb334-1" data-line-number="1"><span class="kw">library</span>(nortest)</a>
+<a class="sourceLine" id="cb334-2" data-line-number="2"><span class="kw">lillie.test</span>(valors)</a></code></pre></div>
+<pre><code>## 
+##  Lilliefors (Kolmogorov-Smirnov) normality test
+## 
+## data:  valors
+## D = 0.19912, p-value = 0.6425</code></pre>
+
+<div class="rmdnote">
+L’estadístic de contrast no val el mateix que abans, perquè ara la variable normal que contrasta té paràmetres
+<span class="math inline">\(\mu=\texttt{mean(valors)}=3.187\)</span> i <span class="math inline">\(\sigma=\texttt{sd(valors)}=1.795\)</span>.
+</div>
+
+
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="contrastos-dhipòtesis-dun-i-dos-paràmetres.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="contrastos-dindependència-i-homogeneïtat.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": null,
+"toc": {
+"collapse": "subsection",
+"download": ["pdf", "epub"]
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>
