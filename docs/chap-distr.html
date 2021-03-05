@@ -1,13 +1,12 @@
 <!DOCTYPE html>
-<html >
-
+<html lang="" xml:lang="">
 <head>
 
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Lección 1 Distribuciones de probabilidad | AprendeR: Parte II</title>
-  <meta name="description" content="Apuntes AprendeR bookdown::gitbook.">
-  <meta name="generator" content="bookdown  and GitBook 2.6.7">
+  <meta name="description" content="Apuntes AprendeR bookdown::gitbook." />
+  <meta name="generator" content="bookdown 0.20 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Lección 1 Distribuciones de probabilidad | AprendeR: Parte II" />
   <meta property="og:type" content="book" />
@@ -22,18 +21,19 @@
   <meta name="twitter:description" content="Apuntes AprendeR bookdown::gitbook." />
   
 
-<meta name="author" content="The UIB-AprendeR team">
+<meta name="author" content="The UIB-AprendeR team" />
 
 
-<meta name="date" content="2020-03-18">
+<meta name="date" content="2021-03-05" />
 
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="apple-mobile-web-app-capable" content="yes">
-  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="index.html">
-<link rel="next" href="chap-muestreo.html">
+<link rel="prev" href="index.html"/>
+<link rel="next" href="chap-muestreo.html"/>
+<script src="libs/header-attrs-2.6/header-attrs.js"></script>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -41,6 +41,9 @@
 <link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
 
 
 
@@ -51,26 +54,26 @@
 
 
 <style type="text/css">
-a.sourceLine { display: inline-block; line-height: 1.25; }
-a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
-a.sourceLine:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode { white-space: pre; position: relative; }
-div.sourceCode { margin: 1em 0; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
 pre.sourceCode { margin: 0; }
 @media screen {
 div.sourceCode { overflow: auto; }
 }
 @media print {
-code.sourceCode { white-space: pre-wrap; }
-a.sourceLine { text-indent: -1em; padding-left: 1em; }
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
 }
-pre.numberSource a.sourceLine
-  { position: relative; left: -4em; }
-pre.numberSource a.sourceLine::before
-  { content: attr(data-line-number);
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
     position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; pointer-events: all; display: inline-block;
+    border: none; display: inline-block;
     -webkit-touch-callout: none; -webkit-user-select: none;
     -khtml-user-select: none; -moz-user-select: none;
     -ms-user-select: none; user-select: none;
@@ -79,9 +82,9 @@ pre.numberSource a.sourceLine::before
   }
 pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
 div.sourceCode
-  {  }
+  {   }
 @media screen {
-a.sourceLine::before { text-decoration: underline; }
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 code span.al { color: #ff0000; font-weight: bold; } /* Alert */
 code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
@@ -132,154 +135,179 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="divider"></li>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Presentación</a></li>
 <li class="part"><span><b>Parte II: Estadística inferencial</b></span></li>
-<li class="chapter" data-level="1" data-path="chap-distr.html"><a href="chap-distr.html"><i class="fa fa-check"></i><b>1</b> Distribuciones de probabilidad</a><ul>
-<li class="chapter" data-level="1.1" data-path="chap-distr.html"><a href="chap-distr.html#ejercicios"><i class="fa fa-check"></i><b>1.1</b> Ejercicios</a><ul>
+<li class="chapter" data-level="1" data-path="chap-distr.html"><a href="chap-distr.html"><i class="fa fa-check"></i><b>1</b> Distribuciones de probabilidad</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="chap-distr.html"><a href="chap-distr.html#ejercicios"><i class="fa fa-check"></i><b>1.1</b> Ejercicios</a>
+<ul>
 <li class="chapter" data-level="" data-path="chap-distr.html"><a href="chap-distr.html#test"><i class="fa fa-check"></i>Test</a></li>
 <li class="chapter" data-level="" data-path="chap-distr.html"><a href="chap-distr.html#problemas"><i class="fa fa-check"></i>Problemas</a></li>
 <li class="chapter" data-level="" data-path="chap-distr.html"><a href="chap-distr.html#respuestas-al-test"><i class="fa fa-check"></i>Respuestas al test</a></li>
 <li class="chapter" data-level="" data-path="chap-distr.html"><a href="chap-distr.html#soluciones-sucintas-de-los-problemas"><i class="fa fa-check"></i>Soluciones sucintas de los problemas</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="2" data-path="chap-muestreo.html"><a href="chap-muestreo.html"><i class="fa fa-check"></i><b>2</b> Conceptos básicos de muestreo</a><ul>
+<li class="chapter" data-level="2" data-path="chap-muestreo.html"><a href="chap-muestreo.html"><i class="fa fa-check"></i><b>2</b> Conceptos básicos de muestreo</a>
+<ul>
 <li class="chapter" data-level="2.1" data-path="chap-muestreo.html"><a href="chap-muestreo.html#sec:muestreo"><i class="fa fa-check"></i><b>2.1</b> Tipos de muestreo</a></li>
 <li class="chapter" data-level="2.2" data-path="chap-muestreo.html"><a href="chap-muestreo.html#muestreo-aleatorio-con-r"><i class="fa fa-check"></i><b>2.2</b> Muestreo aleatorio con R</a></li>
-<li class="chapter" data-level="2.3" data-path="chap-muestreo.html"><a href="chap-muestreo.html#guia-rapida"><i class="fa fa-check"></i><b>2.3</b> Guía rápida</a></li>
-<li class="chapter" data-level="2.4" data-path="chap-muestreo.html"><a href="chap-muestreo.html#ejercicios-1"><i class="fa fa-check"></i><b>2.4</b> Ejercicios</a><ul>
-<li class="chapter" data-level="" data-path="chap-muestreo.html"><a href="chap-muestreo.html#test-1"><i class="fa fa-check"></i>Test</a></li>
-<li class="chapter" data-level="" data-path="chap-muestreo.html"><a href="chap-muestreo.html#problemas-1"><i class="fa fa-check"></i>Problemas</a></li>
-<li class="chapter" data-level="" data-path="chap-muestreo.html"><a href="chap-muestreo.html#respuestas-al-test-1"><i class="fa fa-check"></i>Respuestas al test</a></li>
-<li class="chapter" data-level="" data-path="chap-muestreo.html"><a href="chap-muestreo.html#soluciones-sucintas-de-los-problemas-1"><i class="fa fa-check"></i>Soluciones sucintas de los problemas</a></li>
+<li class="chapter" data-level="2.3" data-path="chap-muestreo.html"><a href="chap-muestreo.html#guía-rápida"><i class="fa fa-check"></i><b>2.3</b> Guía rápida</a></li>
+<li class="chapter" data-level="2.4" data-path="chap-distr.html"><a href="chap-distr.html#ejercicios"><i class="fa fa-check"></i><b>2.4</b> Ejercicios</a>
+<ul>
+<li class="chapter" data-level="" data-path="chap-distr.html"><a href="chap-distr.html#test"><i class="fa fa-check"></i>Test</a></li>
+<li class="chapter" data-level="" data-path="chap-distr.html"><a href="chap-distr.html#problemas"><i class="fa fa-check"></i>Problemas</a></li>
+<li class="chapter" data-level="" data-path="chap-distr.html"><a href="chap-distr.html#respuestas-al-test"><i class="fa fa-check"></i>Respuestas al test</a></li>
+<li class="chapter" data-level="" data-path="chap-distr.html"><a href="chap-distr.html#soluciones-sucintas-de-los-problemas"><i class="fa fa-check"></i>Soluciones sucintas de los problemas</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="3" data-path="chap-estimacion.html"><a href="chap-estimacion.html"><i class="fa fa-check"></i><b>3</b> Estimación puntual</a><ul>
-<li class="chapter" data-level="3.1" data-path="chap-estimacion.html"><a href="chap-estimacion.html#estimacion-maximo-verosimil"><i class="fa fa-check"></i><b>3.1</b> Estimación máximo verosímil</a></li>
-<li class="chapter" data-level="3.2" data-path="chap-estimacion.html"><a href="chap-estimacion.html#guia-rapida-1"><i class="fa fa-check"></i><b>3.2</b> Guía rápida</a></li>
-<li class="chapter" data-level="3.3" data-path="chap-estimacion.html"><a href="chap-estimacion.html#ejercicios-2"><i class="fa fa-check"></i><b>3.3</b> Ejercicios</a><ul>
-<li class="chapter" data-level="" data-path="chap-estimacion.html"><a href="chap-estimacion.html#test-2"><i class="fa fa-check"></i>Test</a></li>
-<li class="chapter" data-level="" data-path="chap-estimacion.html"><a href="chap-estimacion.html#problemas-2"><i class="fa fa-check"></i>Problemas</a></li>
-<li class="chapter" data-level="" data-path="chap-estimacion.html"><a href="chap-estimacion.html#respuestas-al-test-2"><i class="fa fa-check"></i>Respuestas al test</a></li>
-<li class="chapter" data-level="" data-path="chap-estimacion.html"><a href="chap-estimacion.html#soluciones-sucintas-de-los-problemas-2"><i class="fa fa-check"></i>Soluciones sucintas de los problemas</a></li>
+<li class="chapter" data-level="3" data-path="chap-estimacion.html"><a href="chap-estimacion.html"><i class="fa fa-check"></i><b>3</b> Estimación puntual</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="chap-estimacion.html"><a href="chap-estimacion.html#estimación-máximo-verosímil"><i class="fa fa-check"></i><b>3.1</b> Estimación máximo verosímil</a></li>
+<li class="chapter" data-level="3.2" data-path="chap-muestreo.html"><a href="chap-muestreo.html#guía-rápida"><i class="fa fa-check"></i><b>3.2</b> Guía rápida</a></li>
+<li class="chapter" data-level="3.3" data-path="chap-distr.html"><a href="chap-distr.html#ejercicios"><i class="fa fa-check"></i><b>3.3</b> Ejercicios</a>
+<ul>
+<li class="chapter" data-level="" data-path="chap-distr.html"><a href="chap-distr.html#test"><i class="fa fa-check"></i>Test</a></li>
+<li class="chapter" data-level="" data-path="chap-distr.html"><a href="chap-distr.html#problemas"><i class="fa fa-check"></i>Problemas</a></li>
+<li class="chapter" data-level="" data-path="chap-distr.html"><a href="chap-distr.html#respuestas-al-test"><i class="fa fa-check"></i>Respuestas al test</a></li>
+<li class="chapter" data-level="" data-path="chap-distr.html"><a href="chap-distr.html#soluciones-sucintas-de-los-problemas"><i class="fa fa-check"></i>Soluciones sucintas de los problemas</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="4" data-path="chap-IC.html"><a href="chap-IC.html"><i class="fa fa-check"></i><b>4</b> Intervalos de confianza</a><ul>
+<li class="chapter" data-level="4" data-path="chap-IC.html"><a href="chap-IC.html"><i class="fa fa-check"></i><b>4</b> Intervalos de confianza</a>
+<ul>
 <li class="chapter" data-level="4.1" data-path="chap-IC.html"><a href="chap-IC.html#sec:ICT"><i class="fa fa-check"></i><b>4.1</b> Intervalo de confianza para la media basado en la t de Student</a></li>
-<li class="chapter" data-level="4.2" data-path="chap-IC.html"><a href="chap-IC.html#intervalos-de-confianza-para-la-proporcion-poblacional"><i class="fa fa-check"></i><b>4.2</b> Intervalos de confianza para la proporción poblacional</a></li>
+<li class="chapter" data-level="4.2" data-path="chap-IC.html"><a href="chap-IC.html#intervalos-de-confianza-para-la-proporción-poblacional"><i class="fa fa-check"></i><b>4.2</b> Intervalos de confianza para la proporción poblacional</a></li>
 <li class="chapter" data-level="4.3" data-path="chap-IC.html"><a href="chap-IC.html#sec:ICvar"><i class="fa fa-check"></i><b>4.3</b> Intervalo de confianza para la varianza de una población normal</a></li>
 <li class="chapter" data-level="4.4" data-path="chap-IC.html"><a href="chap-IC.html#bootstrap"><i class="fa fa-check"></i><b>4.4</b> Bootstrap</a></li>
-<li class="chapter" data-level="4.5" data-path="chap-IC.html"><a href="chap-IC.html#guia-rapida-2"><i class="fa fa-check"></i><b>4.5</b> Guía rápida</a></li>
-<li class="chapter" data-level="4.6" data-path="chap-IC.html"><a href="chap-IC.html#ejercicios-3"><i class="fa fa-check"></i><b>4.6</b> Ejercicios</a><ul>
-<li class="chapter" data-level="" data-path="chap-IC.html"><a href="chap-IC.html#test-3"><i class="fa fa-check"></i>Test</a></li>
-<li class="chapter" data-level="" data-path="chap-IC.html"><a href="chap-IC.html#problemas-3"><i class="fa fa-check"></i>Problemas</a></li>
-<li class="chapter" data-level="" data-path="chap-IC.html"><a href="chap-IC.html#respuestas-al-test-3"><i class="fa fa-check"></i>Respuestas al test</a></li>
-<li class="chapter" data-level="" data-path="chap-IC.html"><a href="chap-IC.html#soluciones-sucintas-de-los-problemas-3"><i class="fa fa-check"></i>Soluciones sucintas de los problemas</a></li>
+<li class="chapter" data-level="4.5" data-path="chap-muestreo.html"><a href="chap-muestreo.html#guía-rápida"><i class="fa fa-check"></i><b>4.5</b> Guía rápida</a></li>
+<li class="chapter" data-level="4.6" data-path="chap-distr.html"><a href="chap-distr.html#ejercicios"><i class="fa fa-check"></i><b>4.6</b> Ejercicios</a>
+<ul>
+<li class="chapter" data-level="" data-path="chap-distr.html"><a href="chap-distr.html#test"><i class="fa fa-check"></i>Test</a></li>
+<li class="chapter" data-level="" data-path="chap-distr.html"><a href="chap-distr.html#problemas"><i class="fa fa-check"></i>Problemas</a></li>
+<li class="chapter" data-level="" data-path="chap-distr.html"><a href="chap-distr.html#respuestas-al-test"><i class="fa fa-check"></i>Respuestas al test</a></li>
+<li class="chapter" data-level="" data-path="chap-distr.html"><a href="chap-distr.html#soluciones-sucintas-de-los-problemas"><i class="fa fa-check"></i>Soluciones sucintas de los problemas</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="5" data-path="chap-contrastes.html"><a href="chap-contrastes.html"><i class="fa fa-check"></i><b>5</b> Contrastes de hipótesis</a><ul>
-<li class="chapter" data-level="5.1" data-path="chap-contrastes.html"><a href="chap-contrastes.html#contrastes-para-medias"><i class="fa fa-check"></i><b>5.1</b> Contrastes para medias</a><ul>
+<li class="chapter" data-level="5" data-path="chap-contrastes.html"><a href="chap-contrastes.html"><i class="fa fa-check"></i><b>5</b> Contrastes de hipótesis</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="chap-contrastes.html"><a href="chap-contrastes.html#contrastes-para-medias"><i class="fa fa-check"></i><b>5.1</b> Contrastes para medias</a>
+<ul>
 <li class="chapter" data-level="" data-path="chap-contrastes.html"><a href="chap-contrastes.html#el-test-t"><i class="fa fa-check"></i>El test t</a></li>
-<li class="chapter" data-level="" data-path="chap-contrastes.html"><a href="chap-contrastes.html#tests-no-parametricos"><i class="fa fa-check"></i>Tests no paramétricos</a></li>
+<li class="chapter" data-level="" data-path="chap-contrastes.html"><a href="chap-contrastes.html#tests-no-paramétricos"><i class="fa fa-check"></i>Tests no paramétricos</a></li>
 </ul></li>
 <li class="chapter" data-level="5.2" data-path="chap-contrastes.html"><a href="chap-contrastes.html#contrastes-para-varianzas"><i class="fa fa-check"></i><b>5.2</b> Contrastes para varianzas</a></li>
 <li class="chapter" data-level="5.3" data-path="chap-contrastes.html"><a href="chap-contrastes.html#contrastes-para-proporciones"><i class="fa fa-check"></i><b>5.3</b> Contrastes para proporciones</a></li>
-<li class="chapter" data-level="5.4" data-path="chap-contrastes.html"><a href="chap-contrastes.html#calculo-de-la-potencia-de-un-contraste"><i class="fa fa-check"></i><b>5.4</b> Cálculo de la potencia de un contraste</a></li>
-<li class="chapter" data-level="5.5" data-path="chap-contrastes.html"><a href="chap-contrastes.html#guia-rapida-3"><i class="fa fa-check"></i><b>5.5</b> Guía rápida</a></li>
-<li class="chapter" data-level="5.6" data-path="chap-contrastes.html"><a href="chap-contrastes.html#ejercicios-4"><i class="fa fa-check"></i><b>5.6</b> Ejercicios</a><ul>
+<li class="chapter" data-level="5.4" data-path="chap-contrastes.html"><a href="chap-contrastes.html#cálculo-de-la-potencia-de-un-contraste"><i class="fa fa-check"></i><b>5.4</b> Cálculo de la potencia de un contraste</a></li>
+<li class="chapter" data-level="5.5" data-path="chap-muestreo.html"><a href="chap-muestreo.html#guía-rápida"><i class="fa fa-check"></i><b>5.5</b> Guía rápida</a></li>
+<li class="chapter" data-level="5.6" data-path="chap-distr.html"><a href="chap-distr.html#ejercicios"><i class="fa fa-check"></i><b>5.6</b> Ejercicios</a>
+<ul>
 <li class="chapter" data-level="" data-path="chap-contrastes.html"><a href="chap-contrastes.html#modelo-de-test"><i class="fa fa-check"></i>Modelo de test</a></li>
-<li class="chapter" data-level="" data-path="chap-contrastes.html"><a href="chap-contrastes.html#ejercicios-5"><i class="fa fa-check"></i>Ejercicios</a></li>
-<li class="chapter" data-level="" data-path="chap-contrastes.html"><a href="chap-contrastes.html#respuestas-al-test-4"><i class="fa fa-check"></i>Respuestas al test</a></li>
+<li class="chapter" data-level="" data-path="chap-contrastes.html"><a href="chap-contrastes.html#ejercicios-1"><i class="fa fa-check"></i>Ejercicios</a></li>
+<li class="chapter" data-level="" data-path="chap-distr.html"><a href="chap-distr.html#respuestas-al-test"><i class="fa fa-check"></i>Respuestas al test</a></li>
 <li class="chapter" data-level="" data-path="chap-contrastes.html"><a href="chap-contrastes.html#respuestas-sucintas-a-los-ejercicios"><i class="fa fa-check"></i>Respuestas sucintas a los ejercicios</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="6" data-path="chap-bondad.html"><a href="chap-bondad.html"><i class="fa fa-check"></i><b>6</b> Contrastes de bondad de ajuste</a><ul>
-<li class="chapter" data-level="6.1" data-path="chap-bondad.html"><a href="chap-bondad.html#pruebas-graficas-q-q-plots"><i class="fa fa-check"></i><b>6.1</b> Pruebas gráficas: Q-Q-plots</a></li>
+<li class="chapter" data-level="6" data-path="chap-bondad.html"><a href="chap-bondad.html"><i class="fa fa-check"></i><b>6</b> Contrastes de bondad de ajuste</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="chap-bondad.html"><a href="chap-bondad.html#pruebas-gráficas-q-q-plots"><i class="fa fa-check"></i><b>6.1</b> Pruebas gráficas: Q-Q-plots</a></li>
 <li class="chapter" data-level="6.2" data-path="chap-bondad.html"><a href="chap-bondad.html#el-test-chi2-de-pearson"><i class="fa fa-check"></i><b>6.2</b> El test <span class="math inline">\(\chi^2\)</span> de Pearson</a></li>
 <li class="chapter" data-level="6.3" data-path="chap-bondad.html"><a href="chap-bondad.html#el-test-chi2-para-distribuciones-continuas"><i class="fa fa-check"></i><b>6.3</b> El test <span class="math inline">\(\chi^2\)</span> para distribuciones continuas</a></li>
 <li class="chapter" data-level="6.4" data-path="chap-bondad.html"><a href="chap-bondad.html#el-test-de-kolgomorov-smirnov"><i class="fa fa-check"></i><b>6.4</b> El test de Kolgomorov-Smirnov</a></li>
 <li class="chapter" data-level="6.5" data-path="chap-bondad.html"><a href="chap-bondad.html#tests-de-normalidad"><i class="fa fa-check"></i><b>6.5</b> Tests de normalidad</a></li>
-<li class="chapter" data-level="6.6" data-path="chap-bondad.html"><a href="chap-bondad.html#guia-rapida-4"><i class="fa fa-check"></i><b>6.6</b> Guía rápida</a></li>
-<li class="chapter" data-level="6.7" data-path="chap-bondad.html"><a href="chap-bondad.html#ejercicios-6"><i class="fa fa-check"></i><b>6.7</b> Ejercicios</a><ul>
-<li class="chapter" data-level="" data-path="chap-bondad.html"><a href="chap-bondad.html#modelo-de-test-1"><i class="fa fa-check"></i>Modelo de test</a></li>
-<li class="chapter" data-level="" data-path="chap-bondad.html"><a href="chap-bondad.html#problemas-4"><i class="fa fa-check"></i>Problemas</a></li>
-<li class="chapter" data-level="" data-path="chap-bondad.html"><a href="chap-bondad.html#respuestas-al-test-5"><i class="fa fa-check"></i>Respuestas al test</a></li>
-<li class="chapter" data-level="" data-path="chap-bondad.html"><a href="chap-bondad.html#soluciones-sucintas-de-los-problemas-4"><i class="fa fa-check"></i>Soluciones sucintas de los problemas</a></li>
+<li class="chapter" data-level="6.6" data-path="chap-muestreo.html"><a href="chap-muestreo.html#guía-rápida"><i class="fa fa-check"></i><b>6.6</b> Guía rápida</a></li>
+<li class="chapter" data-level="6.7" data-path="chap-distr.html"><a href="chap-distr.html#ejercicios"><i class="fa fa-check"></i><b>6.7</b> Ejercicios</a>
+<ul>
+<li class="chapter" data-level="" data-path="chap-contrastes.html"><a href="chap-contrastes.html#modelo-de-test"><i class="fa fa-check"></i>Modelo de test</a></li>
+<li class="chapter" data-level="" data-path="chap-distr.html"><a href="chap-distr.html#problemas"><i class="fa fa-check"></i>Problemas</a></li>
+<li class="chapter" data-level="" data-path="chap-distr.html"><a href="chap-distr.html#respuestas-al-test"><i class="fa fa-check"></i>Respuestas al test</a></li>
+<li class="chapter" data-level="" data-path="chap-distr.html"><a href="chap-distr.html#soluciones-sucintas-de-los-problemas"><i class="fa fa-check"></i>Soluciones sucintas de los problemas</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="7" data-path="chap-indep.html"><a href="chap-indep.html"><i class="fa fa-check"></i><b>7</b> Contrastes de independencia y homogeneidad</a><ul>
+<li class="chapter" data-level="7" data-path="chap-indep.html"><a href="chap-indep.html"><i class="fa fa-check"></i><b>7</b> Contrastes de independencia y homogeneidad</a>
+<ul>
 <li class="chapter" data-level="7.1" data-path="chap-indep.html"><a href="chap-indep.html#tablas-de-contingencia"><i class="fa fa-check"></i><b>7.1</b> Tablas de contingencia</a></li>
 <li class="chapter" data-level="7.2" data-path="chap-indep.html"><a href="chap-indep.html#contraste-de-independencia"><i class="fa fa-check"></i><b>7.2</b> Contraste de independencia</a></li>
 <li class="chapter" data-level="7.3" data-path="chap-indep.html"><a href="chap-indep.html#sec:hom"><i class="fa fa-check"></i><b>7.3</b> Contraste de homogeneidad</a></li>
 <li class="chapter" data-level="7.4" data-path="chap-indep.html"><a href="chap-indep.html#potencia-de-un-contraste-chi2"><i class="fa fa-check"></i><b>7.4</b> Potencia de un contraste <span class="math inline">\(\chi^2\)</span></a></li>
-<li class="chapter" data-level="7.5" data-path="chap-indep.html"><a href="chap-indep.html#guia-rapida-5"><i class="fa fa-check"></i><b>7.5</b> Guía rápida</a></li>
-<li class="chapter" data-level="7.6" data-path="chap-indep.html"><a href="chap-indep.html#ejercicios-7"><i class="fa fa-check"></i><b>7.6</b> Ejercicios</a><ul>
-<li class="chapter" data-level="" data-path="chap-indep.html"><a href="chap-indep.html#modelo-de-test-2"><i class="fa fa-check"></i>Modelo de test</a></li>
-<li class="chapter" data-level="" data-path="chap-indep.html"><a href="chap-indep.html#ejercicios-8"><i class="fa fa-check"></i>Ejercicios</a></li>
-<li class="chapter" data-level="" data-path="chap-indep.html"><a href="chap-indep.html#respuestas-al-test-6"><i class="fa fa-check"></i>Respuestas al test</a></li>
-<li class="chapter" data-level="" data-path="chap-indep.html"><a href="chap-indep.html#soluciones-sucintas-de-los-problemas-5"><i class="fa fa-check"></i>Soluciones sucintas de los problemas</a></li>
+<li class="chapter" data-level="7.5" data-path="chap-muestreo.html"><a href="chap-muestreo.html#guía-rápida"><i class="fa fa-check"></i><b>7.5</b> Guía rápida</a></li>
+<li class="chapter" data-level="7.6" data-path="chap-distr.html"><a href="chap-distr.html#ejercicios"><i class="fa fa-check"></i><b>7.6</b> Ejercicios</a>
+<ul>
+<li class="chapter" data-level="" data-path="chap-contrastes.html"><a href="chap-contrastes.html#modelo-de-test"><i class="fa fa-check"></i>Modelo de test</a></li>
+<li class="chapter" data-level="" data-path="chap-contrastes.html"><a href="chap-contrastes.html#ejercicios-1"><i class="fa fa-check"></i>Ejercicios</a></li>
+<li class="chapter" data-level="" data-path="chap-distr.html"><a href="chap-distr.html#respuestas-al-test"><i class="fa fa-check"></i>Respuestas al test</a></li>
+<li class="chapter" data-level="" data-path="chap-distr.html"><a href="chap-distr.html#soluciones-sucintas-de-los-problemas"><i class="fa fa-check"></i>Soluciones sucintas de los problemas</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="8" data-path="chap-estmult.html"><a href="chap-estmult.html"><i class="fa fa-check"></i><b>8</b> Introducción a la estadística descriptiva multidimensional</a><ul>
+<li class="chapter" data-level="8" data-path="chap-estmult.html"><a href="chap-estmult.html"><i class="fa fa-check"></i><b>8</b> Introducción a la estadística descriptiva multidimensional</a>
+<ul>
 <li class="chapter" data-level="8.1" data-path="chap-estmult.html"><a href="chap-estmult.html#matrices-de-datos-cuantitativos"><i class="fa fa-check"></i><b>8.1</b> Matrices de datos cuantitativos</a></li>
 <li class="chapter" data-level="8.2" data-path="chap-estmult.html"><a href="chap-estmult.html#transformaciones-lineales"><i class="fa fa-check"></i><b>8.2</b> Transformaciones lineales</a></li>
 <li class="chapter" data-level="8.3" data-path="chap-estmult.html"><a href="chap-estmult.html#covarianzas-y-correlaciones"><i class="fa fa-check"></i><b>8.3</b> Covarianzas y correlaciones</a></li>
-<li class="chapter" data-level="8.4" data-path="chap-estmult.html"><a href="chap-estmult.html#correlacion-de-spearman"><i class="fa fa-check"></i><b>8.4</b> Correlación de Spearman</a></li>
-<li class="chapter" data-level="8.5" data-path="chap-estmult.html"><a href="chap-estmult.html#contrastes-de-correlacion"><i class="fa fa-check"></i><b>8.5</b> Contrastes de correlación</a></li>
+<li class="chapter" data-level="8.4" data-path="chap-estmult.html"><a href="chap-estmult.html#correlación-de-spearman"><i class="fa fa-check"></i><b>8.4</b> Correlación de Spearman</a></li>
+<li class="chapter" data-level="8.5" data-path="chap-estmult.html"><a href="chap-estmult.html#contrastes-de-correlación"><i class="fa fa-check"></i><b>8.5</b> Contrastes de correlación</a></li>
 <li class="chapter" data-level="8.6" data-path="chap-estmult.html"><a href="chap-estmult.html#un-ejemplo"><i class="fa fa-check"></i><b>8.6</b> Un ejemplo</a></li>
-<li class="chapter" data-level="8.7" data-path="chap-estmult.html"><a href="chap-estmult.html#representacion-grafica-de-datos-multidimensionales"><i class="fa fa-check"></i><b>8.7</b> Representación gráfica de datos multidimensionales</a></li>
-<li class="chapter" data-level="8.8" data-path="chap-estmult.html"><a href="chap-estmult.html#guia-rapida-6"><i class="fa fa-check"></i><b>8.8</b> Guía rápida</a></li>
-<li class="chapter" data-level="8.9" data-path="chap-estmult.html"><a href="chap-estmult.html#ejercicios-9"><i class="fa fa-check"></i><b>8.9</b> Ejercicios</a><ul>
-<li class="chapter" data-level="" data-path="chap-estmult.html"><a href="chap-estmult.html#modelo-de-test-3"><i class="fa fa-check"></i>Modelo de test</a></li>
-<li class="chapter" data-level="" data-path="chap-estmult.html"><a href="chap-estmult.html#problemas-5"><i class="fa fa-check"></i>Problemas</a></li>
-<li class="chapter" data-level="" data-path="chap-estmult.html"><a href="chap-estmult.html#respuestas-al-test-7"><i class="fa fa-check"></i>Respuestas al test</a></li>
-<li class="chapter" data-level="" data-path="chap-estmult.html"><a href="chap-estmult.html#soluciones-sucintas-de-los-problemas-6"><i class="fa fa-check"></i>Soluciones sucintas de los problemas</a></li>
+<li class="chapter" data-level="8.7" data-path="chap-estmult.html"><a href="chap-estmult.html#representación-gráfica-de-datos-multidimensionales"><i class="fa fa-check"></i><b>8.7</b> Representación gráfica de datos multidimensionales</a></li>
+<li class="chapter" data-level="8.8" data-path="chap-muestreo.html"><a href="chap-muestreo.html#guía-rápida"><i class="fa fa-check"></i><b>8.8</b> Guía rápida</a></li>
+<li class="chapter" data-level="8.9" data-path="chap-distr.html"><a href="chap-distr.html#ejercicios"><i class="fa fa-check"></i><b>8.9</b> Ejercicios</a>
+<ul>
+<li class="chapter" data-level="" data-path="chap-contrastes.html"><a href="chap-contrastes.html#modelo-de-test"><i class="fa fa-check"></i>Modelo de test</a></li>
+<li class="chapter" data-level="" data-path="chap-distr.html"><a href="chap-distr.html#problemas"><i class="fa fa-check"></i>Problemas</a></li>
+<li class="chapter" data-level="" data-path="chap-distr.html"><a href="chap-distr.html#respuestas-al-test"><i class="fa fa-check"></i>Respuestas al test</a></li>
+<li class="chapter" data-level="" data-path="chap-distr.html"><a href="chap-distr.html#soluciones-sucintas-de-los-problemas"><i class="fa fa-check"></i>Soluciones sucintas de los problemas</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="9" data-path="chap-ANOVA.html"><a href="chap-ANOVA.html"><i class="fa fa-check"></i><b>9</b> ANOVA básico</a><ul>
+<li class="chapter" data-level="9" data-path="chap-ANOVA.html"><a href="chap-ANOVA.html"><i class="fa fa-check"></i><b>9</b> ANOVA básico</a>
+<ul>
 <li class="chapter" data-level="9.1" data-path="chap-ANOVA.html"><a href="chap-ANOVA.html#sec:modelos"><i class="fa fa-check"></i><b>9.1</b> Los modelos del ANOVA en R</a></li>
 <li class="chapter" data-level="9.2" data-path="chap-ANOVA.html"><a href="chap-ANOVA.html#sec:ANOVA-1"><i class="fa fa-check"></i><b>9.2</b> ANOVA de un factor</a></li>
 <li class="chapter" data-level="9.3" data-path="chap-ANOVA.html"><a href="chap-ANOVA.html#anova-de-bloques-completos-aleatorios"><i class="fa fa-check"></i><b>9.3</b> ANOVA de bloques completos aleatorios</a></li>
 <li class="chapter" data-level="9.4" data-path="chap-ANOVA.html"><a href="chap-ANOVA.html#sec:ANOVA2"><i class="fa fa-check"></i><b>9.4</b> ANOVA de dos vías</a></li>
 <li class="chapter" data-level="9.5" data-path="chap-ANOVA.html"><a href="chap-ANOVA.html#condiciones-del-anova"><i class="fa fa-check"></i><b>9.5</b> Condiciones del ANOVA</a></li>
-<li class="chapter" data-level="9.6" data-path="chap-ANOVA.html"><a href="chap-ANOVA.html#sec:pares"><i class="fa fa-check"></i><b>9.6</b> Comparaciones de pares de medias</a><ul>
+<li class="chapter" data-level="9.6" data-path="chap-ANOVA.html"><a href="chap-ANOVA.html#sec:pares"><i class="fa fa-check"></i><b>9.6</b> Comparaciones de pares de medias</a>
+<ul>
 <li class="chapter" data-level="9.6.1" data-path="chap-ANOVA.html"><a href="chap-ANOVA.html#tests-t-por-parejas"><i class="fa fa-check"></i><b>9.6.1</b> Tests t por parejas</a></li>
 <li class="chapter" data-level="9.6.2" data-path="chap-ANOVA.html"><a href="chap-ANOVA.html#test-de-duncan"><i class="fa fa-check"></i><b>9.6.2</b> Test de Duncan</a></li>
-<li class="chapter" data-level="9.6.3" data-path="chap-ANOVA.html"><a href="chap-ANOVA.html#metodo-de-tukey"><i class="fa fa-check"></i><b>9.6.3</b> Método de Tukey</a></li>
+<li class="chapter" data-level="9.6.3" data-path="chap-ANOVA.html"><a href="chap-ANOVA.html#método-de-tukey"><i class="fa fa-check"></i><b>9.6.3</b> Método de Tukey</a></li>
 </ul></li>
-<li class="chapter" data-level="9.7" data-path="chap-ANOVA.html"><a href="chap-ANOVA.html#metodos-no-parametricos"><i class="fa fa-check"></i><b>9.7</b> Métodos no paramétricos</a></li>
-<li class="chapter" data-level="9.8" data-path="chap-ANOVA.html"><a href="chap-ANOVA.html#guia-rapida-7"><i class="fa fa-check"></i><b>9.8</b> Guía rápida</a></li>
-<li class="chapter" data-level="9.9" data-path="chap-ANOVA.html"><a href="chap-ANOVA.html#ejercicios-10"><i class="fa fa-check"></i><b>9.9</b> Ejercicios</a><ul>
-<li class="chapter" data-level="" data-path="chap-ANOVA.html"><a href="chap-ANOVA.html#test-4"><i class="fa fa-check"></i>Test</a></li>
+<li class="chapter" data-level="9.7" data-path="chap-ANOVA.html"><a href="chap-ANOVA.html#métodos-no-paramétricos"><i class="fa fa-check"></i><b>9.7</b> Métodos no paramétricos</a></li>
+<li class="chapter" data-level="9.8" data-path="chap-muestreo.html"><a href="chap-muestreo.html#guía-rápida"><i class="fa fa-check"></i><b>9.8</b> Guía rápida</a></li>
+<li class="chapter" data-level="9.9" data-path="chap-distr.html"><a href="chap-distr.html#ejercicios"><i class="fa fa-check"></i><b>9.9</b> Ejercicios</a>
+<ul>
+<li class="chapter" data-level="" data-path="chap-distr.html"><a href="chap-distr.html#test"><i class="fa fa-check"></i>Test</a></li>
 <li class="chapter" data-level="9.9.1" data-path="chap-ANOVA.html"><a href="chap-ANOVA.html#ejercicio"><i class="fa fa-check"></i><b>9.9.1</b> Ejercicio</a></li>
-<li class="chapter" data-level="" data-path="chap-ANOVA.html"><a href="chap-ANOVA.html#respuestas-al-test-8"><i class="fa fa-check"></i>Respuestas al test</a></li>
+<li class="chapter" data-level="" data-path="chap-distr.html"><a href="chap-distr.html#respuestas-al-test"><i class="fa fa-check"></i>Respuestas al test</a></li>
 <li class="chapter" data-level="9.9.2" data-path="chap-ANOVA.html"><a href="chap-ANOVA.html#soluciones-sucintas-del-ejercicio"><i class="fa fa-check"></i><b>9.9.2</b> Soluciones sucintas del ejercicio</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="10" data-path="chap-regresion.html"><a href="chap-regresion.html"><i class="fa fa-check"></i><b>10</b> Regresión lineal</a><ul>
+<li class="chapter" data-level="10" data-path="chap-regresion.html"><a href="chap-regresion.html"><i class="fa fa-check"></i><b>10</b> Regresión lineal</a>
+<ul>
 <li class="chapter" data-level="10.1" data-path="chap-regresion.html"><a href="chap-regresion.html#sec:1"><i class="fa fa-check"></i><b>10.1</b> El modelo de regresión lineal en R</a></li>
-<li class="chapter" data-level="10.2" data-path="chap-regresion.html"><a href="chap-regresion.html#intervalos-de-confianza-en-el-modelo-de-regresion-lineal"><i class="fa fa-check"></i><b>10.2</b> Intervalos de confianza en el modelo de regresión lineal</a></li>
+<li class="chapter" data-level="10.2" data-path="chap-regresion.html"><a href="chap-regresion.html#intervalos-de-confianza-en-el-modelo-de-regresión-lineal"><i class="fa fa-check"></i><b>10.2</b> Intervalos de confianza en el modelo de regresión lineal</a></li>
 <li class="chapter" data-level="10.3" data-path="chap-regresion.html"><a href="chap-regresion.html#sec:seleccion"><i class="fa fa-check"></i><b>10.3</b> Selección del modelo en base al ajuste de los datos</a></li>
 <li class="chapter" data-level="10.4" data-path="chap-regresion.html"><a href="chap-regresion.html#sec:diagn"><i class="fa fa-check"></i><b>10.4</b> Diagnósticos de regresión</a></li>
-<li class="chapter" data-level="10.5" data-path="chap-regresion.html"><a href="chap-regresion.html#guia-rapida-8"><i class="fa fa-check"></i><b>10.5</b> Guía rápida</a></li>
-<li class="chapter" data-level="10.6" data-path="chap-regresion.html"><a href="chap-regresion.html#ejercicios-11"><i class="fa fa-check"></i><b>10.6</b> Ejercicios</a><ul>
-<li class="chapter" data-level="" data-path="chap-regresion.html"><a href="chap-regresion.html#test-5"><i class="fa fa-check"></i>Test</a></li>
-<li class="chapter" data-level="" data-path="chap-regresion.html"><a href="chap-regresion.html#respuestas-al-test-9"><i class="fa fa-check"></i>Respuestas al test</a></li>
+<li class="chapter" data-level="10.5" data-path="chap-muestreo.html"><a href="chap-muestreo.html#guía-rápida"><i class="fa fa-check"></i><b>10.5</b> Guía rápida</a></li>
+<li class="chapter" data-level="10.6" data-path="chap-distr.html"><a href="chap-distr.html#ejercicios"><i class="fa fa-check"></i><b>10.6</b> Ejercicios</a>
+<ul>
+<li class="chapter" data-level="" data-path="chap-distr.html"><a href="chap-distr.html#test"><i class="fa fa-check"></i>Test</a></li>
+<li class="chapter" data-level="" data-path="chap-distr.html"><a href="chap-distr.html#respuestas-al-test"><i class="fa fa-check"></i>Respuestas al test</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="11" data-path="chap-clustering.html"><a href="chap-clustering.html"><i class="fa fa-check"></i><b>11</b> <em>Clustering</em> básico</a><ul>
-<li class="chapter" data-level="11.1" data-path="chap-clustering.html"><a href="chap-clustering.html#metodo-de-k-medias-o-k-means"><i class="fa fa-check"></i><b>11.1</b> Método de k-medias o <em>k-means</em></a></li>
-<li class="chapter" data-level="11.2" data-path="chap-clustering.html"><a href="chap-clustering.html#eleccion-del-numero-de-clusters"><i class="fa fa-check"></i><b>11.2</b> Elección del número de <em>clusters</em></a></li>
-<li class="chapter" data-level="11.3" data-path="chap-clustering.html"><a href="chap-clustering.html#metodos-jerarquicos-aglomerativos"><i class="fa fa-check"></i><b>11.3</b> Métodos jerárquicos aglomerativos</a></li>
-<li class="chapter" data-level="11.4" data-path="chap-clustering.html"><a href="chap-clustering.html#guia-rapida-9"><i class="fa fa-check"></i><b>11.4</b> Guía rápida</a></li>
-<li class="chapter" data-level="11.5" data-path="chap-clustering.html"><a href="chap-clustering.html#ejercicios-12"><i class="fa fa-check"></i><b>11.5</b> Ejercicios</a><ul>
-<li class="chapter" data-level="" data-path="chap-clustering.html"><a href="chap-clustering.html#test-6"><i class="fa fa-check"></i>Test</a></li>
-<li class="chapter" data-level="" data-path="chap-clustering.html"><a href="chap-clustering.html#respuestas-al-test-10"><i class="fa fa-check"></i>Respuestas al test</a></li>
+<li class="chapter" data-level="11" data-path="chap-clustering.html"><a href="chap-clustering.html"><i class="fa fa-check"></i><b>11</b> <em>Clustering</em> básico</a>
+<ul>
+<li class="chapter" data-level="11.1" data-path="chap-clustering.html"><a href="chap-clustering.html#método-de-k-medias-o-k-means"><i class="fa fa-check"></i><b>11.1</b> Método de k-medias o <em>k-means</em></a></li>
+<li class="chapter" data-level="11.2" data-path="chap-clustering.html"><a href="chap-clustering.html#elección-del-número-de-clusters"><i class="fa fa-check"></i><b>11.2</b> Elección del número de <em>clusters</em></a></li>
+<li class="chapter" data-level="11.3" data-path="chap-clustering.html"><a href="chap-clustering.html#métodos-jerárquicos-aglomerativos"><i class="fa fa-check"></i><b>11.3</b> Métodos jerárquicos aglomerativos</a></li>
+<li class="chapter" data-level="11.4" data-path="chap-muestreo.html"><a href="chap-muestreo.html#guía-rápida"><i class="fa fa-check"></i><b>11.4</b> Guía rápida</a></li>
+<li class="chapter" data-level="11.5" data-path="chap-distr.html"><a href="chap-distr.html#ejercicios"><i class="fa fa-check"></i><b>11.5</b> Ejercicios</a>
+<ul>
+<li class="chapter" data-level="" data-path="chap-distr.html"><a href="chap-distr.html#test"><i class="fa fa-check"></i>Test</a></li>
+<li class="chapter" data-level="" data-path="chap-distr.html"><a href="chap-distr.html#respuestas-al-test"><i class="fa fa-check"></i>Respuestas al test</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="12" data-path="extras-de-r-markdown.html"><a href="extras-de-r-markdown.html"><i class="fa fa-check"></i><b>12</b> Extras de <em>R Markdown</em></a><ul>
-<li class="chapter" data-level="12.1" data-path="extras-de-r-markdown.html"><a href="extras-de-r-markdown.html#parametros-de-los-chunks-de-r"><i class="fa fa-check"></i><b>12.1</b> Parámetros de los <em>chunks</em> de R</a></li>
-<li class="chapter" data-level="12.2" data-path="extras-de-r-markdown.html"><a href="extras-de-r-markdown.html#los-chunks-en-modo-linea"><i class="fa fa-check"></i><b>12.2</b> Los <em>chunks</em> en modo línea</a></li>
+<li class="chapter" data-level="12" data-path="extras-de-r-markdown.html"><a href="extras-de-r-markdown.html"><i class="fa fa-check"></i><b>12</b> Extras de <em>R Markdown</em></a>
+<ul>
+<li class="chapter" data-level="12.1" data-path="extras-de-r-markdown.html"><a href="extras-de-r-markdown.html#parámetros-de-los-chunks-de-r"><i class="fa fa-check"></i><b>12.1</b> Parámetros de los <em>chunks</em> de R</a></li>
+<li class="chapter" data-level="12.2" data-path="extras-de-r-markdown.html"><a href="extras-de-r-markdown.html#los-chunks-en-modo-línea"><i class="fa fa-check"></i><b>12.2</b> Los <em>chunks</em> en modo línea</a></li>
 <li class="chapter" data-level="12.3" data-path="extras-de-r-markdown.html"><a href="extras-de-r-markdown.html#figuras"><i class="fa fa-check"></i><b>12.3</b> Figuras</a></li>
 <li class="chapter" data-level="12.4" data-path="extras-de-r-markdown.html"><a href="extras-de-r-markdown.html#tablas"><i class="fa fa-check"></i><b>12.4</b> Tablas</a></li>
-<li class="chapter" data-level="12.5" data-path="extras-de-r-markdown.html"><a href="extras-de-r-markdown.html#formulas-matematicas"><i class="fa fa-check"></i><b>12.5</b> Fórmulas matemáticas</a></li>
+<li class="chapter" data-level="12.5" data-path="extras-de-r-markdown.html"><a href="extras-de-r-markdown.html#fórmulas-matemáticas"><i class="fa fa-check"></i><b>12.5</b> Fórmulas matemáticas</a></li>
 </ul></li>
 </ul>
 
@@ -298,7 +326,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="chap:distr" class="section level1">
+<div id="chap:distr" class="section level1" number="1">
 <h1><span class="header-section-number">Lección 1</span> Distribuciones de probabilidad</h1>
 <p>R conoce los tipos de distribución de probabilidad más importantes, incluyendo las que mostramos en la tabla siguiente:</p>
 <p><span class="math display">\[
@@ -331,113 +359,113 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <ul>
 <li><span class="math inline">\(f_X(5)=P(X=5)\)</span>:</li>
 </ul>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">dbinom</span>(<span class="dv">5</span>,<span class="dv">20</span>,<span class="fl">0.3</span>)</code></pre>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="chap-distr.html#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">dbinom</span>(<span class="dv">5</span>,<span class="dv">20</span>,<span class="fl">0.3</span>)</span></code></pre></div>
 <pre><code>## [1] 0.1788631</code></pre>
 <div class="line-block">       Comprobémoslo, recordando que si <span class="math inline">\(X\sim B(n,k)\)</span>, entonces <span class="math inline">\(P(X=k)=\binom{n}{k}p^k(1-p)^{n-k}\)</span>:</div>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">choose</span>(<span class="dv">20</span>,<span class="dv">5</span>)<span class="op">*</span><span class="fl">0.3</span><span class="op">^</span><span class="dv">5</span><span class="op">*</span><span class="fl">0.7</span><span class="op">^</span><span class="dv">15</span></code></pre>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="chap-distr.html#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">choose</span>(<span class="dv">20</span>,<span class="dv">5</span>)<span class="sc">*</span><span class="fl">0.3</span><span class="sc">^</span><span class="dv">5</span><span class="sc">*</span><span class="fl">0.7</span><span class="sc">^</span><span class="dv">15</span></span></code></pre></div>
 <pre><code>## [1] 0.1788631</code></pre>
 <ul>
 <li><span class="math inline">\(f_X(8)=P(X=8)\)</span>:</li>
 </ul>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">dbinom</span>(<span class="dv">8</span>,<span class="dv">20</span>,<span class="fl">0.3</span>)  </code></pre>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="chap-distr.html#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">dbinom</span>(<span class="dv">8</span>,<span class="dv">20</span>,<span class="fl">0.3</span>)  </span></code></pre></div>
 <pre><code>## [1] 0.1143967</code></pre>
 <ul>
-<li><span class="math inline">\(F_X(5)=P(X\leqslant 5)\)</span>:</li>
+<li><span class="math inline">\(F_X(5)=P(X\leq 5)\)</span>:</li>
 </ul>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">pbinom</span>(<span class="dv">5</span>,<span class="dv">20</span>,<span class="fl">0.3</span>)  </code></pre>
+<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="chap-distr.html#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">pbinom</span>(<span class="dv">5</span>,<span class="dv">20</span>,<span class="fl">0.3</span>)  </span></code></pre></div>
 <pre><code>## [1] 0.4163708</code></pre>
-<div class="line-block">       Comprobémoslo, usando que <span class="math inline">\(P(X\leqslant 5)=\sum_{k=0}^5 P(X=k)\)</span>:</div>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">sum</span>(<span class="kw">dbinom</span>(<span class="dv">0</span><span class="op">:</span><span class="dv">5</span>,<span class="dv">20</span>,<span class="fl">0.3</span>))</code></pre>
+<div class="line-block">       Comprobémoslo, usando que <span class="math inline">\(P(X\leq 5)=\sum_{k=0}^5 P(X=k)\)</span>:</div>
+<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="chap-distr.html#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sum</span>(<span class="fu">dbinom</span>(<span class="dv">0</span><span class="sc">:</span><span class="dv">5</span>,<span class="dv">20</span>,<span class="fl">0.3</span>))</span></code></pre></div>
 <pre><code>## [1] 0.4163708</code></pre>
 <ul>
-<li><span class="math inline">\(F_X(8)=P(X\leqslant 8)\)</span>:</li>
+<li><span class="math inline">\(F_X(8)=P(X\leq 8)\)</span>:</li>
 </ul>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">pbinom</span>(<span class="dv">8</span>,<span class="dv">20</span>,<span class="fl">0.3</span>)  </code></pre>
+<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="chap-distr.html#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="fu">pbinom</span>(<span class="dv">8</span>,<span class="dv">20</span>,<span class="fl">0.3</span>)  </span></code></pre></div>
 <pre><code>## [1] 0.8866685</code></pre>
 <ul>
 <li><span class="math inline">\(P(X&gt;8)\)</span></li>
 </ul>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">pbinom</span>(<span class="dv">8</span>,<span class="dv">20</span>,<span class="fl">0.3</span>,<span class="dt">lower.tail=</span><span class="ot">FALSE</span>)</code></pre>
+<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb13-1"><a href="chap-distr.html#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="fu">pbinom</span>(<span class="dv">8</span>,<span class="dv">20</span>,<span class="fl">0.3</span>,<span class="at">lower.tail=</span><span class="cn">FALSE</span>)</span></code></pre></div>
 <pre><code>## [1] 0.1133315</code></pre>
 <div class="line-block">       En efecto:</div>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="dv">1</span><span class="op">-</span><span class="kw">pbinom</span>(<span class="dv">8</span>,<span class="dv">20</span>,<span class="fl">0.3</span>)</code></pre>
+<div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb15-1"><a href="chap-distr.html#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="dv">1</span><span class="sc">-</span><span class="fu">pbinom</span>(<span class="dv">8</span>,<span class="dv">20</span>,<span class="fl">0.3</span>)</span></code></pre></div>
 <pre><code>## [1] 0.1133315</code></pre>
 <ul>
-<li>El cuantil de orden <span class="math inline">\(0.5\)</span> de <span class="math inline">\(X\)</span>, o sea, su <strong>mediana</strong>: el valor <span class="math inline">\(x\)</span> más pequeño tal que <span class="math inline">\(P(X\leqslant x)\geqslant 0.5\)</span></li>
+<li>El cuantil de orden <span class="math inline">\(0.5\)</span> de <span class="math inline">\(X\)</span>, o sea, su <strong>mediana</strong>: el valor <span class="math inline">\(x\)</span> más pequeño tal que <span class="math inline">\(P(X\leq x)\geq 0.5\)</span></li>
 </ul>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">qbinom</span>(<span class="fl">0.5</span>,<span class="dv">20</span>,<span class="fl">0.3</span>)  </code></pre>
+<div class="sourceCode" id="cb17"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb17-1"><a href="chap-distr.html#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="fu">qbinom</span>(<span class="fl">0.5</span>,<span class="dv">20</span>,<span class="fl">0.3</span>)  </span></code></pre></div>
 <pre><code>## [1] 6</code></pre>
-<div class="line-block">       Comprobemos que <span class="math inline">\(P(X\leqslant 6)\geqslant 0.5\)</span> y en cambio <span class="math inline">\(P(X\leqslant 5)&lt; 0.5\)</span>:</div>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">pbinom</span>(<span class="dv">6</span>,<span class="dv">20</span>,<span class="fl">0.3</span>) </code></pre>
+<div class="line-block">       Comprobemos que <span class="math inline">\(P(X\leq 6)\geq 0.5\)</span> y en cambio <span class="math inline">\(P(X\leq 5)&lt; 0.5\)</span>:</div>
+<div class="sourceCode" id="cb19"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb19-1"><a href="chap-distr.html#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="fu">pbinom</span>(<span class="dv">6</span>,<span class="dv">20</span>,<span class="fl">0.3</span>) </span></code></pre></div>
 <pre><code>## [1] 0.6080098</code></pre>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">pbinom</span>(<span class="dv">5</span>,<span class="dv">20</span>,<span class="fl">0.3</span>) </code></pre>
+<div class="sourceCode" id="cb21"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb21-1"><a href="chap-distr.html#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="fu">pbinom</span>(<span class="dv">5</span>,<span class="dv">20</span>,<span class="fl">0.3</span>) </span></code></pre></div>
 <pre><code>## [1] 0.4163708</code></pre>
 <ul>
 <li>El cuantil de orden <span class="math inline">\(0.25\)</span> de <span class="math inline">\(X\)</span>, es decir, su <strong>primer cuartil</strong>:</li>
 </ul>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">qbinom</span>(<span class="fl">0.25</span>,<span class="dv">20</span>,<span class="fl">0.3</span>)  </code></pre>
+<div class="sourceCode" id="cb23"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb23-1"><a href="chap-distr.html#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="fu">qbinom</span>(<span class="fl">0.25</span>,<span class="dv">20</span>,<span class="fl">0.3</span>)  </span></code></pre></div>
 <pre><code>## [1] 5</code></pre>
 <ul>
 <li>Un vector aleatorio de 10 valores generado con la variable aleatoria <span class="math inline">\(X\)</span>:</li>
 </ul>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">rbinom</span>(<span class="dv">10</span>,<span class="dv">20</span>,<span class="fl">0.3</span>)</code></pre>
+<div class="sourceCode" id="cb25"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb25-1"><a href="chap-distr.html#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="fu">rbinom</span>(<span class="dv">10</span>,<span class="dv">20</span>,<span class="fl">0.3</span>)</span></code></pre></div>
 <pre><code>##  [1]  6  8  7  5 10  7  3  4  3  9</code></pre>
 <ul>
 <li>Dos vectores aleatorios más, de 10 valores cada uno, generados con la variable aleatoria <span class="math inline">\(X\)</span>:</li>
 </ul>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">rbinom</span>(<span class="dv">10</span>,<span class="dv">20</span>,<span class="fl">0.3</span>) </code></pre>
+<div class="sourceCode" id="cb27"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb27-1"><a href="chap-distr.html#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="fu">rbinom</span>(<span class="dv">10</span>,<span class="dv">20</span>,<span class="fl">0.3</span>) </span></code></pre></div>
 <pre><code>##  [1] 8 2 6 7 7 4 8 3 4 4</code></pre>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">rbinom</span>(<span class="dv">10</span>,<span class="dv">20</span>,<span class="fl">0.3</span>)</code></pre>
+<div class="sourceCode" id="cb29"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb29-1"><a href="chap-distr.html#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="fu">rbinom</span>(<span class="dv">10</span>,<span class="dv">20</span>,<span class="fl">0.3</span>)</span></code></pre></div>
 <pre><code>##  [1] 7 6 9 8 5 4 5 4 9 4</code></pre>
 <p>Del mismo modo, si estamos trabajando con una variable aleatoria <span class="math inline">\(Y\)</span> de Poisson con parámetro <span class="math inline">\(\lambda=5\)</span>:</p>
 <ul>
 <li><span class="math inline">\(P(Y=8)\)</span>:</li>
 </ul>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">dpois</span>(<span class="dv">8</span>,<span class="dv">5</span>) </code></pre>
+<div class="sourceCode" id="cb31"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb31-1"><a href="chap-distr.html#cb31-1" aria-hidden="true" tabindex="-1"></a><span class="fu">dpois</span>(<span class="dv">8</span>,<span class="dv">5</span>) </span></code></pre></div>
 <pre><code>## [1] 0.06527804</code></pre>
 <ul>
-<li><span class="math inline">\(P(Y\leqslant 8)\)</span>:</li>
+<li><span class="math inline">\(P(Y\leq 8)\)</span>:</li>
 </ul>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ppois</span>(<span class="dv">8</span>,<span class="dv">5</span>) </code></pre>
+<div class="sourceCode" id="cb33"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb33-1"><a href="chap-distr.html#cb33-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ppois</span>(<span class="dv">8</span>,<span class="dv">5</span>) </span></code></pre></div>
 <pre><code>## [1] 0.9319064</code></pre>
 <ul>
 <li>El cuantil de orden 0.6 de <span class="math inline">\(Y\)</span>:</li>
 </ul>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">qpois</span>(<span class="fl">0.6</span>,<span class="dv">5</span>)</code></pre>
+<div class="sourceCode" id="cb35"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb35-1"><a href="chap-distr.html#cb35-1" aria-hidden="true" tabindex="-1"></a><span class="fu">qpois</span>(<span class="fl">0.6</span>,<span class="dv">5</span>)</span></code></pre></div>
 <pre><code>## [1] 5</code></pre>
 <ul>
 <li>Un vector aleatorio de 20 valores generado con la variable aleatoria <span class="math inline">\(Y\)</span>:</li>
 </ul>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">rpois</span>(<span class="dv">20</span>,<span class="dv">5</span>)</code></pre>
+<div class="sourceCode" id="cb37"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb37-1"><a href="chap-distr.html#cb37-1" aria-hidden="true" tabindex="-1"></a><span class="fu">rpois</span>(<span class="dv">20</span>,<span class="dv">5</span>)</span></code></pre></div>
 <pre><code>##  [1]  2  3 10  6  5 10  6  6  5  8  4  3  3  5  2  4  4  2  1  4</code></pre>
 <p>Si no entramos ningún parámetro en las funciones asociadas a la distribución normal, R entiende que se trata de la normal estándar (con media <span class="math inline">\(\mu=0\)</span> y desviación típica <span class="math inline">\(\sigma=1\)</span>): por ejemplo, las dos instrucciones siguientes nos dan el valor <span class="math inline">\(f_Z(0.3)\)</span> de la función densidad de una normal estándar <span class="math inline">\(Z\)</span> aplicada a 0.3 (que <em>no</em> es igual a <span class="math inline">\(P(Z=0.3)\)</span>):</p>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">dnorm</span>(<span class="fl">0.3</span>)</code></pre>
+<div class="sourceCode" id="cb39"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb39-1"><a href="chap-distr.html#cb39-1" aria-hidden="true" tabindex="-1"></a><span class="fu">dnorm</span>(<span class="fl">0.3</span>)</span></code></pre></div>
 <pre><code>## [1] 0.3813878</code></pre>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">dnorm</span>(<span class="fl">0.3</span>,<span class="dv">0</span>,<span class="dv">1</span>)</code></pre>
+<div class="sourceCode" id="cb41"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb41-1"><a href="chap-distr.html#cb41-1" aria-hidden="true" tabindex="-1"></a><span class="fu">dnorm</span>(<span class="fl">0.3</span>,<span class="dv">0</span>,<span class="dv">1</span>)</span></code></pre></div>
 <pre><code>## [1] 0.3813878</code></pre>
-<p>Las funciones densidad y distribución de una variable aleatoria se pueden dibujar con la función <code>curve</code>. Así, la función siguiente dibuja la gráfica de la densidad de una variable normal estándar de la Figura <a href="chap-distr.html#fig:dnorm">1.1</a>:</p>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">curve</span>(<span class="kw">dnorm</span>(x,<span class="dv">0</span>,<span class="fl">1.5</span>),<span class="op">-</span><span class="dv">5</span>,<span class="dv">5</span>,<span class="dt">xlab=</span><span class="st">&quot;&quot;</span>,<span class="dt">ylab=</span><span class="st">&quot;&quot;</span>,<span class="dt">main=</span><span class="st">&quot;&quot;</span>)</code></pre>
+<p>Las funciones densidad y distribución de una variable aleatoria se pueden dibujar con la función <code>curve</code>. Así, la función siguiente dibuja la gráfica de la densidad de una variable normal de la Figura <a href="chap-distr.html#fig:dnorm">1.1</a>:</p>
+<div class="sourceCode" id="cb43"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb43-1"><a href="chap-distr.html#cb43-1" aria-hidden="true" tabindex="-1"></a><span class="fu">curve</span>(<span class="fu">dnorm</span>(x,<span class="dv">0</span>,<span class="fl">1.5</span>),<span class="sc">-</span><span class="dv">5</span>,<span class="dv">5</span>,<span class="at">xlab=</span><span class="st">&quot;&quot;</span>,<span class="at">ylab=</span><span class="st">&quot;&quot;</span>,<span class="at">main=</span><span class="st">&quot;&quot;</span>)</span></code></pre></div>
 <div class="figure" style="text-align: center"><span id="fig:dnorm"></span>
-<img src="AprendeR-Parte-II_files/figure-html/dnorm-1.png" alt="Función densidad de una variable *N*(0,1)." width="480" />
+<img src="AprendeR-Parte-II_files/figure-html/dnorm-1.png" alt="Función densidad de una variable *N*(0,1.5)." width="480" />
 <p class="caption">
-Figura 1.1: Función densidad de una variable <em>N</em>(0,1).
+Figura 1.1: Función densidad de una variable <em>N</em>(0,1.5).
 </p>
 </div>
-<p>De manera similar, la función siguiente dibuja la gráfica de la función de distribución de una variable normal estándar de la Figura <a href="chap-distr.html#fig:pnorm">1.2</a>:</p>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">curve</span>(<span class="kw">pnorm</span>(x,<span class="dv">0</span>,<span class="fl">1.5</span>),<span class="op">-</span><span class="dv">5</span>,<span class="dv">5</span>,<span class="dt">xlab=</span><span class="st">&quot;&quot;</span>,<span class="dt">ylab=</span><span class="st">&quot;&quot;</span>,<span class="dt">main=</span><span class="st">&quot;&quot;</span>)</code></pre>
+<p>De manera similar, la función siguiente dibuja la gráfica de la función de distribución de una variable normal de la Figura <a href="chap-distr.html#fig:pnorm">1.2</a>:</p>
+<div class="sourceCode" id="cb44"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb44-1"><a href="chap-distr.html#cb44-1" aria-hidden="true" tabindex="-1"></a><span class="fu">curve</span>(<span class="fu">pnorm</span>(x,<span class="dv">0</span>,<span class="fl">1.5</span>),<span class="sc">-</span><span class="dv">5</span>,<span class="dv">5</span>,<span class="at">xlab=</span><span class="st">&quot;&quot;</span>,<span class="at">ylab=</span><span class="st">&quot;&quot;</span>,<span class="at">main=</span><span class="st">&quot;&quot;</span>)</span></code></pre></div>
 <div class="figure" style="text-align: center"><span id="fig:pnorm"></span>
-<img src="AprendeR-Parte-II_files/figure-html/pnorm-1.png" alt="Función distribución de una variable *N*(0,1)." width="480" />
+<img src="AprendeR-Parte-II_files/figure-html/pnorm-1.png" alt="Función distribución de una variable *N*(0,1.5)." width="480" />
 <p class="caption">
-Figura 1.2: Función distribución de una variable <em>N</em>(0,1).
+Figura 1.2: Función distribución de una variable <em>N</em>(0,1.5).
 </p>
 </div>
-<div id="ejercicios" class="section level2">
+<div id="ejercicios" class="section level2" number="1.1">
 <h2><span class="header-section-number">1.1</span> Ejercicios</h2>
 <div id="test" class="section level3 unnumbered">
 <h3>Test</h3>
 <p><em>(1)</em> Sea <span class="math inline">\(f\)</span> la función de densidad de una variable aleatoria normal con <span class="math inline">\(\mu=0.2\)</span> y <span class="math inline">\(\sigma=1.2\)</span>. Dad el valor de <span class="math inline">\(f(0.5)\)</span> redondeado a 4 cifras decimales.</p>
-<p><em>(2)</em> Sea <span class="math inline">\(X\)</span> una variable aleatoria normal con <span class="math inline">\(\mu=0.2\)</span> y <span class="math inline">\(\sigma=1.2\)</span>. Dad el valor de <span class="math inline">\(P(3\leqslant X\leqslant 7)\)</span> redondeado a 4 cifras decimales.</p>
-<p><em>(3)</em> Sea <span class="math inline">\(X\)</span> una variable aleatoria <span class="math inline">\(B(10,0.2)\)</span>. Dad el valor de <span class="math inline">\(P(3\leqslant X\leqslant 7)\)</span> redondeado a 4 cifras decimales.</p>
+<p><em>(2)</em> Sea <span class="math inline">\(X\)</span> una variable aleatoria normal con <span class="math inline">\(\mu=0.2\)</span> y <span class="math inline">\(\sigma=1.2\)</span>. Dad el valor de <span class="math inline">\(P(3\leq X\leq 7)\)</span> redondeado a 4 cifras decimales.</p>
+<p><em>(3)</em> Sea <span class="math inline">\(X\)</span> una variable aleatoria <span class="math inline">\(B(10,0.2)\)</span>. Dad el valor de <span class="math inline">\(P(3\leq X\leq 7)\)</span> redondeado a 4 cifras decimales.</p>
 <p><em>(4)</em> Dad una instrucción que calcule la mediana de una lista de 20 números aleatorios generados con distribución <span class="math inline">\(B(10,0.2)\)</span>. No deis el resultado, solo la instrucción.</p>
 </div>
 <div id="problemas" class="section level3 unnumbered">
@@ -466,21 +494,21 @@ Por lo tanto, si efectuamos una serie de lanzamientos independientes de una mone
 <h3>Respuestas al test</h3>
 <p><em>(1)</em> 0.3222</p>
 <p>Nosotros lo hemos calculado con</p>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">round</span>(<span class="kw">dnorm</span>(<span class="fl">0.5</span>,<span class="fl">0.2</span>,<span class="fl">1.2</span>),<span class="dv">4</span>)</code></pre>
+<div class="sourceCode" id="cb45"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb45-1"><a href="chap-distr.html#cb45-1" aria-hidden="true" tabindex="-1"></a><span class="fu">round</span>(<span class="fu">dnorm</span>(<span class="fl">0.5</span>,<span class="fl">0.2</span>,<span class="fl">1.2</span>),<span class="dv">4</span>)</span></code></pre></div>
 <pre><code>## [1] 0.3222</code></pre>
 <p><em>(2)</em> 0.0098</p>
 <p>Nosotros lo hemos calculado con</p>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">round</span>(<span class="kw">pnorm</span>(<span class="dv">7</span>,<span class="fl">0.2</span>,<span class="fl">1.2</span>)<span class="op">-</span><span class="kw">pnorm</span>(<span class="dv">3</span>,<span class="fl">0.2</span>,<span class="fl">1.2</span>),<span class="dv">4</span>)</code></pre>
+<div class="sourceCode" id="cb47"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb47-1"><a href="chap-distr.html#cb47-1" aria-hidden="true" tabindex="-1"></a><span class="fu">round</span>(<span class="fu">pnorm</span>(<span class="dv">7</span>,<span class="fl">0.2</span>,<span class="fl">1.2</span>)<span class="sc">-</span><span class="fu">pnorm</span>(<span class="dv">3</span>,<span class="fl">0.2</span>,<span class="fl">1.2</span>),<span class="dv">4</span>)</span></code></pre></div>
 <pre><code>## [1] 0.0098</code></pre>
 <p><em>(3)</em> 0.3221</p>
 <p>Nosotros lo hemos calculado con</p>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">round</span>(<span class="kw">pbinom</span>(<span class="dv">7</span>,<span class="dv">10</span>,<span class="fl">0.2</span>)<span class="op">-</span><span class="kw">pbinom</span>(<span class="dv">2</span>,<span class="dv">10</span>,<span class="fl">0.2</span>),<span class="dv">4</span>)</code></pre>
+<div class="sourceCode" id="cb49"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb49-1"><a href="chap-distr.html#cb49-1" aria-hidden="true" tabindex="-1"></a><span class="fu">round</span>(<span class="fu">pbinom</span>(<span class="dv">7</span>,<span class="dv">10</span>,<span class="fl">0.2</span>)<span class="sc">-</span><span class="fu">pbinom</span>(<span class="dv">2</span>,<span class="dv">10</span>,<span class="fl">0.2</span>),<span class="dv">4</span>)</span></code></pre></div>
 <pre><code>## [1] 0.3221</code></pre>
 <p>También se obtiene el resultado correcto con</p>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">round</span>(<span class="kw">sum</span>(<span class="kw">dbinom</span>(<span class="dv">3</span><span class="op">:</span><span class="dv">7</span>,<span class="dv">10</span>,<span class="fl">0.2</span>)),<span class="dv">4</span>)</code></pre>
+<div class="sourceCode" id="cb51"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb51-1"><a href="chap-distr.html#cb51-1" aria-hidden="true" tabindex="-1"></a><span class="fu">round</span>(<span class="fu">sum</span>(<span class="fu">dbinom</span>(<span class="dv">3</span><span class="sc">:</span><span class="dv">7</span>,<span class="dv">10</span>,<span class="fl">0.2</span>)),<span class="dv">4</span>)</span></code></pre></div>
 <pre><code>## [1] 0.3221</code></pre>
 <p>En cambio, con</p>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">round</span>(<span class="kw">pbinom</span>(<span class="dv">7</span>,<span class="dv">10</span>,<span class="fl">0.2</span>)<span class="op">-</span><span class="kw">pbinom</span>(<span class="dv">3</span>,<span class="dv">10</span>,<span class="fl">0.2</span>),<span class="dv">4</span>)</code></pre>
+<div class="sourceCode" id="cb53"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb53-1"><a href="chap-distr.html#cb53-1" aria-hidden="true" tabindex="-1"></a><span class="fu">round</span>(<span class="fu">pbinom</span>(<span class="dv">7</span>,<span class="dv">10</span>,<span class="fl">0.2</span>)<span class="sc">-</span><span class="fu">pbinom</span>(<span class="dv">3</span>,<span class="dv">10</span>,<span class="fl">0.2</span>),<span class="dv">4</span>)</span></code></pre></div>
 <pre><code>## [1] 0.1208</code></pre>
 <p>no se obtiene el resultado correcto. Pensad por qué aquí hay que restar <code>pbinom(2,10,0.2)</code> y en la pregunta anterior restábamos <code>pnorm(3,0.2,1.2)</code>.</p>
 <p><em>(4)</em> <code>median(rbinom(20,10,0.2))</code></p>
@@ -489,34 +517,34 @@ Por lo tanto, si efectuamos una serie de lanzamientos independientes de una mone
 <div id="soluciones-sucintas-de-los-problemas" class="section level3 unnumbered">
 <h3>Soluciones sucintas de los problemas</h3>
 <p><strong>(1)</strong> <em>(a)</em> La probabilidad que un hombre adulto español sea más alto que Víctor Claver es</p>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">pnorm</span>(<span class="dv">205</span>,<span class="fl">173.1</span>,<span class="fl">7.42</span>,<span class="dt">lower.tail=</span><span class="ot">FALSE</span>)</code></pre>
+<div class="sourceCode" id="cb55"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb55-1"><a href="chap-distr.html#cb55-1" aria-hidden="true" tabindex="-1"></a><span class="fu">pnorm</span>(<span class="dv">205</span>,<span class="fl">173.1</span>,<span class="fl">7.42</span>,<span class="at">lower.tail=</span><span class="cn">FALSE</span>)</span></code></pre></div>
 <pre><code>## [1] 0.00000857112</code></pre>
 <p>y la probabilidad de que una mujer adulta española sea más alta que Alba Torrens es</p>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">pnorm</span>(<span class="dv">190</span>,<span class="fl">160.3</span>,<span class="fl">7.11</span>,<span class="dt">lower.tail=</span><span class="ot">FALSE</span>)</code></pre>
+<div class="sourceCode" id="cb57"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb57-1"><a href="chap-distr.html#cb57-1" aria-hidden="true" tabindex="-1"></a><span class="fu">pnorm</span>(<span class="dv">190</span>,<span class="fl">160.3</span>,<span class="fl">7.11</span>,<span class="at">lower.tail=</span><span class="cn">FALSE</span>)</span></code></pre></div>
 <pre><code>## [1] 0.00001475499</code></pre>
 <p><em>(b)</em> La probabilidad de que un español adulto sea más alto (o alta) que Marc Gasol es</p>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="fl">0.49</span><span class="op">*</span><span class="kw">pnorm</span>(<span class="dv">211</span>,<span class="fl">173.1</span>,<span class="fl">7.42</span>,<span class="dt">lower.tail=</span><span class="ot">FALSE</span>)<span class="op">+</span><span class="fl">0.51</span><span class="op">*</span><span class="kw">pnorm</span>(<span class="dv">211</span>,<span class="fl">160.3</span>,<span class="fl">7.11</span>,<span class="dt">lower.tail=</span><span class="ot">FALSE</span>)</code></pre>
+<div class="sourceCode" id="cb59"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb59-1"><a href="chap-distr.html#cb59-1" aria-hidden="true" tabindex="-1"></a><span class="fl">0.49</span><span class="sc">*</span><span class="fu">pnorm</span>(<span class="dv">211</span>,<span class="fl">173.1</span>,<span class="fl">7.42</span>,<span class="at">lower.tail=</span><span class="cn">FALSE</span>)<span class="sc">+</span><span class="fl">0.51</span><span class="sc">*</span><span class="fu">pnorm</span>(<span class="dv">211</span>,<span class="fl">160.3</span>,<span class="fl">7.11</span>,<span class="at">lower.tail=</span><span class="cn">FALSE</span>)</span></code></pre></div>
 <pre><code>## [1] 0.00000007984638</code></pre>
 <p>y la probabilidad de que un español adulto sea más bajo (o baja) que Peter Dinklage es</p>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="fl">0.49</span><span class="op">*</span><span class="kw">pnorm</span>(<span class="dv">135</span>,<span class="fl">173.1</span>,<span class="fl">7.42</span>)<span class="op">+</span><span class="fl">0.51</span><span class="op">*</span><span class="kw">pnorm</span>(<span class="dv">135</span>,<span class="fl">160.3</span>,<span class="fl">7.11</span>)</code></pre>
+<div class="sourceCode" id="cb61"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb61-1"><a href="chap-distr.html#cb61-1" aria-hidden="true" tabindex="-1"></a><span class="fl">0.49</span><span class="sc">*</span><span class="fu">pnorm</span>(<span class="dv">135</span>,<span class="fl">173.1</span>,<span class="fl">7.42</span>)<span class="sc">+</span><span class="fl">0.51</span><span class="sc">*</span><span class="fu">pnorm</span>(<span class="dv">135</span>,<span class="fl">160.3</span>,<span class="fl">7.11</span>)</span></code></pre></div>
 <pre><code>## [1] 0.00009522642</code></pre>
 <p><strong>(2)</strong> <em>(a)</em> Binomial <span class="math inline">\(B(100,1/6)\)</span></p>
 <p><em>(b)</em> <code>dbinom(24,100,1/6)</code>=0.016161</p>
 <p><em>(c)</em> <code>1-pbinom(23,100,1/6)</code>=0.0378644</p>
 <p><em>(d)</em> El vector siguiente contiene una simulación como la pedida</p>
-<pre class="sourceCode r"><code class="sourceCode r">Simulación=<span class="kw">rbinom</span>(<span class="dv">1000</span>,<span class="dv">100</span>,<span class="dv">1</span><span class="op">/</span><span class="dv">6</span>)</code></pre>
+<div class="sourceCode" id="cb63"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb63-1"><a href="chap-distr.html#cb63-1" aria-hidden="true" tabindex="-1"></a>Simulación<span class="ot">=</span><span class="fu">rbinom</span>(<span class="dv">1000</span>,<span class="dv">100</span>,<span class="dv">1</span><span class="sc">/</span><span class="dv">6</span>)</span></code></pre></div>
 <p>En este vector, el porcentaje de entradas iguales a 24 es</p>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">round</span>(<span class="dv">100</span><span class="op">*</span><span class="kw">length</span>(Simulación[Simulación==<span class="dv">24</span>])<span class="op">/</span><span class="dv">1000</span>,<span class="dv">1</span>)</code></pre>
+<div class="sourceCode" id="cb64"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb64-1"><a href="chap-distr.html#cb64-1" aria-hidden="true" tabindex="-1"></a><span class="fu">round</span>(<span class="dv">100</span><span class="sc">*</span><span class="fu">length</span>(Simulación[Simulación<span class="sc">==</span><span class="dv">24</span>])<span class="sc">/</span><span class="dv">1000</span>,<span class="dv">1</span>)</span></code></pre></div>
 <pre><code>## [1] 1.9</code></pre>
 <p>y el porcentaje de entradas mayores o iguales a 24 es</p>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">round</span>(<span class="dv">100</span><span class="op">*</span><span class="kw">length</span>(Simulación[Simulación&gt;=<span class="dv">24</span>])<span class="op">/</span><span class="dv">1000</span>,<span class="dv">1</span>)</code></pre>
+<div class="sourceCode" id="cb66"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb66-1"><a href="chap-distr.html#cb66-1" aria-hidden="true" tabindex="-1"></a><span class="fu">round</span>(<span class="dv">100</span><span class="sc">*</span><span class="fu">length</span>(Simulación[Simulación<span class="sc">&gt;=</span><span class="dv">24</span>])<span class="sc">/</span><span class="dv">1000</span>,<span class="dv">1</span>)</span></code></pre></div>
 <pre><code>## [1] 3.8</code></pre>
 <p>Naturalmente, en cada simulación puede dar valores diferentes. Por ejemplo, si repetimos de nuevo la simulación</p>
-<pre class="sourceCode r"><code class="sourceCode r">Simulación2=<span class="kw">rbinom</span>(<span class="dv">1000</span>,<span class="dv">100</span>,<span class="dv">1</span><span class="op">/</span><span class="dv">6</span>)</code></pre>
+<div class="sourceCode" id="cb68"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb68-1"><a href="chap-distr.html#cb68-1" aria-hidden="true" tabindex="-1"></a>Simulación2<span class="ot">=</span><span class="fu">rbinom</span>(<span class="dv">1000</span>,<span class="dv">100</span>,<span class="dv">1</span><span class="sc">/</span><span class="dv">6</span>)</span></code></pre></div>
 <p>obtenemos:</p>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">round</span>(<span class="dv">100</span><span class="op">*</span><span class="kw">length</span>(Simulación2[Simulación2==<span class="dv">24</span>])<span class="op">/</span><span class="dv">1000</span>,<span class="dv">1</span>)</code></pre>
+<div class="sourceCode" id="cb69"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb69-1"><a href="chap-distr.html#cb69-1" aria-hidden="true" tabindex="-1"></a><span class="fu">round</span>(<span class="dv">100</span><span class="sc">*</span><span class="fu">length</span>(Simulación2[Simulación2<span class="sc">==</span><span class="dv">24</span>])<span class="sc">/</span><span class="dv">1000</span>,<span class="dv">1</span>)</span></code></pre></div>
 <pre><code>## [1] 2</code></pre>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">round</span>(<span class="dv">100</span><span class="op">*</span><span class="kw">length</span>(Simulación2[Simulación2&gt;=<span class="dv">24</span>])<span class="op">/</span><span class="dv">1000</span>,<span class="dv">1</span>)</code></pre>
+<div class="sourceCode" id="cb71"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb71-1"><a href="chap-distr.html#cb71-1" aria-hidden="true" tabindex="-1"></a><span class="fu">round</span>(<span class="dv">100</span><span class="sc">*</span><span class="fu">length</span>(Simulación2[Simulación2<span class="sc">&gt;=</span><span class="dv">24</span>])<span class="sc">/</span><span class="dv">1000</span>,<span class="dv">1</span>)</span></code></pre></div>
 <pre><code>## [1] 3.3</code></pre>
 <!--
 **(1)** *(a)* Como la distribución $Be(p)$ es la distribución binomial $B(1,p)$, podemos construir $X$ por medio de: 
@@ -569,11 +597,13 @@ points(n,dgeom(n,0.5),col="red",type="o",pch=20,cex=0.5)
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
 <script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
 <script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
 <script>
 gitbook.require(["gitbook"], function(gitbook) {
 gitbook.start({
@@ -581,12 +611,11 @@ gitbook.start({
 "github": false,
 "facebook": true,
 "twitter": true,
-"google": false,
 "linkedin": false,
 "weibo": false,
 "instapaper": false,
 "vk": false,
-"all": ["facebook", "google", "twitter", "linkedin", "weibo", "instapaper"]
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
 },
 "fontsettings": {
 "theme": "white",
@@ -598,6 +627,10 @@ gitbook.start({
 "text": null
 },
 "history": {
+"link": null,
+"text": null
+},
+"view": {
 "link": null,
 "text": null
 },
@@ -617,8 +650,9 @@ gitbook.start({
     script.type = "text/javascript";
     var src = "true";
     if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
-    if (location.protocol !== "file:" && /^https?:/.test(src))
-      src = src.replace(/^https?:/, '');
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
     script.src = src;
     document.getElementsByTagName("head")[0].appendChild(script);
   })();

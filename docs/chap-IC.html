@@ -1,13 +1,12 @@
 <!DOCTYPE html>
-<html >
-
+<html lang="" xml:lang="">
 <head>
 
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Lección 4 Intervalos de confianza | AprendeR: Parte II</title>
-  <meta name="description" content="Apuntes AprendeR bookdown::gitbook.">
-  <meta name="generator" content="bookdown  and GitBook 2.6.7">
+  <meta name="description" content="Apuntes AprendeR bookdown::gitbook." />
+  <meta name="generator" content="bookdown 0.20 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Lección 4 Intervalos de confianza | AprendeR: Parte II" />
   <meta property="og:type" content="book" />
@@ -22,18 +21,19 @@
   <meta name="twitter:description" content="Apuntes AprendeR bookdown::gitbook." />
   
 
-<meta name="author" content="The UIB-AprendeR team">
+<meta name="author" content="The UIB-AprendeR team" />
 
 
-<meta name="date" content="2020-03-18">
+<meta name="date" content="2021-03-05" />
 
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="apple-mobile-web-app-capable" content="yes">
-  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="chap-estimacion.html">
-<link rel="next" href="chap-contrastes.html">
+<link rel="prev" href="chap-estimacion.html"/>
+<link rel="next" href="chap-contrastes.html"/>
+<script src="libs/header-attrs-2.6/header-attrs.js"></script>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -41,6 +41,9 @@
 <link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
 
 
 
@@ -51,26 +54,26 @@
 
 
 <style type="text/css">
-a.sourceLine { display: inline-block; line-height: 1.25; }
-a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
-a.sourceLine:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode { white-space: pre; position: relative; }
-div.sourceCode { margin: 1em 0; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
 pre.sourceCode { margin: 0; }
 @media screen {
 div.sourceCode { overflow: auto; }
 }
 @media print {
-code.sourceCode { white-space: pre-wrap; }
-a.sourceLine { text-indent: -1em; padding-left: 1em; }
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
 }
-pre.numberSource a.sourceLine
-  { position: relative; left: -4em; }
-pre.numberSource a.sourceLine::before
-  { content: attr(data-line-number);
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
     position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; pointer-events: all; display: inline-block;
+    border: none; display: inline-block;
     -webkit-touch-callout: none; -webkit-user-select: none;
     -khtml-user-select: none; -moz-user-select: none;
     -ms-user-select: none; user-select: none;
@@ -79,9 +82,9 @@ pre.numberSource a.sourceLine::before
   }
 pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
 div.sourceCode
-  {  }
+  {   }
 @media screen {
-a.sourceLine::before { text-decoration: underline; }
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 code span.al { color: #ff0000; font-weight: bold; } /* Alert */
 code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
@@ -132,154 +135,179 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="divider"></li>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Presentación</a></li>
 <li class="part"><span><b>Parte II: Estadística inferencial</b></span></li>
-<li class="chapter" data-level="1" data-path="chap-distr.html"><a href="chap-distr.html"><i class="fa fa-check"></i><b>1</b> Distribuciones de probabilidad</a><ul>
-<li class="chapter" data-level="1.1" data-path="chap-distr.html"><a href="chap-distr.html#ejercicios"><i class="fa fa-check"></i><b>1.1</b> Ejercicios</a><ul>
+<li class="chapter" data-level="1" data-path="chap-distr.html"><a href="chap-distr.html"><i class="fa fa-check"></i><b>1</b> Distribuciones de probabilidad</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="chap-distr.html"><a href="chap-distr.html#ejercicios"><i class="fa fa-check"></i><b>1.1</b> Ejercicios</a>
+<ul>
 <li class="chapter" data-level="" data-path="chap-distr.html"><a href="chap-distr.html#test"><i class="fa fa-check"></i>Test</a></li>
 <li class="chapter" data-level="" data-path="chap-distr.html"><a href="chap-distr.html#problemas"><i class="fa fa-check"></i>Problemas</a></li>
 <li class="chapter" data-level="" data-path="chap-distr.html"><a href="chap-distr.html#respuestas-al-test"><i class="fa fa-check"></i>Respuestas al test</a></li>
 <li class="chapter" data-level="" data-path="chap-distr.html"><a href="chap-distr.html#soluciones-sucintas-de-los-problemas"><i class="fa fa-check"></i>Soluciones sucintas de los problemas</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="2" data-path="chap-muestreo.html"><a href="chap-muestreo.html"><i class="fa fa-check"></i><b>2</b> Conceptos básicos de muestreo</a><ul>
+<li class="chapter" data-level="2" data-path="chap-muestreo.html"><a href="chap-muestreo.html"><i class="fa fa-check"></i><b>2</b> Conceptos básicos de muestreo</a>
+<ul>
 <li class="chapter" data-level="2.1" data-path="chap-muestreo.html"><a href="chap-muestreo.html#sec:muestreo"><i class="fa fa-check"></i><b>2.1</b> Tipos de muestreo</a></li>
 <li class="chapter" data-level="2.2" data-path="chap-muestreo.html"><a href="chap-muestreo.html#muestreo-aleatorio-con-r"><i class="fa fa-check"></i><b>2.2</b> Muestreo aleatorio con R</a></li>
-<li class="chapter" data-level="2.3" data-path="chap-muestreo.html"><a href="chap-muestreo.html#guia-rapida"><i class="fa fa-check"></i><b>2.3</b> Guía rápida</a></li>
-<li class="chapter" data-level="2.4" data-path="chap-muestreo.html"><a href="chap-muestreo.html#ejercicios-1"><i class="fa fa-check"></i><b>2.4</b> Ejercicios</a><ul>
-<li class="chapter" data-level="" data-path="chap-muestreo.html"><a href="chap-muestreo.html#test-1"><i class="fa fa-check"></i>Test</a></li>
-<li class="chapter" data-level="" data-path="chap-muestreo.html"><a href="chap-muestreo.html#problemas-1"><i class="fa fa-check"></i>Problemas</a></li>
-<li class="chapter" data-level="" data-path="chap-muestreo.html"><a href="chap-muestreo.html#respuestas-al-test-1"><i class="fa fa-check"></i>Respuestas al test</a></li>
-<li class="chapter" data-level="" data-path="chap-muestreo.html"><a href="chap-muestreo.html#soluciones-sucintas-de-los-problemas-1"><i class="fa fa-check"></i>Soluciones sucintas de los problemas</a></li>
+<li class="chapter" data-level="2.3" data-path="chap-muestreo.html"><a href="chap-muestreo.html#guía-rápida"><i class="fa fa-check"></i><b>2.3</b> Guía rápida</a></li>
+<li class="chapter" data-level="2.4" data-path="chap-distr.html"><a href="chap-distr.html#ejercicios"><i class="fa fa-check"></i><b>2.4</b> Ejercicios</a>
+<ul>
+<li class="chapter" data-level="" data-path="chap-distr.html"><a href="chap-distr.html#test"><i class="fa fa-check"></i>Test</a></li>
+<li class="chapter" data-level="" data-path="chap-distr.html"><a href="chap-distr.html#problemas"><i class="fa fa-check"></i>Problemas</a></li>
+<li class="chapter" data-level="" data-path="chap-distr.html"><a href="chap-distr.html#respuestas-al-test"><i class="fa fa-check"></i>Respuestas al test</a></li>
+<li class="chapter" data-level="" data-path="chap-distr.html"><a href="chap-distr.html#soluciones-sucintas-de-los-problemas"><i class="fa fa-check"></i>Soluciones sucintas de los problemas</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="3" data-path="chap-estimacion.html"><a href="chap-estimacion.html"><i class="fa fa-check"></i><b>3</b> Estimación puntual</a><ul>
-<li class="chapter" data-level="3.1" data-path="chap-estimacion.html"><a href="chap-estimacion.html#estimacion-maximo-verosimil"><i class="fa fa-check"></i><b>3.1</b> Estimación máximo verosímil</a></li>
-<li class="chapter" data-level="3.2" data-path="chap-estimacion.html"><a href="chap-estimacion.html#guia-rapida-1"><i class="fa fa-check"></i><b>3.2</b> Guía rápida</a></li>
-<li class="chapter" data-level="3.3" data-path="chap-estimacion.html"><a href="chap-estimacion.html#ejercicios-2"><i class="fa fa-check"></i><b>3.3</b> Ejercicios</a><ul>
-<li class="chapter" data-level="" data-path="chap-estimacion.html"><a href="chap-estimacion.html#test-2"><i class="fa fa-check"></i>Test</a></li>
-<li class="chapter" data-level="" data-path="chap-estimacion.html"><a href="chap-estimacion.html#problemas-2"><i class="fa fa-check"></i>Problemas</a></li>
-<li class="chapter" data-level="" data-path="chap-estimacion.html"><a href="chap-estimacion.html#respuestas-al-test-2"><i class="fa fa-check"></i>Respuestas al test</a></li>
-<li class="chapter" data-level="" data-path="chap-estimacion.html"><a href="chap-estimacion.html#soluciones-sucintas-de-los-problemas-2"><i class="fa fa-check"></i>Soluciones sucintas de los problemas</a></li>
+<li class="chapter" data-level="3" data-path="chap-estimacion.html"><a href="chap-estimacion.html"><i class="fa fa-check"></i><b>3</b> Estimación puntual</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="chap-estimacion.html"><a href="chap-estimacion.html#estimación-máximo-verosímil"><i class="fa fa-check"></i><b>3.1</b> Estimación máximo verosímil</a></li>
+<li class="chapter" data-level="3.2" data-path="chap-muestreo.html"><a href="chap-muestreo.html#guía-rápida"><i class="fa fa-check"></i><b>3.2</b> Guía rápida</a></li>
+<li class="chapter" data-level="3.3" data-path="chap-distr.html"><a href="chap-distr.html#ejercicios"><i class="fa fa-check"></i><b>3.3</b> Ejercicios</a>
+<ul>
+<li class="chapter" data-level="" data-path="chap-distr.html"><a href="chap-distr.html#test"><i class="fa fa-check"></i>Test</a></li>
+<li class="chapter" data-level="" data-path="chap-distr.html"><a href="chap-distr.html#problemas"><i class="fa fa-check"></i>Problemas</a></li>
+<li class="chapter" data-level="" data-path="chap-distr.html"><a href="chap-distr.html#respuestas-al-test"><i class="fa fa-check"></i>Respuestas al test</a></li>
+<li class="chapter" data-level="" data-path="chap-distr.html"><a href="chap-distr.html#soluciones-sucintas-de-los-problemas"><i class="fa fa-check"></i>Soluciones sucintas de los problemas</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="4" data-path="chap-IC.html"><a href="chap-IC.html"><i class="fa fa-check"></i><b>4</b> Intervalos de confianza</a><ul>
+<li class="chapter" data-level="4" data-path="chap-IC.html"><a href="chap-IC.html"><i class="fa fa-check"></i><b>4</b> Intervalos de confianza</a>
+<ul>
 <li class="chapter" data-level="4.1" data-path="chap-IC.html"><a href="chap-IC.html#sec:ICT"><i class="fa fa-check"></i><b>4.1</b> Intervalo de confianza para la media basado en la t de Student</a></li>
-<li class="chapter" data-level="4.2" data-path="chap-IC.html"><a href="chap-IC.html#intervalos-de-confianza-para-la-proporcion-poblacional"><i class="fa fa-check"></i><b>4.2</b> Intervalos de confianza para la proporción poblacional</a></li>
+<li class="chapter" data-level="4.2" data-path="chap-IC.html"><a href="chap-IC.html#intervalos-de-confianza-para-la-proporción-poblacional"><i class="fa fa-check"></i><b>4.2</b> Intervalos de confianza para la proporción poblacional</a></li>
 <li class="chapter" data-level="4.3" data-path="chap-IC.html"><a href="chap-IC.html#sec:ICvar"><i class="fa fa-check"></i><b>4.3</b> Intervalo de confianza para la varianza de una población normal</a></li>
 <li class="chapter" data-level="4.4" data-path="chap-IC.html"><a href="chap-IC.html#bootstrap"><i class="fa fa-check"></i><b>4.4</b> Bootstrap</a></li>
-<li class="chapter" data-level="4.5" data-path="chap-IC.html"><a href="chap-IC.html#guia-rapida-2"><i class="fa fa-check"></i><b>4.5</b> Guía rápida</a></li>
-<li class="chapter" data-level="4.6" data-path="chap-IC.html"><a href="chap-IC.html#ejercicios-3"><i class="fa fa-check"></i><b>4.6</b> Ejercicios</a><ul>
-<li class="chapter" data-level="" data-path="chap-IC.html"><a href="chap-IC.html#test-3"><i class="fa fa-check"></i>Test</a></li>
-<li class="chapter" data-level="" data-path="chap-IC.html"><a href="chap-IC.html#problemas-3"><i class="fa fa-check"></i>Problemas</a></li>
-<li class="chapter" data-level="" data-path="chap-IC.html"><a href="chap-IC.html#respuestas-al-test-3"><i class="fa fa-check"></i>Respuestas al test</a></li>
-<li class="chapter" data-level="" data-path="chap-IC.html"><a href="chap-IC.html#soluciones-sucintas-de-los-problemas-3"><i class="fa fa-check"></i>Soluciones sucintas de los problemas</a></li>
+<li class="chapter" data-level="4.5" data-path="chap-muestreo.html"><a href="chap-muestreo.html#guía-rápida"><i class="fa fa-check"></i><b>4.5</b> Guía rápida</a></li>
+<li class="chapter" data-level="4.6" data-path="chap-distr.html"><a href="chap-distr.html#ejercicios"><i class="fa fa-check"></i><b>4.6</b> Ejercicios</a>
+<ul>
+<li class="chapter" data-level="" data-path="chap-distr.html"><a href="chap-distr.html#test"><i class="fa fa-check"></i>Test</a></li>
+<li class="chapter" data-level="" data-path="chap-distr.html"><a href="chap-distr.html#problemas"><i class="fa fa-check"></i>Problemas</a></li>
+<li class="chapter" data-level="" data-path="chap-distr.html"><a href="chap-distr.html#respuestas-al-test"><i class="fa fa-check"></i>Respuestas al test</a></li>
+<li class="chapter" data-level="" data-path="chap-distr.html"><a href="chap-distr.html#soluciones-sucintas-de-los-problemas"><i class="fa fa-check"></i>Soluciones sucintas de los problemas</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="5" data-path="chap-contrastes.html"><a href="chap-contrastes.html"><i class="fa fa-check"></i><b>5</b> Contrastes de hipótesis</a><ul>
-<li class="chapter" data-level="5.1" data-path="chap-contrastes.html"><a href="chap-contrastes.html#contrastes-para-medias"><i class="fa fa-check"></i><b>5.1</b> Contrastes para medias</a><ul>
+<li class="chapter" data-level="5" data-path="chap-contrastes.html"><a href="chap-contrastes.html"><i class="fa fa-check"></i><b>5</b> Contrastes de hipótesis</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="chap-contrastes.html"><a href="chap-contrastes.html#contrastes-para-medias"><i class="fa fa-check"></i><b>5.1</b> Contrastes para medias</a>
+<ul>
 <li class="chapter" data-level="" data-path="chap-contrastes.html"><a href="chap-contrastes.html#el-test-t"><i class="fa fa-check"></i>El test t</a></li>
-<li class="chapter" data-level="" data-path="chap-contrastes.html"><a href="chap-contrastes.html#tests-no-parametricos"><i class="fa fa-check"></i>Tests no paramétricos</a></li>
+<li class="chapter" data-level="" data-path="chap-contrastes.html"><a href="chap-contrastes.html#tests-no-paramétricos"><i class="fa fa-check"></i>Tests no paramétricos</a></li>
 </ul></li>
 <li class="chapter" data-level="5.2" data-path="chap-contrastes.html"><a href="chap-contrastes.html#contrastes-para-varianzas"><i class="fa fa-check"></i><b>5.2</b> Contrastes para varianzas</a></li>
 <li class="chapter" data-level="5.3" data-path="chap-contrastes.html"><a href="chap-contrastes.html#contrastes-para-proporciones"><i class="fa fa-check"></i><b>5.3</b> Contrastes para proporciones</a></li>
-<li class="chapter" data-level="5.4" data-path="chap-contrastes.html"><a href="chap-contrastes.html#calculo-de-la-potencia-de-un-contraste"><i class="fa fa-check"></i><b>5.4</b> Cálculo de la potencia de un contraste</a></li>
-<li class="chapter" data-level="5.5" data-path="chap-contrastes.html"><a href="chap-contrastes.html#guia-rapida-3"><i class="fa fa-check"></i><b>5.5</b> Guía rápida</a></li>
-<li class="chapter" data-level="5.6" data-path="chap-contrastes.html"><a href="chap-contrastes.html#ejercicios-4"><i class="fa fa-check"></i><b>5.6</b> Ejercicios</a><ul>
+<li class="chapter" data-level="5.4" data-path="chap-contrastes.html"><a href="chap-contrastes.html#cálculo-de-la-potencia-de-un-contraste"><i class="fa fa-check"></i><b>5.4</b> Cálculo de la potencia de un contraste</a></li>
+<li class="chapter" data-level="5.5" data-path="chap-muestreo.html"><a href="chap-muestreo.html#guía-rápida"><i class="fa fa-check"></i><b>5.5</b> Guía rápida</a></li>
+<li class="chapter" data-level="5.6" data-path="chap-distr.html"><a href="chap-distr.html#ejercicios"><i class="fa fa-check"></i><b>5.6</b> Ejercicios</a>
+<ul>
 <li class="chapter" data-level="" data-path="chap-contrastes.html"><a href="chap-contrastes.html#modelo-de-test"><i class="fa fa-check"></i>Modelo de test</a></li>
-<li class="chapter" data-level="" data-path="chap-contrastes.html"><a href="chap-contrastes.html#ejercicios-5"><i class="fa fa-check"></i>Ejercicios</a></li>
-<li class="chapter" data-level="" data-path="chap-contrastes.html"><a href="chap-contrastes.html#respuestas-al-test-4"><i class="fa fa-check"></i>Respuestas al test</a></li>
+<li class="chapter" data-level="" data-path="chap-contrastes.html"><a href="chap-contrastes.html#ejercicios-1"><i class="fa fa-check"></i>Ejercicios</a></li>
+<li class="chapter" data-level="" data-path="chap-distr.html"><a href="chap-distr.html#respuestas-al-test"><i class="fa fa-check"></i>Respuestas al test</a></li>
 <li class="chapter" data-level="" data-path="chap-contrastes.html"><a href="chap-contrastes.html#respuestas-sucintas-a-los-ejercicios"><i class="fa fa-check"></i>Respuestas sucintas a los ejercicios</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="6" data-path="chap-bondad.html"><a href="chap-bondad.html"><i class="fa fa-check"></i><b>6</b> Contrastes de bondad de ajuste</a><ul>
-<li class="chapter" data-level="6.1" data-path="chap-bondad.html"><a href="chap-bondad.html#pruebas-graficas-q-q-plots"><i class="fa fa-check"></i><b>6.1</b> Pruebas gráficas: Q-Q-plots</a></li>
+<li class="chapter" data-level="6" data-path="chap-bondad.html"><a href="chap-bondad.html"><i class="fa fa-check"></i><b>6</b> Contrastes de bondad de ajuste</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="chap-bondad.html"><a href="chap-bondad.html#pruebas-gráficas-q-q-plots"><i class="fa fa-check"></i><b>6.1</b> Pruebas gráficas: Q-Q-plots</a></li>
 <li class="chapter" data-level="6.2" data-path="chap-bondad.html"><a href="chap-bondad.html#el-test-chi2-de-pearson"><i class="fa fa-check"></i><b>6.2</b> El test <span class="math inline">\(\chi^2\)</span> de Pearson</a></li>
 <li class="chapter" data-level="6.3" data-path="chap-bondad.html"><a href="chap-bondad.html#el-test-chi2-para-distribuciones-continuas"><i class="fa fa-check"></i><b>6.3</b> El test <span class="math inline">\(\chi^2\)</span> para distribuciones continuas</a></li>
 <li class="chapter" data-level="6.4" data-path="chap-bondad.html"><a href="chap-bondad.html#el-test-de-kolgomorov-smirnov"><i class="fa fa-check"></i><b>6.4</b> El test de Kolgomorov-Smirnov</a></li>
 <li class="chapter" data-level="6.5" data-path="chap-bondad.html"><a href="chap-bondad.html#tests-de-normalidad"><i class="fa fa-check"></i><b>6.5</b> Tests de normalidad</a></li>
-<li class="chapter" data-level="6.6" data-path="chap-bondad.html"><a href="chap-bondad.html#guia-rapida-4"><i class="fa fa-check"></i><b>6.6</b> Guía rápida</a></li>
-<li class="chapter" data-level="6.7" data-path="chap-bondad.html"><a href="chap-bondad.html#ejercicios-6"><i class="fa fa-check"></i><b>6.7</b> Ejercicios</a><ul>
-<li class="chapter" data-level="" data-path="chap-bondad.html"><a href="chap-bondad.html#modelo-de-test-1"><i class="fa fa-check"></i>Modelo de test</a></li>
-<li class="chapter" data-level="" data-path="chap-bondad.html"><a href="chap-bondad.html#problemas-4"><i class="fa fa-check"></i>Problemas</a></li>
-<li class="chapter" data-level="" data-path="chap-bondad.html"><a href="chap-bondad.html#respuestas-al-test-5"><i class="fa fa-check"></i>Respuestas al test</a></li>
-<li class="chapter" data-level="" data-path="chap-bondad.html"><a href="chap-bondad.html#soluciones-sucintas-de-los-problemas-4"><i class="fa fa-check"></i>Soluciones sucintas de los problemas</a></li>
+<li class="chapter" data-level="6.6" data-path="chap-muestreo.html"><a href="chap-muestreo.html#guía-rápida"><i class="fa fa-check"></i><b>6.6</b> Guía rápida</a></li>
+<li class="chapter" data-level="6.7" data-path="chap-distr.html"><a href="chap-distr.html#ejercicios"><i class="fa fa-check"></i><b>6.7</b> Ejercicios</a>
+<ul>
+<li class="chapter" data-level="" data-path="chap-contrastes.html"><a href="chap-contrastes.html#modelo-de-test"><i class="fa fa-check"></i>Modelo de test</a></li>
+<li class="chapter" data-level="" data-path="chap-distr.html"><a href="chap-distr.html#problemas"><i class="fa fa-check"></i>Problemas</a></li>
+<li class="chapter" data-level="" data-path="chap-distr.html"><a href="chap-distr.html#respuestas-al-test"><i class="fa fa-check"></i>Respuestas al test</a></li>
+<li class="chapter" data-level="" data-path="chap-distr.html"><a href="chap-distr.html#soluciones-sucintas-de-los-problemas"><i class="fa fa-check"></i>Soluciones sucintas de los problemas</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="7" data-path="chap-indep.html"><a href="chap-indep.html"><i class="fa fa-check"></i><b>7</b> Contrastes de independencia y homogeneidad</a><ul>
+<li class="chapter" data-level="7" data-path="chap-indep.html"><a href="chap-indep.html"><i class="fa fa-check"></i><b>7</b> Contrastes de independencia y homogeneidad</a>
+<ul>
 <li class="chapter" data-level="7.1" data-path="chap-indep.html"><a href="chap-indep.html#tablas-de-contingencia"><i class="fa fa-check"></i><b>7.1</b> Tablas de contingencia</a></li>
 <li class="chapter" data-level="7.2" data-path="chap-indep.html"><a href="chap-indep.html#contraste-de-independencia"><i class="fa fa-check"></i><b>7.2</b> Contraste de independencia</a></li>
 <li class="chapter" data-level="7.3" data-path="chap-indep.html"><a href="chap-indep.html#sec:hom"><i class="fa fa-check"></i><b>7.3</b> Contraste de homogeneidad</a></li>
 <li class="chapter" data-level="7.4" data-path="chap-indep.html"><a href="chap-indep.html#potencia-de-un-contraste-chi2"><i class="fa fa-check"></i><b>7.4</b> Potencia de un contraste <span class="math inline">\(\chi^2\)</span></a></li>
-<li class="chapter" data-level="7.5" data-path="chap-indep.html"><a href="chap-indep.html#guia-rapida-5"><i class="fa fa-check"></i><b>7.5</b> Guía rápida</a></li>
-<li class="chapter" data-level="7.6" data-path="chap-indep.html"><a href="chap-indep.html#ejercicios-7"><i class="fa fa-check"></i><b>7.6</b> Ejercicios</a><ul>
-<li class="chapter" data-level="" data-path="chap-indep.html"><a href="chap-indep.html#modelo-de-test-2"><i class="fa fa-check"></i>Modelo de test</a></li>
-<li class="chapter" data-level="" data-path="chap-indep.html"><a href="chap-indep.html#ejercicios-8"><i class="fa fa-check"></i>Ejercicios</a></li>
-<li class="chapter" data-level="" data-path="chap-indep.html"><a href="chap-indep.html#respuestas-al-test-6"><i class="fa fa-check"></i>Respuestas al test</a></li>
-<li class="chapter" data-level="" data-path="chap-indep.html"><a href="chap-indep.html#soluciones-sucintas-de-los-problemas-5"><i class="fa fa-check"></i>Soluciones sucintas de los problemas</a></li>
+<li class="chapter" data-level="7.5" data-path="chap-muestreo.html"><a href="chap-muestreo.html#guía-rápida"><i class="fa fa-check"></i><b>7.5</b> Guía rápida</a></li>
+<li class="chapter" data-level="7.6" data-path="chap-distr.html"><a href="chap-distr.html#ejercicios"><i class="fa fa-check"></i><b>7.6</b> Ejercicios</a>
+<ul>
+<li class="chapter" data-level="" data-path="chap-contrastes.html"><a href="chap-contrastes.html#modelo-de-test"><i class="fa fa-check"></i>Modelo de test</a></li>
+<li class="chapter" data-level="" data-path="chap-contrastes.html"><a href="chap-contrastes.html#ejercicios-1"><i class="fa fa-check"></i>Ejercicios</a></li>
+<li class="chapter" data-level="" data-path="chap-distr.html"><a href="chap-distr.html#respuestas-al-test"><i class="fa fa-check"></i>Respuestas al test</a></li>
+<li class="chapter" data-level="" data-path="chap-distr.html"><a href="chap-distr.html#soluciones-sucintas-de-los-problemas"><i class="fa fa-check"></i>Soluciones sucintas de los problemas</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="8" data-path="chap-estmult.html"><a href="chap-estmult.html"><i class="fa fa-check"></i><b>8</b> Introducción a la estadística descriptiva multidimensional</a><ul>
+<li class="chapter" data-level="8" data-path="chap-estmult.html"><a href="chap-estmult.html"><i class="fa fa-check"></i><b>8</b> Introducción a la estadística descriptiva multidimensional</a>
+<ul>
 <li class="chapter" data-level="8.1" data-path="chap-estmult.html"><a href="chap-estmult.html#matrices-de-datos-cuantitativos"><i class="fa fa-check"></i><b>8.1</b> Matrices de datos cuantitativos</a></li>
 <li class="chapter" data-level="8.2" data-path="chap-estmult.html"><a href="chap-estmult.html#transformaciones-lineales"><i class="fa fa-check"></i><b>8.2</b> Transformaciones lineales</a></li>
 <li class="chapter" data-level="8.3" data-path="chap-estmult.html"><a href="chap-estmult.html#covarianzas-y-correlaciones"><i class="fa fa-check"></i><b>8.3</b> Covarianzas y correlaciones</a></li>
-<li class="chapter" data-level="8.4" data-path="chap-estmult.html"><a href="chap-estmult.html#correlacion-de-spearman"><i class="fa fa-check"></i><b>8.4</b> Correlación de Spearman</a></li>
-<li class="chapter" data-level="8.5" data-path="chap-estmult.html"><a href="chap-estmult.html#contrastes-de-correlacion"><i class="fa fa-check"></i><b>8.5</b> Contrastes de correlación</a></li>
+<li class="chapter" data-level="8.4" data-path="chap-estmult.html"><a href="chap-estmult.html#correlación-de-spearman"><i class="fa fa-check"></i><b>8.4</b> Correlación de Spearman</a></li>
+<li class="chapter" data-level="8.5" data-path="chap-estmult.html"><a href="chap-estmult.html#contrastes-de-correlación"><i class="fa fa-check"></i><b>8.5</b> Contrastes de correlación</a></li>
 <li class="chapter" data-level="8.6" data-path="chap-estmult.html"><a href="chap-estmult.html#un-ejemplo"><i class="fa fa-check"></i><b>8.6</b> Un ejemplo</a></li>
-<li class="chapter" data-level="8.7" data-path="chap-estmult.html"><a href="chap-estmult.html#representacion-grafica-de-datos-multidimensionales"><i class="fa fa-check"></i><b>8.7</b> Representación gráfica de datos multidimensionales</a></li>
-<li class="chapter" data-level="8.8" data-path="chap-estmult.html"><a href="chap-estmult.html#guia-rapida-6"><i class="fa fa-check"></i><b>8.8</b> Guía rápida</a></li>
-<li class="chapter" data-level="8.9" data-path="chap-estmult.html"><a href="chap-estmult.html#ejercicios-9"><i class="fa fa-check"></i><b>8.9</b> Ejercicios</a><ul>
-<li class="chapter" data-level="" data-path="chap-estmult.html"><a href="chap-estmult.html#modelo-de-test-3"><i class="fa fa-check"></i>Modelo de test</a></li>
-<li class="chapter" data-level="" data-path="chap-estmult.html"><a href="chap-estmult.html#problemas-5"><i class="fa fa-check"></i>Problemas</a></li>
-<li class="chapter" data-level="" data-path="chap-estmult.html"><a href="chap-estmult.html#respuestas-al-test-7"><i class="fa fa-check"></i>Respuestas al test</a></li>
-<li class="chapter" data-level="" data-path="chap-estmult.html"><a href="chap-estmult.html#soluciones-sucintas-de-los-problemas-6"><i class="fa fa-check"></i>Soluciones sucintas de los problemas</a></li>
+<li class="chapter" data-level="8.7" data-path="chap-estmult.html"><a href="chap-estmult.html#representación-gráfica-de-datos-multidimensionales"><i class="fa fa-check"></i><b>8.7</b> Representación gráfica de datos multidimensionales</a></li>
+<li class="chapter" data-level="8.8" data-path="chap-muestreo.html"><a href="chap-muestreo.html#guía-rápida"><i class="fa fa-check"></i><b>8.8</b> Guía rápida</a></li>
+<li class="chapter" data-level="8.9" data-path="chap-distr.html"><a href="chap-distr.html#ejercicios"><i class="fa fa-check"></i><b>8.9</b> Ejercicios</a>
+<ul>
+<li class="chapter" data-level="" data-path="chap-contrastes.html"><a href="chap-contrastes.html#modelo-de-test"><i class="fa fa-check"></i>Modelo de test</a></li>
+<li class="chapter" data-level="" data-path="chap-distr.html"><a href="chap-distr.html#problemas"><i class="fa fa-check"></i>Problemas</a></li>
+<li class="chapter" data-level="" data-path="chap-distr.html"><a href="chap-distr.html#respuestas-al-test"><i class="fa fa-check"></i>Respuestas al test</a></li>
+<li class="chapter" data-level="" data-path="chap-distr.html"><a href="chap-distr.html#soluciones-sucintas-de-los-problemas"><i class="fa fa-check"></i>Soluciones sucintas de los problemas</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="9" data-path="chap-ANOVA.html"><a href="chap-ANOVA.html"><i class="fa fa-check"></i><b>9</b> ANOVA básico</a><ul>
+<li class="chapter" data-level="9" data-path="chap-ANOVA.html"><a href="chap-ANOVA.html"><i class="fa fa-check"></i><b>9</b> ANOVA básico</a>
+<ul>
 <li class="chapter" data-level="9.1" data-path="chap-ANOVA.html"><a href="chap-ANOVA.html#sec:modelos"><i class="fa fa-check"></i><b>9.1</b> Los modelos del ANOVA en R</a></li>
 <li class="chapter" data-level="9.2" data-path="chap-ANOVA.html"><a href="chap-ANOVA.html#sec:ANOVA-1"><i class="fa fa-check"></i><b>9.2</b> ANOVA de un factor</a></li>
 <li class="chapter" data-level="9.3" data-path="chap-ANOVA.html"><a href="chap-ANOVA.html#anova-de-bloques-completos-aleatorios"><i class="fa fa-check"></i><b>9.3</b> ANOVA de bloques completos aleatorios</a></li>
 <li class="chapter" data-level="9.4" data-path="chap-ANOVA.html"><a href="chap-ANOVA.html#sec:ANOVA2"><i class="fa fa-check"></i><b>9.4</b> ANOVA de dos vías</a></li>
 <li class="chapter" data-level="9.5" data-path="chap-ANOVA.html"><a href="chap-ANOVA.html#condiciones-del-anova"><i class="fa fa-check"></i><b>9.5</b> Condiciones del ANOVA</a></li>
-<li class="chapter" data-level="9.6" data-path="chap-ANOVA.html"><a href="chap-ANOVA.html#sec:pares"><i class="fa fa-check"></i><b>9.6</b> Comparaciones de pares de medias</a><ul>
+<li class="chapter" data-level="9.6" data-path="chap-ANOVA.html"><a href="chap-ANOVA.html#sec:pares"><i class="fa fa-check"></i><b>9.6</b> Comparaciones de pares de medias</a>
+<ul>
 <li class="chapter" data-level="9.6.1" data-path="chap-ANOVA.html"><a href="chap-ANOVA.html#tests-t-por-parejas"><i class="fa fa-check"></i><b>9.6.1</b> Tests t por parejas</a></li>
 <li class="chapter" data-level="9.6.2" data-path="chap-ANOVA.html"><a href="chap-ANOVA.html#test-de-duncan"><i class="fa fa-check"></i><b>9.6.2</b> Test de Duncan</a></li>
-<li class="chapter" data-level="9.6.3" data-path="chap-ANOVA.html"><a href="chap-ANOVA.html#metodo-de-tukey"><i class="fa fa-check"></i><b>9.6.3</b> Método de Tukey</a></li>
+<li class="chapter" data-level="9.6.3" data-path="chap-ANOVA.html"><a href="chap-ANOVA.html#método-de-tukey"><i class="fa fa-check"></i><b>9.6.3</b> Método de Tukey</a></li>
 </ul></li>
-<li class="chapter" data-level="9.7" data-path="chap-ANOVA.html"><a href="chap-ANOVA.html#metodos-no-parametricos"><i class="fa fa-check"></i><b>9.7</b> Métodos no paramétricos</a></li>
-<li class="chapter" data-level="9.8" data-path="chap-ANOVA.html"><a href="chap-ANOVA.html#guia-rapida-7"><i class="fa fa-check"></i><b>9.8</b> Guía rápida</a></li>
-<li class="chapter" data-level="9.9" data-path="chap-ANOVA.html"><a href="chap-ANOVA.html#ejercicios-10"><i class="fa fa-check"></i><b>9.9</b> Ejercicios</a><ul>
-<li class="chapter" data-level="" data-path="chap-ANOVA.html"><a href="chap-ANOVA.html#test-4"><i class="fa fa-check"></i>Test</a></li>
+<li class="chapter" data-level="9.7" data-path="chap-ANOVA.html"><a href="chap-ANOVA.html#métodos-no-paramétricos"><i class="fa fa-check"></i><b>9.7</b> Métodos no paramétricos</a></li>
+<li class="chapter" data-level="9.8" data-path="chap-muestreo.html"><a href="chap-muestreo.html#guía-rápida"><i class="fa fa-check"></i><b>9.8</b> Guía rápida</a></li>
+<li class="chapter" data-level="9.9" data-path="chap-distr.html"><a href="chap-distr.html#ejercicios"><i class="fa fa-check"></i><b>9.9</b> Ejercicios</a>
+<ul>
+<li class="chapter" data-level="" data-path="chap-distr.html"><a href="chap-distr.html#test"><i class="fa fa-check"></i>Test</a></li>
 <li class="chapter" data-level="9.9.1" data-path="chap-ANOVA.html"><a href="chap-ANOVA.html#ejercicio"><i class="fa fa-check"></i><b>9.9.1</b> Ejercicio</a></li>
-<li class="chapter" data-level="" data-path="chap-ANOVA.html"><a href="chap-ANOVA.html#respuestas-al-test-8"><i class="fa fa-check"></i>Respuestas al test</a></li>
+<li class="chapter" data-level="" data-path="chap-distr.html"><a href="chap-distr.html#respuestas-al-test"><i class="fa fa-check"></i>Respuestas al test</a></li>
 <li class="chapter" data-level="9.9.2" data-path="chap-ANOVA.html"><a href="chap-ANOVA.html#soluciones-sucintas-del-ejercicio"><i class="fa fa-check"></i><b>9.9.2</b> Soluciones sucintas del ejercicio</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="10" data-path="chap-regresion.html"><a href="chap-regresion.html"><i class="fa fa-check"></i><b>10</b> Regresión lineal</a><ul>
+<li class="chapter" data-level="10" data-path="chap-regresion.html"><a href="chap-regresion.html"><i class="fa fa-check"></i><b>10</b> Regresión lineal</a>
+<ul>
 <li class="chapter" data-level="10.1" data-path="chap-regresion.html"><a href="chap-regresion.html#sec:1"><i class="fa fa-check"></i><b>10.1</b> El modelo de regresión lineal en R</a></li>
-<li class="chapter" data-level="10.2" data-path="chap-regresion.html"><a href="chap-regresion.html#intervalos-de-confianza-en-el-modelo-de-regresion-lineal"><i class="fa fa-check"></i><b>10.2</b> Intervalos de confianza en el modelo de regresión lineal</a></li>
+<li class="chapter" data-level="10.2" data-path="chap-regresion.html"><a href="chap-regresion.html#intervalos-de-confianza-en-el-modelo-de-regresión-lineal"><i class="fa fa-check"></i><b>10.2</b> Intervalos de confianza en el modelo de regresión lineal</a></li>
 <li class="chapter" data-level="10.3" data-path="chap-regresion.html"><a href="chap-regresion.html#sec:seleccion"><i class="fa fa-check"></i><b>10.3</b> Selección del modelo en base al ajuste de los datos</a></li>
 <li class="chapter" data-level="10.4" data-path="chap-regresion.html"><a href="chap-regresion.html#sec:diagn"><i class="fa fa-check"></i><b>10.4</b> Diagnósticos de regresión</a></li>
-<li class="chapter" data-level="10.5" data-path="chap-regresion.html"><a href="chap-regresion.html#guia-rapida-8"><i class="fa fa-check"></i><b>10.5</b> Guía rápida</a></li>
-<li class="chapter" data-level="10.6" data-path="chap-regresion.html"><a href="chap-regresion.html#ejercicios-11"><i class="fa fa-check"></i><b>10.6</b> Ejercicios</a><ul>
-<li class="chapter" data-level="" data-path="chap-regresion.html"><a href="chap-regresion.html#test-5"><i class="fa fa-check"></i>Test</a></li>
-<li class="chapter" data-level="" data-path="chap-regresion.html"><a href="chap-regresion.html#respuestas-al-test-9"><i class="fa fa-check"></i>Respuestas al test</a></li>
+<li class="chapter" data-level="10.5" data-path="chap-muestreo.html"><a href="chap-muestreo.html#guía-rápida"><i class="fa fa-check"></i><b>10.5</b> Guía rápida</a></li>
+<li class="chapter" data-level="10.6" data-path="chap-distr.html"><a href="chap-distr.html#ejercicios"><i class="fa fa-check"></i><b>10.6</b> Ejercicios</a>
+<ul>
+<li class="chapter" data-level="" data-path="chap-distr.html"><a href="chap-distr.html#test"><i class="fa fa-check"></i>Test</a></li>
+<li class="chapter" data-level="" data-path="chap-distr.html"><a href="chap-distr.html#respuestas-al-test"><i class="fa fa-check"></i>Respuestas al test</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="11" data-path="chap-clustering.html"><a href="chap-clustering.html"><i class="fa fa-check"></i><b>11</b> <em>Clustering</em> básico</a><ul>
-<li class="chapter" data-level="11.1" data-path="chap-clustering.html"><a href="chap-clustering.html#metodo-de-k-medias-o-k-means"><i class="fa fa-check"></i><b>11.1</b> Método de k-medias o <em>k-means</em></a></li>
-<li class="chapter" data-level="11.2" data-path="chap-clustering.html"><a href="chap-clustering.html#eleccion-del-numero-de-clusters"><i class="fa fa-check"></i><b>11.2</b> Elección del número de <em>clusters</em></a></li>
-<li class="chapter" data-level="11.3" data-path="chap-clustering.html"><a href="chap-clustering.html#metodos-jerarquicos-aglomerativos"><i class="fa fa-check"></i><b>11.3</b> Métodos jerárquicos aglomerativos</a></li>
-<li class="chapter" data-level="11.4" data-path="chap-clustering.html"><a href="chap-clustering.html#guia-rapida-9"><i class="fa fa-check"></i><b>11.4</b> Guía rápida</a></li>
-<li class="chapter" data-level="11.5" data-path="chap-clustering.html"><a href="chap-clustering.html#ejercicios-12"><i class="fa fa-check"></i><b>11.5</b> Ejercicios</a><ul>
-<li class="chapter" data-level="" data-path="chap-clustering.html"><a href="chap-clustering.html#test-6"><i class="fa fa-check"></i>Test</a></li>
-<li class="chapter" data-level="" data-path="chap-clustering.html"><a href="chap-clustering.html#respuestas-al-test-10"><i class="fa fa-check"></i>Respuestas al test</a></li>
+<li class="chapter" data-level="11" data-path="chap-clustering.html"><a href="chap-clustering.html"><i class="fa fa-check"></i><b>11</b> <em>Clustering</em> básico</a>
+<ul>
+<li class="chapter" data-level="11.1" data-path="chap-clustering.html"><a href="chap-clustering.html#método-de-k-medias-o-k-means"><i class="fa fa-check"></i><b>11.1</b> Método de k-medias o <em>k-means</em></a></li>
+<li class="chapter" data-level="11.2" data-path="chap-clustering.html"><a href="chap-clustering.html#elección-del-número-de-clusters"><i class="fa fa-check"></i><b>11.2</b> Elección del número de <em>clusters</em></a></li>
+<li class="chapter" data-level="11.3" data-path="chap-clustering.html"><a href="chap-clustering.html#métodos-jerárquicos-aglomerativos"><i class="fa fa-check"></i><b>11.3</b> Métodos jerárquicos aglomerativos</a></li>
+<li class="chapter" data-level="11.4" data-path="chap-muestreo.html"><a href="chap-muestreo.html#guía-rápida"><i class="fa fa-check"></i><b>11.4</b> Guía rápida</a></li>
+<li class="chapter" data-level="11.5" data-path="chap-distr.html"><a href="chap-distr.html#ejercicios"><i class="fa fa-check"></i><b>11.5</b> Ejercicios</a>
+<ul>
+<li class="chapter" data-level="" data-path="chap-distr.html"><a href="chap-distr.html#test"><i class="fa fa-check"></i>Test</a></li>
+<li class="chapter" data-level="" data-path="chap-distr.html"><a href="chap-distr.html#respuestas-al-test"><i class="fa fa-check"></i>Respuestas al test</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="12" data-path="extras-de-r-markdown.html"><a href="extras-de-r-markdown.html"><i class="fa fa-check"></i><b>12</b> Extras de <em>R Markdown</em></a><ul>
-<li class="chapter" data-level="12.1" data-path="extras-de-r-markdown.html"><a href="extras-de-r-markdown.html#parametros-de-los-chunks-de-r"><i class="fa fa-check"></i><b>12.1</b> Parámetros de los <em>chunks</em> de R</a></li>
-<li class="chapter" data-level="12.2" data-path="extras-de-r-markdown.html"><a href="extras-de-r-markdown.html#los-chunks-en-modo-linea"><i class="fa fa-check"></i><b>12.2</b> Los <em>chunks</em> en modo línea</a></li>
+<li class="chapter" data-level="12" data-path="extras-de-r-markdown.html"><a href="extras-de-r-markdown.html"><i class="fa fa-check"></i><b>12</b> Extras de <em>R Markdown</em></a>
+<ul>
+<li class="chapter" data-level="12.1" data-path="extras-de-r-markdown.html"><a href="extras-de-r-markdown.html#parámetros-de-los-chunks-de-r"><i class="fa fa-check"></i><b>12.1</b> Parámetros de los <em>chunks</em> de R</a></li>
+<li class="chapter" data-level="12.2" data-path="extras-de-r-markdown.html"><a href="extras-de-r-markdown.html#los-chunks-en-modo-línea"><i class="fa fa-check"></i><b>12.2</b> Los <em>chunks</em> en modo línea</a></li>
 <li class="chapter" data-level="12.3" data-path="extras-de-r-markdown.html"><a href="extras-de-r-markdown.html#figuras"><i class="fa fa-check"></i><b>12.3</b> Figuras</a></li>
 <li class="chapter" data-level="12.4" data-path="extras-de-r-markdown.html"><a href="extras-de-r-markdown.html#tablas"><i class="fa fa-check"></i><b>12.4</b> Tablas</a></li>
-<li class="chapter" data-level="12.5" data-path="extras-de-r-markdown.html"><a href="extras-de-r-markdown.html#formulas-matematicas"><i class="fa fa-check"></i><b>12.5</b> Fórmulas matemáticas</a></li>
+<li class="chapter" data-level="12.5" data-path="extras-de-r-markdown.html"><a href="extras-de-r-markdown.html#fórmulas-matemáticas"><i class="fa fa-check"></i><b>12.5</b> Fórmulas matemáticas</a></li>
 </ul></li>
 </ul>
 
@@ -298,11 +326,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="chap:IC" class="section level1">
+<div id="chap:IC" class="section level1" number="4">
 <h1><span class="header-section-number">Lección 4</span> Intervalos de confianza</h1>
 <p>En esta lección explicamos cómo calcular con R algunos intervalos de confianza básicos. Recordad que un <strong>intervalo de confianza del <span class="math inline">\(q\times 100\%\)</span></strong> (con <span class="math inline">\(q\)</span> entre 0 y 1) para un parámetro poblacional (la media, la desviación típica, la probabilidad de éxito de una variable Bernoulli, …) es un intervalo obtenido aplicando a una muestra aleatoria simple una fórmula que garantiza (si se cumplen una serie de condiciones sobre la distribución de la variable aleatoria poblacional que en cada caso dependen del parámetro y de la fórmula) que el <span class="math inline">\(q\times 100\%\)</span> de las veces que la aplicáramos a una muestra aleatoria simple de la misma población, el intervalo resultante contendría el parámetro poblacional que queremos estimar. Esto es lo que significa lo de “confianza del <span class="math inline">\(q\times 100\%\)</span>”: que confiamos en que nuestra muestra pertenece al <span class="math inline">\(q\times 100\%\)</span> de las muestras (aleatorias simples) en las que la fórmula acierta y da un intervalo que contiene el parámetro deseado.</p>
 <p>Algunas de las funciones que aparecen en esta lección volverán a salir en la próxima, ya que aunque calculan intervalos de confianza, su función principal es en realidad efectuar contrastes de hipótesis.</p>
-<div id="sec:ICT" class="section level2">
+<div id="sec:ICT" class="section level2" number="4.1">
 <h2><span class="header-section-number">4.1</span> Intervalo de confianza para la media basado en la t de Student</h2>
 <p>Supongamos que queremos estimar a partir de una m.a.s. la media <span class="math inline">\(\mu\)</span> de una variable <span class="math inline">\(X\)</span> que sigue una distribución normal o de una variable cualquiera pero tomando una muestra grande (por fijar una cota, de tamaño 40 o mayor). En esta situación, si <span class="math inline">\(\overline{X}\)</span>, <span class="math inline">\(\widetilde{S}_{X}\)</span> y <span class="math inline">\(n\)</span> son, respectivamente, la media muestral, la desviación típica muestral y el tamaño de la muestra, un intervalo de confianza del <span class="math inline">\(q\times 100\%\)</span> para <span class="math inline">\(\mu\)</span> es</p>
 <p><span class="math display" id="eq:form1">\[\begin{equation}
@@ -311,35 +339,34 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 \end{equation}\]</span></p>
 <p>donde <span class="math inline">\(t_{n-1,(1+q)/2}\)</span> es el cuantil de orden <span class="math inline">\((1+q)/2\)</span> de una variable aleatoria con distribución t de Student con <span class="math inline">\(n-1\)</span> grados de libertad. Fijaos en que <span class="math inline">\(\widetilde{S}_{X}/\sqrt{n}\)</span> es el error típico de la estimación de la media.</p>
 <p>A la hora de calcular este intervalo de confianza, tenemos dos posibles situaciones. Una, típica de ejercicios, es cuando de la muestra sólo conocemos su media muestral <span class="math inline">\(\overline{X}\)</span>, su desviación típica muestral <span class="math inline">\(\widetilde{S}_X\)</span> y su tamaño <span class="math inline">\(n\)</span>. Si los denotamos por <code>x.b</code>, <code>sdm</code> y <code>n</code>, respectivamente, y denotamos el nivel de confianza en tanto por uno <span class="math inline">\(q\)</span> por <code>q</code>, podemos calcular los extremos de este intervalo de confianza con la expresión siguiente:</p>
-<pre class="sourceCode r"><code class="sourceCode r">x.b<span class="op">+</span>(<span class="kw">qt</span>((<span class="dv">1</span><span class="op">+</span>q)<span class="op">/</span><span class="dv">2</span>,n<span class="dv">-1</span>)<span class="op">*</span>sdm<span class="op">/</span><span class="kw">sqrt</span>(n))<span class="op">*</span><span class="kw">c</span>(<span class="op">-</span><span class="dv">1</span>,<span class="dv">1</span>)</code></pre>
+<div class="sourceCode" id="cb221"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb221-1"><a href="chap-IC.html#cb221-1" aria-hidden="true" tabindex="-1"></a>x.b<span class="sc">+</span>(<span class="fu">qt</span>((<span class="dv">1</span><span class="sc">+</span>q)<span class="sc">/</span><span class="dv">2</span>,n<span class="dv">-1</span>)<span class="sc">*</span>sdm<span class="sc">/</span><span class="fu">sqrt</span>(n))<span class="sc">*</span><span class="fu">c</span>(<span class="sc">-</span><span class="dv">1</span>,<span class="dv">1</span>)</span></code></pre></div>
 <p>Ahora bien, “en la vida real” lo usual es disponer de un vector numérico <code>X</code> con los valores de la muestra. En este caso, podemos usar la función <code>t.test</code> de R, que, entre otra información, calcula estos intervalos de confianza para <span class="math inline">\(\mu\)</span>. Si solo nos interesa el intervalo de confianza, podemos usar la sintaxis siguiente:</p>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">t.test</span>(X,<span class="dt">conf.level=</span>...)<span class="op">$</span>conf.int</code></pre>
+<div class="sourceCode" id="cb222"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb222-1"><a href="chap-IC.html#cb222-1" aria-hidden="true" tabindex="-1"></a><span class="fu">t.test</span>(X,<span class="at">conf.level=</span>...)<span class="sc">$</span>conf.int</span></code></pre></div>
 <p>donde tenemos que igualar el parámetro <code>conf.level</code> al nivel de confianza <span class="math inline">\(q\)</span> en tanto por uno. Si <span class="math inline">\(q=0.95\)</span>, no hace falta entrarlo, porque es su valor por defecto.</p>
 
 <div class="example">
 <span id="exm:lux" class="example"><strong>Ejemplo 4.1  </strong></span>Tenemos una muestra de pesos en gramos de 28 recién nacidos con luxación severa de cadera:
 </div>
-
-<pre class="sourceCode r"><code class="sourceCode r">pesos=<span class="kw">c</span>(<span class="dv">2466</span>,<span class="dv">3941</span>,<span class="dv">2807</span>,<span class="dv">3118</span>,<span class="dv">3175</span>,<span class="dv">3515</span>,<span class="dv">3317</span>,<span class="dv">3742</span>,<span class="dv">3062</span>,<span class="dv">3033</span>,<span class="dv">2353</span>,<span class="dv">3515</span>,<span class="dv">3260</span>,<span class="dv">2892</span>,
-<span class="dv">4423</span>,<span class="dv">3572</span>,<span class="dv">2750</span>,<span class="dv">3459</span>,<span class="dv">3374</span>,<span class="dv">3062</span>,<span class="dv">3205</span>,<span class="dv">2608</span>,<span class="dv">3118</span>,<span class="dv">2637</span>,<span class="dv">3438</span>,<span class="dv">2722</span>,<span class="dv">2863</span>,<span class="dv">3513</span>)</code></pre>
+<div class="sourceCode" id="cb223"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb223-1"><a href="chap-IC.html#cb223-1" aria-hidden="true" tabindex="-1"></a>pesos<span class="ot">=</span><span class="fu">c</span>(<span class="dv">2466</span>,<span class="dv">3941</span>,<span class="dv">2807</span>,<span class="dv">3118</span>,<span class="dv">3175</span>,<span class="dv">3515</span>,<span class="dv">3317</span>,<span class="dv">3742</span>,<span class="dv">3062</span>,<span class="dv">3033</span>,<span class="dv">2353</span>,<span class="dv">3515</span>,<span class="dv">3260</span>,<span class="dv">2892</span>,</span>
+<span id="cb223-2"><a href="chap-IC.html#cb223-2" aria-hidden="true" tabindex="-1"></a><span class="dv">4423</span>,<span class="dv">3572</span>,<span class="dv">2750</span>,<span class="dv">3459</span>,<span class="dv">3374</span>,<span class="dv">3062</span>,<span class="dv">3205</span>,<span class="dv">2608</span>,<span class="dv">3118</span>,<span class="dv">2637</span>,<span class="dv">3438</span>,<span class="dv">2722</span>,<span class="dv">2863</span>,<span class="dv">3513</span>)</span></code></pre></div>
 <p>Vamos a suponer que nuestra muestra es aleatoria simple y que los pesos al nacer de los bebés con esta patología siguen una distribución normal. A partir de esta muestra, queremos calcular un intervalo de confianza del 95% para el peso medio de un recién nacido con luxación severa de cadera, y ver si contiene el peso medio de la población global de recién nacidos, que es de unos 3400 g.</p>
 <p>Como suponemos que la variable aleatoria poblacional es normal, para calcular un intervalo de confianza del 95% para su valor medio vamos a usar la fórmula basada en la distribución t de Student, y por lo tanto la función <code>t.test</code>:</p>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">t.test</span>(pesos)<span class="op">$</span>conf.int</code></pre>
+<div class="sourceCode" id="cb224"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb224-1"><a href="chap-IC.html#cb224-1" aria-hidden="true" tabindex="-1"></a><span class="fu">t.test</span>(pesos)<span class="sc">$</span>conf.int</span></code></pre></div>
 <pre><code>## [1] 2997.849 3355.008
 ## attr(,&quot;conf.level&quot;)
 ## [1] 0.95</code></pre>
 <p>El intervalo que obtenemos es [2997.8, 3355] y está completamente a la izquierda del peso medio global de 3400 g, por lo que tenemos evidencia (a un 95% de confianza) de que los niños con luxación severa de cadera pesan de media al nacer por debajo de la media global. La apostilla entre paréntesis “a un 95% de confianza” aquí significa que hemos basado esta conclusión en un intervalo obtenido con una fórmula que acierta con una probabilidad del 95%, en el sentido de que el 95% de las ocasiones que aplicamos esta fórmula a una m.a.s. de una variable aleatoria normal, produce un intervalo que contiene la media de esta variable.</p>
 <p>Observad que el resultado de <code>t.test(pesos)$conf.int</code> tiene un atributo, <code>conf.level</code>, que indica su nivel de confianza. En principio este atributo no molesta para nada en cálculos posteriores con los extremos de este intervalo de confianza, pero si os molesta, lo podéis quitar igualándolo a <code>NULL</code>.</p>
-<pre class="sourceCode r"><code class="sourceCode r">IC.lux=<span class="kw">t.test</span>(pesos)<span class="op">$</span>conf.int
-<span class="kw">attr</span>(IC.lux,<span class="st">&quot;conf.level&quot;</span>)=<span class="ot">NULL</span>
-IC.lux</code></pre>
+<div class="sourceCode" id="cb226"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb226-1"><a href="chap-IC.html#cb226-1" aria-hidden="true" tabindex="-1"></a>IC.lux<span class="ot">=</span><span class="fu">t.test</span>(pesos)<span class="sc">$</span>conf.int</span>
+<span id="cb226-2"><a href="chap-IC.html#cb226-2" aria-hidden="true" tabindex="-1"></a><span class="fu">attr</span>(IC.lux,<span class="st">&quot;conf.level&quot;</span>)<span class="ot">=</span><span class="cn">NULL</span></span>
+<span id="cb226-3"><a href="chap-IC.html#cb226-3" aria-hidden="true" tabindex="-1"></a>IC.lux</span></code></pre></div>
 <pre><code>## [1] 2997.849 3355.008</code></pre>
 <p>Veamos cómo podríamos haber obtenido este intervalo directamente con la fórmula <a href="chap-IC.html#eq:form1">(4.1)</a>:</p>
-<pre class="sourceCode r"><code class="sourceCode r">x.b=<span class="kw">mean</span>(pesos)
-sdm=<span class="kw">sd</span>(pesos)
-n=<span class="kw">length</span>(pesos)
-q=<span class="fl">0.95</span>
-x.b<span class="op">+</span>(<span class="kw">qt</span>((<span class="dv">1</span><span class="op">+</span>q)<span class="op">/</span><span class="dv">2</span>,n<span class="dv">-1</span>)<span class="op">*</span>sdm<span class="op">/</span><span class="kw">sqrt</span>(n))<span class="op">*</span><span class="kw">c</span>(<span class="op">-</span><span class="dv">1</span>,<span class="dv">1</span>)</code></pre>
+<div class="sourceCode" id="cb228"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb228-1"><a href="chap-IC.html#cb228-1" aria-hidden="true" tabindex="-1"></a>x.b<span class="ot">=</span><span class="fu">mean</span>(pesos)</span>
+<span id="cb228-2"><a href="chap-IC.html#cb228-2" aria-hidden="true" tabindex="-1"></a>sdm<span class="ot">=</span><span class="fu">sd</span>(pesos)</span>
+<span id="cb228-3"><a href="chap-IC.html#cb228-3" aria-hidden="true" tabindex="-1"></a>n<span class="ot">=</span><span class="fu">length</span>(pesos)</span>
+<span id="cb228-4"><a href="chap-IC.html#cb228-4" aria-hidden="true" tabindex="-1"></a>q<span class="ot">=</span><span class="fl">0.95</span></span>
+<span id="cb228-5"><a href="chap-IC.html#cb228-5" aria-hidden="true" tabindex="-1"></a>x.b<span class="sc">+</span>(<span class="fu">qt</span>((<span class="dv">1</span><span class="sc">+</span>q)<span class="sc">/</span><span class="dv">2</span>,n<span class="dv">-1</span>)<span class="sc">*</span>sdm<span class="sc">/</span><span class="fu">sqrt</span>(n))<span class="sc">*</span><span class="fu">c</span>(<span class="sc">-</span><span class="dv">1</span>,<span class="dv">1</span>)</span></code></pre></div>
 <pre><code>## [1] 2997.849 3355.008</code></pre>
 <p>Como podéis ver, coincide con el intervalo obtenido con la función <code>t.test</code>.</p>
 
@@ -347,29 +374,28 @@ x.b<span class="op">+</span>(<span class="kw">qt</span>((<span class="dv">1</spa
 <p><span id="exm:experiment" class="example"><strong>Ejemplo 4.2  </strong></span>Vamos a comprobar con un experimento esto de la “confianza” de los intervalos de confianza, y en concreto de la fórmula <a href="chap-IC.html#eq:form1">(4.1)</a>.
 Vamos a generar al azar una <em>Población</em> de 10,000,000 “individuos” con distribución normal estándard. Vamos a tomar 200 muestras aleatorias simples de tamaño 50 de esta población y calcularemos el intervalo de confianza para la media poblacional usando dicha fórmula. Finalmente, contaremos cuántos de estos intervalos de confianza contienen la media de la <em>Población</em>. Fijaremos la semilla de aleatoriedad para que el experimento sea reproducible y podáis comprobar que no hacemos trampa. En otras simulaciones habríamos obtenido resultados mejores o peores, es lo que tienen las simulaciones aleatorias.</p>
 </div>
-
-<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">set.seed</span>(<span class="dv">42</span>)
-Poblacion=<span class="kw">rnorm</span>(<span class="dv">10</span><span class="op">^</span><span class="dv">7</span>) <span class="co">#La población</span>
-mu=<span class="kw">mean</span>(Poblacion)  <span class="co"># La media poblacional</span>
-M=<span class="kw">replicate</span>(<span class="dv">200</span>, <span class="kw">sample</span>(Poblacion,<span class="dv">50</span>,<span class="dt">replace=</span><span class="ot">TRUE</span>)) <span class="co"># Las muestras</span>
-<span class="kw">dim</span>(M)</code></pre>
+<div class="sourceCode" id="cb230"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb230-1"><a href="chap-IC.html#cb230-1" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">42</span>)</span>
+<span id="cb230-2"><a href="chap-IC.html#cb230-2" aria-hidden="true" tabindex="-1"></a>Poblacion<span class="ot">=</span><span class="fu">rnorm</span>(<span class="dv">10</span><span class="sc">^</span><span class="dv">7</span>) <span class="co">#La población</span></span>
+<span id="cb230-3"><a href="chap-IC.html#cb230-3" aria-hidden="true" tabindex="-1"></a>mu<span class="ot">=</span><span class="fu">mean</span>(Poblacion)  <span class="co"># La media poblacional</span></span>
+<span id="cb230-4"><a href="chap-IC.html#cb230-4" aria-hidden="true" tabindex="-1"></a>M<span class="ot">=</span><span class="fu">replicate</span>(<span class="dv">200</span>, <span class="fu">sample</span>(Poblacion,<span class="dv">50</span>,<span class="at">replace=</span><span class="cn">TRUE</span>)) <span class="co"># Las muestras</span></span>
+<span id="cb230-5"><a href="chap-IC.html#cb230-5" aria-hidden="true" tabindex="-1"></a><span class="fu">dim</span>(M)</span></code></pre></div>
 <pre><code>## [1]  50 200</code></pre>
 <p>Tenemos una matriz M de 200 columnas y 50 filas, donde cada columna es una m.a.s. de nuestra población. Vamos a aplicar a cada una de estas muestras la función <code>t.test</code> para calcular un intervalo de confianza del 95% y luego contaremos los aciertos, es decir, cuántos de ellos contienen la media poblacional</p>
-<pre class="sourceCode r"><code class="sourceCode r">IC.t=<span class="cf">function</span>(X){<span class="kw">t.test</span>(X)<span class="op">$</span>conf.int}
-ICs=<span class="kw">apply</span>(M,<span class="dt">FUN=</span>IC.t,<span class="dt">MARGIN=</span><span class="dv">2</span>)
-Aciertos=<span class="kw">length</span>(<span class="kw">which</span>((mu<span class="op">&gt;=</span>ICs[<span class="dv">1</span>,]) <span class="op">&amp;</span><span class="st"> </span>(mu<span class="op">&lt;=</span>ICs[<span class="dv">2</span>,])))
-Aciertos</code></pre>
+<div class="sourceCode" id="cb232"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb232-1"><a href="chap-IC.html#cb232-1" aria-hidden="true" tabindex="-1"></a>IC.t<span class="ot">=</span><span class="cf">function</span>(X){<span class="fu">t.test</span>(X)<span class="sc">$</span>conf.int}</span>
+<span id="cb232-2"><a href="chap-IC.html#cb232-2" aria-hidden="true" tabindex="-1"></a>ICs<span class="ot">=</span><span class="fu">apply</span>(M,<span class="at">FUN=</span>IC.t,<span class="at">MARGIN=</span><span class="dv">2</span>)</span>
+<span id="cb232-3"><a href="chap-IC.html#cb232-3" aria-hidden="true" tabindex="-1"></a>Aciertos<span class="ot">=</span><span class="fu">length</span>(<span class="fu">which</span>((mu<span class="sc">&gt;=</span>ICs[<span class="dv">1</span>,]) <span class="sc">&amp;</span> (mu<span class="sc">&lt;=</span>ICs[<span class="dv">2</span>,])))</span>
+<span id="cb232-4"><a href="chap-IC.html#cb232-4" aria-hidden="true" tabindex="-1"></a>Aciertos</span></code></pre></div>
 <pre><code>## [1] 189</code></pre>
 <p>Hemos acertado 189 veces, es decir, un 94.5% de los intervalos obtenidos contienen la media poblacional. No hemos quedado muy lejos del 95% esperado.</p>
 <p>Para visualizar mejor los aciertos, vamos a dibujar los intervalos apilados en un gráfico, donde aparecerán en azul claro los que aciertan y en rojo los que no aciertan.</p>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">plot</span>(<span class="dv">1</span>,<span class="dt">type=</span><span class="st">&quot;n&quot;</span>,<span class="dt">xlim=</span><span class="kw">c</span>(<span class="op">-</span><span class="fl">0.8</span>,<span class="fl">0.8</span>),<span class="dt">ylim=</span><span class="kw">c</span>(<span class="dv">0</span>,<span class="dv">200</span>),<span class="dt">xlab=</span><span class="st">&quot;Valores&quot;</span>,<span class="dt">ylab=</span><span class="st">&quot;Repeticiones&quot;</span>,<span class="dt">main=</span><span class="st">&quot;&quot;</span>)
-seg.int=<span class="cf">function</span>(i){
-  color=<span class="st">&quot;light blue&quot;</span>;
-  <span class="cf">if</span>((mu<span class="op">&lt;</span>ICs[<span class="dv">1</span>,i]) <span class="op">|</span><span class="st"> </span>(mu<span class="op">&gt;</span>ICs[<span class="dv">2</span>,i])){color =<span class="st"> &quot;red&quot;</span>}
-  <span class="kw">segments</span>(ICs[<span class="dv">1</span>,i],i,ICs[<span class="dv">2</span>,i],i,<span class="dt">col=</span>color,<span class="dt">lwd=</span><span class="dv">2</span>)
-  }
-<span class="kw">sapply</span>(<span class="dv">1</span><span class="op">:</span><span class="dv">200</span>,<span class="dt">FUN=</span>seg.int)
-<span class="kw">abline</span>(<span class="dt">v=</span>mu,<span class="dt">lwd=</span><span class="dv">2</span>)</code></pre>
+<div class="sourceCode" id="cb234"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb234-1"><a href="chap-IC.html#cb234-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(<span class="dv">1</span>,<span class="at">type=</span><span class="st">&quot;n&quot;</span>,<span class="at">xlim=</span><span class="fu">c</span>(<span class="sc">-</span><span class="fl">0.8</span>,<span class="fl">0.8</span>),<span class="at">ylim=</span><span class="fu">c</span>(<span class="dv">0</span>,<span class="dv">200</span>),<span class="at">xlab=</span><span class="st">&quot;Valores&quot;</span>,<span class="at">ylab=</span><span class="st">&quot;Repeticiones&quot;</span>,<span class="at">main=</span><span class="st">&quot;&quot;</span>)</span>
+<span id="cb234-2"><a href="chap-IC.html#cb234-2" aria-hidden="true" tabindex="-1"></a>seg.int<span class="ot">=</span><span class="cf">function</span>(i){</span>
+<span id="cb234-3"><a href="chap-IC.html#cb234-3" aria-hidden="true" tabindex="-1"></a>  color<span class="ot">=</span><span class="st">&quot;light blue&quot;</span>;</span>
+<span id="cb234-4"><a href="chap-IC.html#cb234-4" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span>((mu<span class="sc">&lt;</span>ICs[<span class="dv">1</span>,i]) <span class="sc">|</span> (mu<span class="sc">&gt;</span>ICs[<span class="dv">2</span>,i])){color <span class="ot">=</span> <span class="st">&quot;red&quot;</span>}</span>
+<span id="cb234-5"><a href="chap-IC.html#cb234-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">segments</span>(ICs[<span class="dv">1</span>,i],i,ICs[<span class="dv">2</span>,i],i,<span class="at">col=</span>color,<span class="at">lwd=</span><span class="dv">2</span>)</span>
+<span id="cb234-6"><a href="chap-IC.html#cb234-6" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb234-7"><a href="chap-IC.html#cb234-7" aria-hidden="true" tabindex="-1"></a><span class="fu">sapply</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">200</span>,<span class="at">FUN=</span>seg.int)</span>
+<span id="cb234-8"><a href="chap-IC.html#cb234-8" aria-hidden="true" tabindex="-1"></a><span class="fu">abline</span>(<span class="at">v=</span>mu,<span class="at">lwd=</span><span class="dv">2</span>)</span></code></pre></div>
 <div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-110"></span>
 <img src="AprendeR-Parte-II_files/figure-html/unnamed-chunk-110-1.png" alt="Aciertos y errores en 200 Intervalos de confianza al 95%" width="480" />
 <p class="caption">
@@ -378,7 +404,7 @@ Figura 4.1: Aciertos y errores en 200 Intervalos de confianza al 95%
 </div>
 <p>Fijaos en que los errores no se distribuyen por igual a los dos lados, hay muchos más intervalos que dejan la media poblacional a su izquierda que a su derecha, mientras que, en teoría, tendríamos que esperar que en la mitad de los errores la media poblacional estuviera a la izquierda del intervalo calculado y en la otra mitad a la derecha. Cosas de la aleatoriedad.</p>
 </div>
-<div id="intervalos-de-confianza-para-la-proporcion-poblacional" class="section level2">
+<div id="intervalos-de-confianza-para-la-proporción-poblacional" class="section level2" number="4.2">
 <h2><span class="header-section-number">4.2</span> Intervalos de confianza para la proporción poblacional</h2>
 <p>En esta sección consideramos el caso en que la población objeto de estudio sigue una distribución Bernoulli y queremos estimar su probabilidad de éxito (o <strong>proporción poblacional</strong>) <span class="math inline">\(p\)</span>. Para ello, tomamos una muestra aleatoria simple de tamaño <span class="math inline">\(n\)</span> y número de éxitos <span class="math inline">\(x\)</span>, y, por lo tanto, de <strong>proporción muestral</strong> de éxitos <span class="math inline">\(\widehat{p}_X=x/n\)</span>.</p>
 <p>El <strong>método “exacto” de Clopper-Pearson</strong> para calcular un intervalo de confianza del <span class="math inline">\(q\times 100\%\)</span> para <span class="math inline">\(p\)</span> se basa en el hecho de que, en estas condiciones, el valor de <span class="math inline">\(x\)</span> sigue una distribución binomial <span class="math inline">\(B(n,p)\)</span>. Este método se puede usar siempre, sin ninguna restricción sobre la muestra, y consiste básicamente en encontrar los valores <span class="math inline">\(p_0\)</span> y <span class="math inline">\(p_1\)</span> tales que</p>
@@ -389,46 +415,44 @@ Figura 4.1: Aciertos y errores en 200 Intervalos de confianza al 95%
 \end{array}
 \]</span></p>
 <p>y dar el intervalo <span class="math inline">\([p_0,p_1]\)</span>. Para calcular este intervalo se puede usar la función <code>binom.exact</code> del paquete <strong>epitools</strong>. Su sintaxis es</p>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">binom.exact</span>(x,n,conf.level)</code></pre>
+<div class="sourceCode" id="cb235"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb235-1"><a href="chap-IC.html#cb235-1" aria-hidden="true" tabindex="-1"></a><span class="fu">binom.exact</span>(x,n,conf.level)</span></code></pre></div>
 <p>donde <code>x</code> y <code>n</code> representan, respectivamente, el número de éxitos y el tamaño de la muestra, y <code>conf.level</code> es <span class="math inline">\(q\)</span>, el nivel de confianza en tanto por uno. El valor por defecto de <code>conf.level</code> es 0.95.</p>
 
 <div class="example">
 <p><span id="exm:unnamed-chunk-112" class="example"><strong>Ejemplo 4.3  </strong></span>Supongamos que, de una muestra de 15 enfermos tratados con un cierto medicamento, solo 1 ha desarrollado taquicardia. Queremos conocer un intervalo de confianza del 95% para la proporción de enfermos tratados con este medicamento que presentan este efecto adverso.</p>
 </div>
-
 <p>Tenemos una población Bernoulli, formada por los enfermos tratados con el medicamento en cuestión, donde los éxitos son los enfermos que desarrollan taquicardia. La fracción de éstos es la fracción poblacional <span class="math inline">\(p\)</span> para la que queremos calcular el intervalo de confianza del 95%. Para ello cargamos el paquete <strong>epitools</strong> y usamos <code>binom.exact</code>:</p>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(epitools)
-<span class="kw">binom.exact</span>(<span class="dv">1</span>,<span class="dv">15</span>)</code></pre>
+<div class="sourceCode" id="cb236"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb236-1"><a href="chap-IC.html#cb236-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(epitools)</span>
+<span id="cb236-2"><a href="chap-IC.html#cb236-2" aria-hidden="true" tabindex="-1"></a><span class="fu">binom.exact</span>(<span class="dv">1</span>,<span class="dv">15</span>)</span></code></pre></div>
 <pre><code>##   x  n proportion      lower     upper conf.level
 ## 1 1 15 0.06666667 0.00168643 0.3194846       0.95</code></pre>
 <p>El resultado de la función <code>binom.exact</code> es un <em>data frame</em>; el intervalo de confianza deseado está formado por los números en las columnas <code>lower</code> (extremo inferior) y <code>upper</code> (extremo superior):</p>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">binom.exact</span>(<span class="dv">1</span>,<span class="dv">15</span>)<span class="op">$</span>lower</code></pre>
+<div class="sourceCode" id="cb238"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb238-1"><a href="chap-IC.html#cb238-1" aria-hidden="true" tabindex="-1"></a><span class="fu">binom.exact</span>(<span class="dv">1</span>,<span class="dv">15</span>)<span class="sc">$</span>lower</span></code></pre></div>
 <pre><code>## [1] 0.00168643</code></pre>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">binom.exact</span>(<span class="dv">1</span>,<span class="dv">15</span>)<span class="op">$</span>upper</code></pre>
+<div class="sourceCode" id="cb240"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb240-1"><a href="chap-IC.html#cb240-1" aria-hidden="true" tabindex="-1"></a><span class="fu">binom.exact</span>(<span class="dv">1</span>,<span class="dv">15</span>)<span class="sc">$</span>upper</span></code></pre></div>
 <pre><code>## [1] 0.3194846</code></pre>
 <p>Hemos obtenido el intervalo de confianza [0.002,0.319]: podemos afirmar con un nivel de confianza del 95% que el porcentaje de enfermos tratados con este medicamento que presentan este efecto adverso está entre el 0.2% y el 31.9%.</p>
-<p>Supongamos ahora que el tamaño <span class="math inline">\(n\)</span> de la muestra aleatoria simple es grande; de nuevo, digamos que <span class="math inline">\(n\geqslant 40\)</span>. En esta situación, podemos usar el <strong>Método de Wilson</strong> para aproximar, a partir del Teorema Central del Límite, un intervalo de confianza para el parámetro <span class="math inline">\(p\)</span> al nivel de confianza <span class="math inline">\(q\times 100\%\)</span>, mediante la fórmula
+<p>Supongamos ahora que el tamaño <span class="math inline">\(n\)</span> de la muestra aleatoria simple es grande; de nuevo, digamos que <span class="math inline">\(n\geq 40\)</span>. En esta situación, podemos usar el <strong>Método de Wilson</strong> para aproximar, a partir del Teorema Central del Límite, un intervalo de confianza para el parámetro <span class="math inline">\(p\)</span> al nivel de confianza <span class="math inline">\(q\times 100\%\)</span>, mediante la fórmula
 <span class="math display">\[
 \frac{\widehat{p}_{X}+\frac{z_{(1+q)/2}^2}{2n}\pm z_{(1+q)/2}\sqrt{\frac{\widehat{p}_{X}(1-\widehat{p}_{X})}{n}+\frac{z_{(1+q)/2}^2}{4n^2}}}{1+\frac{z_{(1+q)/2}^2}{n}}
 \]</span>
 donde <span class="math inline">\(z_{(1+q)/2}\)</span> es el cuantil de orden <span class="math inline">\((1+q)/2\)</span> de una variable aleatoria normal estándar.</p>
 <p>Para calcular este intervalo se puede usar la función <code>binom.wilson</code> del paquete <strong>epitools</strong>. Su sintaxis es</p>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">binom.wilson</span>(x,n,conf.level)</code></pre>
+<div class="sourceCode" id="cb242"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb242-1"><a href="chap-IC.html#cb242-1" aria-hidden="true" tabindex="-1"></a><span class="fu">binom.wilson</span>(x,n,conf.level)</span></code></pre></div>
 <p>con los mismos parámetros que <code>binom.exact</code>.</p>
 
 <div class="example">
 <p><span id="exm:unnamed-chunk-116" class="example"><strong>Ejemplo 4.4  </strong></span>Supongamos que tratamos 45 ratones con un agente químico, y 10 de ellos desarrollan un determinado cáncer de piel. Queremos calcular un intervalo de confianza al 90% para la proporción <span class="math inline">\(p\)</span> de ratones que desarrollan este cáncer de piel al ser tratados con este agente químico.</p>
 </div>
-
 <p>Como 45 es relativamente grande, usaremos el método de Wilson. Para comparar los resultados, usaremos también el método exacto. Fijaos que, en este ejemplo, <span class="math inline">\(q=0.9\)</span>.</p>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">binom.wilson</span>(<span class="dv">10</span>,<span class="dv">45</span>,<span class="fl">0.9</span>)</code></pre>
+<div class="sourceCode" id="cb243"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb243-1"><a href="chap-IC.html#cb243-1" aria-hidden="true" tabindex="-1"></a><span class="fu">binom.wilson</span>(<span class="dv">10</span>,<span class="dv">45</span>,<span class="fl">0.9</span>)</span></code></pre></div>
 <pre><code>##    x  n proportion     lower     upper conf.level
 ## 1 10 45  0.2222222 0.1377238 0.3382281        0.9</code></pre>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">binom.exact</span>(<span class="dv">10</span>,<span class="dv">45</span>,<span class="fl">0.9</span>)</code></pre>
+<div class="sourceCode" id="cb245"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb245-1"><a href="chap-IC.html#cb245-1" aria-hidden="true" tabindex="-1"></a><span class="fu">binom.exact</span>(<span class="dv">10</span>,<span class="dv">45</span>,<span class="fl">0.9</span>)</span></code></pre></div>
 <pre><code>##    x  n proportion     lower     upper conf.level
 ## 1 10 45  0.2222222 0.1258186 0.3477285        0.9</code></pre>
 <p>Con el método de Wilson obtenemos el intervalo [0.138,0.338] y con el método de Clopper-Pearson, el intervalo [0.126,0.348], un poco más ancho: hay una diferencia en los extremos de alrededor de un punto porcentual.</p>
-<p>Supongamos finalmente que la muestra aleatoria simple es considerablemente más grande que la usada en el método de Wilson y que, además, la proporción muestral de éxitos <span class="math inline">\(\widehat{p}_{X}\)</span> está alejada de 0 y de 1. Una posible manera de formalizar estas condiciones es requerir que <span class="math inline">\(n\geqslant 100\)</span> y que <span class="math inline">\(n\widehat{p}_{X}\geqslant 10\)</span> y <span class="math inline">\(n(1-\widehat{p}_{X})\geqslant 10\)</span>; observad que estas dos últimas condiciones son equivalentes a que tanto el número de éxitos como el número de fracasos en la muestra sean como mínimo 10. En este caso, se puede usar la <strong>fórmula de Laplace</strong>, que simplifica la de Wilson (aunque, en realidad, la precede en más de 100 años) suponiendo que, si <em>n</em> es grande y <span class="math inline">\(\widehat{p}_{X}(1-\widehat{p}_{X})/n\)</span> no es muy cercano a 0, podemos igualar <span class="math inline">\(z_{(1+q)/2}^2/(2n)\)</span> a 0: un intervalo de confianza del parámetro <span class="math inline">\(p\)</span> al nivel de confianza <span class="math inline">\(q\times 100\%\)</span> viene dado aproximadamente por la fórmula
+<p>Supongamos finalmente que la muestra aleatoria simple es considerablemente más grande que la usada en el método de Wilson y que, además, la proporción muestral de éxitos <span class="math inline">\(\widehat{p}_{X}\)</span> está alejada de 0 y de 1. Una posible manera de formalizar estas condiciones es requerir que <span class="math inline">\(n\geq 100\)</span> y que <span class="math inline">\(n\widehat{p}_{X}\geq 10\)</span> y <span class="math inline">\(n(1-\widehat{p}_{X})\geq 10\)</span>; observad que estas dos últimas condiciones son equivalentes a que tanto el número de éxitos como el número de fracasos en la muestra sean como mínimo 10. En este caso, se puede usar la <strong>fórmula de Laplace</strong>, que simplifica la de Wilson (aunque, en realidad, la precede en más de 100 años) suponiendo que, si <em>n</em> es grande y <span class="math inline">\(\widehat{p}_{X}(1-\widehat{p}_{X})/n\)</span> no es muy cercano a 0, podemos igualar <span class="math inline">\(z_{(1+q)/2}^2/(2n)\)</span> a 0: un intervalo de confianza del parámetro <span class="math inline">\(p\)</span> al nivel de confianza <span class="math inline">\(q\times 100\%\)</span> viene dado aproximadamente por la fórmula
 <span class="math display">\[
 \widehat{p}_{X}\pm z_{(1+q)/2}\sqrt{\frac{\widehat{p}_{X}
 (1-\widehat{p}_{X})}{n}}
@@ -438,21 +462,20 @@ Esta fórmula está implementada en la función <code>binom.approx</code> del pa
 <div class="example">
 <p><span id="exm:unnamed-chunk-118" class="example"><strong>Ejemplo 4.5  </strong></span>En una muestra aleatoria de 500 familias con niños en edad escolar de una determinada ciudad se ha observado que 340 introducen fruta de forma diaria en la dieta de sus hijos. A partir de este dato, queremos encontrar un intervalo de confianza del 95% para la proporción real de familias de esta ciudad con niños en edad escolar que incorporan fruta fresca de forma diaria en la dieta de sus hijos.</p>
 </div>
-
 <p>Tenemos una población Bernoulli donde los éxitos son las familias que aportan fruta de forma diaria a la dieta de sus hijos, y la fracción de estas familias en el total de la población es la proporción poblacional <span class="math inline">\(p\)</span> para la que queremos calcular el intervalo de confianza. Como <span class="math inline">\(n\)</span> es muy grande y los números de éxitos y fracasos también lo son, podemos emplear el método de Laplace.</p>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">binom.approx</span>(<span class="dv">340</span>,<span class="dv">500</span>)</code></pre>
+<div class="sourceCode" id="cb247"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb247-1"><a href="chap-IC.html#cb247-1" aria-hidden="true" tabindex="-1"></a><span class="fu">binom.approx</span>(<span class="dv">340</span>,<span class="dv">500</span>)</span></code></pre></div>
 <pre><code>##     x   n proportion     lower     upper conf.level
 ## 1 340 500       0.68 0.6391123 0.7208877       0.95</code></pre>
 <p>Por lo tanto, según la fórmula de Laplace, un intervalo de confianza al 95% para la proporción poblacional es [0.639,0.721]. ¿Qué hubiéramos obtenido con los otros dos métodos?</p>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">binom.wilson</span>(<span class="dv">340</span>,<span class="dv">500</span>)</code></pre>
+<div class="sourceCode" id="cb249"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb249-1"><a href="chap-IC.html#cb249-1" aria-hidden="true" tabindex="-1"></a><span class="fu">binom.wilson</span>(<span class="dv">340</span>,<span class="dv">500</span>)</span></code></pre></div>
 <pre><code>##     x   n proportion    lower     upper conf.level
 ## 1 340 500       0.68 0.637873 0.7193822       0.95</code></pre>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">binom.exact</span>(<span class="dv">340</span>,<span class="dv">500</span>)</code></pre>
+<div class="sourceCode" id="cb251"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb251-1"><a href="chap-IC.html#cb251-1" aria-hidden="true" tabindex="-1"></a><span class="fu">binom.exact</span>(<span class="dv">340</span>,<span class="dv">500</span>)</span></code></pre></div>
 <pre><code>##     x   n proportion     lower     upper conf.level
 ## 1 340 500       0.68 0.6371369 0.7207188       0.95</code></pre>
 <p>Como podéis ver, los resultados son muy parecidos, con diferencias de unas pocas milésimas.</p>
 </div>
-<div id="sec:ICvar" class="section level2">
+<div id="sec:ICvar" class="section level2" number="4.3">
 <h2><span class="header-section-number">4.3</span> Intervalo de confianza para la varianza de una población normal</h2>
 <p>Supongamos ahora que queremos estimar la varianza <span class="math inline">\(\sigma^2\)</span>, o la desviación típica <span class="math inline">\(\sigma\)</span>, de una población que sigue una distribución normal. Tomamos una muestra aleatoria simple de tamaño <span class="math inline">\(n\)</span>, y sea <span class="math inline">\(\widetilde{S}_{X}\)</span> su desviación típica muestral. En esta situación, un intervalo de confianza del <span class="math inline">\(q\times 100\%\)</span> para la varianza <span class="math inline">\(\sigma^2\)</span> es
 <span class="math display">\[
@@ -462,34 +485,33 @@ Esta fórmula está implementada en la función <code>binom.approx</code> del pa
 donde <span class="math inline">\(\chi_{n-1,(1-q)/2}^2\)</span> y <span class="math inline">\(\chi_{n-1,(1+q)/2}^2\)</span> son, respectivamente, los cuantiles de orden <span class="math inline">\((1-q)/2\)</span> y <span class="math inline">\((1+q)/2\)</span> de una variable aleatoria que sigue una distribución <span class="math inline">\(\chi^2\)</span> con
 <span class="math inline">\(n-1\)</span> grados de libertad.</p>
 <p>Si conocéis la varianza muestral <span class="math inline">\(\widetilde{S}_{X}^2\)</span>, que denotaremos por <code>varm</code>, podéis calcular este intervalo de confianza para la varianza con la fórmula siguiente (donde <code>q</code>indica el nivel de confianza en tanto por uno <span class="math inline">\(q\)</span>):</p>
-<pre class="sourceCode r"><code class="sourceCode r">(n<span class="dv">-1</span>)<span class="op">*</span>varm<span class="op">*</span><span class="kw">c</span>(<span class="dv">1</span><span class="op">/</span><span class="kw">qchisq</span>((<span class="dv">1</span><span class="op">+</span>q)<span class="op">/</span><span class="dv">2</span>,n<span class="dv">-1</span>),<span class="dv">1</span><span class="op">/</span><span class="kw">qchisq</span>((<span class="dv">1</span><span class="op">-</span>q)<span class="op">/</span><span class="dv">2</span>,n<span class="dv">-1</span>))</code></pre>
+<div class="sourceCode" id="cb253"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb253-1"><a href="chap-IC.html#cb253-1" aria-hidden="true" tabindex="-1"></a>(n<span class="dv">-1</span>)<span class="sc">*</span>varm<span class="sc">*</span><span class="fu">c</span>(<span class="dv">1</span><span class="sc">/</span><span class="fu">qchisq</span>((<span class="dv">1</span><span class="sc">+</span>q)<span class="sc">/</span><span class="dv">2</span>,n<span class="dv">-1</span>),<span class="dv">1</span><span class="sc">/</span><span class="fu">qchisq</span>((<span class="dv">1</span><span class="sc">-</span>q)<span class="sc">/</span><span class="dv">2</span>,n<span class="dv">-1</span>))</span></code></pre></div>
 <p>Si, en cambio, disponéis de la muestra, podéis calcular este intervalo de confianza con la función <code>varTest</code> del paquete <strong>EnvStats</strong>. La sintaxis es similar a la usada con <code>t.test</code>:</p>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">varTest</span>(X,conf.level)<span class="op">$</span>conf.int</code></pre>
+<div class="sourceCode" id="cb254"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb254-1"><a href="chap-IC.html#cb254-1" aria-hidden="true" tabindex="-1"></a><span class="fu">varTest</span>(X,conf.level)<span class="sc">$</span>conf.int</span></code></pre></div>
 <p>donde <code>X</code> es el vector que contiene la muestra y <code>conf.level</code> el nivel de confianza, que por defecto es igual a 0.95.</p>
 
 <div class="example">
 <p><span id="exm:unnamed-chunk-123" class="example"><strong>Ejemplo 4.6  </strong></span>Un índice de calidad de un reactivo químico es el tiempo que tarda en actuar. Se supone que la distribución de este tiempo de actuación del reactivo es aproximadamente normal. Se realizaron 30 pruebas independientes, que forman una muestra aleatoria simple, en las que se midió el tiempo de actuación del reactivo. Los tiempos obtenidos fueron</p>
 </div>
-
-<pre class="sourceCode r"><code class="sourceCode r">reactivo =<span class="st"> </span><span class="kw">c</span>(<span class="dv">12</span>,<span class="dv">13</span>,<span class="dv">13</span>,<span class="dv">14</span>,<span class="dv">14</span>,<span class="dv">14</span>,<span class="dv">15</span>,<span class="dv">15</span>,<span class="dv">16</span>,<span class="dv">17</span>,<span class="dv">17</span>,<span class="dv">18</span>,<span class="dv">18</span>,<span class="dv">19</span>,<span class="dv">19</span>,<span class="dv">25</span>,<span class="dv">25</span>,<span class="dv">26</span>,<span class="dv">27</span>,<span class="dv">30</span>,<span class="dv">33</span>,<span class="dv">34</span>,<span class="dv">35</span>,
-<span class="dv">40</span>,<span class="dv">40</span>,<span class="dv">51</span>,<span class="dv">51</span>,<span class="dv">58</span>,<span class="dv">59</span>,<span class="dv">83</span>)</code></pre>
+<div class="sourceCode" id="cb255"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb255-1"><a href="chap-IC.html#cb255-1" aria-hidden="true" tabindex="-1"></a>reactivo <span class="ot">=</span> <span class="fu">c</span>(<span class="dv">12</span>,<span class="dv">13</span>,<span class="dv">13</span>,<span class="dv">14</span>,<span class="dv">14</span>,<span class="dv">14</span>,<span class="dv">15</span>,<span class="dv">15</span>,<span class="dv">16</span>,<span class="dv">17</span>,<span class="dv">17</span>,<span class="dv">18</span>,<span class="dv">18</span>,<span class="dv">19</span>,<span class="dv">19</span>,<span class="dv">25</span>,<span class="dv">25</span>,<span class="dv">26</span>,<span class="dv">27</span>,<span class="dv">30</span>,<span class="dv">33</span>,<span class="dv">34</span>,<span class="dv">35</span>,</span>
+<span id="cb255-2"><a href="chap-IC.html#cb255-2" aria-hidden="true" tabindex="-1"></a><span class="dv">40</span>,<span class="dv">40</span>,<span class="dv">51</span>,<span class="dv">51</span>,<span class="dv">58</span>,<span class="dv">59</span>,<span class="dv">83</span>)</span></code></pre></div>
 <p>Queremos usar estos datos para calcular un intervalo de confianza del 95% para la desviación típica de este tiempo de actuación.</p>
 <p>El siguiente código calcula un intervalo de confianza al 95% para la varianza a partir del vector <code>reactivo</code>:</p>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(EnvStats)
-<span class="kw">varTest</span>(reactivo)<span class="op">$</span>conf.int</code></pre>
+<div class="sourceCode" id="cb256"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb256-1"><a href="chap-IC.html#cb256-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(EnvStats)</span>
+<span id="cb256-2"><a href="chap-IC.html#cb256-2" aria-hidden="true" tabindex="-1"></a><span class="fu">varTest</span>(reactivo)<span class="sc">$</span>conf.int</span></code></pre></div>
 <pre><code>##      LCL      UCL 
 ## 191.2627 544.9572 
 ## attr(,&quot;conf.level&quot;)
 ## [1] 0.95</code></pre>
 <p>Este intervalo de confianza es para la varianza. Como la desviación típica es la raíz cuadrada de la varianza, para obtener un intervalo de confianza al 95% para la desviación típica, tenemos que tomar la raíz cuadrada de este intervalo para la varianza:</p>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">sqrt</span>(<span class="kw">varTest</span>(reactivo)<span class="op">$</span>conf.int)</code></pre>
+<div class="sourceCode" id="cb258"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb258-1"><a href="chap-IC.html#cb258-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sqrt</span>(<span class="fu">varTest</span>(reactivo)<span class="sc">$</span>conf.int)</span></code></pre></div>
 <pre><code>##      LCL      UCL 
 ## 13.82977 23.34432 
 ## attr(,&quot;conf.level&quot;)
 ## [1] 0.95</code></pre>
 <p>Por lo tanto un intervalo de confianza del 95% para la desviación típica poblacional es [13.83, 23.34]. De nuevo, si os molesta, podéis eliminar el atributo <code>conf.level</code> igualándolo a <code>NULL</code>.</p>
 </div>
-<div id="bootstrap" class="section level2">
+<div id="bootstrap" class="section level2" number="4.4">
 <h2><span class="header-section-number">4.4</span> Bootstrap</h2>
 <p>Cuando no tiene sentido usar un método paramétrico como los explicados en las secciones anteriores para calcular un intervalo de confianza porque no se satisfacen las condiciones teóricas que garantizan que el intervalo obtenido contiene el 95% de las veces el parámetro poblacional deseado, podemos recurrir a un método no paramétrico. El más utilizado es el <strong>bootstrap</strong>, que básicamente consiste en:</p>
 <ol style="list-style-type: decimal">
@@ -503,36 +525,35 @@ donde <span class="math inline">\(\chi_{n-1,(1-q)/2}^2\)</span> y <span class="m
 <div class="example">
 <p><span id="exm:unnamed-chunk-127" class="example"><strong>Ejemplo 4.7  </strong></span>Volvamos a la muestra de pesos del Ejemplo <a href="chap-IC.html#exm:lux">4.1</a>, pero supongamos ahora que la variable aleatoria poblacional de la que la hemos extraído no es normal (o que no queremos suponer que lo sea). Vamos a usar el método <em>bootstrap</em> de los percentiles para calcular un intervalo de confianza del 95% para el peso medio poblacional.</p>
 </div>
-
 <p>Para ello, vamos a general 1000 muestras aleatorias simples de la muestra, todas ellas del mismo tamaño que la muestra, calcularemos la media de cada una de estas muestras simples, construiremos un vector con estas medias muestrales, y daremos como extremos del intervalo de confianza los cuantiles de orden 0.025 y 0.975 del vector así obtenido.</p>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">set.seed</span>(<span class="dv">42</span>)
-n=<span class="kw">length</span>(pesos)
-X=<span class="kw">replicate</span>(<span class="dv">1000</span>,<span class="kw">mean</span>(<span class="kw">sample</span>(pesos,n,<span class="dt">replace=</span><span class="ot">TRUE</span>)))
-IC.boot=<span class="kw">c</span>(<span class="kw">quantile</span>(X,<span class="fl">0.025</span>),<span class="kw">quantile</span>(X,<span class="fl">0.975</span>))
-<span class="kw">round</span>(IC.boot,<span class="dv">1</span>)</code></pre>
+<div class="sourceCode" id="cb260"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb260-1"><a href="chap-IC.html#cb260-1" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">42</span>)</span>
+<span id="cb260-2"><a href="chap-IC.html#cb260-2" aria-hidden="true" tabindex="-1"></a>n<span class="ot">=</span><span class="fu">length</span>(pesos)</span>
+<span id="cb260-3"><a href="chap-IC.html#cb260-3" aria-hidden="true" tabindex="-1"></a>X<span class="ot">=</span><span class="fu">replicate</span>(<span class="dv">1000</span>,<span class="fu">mean</span>(<span class="fu">sample</span>(pesos,n,<span class="at">replace=</span><span class="cn">TRUE</span>)))</span>
+<span id="cb260-4"><a href="chap-IC.html#cb260-4" aria-hidden="true" tabindex="-1"></a>IC.boot<span class="ot">=</span><span class="fu">c</span>(<span class="fu">quantile</span>(X,<span class="fl">0.025</span>),<span class="fu">quantile</span>(X,<span class="fl">0.975</span>))</span>
+<span id="cb260-5"><a href="chap-IC.html#cb260-5" aria-hidden="true" tabindex="-1"></a><span class="fu">round</span>(IC.boot,<span class="dv">1</span>)</span></code></pre></div>
 <pre><code>##   2.5%  97.5% 
 ## 3027.3 3350.6</code></pre>
 <p>El intervalo obtenido en este caso es [3027.3, 3350.6]; como se trata de un método basado en una simulación aleatoria, seguramente con otra semilla de aleatoriedad daría un intervalo diferente. Para comparar, recordad que el intervalo de confianza obtenido con la fórmula basada en la t de Student ha sido [2997.8, 3355].</p>
 <p>El paquete <strong>boot</strong> dispone de la función <code>boot</code> para llevar a cabo simulaciones <em>bootstrap.</em> Aplicando luego la función <code>boot.ci</code> al resultado de la función <code>boot</code> obtenemos diversos intervalos de confianza basados en el enfoque <em>bootstrap</em>. La sintaxis básica de la función <code>boot</code> es</p>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">boot</span>(X,estadístico,R)</code></pre>
+<div class="sourceCode" id="cb262"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb262-1"><a href="chap-IC.html#cb262-1" aria-hidden="true" tabindex="-1"></a><span class="fu">boot</span>(X,estadístico,R)</span></code></pre></div>
 <p>donde:</p>
 <ul>
 <li><p><code>X</code> es el vector que forma la muestra de la que disponemos</p></li>
 <li><p><code>R</code> es el número de muestras que queremos extraer de la muestra original</p></li>
 <li><p>El <code>estadístico</code> es la función que calcula el estadístico deseado de la submuestra, y tiene que tener dos parámetros: el primero representa la muestra original <code>X</code> y el segundo representa el vector de índices de una m.a.s. de <code>X</code>. Por ejemplo, si vamos a usar la función <code>boot</code> para efectuar una simulación <em>bootstrap</em> de medias muestrales, podemos tomar como <code>estadístico</code> la función:</p></li>
 </ul>
-<pre class="sourceCode r"><code class="sourceCode r">media.boot=<span class="cf">function</span>(X,índices){<span class="kw">mean</span>(X[índices])}</code></pre>
+<div class="sourceCode" id="cb263"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb263-1"><a href="chap-IC.html#cb263-1" aria-hidden="true" tabindex="-1"></a>media.boot<span class="ot">=</span><span class="cf">function</span>(X,índices){<span class="fu">mean</span>(X[índices])}</span></code></pre></div>
 <p>Por otro lado, el nivel de confianza se especifica en la función <code>boot.ci</code> mediante el parámetro <code>conf</code> (no <code>conf.level</code>, como hasta ahora), cuyo valor por defecto es, eso sí, el de siempre: 0.95.</p>
 <p>A modo de ejemplo, vamos a usar las funciones del paquete <strong>boot</strong> para calcular un intervalo de confianza del 95% para la media de la variable aleatoria que ha producido el vector <code>pesos</code>.</p>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(boot)
-<span class="kw">set.seed</span>(<span class="dv">42</span>)
-simulacion=<span class="kw">boot</span>(pesos,media.boot,<span class="dv">1000</span>)</code></pre>
+<div class="sourceCode" id="cb264"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb264-1"><a href="chap-IC.html#cb264-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(boot)</span>
+<span id="cb264-2"><a href="chap-IC.html#cb264-2" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">42</span>)</span>
+<span id="cb264-3"><a href="chap-IC.html#cb264-3" aria-hidden="true" tabindex="-1"></a>simulacion<span class="ot">=</span><span class="fu">boot</span>(pesos,media.boot,<span class="dv">1000</span>)</span></code></pre></div>
 <p>El resultado <code>simulacion</code> de esta última instrucción es una <code>list</code> que incluye, en su componente <code>t</code>, el vector de 1000 medias muestrales obtenido mediante la simulación; sus 10 primeros valores son:</p>
-<pre class="sourceCode r"><code class="sourceCode r">simulacion<span class="op">$</span>t[<span class="dv">1</span><span class="op">:</span><span class="dv">10</span>]</code></pre>
+<div class="sourceCode" id="cb265"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb265-1"><a href="chap-IC.html#cb265-1" aria-hidden="true" tabindex="-1"></a>simulacion<span class="sc">$</span>t[<span class="dv">1</span><span class="sc">:</span><span class="dv">10</span>]</span></code></pre></div>
 <pre><code>##  [1] 3189.14 3237.11 3301.32 3103.00 3154.11 3294.11 3347.25 3239.93
 ##  [9] 3304.07 3217.11</code></pre>
 <p>Calculemos ahora el intervalo de confianza deseado:</p>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">boot.ci</span>(simulacion)</code></pre>
+<div class="sourceCode" id="cb267"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb267-1"><a href="chap-IC.html#cb267-1" aria-hidden="true" tabindex="-1"></a><span class="fu">boot.ci</span>(simulacion)</span></code></pre></div>
 <pre><code>## Warning in boot.ci(simulacion): bootstrap variances needed for studentized
 ## intervals</code></pre>
 <pre><code>## BOOTSTRAP CONFIDENCE INTERVAL CALCULATIONS
@@ -553,21 +574,20 @@ simulacion=<span class="kw">boot</span>(pesos,media.boot,<span class="dv">1000</
 <div class="example">
 <p><span id="exm:unnamed-chunk-135" class="example"><strong>Ejemplo 4.8  </strong></span>¿Realmente funciona el enfoque <em>bootstrap</em>? Vamos a retomar el experimento realizado en el Ejemplo <a href="chap-IC.html#exm:experiment">4.2</a>, donde construimos una matriz M cuyas columnas son 200 muestras aleatorias simples de tamaño 50 de una población que sigue una distribución normal estándard.</p>
 </div>
-
 <p>En dicho ejemplo calculamos para cada una de estas muestras el intervalo de confianza del 95% para la media poblacional usando la fórmula <a href="chap-IC.html#eq:form1">(4.1)</a>, que es la recomendada por la teoría en este caso. De los 200 intervalos calculados, 189 contuvieron la media poblacional, lo que representa un 94.5% de aciertos.
 Ahora vamos a calcular para cada una de estas muestras un intervalo de confianza del 95% por el método <em>bootstrap</em> de los percentiles y compararemos las tasas de aciertos. Para mayor seguridad, vamos a volver a generar en las mismas condiciones las 200 muestras de la población, no sea que a lo largo de la lección hayamos modificado inadvertidamente el contenido de la matriz <code>M</code> (y así de paso fijamos la semilla de aleatoriedad).</p>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">set.seed</span>(<span class="dv">42</span>)
-Poblacion=<span class="kw">rnorm</span>(<span class="dv">10</span><span class="op">^</span><span class="dv">7</span>) <span class="co">#La población</span>
-mu=<span class="kw">mean</span>(Poblacion)  <span class="co"># La media poblacional</span>
-M=<span class="kw">replicate</span>(<span class="dv">200</span>, <span class="kw">sample</span>(Poblacion,<span class="dv">50</span>,<span class="dt">replace=</span><span class="ot">TRUE</span>)) <span class="co"># Las muestras</span>
-IC.b=<span class="cf">function</span>(X){<span class="kw">boot.ci</span>(<span class="kw">boot</span>(X,media.boot,<span class="dv">1000</span>))<span class="op">$</span>percent[<span class="dv">4</span><span class="op">:</span><span class="dv">5</span>]}
-ICs.bootstrap=<span class="kw">apply</span>(M,<span class="dt">FUN=</span>IC.b,<span class="dt">MARGIN=</span><span class="dv">2</span>)
-Aciertos.bootstrap=<span class="kw">length</span>(<span class="kw">which</span>((mu<span class="op">&gt;=</span>ICs.bootstrap[<span class="dv">1</span>,]) <span class="op">&amp;</span><span class="st"> </span>(mu<span class="op">&lt;=</span>ICs.bootstrap[<span class="dv">2</span>,])))
-Aciertos.bootstrap</code></pre>
+<div class="sourceCode" id="cb270"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb270-1"><a href="chap-IC.html#cb270-1" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">42</span>)</span>
+<span id="cb270-2"><a href="chap-IC.html#cb270-2" aria-hidden="true" tabindex="-1"></a>Poblacion<span class="ot">=</span><span class="fu">rnorm</span>(<span class="dv">10</span><span class="sc">^</span><span class="dv">7</span>) <span class="co">#La población</span></span>
+<span id="cb270-3"><a href="chap-IC.html#cb270-3" aria-hidden="true" tabindex="-1"></a>mu<span class="ot">=</span><span class="fu">mean</span>(Poblacion)  <span class="co"># La media poblacional</span></span>
+<span id="cb270-4"><a href="chap-IC.html#cb270-4" aria-hidden="true" tabindex="-1"></a>M<span class="ot">=</span><span class="fu">replicate</span>(<span class="dv">200</span>, <span class="fu">sample</span>(Poblacion,<span class="dv">50</span>,<span class="at">replace=</span><span class="cn">TRUE</span>)) <span class="co"># Las muestras</span></span>
+<span id="cb270-5"><a href="chap-IC.html#cb270-5" aria-hidden="true" tabindex="-1"></a>IC.b<span class="ot">=</span><span class="cf">function</span>(X){<span class="fu">boot.ci</span>(<span class="fu">boot</span>(X,media.boot,<span class="dv">1000</span>))<span class="sc">$</span>percent[<span class="dv">4</span><span class="sc">:</span><span class="dv">5</span>]}</span>
+<span id="cb270-6"><a href="chap-IC.html#cb270-6" aria-hidden="true" tabindex="-1"></a>ICs.bootstrap<span class="ot">=</span><span class="fu">apply</span>(M,<span class="at">FUN=</span>IC.b,<span class="at">MARGIN=</span><span class="dv">2</span>)</span>
+<span id="cb270-7"><a href="chap-IC.html#cb270-7" aria-hidden="true" tabindex="-1"></a>Aciertos.bootstrap<span class="ot">=</span><span class="fu">length</span>(<span class="fu">which</span>((mu<span class="sc">&gt;=</span>ICs.bootstrap[<span class="dv">1</span>,]) <span class="sc">&amp;</span> (mu<span class="sc">&lt;=</span>ICs.bootstrap[<span class="dv">2</span>,])))</span>
+<span id="cb270-8"><a href="chap-IC.html#cb270-8" aria-hidden="true" tabindex="-1"></a>Aciertos.bootstrap</span></code></pre></div>
 <pre><code>## [1] 186</code></pre>
 <p>Con el <em>bootstrap</em>, hemos acertado en 186 ocasiones, lo que supone un 93% de aciertos.</p>
 </div>
-<div id="guia-rapida-2" class="section level2">
+<div id="guía-rápida" class="section level2" number="4.5">
 <h2><span class="header-section-number">4.5</span> Guía rápida</h2>
 <ul>
 <li><p><code>t.test(X, conf.level=...)$conf.int</code> calcula el intervalo de confianza del <code>conf.level</code><span class="math inline">\(\times 100\%\)</span> para la media poblacional usando la fórmula basada en la t de Student aplicada a la muestra <code>X</code>.</p></li>
@@ -579,16 +599,16 @@ Aciertos.bootstrap</code></pre>
 <li><p><code>boot.ci</code>, del paquete <strong>boot</strong>, aplicado al resultado de una función <code>boot</code>, calcula diversos intervalos de confianza a partir del resultado de la simulación efectuada con <code>boot</code>. El nivel de confianza se especifica con el parámetro <code>conf</code>.</p></li>
 </ul>
 </div>
-<div id="ejercicios-3" class="section level2">
+<div id="ejercicios" class="section level2" number="4.6">
 <h2><span class="header-section-number">4.6</span> Ejercicios</h2>
-<div id="test-3" class="section level3 unnumbered">
+<div id="test" class="section level3 unnumbered">
 <h3>Test</h3>
 <p><em>(1)</em> Tomad la muestra de todas las longitudes de pétalos de flores <em>Iris setosa</em> contenida en la tabla de datos <code>iris</code> y usadla para calcular un intervalo de confianza del 95% para el valor medio de las longitudes de pétalos de esta especie de flores usando la fórmula basada en la t de Student. Tenéis que dar el extremo inferior y el extremo superior, en este orden, separados por una coma (sin paréntesis u otros delimitadores, ni espacios en blanco) y redondeados a 2 cifras decimales (sin ceros innecesarios a la derecha).</p>
 <p><em>(2)</em> Tenemos una población de media <span class="math inline">\(\mu\)</span> desconocida. Tomamos una muestra aleatoria simple de tamaño 80 y obtenemos una media muestral de 6.2 y una desviación típica muestral de 1.2. Usad estos datos y la fórmula del intervalo de confianza para la media basado en la t de Student para calcular un intervalo de confianza al 95% para <span class="math inline">\(\mu\)</span>. Tenéis que dar el extremo inferior y el extremo superior, en este orden, separados por una coma (sin paréntesis u otros delimitadores, ni espacios en blanco) y redondeados a 2 cifras decimales (sin ceros innecesarios a la derecha).</p>
 <p><em>(3)</em> Tenemos una población Bernoulli de proporción poblacional <span class="math inline">\(p\)</span> desconocida. Tomamos una muestra aleatoria simple de 80 individuos y obtenemos una proporción muestral de 35% de éxitos. Calculad un intervalo de confianza para <span class="math inline">\(p\)</span> a un nivel de confianza del 95% usando el método de Wilson. Tenéis que dar el extremo inferior y el extremo superior, en este orden, separados por una coma (sin paréntesis u otros delimitadores, ni espacios en blanco) y redondeados a 3 cifras decimales (sin ceros innecesarios a la derecha).</p>
 <p><em>(4)</em> Tomad la muestra de todas las longitudes de pétalos de flores <em>Iris setosa</em> contenida en la tabla de datos <code>iris</code> y usadla para calcular un intervalo de confianza del 95% para la varianza de las longitudes de pétalos de esta especie de flores. Tenéis que dar el extremo inferior y el extremo superior, en este orden, separados por una coma (sin paréntesis u otros delimitadores, ni espacios en blanco) y redondeados a 3 cifras decimales (sin ceros innecesarios a la derecha).</p>
 </div>
-<div id="problemas-3" class="section level3 unnumbered">
+<div id="problemas" class="section level3 unnumbered">
 <h3>Problemas</h3>
 <p><strong>(1)</strong> En la tabla de datos que encontraréis en el url <a href="https://www.dropbox.com/s/qcok2f7u51teqr6/pacientes.txt?raw=1" class="uri">https://www.dropbox.com/s/qcok2f7u51teqr6/pacientes.txt?raw=1</a> se ha recogido información acerca de un conjunto de pacientes que se han sometido a una revisión médica voluntaria. Sus variables son:</p>
 <ul>
@@ -606,42 +626,42 @@ Aciertos.bootstrap</code></pre>
 <p><em>(c)</em> Calculad un intervalo de confianza del 95% para la proporción de hombres hipertensos que sufren cardiopatías. Usad todos los métodos que tenga sentido usar y comparad los resultados.</p>
 <p><em>(d)</em> Calculad un intervalo de confianza del 95% para la desviación típica del IMC de las mujeres de 50 años o más usando la técnica <em>bootstrap</em> de los percentiles y 1000 muestras.</p>
 </div>
-<div id="respuestas-al-test-3" class="section level3 unnumbered">
+<div id="respuestas-al-test" class="section level3 unnumbered">
 <h3>Respuestas al test</h3>
 <p><em>(1)</em> 1.41,1.51</p>
 <p>Nosotros lo hemos calculado con</p>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">round</span>(<span class="kw">t.test</span>(iris[iris<span class="op">$</span>Species<span class="op">==</span><span class="st">&quot;setosa&quot;</span>,<span class="st">&quot;Petal.Length&quot;</span>])<span class="op">$</span>conf.int,<span class="dv">2</span>)</code></pre>
+<div class="sourceCode" id="cb272"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb272-1"><a href="chap-IC.html#cb272-1" aria-hidden="true" tabindex="-1"></a><span class="fu">round</span>(<span class="fu">t.test</span>(iris[iris<span class="sc">$</span>Species<span class="sc">==</span><span class="st">&quot;setosa&quot;</span>,<span class="st">&quot;Petal.Length&quot;</span>])<span class="sc">$</span>conf.int,<span class="dv">2</span>)</span></code></pre></div>
 <pre><code>## [1] 1.41 1.51
 ## attr(,&quot;conf.level&quot;)
 ## [1] 0.95</code></pre>
 <p><em>(2)</em> 5.933,6.467</p>
 <p>Nosotros lo hemos calculado con</p>
-<pre class="sourceCode r"><code class="sourceCode r">x=<span class="fl">6.2</span>
-n=<span class="dv">80</span>
-sdm=<span class="fl">1.2</span>
-conf.level=<span class="fl">0.95</span>
-<span class="kw">round</span>(x<span class="op">+</span>(<span class="kw">qt</span>((<span class="dv">1</span><span class="op">+</span>conf.level)<span class="op">/</span><span class="dv">2</span>,n<span class="dv">-1</span>)<span class="op">*</span>sdm<span class="op">/</span><span class="kw">sqrt</span>(n))<span class="op">*</span><span class="kw">c</span>(<span class="op">-</span><span class="dv">1</span>,<span class="dv">1</span>),<span class="dv">3</span>)</code></pre>
+<div class="sourceCode" id="cb274"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb274-1"><a href="chap-IC.html#cb274-1" aria-hidden="true" tabindex="-1"></a>x<span class="ot">=</span><span class="fl">6.2</span></span>
+<span id="cb274-2"><a href="chap-IC.html#cb274-2" aria-hidden="true" tabindex="-1"></a>n<span class="ot">=</span><span class="dv">80</span></span>
+<span id="cb274-3"><a href="chap-IC.html#cb274-3" aria-hidden="true" tabindex="-1"></a>sdm<span class="ot">=</span><span class="fl">1.2</span></span>
+<span id="cb274-4"><a href="chap-IC.html#cb274-4" aria-hidden="true" tabindex="-1"></a>conf.level<span class="ot">=</span><span class="fl">0.95</span></span>
+<span id="cb274-5"><a href="chap-IC.html#cb274-5" aria-hidden="true" tabindex="-1"></a><span class="fu">round</span>(x<span class="sc">+</span>(<span class="fu">qt</span>((<span class="dv">1</span><span class="sc">+</span>conf.level)<span class="sc">/</span><span class="dv">2</span>,n<span class="dv">-1</span>)<span class="sc">*</span>sdm<span class="sc">/</span><span class="fu">sqrt</span>(n))<span class="sc">*</span><span class="fu">c</span>(<span class="sc">-</span><span class="dv">1</span>,<span class="dv">1</span>),<span class="dv">3</span>)</span></code></pre></div>
 <pre><code>## [1] 5.933 6.467</code></pre>
 <p><em>(3)</em> 0.255,0.459</p>
 <p>Nosotros lo hemos calculado con</p>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">round</span>(<span class="kw">binom.wilson</span>(<span class="fl">0.35</span><span class="op">*</span><span class="dv">80</span>,<span class="dv">80</span>),<span class="dv">3</span>)</code></pre>
+<div class="sourceCode" id="cb276"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb276-1"><a href="chap-IC.html#cb276-1" aria-hidden="true" tabindex="-1"></a><span class="fu">round</span>(<span class="fu">binom.wilson</span>(<span class="fl">0.35</span><span class="sc">*</span><span class="dv">80</span>,<span class="dv">80</span>),<span class="dv">3</span>)</span></code></pre></div>
 <pre><code>##    x  n proportion lower upper conf.level
 ## 1 28 80       0.35 0.255 0.459       0.95</code></pre>
 <p><em>(4)</em> 0.021,0.047</p>
 <p>Nosotros lo hemos calculado con</p>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">round</span>(<span class="kw">varTest</span>(iris[iris<span class="op">$</span>Species<span class="op">==</span><span class="st">&quot;setosa&quot;</span>,<span class="st">&quot;Petal.Length&quot;</span>])<span class="op">$</span>conf.int,<span class="dv">3</span>)</code></pre>
+<div class="sourceCode" id="cb278"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb278-1"><a href="chap-IC.html#cb278-1" aria-hidden="true" tabindex="-1"></a><span class="fu">round</span>(<span class="fu">varTest</span>(iris[iris<span class="sc">$</span>Species<span class="sc">==</span><span class="st">&quot;setosa&quot;</span>,<span class="st">&quot;Petal.Length&quot;</span>])<span class="sc">$</span>conf.int,<span class="dv">3</span>)</span></code></pre></div>
 <pre><code>##   LCL   UCL 
 ## 0.021 0.047 
 ## attr(,&quot;conf.level&quot;)
 ## [1] 0.95</code></pre>
 </div>
-<div id="soluciones-sucintas-de-los-problemas-3" class="section level3 unnumbered">
+<div id="soluciones-sucintas-de-los-problemas" class="section level3 unnumbered">
 <h3>Soluciones sucintas de los problemas</h3>
 <p><strong>(1)</strong> Cargamos la tabla de datos:</p>
-<pre class="sourceCode r"><code class="sourceCode r">Datos=<span class="kw">read.table</span>(<span class="st">&quot;https://www.dropbox.com/s/qcok2f7u51teqr6/pacientes.txt?raw=1&quot;</span>,
-                <span class="dt">header=</span><span class="ot">TRUE</span>)
-<span class="kw">str</span>(Datos)</code></pre>
-<pre><code>## &#39;data.frame&#39;:    81 obs. of  7 variables:
+<div class="sourceCode" id="cb280"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb280-1"><a href="chap-IC.html#cb280-1" aria-hidden="true" tabindex="-1"></a>Datos<span class="ot">=</span><span class="fu">read.table</span>(<span class="st">&quot;https://www.dropbox.com/s/qcok2f7u51teqr6/pacientes.txt?raw=1&quot;</span>,</span>
+<span id="cb280-2"><a href="chap-IC.html#cb280-2" aria-hidden="true" tabindex="-1"></a>                <span class="at">header=</span><span class="cn">TRUE</span>)</span>
+<span id="cb280-3"><a href="chap-IC.html#cb280-3" aria-hidden="true" tabindex="-1"></a><span class="fu">str</span>(Datos)</span></code></pre></div>
+<pre><code>## &#39;data.frame&#39;:	81 obs. of  7 variables:
 ##  $ SEXO    : Factor w/ 2 levels &quot;Hombre&quot;,&quot;Mujer&quot;: 1 1 2 1 1 2 1 1 1 1 ...
 ##  $ EDAD    : int  47 51 54 50 52 53 49 52 50 48 ...
 ##  $ ALTURA  : int  170 170 148 170 165 151 170 168 170 166 ...
@@ -650,40 +670,40 @@ conf.level=<span class="fl">0.95</span>
 ##  $ IMC     : num  27.7 25.3 21 25.6 24.6 ...
 ##  $ CARDIOPA: Factor w/ 2 levels &quot;Con cardiopatia&quot;,..: 2 1 2 2 2 2 2 2 1 1 ...</code></pre>
 <p><em>(a)</em></p>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">t.test</span>(Datos[Datos<span class="op">$</span>SEXO<span class="op">==</span><span class="st">&quot;Mujer&quot;</span>,<span class="st">&quot;IMC&quot;</span>])<span class="op">$</span>conf.int</code></pre>
+<div class="sourceCode" id="cb282"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb282-1"><a href="chap-IC.html#cb282-1" aria-hidden="true" tabindex="-1"></a><span class="fu">t.test</span>(Datos[Datos<span class="sc">$</span>SEXO<span class="sc">==</span><span class="st">&quot;Mujer&quot;</span>,<span class="st">&quot;IMC&quot;</span>])<span class="sc">$</span>conf.int</span></code></pre></div>
 <pre><code>## [1] 22.3313 22.9053
 ## attr(,&quot;conf.level&quot;)
 ## [1] 0.95</code></pre>
 <p><em>(b)</em></p>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">sqrt</span>(<span class="kw">varTest</span>(Datos[Datos<span class="op">$</span>SEXO<span class="op">==</span><span class="st">&quot;Mujer&quot;</span>,<span class="st">&quot;IMC&quot;</span>])<span class="op">$</span>conf.int)</code></pre>
+<div class="sourceCode" id="cb284"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb284-1"><a href="chap-IC.html#cb284-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sqrt</span>(<span class="fu">varTest</span>(Datos[Datos<span class="sc">$</span>SEXO<span class="sc">==</span><span class="st">&quot;Mujer&quot;</span>,<span class="st">&quot;IMC&quot;</span>])<span class="sc">$</span>conf.int)</span></code></pre></div>
 <pre><code>##      LCL      UCL 
 ## 0.687995 1.106481 
 ## attr(,&quot;conf.level&quot;)
 ## [1] 0.95</code></pre>
 <p><em>(c)</em> Veamos el tamaño de la muestra</p>
-<pre class="sourceCode r"><code class="sourceCode r">HH=Datos[Datos<span class="op">$</span>SEXO<span class="op">==</span><span class="st">&quot;Hombre&quot;</span> <span class="op">&amp;</span><span class="st"> </span>Datos<span class="op">$</span>CARDIOPA<span class="op">==</span><span class="st">&quot;Con cardiopatia&quot;</span>, <span class="st">&quot;HIPERT&quot;</span>]
-<span class="kw">length</span>(HH)</code></pre>
+<div class="sourceCode" id="cb286"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb286-1"><a href="chap-IC.html#cb286-1" aria-hidden="true" tabindex="-1"></a>HH<span class="ot">=</span>Datos[Datos<span class="sc">$</span>SEXO<span class="sc">==</span><span class="st">&quot;Hombre&quot;</span> <span class="sc">&amp;</span> Datos<span class="sc">$</span>CARDIOPA<span class="sc">==</span><span class="st">&quot;Con cardiopatia&quot;</span>, <span class="st">&quot;HIPERT&quot;</span>]</span>
+<span id="cb286-2"><a href="chap-IC.html#cb286-2" aria-hidden="true" tabindex="-1"></a><span class="fu">length</span>(HH)</span></code></pre></div>
 <pre><code>## [1] 12</code></pre>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">table</span>(HH)</code></pre>
+<div class="sourceCode" id="cb288"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb288-1"><a href="chap-IC.html#cb288-1" aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>(HH)</span></code></pre></div>
 <pre><code>## HH
 ## Hipertenso Normotenso 
 ##          4          8</code></pre>
 <p>Con un tamaño tan pequeño, solo tiene sentido calcular el intervalo de Clopper-Pearson:</p>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">binom.exact</span>(<span class="kw">table</span>(HH)[<span class="dv">1</span>],<span class="kw">length</span>(HH))</code></pre>
+<div class="sourceCode" id="cb290"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb290-1"><a href="chap-IC.html#cb290-1" aria-hidden="true" tabindex="-1"></a><span class="fu">binom.exact</span>(<span class="fu">table</span>(HH)[<span class="dv">1</span>],<span class="fu">length</span>(HH))</span></code></pre></div>
 <pre><code>##            x  n proportion     lower    upper conf.level
 ## Hipertenso 4 12   0.333333 0.0992461 0.651124       0.95</code></pre>
 <p><em>(d)</em> “A mano”</p>
-<pre class="sourceCode r"><code class="sourceCode r">Muestra=Datos[Datos<span class="op">$</span>SEXO<span class="op">==</span><span class="st">&quot;Mujer&quot;</span> <span class="op">&amp;</span><span class="st"> </span>Datos<span class="op">$</span>EDAD<span class="op">&gt;=</span><span class="dv">50</span>, <span class="st">&quot;IMC&quot;</span>]
-n=<span class="kw">length</span>(Muestra)
-X=<span class="kw">replicate</span>(<span class="dv">1000</span>,<span class="kw">sd</span>(<span class="kw">sample</span>(Muestra,n,<span class="dt">replace=</span><span class="ot">TRUE</span>)))
-<span class="kw">c</span>(<span class="kw">quantile</span>(X,<span class="fl">0.025</span>),<span class="kw">quantile</span>(X,<span class="fl">0.975</span>))</code></pre>
+<div class="sourceCode" id="cb292"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb292-1"><a href="chap-IC.html#cb292-1" aria-hidden="true" tabindex="-1"></a>Muestra<span class="ot">=</span>Datos[Datos<span class="sc">$</span>SEXO<span class="sc">==</span><span class="st">&quot;Mujer&quot;</span> <span class="sc">&amp;</span> Datos<span class="sc">$</span>EDAD<span class="sc">&gt;=</span><span class="dv">50</span>, <span class="st">&quot;IMC&quot;</span>]</span>
+<span id="cb292-2"><a href="chap-IC.html#cb292-2" aria-hidden="true" tabindex="-1"></a>n<span class="ot">=</span><span class="fu">length</span>(Muestra)</span>
+<span id="cb292-3"><a href="chap-IC.html#cb292-3" aria-hidden="true" tabindex="-1"></a>X<span class="ot">=</span><span class="fu">replicate</span>(<span class="dv">1000</span>,<span class="fu">sd</span>(<span class="fu">sample</span>(Muestra,n,<span class="at">replace=</span><span class="cn">TRUE</span>)))</span>
+<span id="cb292-4"><a href="chap-IC.html#cb292-4" aria-hidden="true" tabindex="-1"></a><span class="fu">c</span>(<span class="fu">quantile</span>(X,<span class="fl">0.025</span>),<span class="fu">quantile</span>(X,<span class="fl">0.975</span>))</span></code></pre></div>
 <pre><code>##     2.5%    97.5% 
 ## 0.618456 0.996212</code></pre>
 <p>Usando las funciones del paquete <strong>boot</strong>:</p>
-<pre class="sourceCode r"><code class="sourceCode r">sd.boot=<span class="cf">function</span>(X,índices){<span class="kw">sd</span>(X[índices])}
-simulacion=<span class="kw">boot</span>(Muestra,sd.boot,<span class="dv">1000</span>)
-<span class="kw">boot.ci</span>(simulacion)<span class="op">$</span>percent[<span class="dv">4</span><span class="op">:</span><span class="dv">5</span>]</code></pre>
-<pre><code>## [1] 0.625236 0.997701</code></pre>
+<div class="sourceCode" id="cb294"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb294-1"><a href="chap-IC.html#cb294-1" aria-hidden="true" tabindex="-1"></a>sd.boot<span class="ot">=</span><span class="cf">function</span>(X,índices){<span class="fu">sd</span>(X[índices])}</span>
+<span id="cb294-2"><a href="chap-IC.html#cb294-2" aria-hidden="true" tabindex="-1"></a>simulacion<span class="ot">=</span><span class="fu">boot</span>(Muestra,sd.boot,<span class="dv">1000</span>)</span>
+<span id="cb294-3"><a href="chap-IC.html#cb294-3" aria-hidden="true" tabindex="-1"></a><span class="fu">boot.ci</span>(simulacion)<span class="sc">$</span>percent[<span class="dv">4</span><span class="sc">:</span><span class="dv">5</span>]</span></code></pre></div>
+<pre><code>## [1] 0.6252360 0.9977014</code></pre>
 
 </div>
 </div>
@@ -699,11 +719,13 @@ simulacion=<span class="kw">boot</span>(Muestra,sd.boot,<span class="dv">1000</s
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
 <script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
 <script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
 <script>
 gitbook.require(["gitbook"], function(gitbook) {
 gitbook.start({
@@ -711,12 +733,11 @@ gitbook.start({
 "github": false,
 "facebook": true,
 "twitter": true,
-"google": false,
 "linkedin": false,
 "weibo": false,
 "instapaper": false,
 "vk": false,
-"all": ["facebook", "google", "twitter", "linkedin", "weibo", "instapaper"]
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
 },
 "fontsettings": {
 "theme": "white",
@@ -728,6 +749,10 @@ gitbook.start({
 "text": null
 },
 "history": {
+"link": null,
+"text": null
+},
+"view": {
 "link": null,
 "text": null
 },
@@ -747,8 +772,9 @@ gitbook.start({
     script.type = "text/javascript";
     var src = "true";
     if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
-    if (location.protocol !== "file:" && /^https?:/.test(src))
-      src = src.replace(/^https?:/, '');
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
     script.src = src;
     document.getElementsByTagName("head")[0].appendChild(script);
   })();

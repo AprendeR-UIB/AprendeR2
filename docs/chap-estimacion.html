@@ -1,13 +1,12 @@
 <!DOCTYPE html>
-<html >
-
+<html lang="" xml:lang="">
 <head>
 
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Lección 3 Estimación puntual | AprendeR: Parte II</title>
-  <meta name="description" content="Apuntes AprendeR bookdown::gitbook.">
-  <meta name="generator" content="bookdown  and GitBook 2.6.7">
+  <meta name="description" content="Apuntes AprendeR bookdown::gitbook." />
+  <meta name="generator" content="bookdown 0.20 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Lección 3 Estimación puntual | AprendeR: Parte II" />
   <meta property="og:type" content="book" />
@@ -22,18 +21,19 @@
   <meta name="twitter:description" content="Apuntes AprendeR bookdown::gitbook." />
   
 
-<meta name="author" content="The UIB-AprendeR team">
+<meta name="author" content="The UIB-AprendeR team" />
 
 
-<meta name="date" content="2020-03-18">
+<meta name="date" content="2021-03-05" />
 
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="apple-mobile-web-app-capable" content="yes">
-  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="chap-muestreo.html">
-<link rel="next" href="chap-IC.html">
+<link rel="prev" href="chap-muestreo.html"/>
+<link rel="next" href="chap-IC.html"/>
+<script src="libs/header-attrs-2.6/header-attrs.js"></script>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -41,6 +41,9 @@
 <link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
 
 
 
@@ -51,26 +54,26 @@
 
 
 <style type="text/css">
-a.sourceLine { display: inline-block; line-height: 1.25; }
-a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
-a.sourceLine:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode { white-space: pre; position: relative; }
-div.sourceCode { margin: 1em 0; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
 pre.sourceCode { margin: 0; }
 @media screen {
 div.sourceCode { overflow: auto; }
 }
 @media print {
-code.sourceCode { white-space: pre-wrap; }
-a.sourceLine { text-indent: -1em; padding-left: 1em; }
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
 }
-pre.numberSource a.sourceLine
-  { position: relative; left: -4em; }
-pre.numberSource a.sourceLine::before
-  { content: attr(data-line-number);
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
     position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; pointer-events: all; display: inline-block;
+    border: none; display: inline-block;
     -webkit-touch-callout: none; -webkit-user-select: none;
     -khtml-user-select: none; -moz-user-select: none;
     -ms-user-select: none; user-select: none;
@@ -79,9 +82,9 @@ pre.numberSource a.sourceLine::before
   }
 pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
 div.sourceCode
-  {  }
+  {   }
 @media screen {
-a.sourceLine::before { text-decoration: underline; }
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 code span.al { color: #ff0000; font-weight: bold; } /* Alert */
 code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
@@ -132,154 +135,179 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="divider"></li>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Presentación</a></li>
 <li class="part"><span><b>Parte II: Estadística inferencial</b></span></li>
-<li class="chapter" data-level="1" data-path="chap-distr.html"><a href="chap-distr.html"><i class="fa fa-check"></i><b>1</b> Distribuciones de probabilidad</a><ul>
-<li class="chapter" data-level="1.1" data-path="chap-distr.html"><a href="chap-distr.html#ejercicios"><i class="fa fa-check"></i><b>1.1</b> Ejercicios</a><ul>
+<li class="chapter" data-level="1" data-path="chap-distr.html"><a href="chap-distr.html"><i class="fa fa-check"></i><b>1</b> Distribuciones de probabilidad</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="chap-distr.html"><a href="chap-distr.html#ejercicios"><i class="fa fa-check"></i><b>1.1</b> Ejercicios</a>
+<ul>
 <li class="chapter" data-level="" data-path="chap-distr.html"><a href="chap-distr.html#test"><i class="fa fa-check"></i>Test</a></li>
 <li class="chapter" data-level="" data-path="chap-distr.html"><a href="chap-distr.html#problemas"><i class="fa fa-check"></i>Problemas</a></li>
 <li class="chapter" data-level="" data-path="chap-distr.html"><a href="chap-distr.html#respuestas-al-test"><i class="fa fa-check"></i>Respuestas al test</a></li>
 <li class="chapter" data-level="" data-path="chap-distr.html"><a href="chap-distr.html#soluciones-sucintas-de-los-problemas"><i class="fa fa-check"></i>Soluciones sucintas de los problemas</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="2" data-path="chap-muestreo.html"><a href="chap-muestreo.html"><i class="fa fa-check"></i><b>2</b> Conceptos básicos de muestreo</a><ul>
+<li class="chapter" data-level="2" data-path="chap-muestreo.html"><a href="chap-muestreo.html"><i class="fa fa-check"></i><b>2</b> Conceptos básicos de muestreo</a>
+<ul>
 <li class="chapter" data-level="2.1" data-path="chap-muestreo.html"><a href="chap-muestreo.html#sec:muestreo"><i class="fa fa-check"></i><b>2.1</b> Tipos de muestreo</a></li>
 <li class="chapter" data-level="2.2" data-path="chap-muestreo.html"><a href="chap-muestreo.html#muestreo-aleatorio-con-r"><i class="fa fa-check"></i><b>2.2</b> Muestreo aleatorio con R</a></li>
-<li class="chapter" data-level="2.3" data-path="chap-muestreo.html"><a href="chap-muestreo.html#guia-rapida"><i class="fa fa-check"></i><b>2.3</b> Guía rápida</a></li>
-<li class="chapter" data-level="2.4" data-path="chap-muestreo.html"><a href="chap-muestreo.html#ejercicios-1"><i class="fa fa-check"></i><b>2.4</b> Ejercicios</a><ul>
-<li class="chapter" data-level="" data-path="chap-muestreo.html"><a href="chap-muestreo.html#test-1"><i class="fa fa-check"></i>Test</a></li>
-<li class="chapter" data-level="" data-path="chap-muestreo.html"><a href="chap-muestreo.html#problemas-1"><i class="fa fa-check"></i>Problemas</a></li>
-<li class="chapter" data-level="" data-path="chap-muestreo.html"><a href="chap-muestreo.html#respuestas-al-test-1"><i class="fa fa-check"></i>Respuestas al test</a></li>
-<li class="chapter" data-level="" data-path="chap-muestreo.html"><a href="chap-muestreo.html#soluciones-sucintas-de-los-problemas-1"><i class="fa fa-check"></i>Soluciones sucintas de los problemas</a></li>
+<li class="chapter" data-level="2.3" data-path="chap-muestreo.html"><a href="chap-muestreo.html#guía-rápida"><i class="fa fa-check"></i><b>2.3</b> Guía rápida</a></li>
+<li class="chapter" data-level="2.4" data-path="chap-distr.html"><a href="chap-distr.html#ejercicios"><i class="fa fa-check"></i><b>2.4</b> Ejercicios</a>
+<ul>
+<li class="chapter" data-level="" data-path="chap-distr.html"><a href="chap-distr.html#test"><i class="fa fa-check"></i>Test</a></li>
+<li class="chapter" data-level="" data-path="chap-distr.html"><a href="chap-distr.html#problemas"><i class="fa fa-check"></i>Problemas</a></li>
+<li class="chapter" data-level="" data-path="chap-distr.html"><a href="chap-distr.html#respuestas-al-test"><i class="fa fa-check"></i>Respuestas al test</a></li>
+<li class="chapter" data-level="" data-path="chap-distr.html"><a href="chap-distr.html#soluciones-sucintas-de-los-problemas"><i class="fa fa-check"></i>Soluciones sucintas de los problemas</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="3" data-path="chap-estimacion.html"><a href="chap-estimacion.html"><i class="fa fa-check"></i><b>3</b> Estimación puntual</a><ul>
-<li class="chapter" data-level="3.1" data-path="chap-estimacion.html"><a href="chap-estimacion.html#estimacion-maximo-verosimil"><i class="fa fa-check"></i><b>3.1</b> Estimación máximo verosímil</a></li>
-<li class="chapter" data-level="3.2" data-path="chap-estimacion.html"><a href="chap-estimacion.html#guia-rapida-1"><i class="fa fa-check"></i><b>3.2</b> Guía rápida</a></li>
-<li class="chapter" data-level="3.3" data-path="chap-estimacion.html"><a href="chap-estimacion.html#ejercicios-2"><i class="fa fa-check"></i><b>3.3</b> Ejercicios</a><ul>
-<li class="chapter" data-level="" data-path="chap-estimacion.html"><a href="chap-estimacion.html#test-2"><i class="fa fa-check"></i>Test</a></li>
-<li class="chapter" data-level="" data-path="chap-estimacion.html"><a href="chap-estimacion.html#problemas-2"><i class="fa fa-check"></i>Problemas</a></li>
-<li class="chapter" data-level="" data-path="chap-estimacion.html"><a href="chap-estimacion.html#respuestas-al-test-2"><i class="fa fa-check"></i>Respuestas al test</a></li>
-<li class="chapter" data-level="" data-path="chap-estimacion.html"><a href="chap-estimacion.html#soluciones-sucintas-de-los-problemas-2"><i class="fa fa-check"></i>Soluciones sucintas de los problemas</a></li>
+<li class="chapter" data-level="3" data-path="chap-estimacion.html"><a href="chap-estimacion.html"><i class="fa fa-check"></i><b>3</b> Estimación puntual</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="chap-estimacion.html"><a href="chap-estimacion.html#estimación-máximo-verosímil"><i class="fa fa-check"></i><b>3.1</b> Estimación máximo verosímil</a></li>
+<li class="chapter" data-level="3.2" data-path="chap-muestreo.html"><a href="chap-muestreo.html#guía-rápida"><i class="fa fa-check"></i><b>3.2</b> Guía rápida</a></li>
+<li class="chapter" data-level="3.3" data-path="chap-distr.html"><a href="chap-distr.html#ejercicios"><i class="fa fa-check"></i><b>3.3</b> Ejercicios</a>
+<ul>
+<li class="chapter" data-level="" data-path="chap-distr.html"><a href="chap-distr.html#test"><i class="fa fa-check"></i>Test</a></li>
+<li class="chapter" data-level="" data-path="chap-distr.html"><a href="chap-distr.html#problemas"><i class="fa fa-check"></i>Problemas</a></li>
+<li class="chapter" data-level="" data-path="chap-distr.html"><a href="chap-distr.html#respuestas-al-test"><i class="fa fa-check"></i>Respuestas al test</a></li>
+<li class="chapter" data-level="" data-path="chap-distr.html"><a href="chap-distr.html#soluciones-sucintas-de-los-problemas"><i class="fa fa-check"></i>Soluciones sucintas de los problemas</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="4" data-path="chap-IC.html"><a href="chap-IC.html"><i class="fa fa-check"></i><b>4</b> Intervalos de confianza</a><ul>
+<li class="chapter" data-level="4" data-path="chap-IC.html"><a href="chap-IC.html"><i class="fa fa-check"></i><b>4</b> Intervalos de confianza</a>
+<ul>
 <li class="chapter" data-level="4.1" data-path="chap-IC.html"><a href="chap-IC.html#sec:ICT"><i class="fa fa-check"></i><b>4.1</b> Intervalo de confianza para la media basado en la t de Student</a></li>
-<li class="chapter" data-level="4.2" data-path="chap-IC.html"><a href="chap-IC.html#intervalos-de-confianza-para-la-proporcion-poblacional"><i class="fa fa-check"></i><b>4.2</b> Intervalos de confianza para la proporción poblacional</a></li>
+<li class="chapter" data-level="4.2" data-path="chap-IC.html"><a href="chap-IC.html#intervalos-de-confianza-para-la-proporción-poblacional"><i class="fa fa-check"></i><b>4.2</b> Intervalos de confianza para la proporción poblacional</a></li>
 <li class="chapter" data-level="4.3" data-path="chap-IC.html"><a href="chap-IC.html#sec:ICvar"><i class="fa fa-check"></i><b>4.3</b> Intervalo de confianza para la varianza de una población normal</a></li>
 <li class="chapter" data-level="4.4" data-path="chap-IC.html"><a href="chap-IC.html#bootstrap"><i class="fa fa-check"></i><b>4.4</b> Bootstrap</a></li>
-<li class="chapter" data-level="4.5" data-path="chap-IC.html"><a href="chap-IC.html#guia-rapida-2"><i class="fa fa-check"></i><b>4.5</b> Guía rápida</a></li>
-<li class="chapter" data-level="4.6" data-path="chap-IC.html"><a href="chap-IC.html#ejercicios-3"><i class="fa fa-check"></i><b>4.6</b> Ejercicios</a><ul>
-<li class="chapter" data-level="" data-path="chap-IC.html"><a href="chap-IC.html#test-3"><i class="fa fa-check"></i>Test</a></li>
-<li class="chapter" data-level="" data-path="chap-IC.html"><a href="chap-IC.html#problemas-3"><i class="fa fa-check"></i>Problemas</a></li>
-<li class="chapter" data-level="" data-path="chap-IC.html"><a href="chap-IC.html#respuestas-al-test-3"><i class="fa fa-check"></i>Respuestas al test</a></li>
-<li class="chapter" data-level="" data-path="chap-IC.html"><a href="chap-IC.html#soluciones-sucintas-de-los-problemas-3"><i class="fa fa-check"></i>Soluciones sucintas de los problemas</a></li>
+<li class="chapter" data-level="4.5" data-path="chap-muestreo.html"><a href="chap-muestreo.html#guía-rápida"><i class="fa fa-check"></i><b>4.5</b> Guía rápida</a></li>
+<li class="chapter" data-level="4.6" data-path="chap-distr.html"><a href="chap-distr.html#ejercicios"><i class="fa fa-check"></i><b>4.6</b> Ejercicios</a>
+<ul>
+<li class="chapter" data-level="" data-path="chap-distr.html"><a href="chap-distr.html#test"><i class="fa fa-check"></i>Test</a></li>
+<li class="chapter" data-level="" data-path="chap-distr.html"><a href="chap-distr.html#problemas"><i class="fa fa-check"></i>Problemas</a></li>
+<li class="chapter" data-level="" data-path="chap-distr.html"><a href="chap-distr.html#respuestas-al-test"><i class="fa fa-check"></i>Respuestas al test</a></li>
+<li class="chapter" data-level="" data-path="chap-distr.html"><a href="chap-distr.html#soluciones-sucintas-de-los-problemas"><i class="fa fa-check"></i>Soluciones sucintas de los problemas</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="5" data-path="chap-contrastes.html"><a href="chap-contrastes.html"><i class="fa fa-check"></i><b>5</b> Contrastes de hipótesis</a><ul>
-<li class="chapter" data-level="5.1" data-path="chap-contrastes.html"><a href="chap-contrastes.html#contrastes-para-medias"><i class="fa fa-check"></i><b>5.1</b> Contrastes para medias</a><ul>
+<li class="chapter" data-level="5" data-path="chap-contrastes.html"><a href="chap-contrastes.html"><i class="fa fa-check"></i><b>5</b> Contrastes de hipótesis</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="chap-contrastes.html"><a href="chap-contrastes.html#contrastes-para-medias"><i class="fa fa-check"></i><b>5.1</b> Contrastes para medias</a>
+<ul>
 <li class="chapter" data-level="" data-path="chap-contrastes.html"><a href="chap-contrastes.html#el-test-t"><i class="fa fa-check"></i>El test t</a></li>
-<li class="chapter" data-level="" data-path="chap-contrastes.html"><a href="chap-contrastes.html#tests-no-parametricos"><i class="fa fa-check"></i>Tests no paramétricos</a></li>
+<li class="chapter" data-level="" data-path="chap-contrastes.html"><a href="chap-contrastes.html#tests-no-paramétricos"><i class="fa fa-check"></i>Tests no paramétricos</a></li>
 </ul></li>
 <li class="chapter" data-level="5.2" data-path="chap-contrastes.html"><a href="chap-contrastes.html#contrastes-para-varianzas"><i class="fa fa-check"></i><b>5.2</b> Contrastes para varianzas</a></li>
 <li class="chapter" data-level="5.3" data-path="chap-contrastes.html"><a href="chap-contrastes.html#contrastes-para-proporciones"><i class="fa fa-check"></i><b>5.3</b> Contrastes para proporciones</a></li>
-<li class="chapter" data-level="5.4" data-path="chap-contrastes.html"><a href="chap-contrastes.html#calculo-de-la-potencia-de-un-contraste"><i class="fa fa-check"></i><b>5.4</b> Cálculo de la potencia de un contraste</a></li>
-<li class="chapter" data-level="5.5" data-path="chap-contrastes.html"><a href="chap-contrastes.html#guia-rapida-3"><i class="fa fa-check"></i><b>5.5</b> Guía rápida</a></li>
-<li class="chapter" data-level="5.6" data-path="chap-contrastes.html"><a href="chap-contrastes.html#ejercicios-4"><i class="fa fa-check"></i><b>5.6</b> Ejercicios</a><ul>
+<li class="chapter" data-level="5.4" data-path="chap-contrastes.html"><a href="chap-contrastes.html#cálculo-de-la-potencia-de-un-contraste"><i class="fa fa-check"></i><b>5.4</b> Cálculo de la potencia de un contraste</a></li>
+<li class="chapter" data-level="5.5" data-path="chap-muestreo.html"><a href="chap-muestreo.html#guía-rápida"><i class="fa fa-check"></i><b>5.5</b> Guía rápida</a></li>
+<li class="chapter" data-level="5.6" data-path="chap-distr.html"><a href="chap-distr.html#ejercicios"><i class="fa fa-check"></i><b>5.6</b> Ejercicios</a>
+<ul>
 <li class="chapter" data-level="" data-path="chap-contrastes.html"><a href="chap-contrastes.html#modelo-de-test"><i class="fa fa-check"></i>Modelo de test</a></li>
-<li class="chapter" data-level="" data-path="chap-contrastes.html"><a href="chap-contrastes.html#ejercicios-5"><i class="fa fa-check"></i>Ejercicios</a></li>
-<li class="chapter" data-level="" data-path="chap-contrastes.html"><a href="chap-contrastes.html#respuestas-al-test-4"><i class="fa fa-check"></i>Respuestas al test</a></li>
+<li class="chapter" data-level="" data-path="chap-contrastes.html"><a href="chap-contrastes.html#ejercicios-1"><i class="fa fa-check"></i>Ejercicios</a></li>
+<li class="chapter" data-level="" data-path="chap-distr.html"><a href="chap-distr.html#respuestas-al-test"><i class="fa fa-check"></i>Respuestas al test</a></li>
 <li class="chapter" data-level="" data-path="chap-contrastes.html"><a href="chap-contrastes.html#respuestas-sucintas-a-los-ejercicios"><i class="fa fa-check"></i>Respuestas sucintas a los ejercicios</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="6" data-path="chap-bondad.html"><a href="chap-bondad.html"><i class="fa fa-check"></i><b>6</b> Contrastes de bondad de ajuste</a><ul>
-<li class="chapter" data-level="6.1" data-path="chap-bondad.html"><a href="chap-bondad.html#pruebas-graficas-q-q-plots"><i class="fa fa-check"></i><b>6.1</b> Pruebas gráficas: Q-Q-plots</a></li>
+<li class="chapter" data-level="6" data-path="chap-bondad.html"><a href="chap-bondad.html"><i class="fa fa-check"></i><b>6</b> Contrastes de bondad de ajuste</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="chap-bondad.html"><a href="chap-bondad.html#pruebas-gráficas-q-q-plots"><i class="fa fa-check"></i><b>6.1</b> Pruebas gráficas: Q-Q-plots</a></li>
 <li class="chapter" data-level="6.2" data-path="chap-bondad.html"><a href="chap-bondad.html#el-test-chi2-de-pearson"><i class="fa fa-check"></i><b>6.2</b> El test <span class="math inline">\(\chi^2\)</span> de Pearson</a></li>
 <li class="chapter" data-level="6.3" data-path="chap-bondad.html"><a href="chap-bondad.html#el-test-chi2-para-distribuciones-continuas"><i class="fa fa-check"></i><b>6.3</b> El test <span class="math inline">\(\chi^2\)</span> para distribuciones continuas</a></li>
 <li class="chapter" data-level="6.4" data-path="chap-bondad.html"><a href="chap-bondad.html#el-test-de-kolgomorov-smirnov"><i class="fa fa-check"></i><b>6.4</b> El test de Kolgomorov-Smirnov</a></li>
 <li class="chapter" data-level="6.5" data-path="chap-bondad.html"><a href="chap-bondad.html#tests-de-normalidad"><i class="fa fa-check"></i><b>6.5</b> Tests de normalidad</a></li>
-<li class="chapter" data-level="6.6" data-path="chap-bondad.html"><a href="chap-bondad.html#guia-rapida-4"><i class="fa fa-check"></i><b>6.6</b> Guía rápida</a></li>
-<li class="chapter" data-level="6.7" data-path="chap-bondad.html"><a href="chap-bondad.html#ejercicios-6"><i class="fa fa-check"></i><b>6.7</b> Ejercicios</a><ul>
-<li class="chapter" data-level="" data-path="chap-bondad.html"><a href="chap-bondad.html#modelo-de-test-1"><i class="fa fa-check"></i>Modelo de test</a></li>
-<li class="chapter" data-level="" data-path="chap-bondad.html"><a href="chap-bondad.html#problemas-4"><i class="fa fa-check"></i>Problemas</a></li>
-<li class="chapter" data-level="" data-path="chap-bondad.html"><a href="chap-bondad.html#respuestas-al-test-5"><i class="fa fa-check"></i>Respuestas al test</a></li>
-<li class="chapter" data-level="" data-path="chap-bondad.html"><a href="chap-bondad.html#soluciones-sucintas-de-los-problemas-4"><i class="fa fa-check"></i>Soluciones sucintas de los problemas</a></li>
+<li class="chapter" data-level="6.6" data-path="chap-muestreo.html"><a href="chap-muestreo.html#guía-rápida"><i class="fa fa-check"></i><b>6.6</b> Guía rápida</a></li>
+<li class="chapter" data-level="6.7" data-path="chap-distr.html"><a href="chap-distr.html#ejercicios"><i class="fa fa-check"></i><b>6.7</b> Ejercicios</a>
+<ul>
+<li class="chapter" data-level="" data-path="chap-contrastes.html"><a href="chap-contrastes.html#modelo-de-test"><i class="fa fa-check"></i>Modelo de test</a></li>
+<li class="chapter" data-level="" data-path="chap-distr.html"><a href="chap-distr.html#problemas"><i class="fa fa-check"></i>Problemas</a></li>
+<li class="chapter" data-level="" data-path="chap-distr.html"><a href="chap-distr.html#respuestas-al-test"><i class="fa fa-check"></i>Respuestas al test</a></li>
+<li class="chapter" data-level="" data-path="chap-distr.html"><a href="chap-distr.html#soluciones-sucintas-de-los-problemas"><i class="fa fa-check"></i>Soluciones sucintas de los problemas</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="7" data-path="chap-indep.html"><a href="chap-indep.html"><i class="fa fa-check"></i><b>7</b> Contrastes de independencia y homogeneidad</a><ul>
+<li class="chapter" data-level="7" data-path="chap-indep.html"><a href="chap-indep.html"><i class="fa fa-check"></i><b>7</b> Contrastes de independencia y homogeneidad</a>
+<ul>
 <li class="chapter" data-level="7.1" data-path="chap-indep.html"><a href="chap-indep.html#tablas-de-contingencia"><i class="fa fa-check"></i><b>7.1</b> Tablas de contingencia</a></li>
 <li class="chapter" data-level="7.2" data-path="chap-indep.html"><a href="chap-indep.html#contraste-de-independencia"><i class="fa fa-check"></i><b>7.2</b> Contraste de independencia</a></li>
 <li class="chapter" data-level="7.3" data-path="chap-indep.html"><a href="chap-indep.html#sec:hom"><i class="fa fa-check"></i><b>7.3</b> Contraste de homogeneidad</a></li>
 <li class="chapter" data-level="7.4" data-path="chap-indep.html"><a href="chap-indep.html#potencia-de-un-contraste-chi2"><i class="fa fa-check"></i><b>7.4</b> Potencia de un contraste <span class="math inline">\(\chi^2\)</span></a></li>
-<li class="chapter" data-level="7.5" data-path="chap-indep.html"><a href="chap-indep.html#guia-rapida-5"><i class="fa fa-check"></i><b>7.5</b> Guía rápida</a></li>
-<li class="chapter" data-level="7.6" data-path="chap-indep.html"><a href="chap-indep.html#ejercicios-7"><i class="fa fa-check"></i><b>7.6</b> Ejercicios</a><ul>
-<li class="chapter" data-level="" data-path="chap-indep.html"><a href="chap-indep.html#modelo-de-test-2"><i class="fa fa-check"></i>Modelo de test</a></li>
-<li class="chapter" data-level="" data-path="chap-indep.html"><a href="chap-indep.html#ejercicios-8"><i class="fa fa-check"></i>Ejercicios</a></li>
-<li class="chapter" data-level="" data-path="chap-indep.html"><a href="chap-indep.html#respuestas-al-test-6"><i class="fa fa-check"></i>Respuestas al test</a></li>
-<li class="chapter" data-level="" data-path="chap-indep.html"><a href="chap-indep.html#soluciones-sucintas-de-los-problemas-5"><i class="fa fa-check"></i>Soluciones sucintas de los problemas</a></li>
+<li class="chapter" data-level="7.5" data-path="chap-muestreo.html"><a href="chap-muestreo.html#guía-rápida"><i class="fa fa-check"></i><b>7.5</b> Guía rápida</a></li>
+<li class="chapter" data-level="7.6" data-path="chap-distr.html"><a href="chap-distr.html#ejercicios"><i class="fa fa-check"></i><b>7.6</b> Ejercicios</a>
+<ul>
+<li class="chapter" data-level="" data-path="chap-contrastes.html"><a href="chap-contrastes.html#modelo-de-test"><i class="fa fa-check"></i>Modelo de test</a></li>
+<li class="chapter" data-level="" data-path="chap-contrastes.html"><a href="chap-contrastes.html#ejercicios-1"><i class="fa fa-check"></i>Ejercicios</a></li>
+<li class="chapter" data-level="" data-path="chap-distr.html"><a href="chap-distr.html#respuestas-al-test"><i class="fa fa-check"></i>Respuestas al test</a></li>
+<li class="chapter" data-level="" data-path="chap-distr.html"><a href="chap-distr.html#soluciones-sucintas-de-los-problemas"><i class="fa fa-check"></i>Soluciones sucintas de los problemas</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="8" data-path="chap-estmult.html"><a href="chap-estmult.html"><i class="fa fa-check"></i><b>8</b> Introducción a la estadística descriptiva multidimensional</a><ul>
+<li class="chapter" data-level="8" data-path="chap-estmult.html"><a href="chap-estmult.html"><i class="fa fa-check"></i><b>8</b> Introducción a la estadística descriptiva multidimensional</a>
+<ul>
 <li class="chapter" data-level="8.1" data-path="chap-estmult.html"><a href="chap-estmult.html#matrices-de-datos-cuantitativos"><i class="fa fa-check"></i><b>8.1</b> Matrices de datos cuantitativos</a></li>
 <li class="chapter" data-level="8.2" data-path="chap-estmult.html"><a href="chap-estmult.html#transformaciones-lineales"><i class="fa fa-check"></i><b>8.2</b> Transformaciones lineales</a></li>
 <li class="chapter" data-level="8.3" data-path="chap-estmult.html"><a href="chap-estmult.html#covarianzas-y-correlaciones"><i class="fa fa-check"></i><b>8.3</b> Covarianzas y correlaciones</a></li>
-<li class="chapter" data-level="8.4" data-path="chap-estmult.html"><a href="chap-estmult.html#correlacion-de-spearman"><i class="fa fa-check"></i><b>8.4</b> Correlación de Spearman</a></li>
-<li class="chapter" data-level="8.5" data-path="chap-estmult.html"><a href="chap-estmult.html#contrastes-de-correlacion"><i class="fa fa-check"></i><b>8.5</b> Contrastes de correlación</a></li>
+<li class="chapter" data-level="8.4" data-path="chap-estmult.html"><a href="chap-estmult.html#correlación-de-spearman"><i class="fa fa-check"></i><b>8.4</b> Correlación de Spearman</a></li>
+<li class="chapter" data-level="8.5" data-path="chap-estmult.html"><a href="chap-estmult.html#contrastes-de-correlación"><i class="fa fa-check"></i><b>8.5</b> Contrastes de correlación</a></li>
 <li class="chapter" data-level="8.6" data-path="chap-estmult.html"><a href="chap-estmult.html#un-ejemplo"><i class="fa fa-check"></i><b>8.6</b> Un ejemplo</a></li>
-<li class="chapter" data-level="8.7" data-path="chap-estmult.html"><a href="chap-estmult.html#representacion-grafica-de-datos-multidimensionales"><i class="fa fa-check"></i><b>8.7</b> Representación gráfica de datos multidimensionales</a></li>
-<li class="chapter" data-level="8.8" data-path="chap-estmult.html"><a href="chap-estmult.html#guia-rapida-6"><i class="fa fa-check"></i><b>8.8</b> Guía rápida</a></li>
-<li class="chapter" data-level="8.9" data-path="chap-estmult.html"><a href="chap-estmult.html#ejercicios-9"><i class="fa fa-check"></i><b>8.9</b> Ejercicios</a><ul>
-<li class="chapter" data-level="" data-path="chap-estmult.html"><a href="chap-estmult.html#modelo-de-test-3"><i class="fa fa-check"></i>Modelo de test</a></li>
-<li class="chapter" data-level="" data-path="chap-estmult.html"><a href="chap-estmult.html#problemas-5"><i class="fa fa-check"></i>Problemas</a></li>
-<li class="chapter" data-level="" data-path="chap-estmult.html"><a href="chap-estmult.html#respuestas-al-test-7"><i class="fa fa-check"></i>Respuestas al test</a></li>
-<li class="chapter" data-level="" data-path="chap-estmult.html"><a href="chap-estmult.html#soluciones-sucintas-de-los-problemas-6"><i class="fa fa-check"></i>Soluciones sucintas de los problemas</a></li>
+<li class="chapter" data-level="8.7" data-path="chap-estmult.html"><a href="chap-estmult.html#representación-gráfica-de-datos-multidimensionales"><i class="fa fa-check"></i><b>8.7</b> Representación gráfica de datos multidimensionales</a></li>
+<li class="chapter" data-level="8.8" data-path="chap-muestreo.html"><a href="chap-muestreo.html#guía-rápida"><i class="fa fa-check"></i><b>8.8</b> Guía rápida</a></li>
+<li class="chapter" data-level="8.9" data-path="chap-distr.html"><a href="chap-distr.html#ejercicios"><i class="fa fa-check"></i><b>8.9</b> Ejercicios</a>
+<ul>
+<li class="chapter" data-level="" data-path="chap-contrastes.html"><a href="chap-contrastes.html#modelo-de-test"><i class="fa fa-check"></i>Modelo de test</a></li>
+<li class="chapter" data-level="" data-path="chap-distr.html"><a href="chap-distr.html#problemas"><i class="fa fa-check"></i>Problemas</a></li>
+<li class="chapter" data-level="" data-path="chap-distr.html"><a href="chap-distr.html#respuestas-al-test"><i class="fa fa-check"></i>Respuestas al test</a></li>
+<li class="chapter" data-level="" data-path="chap-distr.html"><a href="chap-distr.html#soluciones-sucintas-de-los-problemas"><i class="fa fa-check"></i>Soluciones sucintas de los problemas</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="9" data-path="chap-ANOVA.html"><a href="chap-ANOVA.html"><i class="fa fa-check"></i><b>9</b> ANOVA básico</a><ul>
+<li class="chapter" data-level="9" data-path="chap-ANOVA.html"><a href="chap-ANOVA.html"><i class="fa fa-check"></i><b>9</b> ANOVA básico</a>
+<ul>
 <li class="chapter" data-level="9.1" data-path="chap-ANOVA.html"><a href="chap-ANOVA.html#sec:modelos"><i class="fa fa-check"></i><b>9.1</b> Los modelos del ANOVA en R</a></li>
 <li class="chapter" data-level="9.2" data-path="chap-ANOVA.html"><a href="chap-ANOVA.html#sec:ANOVA-1"><i class="fa fa-check"></i><b>9.2</b> ANOVA de un factor</a></li>
 <li class="chapter" data-level="9.3" data-path="chap-ANOVA.html"><a href="chap-ANOVA.html#anova-de-bloques-completos-aleatorios"><i class="fa fa-check"></i><b>9.3</b> ANOVA de bloques completos aleatorios</a></li>
 <li class="chapter" data-level="9.4" data-path="chap-ANOVA.html"><a href="chap-ANOVA.html#sec:ANOVA2"><i class="fa fa-check"></i><b>9.4</b> ANOVA de dos vías</a></li>
 <li class="chapter" data-level="9.5" data-path="chap-ANOVA.html"><a href="chap-ANOVA.html#condiciones-del-anova"><i class="fa fa-check"></i><b>9.5</b> Condiciones del ANOVA</a></li>
-<li class="chapter" data-level="9.6" data-path="chap-ANOVA.html"><a href="chap-ANOVA.html#sec:pares"><i class="fa fa-check"></i><b>9.6</b> Comparaciones de pares de medias</a><ul>
+<li class="chapter" data-level="9.6" data-path="chap-ANOVA.html"><a href="chap-ANOVA.html#sec:pares"><i class="fa fa-check"></i><b>9.6</b> Comparaciones de pares de medias</a>
+<ul>
 <li class="chapter" data-level="9.6.1" data-path="chap-ANOVA.html"><a href="chap-ANOVA.html#tests-t-por-parejas"><i class="fa fa-check"></i><b>9.6.1</b> Tests t por parejas</a></li>
 <li class="chapter" data-level="9.6.2" data-path="chap-ANOVA.html"><a href="chap-ANOVA.html#test-de-duncan"><i class="fa fa-check"></i><b>9.6.2</b> Test de Duncan</a></li>
-<li class="chapter" data-level="9.6.3" data-path="chap-ANOVA.html"><a href="chap-ANOVA.html#metodo-de-tukey"><i class="fa fa-check"></i><b>9.6.3</b> Método de Tukey</a></li>
+<li class="chapter" data-level="9.6.3" data-path="chap-ANOVA.html"><a href="chap-ANOVA.html#método-de-tukey"><i class="fa fa-check"></i><b>9.6.3</b> Método de Tukey</a></li>
 </ul></li>
-<li class="chapter" data-level="9.7" data-path="chap-ANOVA.html"><a href="chap-ANOVA.html#metodos-no-parametricos"><i class="fa fa-check"></i><b>9.7</b> Métodos no paramétricos</a></li>
-<li class="chapter" data-level="9.8" data-path="chap-ANOVA.html"><a href="chap-ANOVA.html#guia-rapida-7"><i class="fa fa-check"></i><b>9.8</b> Guía rápida</a></li>
-<li class="chapter" data-level="9.9" data-path="chap-ANOVA.html"><a href="chap-ANOVA.html#ejercicios-10"><i class="fa fa-check"></i><b>9.9</b> Ejercicios</a><ul>
-<li class="chapter" data-level="" data-path="chap-ANOVA.html"><a href="chap-ANOVA.html#test-4"><i class="fa fa-check"></i>Test</a></li>
+<li class="chapter" data-level="9.7" data-path="chap-ANOVA.html"><a href="chap-ANOVA.html#métodos-no-paramétricos"><i class="fa fa-check"></i><b>9.7</b> Métodos no paramétricos</a></li>
+<li class="chapter" data-level="9.8" data-path="chap-muestreo.html"><a href="chap-muestreo.html#guía-rápida"><i class="fa fa-check"></i><b>9.8</b> Guía rápida</a></li>
+<li class="chapter" data-level="9.9" data-path="chap-distr.html"><a href="chap-distr.html#ejercicios"><i class="fa fa-check"></i><b>9.9</b> Ejercicios</a>
+<ul>
+<li class="chapter" data-level="" data-path="chap-distr.html"><a href="chap-distr.html#test"><i class="fa fa-check"></i>Test</a></li>
 <li class="chapter" data-level="9.9.1" data-path="chap-ANOVA.html"><a href="chap-ANOVA.html#ejercicio"><i class="fa fa-check"></i><b>9.9.1</b> Ejercicio</a></li>
-<li class="chapter" data-level="" data-path="chap-ANOVA.html"><a href="chap-ANOVA.html#respuestas-al-test-8"><i class="fa fa-check"></i>Respuestas al test</a></li>
+<li class="chapter" data-level="" data-path="chap-distr.html"><a href="chap-distr.html#respuestas-al-test"><i class="fa fa-check"></i>Respuestas al test</a></li>
 <li class="chapter" data-level="9.9.2" data-path="chap-ANOVA.html"><a href="chap-ANOVA.html#soluciones-sucintas-del-ejercicio"><i class="fa fa-check"></i><b>9.9.2</b> Soluciones sucintas del ejercicio</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="10" data-path="chap-regresion.html"><a href="chap-regresion.html"><i class="fa fa-check"></i><b>10</b> Regresión lineal</a><ul>
+<li class="chapter" data-level="10" data-path="chap-regresion.html"><a href="chap-regresion.html"><i class="fa fa-check"></i><b>10</b> Regresión lineal</a>
+<ul>
 <li class="chapter" data-level="10.1" data-path="chap-regresion.html"><a href="chap-regresion.html#sec:1"><i class="fa fa-check"></i><b>10.1</b> El modelo de regresión lineal en R</a></li>
-<li class="chapter" data-level="10.2" data-path="chap-regresion.html"><a href="chap-regresion.html#intervalos-de-confianza-en-el-modelo-de-regresion-lineal"><i class="fa fa-check"></i><b>10.2</b> Intervalos de confianza en el modelo de regresión lineal</a></li>
+<li class="chapter" data-level="10.2" data-path="chap-regresion.html"><a href="chap-regresion.html#intervalos-de-confianza-en-el-modelo-de-regresión-lineal"><i class="fa fa-check"></i><b>10.2</b> Intervalos de confianza en el modelo de regresión lineal</a></li>
 <li class="chapter" data-level="10.3" data-path="chap-regresion.html"><a href="chap-regresion.html#sec:seleccion"><i class="fa fa-check"></i><b>10.3</b> Selección del modelo en base al ajuste de los datos</a></li>
 <li class="chapter" data-level="10.4" data-path="chap-regresion.html"><a href="chap-regresion.html#sec:diagn"><i class="fa fa-check"></i><b>10.4</b> Diagnósticos de regresión</a></li>
-<li class="chapter" data-level="10.5" data-path="chap-regresion.html"><a href="chap-regresion.html#guia-rapida-8"><i class="fa fa-check"></i><b>10.5</b> Guía rápida</a></li>
-<li class="chapter" data-level="10.6" data-path="chap-regresion.html"><a href="chap-regresion.html#ejercicios-11"><i class="fa fa-check"></i><b>10.6</b> Ejercicios</a><ul>
-<li class="chapter" data-level="" data-path="chap-regresion.html"><a href="chap-regresion.html#test-5"><i class="fa fa-check"></i>Test</a></li>
-<li class="chapter" data-level="" data-path="chap-regresion.html"><a href="chap-regresion.html#respuestas-al-test-9"><i class="fa fa-check"></i>Respuestas al test</a></li>
+<li class="chapter" data-level="10.5" data-path="chap-muestreo.html"><a href="chap-muestreo.html#guía-rápida"><i class="fa fa-check"></i><b>10.5</b> Guía rápida</a></li>
+<li class="chapter" data-level="10.6" data-path="chap-distr.html"><a href="chap-distr.html#ejercicios"><i class="fa fa-check"></i><b>10.6</b> Ejercicios</a>
+<ul>
+<li class="chapter" data-level="" data-path="chap-distr.html"><a href="chap-distr.html#test"><i class="fa fa-check"></i>Test</a></li>
+<li class="chapter" data-level="" data-path="chap-distr.html"><a href="chap-distr.html#respuestas-al-test"><i class="fa fa-check"></i>Respuestas al test</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="11" data-path="chap-clustering.html"><a href="chap-clustering.html"><i class="fa fa-check"></i><b>11</b> <em>Clustering</em> básico</a><ul>
-<li class="chapter" data-level="11.1" data-path="chap-clustering.html"><a href="chap-clustering.html#metodo-de-k-medias-o-k-means"><i class="fa fa-check"></i><b>11.1</b> Método de k-medias o <em>k-means</em></a></li>
-<li class="chapter" data-level="11.2" data-path="chap-clustering.html"><a href="chap-clustering.html#eleccion-del-numero-de-clusters"><i class="fa fa-check"></i><b>11.2</b> Elección del número de <em>clusters</em></a></li>
-<li class="chapter" data-level="11.3" data-path="chap-clustering.html"><a href="chap-clustering.html#metodos-jerarquicos-aglomerativos"><i class="fa fa-check"></i><b>11.3</b> Métodos jerárquicos aglomerativos</a></li>
-<li class="chapter" data-level="11.4" data-path="chap-clustering.html"><a href="chap-clustering.html#guia-rapida-9"><i class="fa fa-check"></i><b>11.4</b> Guía rápida</a></li>
-<li class="chapter" data-level="11.5" data-path="chap-clustering.html"><a href="chap-clustering.html#ejercicios-12"><i class="fa fa-check"></i><b>11.5</b> Ejercicios</a><ul>
-<li class="chapter" data-level="" data-path="chap-clustering.html"><a href="chap-clustering.html#test-6"><i class="fa fa-check"></i>Test</a></li>
-<li class="chapter" data-level="" data-path="chap-clustering.html"><a href="chap-clustering.html#respuestas-al-test-10"><i class="fa fa-check"></i>Respuestas al test</a></li>
+<li class="chapter" data-level="11" data-path="chap-clustering.html"><a href="chap-clustering.html"><i class="fa fa-check"></i><b>11</b> <em>Clustering</em> básico</a>
+<ul>
+<li class="chapter" data-level="11.1" data-path="chap-clustering.html"><a href="chap-clustering.html#método-de-k-medias-o-k-means"><i class="fa fa-check"></i><b>11.1</b> Método de k-medias o <em>k-means</em></a></li>
+<li class="chapter" data-level="11.2" data-path="chap-clustering.html"><a href="chap-clustering.html#elección-del-número-de-clusters"><i class="fa fa-check"></i><b>11.2</b> Elección del número de <em>clusters</em></a></li>
+<li class="chapter" data-level="11.3" data-path="chap-clustering.html"><a href="chap-clustering.html#métodos-jerárquicos-aglomerativos"><i class="fa fa-check"></i><b>11.3</b> Métodos jerárquicos aglomerativos</a></li>
+<li class="chapter" data-level="11.4" data-path="chap-muestreo.html"><a href="chap-muestreo.html#guía-rápida"><i class="fa fa-check"></i><b>11.4</b> Guía rápida</a></li>
+<li class="chapter" data-level="11.5" data-path="chap-distr.html"><a href="chap-distr.html#ejercicios"><i class="fa fa-check"></i><b>11.5</b> Ejercicios</a>
+<ul>
+<li class="chapter" data-level="" data-path="chap-distr.html"><a href="chap-distr.html#test"><i class="fa fa-check"></i>Test</a></li>
+<li class="chapter" data-level="" data-path="chap-distr.html"><a href="chap-distr.html#respuestas-al-test"><i class="fa fa-check"></i>Respuestas al test</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="12" data-path="extras-de-r-markdown.html"><a href="extras-de-r-markdown.html"><i class="fa fa-check"></i><b>12</b> Extras de <em>R Markdown</em></a><ul>
-<li class="chapter" data-level="12.1" data-path="extras-de-r-markdown.html"><a href="extras-de-r-markdown.html#parametros-de-los-chunks-de-r"><i class="fa fa-check"></i><b>12.1</b> Parámetros de los <em>chunks</em> de R</a></li>
-<li class="chapter" data-level="12.2" data-path="extras-de-r-markdown.html"><a href="extras-de-r-markdown.html#los-chunks-en-modo-linea"><i class="fa fa-check"></i><b>12.2</b> Los <em>chunks</em> en modo línea</a></li>
+<li class="chapter" data-level="12" data-path="extras-de-r-markdown.html"><a href="extras-de-r-markdown.html"><i class="fa fa-check"></i><b>12</b> Extras de <em>R Markdown</em></a>
+<ul>
+<li class="chapter" data-level="12.1" data-path="extras-de-r-markdown.html"><a href="extras-de-r-markdown.html#parámetros-de-los-chunks-de-r"><i class="fa fa-check"></i><b>12.1</b> Parámetros de los <em>chunks</em> de R</a></li>
+<li class="chapter" data-level="12.2" data-path="extras-de-r-markdown.html"><a href="extras-de-r-markdown.html#los-chunks-en-modo-línea"><i class="fa fa-check"></i><b>12.2</b> Los <em>chunks</em> en modo línea</a></li>
 <li class="chapter" data-level="12.3" data-path="extras-de-r-markdown.html"><a href="extras-de-r-markdown.html#figuras"><i class="fa fa-check"></i><b>12.3</b> Figuras</a></li>
 <li class="chapter" data-level="12.4" data-path="extras-de-r-markdown.html"><a href="extras-de-r-markdown.html#tablas"><i class="fa fa-check"></i><b>12.4</b> Tablas</a></li>
-<li class="chapter" data-level="12.5" data-path="extras-de-r-markdown.html"><a href="extras-de-r-markdown.html#formulas-matematicas"><i class="fa fa-check"></i><b>12.5</b> Fórmulas matemáticas</a></li>
+<li class="chapter" data-level="12.5" data-path="extras-de-r-markdown.html"><a href="extras-de-r-markdown.html#fórmulas-matemáticas"><i class="fa fa-check"></i><b>12.5</b> Fórmulas matemáticas</a></li>
 </ul></li>
 </ul>
 
@@ -298,7 +326,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="chap:estimacion" class="section level1">
+<div id="chap:estimacion" class="section level1" number="3">
 <h1><span class="header-section-number">Lección 3</span> Estimación puntual</h1>
 <p>En un estudio inferencial, una vez tomada la muestra y obtenidos los datos sobre sus miembros, el siguiente paso es inferir, es decir, deducir información sobre la población a partir de estos datos. Dicha información se puede deducir de dos formas:</p>
 <ul>
@@ -321,7 +349,7 @@ es un estimador del <strong>valor medio</strong> (<strong>valor esperado</strong
 <li><p><strong>Máximo verosímil</strong>: Cada muestra aleatoria de una población tiene una probabilidad de obtenerse que no solo depende de la muestra, sino también de la distribución de probabilidad de la variable aleatoria poblacional. Si la distribución poblacional es de un tipo concreto (Bernoulli, normal, …), esta probabilidad depende de sus parámetros. Decimos entonces que un estimador es <strong>máximo verosímil</strong> cuando el resultado que da sobre cada muestra aleatoria es el valor del parámetro poblacional que maximiza la probabilidad de obtenerla. Por ejemplo, si lanzamos una moneda al aire <span class="math inline">\(n\)</span> veces y calculamos la proporción de veces que obtenemos cara, esa <strong>proporción muestral</strong> <span class="math inline">\(\widehat{p}\)</span> es el estimador máximo verosímil de la probabilidad <span class="math inline">\(p\)</span> de obtener cara con esa moneda. Esto quiere decir que, de entre todas las distribuciones binomiales <span class="math inline">\(B(n,p)\)</span> que pueden modelar el número de caras que obtenemos al lanzar <span class="math inline">\(n\)</span> veces nuestra moneda, aquella que asigna mayor probabilidad al número de caras que hemos obtenido es la que tiene como parámetro <span class="math inline">\(p\)</span> la frecuencia relativa de caras <span class="math inline">\(\widehat{p}\)</span> que hemos observado.</p></li>
 </ul>
 <p>Para algunas distribuciones, el método de estimación por máxima verosimilitud de sus parámetros da lugar a fórmulas cerradas más o menos sencillas, pero en otros casos nos tenemos que conformar con un valor aproximado obtenido mediante algún método numérico.</p>
-<div id="estimacion-maximo-verosimil" class="section level2">
+<div id="estimación-máximo-verosímil" class="section level2" number="3.1">
 <h2><span class="header-section-number">3.1</span> Estimación máximo verosímil</h2>
 <p>A continuación recordamos una lista de los estimadores máximo verosímiles de los parámetros de las distribuciones más comunes a partir de una muestra aleatoria simple:</p>
 <ul>
@@ -337,83 +365,79 @@ es un estimador del <strong>valor medio</strong> (<strong>valor esperado</strong
 <div class="example">
 <p><span id="exm:unnamed-chunk-83" class="example"><strong>Ejemplo 3.1  </strong></span>Supongamos que tenemos una muestra aleatoria simple de tamaño <span class="math inline">\(n\)</span> de una variable <span class="math inline">\(X\)</span> que sigue una distribución Bernoulli de probabilidad poblacional <span class="math inline">\(p\)</span> desconocida que queremos estimar. Por ejemplo, puede ser que tengamos una moneda posiblemente trucada, la hayamos lanzado 100 veces al aire y hayamos anotado los resultados (1, cara, 0, cruz), y a partir de este experimento queramos estimar la probabilidad de sacar cara con esta moneda. O que hayamos anotado para 100 individuos de una población elegidos al azar si tienen o no una determinada enfermedad (1 significa que sí, 0 que no) y a partir de esta muestra deseemos estimar la <strong>prevalencia</strong> de la enfermedad en la población, es decir, la proporción real de enfermos, que coincide con la probabilidad de que un individuo elegido al azar tenga dicha enfermedad. Tomemos, para fijar ideas, la siguiente muestra de tamaño 100:</p>
 </div>
-
-<pre class="sourceCode r"><code class="sourceCode r">x=<span class="kw">c</span>(<span class="dv">0</span>,<span class="dv">1</span>,<span class="dv">1</span>,<span class="dv">1</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">1</span>,<span class="dv">1</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">1</span>,<span class="dv">1</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">1</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">1</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">1</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">1</span>,<span class="dv">0</span>,<span class="dv">1</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,
-<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">1</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">1</span>,<span class="dv">1</span>,<span class="dv">0</span>,<span class="dv">1</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">1</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">1</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,
-<span class="dv">1</span>,<span class="dv">1</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">1</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">1</span>,<span class="dv">0</span>)</code></pre>
+<div class="sourceCode" id="cb174"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb174-1"><a href="chap-estimacion.html#cb174-1" aria-hidden="true" tabindex="-1"></a>x<span class="ot">=</span><span class="fu">c</span>(<span class="dv">0</span>,<span class="dv">1</span>,<span class="dv">1</span>,<span class="dv">1</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">1</span>,<span class="dv">1</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">1</span>,<span class="dv">1</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">1</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">1</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">1</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">1</span>,<span class="dv">0</span>,<span class="dv">1</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,</span>
+<span id="cb174-2"><a href="chap-estimacion.html#cb174-2" aria-hidden="true" tabindex="-1"></a><span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">1</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">1</span>,<span class="dv">1</span>,<span class="dv">0</span>,<span class="dv">1</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">1</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">1</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,</span>
+<span id="cb174-3"><a href="chap-estimacion.html#cb174-3" aria-hidden="true" tabindex="-1"></a><span class="dv">1</span>,<span class="dv">1</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">1</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">1</span>,<span class="dv">0</span>)</span></code></pre></div>
 <p>En este caso, podemos estimar <span class="math inline">\(p\)</span> mediante la proporción muestral de éxitos <span class="math inline">\(\widehat{p}\)</span>, que coincide con la media muestral. El error típico de este estimador es <span class="math inline">\(\sqrt{p(1-p)/n}\)</span>, y el error típico de una estimación concreta es <span class="math inline">\(\sqrt{\widehat{p}(1-\widehat{p})/n}\)</span>. Por lo tanto, a mano podemos estimar <span class="math inline">\(p\)</span> y calcular el error típico de dicha estimación de la manera siguiente:</p>
-<pre class="sourceCode r"><code class="sourceCode r">n=<span class="kw">length</span>(x)  <span class="co">#Tamaño de la muestra</span>
-estim.p=<span class="kw">mean</span>(x)  <span class="co">#Proporción muestral</span>
-estim.p</code></pre>
+<div class="sourceCode" id="cb175"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb175-1"><a href="chap-estimacion.html#cb175-1" aria-hidden="true" tabindex="-1"></a>n<span class="ot">=</span><span class="fu">length</span>(x)  <span class="co">#Tamaño de la muestra</span></span>
+<span id="cb175-2"><a href="chap-estimacion.html#cb175-2" aria-hidden="true" tabindex="-1"></a>estim.p<span class="ot">=</span><span class="fu">mean</span>(x)  <span class="co">#Proporción muestral</span></span>
+<span id="cb175-3"><a href="chap-estimacion.html#cb175-3" aria-hidden="true" tabindex="-1"></a>estim.p</span></code></pre></div>
 <pre><code>## [1] 0.22</code></pre>
-<pre class="sourceCode r"><code class="sourceCode r">error.tip.p=<span class="kw">sqrt</span>(estim.p<span class="op">*</span>(<span class="dv">1</span><span class="op">-</span>estim.p)<span class="op">/</span>n) <span class="co">#Error típico de la estimación</span>
-error.tip.p</code></pre>
+<div class="sourceCode" id="cb177"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb177-1"><a href="chap-estimacion.html#cb177-1" aria-hidden="true" tabindex="-1"></a>error.tip.p<span class="ot">=</span><span class="fu">sqrt</span>(estim.p<span class="sc">*</span>(<span class="dv">1</span><span class="sc">-</span>estim.p)<span class="sc">/</span>n) <span class="co">#Error típico de la estimación</span></span>
+<span id="cb177-2"><a href="chap-estimacion.html#cb177-2" aria-hidden="true" tabindex="-1"></a>error.tip.p</span></code></pre></div>
 <pre><code>## [1] 0.04142463</code></pre>
 <p>De esta manera, estimamos que <span class="math inline">\(p\)</span>=0.22 con un error típico de 0.04.</p>
 <p>Con R podemos estimar un parámetro de una distribución por el método de máxima verosimilitud a partir de una muestra y además obtener el error típico de dicha estimación usando la función <code>fitdistr</code> del paquete <strong>MASS</strong>. Esta función calcula los estimadores máximo verosímiles de los parámetros de la mayoría de las familias de distribuciones disponibles en R. Su sintaxis básica es</p>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">fitdistr</span>(x, <span class="dt">densfun=</span>..., <span class="dt">start=</span>...)</code></pre>
+<div class="sourceCode" id="cb179"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb179-1"><a href="chap-estimacion.html#cb179-1" aria-hidden="true" tabindex="-1"></a><span class="fu">fitdistr</span>(x, <span class="at">densfun=</span>..., <span class="at">start=</span>...)</span></code></pre></div>
 <p>donde</p>
 <ul>
 <li><p><code>x</code> es la muestra, un vector numérico.</p></li>
-<li><p>El valor de <code>densfun</code> ha de ser el nombre de la familia de distribuciones; se tiene que entrar entre comillas y puede tomar, entre otros, los valores siguientes: <code>&quot;chi-squared&quot;</code>, <code>&quot;exponential&quot;</code>, <code>&quot;f&quot;</code>, <code>&quot;geometric&quot;</code>, <code>&quot;lognormal&quot;</code>, <code>&quot;normal&quot;</code> y <code>&quot;poisson&quot;</code>. La lista de distribuciones a las que se puede aplicar, que podéis consultar en la Ayuda de la función, no incluye la Bernoulli ni la binomial.</p></li>
-<li><p>Si <code>fitdistr</code> no dispone de una fórmula cerrada para el estimador máximo verosímil de algún parámetro, usa un algoritmo numérico para aproximarlo que requiere de un valor inicial para arrancar. Este valor (o valores) se puede especificar igualando el parámetro <code>start</code> a una <code>list</code> con cada parámetro a estimar igualado a un valor inicial. Para algunas distribuciones, como la <code>&quot;t&quot;</code>, <code>fitdistr</code> sabe tomar valores iniciales razonables, y no es necesario especificar el parámetro <code>start</code>. Pero para otras distribuciones, como por ejemplo la <code>&quot;chi-squared&quot;</code>, es obligatorio especificarlo. Para las distribuciones que disponen de fórmula cerrada, como la <code>&quot;normal&quot;</code> o la <code>&quot;poisson&quot;</code>, se tiene que omitir el parámetro <code>start</code>.</p></li>
+<li><p>El valor de <code>densfun</code> ha de ser el nombre de la familia de distribuciones; se tiene que entrar entre comillas y puede tomar, entre otros, los valores siguientes: <code>"chi-squared"</code>, <code>"exponential"</code>, <code>"f"</code>, <code>"geometric"</code>, <code>"lognormal"</code>, <code>"normal"</code> y <code>"poisson"</code>. La lista de distribuciones a las que se puede aplicar, que podéis consultar en la Ayuda de la función, no incluye la Bernoulli ni la binomial.</p></li>
+<li><p>Si <code>fitdistr</code> no dispone de una fórmula cerrada para el estimador máximo verosímil de algún parámetro, usa un algoritmo numérico para aproximarlo que requiere de un valor inicial para arrancar. Este valor (o valores) se puede especificar igualando el parámetro <code>start</code> a una <code>list</code> con cada parámetro a estimar igualado a un valor inicial. Para algunas distribuciones, como la <code>"t"</code>, <code>fitdistr</code> sabe tomar valores iniciales razonables, y no es necesario especificar el parámetro <code>start</code>. Pero para otras distribuciones, como por ejemplo la <code>"chi-squared"</code>, es obligatorio especificarlo. Para las distribuciones que disponen de fórmula cerrada, como la <code>"normal"</code> o la <code>"poisson"</code>, se tiene que omitir el parámetro <code>start</code>.</p></li>
 </ul>
 <p>Como no podemos usar la función <code>fitdistr</code> para estimar el parámetro <span class="math inline">\(p\)</span> de una Bernoulli (los autores del paquete debieron de considerar que era más fácil estimarlo directamente), vamos a usarla en otro ejemplo.</p>
 
 <div class="example">
 <p><span id="exm:pois1" class="example"><strong>Ejemplo 3.2  </strong></span>Consideremos la siguiente muestra <em>y</em> de 100 valores generados con distribución de Poisson de parámetro <span class="math inline">\(\lambda=10\)</span>:</p>
 </div>
-
-<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">set.seed</span>(<span class="dv">100</span>) 
-y=<span class="kw">rpois</span>(<span class="dv">100</span>,<span class="dv">10</span>)
-<span class="kw">set.seed</span>(<span class="ot">NULL</span>) 
-y</code></pre>
+<div class="sourceCode" id="cb180"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb180-1"><a href="chap-estimacion.html#cb180-1" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">100</span>) </span>
+<span id="cb180-2"><a href="chap-estimacion.html#cb180-2" aria-hidden="true" tabindex="-1"></a>y<span class="ot">=</span><span class="fu">rpois</span>(<span class="dv">100</span>,<span class="dv">10</span>)</span>
+<span id="cb180-3"><a href="chap-estimacion.html#cb180-3" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="cn">NULL</span>) </span>
+<span id="cb180-4"><a href="chap-estimacion.html#cb180-4" aria-hidden="true" tabindex="-1"></a>y</span></code></pre></div>
 <pre><code>##   [1]  8 10  9 12 10 11  8 12  7 11 11 12  7 10  9  8 11  7  6 12 10 12  7
 ##  [24]  7 10  6  7 15  9  9  7  8 15 11 12  5 14  4  7 14  8 14 10  4  9  8
 ##  [47] 11 11 10 12  7 14  7  9 10  3 10  7  9 21 14  6 13  3 10  6  3 13  9
 ##  [70] 12  8 11 10 11 11  8  6 17  7  8 10 12 15 12 13 10  9 12  8 11 12  4
 ##  [93] 10  8  5  8  8 10  8 11</code></pre>
 <p>Vamos a estimar el parámetro <span class="math inline">\(\lambda\)</span> de una distribución Poisson que haya generado este vector:</p>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(MASS)
-<span class="kw">fitdistr</span>(y, <span class="dt">densfun=</span><span class="st">&quot;poisson&quot;</span>)</code></pre>
+<div class="sourceCode" id="cb182"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb182-1"><a href="chap-estimacion.html#cb182-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(MASS)</span>
+<span id="cb182-2"><a href="chap-estimacion.html#cb182-2" aria-hidden="true" tabindex="-1"></a><span class="fu">fitdistr</span>(y, <span class="at">densfun=</span><span class="st">&quot;poisson&quot;</span>)</span></code></pre></div>
 <pre><code>##     lambda  
 ##   9.5600000 
 ##  (0.3091925)</code></pre>
 <p>El resultado dice que el valor estimado de <span class="math inline">\(\lambda\)</span> es 9.56, con un error típico estimado de 0.31. Veámoslo directamente: el estimador máximo verosímil de <span class="math inline">\(\lambda\)</span> es la media aritmética <span class="math inline">\(\overline{X}\)</span> y el error típico de este estimador es <span class="math inline">\(\sqrt{\lambda}/\sqrt{n}\)</span> (recordad que la desviación típica de una Poisson de parámetro <span class="math inline">\(\lambda\)</span> es <span class="math inline">\(\sqrt{\lambda}\)</span> y que el error típico de la media muestral es la desviación típica poblacional dividida por la raíz cuadrada del tamaño de la muestra), por lo que el error típico de una estimación es <span class="math inline">\(\sqrt{\overline{X}}/\sqrt{n}\)</span>.</p>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">mean</span>(y)</code></pre>
+<div class="sourceCode" id="cb184"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb184-1"><a href="chap-estimacion.html#cb184-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(y)</span></code></pre></div>
 <pre><code>## [1] 9.56</code></pre>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">sqrt</span>(<span class="kw">mean</span>(y)<span class="op">/</span><span class="kw">length</span>(y))</code></pre>
+<div class="sourceCode" id="cb186"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb186-1"><a href="chap-estimacion.html#cb186-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sqrt</span>(<span class="fu">mean</span>(y)<span class="sc">/</span><span class="fu">length</span>(y))</span></code></pre></div>
 <pre><code>## [1] 0.3091925</code></pre>
 
 <div class="example">
 <p><span id="exm:pois2" class="example"><strong>Ejemplo 3.3  </strong></span>También podemos estimar la media y la desviación típica de una variable normal que hubiera producido la muestra del ejemplo anterior:</p>
 </div>
-
-<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">fitdistr</span>(y, <span class="dt">densfun=</span><span class="st">&quot;normal&quot;</span>)</code></pre>
+<div class="sourceCode" id="cb188"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb188-1"><a href="chap-estimacion.html#cb188-1" aria-hidden="true" tabindex="-1"></a><span class="fu">fitdistr</span>(y, <span class="at">densfun=</span><span class="st">&quot;normal&quot;</span>)</span></code></pre></div>
 <pre><code>##      mean         sd    
 ##   9.5600000   3.0832450 
 ##  (0.3083245) (0.2180183)</code></pre>
 <p>Observad que la estimación de la desviación típica que nos da <code>fitdistr</code> es la desviación típica “verdadera” <span class="math inline">\(S_X\)</span> (que es su estimador máximo verosímil) y no la muestral <span class="math inline">\(\widetilde{S}_X\)</span>:</p>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">sd</span>(y)</code></pre>
+<div class="sourceCode" id="cb190"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb190-1"><a href="chap-estimacion.html#cb190-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sd</span>(y)</span></code></pre></div>
 <pre><code>## [1] 3.098778</code></pre>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">sqrt</span>((<span class="kw">length</span>(y)<span class="op">-</span><span class="dv">1</span>)<span class="op">/</span><span class="kw">length</span>(y))<span class="op">*</span><span class="kw">sd</span>(y)</code></pre>
+<div class="sourceCode" id="cb192"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb192-1"><a href="chap-estimacion.html#cb192-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sqrt</span>((<span class="fu">length</span>(y)<span class="sc">-</span><span class="dv">1</span>)<span class="sc">/</span><span class="fu">length</span>(y))<span class="sc">*</span><span class="fu">sd</span>(y)</span></code></pre></div>
 <pre><code>## [1] 3.083245</code></pre>
 <p>Y que, consistentemente, da como error típico de la estimación de la media <span class="math inline">\(S_X/\sqrt{n}\)</span> en vez de <span class="math inline">\(\widetilde{S}_X/\sqrt{n}\)</span>.</p>
 
 <div class="example">
 <p><span id="exm:pois3" class="example"><strong>Ejemplo 3.4  </strong></span>Vamos a estimar ahora el número de grados de libertad de una t de Student que hubiera producido la muestra del Ejemplo <a href="chap-estimacion.html#exm:pois1">3.2</a>.</p>
 </div>
-
-<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">fitdistr</span>(y, <span class="dt">densfun=</span><span class="st">&quot;t&quot;</span>)</code></pre>
+<div class="sourceCode" id="cb194"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb194-1"><a href="chap-estimacion.html#cb194-1" aria-hidden="true" tabindex="-1"></a><span class="fu">fitdistr</span>(y, <span class="at">densfun=</span><span class="st">&quot;t&quot;</span>)</span></code></pre></div>
 <pre><code>##        m           s          df    
 ##   9.5085516   2.7517475   9.9229027 
 ##  (0.2997949) (0.3072053) (8.4890355)</code></pre>
 <p>¡Vaya!, aparte del número de grados de libertad, <code>df</code>, han aparecido parámetros que no esperábamos. Los parámetros <code>m</code> y <code>s</code> son los parámetros de posición, <span class="math inline">\(\mu\)</span>, y de escala, <span class="math inline">\(\sigma\)</span>, respectivamente, que definen una familia más general de distribuciones t de Student (si os interesa, consultad esta <a href="http://en.wikipedia.org/wiki/Noncentral_t-distribution">entrada de la Wikipedia</a>). Las que usamos en este curso tienen <span class="math inline">\(\mu=0\)</span> y <span class="math inline">\(\sigma=1\)</span>. ¿Cómo podríamos estimar los grados de libertad de una t de Student de las nuestras? Especificando dentro de <code>fitdistr</code> los valores de los parámetros que queremos que tomen un valor concreto: en este caso, añadiendo <code>m=0</code> y <code>s=1</code>.</p>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">fitdistr</span>(y, <span class="dt">densfun=</span><span class="st">&quot;t&quot;</span>, <span class="dt">m=</span><span class="dv">0</span>, <span class="dt">s=</span><span class="dv">1</span>)</code></pre>
+<div class="sourceCode" id="cb196"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb196-1"><a href="chap-estimacion.html#cb196-1" aria-hidden="true" tabindex="-1"></a><span class="fu">fitdistr</span>(y, <span class="at">densfun=</span><span class="st">&quot;t&quot;</span>, <span class="at">m=</span><span class="dv">0</span>, <span class="at">s=</span><span class="dv">1</span>)</span></code></pre></div>
 <pre><code>## Error in fitdistr(y, densfun = &quot;t&quot;, m = 0, s = 1): &#39;start&#39; must be a named list</code></pre>
 <p>Ahora R nos pide que demos un valor inicial al número de grados de libertad, <code>df</code>, para poder arrancar el algoritmo numérico que usará.
 Vamos a inicializarlo a 1, y de paso veremos cómo se usa este parámetro:</p>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">fitdistr</span>(y, <span class="dt">densfun=</span><span class="st">&quot;t&quot;</span>, <span class="dt">m=</span><span class="dv">0</span>, <span class="dt">s=</span><span class="dv">1</span>, <span class="dt">start=</span><span class="kw">list</span>(<span class="dt">df=</span><span class="dv">1</span>))</code></pre>
+<div class="sourceCode" id="cb198"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb198-1"><a href="chap-estimacion.html#cb198-1" aria-hidden="true" tabindex="-1"></a><span class="fu">fitdistr</span>(y, <span class="at">densfun=</span><span class="st">&quot;t&quot;</span>, <span class="at">m=</span><span class="dv">0</span>, <span class="at">s=</span><span class="dv">1</span>, <span class="at">start=</span><span class="fu">list</span>(<span class="at">df=</span><span class="dv">1</span>))</span></code></pre></div>
 <pre><code>## Warning in stats::optim(x = c(8L, 10L, 9L, 12L, 10L, 11L, 8L, 12L, 7L, 11L, : one-dimensional optimization by Nelder-Mead is unreliable:
 ## use &quot;Brent&quot; or optimize() directly</code></pre>
 <pre><code>## Warning in dt((x - m)/s, df, log = TRUE): NaNs produced</code></pre>
@@ -424,23 +448,23 @@ Vamos a inicializarlo a 1, y de paso veremos cómo se usa este parámetro:</p>
 Por otro lado, R nos avisa de que el resultado es poco de fiar, pero tampoco nos importa mucho, porque el objetivo era mostrar un ejemplo de cómo fijar valores de parámetros, igualándolos a dichos valores, y cómo especificar el parámetro <code>start</code>, como una <code>list</code> donde asignamos a cada parámetro un valor inicial.</p>
 <p>El resultado de <code>fitdistr</code> es una <code>list</code>, y por lo tanto el
 valor de cada estimador y su error típico se pueden obtener con los sufijos adecuados. En concreto, los valores estimados forman la componente <code>estimate</code> y los errores típicos la componente <code>sd</code>. Para obtenerlos directamente, basta usar los sufijos <code>$estimate</code> y <code>$sd</code>, respectivamente:</p>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">fitdistr</span>(y,<span class="st">&quot;poisson&quot;</span>)<span class="op">$</span>estimate  <span class="co">#Estimación de lambda</span></code></pre>
+<div class="sourceCode" id="cb202"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb202-1"><a href="chap-estimacion.html#cb202-1" aria-hidden="true" tabindex="-1"></a><span class="fu">fitdistr</span>(y,<span class="st">&quot;poisson&quot;</span>)<span class="sc">$</span>estimate  <span class="co">#Estimación de lambda</span></span></code></pre></div>
 <pre><code>## lambda 
 ##   9.56</code></pre>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">fitdistr</span>(y,<span class="st">&quot;poisson&quot;</span>)<span class="op">$</span>sd   <span class="co">#Error típico</span></code></pre>
+<div class="sourceCode" id="cb204"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb204-1"><a href="chap-estimacion.html#cb204-1" aria-hidden="true" tabindex="-1"></a><span class="fu">fitdistr</span>(y,<span class="st">&quot;poisson&quot;</span>)<span class="sc">$</span>sd   <span class="co">#Error típico</span></span></code></pre></div>
 <pre><code>##    lambda 
 ## 0.3091925</code></pre>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">fitdistr</span>(y,<span class="st">&quot;normal&quot;</span>)<span class="op">$</span>estimate  <span class="co">#Estimaciones </span></code></pre>
+<div class="sourceCode" id="cb206"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb206-1"><a href="chap-estimacion.html#cb206-1" aria-hidden="true" tabindex="-1"></a><span class="fu">fitdistr</span>(y,<span class="st">&quot;normal&quot;</span>)<span class="sc">$</span>estimate  <span class="co">#Estimaciones </span></span></code></pre></div>
 <pre><code>##     mean       sd 
 ## 9.560000 3.083245</code></pre>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">fitdistr</span>(y,<span class="st">&quot;normal&quot;</span>)<span class="op">$</span>estimate[<span class="dv">1</span>]  <span class="co">#Estimación de mu</span></code></pre>
+<div class="sourceCode" id="cb208"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb208-1"><a href="chap-estimacion.html#cb208-1" aria-hidden="true" tabindex="-1"></a><span class="fu">fitdistr</span>(y,<span class="st">&quot;normal&quot;</span>)<span class="sc">$</span>estimate[<span class="dv">1</span>]  <span class="co">#Estimación de mu</span></span></code></pre></div>
 <pre><code>## mean 
 ## 9.56</code></pre>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">fitdistr</span>(y,<span class="st">&quot;normal&quot;</span>)<span class="op">$</span>estimate[<span class="dv">2</span>]  <span class="co">#Estimación de sigma</span></code></pre>
+<div class="sourceCode" id="cb210"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb210-1"><a href="chap-estimacion.html#cb210-1" aria-hidden="true" tabindex="-1"></a><span class="fu">fitdistr</span>(y,<span class="st">&quot;normal&quot;</span>)<span class="sc">$</span>estimate[<span class="dv">2</span>]  <span class="co">#Estimación de sigma</span></span></code></pre></div>
 <pre><code>##       sd 
 ## 3.083245</code></pre>
 </div>
-<div id="guia-rapida-1" class="section level2">
+<div id="guía-rápida" class="section level2" number="3.2">
 <h2><span class="header-section-number">3.2</span> Guía rápida</h2>
 <ul>
 <li><p><code>fitdistr</code>, del paquete <strong>MASS</strong>, sirve para calcular los estimadores máximo verosímiles de los parámetros de una distribución a partir de una muestra. El resultado es una <code>list</code> que incluye los objetos <code>estimate</code> (los valores estimados) y <code>sd</code> (los errores típicos de las estimaciones). Sus parámetros principales son:</p>
@@ -450,14 +474,14 @@ valor de cada estimador y su error típico se pueden obtener con los sufijos ade
 </ul></li>
 </ul>
 </div>
-<div id="ejercicios-2" class="section level2">
+<div id="ejercicios" class="section level2" number="3.3">
 <h2><span class="header-section-number">3.3</span> Ejercicios</h2>
-<div id="test-2" class="section level3 unnumbered">
+<div id="test" class="section level3 unnumbered">
 <h3>Test</h3>
 <p><em>(1)</em> Las distribuciones de Weibull tienen dos parámetros: forma, <code>shape</code>, y escala, <code>scale</code>. Supongamos que los datos siguientes siguen una distribución de Weibull: 2.46, 2.28, 1.7, 0.62, 0.87, 2.81, 2.35, 2.08, 2.11, 1.72. Calculad el estimador máximo verosímil del parámetro de escala de esta distribución, redondeado a 3 cifras decimales. Tenéis que dar el resultado (sin ceros innecesarios a la derecha), no cómo lo habéis calculado.</p>
 <p><em>(2)</em> Generad, con semilla de aleatoriedad igual a 42, una secuencia aleatoria de 100 valores con distribución geométrica Ge(0.6). A continuación estimad por máxima verosimilitud el parámetro <span class="math inline">\(p\)</span> de una distribución geométrica que haya generado dicha muestra y dad como respuesta a esta pregunta <em>el error típico de esta estimación</em> redondeado a 3 cifras decimales. Tenéis que dar el resultado (sin ceros innecesarios a la derecha), no cómo lo habéis calculado.</p>
 </div>
-<div id="problemas-2" class="section level3 unnumbered">
+<div id="problemas" class="section level3 unnumbered">
 <h3>Problemas</h3>
 <p><strong>(1)</strong> Sea <span class="math inline">\(X\)</span> una variable aleatoria normal <span class="math inline">\(N(\mu,\sigma)\)</span>. Suponemos que recordáis que si tomamos muestras aleatorias simples de <span class="math inline">\(X\)</span> de tamaño <em>n</em> y calculamos su media aritmética <span class="math inline">\(\overline{X}\)</span> y su desviación típica muestral <span class="math inline">\(\widetilde{S}_X\)</span>, la variable aleatoria
 <span class="math display">\[
@@ -467,35 +491,35 @@ sigue una distribución t de Student con <em>n</em>-1 grados de libertad. Vamos 
 <p><em>(a)</em> Construid un vector formado por los valores de <span class="math inline">\(T\)</span> para 5000 muestras aleatorias simples de tamaño 10 de una variable normal estándar. A continuación, dad la estimación máximo verosímil de los tres parámetros de una variable t de Student que haya generado dicho vector y mirad si el resultado se acerca a lo predicho por la teoría (recordad del Ejemplo <a href="chap-estimacion.html#exm:pois3">3.4</a> que nuestras t de Student tienen los parámetros <span class="math inline">\(\mu=0\)</span> y <span class="math inline">\(\sigma=1\)</span>).</p>
 <p><em>(b)</em> Repetid el apartado anterior a partir de una variable <span class="math inline">\(N(5,2)\)</span> y muestras de tamaño 25.</p>
 </div>
-<div id="respuestas-al-test-2" class="section level3 unnumbered">
+<div id="respuestas-al-test" class="section level3 unnumbered">
 <h3>Respuestas al test</h3>
 <p><em>(1)</em> 2.116</p>
 <p>Nosotros lo hemos calculado con</p>
-<pre class="sourceCode r"><code class="sourceCode r">x=<span class="kw">c</span>(<span class="fl">2.46</span>, <span class="fl">2.28</span>, <span class="fl">1.7</span>, <span class="fl">0.62</span>, <span class="fl">0.87</span>, <span class="fl">2.81</span>, <span class="fl">2.35</span>, <span class="fl">2.08</span>, <span class="fl">2.11</span>, <span class="fl">1.72</span>)
-<span class="kw">round</span>(<span class="kw">fitdistr</span>(x,<span class="st">&quot;weibull&quot;</span>)<span class="op">$</span>estimate,<span class="dv">3</span>)</code></pre>
+<div class="sourceCode" id="cb212"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb212-1"><a href="chap-estimacion.html#cb212-1" aria-hidden="true" tabindex="-1"></a>x<span class="ot">=</span><span class="fu">c</span>(<span class="fl">2.46</span>, <span class="fl">2.28</span>, <span class="fl">1.7</span>, <span class="fl">0.62</span>, <span class="fl">0.87</span>, <span class="fl">2.81</span>, <span class="fl">2.35</span>, <span class="fl">2.08</span>, <span class="fl">2.11</span>, <span class="fl">1.72</span>)</span>
+<span id="cb212-2"><a href="chap-estimacion.html#cb212-2" aria-hidden="true" tabindex="-1"></a><span class="fu">round</span>(<span class="fu">fitdistr</span>(x,<span class="st">&quot;weibull&quot;</span>)<span class="sc">$</span>estimate,<span class="dv">3</span>)</span></code></pre></div>
 <pre><code>## shape scale 
 ## 3.432 2.116</code></pre>
 <p><em>(2)</em> 0.038</p>
 <p>Nosotros lo hemos calculado con</p>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">set.seed</span>(<span class="dv">42</span>)
-x=<span class="kw">rgeom</span>(<span class="dv">100</span>,<span class="fl">0.6</span>)
-<span class="kw">round</span>(<span class="kw">fitdistr</span>(x,<span class="st">&quot;geometric&quot;</span>)<span class="op">$</span>sd,<span class="dv">3</span>)</code></pre>
+<div class="sourceCode" id="cb214"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb214-1"><a href="chap-estimacion.html#cb214-1" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">42</span>)</span>
+<span id="cb214-2"><a href="chap-estimacion.html#cb214-2" aria-hidden="true" tabindex="-1"></a>x<span class="ot">=</span><span class="fu">rgeom</span>(<span class="dv">100</span>,<span class="fl">0.6</span>)</span>
+<span id="cb214-3"><a href="chap-estimacion.html#cb214-3" aria-hidden="true" tabindex="-1"></a><span class="fu">round</span>(<span class="fu">fitdistr</span>(x,<span class="st">&quot;geometric&quot;</span>)<span class="sc">$</span>sd,<span class="dv">3</span>)</span></code></pre></div>
 <pre><code>##  prob 
 ## 0.038</code></pre>
 </div>
-<div id="soluciones-sucintas-de-los-problemas-2" class="section level3 unnumbered">
+<div id="soluciones-sucintas-de-los-problemas" class="section level3 unnumbered">
 <h3>Soluciones sucintas de los problemas</h3>
 <p><strong>(1)</strong> <em>(a)</em> Construimos el vector con el código siguiente (fijamos la semilla de aleatoriedad para que sea reproducible):</p>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">set.seed</span>(<span class="dv">100</span>)
-Est.T=<span class="cf">function</span>(x,mu){(<span class="kw">mean</span>(x)<span class="op">-</span>mu)<span class="op">/</span>(<span class="kw">sd</span>(x)<span class="op">/</span><span class="kw">sqrt</span>(<span class="kw">length</span>(x)))}
-Simulación.<span class="dv">10</span>=<span class="kw">replicate</span>(<span class="dv">5000</span>,<span class="kw">Est.T</span>(<span class="kw">rnorm</span>(<span class="dv">10</span>),<span class="dv">0</span>))</code></pre>
+<div class="sourceCode" id="cb216"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb216-1"><a href="chap-estimacion.html#cb216-1" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">100</span>)</span>
+<span id="cb216-2"><a href="chap-estimacion.html#cb216-2" aria-hidden="true" tabindex="-1"></a>Est.T<span class="ot">=</span><span class="cf">function</span>(x,mu){(<span class="fu">mean</span>(x)<span class="sc">-</span>mu)<span class="sc">/</span>(<span class="fu">sd</span>(x)<span class="sc">/</span><span class="fu">sqrt</span>(<span class="fu">length</span>(x)))}</span>
+<span id="cb216-3"><a href="chap-estimacion.html#cb216-3" aria-hidden="true" tabindex="-1"></a>Simulación<span class="fl">.10</span><span class="ot">=</span><span class="fu">replicate</span>(<span class="dv">5000</span>,<span class="fu">Est.T</span>(<span class="fu">rnorm</span>(<span class="dv">10</span>),<span class="dv">0</span>))</span></code></pre></div>
 <p>Ahora estimamos los parámetros con el código siguiente:</p>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">fitdistr</span>(Simulación.<span class="dv">10</span>,<span class="dt">densfun=</span><span class="st">&quot;t&quot;</span>)<span class="op">$</span>estimate</code></pre>
+<div class="sourceCode" id="cb217"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb217-1"><a href="chap-estimacion.html#cb217-1" aria-hidden="true" tabindex="-1"></a><span class="fu">fitdistr</span>(Simulación<span class="fl">.10</span>,<span class="at">densfun=</span><span class="st">&quot;t&quot;</span>)<span class="sc">$</span>estimate</span></code></pre></div>
 <pre><code>##            m            s           df 
 ## -0.003707446  0.997435397  8.352281013</code></pre>
 <p><em>(b)</em></p>
-<pre class="sourceCode r"><code class="sourceCode r">Simulación.<span class="dv">25</span>=<span class="kw">replicate</span>(<span class="dv">5000</span>,<span class="kw">Est.T</span>(<span class="kw">rnorm</span>(<span class="dv">25</span>,<span class="dv">5</span>,<span class="dv">2</span>),<span class="dv">5</span>))
-<span class="kw">fitdistr</span>(Simulación.<span class="dv">25</span>,<span class="dt">densfun=</span><span class="st">&quot;t&quot;</span>)<span class="op">$</span>estimate</code></pre>
+<div class="sourceCode" id="cb219"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb219-1"><a href="chap-estimacion.html#cb219-1" aria-hidden="true" tabindex="-1"></a>Simulación<span class="fl">.25</span><span class="ot">=</span><span class="fu">replicate</span>(<span class="dv">5000</span>,<span class="fu">Est.T</span>(<span class="fu">rnorm</span>(<span class="dv">25</span>,<span class="dv">5</span>,<span class="dv">2</span>),<span class="dv">5</span>))</span>
+<span id="cb219-2"><a href="chap-estimacion.html#cb219-2" aria-hidden="true" tabindex="-1"></a><span class="fu">fitdistr</span>(Simulación<span class="fl">.25</span>,<span class="at">densfun=</span><span class="st">&quot;t&quot;</span>)<span class="sc">$</span>estimate</span></code></pre></div>
 <pre><code>##           m           s          df 
 ##  0.03191577  1.00808360 23.77363044</code></pre>
 
@@ -513,11 +537,13 @@ Simulación.<span class="dv">10</span>=<span class="kw">replicate</span>(<span c
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
 <script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
 <script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
 <script>
 gitbook.require(["gitbook"], function(gitbook) {
 gitbook.start({
@@ -525,12 +551,11 @@ gitbook.start({
 "github": false,
 "facebook": true,
 "twitter": true,
-"google": false,
 "linkedin": false,
 "weibo": false,
 "instapaper": false,
 "vk": false,
-"all": ["facebook", "google", "twitter", "linkedin", "weibo", "instapaper"]
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
 },
 "fontsettings": {
 "theme": "white",
@@ -542,6 +567,10 @@ gitbook.start({
 "text": null
 },
 "history": {
+"link": null,
+"text": null
+},
+"view": {
 "link": null,
 "text": null
 },
@@ -561,8 +590,9 @@ gitbook.start({
     script.type = "text/javascript";
     var src = "true";
     if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
-    if (location.protocol !== "file:" && /^https?:/.test(src))
-      src = src.replace(/^https?:/, '');
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
     script.src = src;
     document.getElementsByTagName("head")[0].appendChild(script);
   })();

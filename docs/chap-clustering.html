@@ -1,13 +1,12 @@
 <!DOCTYPE html>
-<html >
-
+<html lang="" xml:lang="">
 <head>
 
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Lección 11 Clustering básico | AprendeR: Parte II</title>
-  <meta name="description" content="Apuntes AprendeR bookdown::gitbook.">
-  <meta name="generator" content="bookdown  and GitBook 2.6.7">
+  <meta name="description" content="Apuntes AprendeR bookdown::gitbook." />
+  <meta name="generator" content="bookdown 0.20 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Lección 11 Clustering básico | AprendeR: Parte II" />
   <meta property="og:type" content="book" />
@@ -22,18 +21,19 @@
   <meta name="twitter:description" content="Apuntes AprendeR bookdown::gitbook." />
   
 
-<meta name="author" content="The UIB-AprendeR team">
+<meta name="author" content="The UIB-AprendeR team" />
 
 
-<meta name="date" content="2020-03-18">
+<meta name="date" content="2021-03-05" />
 
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="apple-mobile-web-app-capable" content="yes">
-  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="chap-regresion.html">
-<link rel="next" href="extras-de-r-markdown.html">
+<link rel="prev" href="chap-regresion.html"/>
+<link rel="next" href="extras-de-r-markdown.html"/>
+<script src="libs/header-attrs-2.6/header-attrs.js"></script>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -41,6 +41,9 @@
 <link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
 
 
 
@@ -51,26 +54,26 @@
 
 
 <style type="text/css">
-a.sourceLine { display: inline-block; line-height: 1.25; }
-a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
-a.sourceLine:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode { white-space: pre; position: relative; }
-div.sourceCode { margin: 1em 0; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
 pre.sourceCode { margin: 0; }
 @media screen {
 div.sourceCode { overflow: auto; }
 }
 @media print {
-code.sourceCode { white-space: pre-wrap; }
-a.sourceLine { text-indent: -1em; padding-left: 1em; }
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
 }
-pre.numberSource a.sourceLine
-  { position: relative; left: -4em; }
-pre.numberSource a.sourceLine::before
-  { content: attr(data-line-number);
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
     position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; pointer-events: all; display: inline-block;
+    border: none; display: inline-block;
     -webkit-touch-callout: none; -webkit-user-select: none;
     -khtml-user-select: none; -moz-user-select: none;
     -ms-user-select: none; user-select: none;
@@ -79,9 +82,9 @@ pre.numberSource a.sourceLine::before
   }
 pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
 div.sourceCode
-  {  }
+  {   }
 @media screen {
-a.sourceLine::before { text-decoration: underline; }
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 code span.al { color: #ff0000; font-weight: bold; } /* Alert */
 code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
@@ -132,154 +135,179 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="divider"></li>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Presentación</a></li>
 <li class="part"><span><b>Parte II: Estadística inferencial</b></span></li>
-<li class="chapter" data-level="1" data-path="chap-distr.html"><a href="chap-distr.html"><i class="fa fa-check"></i><b>1</b> Distribuciones de probabilidad</a><ul>
-<li class="chapter" data-level="1.1" data-path="chap-distr.html"><a href="chap-distr.html#ejercicios"><i class="fa fa-check"></i><b>1.1</b> Ejercicios</a><ul>
+<li class="chapter" data-level="1" data-path="chap-distr.html"><a href="chap-distr.html"><i class="fa fa-check"></i><b>1</b> Distribuciones de probabilidad</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="chap-distr.html"><a href="chap-distr.html#ejercicios"><i class="fa fa-check"></i><b>1.1</b> Ejercicios</a>
+<ul>
 <li class="chapter" data-level="" data-path="chap-distr.html"><a href="chap-distr.html#test"><i class="fa fa-check"></i>Test</a></li>
 <li class="chapter" data-level="" data-path="chap-distr.html"><a href="chap-distr.html#problemas"><i class="fa fa-check"></i>Problemas</a></li>
 <li class="chapter" data-level="" data-path="chap-distr.html"><a href="chap-distr.html#respuestas-al-test"><i class="fa fa-check"></i>Respuestas al test</a></li>
 <li class="chapter" data-level="" data-path="chap-distr.html"><a href="chap-distr.html#soluciones-sucintas-de-los-problemas"><i class="fa fa-check"></i>Soluciones sucintas de los problemas</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="2" data-path="chap-muestreo.html"><a href="chap-muestreo.html"><i class="fa fa-check"></i><b>2</b> Conceptos básicos de muestreo</a><ul>
+<li class="chapter" data-level="2" data-path="chap-muestreo.html"><a href="chap-muestreo.html"><i class="fa fa-check"></i><b>2</b> Conceptos básicos de muestreo</a>
+<ul>
 <li class="chapter" data-level="2.1" data-path="chap-muestreo.html"><a href="chap-muestreo.html#sec:muestreo"><i class="fa fa-check"></i><b>2.1</b> Tipos de muestreo</a></li>
 <li class="chapter" data-level="2.2" data-path="chap-muestreo.html"><a href="chap-muestreo.html#muestreo-aleatorio-con-r"><i class="fa fa-check"></i><b>2.2</b> Muestreo aleatorio con R</a></li>
-<li class="chapter" data-level="2.3" data-path="chap-muestreo.html"><a href="chap-muestreo.html#guia-rapida"><i class="fa fa-check"></i><b>2.3</b> Guía rápida</a></li>
-<li class="chapter" data-level="2.4" data-path="chap-muestreo.html"><a href="chap-muestreo.html#ejercicios-1"><i class="fa fa-check"></i><b>2.4</b> Ejercicios</a><ul>
-<li class="chapter" data-level="" data-path="chap-muestreo.html"><a href="chap-muestreo.html#test-1"><i class="fa fa-check"></i>Test</a></li>
-<li class="chapter" data-level="" data-path="chap-muestreo.html"><a href="chap-muestreo.html#problemas-1"><i class="fa fa-check"></i>Problemas</a></li>
-<li class="chapter" data-level="" data-path="chap-muestreo.html"><a href="chap-muestreo.html#respuestas-al-test-1"><i class="fa fa-check"></i>Respuestas al test</a></li>
-<li class="chapter" data-level="" data-path="chap-muestreo.html"><a href="chap-muestreo.html#soluciones-sucintas-de-los-problemas-1"><i class="fa fa-check"></i>Soluciones sucintas de los problemas</a></li>
+<li class="chapter" data-level="2.3" data-path="chap-muestreo.html"><a href="chap-muestreo.html#guía-rápida"><i class="fa fa-check"></i><b>2.3</b> Guía rápida</a></li>
+<li class="chapter" data-level="2.4" data-path="chap-distr.html"><a href="chap-distr.html#ejercicios"><i class="fa fa-check"></i><b>2.4</b> Ejercicios</a>
+<ul>
+<li class="chapter" data-level="" data-path="chap-distr.html"><a href="chap-distr.html#test"><i class="fa fa-check"></i>Test</a></li>
+<li class="chapter" data-level="" data-path="chap-distr.html"><a href="chap-distr.html#problemas"><i class="fa fa-check"></i>Problemas</a></li>
+<li class="chapter" data-level="" data-path="chap-distr.html"><a href="chap-distr.html#respuestas-al-test"><i class="fa fa-check"></i>Respuestas al test</a></li>
+<li class="chapter" data-level="" data-path="chap-distr.html"><a href="chap-distr.html#soluciones-sucintas-de-los-problemas"><i class="fa fa-check"></i>Soluciones sucintas de los problemas</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="3" data-path="chap-estimacion.html"><a href="chap-estimacion.html"><i class="fa fa-check"></i><b>3</b> Estimación puntual</a><ul>
-<li class="chapter" data-level="3.1" data-path="chap-estimacion.html"><a href="chap-estimacion.html#estimacion-maximo-verosimil"><i class="fa fa-check"></i><b>3.1</b> Estimación máximo verosímil</a></li>
-<li class="chapter" data-level="3.2" data-path="chap-estimacion.html"><a href="chap-estimacion.html#guia-rapida-1"><i class="fa fa-check"></i><b>3.2</b> Guía rápida</a></li>
-<li class="chapter" data-level="3.3" data-path="chap-estimacion.html"><a href="chap-estimacion.html#ejercicios-2"><i class="fa fa-check"></i><b>3.3</b> Ejercicios</a><ul>
-<li class="chapter" data-level="" data-path="chap-estimacion.html"><a href="chap-estimacion.html#test-2"><i class="fa fa-check"></i>Test</a></li>
-<li class="chapter" data-level="" data-path="chap-estimacion.html"><a href="chap-estimacion.html#problemas-2"><i class="fa fa-check"></i>Problemas</a></li>
-<li class="chapter" data-level="" data-path="chap-estimacion.html"><a href="chap-estimacion.html#respuestas-al-test-2"><i class="fa fa-check"></i>Respuestas al test</a></li>
-<li class="chapter" data-level="" data-path="chap-estimacion.html"><a href="chap-estimacion.html#soluciones-sucintas-de-los-problemas-2"><i class="fa fa-check"></i>Soluciones sucintas de los problemas</a></li>
+<li class="chapter" data-level="3" data-path="chap-estimacion.html"><a href="chap-estimacion.html"><i class="fa fa-check"></i><b>3</b> Estimación puntual</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="chap-estimacion.html"><a href="chap-estimacion.html#estimación-máximo-verosímil"><i class="fa fa-check"></i><b>3.1</b> Estimación máximo verosímil</a></li>
+<li class="chapter" data-level="3.2" data-path="chap-muestreo.html"><a href="chap-muestreo.html#guía-rápida"><i class="fa fa-check"></i><b>3.2</b> Guía rápida</a></li>
+<li class="chapter" data-level="3.3" data-path="chap-distr.html"><a href="chap-distr.html#ejercicios"><i class="fa fa-check"></i><b>3.3</b> Ejercicios</a>
+<ul>
+<li class="chapter" data-level="" data-path="chap-distr.html"><a href="chap-distr.html#test"><i class="fa fa-check"></i>Test</a></li>
+<li class="chapter" data-level="" data-path="chap-distr.html"><a href="chap-distr.html#problemas"><i class="fa fa-check"></i>Problemas</a></li>
+<li class="chapter" data-level="" data-path="chap-distr.html"><a href="chap-distr.html#respuestas-al-test"><i class="fa fa-check"></i>Respuestas al test</a></li>
+<li class="chapter" data-level="" data-path="chap-distr.html"><a href="chap-distr.html#soluciones-sucintas-de-los-problemas"><i class="fa fa-check"></i>Soluciones sucintas de los problemas</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="4" data-path="chap-IC.html"><a href="chap-IC.html"><i class="fa fa-check"></i><b>4</b> Intervalos de confianza</a><ul>
+<li class="chapter" data-level="4" data-path="chap-IC.html"><a href="chap-IC.html"><i class="fa fa-check"></i><b>4</b> Intervalos de confianza</a>
+<ul>
 <li class="chapter" data-level="4.1" data-path="chap-IC.html"><a href="chap-IC.html#sec:ICT"><i class="fa fa-check"></i><b>4.1</b> Intervalo de confianza para la media basado en la t de Student</a></li>
-<li class="chapter" data-level="4.2" data-path="chap-IC.html"><a href="chap-IC.html#intervalos-de-confianza-para-la-proporcion-poblacional"><i class="fa fa-check"></i><b>4.2</b> Intervalos de confianza para la proporción poblacional</a></li>
+<li class="chapter" data-level="4.2" data-path="chap-IC.html"><a href="chap-IC.html#intervalos-de-confianza-para-la-proporción-poblacional"><i class="fa fa-check"></i><b>4.2</b> Intervalos de confianza para la proporción poblacional</a></li>
 <li class="chapter" data-level="4.3" data-path="chap-IC.html"><a href="chap-IC.html#sec:ICvar"><i class="fa fa-check"></i><b>4.3</b> Intervalo de confianza para la varianza de una población normal</a></li>
 <li class="chapter" data-level="4.4" data-path="chap-IC.html"><a href="chap-IC.html#bootstrap"><i class="fa fa-check"></i><b>4.4</b> Bootstrap</a></li>
-<li class="chapter" data-level="4.5" data-path="chap-IC.html"><a href="chap-IC.html#guia-rapida-2"><i class="fa fa-check"></i><b>4.5</b> Guía rápida</a></li>
-<li class="chapter" data-level="4.6" data-path="chap-IC.html"><a href="chap-IC.html#ejercicios-3"><i class="fa fa-check"></i><b>4.6</b> Ejercicios</a><ul>
-<li class="chapter" data-level="" data-path="chap-IC.html"><a href="chap-IC.html#test-3"><i class="fa fa-check"></i>Test</a></li>
-<li class="chapter" data-level="" data-path="chap-IC.html"><a href="chap-IC.html#problemas-3"><i class="fa fa-check"></i>Problemas</a></li>
-<li class="chapter" data-level="" data-path="chap-IC.html"><a href="chap-IC.html#respuestas-al-test-3"><i class="fa fa-check"></i>Respuestas al test</a></li>
-<li class="chapter" data-level="" data-path="chap-IC.html"><a href="chap-IC.html#soluciones-sucintas-de-los-problemas-3"><i class="fa fa-check"></i>Soluciones sucintas de los problemas</a></li>
+<li class="chapter" data-level="4.5" data-path="chap-muestreo.html"><a href="chap-muestreo.html#guía-rápida"><i class="fa fa-check"></i><b>4.5</b> Guía rápida</a></li>
+<li class="chapter" data-level="4.6" data-path="chap-distr.html"><a href="chap-distr.html#ejercicios"><i class="fa fa-check"></i><b>4.6</b> Ejercicios</a>
+<ul>
+<li class="chapter" data-level="" data-path="chap-distr.html"><a href="chap-distr.html#test"><i class="fa fa-check"></i>Test</a></li>
+<li class="chapter" data-level="" data-path="chap-distr.html"><a href="chap-distr.html#problemas"><i class="fa fa-check"></i>Problemas</a></li>
+<li class="chapter" data-level="" data-path="chap-distr.html"><a href="chap-distr.html#respuestas-al-test"><i class="fa fa-check"></i>Respuestas al test</a></li>
+<li class="chapter" data-level="" data-path="chap-distr.html"><a href="chap-distr.html#soluciones-sucintas-de-los-problemas"><i class="fa fa-check"></i>Soluciones sucintas de los problemas</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="5" data-path="chap-contrastes.html"><a href="chap-contrastes.html"><i class="fa fa-check"></i><b>5</b> Contrastes de hipótesis</a><ul>
-<li class="chapter" data-level="5.1" data-path="chap-contrastes.html"><a href="chap-contrastes.html#contrastes-para-medias"><i class="fa fa-check"></i><b>5.1</b> Contrastes para medias</a><ul>
+<li class="chapter" data-level="5" data-path="chap-contrastes.html"><a href="chap-contrastes.html"><i class="fa fa-check"></i><b>5</b> Contrastes de hipótesis</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="chap-contrastes.html"><a href="chap-contrastes.html#contrastes-para-medias"><i class="fa fa-check"></i><b>5.1</b> Contrastes para medias</a>
+<ul>
 <li class="chapter" data-level="" data-path="chap-contrastes.html"><a href="chap-contrastes.html#el-test-t"><i class="fa fa-check"></i>El test t</a></li>
-<li class="chapter" data-level="" data-path="chap-contrastes.html"><a href="chap-contrastes.html#tests-no-parametricos"><i class="fa fa-check"></i>Tests no paramétricos</a></li>
+<li class="chapter" data-level="" data-path="chap-contrastes.html"><a href="chap-contrastes.html#tests-no-paramétricos"><i class="fa fa-check"></i>Tests no paramétricos</a></li>
 </ul></li>
 <li class="chapter" data-level="5.2" data-path="chap-contrastes.html"><a href="chap-contrastes.html#contrastes-para-varianzas"><i class="fa fa-check"></i><b>5.2</b> Contrastes para varianzas</a></li>
 <li class="chapter" data-level="5.3" data-path="chap-contrastes.html"><a href="chap-contrastes.html#contrastes-para-proporciones"><i class="fa fa-check"></i><b>5.3</b> Contrastes para proporciones</a></li>
-<li class="chapter" data-level="5.4" data-path="chap-contrastes.html"><a href="chap-contrastes.html#calculo-de-la-potencia-de-un-contraste"><i class="fa fa-check"></i><b>5.4</b> Cálculo de la potencia de un contraste</a></li>
-<li class="chapter" data-level="5.5" data-path="chap-contrastes.html"><a href="chap-contrastes.html#guia-rapida-3"><i class="fa fa-check"></i><b>5.5</b> Guía rápida</a></li>
-<li class="chapter" data-level="5.6" data-path="chap-contrastes.html"><a href="chap-contrastes.html#ejercicios-4"><i class="fa fa-check"></i><b>5.6</b> Ejercicios</a><ul>
+<li class="chapter" data-level="5.4" data-path="chap-contrastes.html"><a href="chap-contrastes.html#cálculo-de-la-potencia-de-un-contraste"><i class="fa fa-check"></i><b>5.4</b> Cálculo de la potencia de un contraste</a></li>
+<li class="chapter" data-level="5.5" data-path="chap-muestreo.html"><a href="chap-muestreo.html#guía-rápida"><i class="fa fa-check"></i><b>5.5</b> Guía rápida</a></li>
+<li class="chapter" data-level="5.6" data-path="chap-distr.html"><a href="chap-distr.html#ejercicios"><i class="fa fa-check"></i><b>5.6</b> Ejercicios</a>
+<ul>
 <li class="chapter" data-level="" data-path="chap-contrastes.html"><a href="chap-contrastes.html#modelo-de-test"><i class="fa fa-check"></i>Modelo de test</a></li>
-<li class="chapter" data-level="" data-path="chap-contrastes.html"><a href="chap-contrastes.html#ejercicios-5"><i class="fa fa-check"></i>Ejercicios</a></li>
-<li class="chapter" data-level="" data-path="chap-contrastes.html"><a href="chap-contrastes.html#respuestas-al-test-4"><i class="fa fa-check"></i>Respuestas al test</a></li>
+<li class="chapter" data-level="" data-path="chap-contrastes.html"><a href="chap-contrastes.html#ejercicios-1"><i class="fa fa-check"></i>Ejercicios</a></li>
+<li class="chapter" data-level="" data-path="chap-distr.html"><a href="chap-distr.html#respuestas-al-test"><i class="fa fa-check"></i>Respuestas al test</a></li>
 <li class="chapter" data-level="" data-path="chap-contrastes.html"><a href="chap-contrastes.html#respuestas-sucintas-a-los-ejercicios"><i class="fa fa-check"></i>Respuestas sucintas a los ejercicios</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="6" data-path="chap-bondad.html"><a href="chap-bondad.html"><i class="fa fa-check"></i><b>6</b> Contrastes de bondad de ajuste</a><ul>
-<li class="chapter" data-level="6.1" data-path="chap-bondad.html"><a href="chap-bondad.html#pruebas-graficas-q-q-plots"><i class="fa fa-check"></i><b>6.1</b> Pruebas gráficas: Q-Q-plots</a></li>
+<li class="chapter" data-level="6" data-path="chap-bondad.html"><a href="chap-bondad.html"><i class="fa fa-check"></i><b>6</b> Contrastes de bondad de ajuste</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="chap-bondad.html"><a href="chap-bondad.html#pruebas-gráficas-q-q-plots"><i class="fa fa-check"></i><b>6.1</b> Pruebas gráficas: Q-Q-plots</a></li>
 <li class="chapter" data-level="6.2" data-path="chap-bondad.html"><a href="chap-bondad.html#el-test-chi2-de-pearson"><i class="fa fa-check"></i><b>6.2</b> El test <span class="math inline">\(\chi^2\)</span> de Pearson</a></li>
 <li class="chapter" data-level="6.3" data-path="chap-bondad.html"><a href="chap-bondad.html#el-test-chi2-para-distribuciones-continuas"><i class="fa fa-check"></i><b>6.3</b> El test <span class="math inline">\(\chi^2\)</span> para distribuciones continuas</a></li>
 <li class="chapter" data-level="6.4" data-path="chap-bondad.html"><a href="chap-bondad.html#el-test-de-kolgomorov-smirnov"><i class="fa fa-check"></i><b>6.4</b> El test de Kolgomorov-Smirnov</a></li>
 <li class="chapter" data-level="6.5" data-path="chap-bondad.html"><a href="chap-bondad.html#tests-de-normalidad"><i class="fa fa-check"></i><b>6.5</b> Tests de normalidad</a></li>
-<li class="chapter" data-level="6.6" data-path="chap-bondad.html"><a href="chap-bondad.html#guia-rapida-4"><i class="fa fa-check"></i><b>6.6</b> Guía rápida</a></li>
-<li class="chapter" data-level="6.7" data-path="chap-bondad.html"><a href="chap-bondad.html#ejercicios-6"><i class="fa fa-check"></i><b>6.7</b> Ejercicios</a><ul>
-<li class="chapter" data-level="" data-path="chap-bondad.html"><a href="chap-bondad.html#modelo-de-test-1"><i class="fa fa-check"></i>Modelo de test</a></li>
-<li class="chapter" data-level="" data-path="chap-bondad.html"><a href="chap-bondad.html#problemas-4"><i class="fa fa-check"></i>Problemas</a></li>
-<li class="chapter" data-level="" data-path="chap-bondad.html"><a href="chap-bondad.html#respuestas-al-test-5"><i class="fa fa-check"></i>Respuestas al test</a></li>
-<li class="chapter" data-level="" data-path="chap-bondad.html"><a href="chap-bondad.html#soluciones-sucintas-de-los-problemas-4"><i class="fa fa-check"></i>Soluciones sucintas de los problemas</a></li>
+<li class="chapter" data-level="6.6" data-path="chap-muestreo.html"><a href="chap-muestreo.html#guía-rápida"><i class="fa fa-check"></i><b>6.6</b> Guía rápida</a></li>
+<li class="chapter" data-level="6.7" data-path="chap-distr.html"><a href="chap-distr.html#ejercicios"><i class="fa fa-check"></i><b>6.7</b> Ejercicios</a>
+<ul>
+<li class="chapter" data-level="" data-path="chap-contrastes.html"><a href="chap-contrastes.html#modelo-de-test"><i class="fa fa-check"></i>Modelo de test</a></li>
+<li class="chapter" data-level="" data-path="chap-distr.html"><a href="chap-distr.html#problemas"><i class="fa fa-check"></i>Problemas</a></li>
+<li class="chapter" data-level="" data-path="chap-distr.html"><a href="chap-distr.html#respuestas-al-test"><i class="fa fa-check"></i>Respuestas al test</a></li>
+<li class="chapter" data-level="" data-path="chap-distr.html"><a href="chap-distr.html#soluciones-sucintas-de-los-problemas"><i class="fa fa-check"></i>Soluciones sucintas de los problemas</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="7" data-path="chap-indep.html"><a href="chap-indep.html"><i class="fa fa-check"></i><b>7</b> Contrastes de independencia y homogeneidad</a><ul>
+<li class="chapter" data-level="7" data-path="chap-indep.html"><a href="chap-indep.html"><i class="fa fa-check"></i><b>7</b> Contrastes de independencia y homogeneidad</a>
+<ul>
 <li class="chapter" data-level="7.1" data-path="chap-indep.html"><a href="chap-indep.html#tablas-de-contingencia"><i class="fa fa-check"></i><b>7.1</b> Tablas de contingencia</a></li>
 <li class="chapter" data-level="7.2" data-path="chap-indep.html"><a href="chap-indep.html#contraste-de-independencia"><i class="fa fa-check"></i><b>7.2</b> Contraste de independencia</a></li>
 <li class="chapter" data-level="7.3" data-path="chap-indep.html"><a href="chap-indep.html#sec:hom"><i class="fa fa-check"></i><b>7.3</b> Contraste de homogeneidad</a></li>
 <li class="chapter" data-level="7.4" data-path="chap-indep.html"><a href="chap-indep.html#potencia-de-un-contraste-chi2"><i class="fa fa-check"></i><b>7.4</b> Potencia de un contraste <span class="math inline">\(\chi^2\)</span></a></li>
-<li class="chapter" data-level="7.5" data-path="chap-indep.html"><a href="chap-indep.html#guia-rapida-5"><i class="fa fa-check"></i><b>7.5</b> Guía rápida</a></li>
-<li class="chapter" data-level="7.6" data-path="chap-indep.html"><a href="chap-indep.html#ejercicios-7"><i class="fa fa-check"></i><b>7.6</b> Ejercicios</a><ul>
-<li class="chapter" data-level="" data-path="chap-indep.html"><a href="chap-indep.html#modelo-de-test-2"><i class="fa fa-check"></i>Modelo de test</a></li>
-<li class="chapter" data-level="" data-path="chap-indep.html"><a href="chap-indep.html#ejercicios-8"><i class="fa fa-check"></i>Ejercicios</a></li>
-<li class="chapter" data-level="" data-path="chap-indep.html"><a href="chap-indep.html#respuestas-al-test-6"><i class="fa fa-check"></i>Respuestas al test</a></li>
-<li class="chapter" data-level="" data-path="chap-indep.html"><a href="chap-indep.html#soluciones-sucintas-de-los-problemas-5"><i class="fa fa-check"></i>Soluciones sucintas de los problemas</a></li>
+<li class="chapter" data-level="7.5" data-path="chap-muestreo.html"><a href="chap-muestreo.html#guía-rápida"><i class="fa fa-check"></i><b>7.5</b> Guía rápida</a></li>
+<li class="chapter" data-level="7.6" data-path="chap-distr.html"><a href="chap-distr.html#ejercicios"><i class="fa fa-check"></i><b>7.6</b> Ejercicios</a>
+<ul>
+<li class="chapter" data-level="" data-path="chap-contrastes.html"><a href="chap-contrastes.html#modelo-de-test"><i class="fa fa-check"></i>Modelo de test</a></li>
+<li class="chapter" data-level="" data-path="chap-contrastes.html"><a href="chap-contrastes.html#ejercicios-1"><i class="fa fa-check"></i>Ejercicios</a></li>
+<li class="chapter" data-level="" data-path="chap-distr.html"><a href="chap-distr.html#respuestas-al-test"><i class="fa fa-check"></i>Respuestas al test</a></li>
+<li class="chapter" data-level="" data-path="chap-distr.html"><a href="chap-distr.html#soluciones-sucintas-de-los-problemas"><i class="fa fa-check"></i>Soluciones sucintas de los problemas</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="8" data-path="chap-estmult.html"><a href="chap-estmult.html"><i class="fa fa-check"></i><b>8</b> Introducción a la estadística descriptiva multidimensional</a><ul>
+<li class="chapter" data-level="8" data-path="chap-estmult.html"><a href="chap-estmult.html"><i class="fa fa-check"></i><b>8</b> Introducción a la estadística descriptiva multidimensional</a>
+<ul>
 <li class="chapter" data-level="8.1" data-path="chap-estmult.html"><a href="chap-estmult.html#matrices-de-datos-cuantitativos"><i class="fa fa-check"></i><b>8.1</b> Matrices de datos cuantitativos</a></li>
 <li class="chapter" data-level="8.2" data-path="chap-estmult.html"><a href="chap-estmult.html#transformaciones-lineales"><i class="fa fa-check"></i><b>8.2</b> Transformaciones lineales</a></li>
 <li class="chapter" data-level="8.3" data-path="chap-estmult.html"><a href="chap-estmult.html#covarianzas-y-correlaciones"><i class="fa fa-check"></i><b>8.3</b> Covarianzas y correlaciones</a></li>
-<li class="chapter" data-level="8.4" data-path="chap-estmult.html"><a href="chap-estmult.html#correlacion-de-spearman"><i class="fa fa-check"></i><b>8.4</b> Correlación de Spearman</a></li>
-<li class="chapter" data-level="8.5" data-path="chap-estmult.html"><a href="chap-estmult.html#contrastes-de-correlacion"><i class="fa fa-check"></i><b>8.5</b> Contrastes de correlación</a></li>
+<li class="chapter" data-level="8.4" data-path="chap-estmult.html"><a href="chap-estmult.html#correlación-de-spearman"><i class="fa fa-check"></i><b>8.4</b> Correlación de Spearman</a></li>
+<li class="chapter" data-level="8.5" data-path="chap-estmult.html"><a href="chap-estmult.html#contrastes-de-correlación"><i class="fa fa-check"></i><b>8.5</b> Contrastes de correlación</a></li>
 <li class="chapter" data-level="8.6" data-path="chap-estmult.html"><a href="chap-estmult.html#un-ejemplo"><i class="fa fa-check"></i><b>8.6</b> Un ejemplo</a></li>
-<li class="chapter" data-level="8.7" data-path="chap-estmult.html"><a href="chap-estmult.html#representacion-grafica-de-datos-multidimensionales"><i class="fa fa-check"></i><b>8.7</b> Representación gráfica de datos multidimensionales</a></li>
-<li class="chapter" data-level="8.8" data-path="chap-estmult.html"><a href="chap-estmult.html#guia-rapida-6"><i class="fa fa-check"></i><b>8.8</b> Guía rápida</a></li>
-<li class="chapter" data-level="8.9" data-path="chap-estmult.html"><a href="chap-estmult.html#ejercicios-9"><i class="fa fa-check"></i><b>8.9</b> Ejercicios</a><ul>
-<li class="chapter" data-level="" data-path="chap-estmult.html"><a href="chap-estmult.html#modelo-de-test-3"><i class="fa fa-check"></i>Modelo de test</a></li>
-<li class="chapter" data-level="" data-path="chap-estmult.html"><a href="chap-estmult.html#problemas-5"><i class="fa fa-check"></i>Problemas</a></li>
-<li class="chapter" data-level="" data-path="chap-estmult.html"><a href="chap-estmult.html#respuestas-al-test-7"><i class="fa fa-check"></i>Respuestas al test</a></li>
-<li class="chapter" data-level="" data-path="chap-estmult.html"><a href="chap-estmult.html#soluciones-sucintas-de-los-problemas-6"><i class="fa fa-check"></i>Soluciones sucintas de los problemas</a></li>
+<li class="chapter" data-level="8.7" data-path="chap-estmult.html"><a href="chap-estmult.html#representación-gráfica-de-datos-multidimensionales"><i class="fa fa-check"></i><b>8.7</b> Representación gráfica de datos multidimensionales</a></li>
+<li class="chapter" data-level="8.8" data-path="chap-muestreo.html"><a href="chap-muestreo.html#guía-rápida"><i class="fa fa-check"></i><b>8.8</b> Guía rápida</a></li>
+<li class="chapter" data-level="8.9" data-path="chap-distr.html"><a href="chap-distr.html#ejercicios"><i class="fa fa-check"></i><b>8.9</b> Ejercicios</a>
+<ul>
+<li class="chapter" data-level="" data-path="chap-contrastes.html"><a href="chap-contrastes.html#modelo-de-test"><i class="fa fa-check"></i>Modelo de test</a></li>
+<li class="chapter" data-level="" data-path="chap-distr.html"><a href="chap-distr.html#problemas"><i class="fa fa-check"></i>Problemas</a></li>
+<li class="chapter" data-level="" data-path="chap-distr.html"><a href="chap-distr.html#respuestas-al-test"><i class="fa fa-check"></i>Respuestas al test</a></li>
+<li class="chapter" data-level="" data-path="chap-distr.html"><a href="chap-distr.html#soluciones-sucintas-de-los-problemas"><i class="fa fa-check"></i>Soluciones sucintas de los problemas</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="9" data-path="chap-ANOVA.html"><a href="chap-ANOVA.html"><i class="fa fa-check"></i><b>9</b> ANOVA básico</a><ul>
+<li class="chapter" data-level="9" data-path="chap-ANOVA.html"><a href="chap-ANOVA.html"><i class="fa fa-check"></i><b>9</b> ANOVA básico</a>
+<ul>
 <li class="chapter" data-level="9.1" data-path="chap-ANOVA.html"><a href="chap-ANOVA.html#sec:modelos"><i class="fa fa-check"></i><b>9.1</b> Los modelos del ANOVA en R</a></li>
 <li class="chapter" data-level="9.2" data-path="chap-ANOVA.html"><a href="chap-ANOVA.html#sec:ANOVA-1"><i class="fa fa-check"></i><b>9.2</b> ANOVA de un factor</a></li>
 <li class="chapter" data-level="9.3" data-path="chap-ANOVA.html"><a href="chap-ANOVA.html#anova-de-bloques-completos-aleatorios"><i class="fa fa-check"></i><b>9.3</b> ANOVA de bloques completos aleatorios</a></li>
 <li class="chapter" data-level="9.4" data-path="chap-ANOVA.html"><a href="chap-ANOVA.html#sec:ANOVA2"><i class="fa fa-check"></i><b>9.4</b> ANOVA de dos vías</a></li>
 <li class="chapter" data-level="9.5" data-path="chap-ANOVA.html"><a href="chap-ANOVA.html#condiciones-del-anova"><i class="fa fa-check"></i><b>9.5</b> Condiciones del ANOVA</a></li>
-<li class="chapter" data-level="9.6" data-path="chap-ANOVA.html"><a href="chap-ANOVA.html#sec:pares"><i class="fa fa-check"></i><b>9.6</b> Comparaciones de pares de medias</a><ul>
+<li class="chapter" data-level="9.6" data-path="chap-ANOVA.html"><a href="chap-ANOVA.html#sec:pares"><i class="fa fa-check"></i><b>9.6</b> Comparaciones de pares de medias</a>
+<ul>
 <li class="chapter" data-level="9.6.1" data-path="chap-ANOVA.html"><a href="chap-ANOVA.html#tests-t-por-parejas"><i class="fa fa-check"></i><b>9.6.1</b> Tests t por parejas</a></li>
 <li class="chapter" data-level="9.6.2" data-path="chap-ANOVA.html"><a href="chap-ANOVA.html#test-de-duncan"><i class="fa fa-check"></i><b>9.6.2</b> Test de Duncan</a></li>
-<li class="chapter" data-level="9.6.3" data-path="chap-ANOVA.html"><a href="chap-ANOVA.html#metodo-de-tukey"><i class="fa fa-check"></i><b>9.6.3</b> Método de Tukey</a></li>
+<li class="chapter" data-level="9.6.3" data-path="chap-ANOVA.html"><a href="chap-ANOVA.html#método-de-tukey"><i class="fa fa-check"></i><b>9.6.3</b> Método de Tukey</a></li>
 </ul></li>
-<li class="chapter" data-level="9.7" data-path="chap-ANOVA.html"><a href="chap-ANOVA.html#metodos-no-parametricos"><i class="fa fa-check"></i><b>9.7</b> Métodos no paramétricos</a></li>
-<li class="chapter" data-level="9.8" data-path="chap-ANOVA.html"><a href="chap-ANOVA.html#guia-rapida-7"><i class="fa fa-check"></i><b>9.8</b> Guía rápida</a></li>
-<li class="chapter" data-level="9.9" data-path="chap-ANOVA.html"><a href="chap-ANOVA.html#ejercicios-10"><i class="fa fa-check"></i><b>9.9</b> Ejercicios</a><ul>
-<li class="chapter" data-level="" data-path="chap-ANOVA.html"><a href="chap-ANOVA.html#test-4"><i class="fa fa-check"></i>Test</a></li>
+<li class="chapter" data-level="9.7" data-path="chap-ANOVA.html"><a href="chap-ANOVA.html#métodos-no-paramétricos"><i class="fa fa-check"></i><b>9.7</b> Métodos no paramétricos</a></li>
+<li class="chapter" data-level="9.8" data-path="chap-muestreo.html"><a href="chap-muestreo.html#guía-rápida"><i class="fa fa-check"></i><b>9.8</b> Guía rápida</a></li>
+<li class="chapter" data-level="9.9" data-path="chap-distr.html"><a href="chap-distr.html#ejercicios"><i class="fa fa-check"></i><b>9.9</b> Ejercicios</a>
+<ul>
+<li class="chapter" data-level="" data-path="chap-distr.html"><a href="chap-distr.html#test"><i class="fa fa-check"></i>Test</a></li>
 <li class="chapter" data-level="9.9.1" data-path="chap-ANOVA.html"><a href="chap-ANOVA.html#ejercicio"><i class="fa fa-check"></i><b>9.9.1</b> Ejercicio</a></li>
-<li class="chapter" data-level="" data-path="chap-ANOVA.html"><a href="chap-ANOVA.html#respuestas-al-test-8"><i class="fa fa-check"></i>Respuestas al test</a></li>
+<li class="chapter" data-level="" data-path="chap-distr.html"><a href="chap-distr.html#respuestas-al-test"><i class="fa fa-check"></i>Respuestas al test</a></li>
 <li class="chapter" data-level="9.9.2" data-path="chap-ANOVA.html"><a href="chap-ANOVA.html#soluciones-sucintas-del-ejercicio"><i class="fa fa-check"></i><b>9.9.2</b> Soluciones sucintas del ejercicio</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="10" data-path="chap-regresion.html"><a href="chap-regresion.html"><i class="fa fa-check"></i><b>10</b> Regresión lineal</a><ul>
+<li class="chapter" data-level="10" data-path="chap-regresion.html"><a href="chap-regresion.html"><i class="fa fa-check"></i><b>10</b> Regresión lineal</a>
+<ul>
 <li class="chapter" data-level="10.1" data-path="chap-regresion.html"><a href="chap-regresion.html#sec:1"><i class="fa fa-check"></i><b>10.1</b> El modelo de regresión lineal en R</a></li>
-<li class="chapter" data-level="10.2" data-path="chap-regresion.html"><a href="chap-regresion.html#intervalos-de-confianza-en-el-modelo-de-regresion-lineal"><i class="fa fa-check"></i><b>10.2</b> Intervalos de confianza en el modelo de regresión lineal</a></li>
+<li class="chapter" data-level="10.2" data-path="chap-regresion.html"><a href="chap-regresion.html#intervalos-de-confianza-en-el-modelo-de-regresión-lineal"><i class="fa fa-check"></i><b>10.2</b> Intervalos de confianza en el modelo de regresión lineal</a></li>
 <li class="chapter" data-level="10.3" data-path="chap-regresion.html"><a href="chap-regresion.html#sec:seleccion"><i class="fa fa-check"></i><b>10.3</b> Selección del modelo en base al ajuste de los datos</a></li>
 <li class="chapter" data-level="10.4" data-path="chap-regresion.html"><a href="chap-regresion.html#sec:diagn"><i class="fa fa-check"></i><b>10.4</b> Diagnósticos de regresión</a></li>
-<li class="chapter" data-level="10.5" data-path="chap-regresion.html"><a href="chap-regresion.html#guia-rapida-8"><i class="fa fa-check"></i><b>10.5</b> Guía rápida</a></li>
-<li class="chapter" data-level="10.6" data-path="chap-regresion.html"><a href="chap-regresion.html#ejercicios-11"><i class="fa fa-check"></i><b>10.6</b> Ejercicios</a><ul>
-<li class="chapter" data-level="" data-path="chap-regresion.html"><a href="chap-regresion.html#test-5"><i class="fa fa-check"></i>Test</a></li>
-<li class="chapter" data-level="" data-path="chap-regresion.html"><a href="chap-regresion.html#respuestas-al-test-9"><i class="fa fa-check"></i>Respuestas al test</a></li>
+<li class="chapter" data-level="10.5" data-path="chap-muestreo.html"><a href="chap-muestreo.html#guía-rápida"><i class="fa fa-check"></i><b>10.5</b> Guía rápida</a></li>
+<li class="chapter" data-level="10.6" data-path="chap-distr.html"><a href="chap-distr.html#ejercicios"><i class="fa fa-check"></i><b>10.6</b> Ejercicios</a>
+<ul>
+<li class="chapter" data-level="" data-path="chap-distr.html"><a href="chap-distr.html#test"><i class="fa fa-check"></i>Test</a></li>
+<li class="chapter" data-level="" data-path="chap-distr.html"><a href="chap-distr.html#respuestas-al-test"><i class="fa fa-check"></i>Respuestas al test</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="11" data-path="chap-clustering.html"><a href="chap-clustering.html"><i class="fa fa-check"></i><b>11</b> <em>Clustering</em> básico</a><ul>
-<li class="chapter" data-level="11.1" data-path="chap-clustering.html"><a href="chap-clustering.html#metodo-de-k-medias-o-k-means"><i class="fa fa-check"></i><b>11.1</b> Método de k-medias o <em>k-means</em></a></li>
-<li class="chapter" data-level="11.2" data-path="chap-clustering.html"><a href="chap-clustering.html#eleccion-del-numero-de-clusters"><i class="fa fa-check"></i><b>11.2</b> Elección del número de <em>clusters</em></a></li>
-<li class="chapter" data-level="11.3" data-path="chap-clustering.html"><a href="chap-clustering.html#metodos-jerarquicos-aglomerativos"><i class="fa fa-check"></i><b>11.3</b> Métodos jerárquicos aglomerativos</a></li>
-<li class="chapter" data-level="11.4" data-path="chap-clustering.html"><a href="chap-clustering.html#guia-rapida-9"><i class="fa fa-check"></i><b>11.4</b> Guía rápida</a></li>
-<li class="chapter" data-level="11.5" data-path="chap-clustering.html"><a href="chap-clustering.html#ejercicios-12"><i class="fa fa-check"></i><b>11.5</b> Ejercicios</a><ul>
-<li class="chapter" data-level="" data-path="chap-clustering.html"><a href="chap-clustering.html#test-6"><i class="fa fa-check"></i>Test</a></li>
-<li class="chapter" data-level="" data-path="chap-clustering.html"><a href="chap-clustering.html#respuestas-al-test-10"><i class="fa fa-check"></i>Respuestas al test</a></li>
+<li class="chapter" data-level="11" data-path="chap-clustering.html"><a href="chap-clustering.html"><i class="fa fa-check"></i><b>11</b> <em>Clustering</em> básico</a>
+<ul>
+<li class="chapter" data-level="11.1" data-path="chap-clustering.html"><a href="chap-clustering.html#método-de-k-medias-o-k-means"><i class="fa fa-check"></i><b>11.1</b> Método de k-medias o <em>k-means</em></a></li>
+<li class="chapter" data-level="11.2" data-path="chap-clustering.html"><a href="chap-clustering.html#elección-del-número-de-clusters"><i class="fa fa-check"></i><b>11.2</b> Elección del número de <em>clusters</em></a></li>
+<li class="chapter" data-level="11.3" data-path="chap-clustering.html"><a href="chap-clustering.html#métodos-jerárquicos-aglomerativos"><i class="fa fa-check"></i><b>11.3</b> Métodos jerárquicos aglomerativos</a></li>
+<li class="chapter" data-level="11.4" data-path="chap-muestreo.html"><a href="chap-muestreo.html#guía-rápida"><i class="fa fa-check"></i><b>11.4</b> Guía rápida</a></li>
+<li class="chapter" data-level="11.5" data-path="chap-distr.html"><a href="chap-distr.html#ejercicios"><i class="fa fa-check"></i><b>11.5</b> Ejercicios</a>
+<ul>
+<li class="chapter" data-level="" data-path="chap-distr.html"><a href="chap-distr.html#test"><i class="fa fa-check"></i>Test</a></li>
+<li class="chapter" data-level="" data-path="chap-distr.html"><a href="chap-distr.html#respuestas-al-test"><i class="fa fa-check"></i>Respuestas al test</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="12" data-path="extras-de-r-markdown.html"><a href="extras-de-r-markdown.html"><i class="fa fa-check"></i><b>12</b> Extras de <em>R Markdown</em></a><ul>
-<li class="chapter" data-level="12.1" data-path="extras-de-r-markdown.html"><a href="extras-de-r-markdown.html#parametros-de-los-chunks-de-r"><i class="fa fa-check"></i><b>12.1</b> Parámetros de los <em>chunks</em> de R</a></li>
-<li class="chapter" data-level="12.2" data-path="extras-de-r-markdown.html"><a href="extras-de-r-markdown.html#los-chunks-en-modo-linea"><i class="fa fa-check"></i><b>12.2</b> Los <em>chunks</em> en modo línea</a></li>
+<li class="chapter" data-level="12" data-path="extras-de-r-markdown.html"><a href="extras-de-r-markdown.html"><i class="fa fa-check"></i><b>12</b> Extras de <em>R Markdown</em></a>
+<ul>
+<li class="chapter" data-level="12.1" data-path="extras-de-r-markdown.html"><a href="extras-de-r-markdown.html#parámetros-de-los-chunks-de-r"><i class="fa fa-check"></i><b>12.1</b> Parámetros de los <em>chunks</em> de R</a></li>
+<li class="chapter" data-level="12.2" data-path="extras-de-r-markdown.html"><a href="extras-de-r-markdown.html#los-chunks-en-modo-línea"><i class="fa fa-check"></i><b>12.2</b> Los <em>chunks</em> en modo línea</a></li>
 <li class="chapter" data-level="12.3" data-path="extras-de-r-markdown.html"><a href="extras-de-r-markdown.html#figuras"><i class="fa fa-check"></i><b>12.3</b> Figuras</a></li>
 <li class="chapter" data-level="12.4" data-path="extras-de-r-markdown.html"><a href="extras-de-r-markdown.html#tablas"><i class="fa fa-check"></i><b>12.4</b> Tablas</a></li>
-<li class="chapter" data-level="12.5" data-path="extras-de-r-markdown.html"><a href="extras-de-r-markdown.html#formulas-matematicas"><i class="fa fa-check"></i><b>12.5</b> Fórmulas matemáticas</a></li>
+<li class="chapter" data-level="12.5" data-path="extras-de-r-markdown.html"><a href="extras-de-r-markdown.html#fórmulas-matemáticas"><i class="fa fa-check"></i><b>12.5</b> Fórmulas matemáticas</a></li>
 </ul></li>
 </ul>
 
@@ -298,11 +326,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="chap:clustering" class="section level1">
+<div id="chap:clustering" class="section level1" number="11">
 <h1><span class="header-section-number">Lección 11</span> <em>Clustering</em> básico</h1>
 <p>En esta lección explicamos cómo usar R para clasificar objetos (o individuos, observaciones, etc.). En la práctica, supondremos que estos objetos están representados por medio de las filas de una tabla de datos de variables cuantitativas. A partir de estas descripciones como vectores numéricos, calcularemos de alguna manera la diferencia o semejanza entre cada par de objetos y las usaremos para clasificarlos, de manera que cada clase agrupe objetos parecidos. De esta manera, reducimos el problema de describir muchos objetos al de describir unas pocas clases. En este contexto, a las clases resultantes se las llama <em>clusters</em> y a la clasificación, <em>clustering</em>.</p>
 <p>Veremos dos tipos de procedimientos de <em>clustering</em>: el <strong>método de k-medias</strong>, o <em>k-means</em>, donde hay que especificar <em>a priori</em> el número de <em>clusters</em> que queremos formar, y los <strong>métodos jerárquicos aglomerativos</strong>, que producen un árbol que indica el orden en el que se van agrupando los objetos de manera jerárquica, empezando por los más cercanos.</p>
-<div id="metodo-de-k-medias-o-k-means" class="section level2">
+<div id="método-de-k-medias-o-k-means" class="section level2" number="11.1">
 <h2><span class="header-section-number">11.1</span> Método de k-medias o <em>k-means</em></h2>
 <p>El método de k-medias produce una partición de una serie de objetos, representados mediante puntos <span class="math inline">\(x_1,\ldots,x_n\)</span> de un espacio <span class="math inline">\(\mathbb{R}^p\)</span>, en un número prefijado <em>k</em> de <em>clusters</em>. En su versión básica, que es de la que toma su nombre genérico, se usa la distancia euclídea para comparar estos puntos y se identifica cada <em>cluster</em> con su <strong>centro</strong>: el punto medio (<em>mean</em>) de sus elementos. El objetivo es conseguir una clasificación <strong>óptima</strong> en el sentido siguiente. Dado un <em>clustering</em> de un conjunto de puntos, llamaremos <span class="math inline">\(SSC\)</span> a la suma de los cuadrados de las distancias de los puntos a los centros de los <em>clusters</em> a los que han sido asignados. En símbolos, si los <em>clusters</em> resultantes son <span class="math inline">\(C_1,\ldots,C_k\)</span>, de centros <span class="math inline">\(c_1,\ldots,c_k\)</span> respectivamente, y, para cada <span class="math inline">\(i=1,\ldots,k\)</span>, el <em>cluster</em> <span class="math inline">\(C_i\)</span> está formado por los puntos <span class="math inline">\(C_i=\{x_{i,1},\ldots,x_{i,n_i}\}\)</span>, entonces
 <span class="math display">\[
@@ -345,7 +373,7 @@ SSC_i=\sum_{l=1}^{n_i} \|x_{i,l}-c_i\|^2.
 <p>El <em>clustering</em> resultante está formado por los <em>clusters</em> existentes en el momento de parar.</p>
 <p>Ninguno de estos algoritmos garantiza un <em>clustering</em> óptimo, en el que la <span class="math inline">\(SSC\)</span> resultante sea mínima. Lo que se suele hacer entonces es repetir varias veces el algoritmo con distintos conjuntos iniciales de <em>k</em> centros, y cruzar los dedos para que la <span class="math inline">\(SSC\)</span> más pequeña que se obtenga en alguna de estas repeticiones sea efectivamente mínima. En todo caso, se ha demostrado que el algoritmo de Hartigan-Wong es, en general, más rápido y también más eficiente, en el sentido de que con mayor probabilidad da un <em>clustering</em> óptimo.<a href="#fn9" class="footnote-ref" id="fnref9"><sup>9</sup></a></p>
 <p>El método de k-medias está implementado en R en la función <code>kmeans</code>. Su sintaxis básica es la siguiente:</p>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">kmeans</span>(x, <span class="dt">centers=</span>..., <span class="dt">iter.max=</span>..., <span class="dt">algorithm =</span>...)</code></pre>
+<div class="sourceCode" id="cb1261"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1261-1"><a href="chap-clustering.html#cb1261-1" aria-hidden="true" tabindex="-1"></a><span class="fu">kmeans</span>(x, <span class="at">centers=</span>..., <span class="at">iter.max=</span>..., <span class="at">algorithm =</span>...)</span></code></pre></div>
 <p>donde:</p>
 <ul>
 <li><p><code>x</code> es la matriz o el <em>data frame</em> cuyas filas representan los objetos; en ambos casos, todas las variables han de ser numéricas.</p></li>
@@ -363,15 +391,15 @@ SSC_i=\sum_{l=1}^{n_i} \|x_{i,l}-c_i\|^2.
 <li><code>ddpi</code>: su tasa de crecimiento, como porcentaje de su renta per cápita.</li>
 </ul>
 <p>Echemos un vistazo a la tabla de datos:</p>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(faraway)
-<span class="kw">str</span>(savings) </code></pre>
-<pre><code>## &#39;data.frame&#39;:    50 obs. of  5 variables:
+<div class="sourceCode" id="cb1262"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1262-1"><a href="chap-clustering.html#cb1262-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(faraway)</span>
+<span id="cb1262-2"><a href="chap-clustering.html#cb1262-2" aria-hidden="true" tabindex="-1"></a><span class="fu">str</span>(savings) </span></code></pre></div>
+<pre><code>## &#39;data.frame&#39;:	50 obs. of  5 variables:
 ##  $ sr   : num  11.43 12.07 13.17 5.75 12.88 ...
 ##  $ pop15: num  29.4 23.3 23.8 41.9 42.2 ...
 ##  $ pop75: num  2.87 4.41 4.43 1.67 0.83 2.85 1.34 0.67 1.06 1.14 ...
 ##  $ dpi  : num  2330 1508 2108 189 728 ...
 ##  $ ddpi : num  2.87 3.93 3.82 0.22 4.56 2.43 2.67 6.51 3.08 2.8 ...</code></pre>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">head</span>(savings)</code></pre>
+<div class="sourceCode" id="cb1264"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1264-1"><a href="chap-clustering.html#cb1264-1" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(savings)</span></code></pre></div>
 <pre><code>##              sr pop15 pop75     dpi ddpi
 ## Australia 11.43 29.35  2.87 2329.68 2.87
 ## Austria   12.07 23.32  4.41 1507.99 3.93
@@ -380,11 +408,11 @@ SSC_i=\sum_{l=1}^{n_i} \|x_{i,l}-c_i\|^2.
 ## Brazil    12.88 42.19  0.83  728.47 4.56
 ## Canada     8.79 31.72  2.85 2982.88 2.43</code></pre>
 <p>En este ejemplo, para poder representar gráficamente los resultados obtenidos, sólo usaremos los indicadores <em>tasa de ahorro</em> (<code>sr</code>) y <em>renta per cápita</em> (<code>dpi</code>) de los países.</p>
-<pre class="sourceCode r"><code class="sourceCode r">savings2=savings[,<span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">4</span>)]</code></pre>
+<div class="sourceCode" id="cb1266"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1266-1"><a href="chap-clustering.html#cb1266-1" aria-hidden="true" tabindex="-1"></a>savings2<span class="ot">=</span>savings[,<span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">4</span>)]</span></code></pre></div>
 <p>Vamos a clasificar los 50 países en 4 <em>clusters</em>. Este número lo hemos elegido por ahora de manera arbitraria, en la próxima sección ya explicaremos cómo se puede hallar el número más adecuado de <em>clusters</em> en el que clasificar una determinada tabla de datos. Vamos a usar el método por defecto de R, y le dejaremos generar al azar los centros iniciales, pero fijaremos la semilla de aleatoriedad con la función <code>set.seed</code> para que el resultado sea reproducible.</p>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">set.seed</span>(<span class="dv">100</span>)
-estudio.paises=<span class="kw">kmeans</span>(savings2, <span class="dt">centers=</span><span class="dv">4</span>) 
-estudio.paises</code></pre>
+<div class="sourceCode" id="cb1267"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1267-1"><a href="chap-clustering.html#cb1267-1" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">100</span>)</span>
+<span id="cb1267-2"><a href="chap-clustering.html#cb1267-2" aria-hidden="true" tabindex="-1"></a>estudio.paises<span class="ot">=</span><span class="fu">kmeans</span>(savings2, <span class="at">centers=</span><span class="dv">4</span>) </span>
+<span id="cb1267-3"><a href="chap-clustering.html#cb1267-3" aria-hidden="true" tabindex="-1"></a>estudio.paises</span></code></pre></div>
 <pre><code>## K-means clustering with 4 clusters of sizes 20, 9, 11, 10
 ## 
 ## Cluster means:
@@ -428,14 +456,14 @@ estudio.paises</code></pre>
 <p>Veamos en detalle el contenido de <code>estudio.paises</code>. En primer lugar, R nos dice que los <em>clusters</em> están formados por 20, 9, 11 y 10 países, respectivamente. Seguidamente nos da la matriz <code>Cluster means</code>, cuyas filas son las coordenadas de los centros de los <em>clusters</em>, en el orden correspondiente. A continuación, el <code>Clustering vector</code> nos indica a qué <em>cluster</em> pertenece cada país: en este caso, Australia está en el <em>cluster</em> 4, Austria, en el 2, y así sucesivamente. Luego nos da las “sumas de cuadrados de los clusters”, <code>Within cluster sum of squares by cluster</code>; es decir, el vector de las <span class="math inline">\(SSC_i\)</span>.</p>
 <p>A modo de ejemplo, comprobemos que efectivamente la primera entrada del vector <code>Within cluster sum of squares by cluster</code> es <span class="math inline">\(SSC_1\)</span>. Vamos a guardar en un <em>data frame</em> <code>savings.1</code> la subtabla de datos de los
 países que pertenecen al primer <em>cluster</em>, llamaremos <code>centro.1</code> al vector de coordenadas del centro del primer <em>cluster</em>, y finalmente sumaremos los cuadrados de las distancias euclídeas de las filas de <code>savings.1</code> a <code>centro.1</code>. Para ello, vamos a usar que el resultado de <code>kmeans</code> es una <code>list</code> que contiene, por un lado, la componente <code>cluster</code> formada por el <code>Clustering vector</code> de las asignaciones de objetos a <em>clusters</em> (y por lo tanto, podemos especificar las filas que corresponden a países que pertenecen al primer <code>cluster</code> con <code>estudio.paises$cluster==1</code>) y, por otro lado, la componente <code>centers</code> formada por la matriz <code>Cluster means</code> de centros (y por lo tanto las coordenadas del centro del primer <code>cluster</code> se obtienen con <code>estudio.paises$centers[1,]</code>).</p>
-<pre class="sourceCode r"><code class="sourceCode r">savings<span class="fl">.1</span>=savings2[estudio.paises<span class="op">$</span>cluster<span class="op">==</span><span class="dv">1</span>, ]   <span class="co">#Miembros del primer cluster</span>
-centro<span class="fl">.1</span>=estudio.paises<span class="op">$</span>centers[<span class="dv">1</span>,]   <span class="co">#Centro del primer cluster</span>
-dist.euclid2=<span class="cf">function</span>(x,y){<span class="kw">sum</span>((x<span class="op">-</span>y)<span class="op">^</span><span class="dv">2</span>)} <span class="co">#Distancia euclídea al cuadrado</span>
-distancia_a_centro<span class="fl">.1</span>=<span class="cf">function</span>(x){<span class="kw">dist.euclid2</span>(x, centro<span class="fl">.1</span>)}  <span class="co">#Distancia de un punto al centro del primer cluster</span>
-<span class="kw">sum</span>(<span class="kw">apply</span>(savings<span class="fl">.1</span>, <span class="dt">MARGIN=</span><span class="dv">1</span>, <span class="dt">FUN=</span>distancia_a_centro<span class="fl">.1</span>))  <span class="co">#SSC_1</span></code></pre>
+<div class="sourceCode" id="cb1269"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1269-1"><a href="chap-clustering.html#cb1269-1" aria-hidden="true" tabindex="-1"></a>savings<span class="fl">.1</span><span class="ot">=</span>savings2[estudio.paises<span class="sc">$</span>cluster<span class="sc">==</span><span class="dv">1</span>, ]   <span class="co">#Miembros del primer cluster</span></span>
+<span id="cb1269-2"><a href="chap-clustering.html#cb1269-2" aria-hidden="true" tabindex="-1"></a>centro<span class="fl">.1</span><span class="ot">=</span>estudio.paises<span class="sc">$</span>centers[<span class="dv">1</span>,]   <span class="co">#Centro del primer cluster</span></span>
+<span id="cb1269-3"><a href="chap-clustering.html#cb1269-3" aria-hidden="true" tabindex="-1"></a>dist.euclid2<span class="ot">=</span><span class="cf">function</span>(x,y){<span class="fu">sum</span>((x<span class="sc">-</span>y)<span class="sc">^</span><span class="dv">2</span>)} <span class="co">#Distancia euclídea al cuadrado</span></span>
+<span id="cb1269-4"><a href="chap-clustering.html#cb1269-4" aria-hidden="true" tabindex="-1"></a>distancia_a_centro<span class="fl">.1</span><span class="ot">=</span><span class="cf">function</span>(x){<span class="fu">dist.euclid2</span>(x, centro<span class="fl">.1</span>)}  <span class="co">#Distancia de un punto al centro del primer cluster</span></span>
+<span id="cb1269-5"><a href="chap-clustering.html#cb1269-5" aria-hidden="true" tabindex="-1"></a><span class="fu">sum</span>(<span class="fu">apply</span>(savings<span class="fl">.1</span>, <span class="at">MARGIN=</span><span class="dv">1</span>, <span class="at">FUN=</span>distancia_a_centro<span class="fl">.1</span>))  <span class="co">#SSC_1</span></span></code></pre></div>
 <pre><code>## [1] 187921.7</code></pre>
 <p>Coincide con la primera entrada del vector <code>Within cluster sum of squares by cluster</code>. Como el resultado de <code>kmeans</code> contiene la componente <code>withinss</code> formada por el vector de las <span class="math inline">\(SSC_1\)</span>, el valor de <span class="math inline">\(SSC_1\)</span> se puede obtener directamente con</p>
-<pre class="sourceCode r"><code class="sourceCode r">estudio.paises<span class="op">$</span>withinss[<span class="dv">1</span>]</code></pre>
+<div class="sourceCode" id="cb1271"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1271-1"><a href="chap-clustering.html#cb1271-1" aria-hidden="true" tabindex="-1"></a>estudio.paises<span class="sc">$</span>withinss[<span class="dv">1</span>]</span></code></pre></div>
 <pre><code>## [1] 187921.7</code></pre>
 <p>Debajo del vector de las <span class="math inline">\(SSC_i\)</span>, R nos da el porcentaje <code>between_SS / total_SS</code>, en este caso, un 91.8%. Aquí, <code>total_SS</code> representa la suma <span class="math inline">\(SST\)</span> de los cuadrados de las distancias de los puntos al centro <span class="math inline">\(M\)</span> del conjunto de todos los puntos, y <code>between_SS</code> indica la suma <span class="math inline">\(SSB\)</span> de los cuadrados de las distancias de los centros de los <em>clusters</em> a <span class="math inline">\(M\)</span>, contada cada una de ellas tantas veces como elementos tiene <em>cluster</em>. Es decir, si los puntos de partida son <span class="math inline">\(x_1,\ldots,x_n\)</span> y cada <em>cluster</em> <span class="math inline">\(C_i\)</span> tiene centro <span class="math inline">\(c_i\)</span> y está formado por <span class="math inline">\(n_i\)</span> puntos, entonces
 <span class="math display">\[
@@ -451,37 +479,37 @@ que representa que la variabilidad total de los datos es igual a la suma de las 
 <code>between_SS / total_SS</code> indica la fracción de la variabilidad total que explica la variabilidad de los centros de los <em>clusters</em>.
 Como, dada una tabla de datos, el valor de <span class="math inline">\(SST\)</span> es fijo, una mayor fracción <span class="math inline">\(SSB/SST\)</span> es equivalente a una menor <span class="math inline">\(SSC\)</span>, y por lo tanto a un mejor <em>clustering</em>.</p>
 <p>Comprobemos todas estas afirmaciones en nuestro ejemplo. Vamos a empezar calculando a mano <span class="math inline">\(SST\)</span> y comprobando que coincide con <code>estudio.paises$totss</code>. Para ello, calculamos el punto medio de todo el conjunto de datos y a continuación la suma de las distancias al cuadrado de todos los puntos a este centro global. Usaremos la función <code>dist.euclid2</code> que hemos definido hace un rato para calcular las distancias euclídeas al cuadrado.</p>
-<pre class="sourceCode r"><code class="sourceCode r">centro.global=<span class="kw">apply</span>(savings2, <span class="dt">MARGIN=</span><span class="dv">2</span>, <span class="dt">FUN=</span>mean)   <span class="co">#El punto medio global, M</span>
-centro.global</code></pre>
+<div class="sourceCode" id="cb1273"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1273-1"><a href="chap-clustering.html#cb1273-1" aria-hidden="true" tabindex="-1"></a>centro.global<span class="ot">=</span><span class="fu">apply</span>(savings2, <span class="at">MARGIN=</span><span class="dv">2</span>, <span class="at">FUN=</span>mean)   <span class="co">#El punto medio global, M</span></span>
+<span id="cb1273-2"><a href="chap-clustering.html#cb1273-2" aria-hidden="true" tabindex="-1"></a>centro.global</span></code></pre></div>
 <pre><code>##       sr      dpi 
 ##    9.671 1106.758</code></pre>
-<pre class="sourceCode r"><code class="sourceCode r">dist_a_centro=<span class="cf">function</span>(x){<span class="kw">dist.euclid2</span>(x,centro.global)}
-SST=<span class="kw">sum</span>(<span class="kw">apply</span>(savings2, <span class="dt">MARGIN=</span><span class="dv">1</span>, <span class="dt">FUN=</span>dist_a_centro))
-SST</code></pre>
+<div class="sourceCode" id="cb1275"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1275-1"><a href="chap-clustering.html#cb1275-1" aria-hidden="true" tabindex="-1"></a>dist_a_centro<span class="ot">=</span><span class="cf">function</span>(x){<span class="fu">dist.euclid2</span>(x,centro.global)}</span>
+<span id="cb1275-2"><a href="chap-clustering.html#cb1275-2" aria-hidden="true" tabindex="-1"></a>SST<span class="ot">=</span><span class="fu">sum</span>(<span class="fu">apply</span>(savings2, <span class="at">MARGIN=</span><span class="dv">1</span>, <span class="at">FUN=</span>dist_a_centro))</span>
+<span id="cb1275-3"><a href="chap-clustering.html#cb1275-3" aria-hidden="true" tabindex="-1"></a>SST</span></code></pre></div>
 <pre><code>## [1] 48110220</code></pre>
-<pre class="sourceCode r"><code class="sourceCode r">estudio.paises<span class="op">$</span>totss  <span class="co">#La SST contenida en el resultado de la función kmeans</span></code></pre>
+<div class="sourceCode" id="cb1277"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1277-1"><a href="chap-clustering.html#cb1277-1" aria-hidden="true" tabindex="-1"></a>estudio.paises<span class="sc">$</span>totss  <span class="co">#La SST contenida en el resultado de la función kmeans</span></span></code></pre></div>
 <pre><code>## [1] 48110220</code></pre>
 <p>El valor de <span class="math inline">\(SSC\)</span> ha de ser la suma de las <span class="math inline">\(SSC_i\)</span>, que ya hemos visto que forman el vector <code>estudio.paises$withinss</code>.</p>
-<pre class="sourceCode r"><code class="sourceCode r">SSC=<span class="kw">sum</span>(estudio.paises<span class="op">$</span>withinss)
-SSC</code></pre>
+<div class="sourceCode" id="cb1279"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1279-1"><a href="chap-clustering.html#cb1279-1" aria-hidden="true" tabindex="-1"></a>SSC<span class="ot">=</span><span class="fu">sum</span>(estudio.paises<span class="sc">$</span>withinss)</span>
+<span id="cb1279-2"><a href="chap-clustering.html#cb1279-2" aria-hidden="true" tabindex="-1"></a>SSC</span></code></pre></div>
 <pre><code>## [1] 3932771</code></pre>
-<pre class="sourceCode r"><code class="sourceCode r">estudio.paises<span class="op">$</span>tot.withinss  <span class="co">#La SSC contenida en el resultado de la función kmeans</span></code></pre>
+<div class="sourceCode" id="cb1281"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1281-1"><a href="chap-clustering.html#cb1281-1" aria-hidden="true" tabindex="-1"></a>estudio.paises<span class="sc">$</span>tot.withinss  <span class="co">#La SSC contenida en el resultado de la función kmeans</span></span></code></pre></div>
 <pre><code>## [1] 3932771</code></pre>
 <p>Finalmente, vamos a calcular la <span class="math inline">\(SSB\)</span>. Recordemos que la matriz de los centros de los <em>clusters</em> es el objeto <code>estudio.paises$centers</code> y se tiene que los tamaños de los <em>clusters</em> forman el vector <code>estudio.paises$size</code>.</p>
-<pre class="sourceCode r"><code class="sourceCode r">Centros=estudio.paises<span class="op">$</span>centers <span class="co">#La matriz de centros</span>
-Distancias_centros_centroglobal=<span class="kw">apply</span>(Centros,<span class="dt">MARGIN=</span><span class="dv">1</span>,<span class="dt">FUN=</span>dist_a_centro)  <span class="co">#Distancias de los centros a M</span>
-SSB=<span class="kw">sum</span>(Distancias_centros_centroglobal<span class="op">*</span>estudio.paises<span class="op">$</span>size)  
-SSB</code></pre>
+<div class="sourceCode" id="cb1283"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1283-1"><a href="chap-clustering.html#cb1283-1" aria-hidden="true" tabindex="-1"></a>Centros<span class="ot">=</span>estudio.paises<span class="sc">$</span>centers <span class="co">#La matriz de centros</span></span>
+<span id="cb1283-2"><a href="chap-clustering.html#cb1283-2" aria-hidden="true" tabindex="-1"></a>Distancias_centros_centroglobal<span class="ot">=</span><span class="fu">apply</span>(Centros,<span class="at">MARGIN=</span><span class="dv">1</span>,<span class="at">FUN=</span>dist_a_centro)  <span class="co">#Distancias de los centros a M</span></span>
+<span id="cb1283-3"><a href="chap-clustering.html#cb1283-3" aria-hidden="true" tabindex="-1"></a>SSB<span class="ot">=</span><span class="fu">sum</span>(Distancias_centros_centroglobal<span class="sc">*</span>estudio.paises<span class="sc">$</span>size)  </span>
+<span id="cb1283-4"><a href="chap-clustering.html#cb1283-4" aria-hidden="true" tabindex="-1"></a>SSB</span></code></pre></div>
 <pre><code>## [1] 44177450</code></pre>
-<pre class="sourceCode r"><code class="sourceCode r">estudio.paises<span class="op">$</span>betweenss  <span class="co">#La SSB contenida en el resultado de la función kmeans</span></code></pre>
+<div class="sourceCode" id="cb1285"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1285-1"><a href="chap-clustering.html#cb1285-1" aria-hidden="true" tabindex="-1"></a>estudio.paises<span class="sc">$</span>betweenss  <span class="co">#La SSB contenida en el resultado de la función kmeans</span></span></code></pre></div>
 <pre><code>## [1] 44177450</code></pre>
 <p>Comprobemos finalmente la identidad <span class="math inline">\(SST=SSC+SSB\)</span>:</p>
-<pre class="sourceCode r"><code class="sourceCode r">SST</code></pre>
+<div class="sourceCode" id="cb1287"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1287-1"><a href="chap-clustering.html#cb1287-1" aria-hidden="true" tabindex="-1"></a>SST</span></code></pre></div>
 <pre><code>## [1] 48110220</code></pre>
-<pre class="sourceCode r"><code class="sourceCode r">SSB<span class="op">+</span>SSC</code></pre>
+<div class="sourceCode" id="cb1289"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1289-1"><a href="chap-clustering.html#cb1289-1" aria-hidden="true" tabindex="-1"></a>SSB<span class="sc">+</span>SSC</span></code></pre></div>
 <pre><code>## [1] 48110220</code></pre>
 <p>y comprobemos que el cociente <span class="math inline">\(SSB/SST\)</span> es el 91.8% que nos ha dado R:</p>
-<pre class="sourceCode r"><code class="sourceCode r">SSB<span class="op">/</span>SST</code></pre>
+<div class="sourceCode" id="cb1291"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1291-1"><a href="chap-clustering.html#cb1291-1" aria-hidden="true" tabindex="-1"></a>SSB<span class="sc">/</span>SST</span></code></pre></div>
 <pre><code>## [1] 0.918255</code></pre>
 <p>Así pues, el resultado de una aplicación de <code>kmeans</code> es una <code>list</code>. R nos da sus componentes al final del resultado de <code>kmeans</code>, bajo <code>Available components:</code>. A modo de resumen, vamos a recordar las componentes más interesantes para nuestros propósitos:</p>
 <ul>
@@ -495,9 +523,9 @@ SSB</code></pre>
 </ul>
 <p>Antes de continuar, tenemos de hacer un inciso. Cuando usamos un algoritmo de k-means partiendo de una configuración aleatoria de los centros iniciales, los resultados no tienen por qué ser los mismos cada vez que se ejecuta el algoritmo, debido a que distintas configuraciones iniciales de centros pueden desembocar en <em>clusterings</em> diferentes. Por este motivo, en el ejemplo anterior hemos usado <code>set.seed(100)</code> para que fuera reproducible. Con otra semilla de aleatoriedad, podría haber dado un resultado diferente, o no.
 Por ejemplo, con <code>set.seed(2000)</code> obtenemos un <em>clustering</em> con porcentaje <span class="math inline">\(SSB/SST\)</span> más alto, y por lo tanto mejor (lo confirmamos comprobando que su <span class="math inline">\(SSC\)</span> es menor que la anterior).</p>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">set.seed</span>(<span class="dv">2000</span>)
-estudio.paises2=<span class="kw">kmeans</span>(savings2, <span class="dt">centers=</span><span class="dv">4</span>)
-estudio.paises2</code></pre>
+<div class="sourceCode" id="cb1293"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1293-1"><a href="chap-clustering.html#cb1293-1" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">2000</span>)</span>
+<span id="cb1293-2"><a href="chap-clustering.html#cb1293-2" aria-hidden="true" tabindex="-1"></a>estudio.paises2<span class="ot">=</span><span class="fu">kmeans</span>(savings2, <span class="at">centers=</span><span class="dv">4</span>)</span>
+<span id="cb1293-3"><a href="chap-clustering.html#cb1293-3" aria-hidden="true" tabindex="-1"></a>estudio.paises2</span></code></pre></div>
 <pre><code>## K-means clustering with 4 clusters of sizes 9, 3, 30, 8
 ## 
 ## Cluster means:
@@ -538,21 +566,21 @@ estudio.paises2</code></pre>
 ## [1] &quot;cluster&quot;      &quot;centers&quot;      &quot;totss&quot;        &quot;withinss&quot;    
 ## [5] &quot;tot.withinss&quot; &quot;betweenss&quot;    &quot;size&quot;         &quot;iter&quot;        
 ## [9] &quot;ifault&quot;</code></pre>
-<pre class="sourceCode r"><code class="sourceCode r">estudio.paises2<span class="op">$</span>tot.withinss  <span class="co">#Nueva SSC</span></code></pre>
+<div class="sourceCode" id="cb1295"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1295-1"><a href="chap-clustering.html#cb1295-1" aria-hidden="true" tabindex="-1"></a>estudio.paises2<span class="sc">$</span>tot.withinss  <span class="co">#Nueva SSC</span></span></code></pre></div>
 <pre><code>## [1] 2867247</code></pre>
-<pre class="sourceCode r"><code class="sourceCode r">estudio.paises<span class="op">$</span>tot.withinss  <span class="co">#Anterior SSC</span></code></pre>
+<div class="sourceCode" id="cb1297"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1297-1"><a href="chap-clustering.html#cb1297-1" aria-hidden="true" tabindex="-1"></a>estudio.paises<span class="sc">$</span>tot.withinss  <span class="co">#Anterior SSC</span></span></code></pre></div>
 <pre><code>## [1] 3932771</code></pre>
 <p>La moraleja es que conviene ejecutar unas cuantas veces la función <code>kmeans</code> con centros iniciales aleatorios y quedarnos con el mejor <em>clustering</em> que obtengamos. En nuestro caso, en el bloque de código siguiente realizamos 10000 ejecuciones aleatorias y no encontramos ningún <em>clustering</em> con <span class="math inline">\(SSC\)</span> inferior a <code>estudio.paises2$tot.withinss</code>, por lo que consideraremos <code>estudio.paises2</code> como una clasificación óptima de nuestros datos en 4 clases.</p>
-<pre class="sourceCode r"><code class="sourceCode r">fun.SSC=<span class="cf">function</span>(x){
-<span class="kw">set.seed</span>(x)  
-<span class="kw">kmeans</span>(savings2, <span class="dt">centers=</span><span class="dv">4</span>)<span class="op">$</span>tot.withinss
-}
-X=<span class="kw">sample</span>(<span class="dv">10</span><span class="op">^</span><span class="dv">8</span>,<span class="dv">10000</span>)   <span class="co">#10000 semillas aleatorias</span>
-<span class="kw">min</span>(<span class="kw">sapply</span>(X,<span class="dt">FUN=</span>fun.SSC))  <span class="co">#Ejecutamos 10000 kmeans aleatorios y calculamos su mínimo SSC</span></code></pre>
+<div class="sourceCode" id="cb1299"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1299-1"><a href="chap-clustering.html#cb1299-1" aria-hidden="true" tabindex="-1"></a>fun.SSC<span class="ot">=</span><span class="cf">function</span>(x){</span>
+<span id="cb1299-2"><a href="chap-clustering.html#cb1299-2" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(x)  </span>
+<span id="cb1299-3"><a href="chap-clustering.html#cb1299-3" aria-hidden="true" tabindex="-1"></a><span class="fu">kmeans</span>(savings2, <span class="at">centers=</span><span class="dv">4</span>)<span class="sc">$</span>tot.withinss</span>
+<span id="cb1299-4"><a href="chap-clustering.html#cb1299-4" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb1299-5"><a href="chap-clustering.html#cb1299-5" aria-hidden="true" tabindex="-1"></a>X<span class="ot">=</span><span class="fu">sample</span>(<span class="dv">10</span><span class="sc">^</span><span class="dv">8</span>,<span class="dv">10000</span>)   <span class="co">#10000 semillas aleatorias</span></span>
+<span id="cb1299-6"><a href="chap-clustering.html#cb1299-6" aria-hidden="true" tabindex="-1"></a><span class="fu">min</span>(<span class="fu">sapply</span>(X,<span class="at">FUN=</span>fun.SSC))  <span class="co">#Ejecutamos 10000 kmeans aleatorios y calculamos su mínimo SSC</span></span></code></pre></div>
 <pre><code>## [1] 2867247</code></pre>
 <p>Para visualizar gráficamente un <em>clustering</em> de datos bidimensionales, lo más sencillo es producir el gráfico de dispersión de los puntos coloreándolos según los <em>clusters</em>.</p>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">plot</span>(savings2, <span class="dt">col=</span>estudio.paises2<span class="op">$</span>cluster, <span class="dt">xlab=</span><span class="st">&quot;Tasa de ahorro&quot;</span>, <span class="dt">ylab=</span><span class="st">&quot;Renta per cápita&quot;</span>,<span class="dt">pch=</span><span class="dv">20</span>)
-<span class="kw">text</span>(savings2, <span class="kw">rownames</span>(savings2), <span class="dt">col=</span>estudio.paises2<span class="op">$</span>cluster, <span class="dt">cex=</span><span class="fl">0.6</span>, <span class="dt">pos=</span><span class="dv">1</span>) <span class="co">#Añadimos los nombres de los países a los puntos</span></code></pre>
+<div class="sourceCode" id="cb1301"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1301-1"><a href="chap-clustering.html#cb1301-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(savings2, <span class="at">col=</span>estudio.paises2<span class="sc">$</span>cluster, <span class="at">xlab=</span><span class="st">&quot;Tasa de ahorro&quot;</span>, <span class="at">ylab=</span><span class="st">&quot;Renta per cápita&quot;</span>,<span class="at">pch=</span><span class="dv">20</span>)</span>
+<span id="cb1301-2"><a href="chap-clustering.html#cb1301-2" aria-hidden="true" tabindex="-1"></a><span class="fu">text</span>(savings2, <span class="fu">rownames</span>(savings2), <span class="at">col=</span>estudio.paises2<span class="sc">$</span>cluster, <span class="at">cex=</span><span class="fl">0.6</span>, <span class="at">pos=</span><span class="dv">1</span>) <span class="co">#Añadimos los nombres de los países a los puntos</span></span></code></pre></div>
 <p>Obtenemos la Figura <a href="chap-clustering.html#fig:paises">11.1</a>. Observamos que los países “cercanos” están coloreados con el mismo color. Así, por ejemplo, los países más desarrollados están coloreados de color rojo y están en la parte superior del gráfico, ya que tienen la renta per cápita más alta, mientras que los países menos desarrollados están coloreados de color verde y están en la parte inferior del gráfico al tener la renta per cápita más baja.</p>
 <div class="figure" style="text-align: center"><span id="fig:paises"></span>
 <img src="AprendeR-Parte-II_files/figure-html/paises-1.png" alt="Representación gráfica de las variables &quot;Tasa de ahorro&quot; y &quot;Renta per cápita&quot; agrupadas según el clustering `estudio.paises2`." width="480" />
@@ -561,29 +589,29 @@ Figura 11.1: Representación gráfica de las variables “Tasa de ahorro” y �
 </p>
 </div>
 <p>Existen paquetes que aportan funciones para dibujar <em>clusterings</em> más informativos. Por ejemplo, la función <code>clusplot</code> del paquete <code>cluster</code> enmarca los <em>clusters</em> con elipses. Su sintaxis básica es</p>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">clusplot</span>(x, vector, parámetros)</code></pre>
+<div class="sourceCode" id="cb1302"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1302-1"><a href="chap-clustering.html#cb1302-1" aria-hidden="true" tabindex="-1"></a><span class="fu">clusplot</span>(x, vector, parámetros)</span></code></pre></div>
 <p>donde</p>
 <ul>
-<li><code>x</code> es la matriz o la tabla de datos numéricos.</li>
-<li>El <code>vector</code> es la componente <code>cluster</code> del resultado de <code>kmeans</code>.</li>
+<li><p><code>x</code> es la matriz o la tabla de datos numéricos.</p></li>
+<li><p>El <code>vector</code> es la componente <code>cluster</code> del resultado de <code>kmeans</code>.</p></li>
 <li><p>Algunos otros parámetros útiles:</p>
 <ul>
 <li><p><code>shade</code>: un parámetro lógico que igualado a <code>TRUE</code> sombrea las elipses según su densidad (número de puntos dividido entre área de la elipse): más densamente cuanto más densas.</p></li>
 <li><p><code>color</code>: un parámetro lógico que igualado a <code>TRUE</code> colorea las elipses según su densidad, por defecto de azul a granate por orden creciente de intensidad.</p></li>
-<li><code>labels</code>, que puede tomar (entre otros) los valores siguientes: 0 (no añade ninguna etiqueta), 2 (etiqueta los puntos y las elipses), 3 (etiqueta solo los puntos), 4 (etiqueta solo las elipses).</li>
-<li><code>col.clus</code>: los colores de las elipses.</li>
-<li><code>col.p</code>: los colores de los puntos.</li>
-<li><code>col.txt</code>: los colores de las etiquetas.</li>
-<li><code>lines</code>, permite añadir líneas uniendo los <em>clusters</em> y puede tomar los valores siguientes: 0 (no añade ninguna línea), 1 (las líneas unen los centros) y 2 (las líneas unen las fronteras de las elipses). Estas líneas nos permiten hacernos una idea de las distancias entre los <em>clusters</em>.</li>
+<li><p><code>labels</code>, que puede tomar (entre otros) los valores siguientes: 0 (no añade ninguna etiqueta), 2 (etiqueta los puntos y las elipses), 3 (etiqueta solo los puntos), 4 (etiqueta solo las elipses).</p></li>
+<li><p><code>col.clus</code>: los colores de las elipses.</p></li>
+<li><p><code>col.p</code>: los colores de los puntos.</p></li>
+<li><p><code>col.txt</code>: los colores de las etiquetas.</p></li>
+<li><p><code>lines</code>, permite añadir líneas uniendo los <em>clusters</em> y puede tomar los valores siguientes: 0 (no añade ninguna línea), 1 (las líneas unen los centros) y 2 (las líneas unen las fronteras de las elipses). Estas líneas nos permiten hacernos una idea de las distancias entre los <em>clusters</em>.</p></li>
 <li><p><code>cex</code> y <code>cex.text</code> permiten modificar el tamaño de los puntos y de las etiquetas.</p></li>
 </ul></li>
 </ul>
 <p>Esta función dispone de muchos más parámetros, que pueden consultarse en la Ayuda de <code>clusplot.default</code>. A modo de ejemplo, el código</p>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(cluster)
-clustering=estudio.paises2<span class="op">$</span>cluster
-<span class="kw">clusplot</span>(savings2, clustering, <span class="dt">shade=</span><span class="ot">TRUE</span>, <span class="dt">lines=</span><span class="dv">0</span>, <span class="dt">labels=</span><span class="dv">3</span>, <span class="dt">color=</span><span class="ot">TRUE</span>,
-          <span class="dt">col.p=</span><span class="st">&quot;black&quot;</span>, <span class="dt">main=</span><span class="st">&quot;&quot;</span>, <span class="dt">sub=</span><span class="st">&quot;&quot;</span>, <span class="dt">cex.txt=</span><span class="fl">0.75</span>)</code></pre>
-<p>produce la Figura <a href="chap-clustering.html#fig:clusplot">11.2</a> (con <code>main=&quot;&quot;</code> y <code>sub=&quot;&quot;</code> hemos eliminado el título y subtítulo por defecto). Observaréis que los puntos de <em>clusters</em> diferentes se han representado por medio de símbolos diferentes, y que los ejes de coordenadas no se corresponden con las variables originales. En realidad, <code>clusplot</code> ha realizado un <strong>Análisis de Componentes Principales</strong> (<strong>ACP</strong>) de los datos, que para dos variables simplemente significa que ha centrado los datos y ha tomado como eje de abscisas la variable con mayor varianza. En este caso, tras centrar los datos, ha tomado como eje de abscisas (la Componente Principal 1) la “Renta per cápita” y como eje de ordenadas (la Componente Principal 2) la “Tasa de ahorro”; si no os gustan las etiquetas de los ejes por defecto, podéis modificarlas con los parámetros adecuados. Estudiaremos con detalle el Análisis de Componentes Principales en la siguiente lección.</p>
+<div class="sourceCode" id="cb1303"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1303-1"><a href="chap-clustering.html#cb1303-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(cluster)</span>
+<span id="cb1303-2"><a href="chap-clustering.html#cb1303-2" aria-hidden="true" tabindex="-1"></a>clustering<span class="ot">=</span>estudio.paises2<span class="sc">$</span>cluster</span>
+<span id="cb1303-3"><a href="chap-clustering.html#cb1303-3" aria-hidden="true" tabindex="-1"></a><span class="fu">clusplot</span>(savings2, clustering, <span class="at">shade=</span><span class="cn">TRUE</span>, <span class="at">lines=</span><span class="dv">0</span>, <span class="at">labels=</span><span class="dv">3</span>, <span class="at">color=</span><span class="cn">TRUE</span>,</span>
+<span id="cb1303-4"><a href="chap-clustering.html#cb1303-4" aria-hidden="true" tabindex="-1"></a>          <span class="at">col.p=</span><span class="st">&quot;black&quot;</span>, <span class="at">main=</span><span class="st">&quot;&quot;</span>, <span class="at">sub=</span><span class="st">&quot;&quot;</span>, <span class="at">cex.txt=</span><span class="fl">0.75</span>)</span></code></pre></div>
+<p>produce la Figura <a href="chap-clustering.html#fig:clusplot">11.2</a> (con <code>main=""</code> y <code>sub=""</code> hemos eliminado el título y subtítulo por defecto). Observaréis que los puntos de <em>clusters</em> diferentes se han representado por medio de símbolos diferentes, y que los ejes de coordenadas no se corresponden con las variables originales. En realidad, <code>clusplot</code> ha realizado un <strong>Análisis de Componentes Principales</strong> (<strong>ACP</strong>) de los datos, que para dos variables simplemente significa que ha centrado los datos y ha tomado como eje de abscisas la variable con mayor varianza. En este caso, tras centrar los datos, ha tomado como eje de abscisas (la Componente Principal 1) la “Renta per cápita” y como eje de ordenadas (la Componente Principal 2) la “Tasa de ahorro”; si no os gustan las etiquetas de los ejes por defecto, podéis modificarlas con los parámetros adecuados. Estudiaremos con detalle el Análisis de Componentes Principales en la siguiente lección.</p>
 <div class="figure" style="text-align: center"><span id="fig:clusplot"></span>
 <img src="AprendeR-Parte-II_files/figure-html/clusplot-1.png" alt="Representación gráfica del clustering &quot;estudio.paises2&quot; usando la función &quot;clusplot&quot;." width="480" />
 <p class="caption">
@@ -591,7 +619,7 @@ Figura 11.2: Representación gráfica del clustering “estudio.paises2” usand
 </p>
 </div>
 </div>
-<div id="eleccion-del-numero-de-clusters" class="section level2">
+<div id="elección-del-número-de-clusters" class="section level2" number="11.2">
 <h2><span class="header-section-number">11.2</span> Elección del número de <em>clusters</em></h2>
 <p>No se conoce ninguna manera de saber <em>a priori</em> el número correcto de <em>clusters</em> que tenemos que usar para clasificar un conjunto de datos. En cambio, sí que se dispone de algunos métodos más o menos aceptados para decidir <em>a posteriori</em>, una vez clasificados los datos en diversos números de <em>clusters</em>, cuál es el más adecuado.</p>
 <p>El procedimiento general es el siguiente:</p>
@@ -600,20 +628,20 @@ Figura 11.2: Representación gráfica del clustering “estudio.paises2” usand
 <li><p>Para cada <em>k</em>, ejecutamos varias veces la función <code>kmeans</code> con diferentes configuraciones iniciales de <em>k</em> centros, y nos quedamos con un <em>clustering</em> que tenga el menor valor de <span class="math inline">\(SSC\)</span> de los obtenidos para esta <em>k</em>. Llamaremos <span class="math inline">\(SSC(k)\)</span> al valor mínimo de las <span class="math inline">\(SSC\)</span> obtenidas para <em>k</em> <em>clusters</em>.</p></li>
 <li><p>A partir del vector de los <span class="math inline">\(SSC(k)\)</span>, medimos “algo” y a partir de esta medición decidimos la <em>k</em>.</p></li>
 </ol>
-<p>Por ejemplo, una regla bastante extendida, y claramente arbitraria, es la <strong>regla del 90%</strong>: “se toma el valor de <em>k</em> mas pequeño para el que <span class="math inline">\((SST-SSC(k))/SST\geqslant 0.9\)</span>” (observad que <span class="math inline">\(SST-SSC(k)\)</span> es la <span class="math inline">\(SSB\)</span> de un <em>clustering</em> que tenga <span class="math inline">\(SSC=SSC(k)\)</span>).</p>
+<p>Por ejemplo, una regla bastante extendida, y claramente arbitraria, es la <strong>regla del 90%</strong>: “se toma el valor de <em>k</em> mas pequeño para el que <span class="math inline">\((SST-SSC(k))/SST\geq 0.9\)</span>” (observad que <span class="math inline">\(SST-SSC(k)\)</span> es la <span class="math inline">\(SSB\)</span> de un <em>clustering</em> que tenga <span class="math inline">\(SSC=SSC(k)\)</span>).</p>
 <p>Vamos a organizar la información necesaria para aplicar los métodos que vamos a explicar en esta sección a nuestra tabla de datos <code>savings2</code>. Como la tabla contiene información sobre 50 países, probaremos los valores para <em>k</em> de 2 a 17. Para cada valor de <em>k</em>, calcularemos 500 <em>clusterings</em> partiendo de <em>k</em> centros escogidos aleatoriamente con valores de <code>set.seed</code> tomados de un vector aleatorio de 500 entradas escogidas de manera equiprobable (con <code>sample</code>) entre 1 y 50000. De esta manera, los resultados serán bastante aleatorios, pero como hemos fijado el vector de semillas en un bloque de código anterior, serán reproducibles. Entonces, para cada <em>k</em> guardaremos la semilla del primer <em>clustering</em> que dé el valor mínimo de <span class="math inline">\(SSC\)</span> entre las 500 repeticiones (para poder volver a calcularlo si es necesario) y su valor de <span class="math inline">\(SSC\)</span>. Finalmente, organizaremos la información en una matriz <code>Resultados</code> de 3 columnas: una para los valores de <em>k</em>, una para los primeros valores de las semillas de aleatoriedad que han dado, para cada <em>k</em>, la <span class="math inline">\(SSC\)</span> mínima, y una tercera columna con los correspondientes valores mínimos <span class="math inline">\(SSC(k)\)</span>.</p>
-<pre class="sourceCode r"><code class="sourceCode r">x=<span class="kw">sample</span>(<span class="dv">50000</span>,<span class="dv">500</span>,<span class="dt">rep=</span><span class="ot">FALSE</span>) <span class="co">#Las 500 semillas aleatorias que usaremos</span>
-Resultados=<span class="kw">c</span>() 
-<span class="cf">for</span>(k <span class="cf">in</span> <span class="dv">2</span><span class="op">:</span><span class="dv">17</span>){
-  SSCs=<span class="kw">c</span>()  
-  <span class="cf">for</span> (i <span class="cf">in</span> x){
-    <span class="kw">set.seed</span>(i)
-    SSCs=<span class="kw">cbind</span>(SSCs,<span class="kw">c</span>(i,<span class="kw">kmeans</span>(savings2,k)<span class="op">$</span>tot.withinss))
-    }   
-  SSC.min=SSCs[,<span class="kw">which.min</span>(SSCs[<span class="dv">2</span>,])]
-  Resultados=<span class="kw">rbind</span>(Resultados,<span class="kw">c</span>(k,SSC.min))}
-<span class="kw">dimnames</span>(Resultados)=<span class="kw">list</span>(<span class="ot">NULL</span>, <span class="kw">c</span>(<span class="st">&quot;k&quot;</span>, <span class="st">&quot;semilla&quot;</span>, <span class="st">&quot;SSC&quot;</span>))
-Resultados</code></pre>
+<div class="sourceCode" id="cb1304"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1304-1"><a href="chap-clustering.html#cb1304-1" aria-hidden="true" tabindex="-1"></a>x<span class="ot">=</span><span class="fu">sample</span>(<span class="dv">50000</span>,<span class="dv">500</span>,<span class="at">rep=</span><span class="cn">FALSE</span>) <span class="co">#Las 500 semillas aleatorias que usaremos</span></span>
+<span id="cb1304-2"><a href="chap-clustering.html#cb1304-2" aria-hidden="true" tabindex="-1"></a>Resultados<span class="ot">=</span><span class="fu">c</span>() </span>
+<span id="cb1304-3"><a href="chap-clustering.html#cb1304-3" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span>(k <span class="cf">in</span> <span class="dv">2</span><span class="sc">:</span><span class="dv">17</span>){</span>
+<span id="cb1304-4"><a href="chap-clustering.html#cb1304-4" aria-hidden="true" tabindex="-1"></a>  SSCs<span class="ot">=</span><span class="fu">c</span>()	</span>
+<span id="cb1304-5"><a href="chap-clustering.html#cb1304-5" aria-hidden="true" tabindex="-1"></a>  <span class="cf">for</span> (i <span class="cf">in</span> x){</span>
+<span id="cb1304-6"><a href="chap-clustering.html#cb1304-6" aria-hidden="true" tabindex="-1"></a>    <span class="fu">set.seed</span>(i)</span>
+<span id="cb1304-7"><a href="chap-clustering.html#cb1304-7" aria-hidden="true" tabindex="-1"></a>    SSCs<span class="ot">=</span><span class="fu">cbind</span>(SSCs,<span class="fu">c</span>(i,<span class="fu">kmeans</span>(savings2,k)<span class="sc">$</span>tot.withinss))</span>
+<span id="cb1304-8"><a href="chap-clustering.html#cb1304-8" aria-hidden="true" tabindex="-1"></a>    }	</span>
+<span id="cb1304-9"><a href="chap-clustering.html#cb1304-9" aria-hidden="true" tabindex="-1"></a>  SSC.min<span class="ot">=</span>SSCs[,<span class="fu">which.min</span>(SSCs[<span class="dv">2</span>,])]</span>
+<span id="cb1304-10"><a href="chap-clustering.html#cb1304-10" aria-hidden="true" tabindex="-1"></a>  Resultados<span class="ot">=</span><span class="fu">rbind</span>(Resultados,<span class="fu">c</span>(k,SSC.min))}</span>
+<span id="cb1304-11"><a href="chap-clustering.html#cb1304-11" aria-hidden="true" tabindex="-1"></a><span class="fu">dimnames</span>(Resultados)<span class="ot">=</span><span class="fu">list</span>(<span class="cn">NULL</span>, <span class="fu">c</span>(<span class="st">&quot;k&quot;</span>, <span class="st">&quot;semilla&quot;</span>, <span class="st">&quot;SSC&quot;</span>))</span>
+<span id="cb1304-12"><a href="chap-clustering.html#cb1304-12" aria-hidden="true" tabindex="-1"></a>Resultados</span></code></pre></div>
 <pre><code>##        k semilla         SSC
 ##  [1,]  2   48465 10550652.77
 ##  [2,]  3   48465  5290876.37
@@ -632,10 +660,10 @@ Resultados</code></pre>
 ## [15,] 16   37528    80886.18
 ## [16,] 17   37528    75940.10</code></pre>
 <p>Si ahora, por ejemplo, quisiéramos aplicar la regla del 90%, calcularíamos para cada <em>k</em> el valor de <span class="math inline">\((SST-SS(k))/SST\)</span> y tomaríamos el primer <em>k</em> para el que este cociente fuera mayor de 0.9</p>
-<pre class="sourceCode r"><code class="sourceCode r">SST <span class="co">#Recordemos el valor de SST</span></code></pre>
+<div class="sourceCode" id="cb1306"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1306-1"><a href="chap-clustering.html#cb1306-1" aria-hidden="true" tabindex="-1"></a>SST <span class="co">#Recordemos el valor de SST</span></span></code></pre></div>
 <pre><code>## [1] 48110220</code></pre>
-<pre class="sourceCode r"><code class="sourceCode r">SSB=SST<span class="op">-</span>Resultados[,<span class="dv">3</span>]
-Resultados[<span class="kw">min</span>(<span class="kw">which</span>(SSB<span class="op">/</span>SST<span class="op">&gt;</span><span class="fl">0.9</span>)),<span class="dv">1</span>]</code></pre>
+<div class="sourceCode" id="cb1308"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1308-1"><a href="chap-clustering.html#cb1308-1" aria-hidden="true" tabindex="-1"></a>SSB<span class="ot">=</span>SST<span class="sc">-</span>Resultados[,<span class="dv">3</span>]</span>
+<span id="cb1308-2"><a href="chap-clustering.html#cb1308-2" aria-hidden="true" tabindex="-1"></a>Resultados[<span class="fu">min</span>(<span class="fu">which</span>(SSB<span class="sc">/</span>SST<span class="sc">&gt;</span><span class="fl">0.9</span>)),<span class="dv">1</span>]</span></code></pre></div>
 <pre><code>## k 
 ## 4</code></pre>
 <p>Con la regla del 90% hubiéramos escogido <span class="math inline">\(k=4\)</span>, que es justamente lo que hemos hecho en la sección anterior.</p>
@@ -643,7 +671,7 @@ Resultados[<span class="kw">min</span>(<span class="kw">which</span>(SSB<span cl
 línea quebrada que se obtiene uniéndolos es más o menos cóncava. Si podemos detectar un valor de <em>k</em> a partir del cual <span class="math inline">\(SS_C(k)\)</span> disminuya más lentamente que antes de él, ese <em>k</em> será el número recomendable de <em>clusters</em> a usar; si, en cambio, no existe ningún <em>k</em> con esta propiedad, es señal de que no existe ninguna clasificación natural de los objetos bajo estudio. Esta regla se llama el método del “codo” porque si superpusiésemos un
 brazo en la representación gráfica de los puntos <span class="math inline">\((k,SS_C(k))\)</span>, el punto correspondiente al <em>k</em> elegido sería dónde colocaríamos el codo.</p>
 <p>Apliquemos este método a nuestra tabla de datos <code>savings2</code>. El código siguiente produce la Figura <a href="chap-clustering.html#fig:CODO">11.3</a>, que muestra que el número <em>k</em> adecuado de <em>clusters</em> parece ser 5:</p>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">plot</span>(Resultados[,<span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">3</span>)], <span class="dt">xlab=</span><span class="st">&quot;k&quot;</span>, <span class="dt">ylab=</span><span class="st">&quot;SSC(k)&quot;</span>, <span class="dt">type=</span><span class="st">&quot;b&quot;</span>, <span class="dt">col=</span><span class="st">&quot;red&quot;</span>) </code></pre>
+<div class="sourceCode" id="cb1310"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1310-1"><a href="chap-clustering.html#cb1310-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(Resultados[,<span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">3</span>)], <span class="at">xlab=</span><span class="st">&quot;k&quot;</span>, <span class="at">ylab=</span><span class="st">&quot;SSC(k)&quot;</span>, <span class="at">type=</span><span class="st">&quot;b&quot;</span>, <span class="at">col=</span><span class="st">&quot;red&quot;</span>) </span></code></pre></div>
 <div class="figure" style="text-align: center"><span id="fig:CODO"></span>
 <img src="AprendeR-Parte-II_files/figure-html/CODO-1.png" alt="Aplicación del método del codo para hallar el número óptimo de clusters en la tabla de datos &quot;savings2&quot;." width="480" />
 <p class="caption">
@@ -660,16 +688,16 @@ donde, recordemos, <span class="math inline">\(n\)</span> es el número de filas
 \]</span>
 Una vez hallado este p-valor para cada <em>k</em>, escogemos como <em>k</em> adecuado aquel cuyo p-valor sea el más pequeño.</p>
 <p>Vamos a aplicar este test F a nuestra tabla de datos. Recordemos que ya hemos calculado los valores <span class="math inline">\(SSC(k)\)</span>, en la tercera columna de la matriz <code>Resultados</code>.</p>
-<pre class="sourceCode r"><code class="sourceCode r">k=<span class="dv">2</span><span class="op">:</span><span class="dv">16</span>
-n=<span class="kw">dim</span>(savings2)[<span class="dv">1</span>] 
-p=<span class="kw">dim</span>(savings2)[<span class="dv">2</span>]
-<span class="kw">c</span>(n,p)</code></pre>
+<div class="sourceCode" id="cb1311"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1311-1"><a href="chap-clustering.html#cb1311-1" aria-hidden="true" tabindex="-1"></a>k<span class="ot">=</span><span class="dv">2</span><span class="sc">:</span><span class="dv">16</span></span>
+<span id="cb1311-2"><a href="chap-clustering.html#cb1311-2" aria-hidden="true" tabindex="-1"></a>n<span class="ot">=</span><span class="fu">dim</span>(savings2)[<span class="dv">1</span>] </span>
+<span id="cb1311-3"><a href="chap-clustering.html#cb1311-3" aria-hidden="true" tabindex="-1"></a>p<span class="ot">=</span><span class="fu">dim</span>(savings2)[<span class="dv">2</span>]</span>
+<span id="cb1311-4"><a href="chap-clustering.html#cb1311-4" aria-hidden="true" tabindex="-1"></a><span class="fu">c</span>(n,p)</span></code></pre></div>
 <pre><code>## [1] 50  2</code></pre>
-<pre class="sourceCode r"><code class="sourceCode r">SSC=Resultados[ ,<span class="dv">3</span>]
-F_k=(SSC[<span class="op">-</span><span class="dv">16</span>]<span class="op">-</span>SSC[<span class="op">-</span><span class="dv">1</span>])<span class="op">/</span>(SSC[<span class="op">-</span><span class="dv">1</span>]<span class="op">/</span>(n<span class="op">-</span>k<span class="dv">-1</span>))
-p.valores=<span class="dv">1</span><span class="op">-</span><span class="kw">pf</span>(F_k,p,p<span class="op">*</span>(n<span class="op">-</span>k<span class="dv">-1</span>))
-F.test=<span class="kw">cbind</span>(k,F_k,p.valores)
-F.test</code></pre>
+<div class="sourceCode" id="cb1313"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1313-1"><a href="chap-clustering.html#cb1313-1" aria-hidden="true" tabindex="-1"></a>SSC<span class="ot">=</span>Resultados[ ,<span class="dv">3</span>]</span>
+<span id="cb1313-2"><a href="chap-clustering.html#cb1313-2" aria-hidden="true" tabindex="-1"></a>F_k<span class="ot">=</span>(SSC[<span class="sc">-</span><span class="dv">16</span>]<span class="sc">-</span>SSC[<span class="sc">-</span><span class="dv">1</span>])<span class="sc">/</span>(SSC[<span class="sc">-</span><span class="dv">1</span>]<span class="sc">/</span>(n<span class="sc">-</span>k<span class="dv">-1</span>))</span>
+<span id="cb1313-3"><a href="chap-clustering.html#cb1313-3" aria-hidden="true" tabindex="-1"></a>p.valores<span class="ot">=</span><span class="dv">1</span><span class="sc">-</span><span class="fu">pf</span>(F_k,p,p<span class="sc">*</span>(n<span class="sc">-</span>k<span class="dv">-1</span>))</span>
+<span id="cb1313-4"><a href="chap-clustering.html#cb1313-4" aria-hidden="true" tabindex="-1"></a>F.test<span class="ot">=</span><span class="fu">cbind</span>(k,F_k,p.valores)</span>
+<span id="cb1313-5"><a href="chap-clustering.html#cb1313-5" aria-hidden="true" tabindex="-1"></a>F.test</span></code></pre></div>
 <pre><code>##        k       F_k    p.valores
 ##  [1,]  2 46.723732 8.215650e-15
 ##  [2,]  3 38.882917 5.768719e-13
@@ -687,22 +715,22 @@ F.test</code></pre>
 ## [14,] 15  7.010500 1.705498e-03
 ## [15,] 16  2.149334 1.246509e-01</code></pre>
 <p>El p-valor más pequeño se obtiene para <span class="math inline">\(k=2\)</span>, por lo que éste sería el número adecuado de <em>clusters</em> según este test. Para terminar esta sección, vamos a dibujar los <em>clusters</em> que se obtienen para <span class="math inline">\(k=2\)</span> y <span class="math inline">\(k=5\)</span>:</p>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="co">#k=2</span>
-<span class="kw">set.seed</span>(<span class="dv">48465</span>)
-kmeans2=<span class="kw">kmeans</span>(savings2,<span class="dt">centers=</span><span class="dv">2</span>)
-<span class="kw">plot</span>(savings2, <span class="dt">col=</span>kmeans2<span class="op">$</span>cluster, <span class="dt">xlab=</span><span class="st">&quot;Tasa de ahorro&quot;</span>, <span class="dt">ylab=</span><span class="st">&quot;Renta per cápita&quot;</span>,<span class="dt">pch=</span><span class="dv">20</span>)
-<span class="kw">text</span>(savings2, <span class="kw">rownames</span>(savings2), <span class="dt">cex=</span><span class="fl">0.6</span>, <span class="dt">pos=</span><span class="dv">1</span>, <span class="dt">col=</span>kmeans2<span class="op">$</span>cluster) </code></pre>
+<div class="sourceCode" id="cb1315"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1315-1"><a href="chap-clustering.html#cb1315-1" aria-hidden="true" tabindex="-1"></a><span class="co">#k=2</span></span>
+<span id="cb1315-2"><a href="chap-clustering.html#cb1315-2" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">48465</span>)</span>
+<span id="cb1315-3"><a href="chap-clustering.html#cb1315-3" aria-hidden="true" tabindex="-1"></a>kmeans2<span class="ot">=</span><span class="fu">kmeans</span>(savings2,<span class="at">centers=</span><span class="dv">2</span>)</span>
+<span id="cb1315-4"><a href="chap-clustering.html#cb1315-4" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(savings2, <span class="at">col=</span>kmeans2<span class="sc">$</span>cluster, <span class="at">xlab=</span><span class="st">&quot;Tasa de ahorro&quot;</span>, <span class="at">ylab=</span><span class="st">&quot;Renta per cápita&quot;</span>,<span class="at">pch=</span><span class="dv">20</span>)</span>
+<span id="cb1315-5"><a href="chap-clustering.html#cb1315-5" aria-hidden="true" tabindex="-1"></a><span class="fu">text</span>(savings2, <span class="fu">rownames</span>(savings2), <span class="at">cex=</span><span class="fl">0.6</span>, <span class="at">pos=</span><span class="dv">1</span>, <span class="at">col=</span>kmeans2<span class="sc">$</span>cluster) </span></code></pre></div>
 <div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-644"></span>
 <img src="AprendeR-Parte-II_files/figure-html/unnamed-chunk-644-1.png" alt="Clustering óptimo de la tabla de datos &quot;savings2&quot; con 2 clusters." width="480" />
 <p class="caption">
 Figura 11.4: Clustering óptimo de la tabla de datos “savings2” con 2 clusters.
 </p>
 </div>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="co">#k=5</span>
-<span class="kw">set.seed</span>(<span class="dv">48465</span>)
-kmeans5=<span class="kw">kmeans</span>(savings2,<span class="dt">centers=</span><span class="dv">5</span>)
-<span class="kw">plot</span>(savings2, <span class="dt">col=</span>kmeans5<span class="op">$</span>cluster, <span class="dt">xlab=</span><span class="st">&quot;Tasa de ahorro&quot;</span>, <span class="dt">ylab=</span><span class="st">&quot;Renta per cápita&quot;</span>,<span class="dt">pch=</span><span class="dv">20</span>)
-<span class="kw">text</span>(savings2, <span class="kw">rownames</span>(savings2), <span class="dt">cex=</span><span class="fl">0.6</span>, <span class="dt">pos=</span><span class="dv">1</span>, <span class="dt">col=</span>kmeans5<span class="op">$</span>cluster) </code></pre>
+<div class="sourceCode" id="cb1316"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1316-1"><a href="chap-clustering.html#cb1316-1" aria-hidden="true" tabindex="-1"></a><span class="co">#k=5</span></span>
+<span id="cb1316-2"><a href="chap-clustering.html#cb1316-2" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">48465</span>)</span>
+<span id="cb1316-3"><a href="chap-clustering.html#cb1316-3" aria-hidden="true" tabindex="-1"></a>kmeans5<span class="ot">=</span><span class="fu">kmeans</span>(savings2,<span class="at">centers=</span><span class="dv">5</span>)</span>
+<span id="cb1316-4"><a href="chap-clustering.html#cb1316-4" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(savings2, <span class="at">col=</span>kmeans5<span class="sc">$</span>cluster, <span class="at">xlab=</span><span class="st">&quot;Tasa de ahorro&quot;</span>, <span class="at">ylab=</span><span class="st">&quot;Renta per cápita&quot;</span>,<span class="at">pch=</span><span class="dv">20</span>)</span>
+<span id="cb1316-5"><a href="chap-clustering.html#cb1316-5" aria-hidden="true" tabindex="-1"></a><span class="fu">text</span>(savings2, <span class="fu">rownames</span>(savings2), <span class="at">cex=</span><span class="fl">0.6</span>, <span class="at">pos=</span><span class="dv">1</span>, <span class="at">col=</span>kmeans5<span class="sc">$</span>cluster) </span></code></pre></div>
 <div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-645"></span>
 <img src="AprendeR-Parte-II_files/figure-html/unnamed-chunk-645-1.png" alt="Clustering óptimo de la tabla de datos &quot;savings2&quot; con 5 clusters." width="480" />
 <p class="caption">
@@ -710,7 +738,7 @@ Figura 11.5: Clustering óptimo de la tabla de datos “savings2” con 5 cluste
 </p>
 </div>
 </div>
-<div id="metodos-jerarquicos-aglomerativos" class="section level2">
+<div id="métodos-jerárquicos-aglomerativos" class="section level2" number="11.3">
 <h2><span class="header-section-number">11.3</span> Métodos jerárquicos aglomerativos</h2>
 <p>Dada una tabla de datos numéricos, un <strong>método de</strong> <em>clustering</em> <strong>jerárquico aglomerativo</strong> usa una matriz <span class="math inline">\(D\)</span> de distancias entre las filas de la tabla de datos para ir agrupando secuencialmente los objetos que representan estas filas. El procedimiento básico es el siguiente:</p>
 <ol style="list-style-type: decimal">
@@ -723,49 +751,49 @@ Figura 11.5: Clustering óptimo de la tabla de datos “savings2” con 5 cluste
 <li>Repetimos los pasos (3)–(6) hasta que sólo quede un único <em>cluster</em>.</li>
 </ol>
 <p>La matriz de distancias <span class="math inline">\(D\)</span> entre los objetos se puede calcular con la función <code>dist</code>, cuya sintaxis básica es</p>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">dist</span>(x, <span class="dt">method=</span>...)</code></pre>
+<div class="sourceCode" id="cb1317"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1317-1"><a href="chap-clustering.html#cb1317-1" aria-hidden="true" tabindex="-1"></a><span class="fu">dist</span>(x, <span class="at">method=</span>...)</span></code></pre></div>
 <p>donde:</p>
 <ul>
 <li><p><code>x</code> es nuestra tabla de datos (una matriz o un <em>data frame</em> de variables cuantitativas).</p></li>
-<li><code>method</code> sirve para indicar la distancia que queremos usar, cuyo nombre se ha de entrar entrecomillado. La distancia por defecto es la euclídea que hemos venido usando hasta ahora. Otros posibles valores son (en lo que sigue, <span class="math inline">\(x=(x_1,\ldots,x_m)\)</span> e <span class="math inline">\(y=(y_1,\ldots,y_m)\)</span> son dos vectores de <span class="math inline">\(\mathbb{R}^m\)</span>):
+<li><p><code>method</code> sirve para indicar la distancia que queremos usar, cuyo nombre se ha de entrar entrecomillado. La distancia por defecto es la euclídea que hemos venido usando hasta ahora. Otros posibles valores son (en lo que sigue, <span class="math inline">\(x=(x_1,\ldots,x_m)\)</span> e <span class="math inline">\(y=(y_1,\ldots,y_m)\)</span> son dos vectores de <span class="math inline">\(\mathbb{R}^m\)</span>):</p>
 <ul>
-<li>La <strong>distancia de Manhattan</strong>, <code>&quot;manhattan&quot;</code>, que entre <span class="math inline">\(x\)</span> e <span class="math inline">\(y\)</span> vale <span class="math inline">\(\sum\limits_{i=1}^m |x_i-y_i|\)</span>.</li>
-<li>La <strong>distancia del máximo</strong>, <code>&quot;maximum&quot;</code>, que entre <span class="math inline">\(x\)</span> e <span class="math inline">\(y\)</span> vale <span class="math inline">\(\max_{i=1,\ldots,m} |x_i-y_i|\)</span>.</li>
-<li>La <strong>distancia de Canberra</strong>, <code>&quot;canberra&quot;</code>, que entre <span class="math inline">\(x\)</span> e <span class="math inline">\(y\)</span> vale
+<li>La <strong>distancia de Manhattan</strong>, <code>"manhattan"</code>, que entre <span class="math inline">\(x\)</span> e <span class="math inline">\(y\)</span> vale <span class="math inline">\(\sum\limits_{i=1}^m |x_i-y_i|\)</span>.</li>
+<li>La <strong>distancia del máximo</strong>, <code>"maximum"</code>, que entre <span class="math inline">\(x\)</span> e <span class="math inline">\(y\)</span> vale <span class="math inline">\(\max_{i=1,\ldots,m} |x_i-y_i|\)</span>.</li>
+<li>La <strong>distancia de Canberra</strong>, <code>"canberra"</code>, que entre <span class="math inline">\(x\)</span> e <span class="math inline">\(y\)</span> vale
 <span class="math display">\[
 \sum_{i=1}^m \frac{|x_i-y_i|}{|x_i|+|y_i|}.
 \]</span></li>
-<li>La <strong>distancia de Minkowski</strong>, <code>&quot;minkowski&quot;</code>, que depende de un parámetro <span class="math inline">\(p&gt;0\)</span> (que se ha de especificar en la función <code>dist</code> con <code>p</code> igual a su valor), y que entre <span class="math inline">\(x\)</span> e <span class="math inline">\(y\)</span> vale
+<li>La <strong>distancia de Minkowski</strong>, <code>"minkowski"</code>, que depende de un parámetro <span class="math inline">\(p&gt;0\)</span> (que se ha de especificar en la función <code>dist</code> con <code>p</code> igual a su valor), y que entre <span class="math inline">\(x\)</span> e <span class="math inline">\(y\)</span> vale
 <span class="math display">\[
 \sqrt[p]{\sum_{i=1}^m  |x_i -y_i|^p}
 \]</span>
 Observad que cuando <span class="math inline">\(p=1\)</span> se obtiene la distancia de Manhattan y cuando <span class="math inline">\(p=2\)</span> se obtiene la distancia euclídea usual.</li>
-<li>La <strong>distancia binaria</strong>, <code>&quot;binary&quot;</code>, que sirve básicamente para comparar vectores binarios (si los vectores no son binarios, R los entiende como binarios sustituyendo cada entrada diferente de 0 por 1). La distancia binaria entre <span class="math inline">\(x\)</span> e <span class="math inline">\(y\)</span> binarios es el número de posiciones en las que estos vectores tienen entradas diferentes, dividido por el número de posiciones en las que alguno de los dos vectores tiene un 1.</li>
+<li>La <strong>distancia binaria</strong>, <code>"binary"</code>, que sirve básicamente para comparar vectores binarios (si los vectores no son binarios, R los entiende como binarios sustituyendo cada entrada diferente de 0 por 1). La distancia binaria entre <span class="math inline">\(x\)</span> e <span class="math inline">\(y\)</span> binarios es el número de posiciones en las que estos vectores tienen entradas diferentes, dividido por el número de posiciones en las que alguno de los dos vectores tiene un 1.</li>
 </ul></li>
 </ul>
 <p>Una vez calculada la matriz de distancias, los diferentes métodos de <em>clustering</em> jerárquico aglomerativos están implementados en R en la función <code>hclust</code>, cuya sintaxis básica es la siguiente:</p>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">hclust</span>(d, <span class="dt">method=</span>...)</code></pre>
+<div class="sourceCode" id="cb1318"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1318-1"><a href="chap-clustering.html#cb1318-1" aria-hidden="true" tabindex="-1"></a><span class="fu">hclust</span>(d, <span class="at">method=</span>...)</span></code></pre></div>
 <p>donde:</p>
 <ul>
 <li><p><code>d</code> es la matriz de distancias entre nuestros objetos calculada con la función <code>dist</code>.</p></li>
 <li><p><code>method</code> sirve para especificar cómo se define la distancia de la unión de dos <em>clusters</em> al resto de los <em>clusters</em> en el paso (6) del algoritmo general. El nombre del método se ha de entrar entrecomillado. La función <code>hclust</code> dispone de muchos métodos en este sentido, los más populares son los siguientes:</p>
 <ul>
-<li><p>El <strong>método de enlace completo</strong>, <code>&quot;complete&quot;</code>, que es el método usado por <code>hclust</code> por defecto: dados tres <em>clusters</em> <span class="math inline">\(C_1,C_2,C\)</span>, la distancia de <span class="math inline">\(C_1+C_2\)</span> a <span class="math inline">\(C\)</span> es<br />
+<li><p>El <strong>método de enlace completo</strong>, <code>"complete"</code>, que es el método usado por <code>hclust</code> por defecto: dados tres <em>clusters</em> <span class="math inline">\(C_1,C_2,C\)</span>, la distancia de <span class="math inline">\(C_1+C_2\)</span> a <span class="math inline">\(C\)</span> es<br />
 <span class="math display">\[
 d(C_1+C_2,C)=\max\{d(C,C_1),d(C,C_2)\}
 \]</span>
 donde (en este método y en los que siguen) las distancias entre <em>clusters</em> <span class="math inline">\(d(C,C_1)\)</span> y <span class="math inline">\(d(C,C_2)\)</span> se conocen de pasos anteriores: o bien vienen dadas por la matriz de distancias <span class="math inline">\(D\)</span>, si son <em>clusters</em> individuales, o bien se han calculado por este mismo método al formarse por la unión de <em>clusters</em> más pequeños.</p></li>
-<li><p>El <strong>método de enlace simple</strong>, <code>&quot;single&quot;</code>: dados tres <em>clusters</em> <span class="math inline">\(C_1,C_2,C\)</span>, la distancia de <span class="math inline">\(C_1+C_2\)</span> a <span class="math inline">\(C\)</span> es<br />
+<li><p>El <strong>método de enlace simple</strong>, <code>"single"</code>: dados tres <em>clusters</em> <span class="math inline">\(C_1,C_2,C\)</span>, la distancia de <span class="math inline">\(C_1+C_2\)</span> a <span class="math inline">\(C\)</span> es<br />
 <span class="math display">\[
 d(C_1+C_2,C)=\min\{d(C,C_1),d(C,C_2)\}.
 \]</span></p></li>
-<li><p>El <strong>método de enlace promedio</strong>, <code>&quot;average&quot;</code>, más conocido en filogenética como <strong>UPGMA</strong> (<em>Unweighted Pair Group Method Using Arithmetic
+<li><p>El <strong>método de enlace promedio</strong>, <code>"average"</code>, más conocido en filogenética como <strong>UPGMA</strong> (<em>Unweighted Pair Group Method Using Arithmetic
 averages</em>): dados tres <em>clusters</em> <span class="math inline">\(C_1,C_2,C\)</span>, la distancia de <span class="math inline">\(C_1+C_2\)</span> a <span class="math inline">\(C\)</span> es<br />
 <span class="math display">\[
 d(C_1+C_2,C)=\frac{|C_1|}{|C_1|+|C_2|}d(C,C_1)+\frac{|C_2|}{|C_1|+|C_2|}d(C,C_2),
 \]</span>
 donde <span class="math inline">\(|\ |\)</span> denota el cardinal de cada <em>cluster</em>.</p></li>
-<li><p>El <strong>método de Ward clásico</strong>, <code>&quot;ward.D&quot;</code>: dados tres <em>clusters</em> <span class="math inline">\(C_1,C_2,C\)</span>, la distancia de <span class="math inline">\(C_1+C_2\)</span> a <span class="math inline">\(C\)</span> es<br />
+<li><p>El <strong>método de Ward clásico</strong>, <code>"ward.D"</code>: dados tres <em>clusters</em> <span class="math inline">\(C_1,C_2,C\)</span>, la distancia de <span class="math inline">\(C_1+C_2\)</span> a <span class="math inline">\(C\)</span> es<br />
 <span class="math display">\[
 \begin{array}{rl} 
 d(C_1+C_2,C)= &amp; \displaystyle \frac{|C|+|C_1|}{|C|+|C_1|+|C_2|}d(C,C_1)+\frac{|C|+|C_2|}{|C|+|C_1|+|C_2|}d(C,C_2)\\[2ex] &amp; \displaystyle -\frac{|C|}{
@@ -775,16 +803,16 @@ d(C_1+C_2,C)= &amp; \displaystyle \frac{|C|+|C_1|}{|C|+|C_1|+|C_2|}d(C,C_1)+\fra
 </ul></li>
 </ul>
 <p>Para ilustrar cómo usar los métodos aglomerativos con R usaremos la famosa tabla de datos <code>iris</code> que reúne las longitudes y amplitudes de los sépalos y pétalos de <span class="math inline">\(150\)</span> flores de tres especies de iris diferentes: Setosa, Versicolor y Virginica. Vamos a escoger al azar (pero fijando la semilla de aleatoriedad, para que sea reproducible) 5 flores de cada especie, calcularemos las distancias euclídeas entre los vectores numéricos de sus longitudes y amplitudes de sépalos y pétalos, y usaremos estas distancias para calcular algunos <em>clusterings</em> jerárquicos aglomerativos de estas flores, con diversos métodos.</p>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">set.seed</span>(<span class="dv">100</span>) 
-iris.setosa=iris[iris<span class="op">$</span>Species<span class="op">==</span><span class="st">&quot;setosa&quot;</span>,] <span class="co">#Subtabla de flores setosa</span>
-iris.versicolor=iris[iris<span class="op">$</span>Species<span class="op">==</span><span class="st">&quot;versicolor&quot;</span>,] <span class="co">#Subtabla de flores versicolor</span>
-iris.virginica=iris[iris<span class="op">$</span>Species<span class="op">==</span><span class="st">&quot;virginica&quot;</span>,] <span class="co">#Subtabla de flores virginica</span>
-flores.setosa=iris.setosa[<span class="kw">sample</span>(<span class="dv">1</span><span class="op">:</span><span class="dv">50</span>,<span class="dv">5</span>),] <span class="co">#Muestra de 5 flores setosa</span>
-flores.versicolor=iris.versicolor[<span class="kw">sample</span>(<span class="dv">1</span><span class="op">:</span><span class="dv">50</span>,<span class="dv">5</span>),] <span class="co">#Muestra de 5 flores versicolor</span>
-flores.virginica=iris.virginica[<span class="kw">sample</span>(<span class="dv">1</span><span class="op">:</span><span class="dv">50</span>,<span class="dv">5</span>),] <span class="co">#Muestra de 5 flores virginica</span>
-flores=<span class="kw">rbind</span>(flores.setosa,flores.versicolor,flores.virginica) <span class="co">#Tabla de datos con las 15 flores</span></code></pre>
+<div class="sourceCode" id="cb1319"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1319-1"><a href="chap-clustering.html#cb1319-1" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">100</span>) </span>
+<span id="cb1319-2"><a href="chap-clustering.html#cb1319-2" aria-hidden="true" tabindex="-1"></a>iris.setosa<span class="ot">=</span>iris[iris<span class="sc">$</span>Species<span class="sc">==</span><span class="st">&quot;setosa&quot;</span>,] <span class="co">#Subtabla de flores setosa</span></span>
+<span id="cb1319-3"><a href="chap-clustering.html#cb1319-3" aria-hidden="true" tabindex="-1"></a>iris.versicolor<span class="ot">=</span>iris[iris<span class="sc">$</span>Species<span class="sc">==</span><span class="st">&quot;versicolor&quot;</span>,] <span class="co">#Subtabla de flores versicolor</span></span>
+<span id="cb1319-4"><a href="chap-clustering.html#cb1319-4" aria-hidden="true" tabindex="-1"></a>iris.virginica<span class="ot">=</span>iris[iris<span class="sc">$</span>Species<span class="sc">==</span><span class="st">&quot;virginica&quot;</span>,] <span class="co">#Subtabla de flores virginica</span></span>
+<span id="cb1319-5"><a href="chap-clustering.html#cb1319-5" aria-hidden="true" tabindex="-1"></a>flores.setosa<span class="ot">=</span>iris.setosa[<span class="fu">sample</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">50</span>,<span class="dv">5</span>),] <span class="co">#Muestra de 5 flores setosa</span></span>
+<span id="cb1319-6"><a href="chap-clustering.html#cb1319-6" aria-hidden="true" tabindex="-1"></a>flores.versicolor<span class="ot">=</span>iris.versicolor[<span class="fu">sample</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">50</span>,<span class="dv">5</span>),] <span class="co">#Muestra de 5 flores versicolor</span></span>
+<span id="cb1319-7"><a href="chap-clustering.html#cb1319-7" aria-hidden="true" tabindex="-1"></a>flores.virginica<span class="ot">=</span>iris.virginica[<span class="fu">sample</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">50</span>,<span class="dv">5</span>),] <span class="co">#Muestra de 5 flores virginica</span></span>
+<span id="cb1319-8"><a href="chap-clustering.html#cb1319-8" aria-hidden="true" tabindex="-1"></a>flores<span class="ot">=</span><span class="fu">rbind</span>(flores.setosa,flores.versicolor,flores.virginica) <span class="co">#Tabla de datos con las 15 flores</span></span></code></pre></div>
 <p>En el <em>data frame</em> <code>flores</code>, las filas han heredado sus números de la tabla <code>iris</code> original, como podemos comprobar:</p>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">head</span>(flores)</code></pre>
+<div class="sourceCode" id="cb1320"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1320-1"><a href="chap-clustering.html#cb1320-1" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(flores)</span></code></pre></div>
 <pre><code>##    Sepal.Length Sepal.Width Petal.Length Petal.Width    Species
 ## 10          4.9         3.1          1.5         0.1     setosa
 ## 38          4.9         3.6          1.4         0.1     setosa
@@ -793,8 +821,8 @@ flores=<span class="kw">rbind</span>(flores.setosa,flores.versicolor,flores.virg
 ## 14          4.3         3.0          1.1         0.1     setosa
 ## 94          5.0         2.3          3.3         1.0 versicolor</code></pre>
 <p>Renumeremos las filas del 1 al 15:</p>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">rownames</span>(flores)=<span class="dv">1</span><span class="op">:</span><span class="dv">15</span>
-<span class="kw">head</span>(flores)</code></pre>
+<div class="sourceCode" id="cb1322"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1322-1"><a href="chap-clustering.html#cb1322-1" aria-hidden="true" tabindex="-1"></a><span class="fu">rownames</span>(flores)<span class="ot">=</span><span class="dv">1</span><span class="sc">:</span><span class="dv">15</span></span>
+<span id="cb1322-2"><a href="chap-clustering.html#cb1322-2" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(flores)</span></code></pre></div>
 <pre><code>##   Sepal.Length Sepal.Width Petal.Length Petal.Width    Species
 ## 1          4.9         3.1          1.5         0.1     setosa
 ## 2          4.9         3.6          1.4         0.1     setosa
@@ -803,27 +831,27 @@ flores=<span class="kw">rbind</span>(flores.setosa,flores.versicolor,flores.virg
 ## 5          4.3         3.0          1.1         0.1     setosa
 ## 6          5.0         2.3          3.3         1.0 versicolor</code></pre>
 <p>Vamos a guardar en una matriz llamada <code>distancias.iris</code> las distancias euclídeas entre los vectores de longitudes y amplitudes de pares de miembros de la tabla <code>flores</code>.</p>
-<pre class="sourceCode r"><code class="sourceCode r">distancias.iris=<span class="kw">dist</span>(flores[ ,<span class="dv">1</span><span class="op">:</span><span class="dv">4</span>])</code></pre>
+<div class="sourceCode" id="cb1324"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1324-1"><a href="chap-clustering.html#cb1324-1" aria-hidden="true" tabindex="-1"></a>distancias.iris<span class="ot">=</span><span class="fu">dist</span>(flores[ ,<span class="dv">1</span><span class="sc">:</span><span class="dv">4</span>])</span></code></pre></div>
 <p>Calculamos finalmente el <em>clustering</em> jerárquico de estas 15 flores usando el método del enlace completo, y lo llamamos <code>estudio.flores</code> para poder referirnos a él en lo sucesivo:</p>
-<pre class="sourceCode r"><code class="sourceCode r">estudio.flores=<span class="kw">hclust</span>(distancias.iris)</code></pre>
+<div class="sourceCode" id="cb1325"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1325-1"><a href="chap-clustering.html#cb1325-1" aria-hidden="true" tabindex="-1"></a>estudio.flores<span class="ot">=</span><span class="fu">hclust</span>(distancias.iris)</span></code></pre></div>
 <p>Para poder comprender un <em>clustering</em> jerárquico, lo mejor es dibujarlo en forma de árbol binario o, en este contexto, de <strong>dendrograma</strong>, con los objetos que clasificamos en las hojas. Para ello le aplicamos simplemente la función <code>plot</code>. Al usar esta función para representar gráficamente un <em>clustering</em> jerárquico, hay dos parámetros que hay que tener en cuenta (aparte de los usuales):</p>
 <ul>
 <li><p><code>hang</code>, que controla la situación de las hojas del dendrograma respecto del margen inferior.</p></li>
 <li><p><code>labels</code>, que permite poner nombres a los objetos; por defecto, se identifican en la representación gráfica por medio de sus números de fila en la matriz o el <em>data frame</em> que contiene los datos.</p></li>
 </ul>
-<p>Demos una ojeada al <em>clustering</em> <code>estudio.flores</code>; usaremos primero el valor de <code>hang</code> por defecto (que es <code>hang=0.1</code>) y luego <code>hang=-1</code> para que veáis la diferencia. Pondremos además nombres a las flores para identificar su especie, etiquetas adecuadas en los ejes, y con <code>main=&quot;&quot;</code>y <code>sub=&quot;&quot;</code> eliminaremos el título y el subtítulo que añade R por defecto.</p>
-<pre class="sourceCode r"><code class="sourceCode r">nombres.flores=<span class="kw">c</span>(<span class="kw">paste</span>(<span class="st">&quot;Set&quot;</span>,<span class="dv">1</span><span class="op">:</span><span class="dv">5</span>,<span class="dt">sep=</span><span class="st">&quot;&quot;</span>), <span class="kw">paste</span>(<span class="st">&quot;Vers&quot;</span>,<span class="dv">1</span><span class="op">:</span><span class="dv">5</span>,<span class="dt">sep=</span><span class="st">&quot;&quot;</span>), <span class="kw">paste</span>(<span class="st">&quot;Vir&quot;</span>,<span class="dv">1</span><span class="op">:</span><span class="dv">5</span>,<span class="dt">sep=</span><span class="st">&quot;&quot;</span>))
-nombres.flores</code></pre>
+<p>Demos una ojeada al <em>clustering</em> <code>estudio.flores</code>; usaremos primero el valor de <code>hang</code> por defecto (que es <code>hang=0.1</code>) y luego <code>hang=-1</code> para que veáis la diferencia. Pondremos además nombres a las flores para identificar su especie, etiquetas adecuadas en los ejes, y con <code>main=""</code>y <code>sub=""</code> eliminaremos el título y el subtítulo que añade R por defecto.</p>
+<div class="sourceCode" id="cb1326"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1326-1"><a href="chap-clustering.html#cb1326-1" aria-hidden="true" tabindex="-1"></a>nombres.flores<span class="ot">=</span><span class="fu">c</span>(<span class="fu">paste</span>(<span class="st">&quot;Set&quot;</span>,<span class="dv">1</span><span class="sc">:</span><span class="dv">5</span>,<span class="at">sep=</span><span class="st">&quot;&quot;</span>), <span class="fu">paste</span>(<span class="st">&quot;Vers&quot;</span>,<span class="dv">1</span><span class="sc">:</span><span class="dv">5</span>,<span class="at">sep=</span><span class="st">&quot;&quot;</span>), <span class="fu">paste</span>(<span class="st">&quot;Vir&quot;</span>,<span class="dv">1</span><span class="sc">:</span><span class="dv">5</span>,<span class="at">sep=</span><span class="st">&quot;&quot;</span>))</span>
+<span id="cb1326-2"><a href="chap-clustering.html#cb1326-2" aria-hidden="true" tabindex="-1"></a>nombres.flores</span></code></pre></div>
 <pre><code>##  [1] &quot;Set1&quot;  &quot;Set2&quot;  &quot;Set3&quot;  &quot;Set4&quot;  &quot;Set5&quot;  &quot;Vers1&quot; &quot;Vers2&quot; &quot;Vers3&quot;
 ##  [9] &quot;Vers4&quot; &quot;Vers5&quot; &quot;Vir1&quot;  &quot;Vir2&quot;  &quot;Vir3&quot;  &quot;Vir4&quot;  &quot;Vir5&quot;</code></pre>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">plot</span>(estudio.flores, <span class="dt">labels=</span>nombres.flores, <span class="dt">xlab=</span><span class="st">&quot;flores&quot;</span>, <span class="dt">ylab=</span><span class="st">&quot;distancias&quot;</span>, <span class="dt">main=</span><span class="st">&quot;&quot;</span>, <span class="dt">sub=</span><span class="st">&quot;&quot;</span>)</code></pre>
+<div class="sourceCode" id="cb1328"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1328-1"><a href="chap-clustering.html#cb1328-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(estudio.flores, <span class="at">labels=</span>nombres.flores, <span class="at">xlab=</span><span class="st">&quot;flores&quot;</span>, <span class="at">ylab=</span><span class="st">&quot;distancias&quot;</span>, <span class="at">main=</span><span class="st">&quot;&quot;</span>, <span class="at">sub=</span><span class="st">&quot;&quot;</span>)</span></code></pre></div>
 <div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-654"></span>
 <img src="AprendeR-Parte-II_files/figure-html/unnamed-chunk-654-1.png" alt="Dendrograma para 15 flores de iris producido con el método de enlace completo y dibujado con hang=0.1." width="480" />
 <p class="caption">
 Figura 11.6: Dendrograma para 15 flores de iris producido con el método de enlace completo y dibujado con hang=0.1.
 </p>
 </div>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">plot</span>(estudio.flores, <span class="dt">labels=</span>nombres.flores, <span class="dt">xlab=</span><span class="st">&quot;flores&quot;</span>, <span class="dt">ylab=</span><span class="st">&quot;distancias&quot;</span>, <span class="dt">main=</span><span class="st">&quot;&quot;</span>, <span class="dt">sub=</span><span class="st">&quot;&quot;</span>, <span class="dt">hang=</span><span class="op">-</span><span class="dv">1</span>)</code></pre>
+<div class="sourceCode" id="cb1329"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1329-1"><a href="chap-clustering.html#cb1329-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(estudio.flores, <span class="at">labels=</span>nombres.flores, <span class="at">xlab=</span><span class="st">&quot;flores&quot;</span>, <span class="at">ylab=</span><span class="st">&quot;distancias&quot;</span>, <span class="at">main=</span><span class="st">&quot;&quot;</span>, <span class="at">sub=</span><span class="st">&quot;&quot;</span>, <span class="at">hang=</span><span class="sc">-</span><span class="dv">1</span>)</span></code></pre></div>
 <div class="figure" style="text-align: center"><span id="fig:hclustiris"></span>
 <img src="AprendeR-Parte-II_files/figure-html/hclustiris-1.png" alt="Dendrograma para 15 flores de iris producido con el método de enlace completo y dibujado con hang=-1." width="480" />
 <p class="caption">
@@ -832,23 +860,23 @@ Figura 11.7: Dendrograma para 15 flores de iris producido con el método de enla
 </div>
 <p>Vemos cómo el <em>clustering</em> jerárquico separa, en nuestra muestra, las flores setosa del resto, mientras que las versicolor y las virginica aparecen algo mezcladas.</p>
 <p>¿Cuál sería el resultado de usar otros métodos para calcular las distancias entre <em>clusters</em>? Veamos los resultados con los métodos de enlace simple, promedio y Ward.</p>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">plot</span>(<span class="kw">hclust</span>(distancias.iris,<span class="dt">method=</span><span class="st">&quot;single&quot;</span>), <span class="dt">hang=</span><span class="op">-</span><span class="dv">1</span>, 
-  <span class="dt">labels=</span>nombres.flores, <span class="dt">xlab=</span><span class="st">&quot;flores&quot;</span>, <span class="dt">ylab=</span><span class="st">&quot;distancias&quot;</span>, <span class="dt">main=</span><span class="st">&quot;&quot;</span>, <span class="dt">sub=</span><span class="st">&quot;&quot;</span>) </code></pre>
+<div class="sourceCode" id="cb1330"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1330-1"><a href="chap-clustering.html#cb1330-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(<span class="fu">hclust</span>(distancias.iris,<span class="at">method=</span><span class="st">&quot;single&quot;</span>), <span class="at">hang=</span><span class="sc">-</span><span class="dv">1</span>, </span>
+<span id="cb1330-2"><a href="chap-clustering.html#cb1330-2" aria-hidden="true" tabindex="-1"></a>  <span class="at">labels=</span>nombres.flores, <span class="at">xlab=</span><span class="st">&quot;flores&quot;</span>, <span class="at">ylab=</span><span class="st">&quot;distancias&quot;</span>, <span class="at">main=</span><span class="st">&quot;&quot;</span>, <span class="at">sub=</span><span class="st">&quot;&quot;</span>) </span></code></pre></div>
 <div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-655"></span>
 <img src="AprendeR-Parte-II_files/figure-html/unnamed-chunk-655-1.png" alt="Dendrograma para 15 flores de iris producido con el método de enlace simple." width="480" />
 <p class="caption">
 Figura 11.8: Dendrograma para 15 flores de iris producido con el método de enlace simple.
 </p>
 </div>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">plot</span>(<span class="kw">hclust</span>(distancias.iris,<span class="dt">method=</span><span class="st">&quot;average&quot;</span>), <span class="dt">hang=</span><span class="op">-</span><span class="dv">1</span>, <span class="dt">main=</span><span class="st">&quot;&quot;</span>, <span class="dt">sub=</span><span class="st">&quot;&quot;</span>)</code></pre>
+<div class="sourceCode" id="cb1331"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1331-1"><a href="chap-clustering.html#cb1331-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(<span class="fu">hclust</span>(distancias.iris,<span class="at">method=</span><span class="st">&quot;average&quot;</span>), <span class="at">hang=</span><span class="sc">-</span><span class="dv">1</span>, <span class="at">main=</span><span class="st">&quot;&quot;</span>, <span class="at">sub=</span><span class="st">&quot;&quot;</span>)</span></code></pre></div>
 <div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-656"></span>
 <img src="AprendeR-Parte-II_files/figure-html/unnamed-chunk-656-1.png" alt="Dendrograma para 15 flores de iris producido con el método de enlace promedio." width="480" />
 <p class="caption">
 Figura 11.9: Dendrograma para 15 flores de iris producido con el método de enlace promedio.
 </p>
 </div>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">plot</span>(<span class="kw">hclust</span>(distancias.iris,<span class="dt">method=</span><span class="st">&quot;ward.D&quot;</span>), <span class="dt">hang=</span><span class="op">-</span><span class="dv">1</span>, 
-  <span class="dt">labels=</span>nombres.flores, <span class="dt">xlab=</span><span class="st">&quot;flores&quot;</span>, <span class="dt">ylab=</span><span class="st">&quot;distancias&quot;</span>, <span class="dt">main=</span><span class="st">&quot;&quot;</span>, <span class="dt">sub=</span><span class="st">&quot;&quot;</span>)</code></pre>
+<div class="sourceCode" id="cb1332"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1332-1"><a href="chap-clustering.html#cb1332-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(<span class="fu">hclust</span>(distancias.iris,<span class="at">method=</span><span class="st">&quot;ward.D&quot;</span>), <span class="at">hang=</span><span class="sc">-</span><span class="dv">1</span>, </span>
+<span id="cb1332-2"><a href="chap-clustering.html#cb1332-2" aria-hidden="true" tabindex="-1"></a>  <span class="at">labels=</span>nombres.flores, <span class="at">xlab=</span><span class="st">&quot;flores&quot;</span>, <span class="at">ylab=</span><span class="st">&quot;distancias&quot;</span>, <span class="at">main=</span><span class="st">&quot;&quot;</span>, <span class="at">sub=</span><span class="st">&quot;&quot;</span>)</span></code></pre></div>
 <div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-657"></span>
 <img src="AprendeR-Parte-II_files/figure-html/unnamed-chunk-657-1.png" alt="Dendrograma para 15 flores de iris producido con el método de Ward." width="480" />
 <p class="caption">
@@ -857,7 +885,7 @@ Figura 11.10: Dendrograma para 15 flores de iris producido con el método de War
 </div>
 <p>Observamos que cada método ha dado lugar a una jerarquía de <em>clusters</em> diferente.</p>
 <p>Volviendo a la función <code>hclust</code>, veamos la estructura del <em>clustering</em> <code>distancias.iris</code>:</p>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">str</span>(estudio.flores)</code></pre>
+<div class="sourceCode" id="cb1333"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1333-1"><a href="chap-clustering.html#cb1333-1" aria-hidden="true" tabindex="-1"></a><span class="fu">str</span>(estudio.flores)</span></code></pre></div>
 <pre><code>## List of 7
 ##  $ merge      : int [1:14, 1:2] -1 -7 -2 -4 -8 -15 -10 -14 -5 -13 ...
 ##  $ height     : num [1:14] 0.346 0.361 0.51 0.574 0.64 ...
@@ -869,7 +897,7 @@ Figura 11.10: Dendrograma para 15 flores de iris producido con el método de War
 ##  - attr(*, &quot;class&quot;)= chr &quot;hclust&quot;</code></pre>
 <p>Como vemos, un <em>clustering</em> jerárquico producido con <code>hclust</code> es una <code>list</code>. Sus dos componentes más interesantes para nosotros son las siguientes.</p>
 <p>Por un lado, la componente <code>merge</code> es una matriz de dos columnas que indica el orden en el que se han ido agrupando los objetos de dos en dos. En esta matriz, los objetos originales se representan con números negativos, y los nuevos <em>clusters</em> con números positivos que indican el paso en el que se han creado. En nuestro ejemplo:</p>
-<pre class="sourceCode r"><code class="sourceCode r">estudio.flores<span class="op">$</span>merge</code></pre>
+<div class="sourceCode" id="cb1335"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1335-1"><a href="chap-clustering.html#cb1335-1" aria-hidden="true" tabindex="-1"></a>estudio.flores<span class="sc">$</span>merge</span></code></pre></div>
 <pre><code>##       [,1] [,2]
 ##  [1,]   -1   -3
 ##  [2,]   -7  -12
@@ -887,34 +915,34 @@ Figura 11.10: Dendrograma para 15 flores de iris producido con el método de War
 ## [14,]   12   13</code></pre>
 <p>Este resultado nos dice que: en el primer paso del algoritmo, se han agrupado las flores 1 y 3; en el segundo paso del algoritmo, se han agrupado las flores 7 y 12; en el tercer paso del algoritmo, se han agrupado el <em>cluster</em> formado en el primer paso (flores 1 y 3) y la flor 2; en el cuarto paso, se han agrupado el <em>cluster</em> formado en el tercer paso (flores 1, 2 y 3) y la flor 4; y así sucesivamente. Es conveniente que dediquéis un rato a comparar esta matriz de emparejamientos con los dendrogramas que representan el <em>clustering</em>, como por ejemplo el de la Figura <a href="chap-clustering.html#fig:hclustiris">11.7</a>.</p>
 <p>La otra componente que nos interesa es <code>height</code>, un vector que contiene las distancias a las que se han ido agrupando los pares de <em>clusters</em>, representadas como alturas en el eje de ordenadas en el dendrograma. Por ejemplo:</p>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">round</span>(estudio.flores<span class="op">$</span>height,<span class="dv">4</span>)</code></pre>
+<div class="sourceCode" id="cb1337"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1337-1"><a href="chap-clustering.html#cb1337-1" aria-hidden="true" tabindex="-1"></a><span class="fu">round</span>(estudio.flores<span class="sc">$</span>height,<span class="dv">4</span>)</span></code></pre></div>
 <pre><code>##  [1] 0.3464 0.3606 0.5099 0.5745 0.6403 0.7000 0.7810 0.7937 1.0296 1.3928
 ## [11] 1.5067 2.3707 3.8730 6.7186</code></pre>
 <p>indica que las dos flores agrupadas en el primer paso estaban a distancia 0.3464, las dos flores agrupadas en el segundo paso estaban a distancia 0.3606, el <em>cluster</em> y la flor agrupados en el tercer paso estaban a distancia 0.5099, etc. De nuevo, es conveniente comparar esta lista de alturas con el dendrograma de la Figura <a href="chap-clustering.html#fig:hclustiris">11.7</a>: las líneas horizontales que forman los <em>clusters</em> están a las alturas en los que se han unido sus componentes.</p>
 <p>Un <em>clustering</em> jerárquico puede usarse para definir un <em>clustering</em> ordinario, es decir, una clasificación de los objetos bajo estudio. Esto se puede hacer de dos maneras: indicando cuántos <em>clusters</em> deseamos, o indicando a qué altura queremos cortar el dendrograma, de manera que <em>clusters</em> que se unan a una distancia mayor que dicha altura queden separados. Por ejemplo, en el dendrograma representado en la Figura <a href="chap-clustering.html#fig:hclustiris">11.7</a>, si cortamos a altura 3 obtenemos 3 <em>clusters</em>: de izquierda a derecha, uno formado por las cinco setosa, otro formado por cuatro virginica y una versicolor, y un tercero formado por la virginica y las cuatro versicolor restantes. Lo podéis comprobar imaginando una recta horizontal en el dendrograma a altura 3 y visualizando qué grupos forma.</p>
 <p>Con R disponemos de dos funciones básicas para obtener agrupamientos a partir de un <em>clustering</em> jerárquico. La primera es la función <code>cutree</code>. Su sintaxis básica es</p>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">cutree</span>(hclust, <span class="dt">k=</span>..., <span class="dt">h=</span>...)</code></pre>
+<div class="sourceCode" id="cb1339"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1339-1"><a href="chap-clustering.html#cb1339-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cutree</span>(hclust, <span class="at">k=</span>..., <span class="at">h=</span>...)</span></code></pre></div>
 <p>donde <code>hclust</code> es el resultado de una función homónima, y se ha de especificar o bien el parámetro <code>k</code> que indica el número de <em>clusters</em> deseado o bien el parámetro <code>h</code> que indica la altura a la que queremos cortar. Veamos dos ejemplos. Para cortar a altura 3, usamos:</p>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">cutree</span>(estudio.flores,<span class="dt">h=</span><span class="dv">3</span>) </code></pre>
+<div class="sourceCode" id="cb1340"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1340-1"><a href="chap-clustering.html#cb1340-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cutree</span>(estudio.flores,<span class="at">h=</span><span class="dv">3</span>) </span></code></pre></div>
 <pre><code>##  1  2  3  4  5  6  7  8  9 10 11 12 13 14 15 
 ##  1  1  1  1  1  2  3  2  2  2  3  3  2  3  3</code></pre>
 <p>Y para clasificar en 4 <em>clusters</em>, usamos:</p>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">cutree</span>(estudio.flores,<span class="dt">k=</span><span class="dv">4</span>) </code></pre>
+<div class="sourceCode" id="cb1342"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1342-1"><a href="chap-clustering.html#cb1342-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cutree</span>(estudio.flores,<span class="at">k=</span><span class="dv">4</span>) </span></code></pre></div>
 <pre><code>##  1  2  3  4  5  6  7  8  9 10 11 12 13 14 15 
 ##  1  1  1  1  1  2  3  2  2  2  4  3  2  3  3</code></pre>
 <p>Como vemos, el resultado de <code>cutree</code> es un vector similar a la componente <code>cluster</code> de un <code>kmeans</code>.</p>
 <p>Otra posibilidad es usar la función <code>rect.hclust</code>, que sobre el dendrograma dibujado en la instrucción inmediatamente anterior resalta los grupos enmarcándolos en rectángulos. La sintaxis es similar: se aplica al resultado de un <code>hclust</code> y al número <code>k</code> de grupos o a la altura <code>h</code>. Admite además un parámetro <code>border</code> que permite especificar los colores de los rectángulos (por defecto, todos rojos).</p>
 <p>Veamos el resultado de su aplicación por defecto en los mismos casos que hemos aplicado <code>cutree</code>:</p>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">plot</span>(estudio.flores, <span class="dt">labels=</span>nombres.flores, <span class="dt">xlab=</span><span class="st">&quot;flores&quot;</span>, <span class="dt">ylab=</span><span class="st">&quot;distancias&quot;</span>, <span class="dt">main=</span><span class="st">&quot;&quot;</span>, <span class="dt">sub=</span><span class="st">&quot;&quot;</span>, <span class="dt">hang=</span><span class="op">-</span><span class="dv">1</span>)
-<span class="kw">rect.hclust</span>(estudio.flores,<span class="dt">h=</span><span class="dv">3</span>)</code></pre>
+<div class="sourceCode" id="cb1344"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1344-1"><a href="chap-clustering.html#cb1344-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(estudio.flores, <span class="at">labels=</span>nombres.flores, <span class="at">xlab=</span><span class="st">&quot;flores&quot;</span>, <span class="at">ylab=</span><span class="st">&quot;distancias&quot;</span>, <span class="at">main=</span><span class="st">&quot;&quot;</span>, <span class="at">sub=</span><span class="st">&quot;&quot;</span>, <span class="at">hang=</span><span class="sc">-</span><span class="dv">1</span>)</span>
+<span id="cb1344-2"><a href="chap-clustering.html#cb1344-2" aria-hidden="true" tabindex="-1"></a><span class="fu">rect.hclust</span>(estudio.flores,<span class="at">h=</span><span class="dv">3</span>)</span></code></pre></div>
 <div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-664"></span>
 <img src="AprendeR-Parte-II_files/figure-html/unnamed-chunk-664-1.png" alt="Clustering de 15 flores de iris a partir de su dendrograma calculado con el método de enlace  completo, cortándolo a altura 3." width="480" />
 <p class="caption">
 Figura 11.11: Clustering de 15 flores de iris a partir de su dendrograma calculado con el método de enlace completo, cortándolo a altura 3.
 </p>
 </div>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">plot</span>(estudio.flores, <span class="dt">labels=</span>nombres.flores, <span class="dt">xlab=</span><span class="st">&quot;flores&quot;</span>, <span class="dt">ylab=</span><span class="st">&quot;distancias&quot;</span>, <span class="dt">main=</span><span class="st">&quot;&quot;</span>, <span class="dt">sub=</span><span class="st">&quot;&quot;</span>, <span class="dt">hang=</span><span class="op">-</span><span class="dv">1</span>)
-<span class="kw">rect.hclust</span>(estudio.flores,<span class="dt">k=</span><span class="dv">4</span>)  </code></pre>
+<div class="sourceCode" id="cb1345"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1345-1"><a href="chap-clustering.html#cb1345-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(estudio.flores, <span class="at">labels=</span>nombres.flores, <span class="at">xlab=</span><span class="st">&quot;flores&quot;</span>, <span class="at">ylab=</span><span class="st">&quot;distancias&quot;</span>, <span class="at">main=</span><span class="st">&quot;&quot;</span>, <span class="at">sub=</span><span class="st">&quot;&quot;</span>, <span class="at">hang=</span><span class="sc">-</span><span class="dv">1</span>)</span>
+<span id="cb1345-2"><a href="chap-clustering.html#cb1345-2" aria-hidden="true" tabindex="-1"></a><span class="fu">rect.hclust</span>(estudio.flores,<span class="at">k=</span><span class="dv">4</span>)  </span></code></pre></div>
 <div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-665"></span>
 <img src="AprendeR-Parte-II_files/figure-html/unnamed-chunk-665-1.png" alt="Clustering de 15 flores de iris a partir de su dendrograma calculado con el método de enlace  completo, usando 4 grupos." width="480" />
 <p class="caption">
@@ -922,7 +950,7 @@ Figura 11.12: Clustering de 15 flores de iris a partir de su dendrograma calcula
 </p>
 </div>
 </div>
-<div id="guia-rapida-9" class="section level2">
+<div id="guía-rápida" class="section level2" number="11.4">
 <h2><span class="header-section-number">11.4</span> Guía rápida</h2>
 <ul>
 <li><p><code>kmeans</code> aplica el algoritmo de k-means a una tabla de datos. Sus parámetros principales son:</p>
@@ -968,9 +996,9 @@ Figura 11.12: Clustering de 15 flores de iris a partir de su dendrograma calcula
 <li><p><code>rect.hclust</code> resalta, enmarcados en rectángulos sobre el dendrograma dibujado con <code>plot</code> en la instrucción inmediatamente anterior, los <em>clusters</em> que se producen al cortar el resultado de un <code>hclust</code> en <code>k</code> grupos o a la altura <code>h</code>.</p></li>
 </ul>
 </div>
-<div id="ejercicios-12" class="section level2">
+<div id="ejercicios" class="section level2" number="11.5">
 <h2><span class="header-section-number">11.5</span> Ejercicios</h2>
-<div id="test-6" class="section level3 unnumbered">
+<div id="test" class="section level3 unnumbered">
 <h3>Test</h3>
 <p><em>(1)</em> El <em>data frame</em> <code>kanga</code> del paquete <strong>faraway</strong> contiene diferentes medidas de los cráneos de 148 ejemplares de canguros de 3 especies. Considerad solo las medidas asociadas a su mandíbula (columnas 17 a 19), y como hay valores NA en estas variables, usad solo las filas que no contengan ningún NA. Vamos a llamar <strong>kanga.mand</strong> a la tabla resultante. Usad esta tabla de datos para realizar un <em>clustering</em> (de los canguros que queden en ella) con el método de k-means de Hartigan-Wong en <span class="math inline">\(k=3\)</span> clases, usando como centros iniciales los puntos (1000,100,100), (1200,120,120) y (1500,150,150). Cuántos elementos tiene el <em>cluster</em> más grande que se obtiene de esta manera?</p>
 <p><em>(2)</em> Seguimos con la tabla <strong>kanga.mand</strong>. Realizad un <em>clustering</em> de sus canguros con el método de k-means de Hartigan-Wong en <span class="math inline">\(k=3\)</span> clases usando 3 puntos iniciales escogidos al azar pero fijando la semilla de aleatoriedad en 314. Qué vale la <span class="math inline">\(SSC\)</span> del <em>cluster</em> que contiene el quinto ejemplar de la tabla de datos (según el orden de las filas)? Dad el resultado redondeado a un entero.</p>
@@ -978,42 +1006,42 @@ Figura 11.12: Clustering de 15 flores de iris a partir de su dendrograma calcula
 <p><em>(4)</em> Seguimos con la tabla <strong>kanga.mand</strong> de las preguntas anteriores. Realizad un <em>clustering</em> jerárquico de sus canguros usando la distancia euclídea y el método de enlace promedio. Si lo cortáis en 3 clases, cuántos elementos tiene el <em>cluster</em> más grande que obtenéis?</p>
 <p><em>(5)</em> Seguimos con la tabla <strong>kanga.mand</strong> de las preguntas anteriores. Realizad un <em>clustering</em> jerárquico de sus canguros usando la distancia euclídea y el método de Ward clásico. Si lo cortáis a altura 1000, cuántos <em>clusters</em> se forman?</p>
 </div>
-<div id="respuestas-al-test-10" class="section level3 unnumbered">
+<div id="respuestas-al-test" class="section level3 unnumbered">
 <h3>Respuestas al test</h3>
 <p><em>(1)</em> 62</p>
 <p>Nosotros lo hemos calculado con</p>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(faraway)
-kanga.mand=kanga[,<span class="dv">17</span><span class="op">:</span><span class="dv">19</span>]
-kanga.mand=<span class="kw">na.omit</span>(kanga.mand)
-Centros=<span class="kw">rbind</span>(<span class="kw">c</span>(<span class="dv">1000</span>,<span class="dv">100</span>,<span class="dv">100</span>),<span class="kw">c</span>(<span class="dv">1200</span>,<span class="dv">120</span>,<span class="dv">120</span>),<span class="kw">c</span>(<span class="dv">1500</span>,<span class="dv">150</span>,<span class="dv">150</span>))
-KM1=<span class="kw">kmeans</span>(kanga.mand,<span class="dt">centers=</span>Centros)
-<span class="kw">max</span>(KM1<span class="op">$</span>size)</code></pre>
+<div class="sourceCode" id="cb1346"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1346-1"><a href="chap-clustering.html#cb1346-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(faraway)</span>
+<span id="cb1346-2"><a href="chap-clustering.html#cb1346-2" aria-hidden="true" tabindex="-1"></a>kanga.mand<span class="ot">=</span>kanga[,<span class="dv">17</span><span class="sc">:</span><span class="dv">19</span>]</span>
+<span id="cb1346-3"><a href="chap-clustering.html#cb1346-3" aria-hidden="true" tabindex="-1"></a>kanga.mand<span class="ot">=</span><span class="fu">na.omit</span>(kanga.mand)</span>
+<span id="cb1346-4"><a href="chap-clustering.html#cb1346-4" aria-hidden="true" tabindex="-1"></a>Centros<span class="ot">=</span><span class="fu">rbind</span>(<span class="fu">c</span>(<span class="dv">1000</span>,<span class="dv">100</span>,<span class="dv">100</span>),<span class="fu">c</span>(<span class="dv">1200</span>,<span class="dv">120</span>,<span class="dv">120</span>),<span class="fu">c</span>(<span class="dv">1500</span>,<span class="dv">150</span>,<span class="dv">150</span>))</span>
+<span id="cb1346-5"><a href="chap-clustering.html#cb1346-5" aria-hidden="true" tabindex="-1"></a>KM1<span class="ot">=</span><span class="fu">kmeans</span>(kanga.mand,<span class="at">centers=</span>Centros)</span>
+<span id="cb1346-6"><a href="chap-clustering.html#cb1346-6" aria-hidden="true" tabindex="-1"></a><span class="fu">max</span>(KM1<span class="sc">$</span>size)</span></code></pre></div>
 <pre><code>## [1] 62</code></pre>
 <p><em>(2)</em> 160802</p>
 <p>Nosotros lo hemos calculado con</p>
-<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">set.seed</span>(<span class="dv">314</span>)
-KM2=<span class="kw">kmeans</span>(kanga.mand,<span class="dt">centers=</span><span class="dv">3</span>)
-cluster<span class="fl">.5</span>=KM2<span class="op">$</span>cluster[<span class="dv">5</span>]
-<span class="kw">round</span>(KM2<span class="op">$</span>withinss[cluster<span class="fl">.5</span>])</code></pre>
+<div class="sourceCode" id="cb1348"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1348-1"><a href="chap-clustering.html#cb1348-1" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">314</span>)</span>
+<span id="cb1348-2"><a href="chap-clustering.html#cb1348-2" aria-hidden="true" tabindex="-1"></a>KM2<span class="ot">=</span><span class="fu">kmeans</span>(kanga.mand,<span class="at">centers=</span><span class="dv">3</span>)</span>
+<span id="cb1348-3"><a href="chap-clustering.html#cb1348-3" aria-hidden="true" tabindex="-1"></a>cluster<span class="fl">.5</span><span class="ot">=</span>KM2<span class="sc">$</span>cluster[<span class="dv">5</span>]</span>
+<span id="cb1348-4"><a href="chap-clustering.html#cb1348-4" aria-hidden="true" tabindex="-1"></a><span class="fu">round</span>(KM2<span class="sc">$</span>withinss[cluster<span class="fl">.5</span>])</span></code></pre></div>
 <pre><code>## [1] 160802</code></pre>
 <p><em>(3)</em> 0</p>
 <p>Nosotros lo hemos resuelto calculando los dos <span class="math inline">\(SSC\)</span> y viendo que son iguales:</p>
-<pre class="sourceCode r"><code class="sourceCode r">KM1<span class="op">$</span>totss</code></pre>
+<div class="sourceCode" id="cb1350"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1350-1"><a href="chap-clustering.html#cb1350-1" aria-hidden="true" tabindex="-1"></a>KM1<span class="sc">$</span>totss</span></code></pre></div>
 <pre><code>## [1] 2938803</code></pre>
-<pre class="sourceCode r"><code class="sourceCode r">KM2<span class="op">$</span>totss</code></pre>
+<div class="sourceCode" id="cb1352"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1352-1"><a href="chap-clustering.html#cb1352-1" aria-hidden="true" tabindex="-1"></a>KM2<span class="sc">$</span>totss</span></code></pre></div>
 <pre><code>## [1] 2938803</code></pre>
 <p><em>(4)</em> 76</p>
 <p>Nosotros lo hemos calculado con</p>
-<pre class="sourceCode r"><code class="sourceCode r">D=<span class="kw">dist</span>(kanga.mand)
-HC1=<span class="kw">hclust</span>(D,<span class="dt">method=</span><span class="st">&quot;average&quot;</span>)
-<span class="kw">table</span>(<span class="kw">cutree</span>(HC1,<span class="dt">k=</span><span class="dv">3</span>))</code></pre>
+<div class="sourceCode" id="cb1354"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1354-1"><a href="chap-clustering.html#cb1354-1" aria-hidden="true" tabindex="-1"></a>D<span class="ot">=</span><span class="fu">dist</span>(kanga.mand)</span>
+<span id="cb1354-2"><a href="chap-clustering.html#cb1354-2" aria-hidden="true" tabindex="-1"></a>HC1<span class="ot">=</span><span class="fu">hclust</span>(D,<span class="at">method=</span><span class="st">&quot;average&quot;</span>)</span>
+<span id="cb1354-3"><a href="chap-clustering.html#cb1354-3" aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>(<span class="fu">cutree</span>(HC1,<span class="at">k=</span><span class="dv">3</span>))</span></code></pre></div>
 <pre><code>## 
 ##  1  2  3 
 ## 76  5 55</code></pre>
 <p><em>(5)</em> 5</p>
 <p>Nosotros lo hemos calculado con</p>
-<pre class="sourceCode r"><code class="sourceCode r">HC2=<span class="kw">hclust</span>(D,<span class="dt">method=</span><span class="st">&quot;ward.D&quot;</span>)
-<span class="kw">table</span>(<span class="kw">cutree</span>(HC2,<span class="dt">h=</span><span class="dv">1000</span>))</code></pre>
+<div class="sourceCode" id="cb1356"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1356-1"><a href="chap-clustering.html#cb1356-1" aria-hidden="true" tabindex="-1"></a>HC2<span class="ot">=</span><span class="fu">hclust</span>(D,<span class="at">method=</span><span class="st">&quot;ward.D&quot;</span>)</span>
+<span id="cb1356-2"><a href="chap-clustering.html#cb1356-2" aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>(<span class="fu">cutree</span>(HC2,<span class="at">h=</span><span class="dv">1000</span>))</span></code></pre></div>
 <pre><code>## 
 ##  1  2  3  4  5 
 ## 26 50  5 35 20</code></pre>
@@ -1024,7 +1052,7 @@ HC1=<span class="kw">hclust</span>(D,<span class="dt">method=</span><span class=
 <div class="footnotes">
 <hr />
 <ol start="9">
-<li id="fn9"><p>Véase, por ejemplo, N. Slonim, E. Aharoni, K. Crammer, “Hartigan’s K-Means Versus Lloyd’s K-Means—Is It Time for a Change?”. <em>Proceedings of the XXIII International Joint Conference on Artificial Intelligence</em> (2013), pp. 1677-1684. Accesible (mayo 2019) en <a href="http://www.ijcai.org/Proceedings/13/Papers/249.pdf" class="uri">http://www.ijcai.org/Proceedings/13/Papers/249.pdf</a>.<a href="chap-clustering.html#fnref9" class="footnote-back">↩</a></p></li>
+<li id="fn9"><p>Véase, por ejemplo, N. Slonim, E. Aharoni, K. Crammer, “Hartigan’s K-Means Versus Lloyd’s K-Means—Is It Time for a Change?”. <em>Proceedings of the XXIII International Joint Conference on Artificial Intelligence</em> (2013), pp. 1677-1684. Accesible (mayo 2019) en <a href="http://www.ijcai.org/Proceedings/13/Papers/249.pdf" class="uri">http://www.ijcai.org/Proceedings/13/Papers/249.pdf</a>.<a href="chap-clustering.html#fnref9" class="footnote-back">↩︎</a></p></li>
 </ol>
 </div>
             </section>
@@ -1038,11 +1066,13 @@ HC1=<span class="kw">hclust</span>(D,<span class="dt">method=</span><span class=
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
 <script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
 <script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
 <script>
 gitbook.require(["gitbook"], function(gitbook) {
 gitbook.start({
@@ -1050,12 +1080,11 @@ gitbook.start({
 "github": false,
 "facebook": true,
 "twitter": true,
-"google": false,
 "linkedin": false,
 "weibo": false,
 "instapaper": false,
 "vk": false,
-"all": ["facebook", "google", "twitter", "linkedin", "weibo", "instapaper"]
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
 },
 "fontsettings": {
 "theme": "white",
@@ -1067,6 +1096,10 @@ gitbook.start({
 "text": null
 },
 "history": {
+"link": null,
+"text": null
+},
+"view": {
 "link": null,
 "text": null
 },
@@ -1086,8 +1119,9 @@ gitbook.start({
     script.type = "text/javascript";
     var src = "true";
     if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
-    if (location.protocol !== "file:" && /^https?:/.test(src))
-      src = src.replace(/^https?:/, '');
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
     script.src = src;
     document.getElementsByTagName("head")[0].appendChild(script);
   })();
